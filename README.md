@@ -1,5 +1,5 @@
 ## Introduzione
-Questa e' la pagina che racchiude tutti i documenti ufficiali appartenenti ed inerenti al progetto di [INGEGNERIA DEL SOFTWARE](https://didattica.unipd.it/off/2018/LT/SC/SC1167/000ZZ/SCP4065580/N0).
+Questa e' la pagina che racchiude tutti i documenti ufficiali appartenenti ed inerenti al progetto di [Ing. del software](https://didattica.unipd.it/off/2018/LT/SC/SC1167/000ZZ/SCP4065580/N0).
 
 ## Navigazione 
 
