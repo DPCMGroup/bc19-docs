@@ -3,4 +3,4 @@ Questa e' la pagina che racchiude tutti i documenti ufficiali appartenenti ed in
 
 ## Navigazione 
 
-- **[Verbali riunioni](https://github.com/DPCMGroup/dpcm2077-docs/Verbali-riunioni/Lista-riunioni)**
+- **[Verbali riunioni](https://github.com/DPCMGroup/dpcm2077-docs/blob/main/Verbali-riunioni/Lista-riunioni.md)**
