@@ -146,11 +146,10 @@ La fase di allenamento e utilizzo sono svincolate. L'utilizzo è facile e rapido
 E' apprezabile scegliere più algoritmi, da confrontare tra loro, e poi riportare nel report l'esito del confronto.
 
 ### Contatti:
->>>>>>> feature/verbaleSynclab
 Ing. Fabio Pallaro
-    f.pallaro@synclab.it
+f.pallaro@synclab.it
 Cristoforo Decaro
-    cristoforo.decaro@synclab.it
+cristoforo.decaro@synclab.it
 
 Domande:
 
