@@ -143,7 +143,7 @@ Una volta completata la checklist salviamo il modello per utlizzarlo con la dash
 ### Slide Outcomes:
 Alla fine del lavoro dobbiamo ottenere modelli e report.
 La fase di allenamento e utilizzo sono svincolate. L'utilizzo è facile e rapido, a differenza del training.
-E' apprezabile scegliere più algoritmi, da confrontare tra loro, e poi riportare nel report l'esito del confronto.
+E' apprezzabile scegliere più algoritmi, da confrontare tra loro, e poi riportare nel report l'esito del confronto.
 
 ### Contatti:
 Ing. Fabio Pallaro
