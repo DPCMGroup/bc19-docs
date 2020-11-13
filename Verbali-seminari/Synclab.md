@@ -1,4 +1,4 @@
-##12/11/2020
+## 12/11/2020
 
 Verbale integrativo rispetto alle slide usate durante il seminario.
 
