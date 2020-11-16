@@ -1,29 +1,52 @@
-#LETTERA DI PRESENTAZIONE
 
-#LINEE GUIDA
+# VALUTAZIONE
 
-#NORME DI PROGETTO
+## LINEE GUIDA
 
-#ANALISI DEI REQUISITI
+## LETTERA DI PRESENTAZIONE
 
-#STUDIO DI FATTIBILITÀ
+## NORME DI PROGETTO
 
-#PIANO DI PROGETTO
+## ANALISI DEI REQUISITI
 
-#PIANO DI QUALIFICA
+## STUDIO DI FATTIBILITÀ
 
-#GLOSSARIO
+## PIANO DI PROGETTO
 
-#VERBALI
+## PIANO DI QUALIFICA
+
+## GLOSSARIO
+
+## VERBALI
 
 ---
 
-LEGENDA
-* errore frequente / contenuto da inserire
-SPIEGAZIONE:
-* contenuto dei documenti: lettere di presentazione, linee guida, norme di progetto, analisi dei requisiti, studio di fattibilità, piano di progetto , piano di qualifica, glossario
-* segnalare gli errori/frequenti
-* concentrarci sui progetti che possiamo vedere e di cui non abbiamo solo una valutazione; meglio se sono eccellenti
-* documenti recuperabili su mega:
-	- progetti recuperabili in: documenti swe anni precedenti. Guardare cartella e .txt
-- attenzione a verificare che le direttive del prof. date in passato siano compatibili con quelle attuali
+# PROGETTO DA IMITARE
+
+## LINEE GUIDA
+
+## LETTERA DI PRESENTAZIONE
+
+## NORME DI PROGETTO
+
+## ANALISI DEI REQUISITI
+
+## STUDIO DI FATTIBILITÀ
+
+## PIANO DI PROGETTO
+
+## PIANO DI QUALIFICA
+
+## GLOSSARIO
+
+## VERBALI
+
+---
+
+# ISTRUZIONI
+
+* Creare un feature branch collegato alla issue
+* Creare una copia di questo file intitolata anno-anno_report-progetti.md
+* In "valutazione" scrivere gli errori da evitare / attenzioni da avere / indicazioni del prof suddivisi per documento; se le indicazioni sono generali inserirle in linee guida. 
+* In "progetto" individuare un progetto eccellente e analizzare per quali motivi è stato reputato eccellente (descrivendone i contenuti e altre caratteristiche significative). Non soffermarsi solo al progetto nella RR ma vedere come il progetto è evoluto nel tempo, sopperendo a eventuali mancanze evidenziate dal prof
+* Fare commit e chiudere il branch
