@@ -6,7 +6,7 @@
 Zucchetti è software house, ossia "costruisce software e vende bit" diversa dalle aziende system integrator, che fanno progetti e vendono forza-lavoro, ore-uomo. Quindi Zucchetti è interessata alla lungimiranza del prodotto sw, ad avere codice riutilizzabile in altri contesti e che duri nel tempo.
 
 ## Algoritmi di machine learning vs uomo
- Gli algoritmi di machine learning sono carenti rispetto all'occhio umano quando ci troviamo in un ambiente in cui siamo abituati a percepire le cose (es. 2 - 3 dimensioni). L'occhio umano è in difficoltà quando trattiamo con molte dimensioni.
+ Gli algoritmi di machine learning sono carenti rispetto all'occhio umano quando ci troviamo in un ambiente in cui l'uomo è abituato a percepire le cose ( 2 - 3 dimensioni). L'occhio umano è in difficoltà quando trattiamo con molte dimensioni.
 
 ## D3JS
 Libreria che consente di spostarci da una visualizzazione a n dimensioni a 2-3 dimensioni
