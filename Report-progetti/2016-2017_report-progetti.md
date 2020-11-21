@@ -1,45 +1,53 @@
 # VALUTAZIONE
 
 ## LINEE GUIDA
-i verbali devono essere raccolti in cartelle apposite dedicate, devono essere presenti i verbali di riunioni interne. 
-Attenzione agli errori di spaziatura. Segnalare sono i termini inclusi nel glossario solo la prima volta. 
+I verbali devono essere raccolti in cartelle apposite dedicate, devono essere presenti i verbali di riunioni interne. 
+Attenzione agli errori di spaziatura. 
+Segnalare sono i termini inclusi nel glossario solo la prima volta. 
 Indicare la data di consegna prevista. 
 I documenti devono essere sempre approvati dal responsabile. Evitare errori tipografici.  
 Le risorse web volatili devono riportare l’ultima data di accesso effettuata in redazione. 
 Attenzione alla distinzione tra proponente e committente. 
- Il costo presentato è inferiore al minimo fissato dal capitolato. 
+Il costo presentato è inferiore al minimo fissato dal capitolato. 
 Tale inadempienza va sanata prima di poter accedere al progetto didattico -> attenzione a  questa cosa            
 Il costo presentato non è calcolato in modo conforme alle regole del capitolato. Tale inadempienza va sanata prima di poter 
 accedere al progetto didattico. -> attenzione a questa cosa
 
 
 ## LETTERA DI PRESENTAZIONE
-Non avere esitazioni nell’esporre (cosa molto segnalata), gestire bene il tempo, non eccedere nel tempo a disposizione.  
+Non avere esitazioni nell’esporre (cosa molto segnalata), gestire bene il tempo, non eccedere nel tempo a disposizione. 
+
 ## NORME DI PROGETTO
 Le norme di codifica non devono precedere quelle di progettazione. Stile di presentazione prevalentemente narrativo e non
 abbastanza procedurale. Esiguo il numero di processi considerati e povera, per ampiezza e profondità la specifica delle 
-procedure previste a loro supporto. Buona invece la struttura e apprezzabile l’alternanza di immagini e testo.
+procedure previste a loro supporto. 
 
 ## ANALISI DEI REQUISITI
 Capire bene le relazioni tra i casi d’uso.  Prima di poter iniziare la stesura dell’architettura, l’analisi deve essere molto più
 approfondita, così da comprendere bene quali funzionalità il sistema dovrà fornire. I requisiti di qualità devono porre dei
-vincoli sul processo di realizzazione del prodotto. Le funzionalità devono essere analizzate in maggior profondità, soprattutto 
-per quanto riguarda i requisiti. Attenzione agli errori nei diagrammi UML.  
+vincoli sul processo di realizzazione del prodotto. 
+Le funzionalità devono essere analizzate in maggior profondità, soprattutto 
+per quanto riguarda i requisiti. Attenzione agli errori nei diagrammi UML. 
+
 ## STUDIO DI FATTIBILITÀ
-(di solito fatto bene, è quello che descrive i motivi per cui quel gruppo ha scelto quel capitolato) 
+(di solito fatto bene, è quello che descrive i motivi per cui quel gruppo ha scelto quel capitolato)
 ## PIANO DI PROGETTO
+Usare struttura tabellare, migliora la sintesi. Attenzione a usare il termine fase (molto segnalato). 
+Includere il consuntivo di periodo nel PdP serve primariamente a trarne indicazioni su come raffinare e correggere il preventivo del periodo rimanente. 
+Non basta dunque riportare gli scostamenti, ma serve invece ragionare sulla loro origine e su come evitarli in futuro. Avere una buona analisi dei rischi.  
+Il totale di impegno rendicontabile supera il limite regolamentare di 105 ore: questo errore va obbligatoriamente sanato pena l’esclusione dalla fornitura
 
 ## PIANO DI QUALIFICA
 (in molti casi si legge) Documento insoddisfacente per interpretazione di struttura (ereditata acriticamente) e profondità di 
 contenuti.
-Ciò causa ridondanze, e scarsa coesione nel trattamento degli argomenti. Da rivedere in profondità.
+Ciò causa ridondanze, e scarsa coesione nel trattamento degli argomenti.
 
 ## GLOSSARIO
-(di solito è fatto bene)  Converrà però, come si usa nei dizionari, far iniziare le voci di una nuova iniziale su pagina nuova. I
- bookmark che compongono l’indice del documento in PDF dovranno limitarsi al primo livello di struttura. Attenzione che il
- documento non manchi di indici. Il documento va indicizzato alfabeticamente (come un dizionario) e non tramite sezioni
- numerate. Converrà però, come si usa nei dizionari, far iniziare le voci di una nuova iniziale su pagina nuova, e fornire il 
-corrispondente indice. 
+(di solito è fatto bene) Converrà però, come si usa nei dizionari, far iniziare le voci di una nuova iniziale su pagina nuova. I
+bookmark che compongono l’indice del documento in PDF dovranno limitarsi al primo livello di struttura. Attenzione che il
+documento non manchi di indici. Il documento va indicizzato alfabeticamente (come un dizionario) e non tramite sezioni
+numerate. Converrà però, come si usa nei dizionari, far iniziare le voci di una nuova iniziale su pagina nuova, e fornire il 
+corrispondente indice.
 ## VERBALI
 I verbali devono essere raccolti in cartelle separate (interni / esterni)
 ---
