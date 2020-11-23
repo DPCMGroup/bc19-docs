@@ -124,8 +124,8 @@ Più che all’assistenza reciproca, la corrispondente contromisura dovrebbe pun
 # PROGETTO DA IMITARE
 Nessun progetto spicca per qualità in qualche categoria.
 ProApes e Qbteam, i due progetti presenti su mega, hanno comunque impianto grafico della presentazione, studio di fattibilità e glossario da prendere come riferimenti.
-ProApes ha impianto grafico ottimo e studio di fattiblità e glossario buoni.
-Qbteam ha tutte e tre le sezioni valutate come buone ma nello studio di fattiblità presenta qualche errore tipografico e grammaticale.
+* ProApes ha impianto grafico ottimo e studio di fattiblità e glossario buoni.
+* Qbteam ha tutte e tre le sezioni valutate come buone ma nello studio di fattiblità presenta qualche errore tipografico e grammaticale.
 
 ## LINEE GUIDA
 
