@@ -28,7 +28,7 @@
 - E' opportuno che il piè di pagina riporti anche il numero totale di pagine del documento.
 - Attenzione alla qualità ortografica.
 - Usare la denominazione corretta degli standard.
-- Wikipedia non è sempre (purtroppo)fonte sufficientemente autorevole. Più di essa lo sono le fonti bibliografiche cui si riferiscono le corrispondenti voci.
+- Wikipedia non è sempre fonte sufficientemente autorevole. Più di essa lo sono le fonti bibliografiche cui si riferiscono le corrispondenti voci.
 
 ## LETTERA DI PRESENTAZIONE
 - Di norma la prima comunicazione con la quale il fornitore candidato si presenta al committente include in allegato la propria composizione e i ruoli correnti.
@@ -50,7 +50,7 @@
 - Nella normazione della progettazione sono state incluse attività che non le appartengono, come PoC e test.
 - Formulazione delle norme non deve essere narrativo e superficiale. Deve contenere passi procedurali e di riferimento operativo alle tecnologie adottate per supportare il lavoro.
 - Non va bene che la copertura dei processi attivati nel progetto sia più in ampiezza che in profondità.
-- La progettazione non deve essere parte nell'analisi.
+- La progettazione non deve essere parte dell'analisi.
 - Attribuire i processi alle tre categorie principali in modo corretto.
 - La codifica è un'attività del processo di sviluppo, non un processo.
 - Le norme sono destinate ai ruoli e non agli individui.
@@ -97,7 +97,6 @@ Più che all’assistenza reciproca, la corrispondente contromisura dovrebbe pun
 ## PIANO DI QUALIFICA
 - Il PdQ deve essere integrato con le Norme. Queste ultime devono fissare metriche e strumenti per misurarle mentre il PdQ deve fissare gli obiettivi quantitativi di qualità del progetto.
 - Il resoconto delle attività di verifica (che devono riflettere tutte le metriche adottate) è meglio presentato con serie storiche e diagrammi a contenuto incrementale, invece che tramite tabelle che “fotografano” gli eventi,ma non li mettono in relazione tra loro, oppure, peggio, tramite riferimento ad altre fonti informative.
-- Poiché il test è parte delle attività di verifica, i suoi risultati dovranno poi confluire in questo stesso luogo.
 - Anche la verifica tramite test va associata a obiettivi metrici (per esempio i vari fattori di copertura)
 - E' eccessivamente ambizioso e quindi troppo oneroso assumere gli standard 9126 e 12207 come normativi.
 - Per lo standard 9126 è meglio derubricarlo a riferimento informativo, traendo da esso solo le parti di stretto e applicabile interesse.
@@ -108,7 +107,6 @@ Più che all’assistenza reciproca, la corrispondente contromisura dovrebbe pun
 - Meglio separare i gruppi alfabetici delle voci riportate, iniziando ogni nuovo gruppo da pagina nuova.
 - Meglio che l’indice dei contenuti non includa tutte le voci del glossario: basterà limitarsi ai loro gruppi.
 - A questo tipo di documento, la cui funzione è auto-esplicativa, e la struttura auto-evidente, non serve introduzione, se non per dichiarare con precisione le fonti consultate per le definizioni fornite.
-
 
 ## VERBALI
 - Le decisioni riportare nelle tabelle riassuntive devono essere precise, non ambigue o incomplete. Se non si può scrivere la decisione nel verbale bisogna fare un riferimento a una fonte esterna che la descriva.
@@ -124,6 +122,10 @@ Più che all’assistenza reciproca, la corrispondente contromisura dovrebbe pun
 ---
 
 # PROGETTO DA IMITARE
+Nessun progetto spicca per qualità in qualche categoria.
+ProApes e Qbteam, i due progetti presenti su mega, hanno comunque impianto grafico della presentazione, studio di fattibilità e glossario da prendere come riferimenti.
+ProApes ha impianto grafico ottimo e studio di fattiblità e glossario buoni.
+Qbteam ha tutte e tre le sezioni valutate come buone ma nello studio di fattiblità presenta qualche errore tipografico e grammaticale.
 
 ## LINEE GUIDA
 
