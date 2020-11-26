@@ -79,10 +79,10 @@ Se si omettono hostname/port o username si va su DockerHub. Se si omette il tag,
 - docker stop: ferma l'esecuzione dell'immagine
 - docker start: fa ripartire l'esecuzione
 - docker exec -it containerId /bin/bash: permette di lanciare comando ad un container già in esecuzione
-- docker container <<command>>:
+- docker container <command>:
     - ls: fa vedere i container presenti. Col parametro -a fa vedere anche quelli stopped.
-    - rm <<containerName>>: rimuove un container
--docker image <<command>>:
+    - rm <containerName>: rimuove un container
+-docker image <command>:
     - ls: fa vedere le immagini presenti sul sistema
     - rm: elimina l'immagine specificata
 
@@ -101,7 +101,7 @@ Se non si definisce un'interfaccia (quindi il comando contiene solo 80:80) il co
 ### Container data persistence
 Di default i file dell'host non sono condivisi col container.
 Tutto ciò a cui il container ha accesso è ciò che è stato definito durante la creazione.
-Si può effettuare un bind mount, ovvero il mount di una porzione del filesystem dell'host nel filesystem del container. Per farlo bisogna definire dei volumi con comandi del tipo docker run -d -v <<cartella_dell_host>>:<<cartella_del_container>>
+Si può effettuare un bind mount, ovvero il mount di una porzione del filesystem dell'host nel filesystem del container. Per farlo bisogna definire dei volumi con comandi del tipo docker run -d -v <cartella_dell_host>:<cartella_del_container>
 Attenzione ai permessi all'interno dei volumi: solitamente sono diversi da quelli presenti nel filesystem dell'host.
 
 ### Portainer web interface
