@@ -37,11 +37,8 @@ Il sistema docker è costituito da due macrocomponenti, una in remoto e una in l
 Docker Hub è in remoto mentre in locale vengono installate due cose:
 - client
 - daemon
+
 Il client da comandi al daemon.
-Comandi principali:
-- docker build: per creare una nuova immagine
-- docker pull: per scaricare immagine dal registry di docker hub
-- docker run: per eseguire l'istanza di un container
 
 ### Docker objects
 Le immagini docker sono dei template read-only. Possono contenere qualsiasi applicazione, anche sistemi operativi interi.
@@ -53,8 +50,9 @@ Si possono creare dei registry privati locali.
 
 ### Docker Container Lifecycle
 Se si vuole containerizzare un'applicazione i passaggi sono:
-1- Scrivere il Dockerfile nel quale vanno definiti tutti i passaggi per eseguire l'applicazione. Nel caso di app java quello che serve è la java virtual machine.
-2- Eseguire la build, che crea l'immagine, la tagga e la pone nel repository locale.
+1. Scrivere il Dockerfile nel quale vanno definiti tutti i passaggi per eseguire l'applicazione. Nel caso di applicazioni java quello che serve è la java virtual machine.
+2. Eseguire la build, che crea l'immagine, la tagga e la pone nel repository locale.
+
 A questo punto si può lanciare l'immagine, fare il push su un registry (per esempio quello di docker hub) oppure salvarla in un file di backup.
 
 ### Docker images
@@ -70,6 +68,7 @@ Vantaggi dei layer:
 - hostname/port: indirizzo e porta del registro
 - username: da usare nel caso il registry sia privato
 - reponame/tag: nome dell'immagine e suo tag
+
 Se si omettono hostname/port o username si va su DockerHub. Se si omette il tag, viene posto di default a "latest".
 
 ### Docker CLI
@@ -79,14 +78,14 @@ Se si omettono hostname/port o username si va su DockerHub. Se si omette il tag,
 - docker stop: ferma l'esecuzione dell'immagine
 - docker start: fa ripartire l'esecuzione
 - docker exec -it containerId /bin/bash: permette di lanciare comando ad un container già in esecuzione
-- docker container <command>:
+- docker container &lt;command&gt;:
     - ls: fa vedere i container presenti. Col parametro -a fa vedere anche quelli stopped.
-    - rm <containerName>: rimuove un container
--docker image <command>:
+    - rm &lt;containerName&gt;: rimuove un container
+-docker image &lt;command&gt;:
     - ls: fa vedere le immagini presenti sul sistema
     - rm: elimina l'immagine specificata
 
-comandi utili del dockerfile:
+Comandi utili del dockerfile:
 - FROM ubuntu: installa ubuntu.
 - RUN: lancia l'applicaizone.
 - EXPOSE: espone la porta a cui ci si connetterà dall'esterno.
@@ -101,7 +100,7 @@ Se non si definisce un'interfaccia (quindi il comando contiene solo 80:80) il co
 ### Container data persistence
 Di default i file dell'host non sono condivisi col container.
 Tutto ciò a cui il container ha accesso è ciò che è stato definito durante la creazione.
-Si può effettuare un bind mount, ovvero il mount di una porzione del filesystem dell'host nel filesystem del container. Per farlo bisogna definire dei volumi con comandi del tipo docker run -d -v <cartella_dell_host>:<cartella_del_container>
+Si può effettuare un bind mount, ovvero il mount di una porzione del filesystem dell'host nel filesystem del container. Per farlo bisogna definire dei volumi con comandi del tipo docker run -d -v &lt;cartella_dell_host&gt;:&lt;cartella_del_container&gt;
 Attenzione ai permessi all'interno dei volumi: solitamente sono diversi da quelli presenti nel filesystem dell'host.
 
 ### Portainer web interface
@@ -115,9 +114,9 @@ Per un container, con il parametro --restart si può specificare la restart poli
 - always: il container viene eseguito ad ogni avvio della macchina.
 
 ### Contatti
-email: lpatera@imolainformatica.it
-twitter: @Lorenzopatera
-linkedin: lorenzopatera
+Email: lpatera@imolainformatica.it
+Twitter: @Lorenzopatera
+Linkedin: lorenzopatera
 
 
 ## Blockchain
@@ -128,7 +127,8 @@ Se devo scambiare denaro con qualcuno mi affido a un terzo (banca) per essere ce
 Svantaggi:
 -i miei dati sono controllati dalla banca
 -la banca costa
--in tre c' èpiù rischio di errori che in due
+-in tre c'è più rischio di errori che in due
+
 Soluzione: Distributed Ledger Technology ( Libri Contabili Distribuiti)
 Ogni persona che vuole fare uno scambio può controllare sul DLT se la controparte ha i soldi.
 E' distribuito, ovvero ha più copie posti diversi, quindi deve avere concordanza tra le varie copie.
@@ -140,6 +140,7 @@ E' distribuito, ovvero ha più copie posti diversi, quindi deve avere concordanz
 - Permissioned: il permesso ad entrare deve essere accordato da un ente.
 - Tokenized: vi si utilizza una valuta digitale come premio o come merce di scambio.
 - Tokenless: non vi si utilizza una valuta digitale.
+
 In una rete libera in mancanza di token tutti potrebbero entrare e porvi qualunque tipo di dato. I token permettono di regolare il comportamento all'interno del dlt.
 
 ### Blockchain
@@ -165,6 +166,7 @@ E' una catena di blocchi e ogni blocco contiene:
 - da 1 a n transazioni, con n limitato a un massimo fissato a seconda dell'implementazione.
 - l'hash del blocco precedente
 - metadati variabili
+
 L'hash permette di avere una struttura immutabile.
 
 ### Scambio di dati
@@ -179,6 +181,7 @@ Due dei principali:
 - Proof of Work: si basa sul fatto che un utente miner dovrà risolvere un problema posto dalla rete per poter creare il successivo blocco della catena.
 Chi crea un blocco ottiene un premio, per esempio in criptovaluta e quindi gli  utenti gareggieranno.
 - Proof of Stake: gli utenti dovranno congelare una parte dei token che possiedono per avere più probabilità di essere scelti per la creazione del prossimo blocco.
+
 Bisogna scegliere il meccanismo giusto in base ai casi d'uso.
 #### Confronto
 PoW porta ad un aumento della richiesta di potenza computazionale, a differenza di PoS.
