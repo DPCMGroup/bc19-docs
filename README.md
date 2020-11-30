@@ -5,3 +5,4 @@ Questa e' la pagina che racchiude tutti i documenti ufficiali appartenenti ed in
 
 - **[Verbali riunioni](Verbali-riunioni/Lista-riunioni.md)**
 - **[Verbali seminari](Verbali-seminari/Lista-seminari.md)**
+
