@@ -6,3 +6,7 @@ Questa e' la pagina che racchiude tutti i documenti ufficiali appartenenti ed in
 - **[Verbali riunioni](Verbali-riunioni/Lista-riunioni.md)**
 - **[Verbali seminari](Verbali-seminari/Lista-seminari.md)**
 
+------
+
+![Build LaTeX document](https://github.com/DPCMGroup/dpcm2077-docs/workflows/Build%20LaTeX%20document/badge.svg)
+
