@@ -16,13 +16,13 @@ jobs:
             for d in */ ; do
                 latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode -cd ${d}main.tex
             done
-      - name: Compile "Verbali-riunioni" documents
+      - name: Compile "interni" documents
         uses: xu-cheng/texlive-action/full@v1
         with:
           #Mi sposto nella cartella "Verbali-riunioni" e mi prendo la lista delle sottocartelle
           #Successivamente compilo i main.tex di ogni sottocartella
           run: |
-            cd Verbali-riunioni
+            cd interni/verbali
             for d in */ ; do
                 latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode -cd ${d}main.tex
             done
