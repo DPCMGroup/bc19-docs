@@ -1,0 +1,55 @@
+\section{Introduzione}
+
+\subsection{Scopo del Documento}
+Lo scopo di questo  documento è fissare  tutte  le  regole  e  le  procedure fondamentali per assicurare al gruppo un modo di lavorare comune in modo da   
+garantire una collaborazione efficiente tra tutti i diversi membri  del  gruppo; In quest’ottica, questo documento deve essere visionato da tutti i componenti del gruppo, che 
+sono obbligati ad applicare quanto scritto al fine di mantenere omogeneità e coesione in ogni aspetto del progetto. Saranno inoltre elencati e discussi tutti gli   
+strumenti software scelti internamente al gruppo per rispettare le regole e attuare le procedure.
+
+\subsection{Scopo del Prodotto}
+Lo scopo del prodotto è quello di sviluppare un’applicazione in grado di
+segnalare ad un \glock{server} dedicato la presenza di un \glock{utente} su una determinata postazione appartenente ad
+una stanza. 
+Nel server deve essere possibile gestire più stanze e postazioni per:
+\begin{itemize}
+\item{sapere in ogni momento se la postazione è occupata, prenotata oppure da pulire;}
+\item{controllare quali postazioni sono prenotate e bloccare le prenotazioni per una determinata
+stanza (e.g. all'esaurimento dei posti disponibili);}
+\item{prevedere una tracciatura autenticata e tutti i cambiamenti di stato relativi alla pulizia della
+postazione, nonché le informazioni su chi ha igienizzato la postazione;}
+\end{itemize}
+L'applicazione dovrà essere in grado di svolgere i seguenti compiti:
+\begin{itemize}
+\item{recupero lista delle postazioni libere;}
+\item{prenotazione di una postazione;}
+\item{tracciamento in tempo reale tramite \glock{tag } \glock{RFID};}
+\item{pulizia di una postazione;}
+\item{storico delle postazioni occupate e igienizzate;}
+\end{itemize}
+\glock{Client} e Server comunicano tra loro nel momento in cui lo smartphone viene  a contatto con il tag RFID
+
+\subsection{Glossario}
+All’interno del  documento sono presenti termini che presentano significati ambigui a seconda del contesto.
+Per evitare questa ambiguità è stato creato un  documento di nome Glossario che  conterrà tali termini con il loro significato specifico. Per segnalare che un termine del testo è presente all’ interno del Glossario  
+verrà aggiunta una G pedice posta a fianco del termine ambiguo. 
+
+\subsection{Riferimenti}
+\subsubsection{Riferimenti Normativi}
+\begin{itemize}
+\item{Standard ISO/IEC 12207:1995: \\
+\url{https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf}}
+\item{Capitolato \\
+\url{https://www.math.unipd.it/~tullio/IS-1/2020/Progetto/C1.pdf}}
+\item{Verbale di incontro esterno con il proponente \glock{Imola Informatica} del 20-12-18}
+\end{itemize}
+
+\subsubsection{Riferimenti Informativi}
+\begin{itemize}
+\item{Sito ufficiale di \glock{git} \\
+\url{https://git-scm.com/}}
+\item{Documentazione ufficiale di \glock{git} \\
+\url{https://git-scm.com/doc}}
+\item{L’Arte di Scrivere con \LaTeX \\
+\url{http://www.lorenzopantieri.net/LaTeX_files/ArteLaTeX.pdf}}
+\item{Libro di Ingegneria del Software: Software Engineering - Ian Sommerville}
+\end{itemize}
