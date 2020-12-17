@@ -1,4 +1,4 @@
-name: Build LaTeX document
+name: Templates LaTeX Document
 on: 
   push:    
     paths:
