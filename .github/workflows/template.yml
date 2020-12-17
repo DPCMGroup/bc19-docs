@@ -1,5 +1,10 @@
 name: Build LaTeX document
-on: [push]
+on: 
+  push:    
+    paths:
+      - 'template/**'
+      - '.github/**'
+
 jobs:
   build_latex:
     runs-on: ubuntu-latest
@@ -15,14 +20,14 @@ jobs:
             cd template
             for d in */ ; do
                 latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode -cd ${d}main.tex
-            done
-      - name: Compile "interni" documents
-        uses: xu-cheng/texlive-action/full@v1
+            done            
+            
+      - name: Notify Discord if failure
+        uses: sarisia/actions-status-discord@v1
+        if: failure()
         with:
-          #Mi sposto nella cartella "Verbali-riunioni" e mi prendo la lista delle sottocartelle
-          #Successivamente compilo i main.tex di ogni sottocartella
-          run: |
-            cd interni/verbali
-            for d in */ ; do
-                latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode -cd ${d}main.tex
-            done
+          webhook: ${{ secrets.BUILD_FAILURE_WEBHOOK }}
+          title: "Latex Template"
+          color: 0xff0000
+          username: GitHub Actions
+            
