@@ -24,7 +24,7 @@ jobs:
             
       - name: Notify Discord if failure
         uses: sarisia/actions-status-discord@v1
-        if: always()
+        if: failure()
         with:
           webhook: ${{ secrets.BUILD_FAILURE_WEBHOOK }}
           title: "Latex Template"
