@@ -1,0 +1,76 @@
+\section{Processi di supporto}
+	\subsection{Documentazione}
+		\subsubsection{Scopo}
+			Lo scopo di questa sezione è definire gli standard e le regole che riguardano la stesura dei documenti e l'approvazione di questi ultimi.
+			I documenti sono consultabili nelle apposite sezioni della repository \url{https://github.com/DPCMGroup/dpcm2077-docs}.
+		\subsubsection{Aspettative}
+			Si vuole fornire uno strumento unico per tutto il gruppo per la stesura dei documenti,in modo da avere una documentazione uniforme e aderente agli standard e regole sotto riportate.
+		\subsubsection{Descrizione}
+			Questo capitolo fornisce i dettagli su come deve essere redatta, verificata, e approvata la documentazione. Tutte le norme descritte devono essere rispettate in pieno da tutti i documenti, sia interni che esterni, rilasciati durante il ciclo di vita del software.
+		\subsubsection{Attività}
+			\paragraph{Implementazione del processo}
+				\subparagraph{Ciclo di vita}
+					Ogni documento viene creato basandosi sul seguente ciclo di vita:
+					\begin{itemize}
+					\item \textbf{stesura:} il documento viene creato da uno o più redattori in base alle regole accordate. Una volta terminata la stesura il documento avanzerà all'attività successiva.
+					\item \textbf{verifica:} viene effettutato da uno o più verificatori un controllo sul documento sia per quanto riguarda la stesura corretta, sia per un controllo semantico e sintattico seguendo le norme di progetto.
+					Se dovessero essere trovati errori il documento tornerà alla fase di stesura dal redattore, in caso contrario passerà alla fase successiva.
+					\item \textbf{approvazione:} è l'ultima fase del ciclo di vita del documento. In questa fase l'approvatore conferma il documento e lo rilascia. 
+					\end{itemize}
+				\subparagraph{Documenti ufficiali}
+					Si dicono ufficiali i documenti che:
+					\begin{itemize}
+						\item sono stati revisionati, verificati ed approvati;
+						\item sono gli unici rilasciabili all'esterno del gruppo di progetto.
+					\end{itemize}
+					
+					I documenti ufficiali che saranno prodotti sono:
+					\begin{itemize}
+					\item \textbf{Studio di fattibilità:} ha l'obiettivo di descrivere in modo breve ogni capitolato, mostrano quelli che per noi componenti del gruppo possono essere punti di forza, aspetti interessanti, o criticità. I estinatari di questo documento sono i membri del gruppo DPCM 2077.
+					\item \textbf{Piano di progetto:} stabilisce e documenta tutti gli aspetti del nostro progetto organizzandoli in modo da raggiungere i risultati nel modo più efficace ed efficiente possibile. Organizza le attività, ne analizza i rischi, e le associa ai membri del gruppo. I destinatari di questo documento sono il committente ed il proponente oltre al gruppo DPCM 2077. 
+					\item \textbf{Piano di qualifica:} espone e descrive i criteri di valutazione della qualitàadottati dal gruppo. I destinatari di questo documento sono il committente ed il proponente oltre al gruppo DPCM 2077. 
+					\item \textbf{Analisi dei requisiti:} Ha lo scopo di definire le funzionalità che il nostro progetto deve offrire, e quindi i requisiti che devono essere soddisfatti. I destinatari di questo documento sono il committente ed il proponente oltre al gruppo DPCM 2077.
+					\item \textbf{Verbali:} hanno lol scopo di riassumere in modo conciso i contenuti delle riunioni.
+					\item \textbf{Glossario:} il documento è composto da un elenco ordinato di tutti i termini usati nella documentazione che il gruppo ritiene necessitino di una definizione esplicita, al fine di rimuovere ogni ambiguità; I destinatari di questo documento sono il committente ed il proponente oltre al gruppo DPCM 2077.
+					
+					
+			\paragraph{Sviluppo e design}
+				\subparagraph{Template LaTeX}
+					Il gruppo ha deciso di utilizzare un template LaTeX per la stesura di tutti i documenti in modo da garantire uniformità tra questi.	
+				\subparagraph{Struttura generale dei documenti}		
+					Un file "main.tex" provvederà a raccogliere tutte le sezioni, pacchetti e comandi necessari per la sua compilazione. Tutti i documenti hanno una struttura predefinita e determinata.
+				\subparagraph{Frontespizio}	
+					Il frontespizio conterrà il logo ed il nome del gruppo, il nome del documento, il nome del progetto al quale si riferisce e tutte le informazioni riguardanti il documento in sè quali:
+					\begin{itemize}
+						\item \textbf{versione:} versione attuale del documento;
+						\item \textbf{uso:} destinazione d'uso del documento, che potrà essere "interno" o "esterno";
+						\item \textbf{stato:} attuale stato del documento, che potrà essere "in redazione" o "approvato";
+						\item \textbf{destinatari:} destinatari del documento;
+						\item \textbf{redattori:} lista dei membri del gruppo che si sono occupati della stesura dello specifico documento;
+						\item \textbf{verificatori:} lista dei membri del gruppo che si sono occupati della verifica dello specifico documento;
+						\item \textbf{approvazione:} nominativo del membro del gruppo che ha approvato il documento per il rilascio.
+					\end{itemize}
+					
+				\subparagraph{Registro modifiche}
+					Il registro delle modifiche occupa la seconda pagina del documento e consiste in una tabella contenente le informazioni riguardanti il ciclo di vita del documento. Più precisamente, la tabella riporta per ogni modifica:
+					\begin{itemize}
+						\item \textbf{versione:} versione del documento relativa alla modifica effettuata;
+						\item \textbf{descrizione:} breve descrizione della modifica effettuata;
+						\item \textbf{data:} data in cui la modifica è stata effettuata;
+						\item \textbf{autore:} nominativo della persona che ha effettuato la modifica;
+						\item \textbf{ruolo:} ruolo della persona che ha effettuato la modifica.
+					\end{itemize}
+				\subparagraph{Indice}
+				\subparagraph{Verbali}
+				\subparagraph{Glossario}
+				\subparagraph{Lettere}
+			\paragraph{Norme tipografiche}
+				\subparagraph{Convenzioni sui nomi dei file}
+				\subparagraph{Formati comuni}
+					\begin{itemize}
+						\item \textbf{data:} viene utilizzato lo standard ISO 8601, esempio 2020-01-22, per la rappresentazione di tutte le date presenti della documentazione;
+						\item \textbf{ora:} viene utilizzato il formato HH:MM;
+					\end{itemize}
+	\subsubsection{Strumenti}
+			\paragraph{LaTeX}
+			\paragraph{Google Drive}
