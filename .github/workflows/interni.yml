@@ -21,8 +21,9 @@ jobs:
             cd interni/verbali
             for d in */ ; do
                 latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode -cd ${d}main.tex
-            done
-            
+            done            
+            cd ..
+            latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode -cd NormeDiProgetto/main.tex
             
       - name: Notify Discord if failure
         uses: sarisia/actions-status-discord@v1
