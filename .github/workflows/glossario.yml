@@ -13,7 +13,7 @@ jobs:
         if: always()
         with:
           webhook: ${{ secrets.GLOSSARIO_WEBHOOK }}
-          status: "Aggiornamento Glossario"
+          title: "Aggiornamento Glossario"
           description: "E' stato aggiornato il glossario"
           username: Glossario
             
