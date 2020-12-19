@@ -23,8 +23,9 @@ Canali tematici predisposti all'interno di Discord:
 \item{analisi-dei-requisiti: Per poter discutere riguardo al documento esterno Analisi dei Requisiti;}
 \end{itemize}
 I membri del gruppo DPCM 2077 sono tenuti a comunicare tra loro, rispettando le tematiche dei canali preposti. Nel caso volessero portare all’attenzione di un particolare membro del gruppo un certo messaggio sono tenuti ad usare
-il comando \@userName.
-Le riunioni possono essere svolte solo tramite canali telematici a causa del propagarsi dell'epidemia.
+il comando @userName.
+Invece usando il comando @everyone è possibile portare il messaggio all'attenzione di tutti.
+Le riunioni possono essere svolte solo tramite canali telematici a causa del propagarsi dell'epidemia, e quindi non in presenza fisica.
 
 \subsubsection{Comunicazioni Esterne}
 Questa sottosezione riguarda le norme alle quali attenersi per comunicare con soggetti esterni al team di sviluppo DPCM 2077.
@@ -133,7 +134,7 @@ Egli:
 \item{Risolve i problemi legati alla gestione dei processi;}
 \item{Fornisce procedure e strumenti di monitoraggio/segnalazione, in modo da garantire un corretto controllo di qualità;}
 \item{Individua strumenti atti all’automazione dei processi, cioè studia e ricerca strumenti che riducano il più possibile l'impiego di risorse umane;}
-\item{gestisce il versionamento della documentazione del progetto e della sua archiviazione;}
+\item{Gestisce il versionamento della documentazione del progetto e della sua archiviazione;}
 \end{itemize}
 
 
@@ -156,7 +157,7 @@ Egli:
 \begin{itemize}
 \item{Produce una soluzione attuabile e chiara;}
 \item{Sviluppa l’architettura secondo un insieme di best practice per garantire coerenza e consistenza;}
-\item{Rend facilmente mantenibile il progetto;}
+\item{Rende facilmente mantenibile il progetto;}
 \item{Definisce una struttura che abbia un basso grado di accoppiamento; Un forte accoppiamento non è mai buona norma a meno che non si tratti di coesione;}
 \item{Sviluppa un’architettura solida,  sicura  e  flessibile, in modo  che rimanga funzionante in caso di malfunzionamenti e sia modificabile a basso costo;}
 \item{Applica soluzioni note ed ottimizzate;}
@@ -184,7 +185,7 @@ Egli:
 
 \subsection{Formazione del personale (dei componenti del Team)}
 Per quanto riguarda la formazione, i membri del gruppo DPCM 2077 devono procedere in modo autonomo con lo studio individuale delle tecnologie che verranno utilizzate nel corso del progetto, prendendo come materiale di riferimento quello indicato nella sezione sezione \textbf{Riferimenti Informativi}. Si è comunque deciso di avere all'interno del Team un esperto di Git e {\LaTeX} in modo che nel caso di ambiguità o difficoltà nell'utilizzo i componenti possono direttamente
-rivolgersi a queste persone. Con lo studio autonomo poi si possono aiutare i componenti che si trovano magari in difficoltà con qualcosa dando origine cosi a un miglioramento continuo per tutti e un'efficienza e qualità maggiore nelle attività.
+rivolgersi a queste persone. Con lo studio autonomo poi si possono aiutare i componenti che si trovano magari in difficoltà con qualcosa dando origine così a un miglioramento continuo per tutti e un'efficienza e qualità maggiore nelle attività.
 
 
 \subsection{Ambiente di Lavoro}
@@ -208,6 +209,7 @@ nel Corso di Laurea \textbf{Tecnologie Open Source} frequentato da tutti i compo
 La maggior parte delle operazioni viene fatta in locale, i requisiti primari sono la velocità e le performance.
 Possono essere adottati diversi tipi di \glock{Workflow} e ogni commit è indentificato da un ID che ne garantisce l'integrità.
 Non è possibile cambiare un commit senza modificare l’ID del commit stesso e di i commit successivi.  
+Si è stabilito inoltre di appoggiarsi al servizio di hosting GitHub per la sua interfaccia intuitiva e per l' Issue Tracking System integrato che offre molteplici funzionalità
 
 \item{\textbf{Pianificazione delle attività}}:  Per la pianificazione delle attività il gruppo ha deciso di utilizzare il software \textbf{\glock{GanttProject}}. 
 \'E un programma completamente scritto in linguaggio Java e sotto licenza GPL quindi gratuito e liberamente utilizzabile, che permette di pianificare ogni tipo di progetto o attività utilizzando con la tecnica di Gantt.
@@ -220,6 +222,17 @@ Può essere utilizzato sui principali sistemi operativi, quali: Windows, macOS e
 \item{\textbf{Annullare le ultime operazioni in caso di errore;}}
 \item{\textbf{generare diagrammi PERT:} Per le dipendenze temporali fra attività e evidenziando le loro criticità;}
 \end{itemize} 
+
+\item{\textbf{Continuos Integration}}:  Per la Continuos Integration il team ha preso in considerazione i seguenti strumenti: \textbf{TravisCI},\textbf{Jenkins} e \textbf{GitHub Actions};
+Si è deciso in seguito di utilizzare GitHub Actions in quanto direttamente integrato nel sistema di versionamento utlizzato e perchè 
+GitHub offre modelli di workflow CI per una varietà di linguaggi e framework.
+Non è stato immediatamente scartato TravisCI in quanto già conosciuto da parte dei membri del team, ma non integrato su GitHub tanto quanto GitHub Actions.
+La Continuos Integration che utilizza GitHub Actions offre workflow che possono creare il codice nel repository ed eseguire i test. 
+I workflow possono essere eseguiti su macchine virtuali ospitate da GitHub o su macchine ospitate personalmente.
+GitHub esegue i test di CI e fornisce i risultati di ogni test nella richiesta pull, così è possibile vedere se la modifica di un ramo introduce un errore. 
+Quando tutti i test CI in un workflow vengono superati, le modifiche inviate sono pronte per essere riviste da un membro del team. 
+Quando un test fallisce, una delle modifiche apportate potrebbe aver causato il fallimento. 
+
 \end{description}
 
 \subsubsection{Documentazione} 
