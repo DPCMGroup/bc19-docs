@@ -1,0 +1,82 @@
+%!TEX output_directory = .cache
+% ---------------------------
+%	  	  [ Verbale ]
+%	----------------------
+%	       DPCM2077
+%  Progetto di SWE (2020-21)
+%    Template by Maxelweb
+% ---------------------------
+
+% Configurazione primaria del documento
+
+% --------------
+
+\newcommand{\docNome}{ VERBALE RIUNIONE ESTERNA \#1 }
+\newcommand{\docBaseline}{}
+\newcommand{\docVersione}{0.0.1\docBaseline}
+\newcommand{\docNomeProgetto}{ 18 dicembre 2020 }
+\newcommand{\docStatus}{Stesura}
+\newcommand{\docUso}{Esterno}
+
+% --------------
+
+\newcommand{\docRedattori}{
+	Ivan Piacere
+}
+\newcommand{\docVerificatori}{
+	Sara Privitera
+}
+\newcommand{\docApprovazione}{
+    Daniele Spigolon
+}
+
+
+% ----- NON MODIFICARE SOTTO QUESTA RIGA -----
+
+% ---------------------------
+% Configurazioni
+% ---------------------------
+
+\documentclass[11pt,a4paper,table]{article}
+
+\input{res/configurazione}    
+
+% ---------------------------
+% Dati frontespizio
+% ---------------------------
+
+\title{\hr \huge \textsc{\docNome} \\ 
+        \vspace{11pt} \large \textsc{\docNomeProgetto} \hr}
+
+\author{} % Non toccare
+\date{} % Non toccare
+
+% ---------------------------
+% Composizione del documento
+% ---------------------------
+
+\begin{document} 
+
+% Frontespizio
+
+\pagenumbering{gobble}
+\DeactivateBG
+\include{res/frontespizio}
+
+% Registro delle modifiche
+
+\newpage
+\ActivateBG
+\pagenumbering{Roman}
+\include{res/registro}
+
+
+% Contenuto
+
+\newpage
+\input{res/contenuto}
+
+\end{document}
+
+
+% EOF
