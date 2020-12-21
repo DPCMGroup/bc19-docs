@@ -41,17 +41,126 @@
 				\item \textbf{Conclusioni}: vengono esposte le ragione per il quale in gruppo ha accettato o rifiutato il \glock{capitolato};
 			\end{itemize}
 			\paragraph{Piano di Progetto}
+			Il \glock{responsabile}, che ne ha in capo la redazione, redige un \textit{Piano di Progetto} da seguire durante	il corso del progetto.
+			\\
+			Il documento è composto in questo modo: 
+			\begin{itemize}
+				\item 
+			\end{itemize}
 			\paragraph{Piano di Qualifica}
-		\subsubsection{Strumenti}
-			\paragraph{Cosa abbiamo utilizzato}
+			I \glock{redattori} dovranno occuparsi del documento \textit{Piano di Qualifica}, che contiene le linee guida da adottare per garantire la qualità del materiale prodotto dal gruppo.
+			\\
+			Il piano è così suddiviso:			 
+			\begin{itemize}
+				\item 
+			\end{itemize}
 	\subsection{Sviluppo}
 		\subsubsection{Scopo}
+		Il processo di sviluppo contiene le attività e i compiti da svolgere, relative al prodotto da sviluppare.
 		\subsubsection{Aspettative}
+		Le aspettative, riguardo il processo in questione, sono le seguenti:
+		\begin{itemize}
+			\item stabilire gli obiettivi di sviluppo;
+			\item stabilire i vincoli tecnologici;
+			\item stabilire i vincoli di design;
+			\item realizzare un prodotto finale che superi i test, che soddisfi i requisiti e le richieste del \glock{proponente}.
+		\end{itemize}
 		\subsubsection{Descrizione}
+		Il processo di sviluppo, secondo lo standard \glock{ISO/IEC 12207:1995}, si articola in:
+		\begin{itemize}
+			\item \textit{Analisi dei requisiti};
+			\item Progettazione;
+			\item Codifica.
+		\end{itemize}
 		\subsubsection{Attività}
+		Di seguito verranno analizzate le varie sezioni elencate precedentemente in modo dettagliato.
 			\paragraph{Analisi dei requisiti}
-			\paragraph{Progettazione}
-			\paragraph{Codifica}
-		\subsubsection{Strumenti}
-			\paragraph{Cosa abbiamo utilizzato}
+				\subparagraph{Scopo}
+				Gli analisti hanno in capo la stesura delle \textit{Analisi dei Requisiti}, dove il suo scopo è definire ed elencare tutti i requisiti del \glock{capitolato}.
+				\\ 
+				Il documento conterrà:
+				\begin{itemize}
+					\item descrizione generale del prodotto;
+					\item fornire ai \glock{proggettisti} riferimenti precisi ed affidabili;
+					\item funzionalità e requisiti concordati con il cliente;
+					\item casi d'uso rappresentati tramite diagrammi \glock{UML};	
+					\item tracciamento di riferimenti sulla mole di lavoro per poter eseguire una stima dei costi.			
+				\end{itemize}
+				\subparagraph{Aspettative}
+				L'obiettivo dell'attività di analisi consiste nella creazione della documentazione formale contenente tutti i requisiti richiesti dal proponente.
+				\subparagraph{Requisiti}
+				Al fine di facilitarne la lettura e comprensione, ogni requisito viene classificato univocamente come segue:				
+				\begin{center}
+					\textbf{R[Priorità][Tipologia][Codice]}
+				\end{center}
+				Dove:
+				\begin{itemize}
+					\item \textbf{R}: abbreviazione di requisito;
+					\item \textbf{Priorità}: ogni requisito assumerà uno dei seguenti valori:
+					\begin{itemize}
+						\item \textbf{\textit{1}}: requisito obbligatorio, ovvero irrinunciabile;
+						\item \textbf{\textit{2}}: requisito desiderabile, non strettamente necessario ma a valore aggiunto;
+						\item \textbf{\textit{3}}: requisito opzionale, ovvero relativamente utile o contrattabile in corso d'opera.
+					\end{itemize}
+					\item \textbf{Tipologia} : ogni requisito assumerà uno dei seguenti valori:
+					\begin{itemize}
+						\item \textbf{\textit{F}}: funzionale;
+						\item \textbf{\textit{P}}: prestazionale;
+						\item \textbf{\textit{Q}}: qualitativo;
+						\item \textbf{\textit{V}}: vincolo.
+					\end{itemize}
+					\item \textbf{Codice}: codice identificativo univoco in forma gerarchica padre/figlio rappresentato come segue:
+					\begin{center}
+						\textbf{[padre].[figlio]}
+					\end{center}
+				\end{itemize}				
+				\subparagraph{Casi d'uso}
+				La convenzione scelta per la rappresentazione univoca dei casi d'uso è la seguente:
+				\begin{center}
+					\textbf{UC[codicePadre].[codiceFiglio]}
+				\end{center}					
+				Dove:
+				\begin{itemize}
+					\item \textbf{UC}: acronimo utilizzato per \textit{Use Case};
+					\item \textbf{codicePadre}: identificativo univoco del caso d'uso;
+					\item \textbf{codiceFiglio}: identificativo dei sottocasi, può contenere altri sottolivelli.
+				\end{itemize}
+				Ogni caso d'uso deve contenere, integralmente o parzialmente, i seguenti campi:
+				\begin{itemize}
+					\item diagramma \glock{UML};
+					\item attori primari;
+					\item attori secondari;
+					\item scenario principale;
+					\item scopo e descrizione;
+					\item estensioni (se presenti);
+					\item inclusioni (se presenti);
+					\item precondizione;
+					\item postcondizione.
+				\end{itemize}
+				\subparagraph{UML}
+				I diagrammi \glock{UML} dovranno essere realizzati con la versione 2.0 del lingiaggio.
+			\paragraph{Progettazione}	
+				\subparagraph{Scopo}
+				L'attività di progettazione individua, una volta concluso il documento \textit{Analisi dei Requisiti}, le caratteristiche del prodotto richiesto e la soluzione migliore adottabile che soddisfi gli \glock{stakeholders}. 
+				\subparagraph{Aspettative}
+				Realizzazione dell'architettura del sistema.
+				\subparagraph{Requisiti}
+				Si divide nelle seguenti fasi:
+				\begin{itemize}
+					\item \textbf{Tecnology baseline}: contiene le specifiche della progettazione ad alto livello del prodotto e delle sue componenti, l'elenco dei diagrammi \glock{UML} che saranno utilizzati per la realizzazione dell'architettura e i test di verifica;
+					\item \textbf{Product baseline}: specifica ulteriormente l'attività di progettazione, integrando ciò che è riportato nella \textit{Tecnology baseline}. Definisce inoltre i test necessari alla verifica;
+					\item \textbf{Diagrammi \glock{UML}}:
+					\begin{itemize}
+						\item diagrammi delle classi;
+						\item diagrammi dei package;
+						\item diagrammi delle attività;
+						\item diagrammi di sequenza.
+					\end{itemize}
+					\item \textbf{Tecnologie utilizzate}: descrivono le tecnologie utilizzate specificandone il loro utilizzo all'interno del progetto.
+				\end{itemize}			
+			\paragraph{Codifica}	
+				\subparagraph{Scopo}
+				\subparagraph{Aspettative}
+				\subparagraph{Requisiti}
+				\subparagraph{Casi d'uso}
 		 
