@@ -10,18 +10,30 @@
 
 \subsection*{Ordine del giorno}
 	\begin{enumerate}
-	\item richiesta di chiarimenti sui seguenti punti del \glock{capitolato} BlockCOVID proposto dall'azienda ImolaInformatica
+	\item porre le seguenti domande sul \glock{capitolato} BlockCOVID proposto dall'azienda ImolaInformatica
 		\begin{enumerate}
-			\item misurazione del consumo energetico dello smartphone durante l'utilizzo dell'applicazione
-			\item documentazione richiesta dall'azienda
-			\item gestione delle \glock{postazioni} eliminate
-			\item visibilità delle postazioni in tempo reale
-			\item granularità dell'igienizzazione da parte degli addetti
-			\item igienizzazione da parte dei dipendenti
-			\item prenotazione di una postazione
-			\item chiarimento del significato del termine "accessi"
-			\item distanziamento minimo tra gli utilizzatori delle postazioni
-			\item disambiguazione tra requisiti opzionali e desiderabili
+			\item Come dobbiamo misurare il consumo energetico dello smartphone durante l'utilizzo dell'applicazione?
+			
+			\item Che documentazione richiedete?
+			
+			\item Come vanno gestite le \glock{postazioni} eliminate, soprattutto rispetto alla visibilità che ne ha l'amministratore?
+			
+			\item Chi ha la visibilità delle postazioni in tempo reale?
+			
+			\item Gli addetti possono igienizzare solo stanze intere o anche singole postazioni?
+			
+			\item Una postazione può essere igienizzata anche da dipendenti diversi da chi l'ha utilizzata l'ultima volta?
+			
+			\item Dobbiamo prevedere un modo per liberare una postazione prenotata se l'utente non si presenta all'orario stabilito?
+			
+			\item Se una postazione viene prenotata per un determinato orario essa è utilizzabile da altri utenti prima di quell'orario?
+			
+			\item Nel documento di presentazione del capitolato, nella descrizione del caso d'uso 1, tra le funzionalità fornite all'amministratore è presente quella di "effettuare ricerche sugli accessi e sulle postazioni occupate da uno specifico dipendente". Cosa si intende per accessi?
+			
+			\item La nostra applicazione deve garantire un distanziamento minimo tra gli utilizzatori delle postazioni?
+			
+			\item Potrebbe disambiguare tra requisiti opzionali e desiderabili?
+			
 		\end{enumerate}
 	\end{enumerate}
 
@@ -52,44 +64,47 @@
 \section*{Svolgimento}
 La riunione si è svolta come una sequenza di domande da parte di Antonio Badan e risposte da parte di Lorenzo Patera.
 
-\subsection*{Misurazione del consumo energetico dello smartphone durante l'utilizzo dell'applicazione}
+\subsection*{Come dobbiamo misurare il consumo energetico dello smartphone durante l'utilizzo dell'applicazione?}
 Non è necessario fare un'analisi approfondita. Si può utilizzare lo strumento preinstallato in \glock{Android}, oppure un altro strumento di terze parti.\\
 L'obiettivo è di trovare una correlazione tra precisione e consumo energetico.
 
-\subsection*{Documentazione richiesta dall'azienda}
+\subsection*{Che documentazione richiedete?}
 L'azienda non richiede documenti ulteriori rispetto a quelli necessari per il corso e a quelli indicati nella presentazione del capitolato.\\
 La discussione si è concentrata sui \glock{test} da effettuare.\\
 Per ogni macrocomponente dovrà esserci una \glock{suite} di test che ne verifichi il funzionamento. Inoltre sarebbe apprezzabile anche se non necessario produrre dei test di integrazione almeno parziali. Per esempio va verificato che una postazione appena prenotata non sia disponibile agli altri utenti.\\
 Nel report dovremo indicare per ogni test la motivazione, l'esito e gli strumenti utilizzati per eseguirlo.
 
-\subsection*{Gestione delle postazioni eliminate}
+\subsection*{Come vanno gestite le postazioni eliminate, soprattutto rispetto alla visibilità che ne ha l'amministratore?}
 Siamo liberi di gestire la problematica come preferiamo.\\
 In ogni caso gli utenti interessati ad una postazione eliminata, perchè ne scannerizzano il tag \glock{RFID} oppure perchè l'hanno prenotata, devono essere avvisati dell'inaccessiblità. Nel caso della prenotazione sarebbe apprezzato fornire all'utente una nuova postazione.\\
 Va previsto un avviso anche nel caso una postazione sia guasta.
 
-\subsection*{Visibilità delle postazioni in tempo reale}
+\subsection*{Chi ha la visibilità delle postazioni in tempo reale?}
 Solo l'amministratore può vedere tutte le postazioni in tempo reale.
 
-\subsection*{Granularità dell'igienizzazione da parte degli addetti}
-Gli addetti alle pulizie possono, attraverso l'applicazione, comunicare l'igienizzazione di una stanza intera o di una sola postazione.
+\subsection*{Gli addetti possono igienizzare solo stanze intere o anche singole postazioni?}
+Entrambi.
 
-\subsection*{Igienizzazione da parte dei dipendenti}
+\subsection*{Una postazione può essere igienizzata anche da dipendenti diversi da chi l'ha utilizzata l'ultima volta?}
 Una postazione che è stata utilizzata può essere igienizzata da qualunque dipendente, oltre che dagli addetti alle pulizie.
 
-\subsection*{Prenotazione di una postazione}
+\subsection*{Dobbiamo prevedere un modo per liberare una postazione prenotata se l'utente non si presenta all'orario stabilito?}
+Se un dipendente non si presenta alla postazione prenotata entro 30 minuti dall'orario stabilito, la postazione viene liberata. E' apprezzabile che l'utente che ha eseguito la prenotazione venga avvisato. Non è necessario sollecitare o chiedere conferma della prenotazione all'utente in ritardo.\\
 Le postazioni possono essere prenotate solo per periodi compresi nell'orario di lavoro.
 Il periodo prenotato dovrà essere di almeno 1 ora e potrà durare al massimo fino alla fine della giornata lavorativa.\\
-Se un dipendente non si presenta alla postazione prenotata entro 30 minuti dall'orario stabilito, la postazione viene liberata. E' apprezzabile che l'utente che ha eseguito la prenotazione venga avvisato. Non è necessario sollecitare o chiedere conferma della prenotazione all'utente in ritardo.\\
-Se una postazione è prenotata per un determinato orario, prima di quell'orario essa è disponibile a tutti gli utenti. Se un utente decide di utilizzarla è utile che gli venga indicato che dovrà lasciarla entro uno specifico orario, di modo che l'utente che ha eseguito la prenotazione possa accedervi.   
 
-\subsection*{Chiarimento del significato del termine "accessi"}
-Nel documento di presentazione del capitolato, nella descrizione del caso d'uso 1, tra le funzionalità fornite all'amministratore è presente quella di "effettuare ricerche sugli accessi e sulle postazioni occupate da uno specifico dipendente". In questa frase la parola accessi è un refuso e va esclusa.
 
-\subsection*{Distanziamento minimo tra gli utilizzatori delle postazioni}			
+\subsection*{Se una postazione viene prenotata per un determinato orario essa è utilizzabile da altri utenti prima di quell'orario?}
+Sì. Se un utente decide di utilizzarla è utile che gli venga indicato che dovrà lasciarla entro uno specifico orario, di modo che l'utente che ha eseguito la prenotazione possa accedervi.
+
+\subsection*{Nel documento di presentazione del capitolato, nella descrizione del caso d'uso 1, tra le funzionalità fornite all'amministratore è presente quella di "effettuare ricerche sugli accessi e sulle postazioni occupate da uno specifico dipendente". Cosa si intende per accessi?}
+In questa frase la parola accessi è un refuso e va esclusa.
+
+\subsection*{La nostra applicazione deve garantire un distanziamento minimo tra gli utilizzatori delle postazioni?}			
 Non è richiesto che l'applicazione assicuri una distanza minima tra le postazioni occupate di una stanza.\\
 Questo problema sarà in carico all'amministratore del sistema, il quale potrà, per esempio, bloccare l'utilizzo di alcune postazioni.
 
-\subsection*{Disambiguazione tra requisiti opzionali e desiderabili}
+\subsection*{Potrebbe disambiguare tra requisiti opzionali e desiderabili?}
 Non è stata menzionata una differenza tra i due termini.\\
 Nel documento di presentazione del capitolato i requisiti sottolineati sono quelli che si possono trascurare nel caso non ci sia tempo per implementarli.
 
