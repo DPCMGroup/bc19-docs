@@ -48,7 +48,7 @@
 				\item 
 			\end{itemize}
 			\paragraph{Piano di Qualifica}
-			I \glock{redattori} dovranno occuparsi del documento \textit{Piano di Qualifica}, che contiene le linee guida da adottare per garantire la qualità del materiale prodotto dal gruppo.
+			I \glock{verificatori} dovranno occuparsi del documento \textit{Piano di Qualifica}, che contiene le linee guida da adottare per garantire la qualità del materiale prodotto dal gruppo.
 			\\
 			Il piano è così suddiviso:			 
 			\begin{itemize}
@@ -160,7 +160,27 @@
 				\end{itemize}			
 			\paragraph{Codifica}	
 				\subparagraph{Scopo}
+				La codifica, svolta dal \glock{programmatore}, ha come scopo quello di normare l'effettiva realizzazione del prodotto software richiesto. I \glock{programmatori} dovranno attenersi a queste norme durante le fasi di programmazione ed implementazione.
 				\subparagraph{Aspettative}
-				\subparagraph{Requisiti}
-				\subparagraph{Casi d'uso}
-		 
+				L'obiettivo dell'attività è la creazione di un prodotto software che rispetti le richieste stabilite con il proponente. L'uso di norme e convenzioni in questa fase è fondamentale per permettere la generazione di codice leggibile ed uniforme, agevolare le fasi di manutenzione e verificare, validare e migliorare la qualità del prodotto.
+				\subparagraph{Descrizione}
+				La scrittura del codice deve rispettare quanto stabilito nella documentazione di prodotto. Dovrà perseguire gli obiettivi descritti all'interno del documento \dext{Piano di Qualifica v1.0.0} al fine di garantire la scrittura di codice di qualità.
+				\subparagraph{Stile di codifica}
+				Al fine di garantire uniformità nella generazione del codice del progetto, ciascun memnro del gruppo è tenuto a rispettare le seguenti norme:
+				\begin{itemize}
+					\item \textbf{Identazione}: i blocchi innestati devono seguire una corretta identazione, usando per ciascun livello di identazione quattro (4) spazi (fatta eccezione per i commenti). Al fine di assicurare il rispetto di questa regola si consiglia di configuare adeguatamente il proprio \glock{IDE};
+					\item \textbf{Parentesi}: inserimento delle parentesi di delimitazione dei costrutti in linea e non al di sotto di essi; 
+					\item \textbf{Struttura dei metodi}: è desiderabile, ove possibile, avere i metodi strutturati in questo modo:
+					\begin{itemize}
+						\item il nome deve iniziare con una lettera minuscola. Se il metodo è composto da più parole, quelle successive devono iniziare con la lettera maiuscola;
+						\item lunghezza del metodo breve;
+						\item la parentesi graffa di apertura deve essere nella stessa riga del metodo, separata da una singola spaziatura dopo il nome del metodo.
+					\end{itemize}
+					\item \textbf{Univocità dei nomi}: classi, metodi, variabili devono avere un nome univoco ed esplicativo al fine di evitare ambiguità ed incomprensioni;
+					\item \textbf{Classi}: i nomi delle classi devono iniziare con la lettera maiuscola. Se sono composte da più parole, le successive avranno la lettera maiuscola;
+					\item \textbf{Costanti}: i nomi delle costati devono essere scritte totalmente in maiuscolo. Se sono composte da più parole, saranno separate dal carattere \textit{underscore (\_)};
+					\item \textbf{Lingua}: i nomi delle variabili, metodi, classi, costruttori e commenti saranno scritte in inglese.
+				\end{itemize}
+				\subparagraph{Ricorsione}
+				L'uso della ricorsione va evitato quanto più possibile in quanto potrebbe indurre ad una maggiore occupazione di memoria rispetto a soluzioni iterative.
+		 		
