@@ -1,0 +1,29 @@
+name: LaTeX documents
+on: 
+  push:    
+    paths:
+      - 'template/**'
+      - 'interni/**'
+      - 'esterni/**'
+      - '.github/**'
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Search and Compiling Latex Files
+        uses: Maxelweb/Latex-multicompiler@master
+        with:
+          path_to_list: .github/filesToCompile
+
+
+      - name: Notify Discord if failure
+        uses: sarisia/actions-status-discord@v1
+        if: failure()
+        with:
+          webhook: ${{ secrets.BUILD_FAILURE_WEBHOOK }}
+          title: "Latex Esterni"
+          color: 0xff0000
+          username: GitHub Actions
