@@ -2,7 +2,6 @@ name: LaTeX documents
 on: 
   push:    
     paths:
-      - 'template/**'
       - 'interni/**'
       - 'esterni/**'
       - '.github/**'
