@@ -14,17 +14,18 @@ Inoltre per determinare le ore nulle nelle successive tabelle verrà usato il si
 \subsection{Fase di Analisi}
 \subsubsection{Prospetto orario}
 Nella fase di Analisi la distribuzione oraria è la seguente:
-\begin{center}
+\begin{table}[H]
 	\rowcolors{2}{lightest-grayest}{white}
-	\begin{longtable}{|p{0.25\columnwidth}|p{0.03\columnwidth}|p{0.03\columnwidth}|p{0.03\columnwidth}|p{0.03\columnwidth}|p{0.03\columnwidth}|p{0.03\columnwidth}|p{0.03\columnwidth}|}
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|}
 		\hline
 		\rowcolor{lighter-grayer}
-		\centering\textbf{Nome} & \centering\textbf{Re} & \centering\textbf{Am} & \centering\textbf{An} &  \centering\textbf{Pt}&  \centering\textbf{Pm}&  \centering\textbf{Ve} & \textbf{Tot}\\
+		Nome & Re & Am & An & Pt & Pm & Ve & Totale\\
 		\hline
-		\endfirsthead
 		
 		% ----- Modificare da qui -----
-		% Manca centrare ultima colonna, titolo tabella, collegamento tabella a indice tabelle, dati;
+		%  collegamento tabella a indice tabelle, dati;
 		\hline
 		\centering Badan Antonio & \centering & \centering & \centering & \centering & \centering - & \centering & 30 \\
 		\hline
@@ -43,27 +44,29 @@ Nella fase di Analisi la distribuzione oraria è la seguente:
 		\centering\textbf{Ore totali}  & \centering 25 & \centering 36& \centering 78& \centering 10 & \centering - & \centering 61 & 210 \\
 		\hline
 		
-	\end{longtable}
-\end{center}
+\end{tabular}
+\caption*{\textbf{Tabella 2}: Distribuzione delle ore nella Fase di Analisi\\}
+\end{table}	
 
 I dati ottenuti possono essere riassunti nel seguente istogramma:
-% fare istogramma (come?), dare tittolo e collegare all'indice delle figure;
+% fare istogramma (con dati poi), dare titolo e collegare all'indice delle figure;
 \\
 
 \subsubsection{Prospetto economico}
 In questa fase il costo per ogni ruolo è il seguente:
 
-\begin{center}
+\begin{table}[H]
 	\rowcolors{2}{lightest-grayest}{white}
-	\begin{longtable}{|p{0.20\columnwidth}|p{0.04\columnwidth}|p{0.10\columnwidth}|}
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{|c|c|c|}
 		\hline
 		\rowcolor{lighter-grayer}
-		\centering\textbf{Ruolo} & \centering\textbf{Ore} & \textbf{Costo} \\
+		Ruolo & Ore & Costo\\
 		\hline
-		\endfirsthead
 		
 		% ----- Modificare da qui -----
-		% Manca centrare ultima colonna, titolo tabella, collegamento tabella a indice tabelle, dati;
+		%  collegamento tabella a indice tabelle;
 		\centering Responsabile & \centering 25 & 775,00\euro\\ %31 per ora
 		\hline
 		\centering Amministatore & \centering 36 & 756,00\euro\\ %21 per ora
@@ -78,8 +81,9 @@ In questa fase il costo per ogni ruolo è il seguente:
 		\hline
 		\centering\textbf{Totale} & \centering 210 & 4616,00\euro\\
 		\hline
-	\end{longtable}
-\end{center}
+\end{tabular}
+	\caption*{\textbf{Tabella 3}: Prospetto dei costi per ruolo nella Fase di Analisi\\}
+\end{table}
 I dati ottenuti possono essere riassunti nel seguente areogramma:
 % Dare titolo e collegare all'indice delle figure;
 \\
@@ -91,18 +95,18 @@ I dati ottenuti possono essere riassunti nel seguente areogramma:
 \subsection{Fase di Consolidamento dei requisiti}
 \subsubsection{Prospetto orario}
 Nella fase di Consolidamento dei requisiti la distribuzione oraria è la seguente:
-\begin{center}
+\begin{table}[H]
 	\rowcolors{2}{lightest-grayest}{white}
-	\begin{longtable}{|p{0.25\columnwidth}|p{0.03\columnwidth}|p{0.03\columnwidth}|p{0.03\columnwidth}|p{0.03\columnwidth}|p{0.03\columnwidth}|p{0.03\columnwidth}|p{0.03\columnwidth}|}
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|}
 		\hline
 		\rowcolor{lighter-grayer}
-		\centering\textbf{Nome} & \centering\textbf{Re} & \centering\textbf{Am} & \centering\textbf{An} &  \centering\textbf{Pt}&  \centering\textbf{Pm}&  \centering\textbf{Ve} & \textbf{Tot}\\
+		Nome & Re & Am & An & Pt & Pm & Ve & Totale\\
 		\hline
-		\endfirsthead
 		
 		% ----- Modificare da qui -----
-		% Manca centrare ultima colonna, titolo tabella, collegamento tabella a indice tabelle, dati;
-		\hline
+		% collegamento tabella a indice tabelle, dati;
 		\centering Badan Antonio & \centering & \centering & \centering & \centering - & \centering - & \centering & 6\\
 		\hline
 		\centering Bertoldo Damiano & \centering & \centering & \centering & \centering - & \centering - & \centering & 6\\
@@ -120,25 +124,25 @@ Nella fase di Consolidamento dei requisiti la distribuzione oraria è la seguent
 		\centering\textbf{Ore totali}  & \centering 3 & \centering 6 & \centering 16& \centering - & \centering - & \centering 17 & 42\\
 		\hline
 		
-	\end{longtable}
-\end{center}
+\end{tabular}
+\caption*{\textbf{Tabella 4}: Distribuzione delle ore nel periodo di Consolidamento dei requisiti\\}
+\end{table}	
 I dati ottenuti possono essere riassunti nel seguente istogramma:
-% fare istogramma (come?), dare titolo e collegare all'indice delle figure;
+% fare istogramma (con dati poi), dare titolo e collegare all'indice delle figure;
 \\
 
 \subsubsection{Prospetto economico}
 In questa fase il costo per ogni ruolo è il seguente:
 
-\begin{center}
+\begin{table}[H]
 	\rowcolors{2}{lightest-grayest}{white}
-	\begin{longtable}{|p{0.20\columnwidth}|p{0.04\columnwidth}|p{0.10\columnwidth}|}
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{|c|c|c|}
 		\hline
 		\rowcolor{lighter-grayer}
-		\centering\textbf{Ruolo} & \centering\textbf{Ore} & \textbf{Costo} \\
+		Ruolo & Ore & Costo\\
 		\hline
-		\endfirsthead
-		
-		% ----- Modificare da qui -----
 		% Manca centrare ultima colonna, titolo tabella, collegamento tabella a indice tabelle, dati;
 		\centering Responsabile & \centering 3 & 93,00\euro\\
 		\hline
@@ -154,8 +158,9 @@ In questa fase il costo per ogni ruolo è il seguente:
 		\hline
 		\centering\textbf{Totale} & \centering 42 & 874,00\euro\\
 		\hline
-	\end{longtable}
-\end{center}
+		\end{tabular}
+\caption*{\textbf{Tabella 5}: Prospetto dei costi per ruolo nel periodo di Consolidamento dei requisiti\\}
+\end{table}
 
 I dati ottenuti possono essere riassunti nel seguente areogramma:
 %Dare titolo e collegare all'indice delle figure;
