@@ -13,6 +13,7 @@ Redattore: @redattore
 Verificatore: @verificatore
 Approvatore: @approvatore
 
+# Cancellare se non utilizzato
 Stendere il verbale basato sull'ordine del giorno:
 - a
 - b
