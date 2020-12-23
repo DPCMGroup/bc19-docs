@@ -11,32 +11,27 @@
 
 % --------------
 
-\newcommand{\docNome}{ GLOSSARIO }
-\newcommand{\docNomeProgetto}{ BlockCOVID: supporto digitale al contrasto della pandemia }
-\newcommand{\docVersione}{0.0.2}
-\newcommand{\docStatus}{In redazione}
-\newcommand{\docUso}{Esterno}
-\newcommand{\docDescrizione}{
-	Raccolta di tutti i termini inerenti al progetto
-}
+\newcommand{\docNome}{ STUDIO DI FATTIBILIT\`A }
+\newcommand{\docNomeProgetto}{ BlockCOVID }
+\newcommand{\docVersione}{1.0.0}
+\newcommand{\docStatus}{approvato}
+\newcommand{\docUso}{interno}
 
 % --------------
 
 \newcommand{\docDestinatari}{
-	DPCM 2077 \\&
-	Imola Informatica \\&
-    Prof. Tullio Vardanega \\&
-    Prof. Riccardo Cardin
+	Prof.~Tullio Vardanega \\&
+	Prof.~Riccardo Cardin \\&
+	DPCM 2077
 }
 \newcommand{\docRedattori}{
-	Damiano Bertoldo \\&
-	Ivan Piacere
+	Antonio Badan
 }
 \newcommand{\docVerificatori}{
-	
+	Damiano Bertoldo
 }
 \newcommand{\docApprovazione}{
-    
+    Ivan Piacere
 }
 
 % ----- NON MODIFICARE SOTTO QUESTA RIGA -----
@@ -48,21 +43,6 @@
 \documentclass[11pt,a4paper,table]{article}
 
 \input{res/configurazione}    
-
-% ---------------------------
-% + CONFIGURAZIONE AGGIUNTIVA
-% ---------------------------
-
-\setcounter{secnumdepth}{0} % No section number
-\setcounter{tocdepth}{2} % No section number
-\usepackage{sectsty}
-
-\makeatletter
-\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
-	{-3.25ex\@plus -1ex \@minus -.2ex}%
-	{-1.5ex \@plus .2ex}%
-	{\normalfont\large\bfseries}}
-\makeatother
 
 % ---------------------------
 % Dati frontespizio
@@ -79,7 +59,7 @@
 % ---------------------------
 
 \begin{document} 
- 
+
 % Frontespizio
 
 \pagenumbering{gobble}
@@ -97,9 +77,6 @@
 
 \newpage
 \tableofcontents
-
-%per glossario
-\sectionfont{\huge}
 
 % Sezioni
 
