@@ -1,8 +1,8 @@
 %!TEX output_directory = .cache
 % ---------------------------
-%	  [ NOME DOCUMENTO ]
+%	  	  [ Verbale ]
 %	----------------------
-%	      DPCM2077
+%	       DPCM2077
 %  Progetto di SWE (2020-21)
 %    Template by Maxelweb
 % ---------------------------
@@ -11,33 +11,22 @@
 
 % --------------
 
-\newcommand{\docNome}{ NORME DI PROGETTO }
-\newcommand{\docNomeProgetto}{ BlockCOVID: supporto digitale al contrasto della pandemia }
-\newcommand{\docVersione}{0.0.10}
-\newcommand{\docStatus}{in redazione}
-\newcommand{\docUso}{interno}
-\newcommand{\docDescrizione}{
-	Documento che riguarda la stesura delle Norme di Progetto riguardanti il capitolato 1
-}
+\newcommand{\docNome}{ VERBALE RIUNIONE ESTERNA \#1 }
+\newcommand{\docVersione}{1.0.0}
+\newcommand{\docNomeProgetto}{ 18 dicembre 2020 }
+\newcommand{\docStatus}{Approvato}
+\newcommand{\docUso}{Esterno}
 
 % --------------
 
-\newcommand{\docDestinatari}{
-	Prof. Tullio Vardanega \\&
-    Prof. Riccardo Cardin \\&
-    Gruppo 3 DPCM 2077
-}
 \newcommand{\docRedattori}{
-	Damiano Bertoldo \\&
-    Sara Privitera \\&
-    Daniele Spigolon
+	Ivan Piacere
 }
 \newcommand{\docVerificatori}{
-	nome cognome \\&
-    nome cognome
+	Sara Privitera
 }
 \newcommand{\docApprovazione}{
-    nome cognome
+    Daniele Spigolon
 }
 
 % ----- NON MODIFICARE SOTTO QUESTA RIGA -----
@@ -76,18 +65,21 @@
 
 \newpage
 \ActivateBG
-\pagenumbering{arabic}
+\pagenumbering{Roman}
 \include{res/registro}
 
-% Tabella dei contenuti
+
+% Contenuto
 
 \newpage
-\tableofcontents
+\input{res/contenuto}
 
-% Sezioni
+
+
+% Registro Decisioni
 
 \newpage
-\input{res/sezioni}
+\input{res/tracciamenti}
 
 \end{document}
 
