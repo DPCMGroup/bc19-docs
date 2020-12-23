@@ -23,6 +23,6 @@ jobs:
         if: failure()
         with:
           webhook: ${{ secrets.BUILD_FAILURE_WEBHOOK }}
-          title: "Latex Esterni"
+          title: "Documenti Latex"
           color: 0xff0000
           username: GitHub Actions
