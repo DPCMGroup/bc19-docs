@@ -2,8 +2,8 @@
 Per ogni capitolato:
 \begin{itemize}
 	\item vengono fornite informazioni di carattere generale;
-	\item viene data una breve descrizione degli obiettivi;
-	\item viene stimato il dominio del capitolato o più informalmente il suo "mondo": quali competenze teoriche sono necessarie durante il progetto, quali sono le tecnologie richieste da padroneggiare, quali linguaggi conoscere, qual è il mercato, etc\dots 
+	\item viene data una breve descrizione degli obiettivi richiesti dal capitolato;
+	\item viene stimato il dominio del capitolato o più informalmente il suo "mondo": quali competenze teoriche sono necessarie durante il progetto, quali sono le tecnologie richieste da padroneggiare, quali linguaggi conoscere, qual è il mercato di riferimento, etc\dots 
 	\item vengono evidenziati fattori positivi e criticità;
 	\item vengono stilate le prime conclusioni.
 \end{itemize}
@@ -17,8 +17,8 @@ Per ogni capitolato:
 	\item[Committente:] prof.~Tullio Vardanega e prof.~Riccardo Cardin.
 \end{description}
 \subsubsection{Descrizione del capitolato}
-BlockCOVID prevede la creazione di un'applicazione che permetta di contrastare il Covid-19 in spazi chiusi (laboratori, aule, aziende) tramite il tracciamento immutabile e certificato delle presenze e della pulizia delle postazioni.
-BlockCOVID richiede la configurazione di un server back-end completo di GUI, un'applicazione mobile per il funzionamento dell'applicazione, la quale deve garantire:
+BlockCOVID prevede la creazione di un'\glock{applicazione} che permetta di contrastare il \glock{Covid-19} in spazi chiusi (laboratori, aule, aziende) tramite il tracciamento immutabile e certificato delle presenze e della pulizia delle postazioni.
+BlockCOVID richiede la configurazione di un \glock{server} \glock{back-end} completo di \glock{GUI} e un'applicazione mobile per il funzionamento dell'applicazione, le quali devono garantire:
 \begin{itemize}
 \item il monitoraggio delle presenze nelle postazioni in maniera certificata e trasparente;
 \item la realizzazione di una reportistica certificata;
@@ -29,11 +29,11 @@ BlockCOVID richiede la configurazione di un server back-end completo di GUI, un'
 \subsubsection{Studio del dominio}
 Per la parte tecnologica:
 \begin{itemize}
-\item Java, Python o Node.js per lo sviluppo del server back-end;
-\item protocolli asincroni per le comunicazioni app mobile-server;
-\item un sistema Blockchain per salvare con opponibilità a terzi i dati di sanificazione;
-\item IAAS Kubernetes o di un PAAS, Openshift o Rancher, per il rilascio delle componenti del server e la gestione della scalabilità orizzontale
-\item Docker.
+\item \glock{Java}, \glock{Python} o \glock{Node.js} per lo sviluppo del server back-end;
+\item \glock{protocolli} \glock{asincroni} per le comunicazioni applicazione mobile - server;
+\item un sistema \glock{Blockchain} per salvare con opponibilità a terzi i dati di \glock{sanificazione};
+\item \glock{IAAS Kubernetes} o di un \glock{PaaS} (\glock{Openshift} o \glock{Rancher}) per il rilascio delle componenti del server e la gestione della \glock{scalabilità} orizzontale;
+\item \glock{Docker}.
 \end{itemize}
 \subsubsection{Pro e Contro}
 \paragraph*{Pro}
@@ -45,33 +45,33 @@ Per la parte tecnologica:
 \end{itemize}
 \paragraph*{Contro}
 \begin{itemize}
-	\item tematica "fortemente" attuale ma che perderebbe di utilità una volta svanita (si spera) la pandemia. Un utilizzo alternativo servirebbe per ottimizzare le pulizie (facendo pulizie mirate e più approfondite nei posti più frequentati e più superficiali altrove);
+	\item tematica fortemente attuale ma che perderebbe di utilità nel caso svanisse la pandemia. Un utilizzo alternativo potrebbe essere per le pulizie (facendo pulizie mirate e più approfondite nei posti più frequentati e più superficiali altrove);
 \end{itemize}
 \subsubsection{Conclusioni}
-BlockCOVID ha colpito positivamente il gruppo per chiarezza nell'esposizione degli obiettivi e delle tecnologie consigliate. Il rischio della forte attualità del prodotto e un suo incerto uso nel futuro non preoccupa troppo in quanto le competenze acquisite durante il progetto sono valide.
+BlockCOVID ha colpito positivamente il gruppo per chiarezza nell'esposizione degli obiettivi e delle tecnologie consigliate. Il rischio della forte attualità del prodotto e un suo incerto uso nel futuro non preoccupa troppo in quanto le competenze acquisite durante il progetto sono valide per il futuro.
 
 % EmporioLambda - Red Label
 \subsection{Capitolato 2 - EmporioLambda}
 \subsubsection{Informazioni generali}
 \begin{description}
-	\item[Nome:] EmporioLambda: piattaforma di e-commerce in stile Serverless;
+	\item[Nome:] EmporioLambda: piattaforma di \glock{e-commerce} in stile \glock{serverless};
 	\item[Proponente:] Red Label;
 	\item[Committente:] prof.~Tullio Vardanega e prof.~Riccardo Cardin.
 \end{description}
 \subsubsection{Descrizione del capitolato}
-Il capitolato riguarda la creazione di un sito e-commerce serverless utilizzando AWS Lambda.
+Il capitolato riguarda la creazione di un sito e-commerce serverless utilizzando \glock{AWS Lambda}.
 \subsubsection{Studio del dominio}
 Per la parte tecnologica:
 \begin{itemize}
-	\item piattaforma node.js;
-	\item typescript per front-end e back-end;
+	\item piattaforma Node.js;
+	\item \glock{Typescript} per \glock{front-end} e back-end;
 	\item AWS Lambda per la distribuzione.
 \end{itemize}
 Per la parte di approfondimento teorico:
 \begin{itemize}
 	\item e-commerce (caratteristiche, dinamiche, attori coinvolti);
 	\item programmazione asincrona;
-	\item architettura serverless;
+	\item \glock{architettura} serverless;
 \end{itemize}
 \subsubsection{Pro e Contro}
 \paragraph*{Pro}
@@ -97,20 +97,20 @@ Per la parte di approfondimento teorico:
 	\item[Committente:] prof.~Tullio Vardanega e prof.~Riccardo Cardin.
 \end{description}
 \subsubsection{Descrizione del capitolato}
-GDP prevede la creazione di una piattaforma che rappresenti, graficamente, zone potenzialmente a rischio di assembramento e le riesca a prevenire. GDP richiede di realizzare un software in grado di acquisire, monitorare, utilizzare e correlare tra loro tutti i dati che descrivono il traffico provenienti da fonti specifiche (videocamere, dispositivi conta-persone, prenotazioni Uber, orari dei mezzi di trasporto pubblici, etc\dots), con lo scopo di identificare i possibili eventi che concorrono all'insorgere di variazioni di flussi di utenti.
+GDP prevede la creazione di una \glock{piattaforma} che rappresenti, graficamente, zone potenzialmente a rischio di assembramento e le riesca a prevenire. GDP richiede di realizzare un \glock{software} in grado di acquisire, monitorare, utilizzare e correlare tra loro tutti i dati che descrivono il traffico provenienti da fonti specifiche (videocamere, dispositivi conta-persone, prenotazioni \glock{Uber}, orari dei mezzi di trasporto pubblici, etc\dots), con lo scopo di identificare i possibili eventi che concorrono all'insorgere di variazioni di flussi di utenti.
 \subsubsection{Studio del dominio}
 Per la parte relativa alle tecnologie:
 \begin{itemize}
-	\item piattaforma Apache Kafka per elaborazioni di stream di dati in tempo reale;
-	\item conoscenza dei linguaggi Java, Python, Javascript;
-	\item framework Angular per lo sviluppo di applicazioni web;
-	\item protocolli asicroni per la comunicazione fra le diverse componenti: publish/subscribe, MQTT 
+	\item piattaforma \glock{Apache Kafka} per elaborazioni di stream di dati in tempo reale;
+	\item conoscenza dei linguaggi Java, Python, \glock{Javascript};
+	\item \glock{framework} \glock{Angular} per lo sviluppo di applicazioni web;
+	\item protocolli asicroni per la comunicazione fra le diverse componenti: \glock{publish/subscribe}, \glock{MQTT}; 
 	\item librerie:
 	\begin{itemize}
-		\item Leaflet per sviluppare mappe geografiche interattive;
-		\item TensorFlow (con l'interfaccia Keras), Pytorch, Scikit-learn per l'apprendimento automatico; 
-		\item Theano e Numpy per ottimizzare e valutare in modo efficiente espressioni matematiche che coinvolgono array multidimensionali;
-		\item Pandas per la manipolazione e l'analisi dei dati.
+		\item \glock{Leaflet} per sviluppare mappe geografiche interattive;
+		\item \glock{TensorFlow} (con l'interfaccia \glock{Keras}), \glock{Pytorch}, \glock{Scikit-learn} per l'\glock{apprendimento automatico}; 
+		\item \glock{Theano} e \glock{Numpy} per ottimizzare e valutare in modo efficiente espressioni matematiche che coinvolgono array multidimensionali;
+		\item \glock{Pandas} per la manipolazione e l'analisi dei dati.
 	\end{itemize}
 \end{itemize}
 \subsubsection{Pro e Contro}
@@ -150,15 +150,15 @@ HD Viz ha per oggetto la realizzazione di un'applicazione di visualizzazione di 
 \subsubsection{Studio del dominio}
 Per la parte relativa alla visualizzazione dei dati:
 \begin{itemize}
-	\item HTML;
-	\item CSS;
+	\item \glock{HTML};
+	\item \glock{CSS};
 	\item JavaScript;
-	\item libreria D3.js.
+	\item libreria \glock{D3.js}.
 \end{itemize}
 Per la parte server di supporto alla presentazione dei dati:
 \begin{itemize}
-	\item database SQL o NoSQL;
-	\item Java con server Tomcat o in Javascript con server Node.js;
+	\item database \glock{SQL} o \glock{NoSQL};
+	\item Java con server \glock{Tomcat} o in Javascript con server Node.js;
 \end{itemize}
 Per la parte teorica:
 \begin{itemize}
@@ -197,12 +197,12 @@ L'oggetto di PORTACS richiede un sistema per governare gli spostamenti di più m
 Per la parte tecnologica le uniche richieste specifiche sono:
 \begin{itemize}
 	\item Docker, per la consegna delle applicazioni;
-	\item un sistema di versionamento, per la consegna del codice sorgente.
+	\item un sistema di \glock{versionamento}, per la consegna del codice sorgente.
 \end{itemize}
 
 Per la parte di approfondimento teorico:
 \begin{itemize}
-	\item monitoraggio e analisi real-time;
+	\item monitoraggio e analisi \glock{real-time};
 	\item predizione degli eventi e decisioni real-time;
 	\item logistica.
 \end{itemize}
@@ -229,33 +229,33 @@ Il capitolato è interessante per l'acquisizione di competenze, visto che posson
 	\item[Committente:] prof.~Tullio Vardanega e prof.~Riccardo Cardin.
 \end{description}
 \subsubsection{Descrizione del capitolato}
-RGP prevede la realizzazione di un videogioco a scorrimento verticale fruibile da device mobile con la possibilità di giocare in modalità multi-giocatore realtime (il gioco si ispira a Aero Fighters, videogioco degli anni '90). Il capitolato richiede che:
+RGP prevede la realizzazione di un videogioco a scorrimento verticale fruibile da dispositivo mobile con la possibilità di giocare in modalità multi-giocatore real-time (il gioco si ispira a Aero Fighters, videogioco degli anni '90). Il capitolato richiede che:
 \begin{itemize}
 	\item la sfida sia a eliminazione: l'ultimo giocatore sopravvissuto vince;
 	\item sia possibile giocare in modalità singolo giocatore oppure multi-giocatore, con preferenza per la seconda; 
-	\item nella modalità multi-giocatore sia possibile vedere in tempo reale i movimenti del rivale e garantire la stessa partita per tutti i giocatori (con gli stessi nemici e power-up);
+	\item nella modalità multi-giocatore sia possibile vedere in tempo reale i movimenti del rivale e garantire la stessa partita per tutti i giocatori (con gli stessi nemici e \glock{power-up});
 	\item nella modalità singolo giocatore i livelli siano infiniti e di difficoltà crescente;
 	\item il gioco termini quando il giocatore ha esaurito le proprie vite o non ha raccolto i power-up per mantenere il suo oggetto attivo 
 \end{itemize}
 \subsubsection{Studio del dominio}
 Per la parte di individuazione delle tecnologie più adatte al gaming:
 \begin{itemize}
-	\item AWS GameLift, AWS Appsync;
+	\item \glock{AWS GameLift}, \glock{AWS Appsync};
 	\item architetture serverless;
-	\item architetture cloud;
+	\item architetture \glock{cloud};
 	\item Node.js per i servizi che richiedono sviluppo di codice.
 \end{itemize}
 Per la parte di sincronizzazione dei dati:
 \begin{itemize}
 	\item protocollo MQTT;
-	\item protocollo WebSocket (gestito con Appsync);
-	\item GraphQL (Tecnologia API) (permette di leggere, scrivere e ricevere dati in tempo reale);
-	\item AWS Amplify per collegare il front-end ai servizi cloud.
+	\item protocollo \glock{WebSocket} (gestito con Appsync);
+	\item \glock{GraphQL} (Tecnologia \glock{API}) (permette di leggere, scrivere e ricevere dati in tempo reale);
+	\item \glock{AWS Amplify} per collegare il front-end ai servizi cloud.
 \end{itemize}
 Per la parte di implementazione del gioco per piattaforma mobile è previsto l'uso di tecnologie native (si può scegliere una o entrambe):
 \begin{itemize}
-	\item iOS (preferito): il linguaggio sarà Swift/SwiftUI (con engine SceneKit/SpriteKit) - target minimo iOS 13; (se verrà scelto iOS zero12 fornirà il certificato Apple Developer per esecuzione nei propri dispositivi)
-	\item Android: il linguaggio sarà Kotlin - minimo Android 8;
+	\item \glock{iOS} (preferito): il linguaggio sarà \glock{Swift}/\glock{SwiftUI} (con \glock{SceneKit}/\glock{SpriteKit}) - target minimo iOS 13; (se verrà scelto iOS zero12 fornirà il certificato "Apple Developer" per esecuzione nei propri dispositivi)
+	\item \glock{Android}: il linguaggio sarà \glock{Kotlin} - minimo Android 8;
 \end{itemize}
 \subsubsection{Pro e Contro}
 \paragraph*{Pro}
@@ -268,7 +268,7 @@ Per la parte di implementazione del gioco per piattaforma mobile è previsto l'u
 \end{itemize}
 \paragraph*{Contro}
 \begin{itemize}
-	\item molte competenze non presenti all'interno del gruppo e che richiedono largo tempo per ottenerle: studio di NodeJS e nel caso di sviluppo nativo Swift/SwiftUI e Kotlin, studio e valutazione di AWS.
+	\item molte competenze non presenti all'interno del gruppo e che richiedono largo tempo per ottenerle: studio di Node.js e nel caso di sviluppo nativo Swift/SwiftUI e Kotlin, studio e valutazione di AWS.
 \end{itemize}
 \subsubsection{Conclusioni}
 Il proponente sembra voler fornire un buon livello di supporto. Nel complesso il progetto ha riscontrato molto interesse per il gruppo grazie anche ai requisiti e lo scopo del progetto che sono stati ben definiti. Preoccupa il notevole rischio legato alla quantità di tempo per imparare ad usare le varie tecnologie.
@@ -282,32 +282,32 @@ Il proponente sembra voler fornire un buon livello di supporto. Nel complesso il
 	\item[Committente:] prof.~Tullio Vardanega e prof.~Riccardo Cardin.
 \end{description}
 \subsubsection{Descrizione del capitolato}
-SSD ha per oggetto la definizione di un algoritmo per la sincronizzazione desktop a uso professionale e il suo utilizzo in contesto Zextras Drive. SSD precisamente richiede che:
+SSD ha per oggetto la definizione di un algoritmo per la sincronizzazione desktop a uso professionale e il suo utilizzo in contesto \glock{Zextras Drive}. SSD precisamente richiede che:
 \begin{itemize}
 	\item l'algoritmo consenta il salvataggio in cloud del lavoro e la sincronizzazione dei cambiamenti presenti in cloud;
-	\item venga sviluppata un'interfaccia multipiattaforma per l'uso dell'algoritmo nei sistemi desktop MacOS, Windows e Linux;
+	\item venga sviluppata un'\glock{interfaccia} multi-piattaforma per l'uso dell'algoritmo nei sistemi desktop \glock{MacOS}, \glock{Windows} e \glock{Linux};
 	\item l'algoritmo venga utilizzato per acquisire e fornire contenuti in sincronizzazione verso il prodotto aziendale Zextras Drive.
 \end{itemize}
 \subsubsection{Studio del dominio}
 Per la parte tecnologica:
 \begin{itemize}
-	\item libreria Qt per la GUI;
+	\item libreria \glock{Qt} per la GUI;
 	\item linguaggio Python per la parte di back-end;
 	\item linguaggio GraphQL per lo sviluppo delle API.
 \end{itemize} 
 
 Per la parte relativa all'approfondimento di prodotti esistenti sul mercato e degli algoritmi che utilizzano:
 \begin{itemize}
-	\item Dropbox;
-	\item Google Drive;
-	\item Nextcloud;
-	\item Open Exchange;
-	\item Zimbra;
+	\item \glock{Dropbox};
+	\item \glock{Google Drive};
+	\item \glock{Nextcloud};
+	\item \glock{Open Exchange};
+	\item \glock{Zimbra};
 \end{itemize} 
 \subsubsection{Pro e Contro}
 \paragraph*{Pro}
 \begin{itemize}
-	\item competenze presenti nel gruppo: esperienza pregressa con Qt e pattern MVC (P2) di tutto il gruppo;
+	\item competenze presenti nel gruppo: esperienza pregressa con Qt e pattern \glock{MVC} (corso di Programmazione a Oggetti) di tutto il gruppo;
 	\item sincronizzazione dei dati: concetto fondamentale e quindi da conoscere, anche se dato per scontato;
 	\item acquisizione di buone prassi: operando su strumenti collaborativi professionali e analizzandoli potremmo acquisire buone prassi per il nostro gruppo e futuro lavorativo.	
 \end{itemize}
