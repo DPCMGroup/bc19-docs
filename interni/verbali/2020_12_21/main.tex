@@ -1,8 +1,8 @@
 %!TEX output_directory = .cache
 % ---------------------------
-%	  [ NOME DOCUMENTO ]
+%	  	  [ Verbale ]
 %	----------------------
-%	      DPCM2077
+%	       DPCM2077
 %  Progetto di SWE (2020-21)
 %    Template by Maxelweb
 % ---------------------------
@@ -11,32 +11,23 @@
 
 % --------------
 
-\newcommand{\docNome}{ GLOSSARIO }
-\newcommand{\docNomeProgetto}{ BlockCOVID: supporto digitale al contrasto della pandemia }
-\newcommand{\docVersione}{0.0.2}
-\newcommand{\docStatus}{In redazione}
-\newcommand{\docUso}{Esterno}
-\newcommand{\docDescrizione}{
-	Raccolta di tutti i termini inerenti al progetto
-}
+\newcommand{\docNome}{ VERBALE RIUNIONE \#8 }
+\newcommand{\docBaseline}{}
+\newcommand{\docVersione}{1.0.0\docBaseline}
+\newcommand{\docNomeProgetto}{ 21 dicembre 2020 }
+\newcommand{\docStatus}{approvato}
+\newcommand{\docUso}{interno}
 
 % --------------
 
-\newcommand{\docDestinatari}{
-	DPCM 2077 \\&
-	Imola Informatica \\&
-    Prof. Tullio Vardanega \\&
-    Prof. Riccardo Cardin
-}
 \newcommand{\docRedattori}{
-	Damiano Bertoldo \\&
-	Ivan Piacere
+	Sara Privitera
 }
 \newcommand{\docVerificatori}{
-	
+	Daniele Spigolon
 }
 \newcommand{\docApprovazione}{
-    
+    Antonio Badan
 }
 
 % ----- NON MODIFICARE SOTTO QUESTA RIGA -----
@@ -48,21 +39,6 @@
 \documentclass[11pt,a4paper,table]{article}
 
 \input{res/configurazione}    
-
-% ---------------------------
-% + CONFIGURAZIONE AGGIUNTIVA
-% ---------------------------
-
-\setcounter{secnumdepth}{0} % No section number
-\setcounter{tocdepth}{2} % No section number
-\usepackage{sectsty}
-
-\makeatletter
-\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
-	{-3.25ex\@plus -1ex \@minus -.2ex}%
-	{-1.5ex \@plus .2ex}%
-	{\normalfont\large\bfseries}}
-\makeatother
 
 % ---------------------------
 % Dati frontespizio
@@ -79,7 +55,7 @@
 % ---------------------------
 
 \begin{document} 
- 
+
 % Frontespizio
 
 \pagenumbering{gobble}
@@ -90,21 +66,21 @@
 
 \newpage
 \ActivateBG
-\pagenumbering{arabic}
+\pagenumbering{Roman}
 \include{res/registro}
 
-% Tabella dei contenuti
+
+% Contenuto
 
 \newpage
-\tableofcontents
+\input{res/contenuto}
 
-%per glossario
-\sectionfont{\huge}
 
-% Sezioni
+
+% Registro Decisioni
 
 \newpage
-\input{res/sezioni}
+\input{res/tracciamenti}
 
 \end{document}
 
