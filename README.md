@@ -3,4 +3,4 @@ Questa e' la pagina che racchiude tutti i documenti ufficiali appartenenti ed in
 
 ------
 
-![Interni LaTeX document](https://github.com/DPCMGroup/dpcm2077-docs/workflows/Interni%20LaTeX%20document/badge.svg) ![Esterni LaTeX document](https://github.com/DPCMGroup/dpcm2077-docs/workflows/Esterni%20LaTeX%20document/badge.svg) ![Template LaTeX Document](https://github.com/DPCMGroup/dpcm2077-docs/workflows/Templates%20LaTeX%20Document/badge.svg)
+![LaTeX documents](https://github.com/DPCMGroup/dpcm2077-docs/workflows/LaTeX%20documents/badge.svg)
