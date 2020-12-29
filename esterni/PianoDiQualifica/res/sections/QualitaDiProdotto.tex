@@ -1,0 +1,121 @@
+\section{Qualità di Prodotto}
+
+Per garantire una buona qualità del prodotto il gruppo DPCM 2077 ha deciso di fare riferimento allo standard \glock{ISO/IEC:9126},
+che definisce le caratteristiche di qualità necessarie affinchè il prodotto finale sia di buona qualità.
+Le caratteristiche sono descritte grazie a dei parametri che ne valutano il grado di raggiungimento.
+
+\subsection{Funzionalità}
+Rappresenta la capacità del software di soddisfare tutte le funzionalità che sono state individuate attraverso l'Analisi dei Requisiti v1.0.0\ped{D}.
+\subsubsection{Obiettivi}
+\begin{itemize}
+\item {\textbf{Completezza}: le funzionalità sviluppate devono essere almeno tante quante quelle richieste dal committente o individuate dal gruppo;}
+\item {\textbf{Accuratezza}: il prodotto deve fornire dei risultati con il livello di precisione richiesto;}
+\item {\textbf{Conformità}: il prodotto deve rispettare determinati standard;} 
+\item {\textbf{Interoperabilità}: Capacità del software di interagire e operare con uno o più sistemi specificati dal \glock{proponente} o \glock{committente}.}
+\end{itemize}
+
+\subsubsection{Metriche}
+\paragraph{Completezza dell'implementazione}
+La completezza di un prodotto software e il rispetto dei requisiti viene indicato con una percentuale.
+\begin{itemize}
+\item \textbf{Metodo di misura}: si calcola con la seguente formula:
+C = (1- $\frac{N\_FNI}{N\_FI}$) * 100
+dove N\_FNI indica il numero di funzionalità non implementate e N\_FI indica il numero di funzionalità che si potevano implementare individuate dall'analisi;
+\item \textbf{valore preferibile}: 100\%;
+\item \textbf{valore accettabile}: 100\%;
+\end{itemize}
+
+\subsection{Affidabilità}
+Capacità del prodotto di mantenere prestazioni elevate anche in caso di situazioni anomale o critiche.
+Possibili limitazioni all’affidabilità sono causate da errori nei requisiti, nella progettazione e nello sviluppo del codice.
+
+\subsubsection{Obiettivi}
+\begin{itemize}
+\item \textbf{Maturità}: capacità del prodotto software di evitare errori e risultati non corretti, quindi anomalie, durante l’esecuzione;
+\item \textbf{Tolleranza agli errori}: capacità del prodotto software di conservare il livello di prestazioni anche in caso di malfunzionamenti o di uso non corretto del prodotto;
+\item \textbf{Aderenza all'affidabilità}: grado di adesione del prodotto software a standard, regole e convenzioni che riguardano l'affidabilità.
+\end{itemize}
+
+\subsubsection{Metriche}
+
+\paragraph{Densità errori}
+L'abilità di un prodotto software di resistere a malfunzionamenti viene indicata con una percentuale.
+\begin{itemize}
+\item \textbf{Metodo di misura}: si calcola con la seguente formula:
+M = (1- $\frac{N\_Er}{N\_Te}$) * 100
+dove N\_Er indica il numero di anomalie riscontrate durante la fase di testing e N\_FI indica il numero di test eseguiti;
+\item \textbf{valore preferibile}: 0\%;
+\item \textbf{valore accettabile}: Inferiore al 10\%;
+\end{itemize}
+\textit{I valori preferibili e accettabili qui sopra espressi sono da ritenersi ancora immaturi e saranno integrati opportunamente prima della verifica dei prodotti.}
+
+\subsection{Efficienza}
+Si definisce efficienza la la capacità di un prodotto software di realizzare le funzioni richieste nel minore tempo possibile e riducendo al minimo l'utilizzo  delle risorse a disposizione.
+Per risorse si intendono altri prodotti software, configurazioni hardware e software del sistema e materiali fisici.
+\subsubsection{Obiettivi}
+\begin{itemize}
+\item \textbf{Comportamento rispetto al tempo}: è la capacità di fornire adeguati tempi di risposta, elaborazione e velocità di attraversamento, sotto condizioni determinate.
+\item \textbf{Utilizzo delle risorse}: è la capacità di utilizzo di quantità e tipo di risorse in maniera adeguata.
+\item \textbf{Conformità}: è la capacità di aderire a standard e specifiche sull'efficienza.
+\end{itemize}
+
+\subsection{Usabilità}
+Capacità del prodotto di essere di facile comprensione e utilizzo da parte degli utenti.
+\subsubsection{Obiettivi}
+\begin{itemize}
+\item \textbf{Attrattiva}: misura della gradevolezza e dell’essere piacevole del prodotto software durante l’uso;
+\item \textbf{Aderenza all’usabilità}: grado di adesione del prodotto software a standard, regole e convenzioni inerenti all’usabilità.
+\item \textbf{Comprensibilità}: esprime la facilità di comprensione dei concetti del prodotto, mettendo in grado l'utente di comprendere se il software è appropriato.
+\item \textbf{Apprendibilità}: facilità con cui un utente medio può comprendere il funzionamento del prodotto software ed imparare ad usarlo; Il software deve accessibile a tutte le categorie di utenti;
+\item \textbf{Operabilità}: è la capacità di mettere in condizione gli utenti di farne uso per i propri scopi e controllarne l'uso.
+\end{itemize}
+
+\subsubsection{Metriche}
+
+\paragraph{Indice di Gulpease}
+Indice che calcola il grado di leggibilità di un testo in Italiano.
+\begin{itemize}
+\item \textbf{Metodo di misura}: si calcola con la seguente formula:
+Gulpease = (89 + $\frac{300*N\_Fra - 10*N\_par}{N\_let}$) 
+dove N\_Fra indica il numero di frasi presenti nel documento, N\_par il numero di parole presenti in un documento e N\_let il numero di lettere presenti in un documento.
+\item \textbf{valore preferibile}: > 80\%;
+\item \textbf{valore accettabile}: >60\%;
+\end{itemize}
+
+\subsection{Manutenibiltà}
+
+Si definisce manutenibilità la capacità del software di essere modificato mediante correzioni, adattamenti o miglioramenti.
+
+\subsubsection{Obiettivi}
+\begin{itemize}
+\item \textbf{Analizzabilità}: rappresenta la facilità con la quale è possibile analizzare il codice per localizzare un errore nello stesso.
+\item \textbf{Modificabilità}: la capacità del prodotto software di permettere l'implementazione di una specificata modifica.
+\item \textbf{Stabilità}: la capacità del software di evitare effetti inaspettati derivanti da modifiche errate.
+\end{itemize}
+
+\subsubsection{Metriche}
+
+\paragraph{Facilità di compresione}
+La facilità con cui l’utente riesce a comprendere cosa fa il codice può essere rappresentata mediante il numero di linee di commento nel codice.
+\begin{itemize}
+\item \textbf{Metodo di misura}: si calcola con la seguente formula:
+R = $\frac{N\_Lcom}{N\_Lcod}$)
+dove N\_Lcom indica le linee di commento nel codice, N\_Lcod indica le linee effettive di codice;
+\item \textbf{valore preferibile}: > 0.20\%;
+\item \textbf{valore accettabile}: > 0.10\%;
+\end{itemize}
+
+\textit{I valori preferibili e accettabili qui sopra espressi sono da ritenersi ancora immaturi e saranno integrati opportunamente durante la fase di progettazione e codifica.}
+ 
+\subsection{Portabilità}
+La portabilità è la capacità del software di essere trasportato da un ambiente di lavoro ad un altro. 
+
+\subsubsection{Obiettivi}
+\begin{itemize}
+\item \textbf{Adattabilità}: la capacità del software di essere adattato per differenti ambienti operativi senza dover applicare modifiche diverse da quelle fornite per il software considerato.
+\item \textbf{Installabilità}: la capacità del software di essere installato in uno specificato ambiente.
+\item \textbf{Conformità}: la capacità del prodotto software di aderire a standard e convenzioni relative alla portabilità.
+\item \textbf{Sostituibilità}: è la capacità di essere utilizzato al posto di un altro software per svolgere gli stessi compiti nello stesso ambiente.
+\end{itemize}
+
+ 
