@@ -215,7 +215,37 @@
 			\item \textbf{Dinamica}: tecnica di analisi del prodotto software che richiede la sua esecuzione. Viene effettuata mediante dei test che verificano se il prodotto funziona o se ci sono anomalie.
 			\end{itemize}
 			\paragraph{Test}
-		\subsubsection{Strumenti}
+			I test rappresentano l'attività fondamentale dell'analisi dinamica. Lo scopo dei test è di dimostrare che il codice scritto funzioni correttamente e che non presenti errori. 
+			Per ogni test devono essere definiti i seguenti parametri: 
+			\begin{itemize}
+			\item \textbf{ambiente:} sistema hardware e software sul quale verrà eseguito il test;
+			\item \textbf{stato iniziale:} stato iniziale dal quale il test viene eseguito;
+			\item \textbf{input:} dati in ingresso immessi;
+			\item \textbf{output:} dati in uscita attesi;
+			\item \textbf{istruzioni aggiuntive:} ulteriori istruzioni su come deve essere eseguito il test e sucome interpreare i risultati ottenuti.
+			\end{itemize}
+			Dei test ben scritti, per definirsi tali, devono:
+			\begin{itemize}
+			\item essere ripetibili;
+			\item specificare l'ambiente di esecuzione;
+			\item identificare input e output richiesti;
+			\item controllare la presenza di effetti indesiderati;
+			\item fornire informazioni sui risultati dell’esecuzione sotto forma di file di log.
+			\end{itemize}
+			Di seguito sono spiegati i diversi test del software.
+			\subparagraph{Test di unità}
+			I test di unità si eseguono su unità di software. Questi test si concentrano sul funzionamento delle unità individuali. Dati gli input possibili in un unità, si suddividono gli input in partizioni di equivalenza e si prova se gli input attesi danno gli output previsti. Le singole unità possono essere testate conl'ausilio di \glock{driver} e \glock{stub}.
+			\subparagraph{Test di integrazione}
+			I test d’integrazione verificano la correttezza delle interfacce. Rappresentano l’estensionelogica dei test d’unità e sono i predecessori dei test di sistema. Svolti con l’aggregazione in un unico componente di due o più unità già testate, la loro ideologia di base sta nell’eseguire tali test in modo da combinare progressivamente più parti, espandendo via via il processo al test di moduli di un gruppo con quelli di altri gruppi. Ogni test prevede vi siano almeno un paio di componenti correlate per sottoporre a verifica tutte le unità che compongono un processo.
+			\subparagraph{Test di sistema}
+			Una volta integrati tutti i suoi componenti il sistema viene testato nella sua interezza. Ci si concentra sulle interazioni tra le parti, sul comportamento delle caratteristiche del sistema e sulla copertura di tutte le funzionalità. Questo tipo di test porta alla luce le ipotesi errate che i diversi sviluppatori fanno su parti del software sviluppate da altri. In questa fase ci si assicura che il sistema rispetti tutte le specifiche definite nell'\textit{Analisi dei Requisiti}.
+			\subparagraph{Test di regressione}
+			Si effettua a seguito di una modifica del sistema e consiste nella riesecuzione dei test esistenti.
+			\subparagraph{Test di accettazione}
+			Anche detto "test di collaudo", è simile al test di sistema per l’oggetto testato, ma viene eseguito con la partecipazione dei committenti. Verifica il prodotto e, in particolare, il soddisfacimento del cliente. Il superamento del test di collaudo garantisce che il software è pronto per essere rilasciato.
+			\subsubsection{Strumenti}
+			\paragraph{Verifica ortografica}
+			Per la verifica ortografica dei documenti scritti in \LaTeX{} si utilizzerà lo strumento di correzione automatica presente nell’editor Texmaker.
 
 	\subsection{Validazione}
 		\subsubsection{Scopo}
