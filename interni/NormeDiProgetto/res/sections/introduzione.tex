@@ -7,14 +7,14 @@ I membri di DPCM 2077 sono obbligati ad applicare quanto scritto al fine di mant
 strumenti software scelti internamente al gruppo per rispettare le regole e attuare le procedure.
 
 \subsection{Composizione del Documento}
-Il documento si compone di 3 processi fondamentali secondo ISO/IEC 12207:1995:
+La struttura del documento si ispira alla suddivisione dei \glock{processi} in tre tipologie desunta dallo standard \dext{ISO/IEC 12207:1995}:
 \begin{itemize}
-\item{\textbf{Primari}: acquisizione, fornitura, sviluppo, gestione operativa e manutenzione;}
+\item{\textbf{Primari}: acquisizione, fornitura, sviluppo, gestione operativa e manutenzione;\footnote{nel presente documento vengono trattati solamente \textit{fornitura} e \textit{sviluppo}}}
 \item{\textbf{Supporto}: documentazione, gestione della configurazione, accertamento della qualità, verifica, validazione, revisioni congiunte con il cliente, verifiche ispettive interne e risoluzione dei problemi;}
 \item{\textbf{Organizzativi}: gestione dei processi, gestione delle infrastrutture tecniche, miglioramento del processo e formazione del personale.}
 \end{itemize}
 \subsection{Scopo del Prodotto}
-Lo scopo del prodotto è quello di sviluppare un’\glock{applicazione} in grado di
+Lo scopo del prodotto è di sviluppare un’\glock{applicazione} in grado di
 segnalare a un \glock{server} dedicato la presenza di un \glock{utente} su una determinata \glock{postazione} appartenente a
 una stanza. 
 Nel server deve essere possibile gestire più stanze e postazioni per:
@@ -23,7 +23,7 @@ Nel server deve essere possibile gestire più stanze e postazioni per:
 \item{controllare quali postazioni sono prenotate e bloccare le prenotazioni per una determinata
 stanza (e.g. all'esaurimento delle postazioni disponibili);}
 \item{garantire una \glock{tracciatura} autenticata delle presenze e la registrazione di tutti i cambiamenti di stato relativi alla pulizia della
-postazione, nonché le informazioni su chi ha igienizzato la postazione;}
+postazione, nonché le informazioni su chi ha igienizzato la postazione.}
 \end{itemize}
 L'applicazione dovrà essere in grado di svolgere i seguenti compiti:
 \begin{itemize}
@@ -31,7 +31,7 @@ L'applicazione dovrà essere in grado di svolgere i seguenti compiti:
 \item{prenotazione di una postazione;}
 \item{tracciatura delle postazioni in tempo reale tramite \glock{tag } \glock{RFID};}
 \item{pulizia di una postazione; Per pulizia si intende segnare come igienizzata una postazione;}
-\item{generare storico delle postazioni occupate e igienizzate.}
+\item{generare uno storico delle postazioni occupate e igienizzate.}
 \end{itemize}
 \glock{Client} e server comunicano tra loro nel momento in cui lo smartphone viene  a contatto con il tag RFID.
 

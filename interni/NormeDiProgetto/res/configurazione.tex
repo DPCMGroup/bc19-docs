@@ -25,6 +25,7 @@
 \usepackage{tikz}
 \usepackage{titlesec}
 \usepackage{lipsum}
+\usepackage{footmisc}
 
 
 % Impostazione sottotitolo di quarto livello e quinto livello
@@ -76,7 +77,7 @@
 
 \renewcommand{\footrulewidth}{0.1pt}
 \fancyfoot{}
-\lfoot{ \textcolor{footer-gray}{\docNome - v \docVersione} }
+\lfoot{ \textcolor{footer-gray}{\docNome - v. \docVersione} }
 
 \renewcommand{\footrule}{\hbox to\headwidth{\color{light-grayer}\leaders\hrule height \footrulewidth\hfill}}
 \rfoot{ \textcolor{footer-gray}{Pagina \thepage \hspace{1pt} di \pageref*{LastPage}} }
