@@ -232,17 +232,86 @@
 			\item controllare la presenza di effetti indesiderati;
 			\item fornire informazioni sui risultati dell’esecuzione sotto forma di file di log.
 			\end{itemize}
+			Per elencare le specifiche dei test si è scelta una rappresentazione tabellare contenente il codice del componente da testare, la descrizione dei test, il suo stato di avanzamento e il risultato del test.
+			Di seguito la nomenclatura dello stato del test:
+			\begin{itemize}
+				\item \textbf{I}: il test è stato implementato;
+				\item \textbf{NI}: il test non è stato implementato.
+			\end{itemize}			
+			Di seguito la nomenclatura del risultato del test:
+			\begin{itemize}
+				\item \textbf{S}: il test si è concluso con successo;
+				\item \textbf{F}: il test ha fallito.
+			\end{itemize}		
 			Di seguito sono spiegati i diversi test del software.
 			\subparagraph{Test di unità}
-			I test di unità si eseguono su unità di software. Questi test si concentrano sul funzionamento delle unità individuali. Dati gli input possibili in un unità, si suddividono gli input in partizioni di equivalenza e si prova se gli input attesi danno gli output previsti. Le singole unità possono essere testate conl'ausilio di \glock{driver} e \glock{stub}.
+			I test di unità si eseguono su unità di software. Questi test si concentrano sul funzionamento delle unità individuali. Dati gli input possibili in un unità, si suddividono gli input in partizioni di equivalenza e si prova se gli input attesi danno gli output previsti.
+			Questa tipologia di test verrà classificata nel seguente modo:
+			\begin{center}
+				\textbf{TU[Identificativo]}
+			\end{center}
+			dove:
+			\begin{itemize}
+				\item \textbf{Identificativo}: numero progressivo univoco incrementale, inizia da 1.
+			\end{itemize}
 			\subparagraph{Test di integrazione}
 			I test d’integrazione verificano la correttezza delle interfacce. Rappresentano l’estensionelogica dei test d’unità e sono i predecessori dei test di sistema. Svolti con l’aggregazione in un unico componente di due o più unità già testate, la loro ideologia di base sta nell’eseguire tali test in modo da combinare progressivamente più parti, espandendo via via il processo al test di moduli di un gruppo con quelli di altri gruppi. Ogni test prevede vi siano almeno un paio di componenti correlate per sottoporre a verifica tutte le unità che compongono un processo.
+			Questa tipologia di test verrà classificata nel seguente modo:
+			\begin{center}
+				\textbf{TI[Identificativo]}
+			\end{center}
+			dove:
+			\begin{itemize}
+				\item \textbf{Identificativo}: numero progressivo univoco incrementale, inizia da 1.
+			\end{itemize}
 			\subparagraph{Test di sistema}
 			Una volta integrati tutti i suoi componenti il sistema viene testato nella sua interezza. Ci si concentra sulle interazioni tra le parti, sul comportamento delle caratteristiche del sistema e sulla copertura di tutte le funzionalità. Questo tipo di test porta alla luce le ipotesi errate che i diversi sviluppatori fanno su parti del software sviluppate da altri. In questa fase ci si assicura che il sistema rispetti tutte le specifiche definite nell'\textit{Analisi dei Requisiti}.
+			Questa tipologia di test verrà classificata nel seguente modo:
+			\begin{center}
+				\textbf{TS[Priorità][Tipologia][Identificativo]}
+			\end{center}
+			dove:
+			\begin{itemize}
+				\item \textbf{Priorità}: indica la priorità del requisito associato al test:
+				\begin{itemize}
+					\item \textbf{\textit{1}}: obbligatorio, ossia irrinunciabile;
+					\item \textbf{\textit{2}}: desiderabile, non strettamente necessario;
+					\item \textbf{\textit{3}}: opzionale, ossia relativamente utile o contrattabile in corso d'opera.
+				\end{itemize}
+				\item \textbf{Tipologia} : indica la tipologia del requisito associato al test:
+				\begin{itemize}
+					\item \textbf{\textit{F}}: funzionale;
+					\item \textbf{\textit{P}}: prestazionale;
+					\item \textbf{\textit{Q}}: qualitativo;
+					\item \textbf{\textit{V}}: vincolo.
+				\end{itemize}
+				\item \textbf{Identificativo}: numero progressivo univoco incrementale, inizia da 1.
+			\end{itemize}
 			\subparagraph{Test di regressione}
 			Si effettua a seguito di una modifica del sistema e consiste nella riesecuzione dei test esistenti.
 			\subparagraph{Test di accettazione}
 			Anche detto "test di collaudo", è simile al test di sistema per l’oggetto testato, ma viene eseguito con la partecipazione dei committenti. Verifica il prodotto e, in particolare, il soddisfacimento del cliente. Il superamento del test di collaudo garantisce che il software è pronto per essere rilasciato.
+			Questa tipologia di test verrà classificata nel seguente modo:
+			\begin{center}
+				\textbf{TA[Priorità][Tipologia][Identificativo]}
+			\end{center}
+			dove:
+			\begin{itemize}
+				\item \textbf{Priorità}: indica la priorità del requisito associato al test:
+				\begin{itemize}
+					\item \textbf{\textit{1}}: obbligatorio, ossia irrinunciabile;
+					\item \textbf{\textit{2}}: desiderabile, non strettamente necessario;
+					\item \textbf{\textit{3}}: opzionale, ossia relativamente utile o contrattabile in corso d'opera.
+				\end{itemize}
+				\item \textbf{Tipologia} : indica la tipologia del requisito associato al test:
+				\begin{itemize}
+					\item \textbf{\textit{F}}: funzionale;
+					\item \textbf{\textit{P}}: prestazionale;
+					\item \textbf{\textit{Q}}: qualitativo;
+					\item \textbf{\textit{V}}: vincolo.
+					\item \textbf{Identificativo}: numero progressivo univoco incrementale, inizia da 1.
+				\end{itemize}
+			\end{itemize}
 			\subsubsection{Strumenti}
 			\paragraph{Verifica ortografica}
 			Per la verifica ortografica dei documenti scritti in \LaTeX{} si utilizzerà lo strumento di correzione automatica presente nell’editor Texmaker.
