@@ -1,0 +1,53 @@
+\section{Qualità di Processo}
+Il gruppo \textit{DPCM 2077} ha deciso di seguire lo standard ISO/IEC/IEEE 12207:1995 per garantire la qualità dei processi, i quali sono stati adattati secondo le nostre esigenze. 
+Il risultato sono i processi presentati di seguito.
+	\subsection{Processi di sviluppo}
+		\subsubsection{Analisi dei Requisiti - Metriche}
+		\paragraph{PROS:Percentuale di requisiti obbligatori soddisfatti}
+		Sta ad indicare la percentuale di requisiti obbligatori soddisfatti.
+		\begin{itemize}
+		\item espresso in percentuale: $PROS = \frac{requisiti \ obbligatori \ soddisfatti}{requisiti \ obbligatori \ totali}$;
+		\item valore preferibile: 100\%;
+		\item valore accettabile: 100\%.
+		\end{itemize}
+		\subsubsection{Progettazione al dettaglio - Metriche}
+		\paragraph{CBO: Accoppiamento tra le classi di oggetti}
+		Una classe è acccoppiata alla seconda se usa metodi o variabili definiti nella seconda.
+		\begin{itemize}
+		\item espresso con un valore intero: CBO;
+		\item valore preferibile: $0 \leq CBO \leq 1$;
+		\item valore accettabile: $0 \leq CBO \leq 6$.
+		\end{itemize}
+		\subsubsection{Codifica - Metriche}
+		\paragraph{Profondità della gerarchia}
+		Misura la profondità del sito in quanto un sito per essere di facile utilizzo non deve essere troppo profondo.
+		\begin{itemize}
+		\item misura: livello di profondità delle pagine;
+		\item valore preferibile: $\leq 4$;
+		\item valore accettabile: $ \leq 7$.
+		\end{itemize}
+		\paragraph{Numero di parametri per metodo}
+		\begin{itemize}
+		\item numero intero;
+		\item valore preferibile: $\leq 3$;
+		\item valore accettabile: $ \leq 4$.
+		\end{itemize}
+		
+	\subsection{Processi di supporto}
+		\subsubsection{Pianificazione - Metriche}
+		\subsubsection{Verifica - Metriche}
+		\paragraph{CC: Code Coverage}
+		Indica il numero di righe di codice percorse dai test durante la loro esecuzione. Per linee di codice totali si intende tutte quelle appartenenti all'unità in fase di test.
+		\begin{itemize}
+		\item valore percentuale: $CC = \frac{linee \ di \ codice \ percorse}{linee \ di \ codice \ totali}$;
+		\item valore preferibile: 100\%;
+		\item valore accettabile: 75\%.
+		\end{itemize}
+		\subsubsection{Documentazione - Metriche}
+		\paragraph{Indice di Gulpease}
+		Indice della leggibilità del testo. Valuta la lunghezza delle parole e delle frasi rispetto al numero totale di lettere.
+		\begin{itemize}
+		\item valore intero da 0 a 100: $I = 89 + \frac{(300 \cdot numero \ di \ frasi - 10 \cdot numero \ di \ lettere)}{numero \ di \ parole}$;
+		\item valore preferibile: $80 < I < 100$;
+		\item valore accettabile: $40 < I < 100$.
+		\end{itemize}
