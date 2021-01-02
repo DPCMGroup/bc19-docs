@@ -74,13 +74,31 @@ In questa sezione sono riportati tutti i casi d'uso individuati, divisi per atto
            	\item\textbf{Postcondizione:}
 \end{itemize}
 
-\subsubsection{ UC5 -  Gestione stanze e postazioni}
+\subsubsection{ UC5 - Gestione stanze e postazioni}
 \begin{itemize}
            	\item\textbf{Attori Primari:} 
            	\item\textbf{Descrizione:} 
            	\item\textbf{Scenario principale:} 
            	\item\textbf{Precondizione:} 
            	\item\textbf{Postcondizione:}
+\end{itemize}
+\subsubsection{ UC5.1 - Visualizzazione stanze e postazioni}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	Amministratore\\ 
+	\item\textbf{Descrizione:}
+	Il sistema mostra all'amministratore lo schema delle stanze e delle postazioni aggiornato rispetto alle azioni salvata su Ethereum.
+	\item\textbf{Scenario principale:}
+	Il sistema ottiene da Ethereum la lista delle azioni salvate. In base a questa aggiorna lo schema delle stanze e delle postazioni e lo fa visualizzare all'amministratore. Le postazioni sono colorate in base al loro stato e gli stati possibili sono:
+	- libera e igienizzata
+	- libera e non igienizzata
+	- occupata
+	- prenotata e igienizzata
+	- prenotata e non igienizzata
+	\item\textbf{Precondizione:} 
+	L'utente è autenticato come amministratore.
+	\item\textbf{Postcondizione:}
+	L'amministratore visualizza lo schema delle stanze e delle postazioni.
 \end{itemize}
 
 \subsubsection{ UC6 - Gestione credenziali dipendenti e addetti}
