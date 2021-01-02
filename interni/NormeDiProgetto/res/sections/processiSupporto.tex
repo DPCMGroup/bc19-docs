@@ -15,13 +15,14 @@
 					Ogni documento viene creato basandosi sul seguente ciclo di vita:
 					\begin{itemize}
 					\item \textbf{stesura:} il documento viene creato da uno o più redattori seguendo le regole presenti in questo documento. Una volta terminata la stesura i redattori autorizzeranno l'avanzamento del documento all'attività successiva.
-					\item \textbf{verifica:} viene effettutato da uno o più verificatori un controllo sul documento sia per quanto riguarda la stesura corretta, sia per un controllo semantico e sintattico seguendo le norme di progetto. Terminato il controllo se il documento dovesse essere corretto, i verificatori autorizzeranno il passaggio del documento alla fase successiva, in caso contrario tornerà alla prima fase.
-					\item \textbf{approvazione:} è l'ultima fase del ciclo di vita del documento. In questa fase l'approvatore conferma l'esito positivo al responsabile il quale rilascerà il documento. 
+					\item \textbf{verifica:} viene effettutato da uno o più verificatori un controllo sul documento sia per quanto riguarda la stesura corretta, sia per un controllo semantico e sintattico seguendo le norme di progetto. Terminato il controllo se il documento dovesse essere corretto, i verificatori autorizzeranno il passaggio del documento alla fase successiva, in caso contrario tornerà alla prima fase, con le indicazioni delle parti da emendare.
+					\item \textbf{approvazione:} è l'ultima fase del ciclo di vita del documento. In questa fase il responsabile autorizza o meno il rilascio il documento.
 					\end{itemize}
+				Il responsabile ha facoltà di intervenire, in ogni momento del ciclo di vita del documento, dando indicazioni se interpellato o per sua volontà.
 				\subparagraph{Documenti ufficiali}
 					Si dicono ufficiali i documenti che:
 					\begin{itemize}
-						\item sono stati revisionati, verificati ed approvati;
+						\item sono stati revisionati, verificati e approvati;
 						\item sono gli unici rilasciabili all'esterno del gruppo di progetto.
 					\end{itemize}
 					
@@ -31,7 +32,7 @@
 						\item[\textbf{Piano di progetto:}] stabilisce e documenta tutti gli aspetti del nostro progetto organizzandoli in modo da raggiungere i risultati nel modo più efficace ed efficiente possibile. Organizza le attività, ne analizza i rischi, e le associa ai membri del gruppo. I destinatari di questo documento sono il committente e il proponente oltre al gruppo \textit{DPCM 2077}. 
 						\item[\textbf{Piano di qualifica:}] espone e descrive i criteri di valutazione della qualità adottati dal gruppo. I destinatari di questo documento sono il committente e il proponente oltre al gruppo \textit{DPCM 2077}. 
 						\item[\textbf{Analisi dei requisiti:}] ha lo scopo di definire le funzionalità che il nostro progetto deve offrire e quindi i requisiti che devono essere soddisfatti. I destinatari di questo documento sono il committente e il proponente oltre al gruppo \textit{DPCM 2077}.
-						\item[\textbf{Verbali}]: hanno lo scopo di riassumere in modo conciso i contenuti delle riunioni e soprattutto le decisioni prese da \textit{DPCM 2077}.
+						\item[\textbf{Verbali:}] hanno lo scopo di riassumere in modo conciso i contenuti delle riunioni e soprattutto le decisioni prese da \textit{DPCM 2077}.
 						\item[\textbf{Glossario:}] il documento è composto da un elenco ordinato di tutti i termini usati nella documentazione che il gruppo ritiene necessitino di una definizione esplicita, al fine di rimuovere ogni ambiguità. I destinatari di questo documento sono il committente e il proponente oltre al gruppo \textit{DPCM 2077}.
 					\end{description}
 					
@@ -45,7 +46,7 @@
 					\begin{itemize}
 						\item \textbf{versione:} versione attuale del documento;
 						\item \textbf{uso:} destinazione d'uso del documento, che potrà essere "interno" o "esterno";
-						\item \textbf{stato:} attuale stato del documento, che potrà essere "in redazione", "verificato" o "approvato";
+						\item \textbf{stato:} attuale stato del documento, che potrà essere "in redazione" o "approvato";
 						\item \textbf{destinatari:} destinatari del documento;
 						\item \textbf{redazione:} lista dei membri del gruppo che si sono occupati della stesura dello specifico documento;
 						\item \textbf{verifica:} lista dei membri del gruppo che si sono occupati della verifica dello specifico documento;
@@ -145,13 +146,13 @@
 		  	\item \textbf{Y}: rappresenta una versione parzialmente stabile del documento che è stata soggetta a verifica da parte di un verificatore:
 		  		\begin{itemize}
 		   			\item inizia da 0;
-		   			\item viene incrementato dal verificatore ad ogni verifica; 
+		   			\item viene incrementato dal verificatore a ogni verifica; 
 		   			\item quando viene incrementato X, viene riportato a 0.
 		   		\end{itemize}
 		   	\item \textbf{Z}: rappresenta una versione instabile del documento in fase di lavorazione da parte dei redattori:
 		   		\begin{itemize}
 		   			\item inizia da 0;
-		   			\item viene incrementato dal redattore ad ogni modifica; 
+		   			\item viene incrementato dal redattore a ogni modifica; 
 		   			\item quando viene incrementato X, viene riportato a 0.
 		   		\end{itemize}
 			\end{itemize}
@@ -160,7 +161,7 @@
 	Il repository fa uso di un Version Control System (VCS) di tipo distribuito sotto il motore \textit{Git}, che permette la condivisione dal locale al remoto del proprio spazio di lavoro su un luogo comune.\\
 		Attraverso l'utilizzo di un web browser, è possibile collegarsi a \textit{GitHub} e controllare i file contenuti in un repository. 
 			\paragraph{Repository}
-			Ci sono due tipi di repository la cui struttura è identica e raccolgono i file sorgenti per la compilazione dei documenti, suddivisi tra esterni ed interni:
+			Ci sono due tipi di repository la cui struttura è identica e raccolgono i file sorgenti per la compilazione dei documenti, suddivisi tra esterni e interni:
 			\begin{itemize}
 		   			\item \textbf{locale}: ogni membro del gruppo lavora sui file clonati dal repository remoto nel proprio computer;
 		   			\item \textbf{remoto}: pubblicato su \textit{GitHub}, contiene il lavoro svolto da ogni componente e che viene condiviso con i membri di DPCM 2077.
@@ -215,14 +216,14 @@
 			\item \textbf{Dinamica}: tecnica di analisi del prodotto software che richiede la sua esecuzione. Viene effettuata mediante dei test che verificano se il prodotto funziona o se ci sono anomalie.
 			\end{itemize}
 			\paragraph{Test}
-			I test rappresentano l'attività fondamentale dell'analisi dinamica. Lo scopo dei test è di dimostrare che il codice scritto funzioni correttamente e che non presenti errori. 
+			I test rappresentano l'attività fondamentale dell'analisi dinamica. Lo scopo dei test è dimostrare che il codice scritto funzioni correttamente e che non presenti errori. 
 			Per ogni test devono essere definiti i seguenti parametri: 
 			\begin{itemize}
 			\item \textbf{ambiente:} sistema hardware e software sul quale verrà eseguito il test;
 			\item \textbf{stato iniziale:} stato iniziale dal quale il test viene eseguito;
 			\item \textbf{input:} dati in ingresso immessi;
 			\item \textbf{output:} dati in uscita attesi;
-			\item \textbf{istruzioni aggiuntive:} ulteriori istruzioni su come deve essere eseguito il test e sucome interpreare i risultati ottenuti.
+			\item \textbf{istruzioni aggiuntive:} ulteriori istruzioni su come deve essere eseguito il test e su come interpretare i risultati ottenuti.
 			\end{itemize}
 			Dei test ben scritti, per definirsi tali, devono:
 			\begin{itemize}
@@ -245,7 +246,7 @@
 			\end{itemize}		
 			Di seguito sono spiegati i diversi test del software.
 			\subparagraph{Test di unità}
-			I test di unità si eseguono su unità di software. Questi test si concentrano sul funzionamento delle unità individuali. Dati gli input possibili in un unità, si suddividono gli input in partizioni di equivalenza e si prova se gli input attesi danno gli output previsti.
+			I test di unità si eseguono su unità di software. Questi test si concentrano sul funzionamento delle unità individuali. Dati gli input possibili in un'unità, si suddividono gli input in partizioni di equivalenza e si prova se gli input attesi danno gli output previsti.
 			Questa tipologia di test verrà classificata nel seguente modo:
 			\begin{center}
 				\textbf{TU[Identificativo]}
@@ -255,7 +256,7 @@
 				\item \textbf{Identificativo}: numero progressivo univoco incrementale, inizia da 1.
 			\end{itemize}
 			\subparagraph{Test di integrazione}
-			I test d’integrazione verificano la correttezza delle interfacce. Rappresentano l’estensionelogica dei test d’unità e sono i predecessori dei test di sistema. Svolti con l’aggregazione in un unico componente di due o più unità già testate, la loro ideologia di base sta nell’eseguire tali test in modo da combinare progressivamente più parti, espandendo via via il processo al test di moduli di un gruppo con quelli di altri gruppi. Ogni test prevede vi siano almeno un paio di componenti correlate per sottoporre a verifica tutte le unità che compongono un processo.
+			I test d’integrazione verificano la correttezza delle interfacce. Rappresentano l’estensione logica dei test d’unità e sono i predecessori dei test di sistema. Vengono svolti aggregando due o più unità già testate in un unico componente ed espandendo, di fatto, i test di moduli di un gruppo con quelli di altri gruppi. Ogni test prevede vi siano almeno un paio di componenti correlate per sottoporre a verifica tutte le unità che compongono un processo.
 			Questa tipologia di test verrà classificata nel seguente modo:
 			\begin{center}
 				\textbf{TI[Identificativo]}
@@ -314,7 +315,7 @@
 			\end{itemize}
 			\subsubsection{Strumenti}
 			\paragraph{Verifica ortografica}
-			Per la verifica ortografica dei documenti scritti in \LaTeX{} si utilizzerà lo strumento di correzione automatica presente nell’editor Texmaker.
+			Per la verifica ortografica dei documenti scritti in \LaTeX{} si utilizzerà lo strumento di correzione automatica presente negli editor Texmaker e TexStudio.
 
 	\subsection{Validazione}
 		\subsubsection{Scopo}
