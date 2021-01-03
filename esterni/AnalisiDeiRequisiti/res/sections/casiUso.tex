@@ -272,10 +272,13 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	Amministratore 
 	\item\textbf{Descrizione:}
 	L'utente modifica il codice identificativo di una stanza.
-	\item\textbf{Estensioni:}
-	Rendere una stanza inaccessibile per alcuni giorni (UC5.4.1).
 	\item\textbf{Scenario principale:} 
-	L'utente preme un pulsante per la modifica di una stanza. Gli viene chiesto di inserire il nuovo codice identificativo e di confermare la modifica. La stanza ha ora il codice aggiornato.
+	L'utente preme un pulsante per la modifica di una stanza. Gli viene chiesto di inserire il nuovo nome e di confermare la modifica. La stanza ha ora il nome aggiornato.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] Rendere una stanza inaccessibile per alcuni giorni (UC5.4.1).
+		\item[$-$] Se è già presente una stanza con lo stesso nome l'utente viene avvisato (UC5.2.1)
+	\end{itemize}
 	\item\textbf{Precondizione:} 
 	L'utente è autenticato.
 	\item\textbf{Postcondizione:}
