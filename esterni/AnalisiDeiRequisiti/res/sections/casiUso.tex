@@ -247,7 +247,6 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	L'utente si trova sulla pagina di creazione di una stanza.
 	\item\textbf{Postcondizione:}
 	L'utente visualizza il messaggio d'errore.
-	
 \end{itemize}
 
 \subsubsection{ UC5.3 - Eliminazione di una stanza}
@@ -320,10 +319,47 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\end{itemize}
 	Inoltre gli viene chiesto di indicare la posizione della postazione su una scacchiera rappresentante la stanza.
 	L'amministratore preme un bottone per la conferma dei dati e la postazione viene aggiunta all'interno della stanza. La nuova configurazione della stanza viene comunicata ad Ethereum.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] Avviso codice postazione già presente (UC5.5.1).
+		\item[$-$] Avviso codice tag già presente (UC5.5.2).
+	\end{itemize}
 	\item\textbf{Precondizione:} 
 	L'utente è autenticato.
 	\item\textbf{Postcondizione:}
 	E' stata inserita una nuova postazione all'interno di una stanza.
+\end{itemize}
+
+
+
+\subsection{ UC5.5.1 - Avviso codice postazione già utilizzato}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:}
+	l'utente tenta di assegnare a una postazione un codice già utilizzato attualmente per un'altra.
+	\item\textbf{Scenario principale:}
+	l'utente sta creando o modificando una postazione ed inserisce come codice un valore giù utilizzato.
+	La postazione non viene creata e alla vista dell'utente compare un avviso che indica appunto che il codice è attualmente utilizzato.
+	\item\textbf{Precondizione:}
+	l'utente si trova sulla pagina di creazione o quella di modifica di una postazione.
+	\item\textbf{Postcondizione:}
+	l'utente visualizza il messaggio d'errore.
+\end{itemize}
+
+\subsection{ UC5.5.2 - Avviso codice tag già utilizzato}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:}
+	l'utente tenta di assegnare a una postazione il codice di un tag già utilizzato attualmente per un'altra.
+	\item\textbf{Scenario principale:}
+	l'utente sta creando o modificando una postazione ed inserisce come codice del tag corrispondente un valore già utilizzato.
+	La postazione non viene creata e alla vista dell'utente compare un avviso che indica appunto che il codice del tag è già assegnato ad una postazione.
+	\item\textbf{Precondizione:}
+	l'utente si trova sulla pagina di creazione o quella di modifica di una postazione.
+	\item\textbf{Postcondizione:}
+	l'utente visualizza il messaggio d'errore.
 \end{itemize}
 
 \subsubsection{ UC5.6 - Eliminazione di una postazione}
@@ -372,6 +408,11 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente modifica gli attributi di una postazione.
 	\item\textbf{Scenario principale:} 
 	l'utente preme sul pulsante per la modifica di una postazione. Gli vengono richiesti i nuovi dati da inserire e la nuova posizione della postazione. Il sistema invia i nuovi dati a Ethereum.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] Avviso codice postazione già presente (UC5.5.1).
+		\item[$-$] Avviso codice tag già presente (UC5.5.2).
+	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
