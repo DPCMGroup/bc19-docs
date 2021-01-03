@@ -279,6 +279,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item[$-$] Rendere una stanza inaccessibile per alcuni giorni (UC5.4.1).
 		\item[$-$] Se è già presente una stanza con lo stesso nome l'utente viene avvisato (UC5.2.1)
 	\end{itemize}
+
 	\item\textbf{Precondizione:} 
 	L'utente è autenticato.
 	\item\textbf{Postcondizione:}
@@ -293,6 +294,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	L'utente rende una stanza inaccessibile per alcuni giorni.
 	\item\textbf{Scenario principale:} 
 	L'utente imposta le date di inizio e fine del periodo di inaccessibilità della stanza e conferma l'impostazione attraverso un pulsante.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] Cancellazione delle prenotazioni per quella postazione e notifica agli utenti che avevano prenotato (UC5.6.1).
+	\end{itemize}
 	\item\textbf{Precondizione:} 
 	L'utente è autenticato come amministratore e ha raggiunto l'area dedicata a questa azione.
 	\item\textbf{Postcondizione:}
@@ -331,26 +336,46 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	L'utente elimina una postazione.
 	\item\textbf{Scenario principale:} 
 	L'utente raggiunge l'area di eliminazione delle postazioni, ne seleziona una ed esegue l'eliminazione. La nuova configurazione della stanza viene inviata ad Ethereum.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] Cancellazione delle prenotazioni per quella postazione e notifica a gli utenti che avevano prenotato (UC5.6.1).
+	\end{itemize}
 	\item\textbf{Precondizione:} 
 	L'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
 	Una postazione è stata eliminata.
 \end{itemize}
 
+\subsection{ UC5.6.1 - Avviso agli utenti che hanno prenotato}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Attori Secondari:}
+	dipendente.
+	\item\textbf{Descrizione:}
+	gli utenti che hanno prenotato una postazione che è stata non è più disponibile vengono avvisati.
+	\item\textbf{Scenario principale:}
+	se amministratore esegue la modifica o l'eliminazione di una postazione i dipendenti vengono avvisati che le loro prenotazioni non sono più valide.
+	\item\textbf{Precondizione:}
+	l'utente è autenticato come amministratore e alcuni dipendenti hanno prenotato la postazione che verrà resa non disponibile.
+	\item\textbf{Postcondizione:}
+	la postazione non è disponibile e i dipendenti interessati sono stati avvisati.
+\end{itemize}
+
 \subsubsection{ UC5.7 - Modifica di una postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
-	Amministratore 
+	amministratore.
 	\item\textbf{Attori Secondari:}
-	Ethereum
+	Ethereum.
 	\item\textbf{Descrizione:}
-	L'utente modifica gli attributi di una postazione.
+	l'utente modifica gli attributi di una postazione.
 	\item\textbf{Scenario principale:} 
-	L'utente preme sul pulsante per la modifica di una postazione. Gli vengono richiesti i nuovi dati da inserire e la nuova posizione della postazione. Il sistema invia i nuovi dati a Ethereum.
+	l'utente preme sul pulsante per la modifica di una postazione. Gli vengono richiesti i nuovi dati da inserire e la nuova posizione della postazione. Il sistema invia i nuovi dati a Ethereum.
 	\item\textbf{Precondizione:} 
-	L'utente è autenticato come amministratore.
+	l'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
-	Sono stati aggiornati gli attributi della postazione selezionata.
+	sono stati aggiornati gli attributi della postazione selezionata.
 \end{itemize}
 
 \subsubsection{ UC6 - Gestione credenziali}
@@ -361,7 +386,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\label{fig:Gestione credenziali}
 \end{figure}
 \begin{itemize}
-           	\item\textbf{Attori Primari:} 
+           	\item\textbf{Attori Primari:}
            	Amministratore
            	\item\textbf{Descrizione:} 
            	L'amministratore visualizza, crea, modifica ed elimina le credenziali di tutti gli altri utenti.
