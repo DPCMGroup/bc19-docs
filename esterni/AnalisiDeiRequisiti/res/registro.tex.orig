@@ -10,7 +10,10 @@
 		\endfirsthead
 		
 		% ----- Modificare da qui -----
+<<<<<<< HEAD
+=======
 		0.0.17 & Inizio stesura requisiti & 2021-01-03 & Matteo Budai & Responsabile \\
+>>>>>>> 25f8e91e324dfbb043df43e16c5e5cdcd2074c73
 		\hline
 		0.0.16 & Aggiunti UC5.5.1 e UC5.5.2 & 2021-01-03 & Ivan Piacere & Analista \\
 		\hline

@@ -33,7 +33,7 @@ Il significato delle seguenti voci è:
 \subsection{Requisiti funzionali}
 \begin{center}
 	\rowcolors{2}{lightest-grayest}{white}
-	\begin{longtable}{|c|c|c|}
+	\begin{longtable}{|c|p{10cm}|p{4cm}|}
 		\hline
 		\rowcolor{lighter-grayer}
 		\textbf{Requisito} & \textbf{Descrizione} & \textbf{Fonti}  \\
@@ -41,15 +41,101 @@ Il significato delle seguenti voci è:
 		\endfirsthead
 		
 		% ----- Modificare da qui -----
-		 R & & \\
+		 R2F1 & L'utente può leggere una breve guida per il login e ill funzionamento & Interno - UC1 \\
 		\hline
-		
+		R1F3	&	L'utente autenticato deve potersi disautenticare dal sistema& Interno - UC3	\\
+		\hline
+		R2F4	&L'amminitratore deve poter gestire le impostazioni del sistema	& Capitolato - UC4	\\
+					\hline
+		R2F4.1	&	L'amministratore deve poter visualizzare la durata dei periodi che servono per accertare l'occupazione e la liberazione di una postazione da parte di un utente& Interno - UC4.1	\\
+					\hline
+			R2F4.2&L'amministratore deve poter modificare la durata dei periodi che servono per accertare l'occupazione e la liberazione di una postazione da parte di un utente	&Interno - UC4.2 	\\
+					\hline
+			R1F5&L'amministratore deve poter gestire le stanze e le postazioni salvate nel sistema	& Capitolato - UC5	\\
+					\hline
+			R1F5.1&L'amministratore deve poter visualizzare le stanze e le postazioni salvate nel sistema in modo schematico	& Capitolato - UC5.1	\\
+					\hline
+			R1F5.2&	L'amministratore deve poter vede le postazioni colorate in base al loro stato attuale.& Capitolato - UC5.1	\\
+					\hline
+			R1F5.3&	Gli stati delle postazioni devono essere i seguenti: libera e igienizzata, libera e non igienizzata, occupata, prenotata e igienizzata, prenotata e non igienizzata e inaccessibile& 	Capitolato - UC5.1\\
+					\hline
+			R1F5.4&Per ogni stanza deve essere indicato il numero di occupanti attuali	& Capitolato - UC5.1	\\
+					\hline
+			R1F5.5&L'amministratore deve poter visualizzare un calendario delle prenotazioni delle postazioni	& Capitolato - UC5.1.1	\\
+					\hline
+				R1F5.6&L'amministratore deve poter aggiungere una stanza al sistema e assegnarle un nome	& Capitolato - UC5.2	\\
+						\hline
+				R1F5.7&	La creazione di una nuova stanza va salvata in Ethereum&Verbale 2021-01-04 - UC5.2 	\\
+						\hline
+				R1F5.8&L'amministratore deve poter eliminare una stanza dal sistema	& Capitolato - UC5.3	\\
+						\hline
+				R1F5.9&L'eliminazione di una stanza va salvata in Ethereum	& Verbale 2021-01-04 - UC5.3	\\
+						\hline
+				R1F5.10&L'amministratore deve poter modificare il nome di una stanza	& Capitolato - UC5.4	\\
+						\hline
+			R1F5.11&L'amministratore deve poter impostare una stanza come inaccessibile per alcuni giorni, a partire anche da un giorno diverso da quello odierno	& Capitolato - UC5.4.1	\\
+					\hline
+			R1F5.12&Gli utenti che hanno prenotato una postazione devono essere avvisati se la postazione stessa o la stanza in cui si trova diventa non disponibile	& Verbale esterno 2020-12-18 - UC5.6.1	\\
+					\hline
+R1F5.13&Se si tenta di creare una stanza o modificarla con un nome attualmente assegnato a un'altra, si riceve un messaggio d'errore e la stanza non viene creata o modificata	& Interno - UC5.2.1	\\
+						\hline
+			R1F5.14&L'amministratore deve poter aggiungere una postazione in una stanza, specificando: codice della postazione, codice del tag RFID che la identifica e posizione all'interno di una stanza	& Capitolato - UC5.5	\\
+					\hline
+			R1F5.15&L'aggiunta di una postazioni va salvata in Ethereum	&Verbale 2021-01-04 - UC5.5 	\\
+					\hline
+R1F5.16&L'amministratore deve poter eliminare una postazione	& Capitolato - UC5.6	\\
+						\hline
+		R1F5.17	&L'eliminazione di una postazione va salvata in Ethereum	& Verbale 2021-01-04 - UC5.6	\\
+					\hline
+			R1F5.18&L'amministratore deve poter modificare i dati e la posizione di una postazione	& Capitolato - UC5.7	\\
+					\hline
+R1F5.19&	La modifica di una postazione va salvata in Ethereum& Verbale 2021-01-04 - UC5.7	\\
+					\hline
+R1F5.20&	Se si tenta di creare o modificare una postazione assegnandole un codice già in utilizzo l'azione deve fallire e deve comparire un messaggio d'errore& Verbale 2020-12-18 - UC5.5.1 	\\
+						\hline
+			R1F5.21&Se si tenta di creare o modificare una postazione assegnandole un codice del tag già in utilizzo l'azione deve fallire e deve comparire un messaggio d'errore	&Verbale 2020-12-18 - UC5.5.2 	\\
+					\hline
+			R1F6&L'amministratore deve poter gestire le credenziali degli utenti	& Capitolato - UC6		\\
+					\hline
+R1F6.1&L'amministratore deve poter visualizzare una lista delle credenziali di tutti gli utente del sistema	& Capitolato - UC6.1	\\
+					\hline
+R1F6.2&L'amministratore deve poter creare nuove credenziali per accedere al sistema. Le informazioni contenute nel profilo di un utente sono: Nome, Cognome, Nome utente, Password e E-mail. Tra queste le informazioni necessarie per l'accesso sono password ed e-mail	& Capitolato - Verbale 2021-01-04 - UC6.2	\\
+						\hline
+			R1F6.3&L'amministratore può modificare le credenziali degli utenti del sistema	&Capitolato - UC6.3 	\\
+					\hline
+			R1F6.4&L'amministratore deve poter eliminare credenziali di utenti del sistema	& Capitolato - UC6.4	\\
+					\hline
+R1F6.5&Il sistema deve poter memorizzare più credenziali per ogni categoria di utenti: amministratori, dipendenti e addetti	& Capitolato - Verbale 2021-01-04	\\
+					\hline
+R1F7&L'amministratore deve poter esplorare la storia delle postazioni occupate da uno specifico utente	& Capitolato - UC7	\\
+						\hline
+			R1F7.1&L'amministratore deve poter visualizzare in forma tabellare le occupazioni di postazioni da parte di un utente specifico, con date e orari di inizio e fine delle occupazioni e codici delle postazioni.	&Capitolato - UC7.1 	\\
+					\hline
+			R1F7.2&L'amministratore deve poter effettuare una ricerca tra le postazioni occupate da un utente. I valori che si possono specificare per la ricerca sono: codice della postazione e periodo all'interno del quale l'utente occupava la postazione	& 	Capitolato - UC7.2\\
+					\hline
+R1F8&L'amministratore deve poter ottenere una tabella delle sanificazioni di tutte le postazioni, con data e ora in cui sono avvenute.	&Capitolato - UC8 	\\
+					\hline
+R1F13&L'addetto alle pulizie riceve l'elenco delle stanze e delle postazioni che necessitano di igienizzazione	& Interno - UC13	\\
+						\hline
+			R1F13.1&	L'addetto alle pulizie riceve l'elenco delle stanze che necessitano di igienizzazione& 	Capitolato - UC13.1\\
+					\hline
+			R1F13.2&L'addetto alle pulizie riceve l'elenco delle postazioni che necessitano di igienizzazione	& Interno - UC13.2	\\
+					\hline
+R1F14&L'addeto alle pulizie deve registrare sulla blockchain con l'utilizzo di ethereum quando igienizza una stanza o una postazione	& Interno - UC14	\\
+					\hline
+R1F14.1&L'addetto alle pulizie deve poter marcare, nella sezione apposita, una stanza come igienizzata	& Capitoato - UC14.1	\\
+						\hline
+			R1F14.2&L'addetto alle pulizie deve poter marcare, nella sezione apposita, una postazione come igienizzata	&Interno - UC14.2 	\\
+					\hline
+			R1F14.3&L'addetto alle pulizie non può pulire postazioni o stanze occupate	& Verbale 2021-01-04	\\
+					\hline
+						
 	\end{longtable}
 \end{center}
 \subsection{Requisiti di qualità}
 \begin{center}
 	\rowcolors{2}{lightest-grayest}{white}
-	\begin{longtable}{|c|c|c|}
+	\begin{longtable}{|c|p{10cm}|p{4cm}|}
 		\hline
 		\rowcolor{lighter-grayer}
 		\textbf{Requisito} & \textbf{Descrizione} & \textbf{Fonti}  \\
@@ -57,7 +143,7 @@ Il significato delle seguenti voci è:
 		\endfirsthead
 		
 		% ----- Modificare da qui -----
-		 R & & \\
+		 R1Q1 &La progettazione e la codifica devono rispettare le norme e le metriche definite nel documento Piano di qualifica v1.0.0 & Interno\\
 		\hline
 		
 	\end{longtable}
@@ -65,7 +151,7 @@ Il significato delle seguenti voci è:
 \subsection{Requisiti di vincolo}
 \begin{center}
 	\rowcolors{2}{lightest-grayest}{white}
-	\begin{longtable}{|c|c|c|}
+	\begin{longtable}{|c|p{10cm}|p{4cm}|}
 		\hline
 		\rowcolor{lighter-grayer}
 		\textbf{Requisito} & \textbf{Descrizione} & \textbf{Fonti}  \\
@@ -73,11 +159,36 @@ Il significato delle seguenti voci è:
 		\endfirsthead
 		
 		% ----- Modificare da qui -----
-		 R & & \\
+		 R1V1 &avere il server che esponga, in aggiunta a eventuali altri protocolli per l’interazione con il servizio specifico, delle API Rest attraverso le quali sia possibile utilizzare l'applicativo &Capitolato \\
 		\hline
-		
+		R3V1.1&è possibile utilizzare gRPC come soluzione alternativa al Rest	& Capitolato	\\
+		\hline
+R1V2&scansione dei codici nel tempo sufficiente a certificare la presenza  della persona in postazione.	& Capitolato	\\
+		\hline
+R1V2.1&L’utilizzo del lettore RFID riduce in modo rilevante l’autonomia dei cellulari, l’applicazione è da sviluppare in maniera tale da bilanciare nel miglior modo possibile batteria e scansioni. È richiesto un resoconto delle scelte fatte e dei test effettuati per garantire il miglior rapporto raggiunto.	& Capitolato	\\
+		\hline
+		R1V3&Avere le componenti applicative correlate da test unitari e d’integrazione.	& Capitolato	\\
+		\hline
+R1V4&è richiesto che il sistema venga testato nella sua interezza tramite test end-to-end	& Capitolato	\\
+		\hline
+R2V5&Le comunicazioni tra app e server devono essere cifrate	& Capitolato	\\
+		\hline
+		R2V6&	Deve essere fornita un'analisi del numero di utenti da supportare e del servizio cloud più adatto per adempiervi, analizzando prezzo, stabilità del servizio ed assistenza (supponendo di disporre di massimo 2 CPU e 1Gi2 per istanza del server).& Capitolato	\\
+		\hline
+R1V7&Deve essere sviluppata un'applicazione per Android o iOS	& Capitolato	\\
+		\hline
+R1V8&Devono essere scritti dei test che abbiamo una copertura di almeno l'80 per cento del codice e deve essere fornito il report della loro esecuzione	& 	\\
+		\hline
+
+R1V9&Devono essere eseguiti dei test che mettano in realzione la precisione del sistema e il consumo della batteria dei cellulari	& Capitolato - Verbale esterno 2020-12-18	\\
+		\hline
+R1V10&Deve essere fornita una documentazione delle scelte implementative e progettuali accompagnate dalle loro motivazioni	& Capitolato	\\
+		\hline
+	R1V11	&Deve essere fornita una documentazione dei problemi che rimangono aperti con eventuali proposte di soluzioni	& Capitolato	\\
+		\hline
 	\end{longtable}
 \end{center}
+
 \subsection{Requisiti prestazionali}
 Non sono stati individuati requisiti prestazionali. Uno dei motivi sta nel fatto che la rete Ethereum, su cui si appoggerà il nostro sistema, ha tempi di esecuzione delle azioni dipendenti dal carico di utenti.
 %\begin{center}
