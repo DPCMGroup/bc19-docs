@@ -40,29 +40,50 @@ In questa sezione sono riportati tutti i casi d'uso individuati, divisi per atto
 \\
 \subsubsection{ UC1 - Guida introduttiva}
 \begin{itemize}
-           	\item\textbf{Attori Primari:} utente generico;
-           	\item\textbf{Descrizione:} L'utente riceve una guida riguardo il login e il funzionamento;
-           	\item\textbf{Scenario principale:} l’utente accede alla pagina introduttiva e visualizza la guida;
-           	\item\textbf{Precondizione:} il sistema è raggiungibile e funzionante, l’utente accede alla pagina iniziale del sito della piattaforma;
-           	\item\textbf{Postcondizione:} il sistema fornisce all’utente, attraverso la lettura della guida, tutte le istruzioni necessarie ad effettuare il login;
+           	\item\textbf{Attori Primari:} utente generico.
+           	\item\textbf{Descrizione:} l'utente riceve una guida riguardo il login e il funzionamento.
+           	\item\textbf{Scenario principale:} l’utente accede alla pagina introduttiva e visualizza la guida.
+           	\item\textbf{Precondizione:} il sistema è raggiungibile e funzionante, l’utente accede alla pagina iniziale del sito della piattaforma.
+           	\item\textbf{Postcondizione:} il sistema fornisce all’utente, attraverso la lettura della guida, tutte le istruzioni necessarie ad effettuare il login.
 \end{itemize}
 
 \subsubsection{ UC2 - Login}
 \begin{itemize}
-           	\item\textbf{Attori Primari:} 
-           	\item\textbf{Descrizione:} 
-           	\item\textbf{Scenario principale:} 
-           	\item\textbf{Precondizione:} 
-           	\item\textbf{Postcondizione:}
+           	\item\textbf{Attori Primari:} utente non autenticato.
+           	\item\textbf{Descrizione:} l’utente tenta di autenticarsi all'applicativo.
+           	\item\textbf{Scenario principale:} l’utente non è ancora autenticato ed esegue il login.
+           	\item\textbf{Precondizione:} l’utente non si è autenticato nell'applicativo. 
+           	\item\textbf{Postcondizione:} l’utente si è autenticato con successo, ed è stato identificato dal sistema
+           	nel ruolo di amministratore, dipendente o addetto alle pulizie. A seconda della tipologia di utente vengono rese
+           	disponibili diverse funzionalità.
 \end{itemize}
-
 \subsubsection{ UC3 - Logout}
 \begin{itemize}
-           	\item\textbf{Attori Primari:} 
-           	\item\textbf{Descrizione:} 
-           	\item\textbf{Scenario principale:} 
-           	\item\textbf{Precondizione:} 
-           	\item\textbf{Postcondizione:}
+	\item\textbf{Attori Primari:} 
+	\item\textbf{Descrizione:} 
+	\item\textbf{Scenario principale:} 
+	\item\textbf{Precondizione:} 
+	\item\textbf{Postcondizione:}
+\end{itemize}
+\subsubsection{ UC3.2 - Visualizzazione messaggio di errore relativo a chiave non registrata}
+\begin{itemize}
+	\item\textbf{Attori Primari:} utente non autenticato.
+	\item\textbf{Descrizione:} l'utente visualizza un messaggio di errore dovuto al fatto che ha tentato il login senza essersi registrato in precedenza.
+	\item\textbf{Scenario principale:} l’utente tenta di eseguire la procedura di login all'applicativo senza essere registrato.
+	\item\textbf{Precondizione:} l'utente tenta di autenticarsi nell'applicativo.
+	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore per informare l'utente del fatto che è necessario registrarsi
+	all'applicativo prima di poter effettuare la procedura di login.
+\end{itemize}
+\subsubsection{ UC3.3 - Visualizzazione schermata relativa a utente non abilitato}
+\begin{itemize}
+           	\item\textbf{Attori Primari:} utente non autenticato.
+           	\item\textbf{Descrizione:} l'utente tenta di autenticarsi nell'applicativo, tuttavia a causa della disabilitazione del suo account, il login viene interrotto, e
+           	l'utente visualizza il messaggio di errore che illustra la causa della disabilitazione dell'account.
+           	\item\textbf{Scenario principale:} l’utente non autenticato con account disabilitato tenta di autenticarsi. 
+           	La procedura di autenticazione viene bloccata a causa dello stato dell'account.
+           	\item\textbf{Precondizione:} un utente non autenticato, registrato all'applicativo e con account disabilitato tenta di effettuare il login automatico. 
+           	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore per informare l'utente del fatto che il 
+           	proprio account è stato disabilitato dall'amministratore. Se quest'ultimo, durante la procedura di disabilitazione, ha inserito un messaggio contenente la causa di tale azione, allora tale messaggio viene visualizzato.
 \end{itemize}
 
 \subsubsection{ UC4 - Gestione impostazioni}
@@ -110,42 +131,311 @@ In questa sezione sono riportati tutti i casi d'uso individuati, divisi per atto
            	\item\textbf{Postcondizione:}
 \end{itemize}
 
-\subsubsection{ UC9 - Visualizza stato postazione}
+\subsubsection{ UC9 - Visualizzazione stato postazione}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/UC9.png}
+	\caption{Visualizzazione stato postazione}
+	\label{fig:Visualizzazione stato postazione}
+\end{figure}
 \begin{itemize}
-           	\item\textbf{Attori Primari:} 
-           	\item\textbf{Descrizione:} 
-           	\item\textbf{Scenario principale:} 
-           	\item\textbf{Precondizione:} 
-           	\item\textbf{Postcondizione:}
+           	\item\textbf{Attori Primari:} dipendente.
+           	\item\textbf{Attori Secondari:} tagRFID.
+           	\item\textbf{Descrizione:} l’utente scansiona il tag RFID presente alla postazione per ricevere indicazioni sullo stato della stessa.
+           	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tag RFID e visualizza nell'applicazione mobile lo stato della postazione.
+           	\item\textbf{Precondizione:} l’utente scansiona con il proprio smarthphone il tag RFID della postazione desiderata e visualizza il suo stato.
+           	\item\textbf{Postcondizione:} l’utente conosce lo stato della postazione.
+           	\item\textbf{Estensioni:}
+           	\begin{itemize}
+           		\item[$-$]  Visualizzazione errore: lo smartphone è troppo distante dal tag RFID per effettuare correttamente la scansione (UC 9.2).
+           	\end{itemize}
+\end{itemize}
+\subsubsection{ UC9.1 - Scansione tag RFID}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Attori Secondari:} tagRFID.
+	\item\textbf{Descrizione:} l’utente scansiona il tag RFID presente alla postazione per ricevere indicazioni sullo stato della stessa.
+	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tag RFID.
+	\item\textbf{Precondizione:} l’utente si è autenticato nell'applicazione mobile e accede alla sezione per la scansione del sensore.
+	\item\textbf{Postcondizione:} l’utente ha effettuato correttamente la scansione.
+\end{itemize}
+\subsubsection{ UC9.2 - Visualizzazione errore scansione: tag RFID troppo distante}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente visualizza un messaggio di errore in quanto tenta di effettuare una scansione del tag RFID, ma appoggia il telefono non abbastanza vicino al sensore.
+	\item\textbf{Scenario principale:} viene visualizzato un messaggio di errore che segnala che lo smartphone non è stato appoggiato in un punto abbastanza vicino
+	al tag RFID.
+	\item\textbf{Precondizione:} l’utente ha tentato di effettuare una scansione del tag RFID.
+	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore specifico.
+\end{itemize}
+\subsubsection{ UC9.3 - Visualizzazione stato}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente visualizza uno dei possibili stati della postazione:
+	\begin{itemize}
+	\item[$-$]libera e igienizzata;
+	\item[$-$]libera e non igienizzata;
+	\item[$-$]occupata;
+	\item[$-$]non accessibile.
+    \end{itemize}
+	\item\textbf{Scenario principale:} l’utente visualizza nell'applicazione mobile lo stato della postazione.
+	\item\textbf{Precondizione:} l’utente sta navigando nella sezione per la visualizzazione dello stato della postazione.
+	\item\textbf{Postcondizione:} l’utente conosce lo stato della postazione.
 \end{itemize}
 
 \subsubsection{ UC10 - Segnalazione presenza}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/UC10.png}
+	\caption{Segnalazione presenza}
+	\label{fig:Segnalazione presenza}
+\end{figure}
 \begin{itemize}
-           	\item\textbf{Attori Primari:} 
-           	\item\textbf{Descrizione:} 
-           	\item\textbf{Scenario principale:} 
-           	\item\textbf{Precondizione:} 
-           	\item\textbf{Postcondizione:}
+           	\item\textbf{Attori Primari:} dipendente.
+           	\item\textbf{Attori Secondari:} tagRFID, Ethereum.
+           	\item\textbf{Descrizione:} l’utente segnala in tempo reale la propria presenza alla postazione, appoggiando il cellulare sul tag RFID. Inoltre, registra il tempo di inizio e di fine di questa azione grazie all'utilizzo di Ethereum.
+           	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tag RFID e segnala in questo modo la propria presenza.
+           	Il tempo di inizio e di fine di questa azione vengono memorizzati grazie all'utilizzo di Ethereum.
+           	\item\textbf{Precondizione:} l’utente si è autenticato nell'applicazione mobile e occupa una postazione.
+           	\item\textbf{Postcondizione:} l’utente segnala in tempo reale la presenza alla postazione e registra questa azione su Ethereum.
+           	\item\textbf{Estensioni:} 
+           	\begin{itemize}
+           		\item[$-$] Visualizzazione errore: se sposto lo smartphone dal tag RFID (ad esempio per una telefonata), 
+           		dopo un timeout di qualche minuto(ad esempio 10 minuti), viene visualizzato un messaggio di errore (UC 10.2).
+           		\item[$-$] Visualizzazione errore: se l'utente si dimentica di premere il bottone della fine dell'occupazione della postazione,
+           		viene visualizzato un messaggio di errore (UC 10.4).
+           	\end{itemize}
 \end{itemize}
-
+\subsubsection{ UC10.1 - Presenza in tempo reale}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Attori Secondari:} tagRFID.
+	\item\textbf{Descrizione:} l’utente segnala in tempo reale la presenza alla postazione, appoggiando il cellulare sul tagRFID.
+	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tagRFID e segnala in questo modo la propria presenza in tempo reale.
+	\item\textbf{Precondizione:} l’utente occupa una postazione e ha attivitato nel proprio smarthphone la possibilità di effettuare scansioni con tagRFID.
+	\item\textbf{Postcondizione:} l’utente segnala in tempo reale la presenza alla postazione.
+\end{itemize}
+\subsubsection{ UC10.2 - Visualizzazione errore spostamento smartphone}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente visualizza un messaggio di errore in quanto sposta lo smartphone dal tag RFID.
+	\item\textbf{Scenario principale:} viene visualizzato un messaggio di errore che consiglia di riposizionare lo smarthpone correttamente sul tag RFID.
+	\item\textbf{Precondizione:} l’utente sposta il proprio smarthphone dal tag RFID.
+	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore specifico.
+\end{itemize}
+\subsubsection{ UC10.3 - Registrazione presenza}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Attori Secondari:} Ethereum.
+	\item\textbf{Descrizione:} l’utente registra l'inizio e la fine della propria occupazione della postazione.
+	\item\textbf{Scenario principale:} l’utente sta navigando nella sezione della segnalazione della presenza e preme i bottoni di inizio e fine occupazione della postazione,
+	nei corrispondenti momenti. Questa azione viene registrata grazie a Ethereum.
+	\item\textbf{Precondizione:} l’utente occupa una postazione e preme i bottoni di inizio e fine dell'occupazione della postazione.
+	\item\textbf{Postcondizione:} l'azione della precondizione viene registrata.
+\end{itemize}
+\subsubsection{ UC10.4 - Visualizzazione errore fine occupazione}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente visualizza un messaggio di errore in quanto si dimentica di segnalare la fine dell'occupazione della postazione.
+	\item\textbf{Scenario principale:} dopo un periodo di tempo abbastanza lungo, viene visualizzato un messaggio di errore in cui si notifica
+	all'utente la fine della sua occupazione della postazione.
+	\item\textbf{Precondizione:} l’utente non preme il bottone per la fine dell'occupazione della postazione.
+	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore specifico.
+\end{itemize}
 \subsubsection{ UC11 - Pulizia autonoma}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/UC11.png}
+	\caption{Pulizia autonoma}
+	\label{fig:Pulizia autonoma}
+\end{figure}
 \begin{itemize}
-           	\item\textbf{Attori Primari:} 
-           	\item\textbf{Descrizione:} 
-           	\item\textbf{Scenario principale:} 
-           	\item\textbf{Precondizione:} 
-           	\item\textbf{Postcondizione:}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Attori Secondari:} Ethereum.
+	\item\textbf{Descrizione:} l’utente pulisce in autonomia la postazione e lo segnala sull'applicazione mobile. Inoltre, 
+	registra di aver effettuato questa azione, grazie all'utilizzo di Ethereum.	\item\textbf{Scenario principale:} l’utente dopo aver igienizzato la postazione con il kit aziendale, modifica lo stato della postazione in libera e igienizzata. Inoltre, 
+	registra di aver effettuato questa azione, grazie all'utilizzo di Ethereum.
+	\item\textbf{Precondizione:} l’utente è autenticato nell'applicazione mobile, ha igienizzato la propria postazione e sta navigando nella sezione per la pulizia 
+	autonoma della postazione.
+	\item\textbf{Postcondizione:} l’utente modifica lo stato della postazione in libera e igienizzata e registra l'avvenuta pulizia autonoma della postazione.
+\end{itemize}
+\subsubsection{ UC11.1 - Modifica stato postazione }
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente dopo aver igienizzato autonomamente la postazione con il kit aziendale, modifica lo stato della stessa.
+	\item\textbf{Scenario principale:} l’utente modifica lo stato della postazione in libera e igienizzata.
+	\item\textbf{Precondizione:} l’utente sta navigando all'interno della sezione pulizia autonoma delle postazioni.
+	\item\textbf{Postcondizione:} l’utente modifica lo stato della postazione.
 \end{itemize}
 
-\subsubsection{ UC12 - Prenotazione postazione}
+\subsubsection{ UC11.2 - Registrazione pulizia autonoma }
 \begin{itemize}
-           	\item\textbf{Attori Primari:} 
-           	\item\textbf{Descrizione:} 
-           	\item\textbf{Scenario principale:} 
-           	\item\textbf{Precondizione:} 
-           	\item\textbf{Postcondizione:}
+           	\item\textbf{Attori Primari:} dipendente.
+           	\item\textbf{Attori Secondari:} Ethereum.
+           	\item\textbf{Descrizione:} l’utente segnala all'applicazione mobile di aver igienizzato autonomamente la postazione con il kit aziendale.
+           	\item\textbf{Scenario principale:} l’utente igienizza la postazione con il kit aziendale e registra questa azione grazie all'utilizzo di Ethereum.
+           	\item\textbf{Precondizione:} l’utente è autenticato nell'applicazione mobile, ha pulito la postazione e sta navigando nella sezione di 
+           	registrazione della pulizia autonoma.
+           	\item\textbf{Postcondizione:} l’utente registra l'avvenuta igienizzazione autonoma della postazione.
 \end{itemize}
-
+\subsubsection{ UC12 - Gestione prenotazione }
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/UC12.png}
+	\caption{Gestione prenotazione}
+	\label{fig:Gestione prenotazione}
+\end{figure}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente vuole prenotare una postazione di una stanza in un determinato giorno e orario.
+	\item\textbf{Scenario principale:} l’utente ha visualizzato o gestito le prenotazioni di una stanza all’interno del sistema.
+	\item\textbf{Precondizione:} l’utente si è autenticato nell'applicazione mobile e sta navigando nella sezione di gestione delle prenotazioni.
+	\item\textbf{Postcondizione:} l’utente ha visualizzato o gestito le prenotazioni all’interno del sistema.
+\end{itemize}
+\subsubsection{ UC12.1 - Cerca postazione}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente vuole prenotare una postazione di una stanza in un determinato giorno e orario.
+	\item\textbf{Scenario principale:} 
+	\begin{itemize}
+		\item[$-$] L’utente inserisce la data (UC 10.1.1);
+		\item[$-$] L’utente inserisce l'orario (UC 10.1.3);
+		\item[$-$] L’utente inserisce l'identificativo della stanza (UC 10.1.5);
+	\end{itemize}
+	\item\textbf{Precondizione:} l’utente sta navigando nella sezione dell'applicazione dedicata alla ricerca di una postazione.
+	\item\textbf{Postcondizione:} l’utente sta navigando nella sezione dell'applicazione dedicata alla ricerca di una postazione.
+	\item\textbf{Estensioni:} l’utente inserisce i campi necessari alla ricerca della postazione desiderata.
+	\begin{itemize}
+		\item[$-$] L’utente inserisce una data non valida (UC 10.1.2);
+		\item[$-$] L’utente inserisce un orario non valida (UC 10.1.4);
+		\item[$-$] L’utente inserisce una stanza non valida (UC 10.1.6).
+	\end{itemize}
+\end{itemize}
+\subsubsection{ UC12.1.1 - Inserimento data }
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente sta cercando una postazione disponibile e deve compilare il campo della data.
+	\item\textbf{Scenario principale:} l’utente ha compilato il campo data.
+	\item\textbf{Precondizione:} l’utente sta compilando i campi richiesti per effettuare la ricerca.
+	\item\textbf{Postcondizione:} l’utente ha compilato il campo richiesto.
+\end{itemize}
+\subsubsection{ UC12.1.2 - Visualizzazione errore: data non valida  }
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente ha compilato un campo per la data, ma è in un formato non corretto.
+	\item\textbf{Scenario principale:} 
+	\begin{itemize}
+		\item[$-$] L’utente ha inserito il campo per la data;
+		\item[$-$] Il sistema elabora la richiesta;
+		\item[$-$] Viene visualizzato un errore che segnala che la data non è valida.
+	\end{itemize}
+	\item\textbf{Precondizione:} l’utente ha compilato il campo per la data.
+	\item\textbf{Postcondizione:} l’utente visualizza un messaggio di errore specifico e non porta a termine l’azione.
+\end{itemize}
+\subsubsection{ UC12.1.3 - Inserimento ora }
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente sta cercando una postazione disponibile e deve compilare il campo orario.
+	\item\textbf{Scenario principale:} l’utente ha compilato il campo orario.
+	\item\textbf{Precondizione:} l’utente sta compilando i campi richiesti per effettuae la ricerca.
+	\item\textbf{Postcondizione:} l’utente ha compilato il campo richiesto.
+\end{itemize}
+\subsubsection{ UC12.1.4 - Visualizzazione errore: orario non valido }
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente ha compilato un campo per l'orario, ma è in un formato non corretto.
+	\item\textbf{Scenario principale:} 
+	\begin{itemize}
+		\item[$-$] L’utente ha inserito il campo per l'orario;
+		\item[$-$] Il sistema elabora la richiesta;
+		\item[$-$] Viene visualizzato un errore che segnala che l'orario non è valido.
+	\end{itemize}
+	\item\textbf{Precondizione:} l’utente ha compilato il campo per l'orario.
+	\item\textbf{Postcondizione:} l’utente visualizza un messaggio di errore specifico e non porta a termine l’azione.
+\end{itemize}
+\subsubsection{ UC12.1.5 - Inserimento stanza }
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente sta cercando una postazione disponibile e deve compilare il campo identificativo della stanza.
+	\item\textbf{Scenario principale:} l’utente ha compilato il campo stanza.
+	\item\textbf{Precondizione:} l’utente sta compilando i campi richiesti per effettuare la ricerca.
+	\item\textbf{Postcondizione:} l’utente ha compilato il campo richiesto.
+\end{itemize}
+\subsubsection{ UC12.1.6 - Visualizzazione errore: stanza non valida }
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+\item\textbf{Descrizione:} l’utente ha compilato un campo per l'identificativo della stanza, ma è in un formato non corretto.
+\item\textbf{Scenario principale:} 
+\begin{itemize}
+	\item[$-$] L’utente ha inserito il campo per la stanza;
+	\item[$-$] Il sistema elabora la richiesta;
+	\item[$-$] Viene visualizzato un errore che segnala che l'identificativo della stanza non è valido.
+\end{itemize}
+\item\textbf{Precondizione:} l’utente ha compilato il campo per la stanza.
+\item\textbf{Postcondizione:} l’utente visualizza un messaggio di errore specifico e non porta a termine l’azione.
+\end{itemize}
+\subsubsection{ UC12.2 - Visualizzazione postazioni  }
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente visualizza le postazioni con colori diversi in base allo stato. L'identificativo di una postazione è costituito da una lettera seguita da un numero (ad esempio: D10). 
+	\item\textbf{Scenario principale:} viene visualizzato lo schema delle postazioni rappresentato con colori diversi in base allo stato in cui si trovano.
+	\item\textbf{Precondizione:} l’utente ha inserito i campi data, orario e stanza correttamente e premuto il bottone di ricerca, nella sezione 
+	medesima.
+	\item\textbf{Postcondizione:} l’utente visualizza le postazioni nella stanza.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] Visualizzazione errore: tutte le postazioni nella stanza selezionata sono occupate o guaste.(UC 12.3);
+	\end{itemize}
+\end{itemize}
+\subsubsection{ UC12.3 - Visualizzazione errore: stanze occupate }
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente visualizza un messaggio di errore in quanto non ci sono postazioni prenotabili.
+	\item\textbf{Scenario principale:} 
+	\begin{itemize}
+		\item[$-$] L’utente ha inserito i campi data, orario, stanza;
+		\item[$-$] Il sistema elabora la richiesta;
+		\item[$-$] Viene visualizzato un messaggio di errore che consiglia di selezionare un'altra fascia oraria.
+	\end{itemize}
+	\item\textbf{Precondizione:} l’utente ha compilato i campi data, orario, stanza oppure ha selezionato la sezione prima postazione 
+	disponibile (UC 12.4).
+	\item\textbf{Postcondizione:} l’utente visualizza un messaggio di errore specifico e non porta a termine l’azione.
+\end{itemize}
+\subsubsection{ UC12.4(opzionale) - Prima postazione libera }
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente riceve l'identificativo di una postazione igienizzata e libera in una determinata stanza, 
+	in modo automatico e in base ad un criterio di distanziamento dalle altre postazioni.
+	\item\textbf{Scenario principale:} viene fornito l'identificativo di una postazione libera e igienizzata, oppure di una libera e non igienizzata (si veda UC 11).
+	\item\textbf{Precondizione:} l’utente preme il bottone nella sezione della prima postazione disponibile.
+	\item\textbf{Postcondizione:} l’utente riceve l'identificativo di una postazione.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] tutte le postazioni nella stanza selezionata sono occupate o guaste.(UC 12.3).
+	\end{itemize}
+\end{itemize}
+\subsubsection{ UC12.5 - Selezione postazione }
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente dopo aver visualizzato le postazioni con colori diversi in base allo stato, ne seleziona una. E' possibile scegliere una postazione libera e igienizzata o non igienizzata.
+	\item\textbf{Scenario principale:} viene selezionata una postazione.
+	\item\textbf{Precondizione:} l’utente ha visualizzato correttamente le postazioni di una stanza.
+	\item\textbf{Postcondizione:} l’utente seleziona una postazione.
+\end{itemize}
+\subsubsection{ UC12.6 - Prenotazione postazione }
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente dopo aver selezionato la postazione, effettua la prenotazione. 
+	\item\textbf{Scenario principale:} l’utente sta navigando nella sezione per la prenotazione di una postazione
+	e preme il bottone per effettuare questa azione.
+	\item\textbf{Precondizione:} l’utente ha selezionato correttamente la postazione di una stanza.
+	\item\textbf{Postcondizione:} l'utente prenota la postazione.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] Nel caso in cui si scelga di prenotare una postazione libera e sporca si veda il caso d'uso "Pulizia autonoma"(UC 11),
+		per poi tornare allo scenario principale.
+	\end{itemize}
+\end{itemize}
 \subsubsection{ UC13 - Elenco stanze e postazioni da igienizzare}
 \begin{figure}[H]
 		\centering
@@ -154,28 +444,28 @@ In questa sezione sono riportati tutti i casi d'uso individuati, divisi per atto
 		\label{fig:Elenco stanze e postazioni da igienizzare}
 	\end{figure}
 \begin{itemize}
-           	\item\textbf{Attori Primari:} addetto pulizie;
-           	\item\textbf{Descrizione:} l'utente riceve un elenco delle postazioni[UC13.2] e delle stanze[UC13.1] che necessitano di igienizzazione;
-           	\item\textbf{Scenario principale:} l'utente si trova all'interno del sistema e verifica tutte le postazioni che sono state utilizzate almeno da un dipendente che saranno quindi da igienizzare oppure può decidere di igienizzare l’intera stanza;;
-           	\item\textbf{Precondizione:} l'utente va nella sezione dedicata nel sistema e deve premere un bottone;
-           	\item\textbf{Postcondizione:} l'utente verifica quali postazioni sono state occupate da almeno un dipendente così da ottenere un elenco delle stanze e postazioni da igienizzare;
+           	\item\textbf{Attori Primari:} addetto pulizie.
+           	\item\textbf{Descrizione:} l'utente riceve un elenco delle postazioni[UC13.2] e delle stanze[UC13.1] che necessitano di igienizzazione.
+           	\item\textbf{Scenario principale:} l'utente si trova all'interno del sistema e verifica tutte le postazioni che sono state utilizzate almeno da un dipendente che saranno quindi da igienizzare oppure può decidere di igienizzare l’intera stanza.
+           	\item\textbf{Precondizione:} l'utente va nella sezione dedicata nel sistema e deve premere un bottone.
+           	\item\textbf{Postcondizione:} l'utente verifica quali postazioni sono state occupate da almeno un dipendente così da ottenere un elenco delle stanze e postazioni da igienizzare.
 \end{itemize}
 
 \subsubsection{UC13.1 - Elenco stanze da igienizzare}
 \begin{itemize}
-           	\item\textbf{Attori Primari:} addetto pulizie;
-           	\item\textbf{Descrizione:} l'utente riceve un elenco delle stanza che necessitano di igienizzazione;
-           	\item\textbf{Scenario principale:} l'utente si trova all'interno del sistema e verifica tutte le stanze che sono state utilizzate almeno da un dipendente 				che saranno quindi da igienizzare;
-           	\item\textbf{Precondizione:} l'utente va nella sezione dedicata nel sistema e deve premere un bottone;
-           	\item\textbf{Postcondizione:} l'utente verifica quali stanze sono state occupate da almeno un dipendente così da ottenere un elenco delle stanze da 				igienizzare;
+           	\item\textbf{Attori Primari:} addetto pulizie.
+           	\item\textbf{Descrizione:} l'utente riceve un elenco delle stanza che necessitano di igienizzazione.
+           	\item\textbf{Scenario principale:} l'utente si trova all'interno del sistema e verifica tutte le stanze che sono state utilizzate almeno da un dipendente 				che saranno quindi da igienizzare.
+           	\item\textbf{Precondizione:} l'utente va nella sezione dedicata nel sistema e deve premere un bottone.
+           	\item\textbf{Postcondizione:} l'utente verifica quali stanze sono state occupate da almeno un dipendente così da ottenere un elenco delle stanze da 				igienizzare.
 \end{itemize}
 \subsubsection{UC13.2 - Elenco postazioni da igienizzare}
 \begin{itemize}
-           	\item\textbf{Attori Primari:} addetto pulizie;
-           	\item\textbf{Descrizione:} l'utente riceve un elenco delle postazioni che necessitano di igienizzazione;
-           	\item\textbf{Scenario principale:} l'utente si trova all'interno del sistema e verifica tutte le postazioni che sono state utilizzate almeno da un dipendente 	che saranno quindi da igienizzare;
-           	\item\textbf{Precondizione:} l'utente va nella sezione dedicata nel sistema e deve premere un bottone;
-           	\item\textbf{Postcondizione:} l'utente verifica quali postazioni sono state occupate da almeno un dipendente così da ottenere un elenco delle postazioni da igienizzare;
+           	\item\textbf{Attori Primari:} addetto pulizie.
+           	\item\textbf{Descrizione:} l'utente riceve un elenco delle postazioni che necessitano di igienizzazione.
+           	\item\textbf{Scenario principale:} l'utente si trova all'interno del sistema e verifica tutte le postazioni che sono state utilizzate almeno da un dipendente 	che saranno quindi da igienizzare.
+           	\item\textbf{Precondizione:} l'utente va nella sezione dedicata nel sistema e deve premere un bottone.
+           	\item\textbf{Postcondizione:} l'utente verifica quali postazioni sono state occupate da almeno un dipendente così da ottenere un elenco delle postazioni da igienizzare.
 \end{itemize}
 
 \subsubsection{ UC14 - Marcatura stanza e postazione come igienizzata}
@@ -186,28 +476,28 @@ In questa sezione sono riportati tutti i casi d'uso individuati, divisi per atto
 		\label{fig:Marcatura stanza e postazione come igienizzata}
 	\end{figure}
 \begin{itemize}
-           	\item\textbf{Attori Primari:} Addetto pulizie;
-		\item\textbf{Attori Secondario:} Ethereum;
-           	\item\textbf{Descrizione:} dopo l'igienizzazione l'utente marca le stanze o le postazioni che ha pulito come igienizzate;
-           	\item\textbf{Scenario principale:} l'utente igienizza la stanza[UC14.1] o la postazione[UC14.2] e in seguito accede al sistema e la marca come igienizzata attraverso l'utilizzo di ethereum;
-           	\item\textbf{Precondizione:} l'utente ottiene l'elenco delle stanze e delle postazioni da igienizzare;
-           	\item\textbf{Postcondizione:} l'utente, dopo l'igienizzazione, marca le stanze e le postazioni come igienizzate;
+           	\item\textbf{Attori Primari:} Addetto pulizie.
+		\item\textbf{Attori Secondario:} Ethereum.
+           	\item\textbf{Descrizione:} dopo l'igienizzazione l'utente marca le stanze o le postazioni che ha pulito come igienizzate.
+           	\item\textbf{Scenario principale:} l'utente igienizza la stanza[UC14.1] o la postazione[UC14.2] e in seguito accede al sistema e la marca come igienizzata attraverso l'utilizzo di Ethereum.
+           	\item\textbf{Precondizione:} l'utente ottiene l'elenco delle stanze e delle postazioni da igienizzare.
+           	\item\textbf{Postcondizione:} l'utente, dopo l'igienizzazione, marca le stanze e le postazioni come igienizzate.
 \end{itemize}
 \subsubsection{UC14.1 - Marcatura stanza come igienizzata}
 \begin{itemize}
-           	\item\textbf{Attori Primari:} Addetto pulizie;
-		\item\textbf{Attori Secondario:} Ethereum;
-           	\item\textbf{Descrizione:} dopo l'igienizzazione l'utente marca la stanza come igienizzata;
-           	\item\textbf{Scenario principale:} l'utente igienizza la stanza e in seguito accede al sistema e la marca come igienizzata attraverso l'utilizzo di ethereum;
-           	\item\textbf{Precondizione:} l'utente ottiene l'elenco delle stanze da igienizzare;
-           	\item\textbf{Postcondizione:} l'utente, dopo l'igienizzazione, marca le stanze come igienizzate;
+           	\item\textbf{Attori Primari:} Addetto pulizie.
+		\item\textbf{Attori Secondario:} Ethereum.
+           	\item\textbf{Descrizione:} dopo l'igienizzazione l'utente marca la stanza come igienizzata.
+           	\item\textbf{Scenario principale:} l'utente igienizza la stanza e in seguito accede al sistema e la marca come igienizzata attraverso l'utilizzo di Ethereum.
+           	\item\textbf{Precondizione:} l'utente ottiene l'elenco delle stanze da igienizzare.
+           	\item\textbf{Postcondizione:} l'utente, dopo l'igienizzazione, marca le stanze come igienizzate.
 \end{itemize}
 \subsubsection{UC14.2 - Marcatura postazione come igienizzata}
 \begin{itemize}
-           	\item\textbf{Attori Primari:} Addetto pulizie;
-		\item\textbf{Attori Secondario:} Ethereum;
-           	\item\textbf{Descrizione:} dopo l'igienizzazione l'utente marca la postazione come igienizzata;
-           	\item\textbf{Scenario principale:} l'utente igienizza la postazione e in seguito accede al sistema e la marca come igienizzata attraverso l'utilizzo di ethereum;
-           	\item\textbf{Precondizione:} l'utente ottiene l'elenco delle postazioni da igienizzare;
-           	\item\textbf{Postcondizione:} l'utente, dopo l'igienizzazione, marca le postazioni come igienizzate;
+           	\item\textbf{Attori Primari:} Addetto pulizie.
+		\item\textbf{Attori Secondario:} Ethereum.
+           	\item\textbf{Descrizione:} dopo l'igienizzazione l'utente marca la postazione come igienizzata.
+           	\item\textbf{Scenario principale:} l'utente igienizza la postazione e in seguito accede al sistema e la marca come igienizzata attraverso l'utilizzo di ethereum.
+           	\item\textbf{Precondizione:} l'utente ottiene l'elenco delle postazioni da igienizzare.
+           	\item\textbf{Postcondizione:} l'utente, dopo l'igienizzazione, marca le postazioni come igienizzate.
 \end{itemize}
