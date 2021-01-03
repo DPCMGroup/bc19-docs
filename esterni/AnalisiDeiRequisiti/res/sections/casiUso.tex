@@ -71,12 +71,29 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \end{itemize}
 
 \subsubsection{ UC4 - Gestione impostazioni}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/UC4.png}
+	\caption{Gestione impostazioni}
+	\label{fig:Gestione impostazioni}
+\end{figure}
 \begin{itemize}
            	\item\textbf{Attori Primari:} 
+           	Amministratore
            	\item\textbf{Descrizione:} 
-           	\item\textbf{Scenario principale:} 
+           	L'amministrazione visualizza e modifica le impostazioni del sistema.
+           	\item\textbf{Scenario principale:}
+           	L'amministratore raggiunge l'area di gestione delle impostazioni.
+           	I valori impostabili sono:
+           	\begin{itemize}
+           		\item Tempo massimo di stazionamento del telefono sul tag RFID di una postazione libera prima che essa venga considerata occupata.
+           		\item Tempo massimo di assenza del telefono dal tag RFID di una postazione occupata prima che essa venga considerata libera.
+           	\end{itemize}
            	\item\textbf{Precondizione:} 
+           	L'utente è autenticato come amministratore.
            	\item\textbf{Postcondizione:}
+           	L'utente ha visualizzato o eseguito delle modifiche sulle impostazioni del sistema.
 \end{itemize}
 
 \subsubsection{ UC4.1 - Visualizzazione delle impostazioni}
@@ -116,6 +133,12 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \end{itemize}
 
 \subsubsection{ UC5 - Gestione stanze e postazioni}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=18cm]{res/images/UC5.png}
+	\caption{Gestione stanze e postazioni}
+	\label{fig:Gestione stanze e postazioni}
+\end{figure}
 \begin{itemize}
            	\item\textbf{Attori Primari:} 
            	Amministratore
@@ -179,13 +202,29 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Scenario principale:} 
 	L'utente autenticato preme un pulsante per creare una nuova stanza. Compare quindi il campo "Nome della stanza" da compilare.
 	L'utente compila il campo e preme un pulsante per confermare la creazione della stanza.
-	Se non è gia presente una stanza con il codice inserito la stanza viene creata.
+	Se non è gia presente una stanza con il codice inserito la stanza viene creata e la sua configurazione viene inviata ad Ethereum per essere salvata.
+	\item\textbf{Estensione:}
+	Se è gia presente una stanza con lo stesso nome l'utente viene avvisato (UC5.2.1)
 	\item\textbf{Precondizione:} 
 	L'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
 	E' stata aggiunta una stanza vuota con le caratteristiche specificate.
-	\item\textbf{Scenari alternativi:}
-	UC3.2.1 Se il codice è già presente l'utente visualizza un messaggio d'errore.
+\end{itemize}
+
+\subsection{ UC5.2.1 - Avviso nome stanza già utilizzato}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	Amministratore
+	\item\textbf{Descrizione:}
+	L'utente tenta di assegnare alla stanza che sta creando un nome già utilizzato per un'altra stanza nel sistema e ne viene avvisato.
+	\item\textbf{Scenario principale:}
+	L'utente sta creando una stanza ed inserisce come nome un valore giù utilizzato.
+	La stanza non viene creata e alla vista dell'utente compare un avviso che indica appunto che il nome è già stato utilizzato.
+	\item\textbf{Precondizione:}
+	L'utente si trova sulla pagina di creazione di una stanza.
+	\item\textbf{Postcondizione:}
+	L'utente visualizza il messaggio d'errore.
+	
 \end{itemize}
 
 \subsubsection{ UC5.3 - Eliminazione di una stanza}
@@ -197,7 +236,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:} 
 	L'utente elimina dal sistema una stanza con tutte le postazioni in essa presenti.
 	\item\textbf{Scenario principale:} 
-	L'utente preme sul pulsante per l'eliminazione di una stanza. La stanza viene eliminata dal sistema con tutte le postazioni al suo interno.
+	L'utente preme sul pulsante per l'eliminazione di una stanza. La stanza viene eliminata dal sistema con tutte le postazioni al suo interno e l'azione viene comunicata ad Ethereum.
 	\item\textbf{Precondizione:} 
 	L'utente è autenticato.
 	\item\textbf{Postcondizione:}
@@ -249,8 +288,8 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item{codice del tag RFID che identifica la postazione}
 	\end{itemize}
 	Inoltre gli viene chiesto di indicare la posizione della postazione su una scacchiera rappresentante la stanza.
-	L'amministratore preme un bottone per la conferma dei dati e la postazione viene aggiunta all'interno della stanza.
-	Estensioni:
+	L'amministratore preme un bottone per la conferma dei dati e la postazione viene aggiunta all'interno della stanza. La nuova configurazione della stanza viene comunicata ad Ethereum.
+	\item\textbf{Estensioni:}
 	1. Se l'utente inserisce un codice già presente all'interno della stanza viene mostrato un messaggio d'errore.
 	\item\textbf{Precondizione:} 
 	L'utente è autenticato.
@@ -267,7 +306,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:}
 	L'utente elimina una postazione.
 	\item\textbf{Scenario principale:} 
-	L'utente seleziona una postazione da eliminare ed esegue l'azione.
+	L'utente raggiunge l'area di eliminazione delle postazioni, ne seleziona una ed esegue l'eliminazione. La nuova configurazione della stanza viene inviata ad Ethereum.
 	\item\textbf{Precondizione:} 
 	L'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
@@ -291,6 +330,12 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \end{itemize}
 
 \subsubsection{ UC6 - Gestione credenziali}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/UC6.png}
+	\caption{Gestione credenziali}
+	\label{fig:Gestione credenziali}
+\end{figure}
 \begin{itemize}
            	\item\textbf{Attori Primari:} 
            	Amministratore
@@ -330,9 +375,9 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\begin{itemize}
 		\item Nome
 		\item Cognome
-		\item nome utente
-		\item password
-		\item e-mail
+		\item Nome utente
+		\item Password
+		\item E-mail
 	\end{itemize}
 	Successivamente l'utente preme il pulsante per la conferma dei dati e la nuova credenziale viene salvata nel sistema.
 	\item\textbf{Precondizione:} 
@@ -380,6 +425,25 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	Le credenziali selezionate non sono più presenti nel sistema.
 \end{itemize}
 
+\subsubsection{ UC7 - Esplorazione postazioni occupate da uno specifico utente}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/UC7.png}
+	\caption{Esplorazione postazioni occupate da uno specifico utente}
+	\label{fig:Esplorazione postazioni occupate da uno specifico utente}
+\end{figure}
+\begin{itemize}
+	\item\textbf{Attori Primari:} 
+	Amministratore
+	\item\textbf{Descrizione:} 
+	L'amministratore ottiene informazioni sulle postazioni occupate da uno specifico utente.
+	\item\textbf{Scenario principale:} 
+	L'amministratore raggiunge la pagina per la ricerca delle occupazioni delle postazioni e inserisce il nickname oppure il Nome e Cognome dell'utente a cui è interessato.
+	\item\textbf{Precondizione:} 
+	L'utente è autenticato come amministratore.
+	\item\textbf{Postcondizione:}
+	L'utente visualizza le informazioni.
+\end{itemize}
 
 \subsubsection{ UC7.1 - Ottenimento report delle postazioni occupate da uno specifico utente}
 \begin{itemize}
@@ -389,6 +453,8 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	L'amministratore ottiene informazioni in forma tabellare sulle postazioni occupate da uno specifico utente.
            	\item\textbf{Scenario principale:} 
            	L'amministratore raggiunge la pagina per la ricerca delle occupazioni delle postazioni e inserisce il nickname oppure il Nome e Cognome dell'utente a cui è interessato.
+           	\item\textbf{Estensioni:}
+           	Ricerca tra le postazioni occupate da uno specifico utente (UC7.1).
            	\item\textbf{Precondizione:} 
            	L'utente è autenticato come amministratore.
            	\item\textbf{Postcondizione:}
@@ -402,7 +468,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	Amministratore
 	\item\textbf{Descrizione:} 
 	L'amministratore esegue una ricerca specifica tra le postazioni occupate.
-	I valori che permettono di personalizzare la ricerca sono:
+	I valori che permettono di precisare la ricerca sono:
 	\begin{itemize}
 		\item codice della postazione
 		\item periodo all'interno del quale l'utente occupava la postazione
