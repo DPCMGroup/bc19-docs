@@ -1,0 +1,87 @@
+%!TEX output_directory = .cache
+% ---------------------------
+%	  	  [ Verbale ]
+%	----------------------
+%	       DPCM2077
+%  Progetto di SWE (2020-21)
+%    Template by Maxelweb
+% ---------------------------
+
+% Configurazione primaria del documento
+
+% --------------
+
+\newcommand{\docNome}{ VERBALE RIUNIONE \#10 }
+\newcommand{\docVersione}{0.0.1}
+\newcommand{\docNomeProgetto}{ 04 gennaio 2021 }
+\newcommand{\docStatus}{in redazione}
+\newcommand{\docUso}{interno}
+
+% --------------
+
+\newcommand{\docRedattori}{
+	Antonio Badan
+}
+\newcommand{\docVerificatori}{
+	Damiano Bertoldo
+}
+\newcommand{\docApprovazione}{
+    Matteo Budai
+}
+
+% ----- NON MODIFICARE SOTTO QUESTA RIGA -----
+
+% ---------------------------
+% Configurazioni
+% ---------------------------
+
+\documentclass[11pt,a4paper,table]{article}
+
+\input{res/configurazione}    
+
+% ---------------------------
+% Dati frontespizio
+% ---------------------------
+
+\title{\hr \huge \textsc{\docNome} \\ 
+        \vspace{11pt} \large \textsc{\docNomeProgetto} \hr}
+
+\author{} % Non toccare
+\date{} % Non toccare	
+
+% ---------------------------
+% Composizione del documento
+% ---------------------------
+
+\begin{document} 
+
+% Frontespizio
+
+\pagenumbering{gobble}
+\DeactivateBG
+\include{res/frontespizio}
+
+% Registro delle modifiche
+
+\newpage
+\ActivateBG
+\pagenumbering{Roman}
+\include{res/registro}
+
+
+% Contenuto
+
+\newpage
+\input{res/contenuto}
+
+
+
+% Registro Decisioni
+
+\newpage
+\input{res/tracciamenti}
+
+\end{document}
+
+
+% EOF
