@@ -3,8 +3,8 @@ Il gruppo \textit{DPCM 2077} ha deciso di seguire lo standard ISO/IEC/IEEE 12207
 Il risultato sono i processi presentati di seguito.
 	\subsection{Processi di sviluppo}
 		\subsubsection{Analisi dei Requisiti - Metriche}
-		\paragraph{PROS:Percentuale di requisiti obbligatori soddisfatti}
-		Sta ad indicare la percentuale di requisiti obbligatori soddisfatti.
+		\paragraph{PROS: Percentuale di requisiti obbligatori soddisfatti}
+		Indica la percentuale di requisiti obbligatori soddisfatti.
 		\begin{itemize}
 		\item espresso in percentuale: $PROS = \frac{requisiti \ obbligatori \ soddisfatti}{requisiti \ obbligatori \ totali}$;
 		\item valore preferibile: 100\%;
@@ -35,13 +35,60 @@ Il risultato sono i processi presentati di seguito.
 		
 	\subsection{Processi di supporto}
 		\subsubsection{Pianificazione - Metriche}
+		\paragraph{BAC: Budget at Completion}
+		Indica il budget totale allocato per il progetto.
+		
+		\begin{itemize}
+		\item numero intero;
+		\item valore preferibile: pari al preventivo;
+		\item valore accettabile: il valore del preventivo con un errore massimo del $5\%$.
+		\end{itemize}
+		\paragraph{EV: Earned Value}
+		Metrica di utilità per il calcolo di SV e CV. Si tratta del valore del lavoro fatto fino al momento del calcolo: denaro guadagnato fino a quel momento.
+		\begin{itemize}
+		\item calcolo: $BAC \cdot \% \  di \ lavoro \ completato$;
+		\item valore preferibile: $\geq 0$;
+		\item valore accettabile: $\geq 0$.
+		\end{itemize}
+		\paragraph{PV: Planned Value}
+		Metrica di utilità per il calcolo di SV e CV. Si tratta del valore del lavoro pianificato al momento del calcolo: denaro che si dovrebbe aver guadagnato in quel momento.
+		\begin{itemize}
+		\item calcolo: $BAC \cdot \% \ di \ lavoro \ pianificato$;
+		\item valore preferibile: $\geq 0$;
+		\item valore accettabile: $\geq 0$.
+		\end{itemize}
+		\paragraph{AC: Actual Cost}
+		Il denaro speso fino al momento del calcolo.
+		
+		\begin{itemize}
+		\item numero intero;
+		\item valore preferibile: $0 \leq AC \le PV$;
+		\item valore accettabile: $0 \leq AC \leq budget \ totale$.
+		\end{itemize}
+		\paragraph{SV: Schedule Variance}
+		Esprime lo stato di anticipo o ritardo nello svolgimento del progetto rispetto alla pianificazione.
+		
+		\begin{itemize}
+		\item calcolo: $SV = EV - PV$;
+		\item valore preferibile: $\ge 0$;
+		\item valore accettabile: $= 0$.
+		\end{itemize}
+		\paragraph{CV: Cost Variance}
+		Differenza tra il costo del lavoro effettivamente completato e quello pianificato. Una CV positiva indica che si sta rispettando il budget.
+		\begin{itemize}
+		\item calcolo: $CV = EV - AC$
+		\item valore preferibile: $\ge 0$;
+		\item valore accettabile: $\geq 0$.
+		\end{itemize}
+		
+		
 		\subsubsection{Verifica - Metriche}
 		\paragraph{CC: Code Coverage}
 		Indica il numero di righe di codice percorse dai test durante la loro esecuzione. Per linee di codice totali si intende tutte quelle appartenenti all'unità in fase di test.
 		\begin{itemize}
 		\item valore percentuale: $CC = \frac{linee \ di \ codice \ percorse}{linee \ di \ codice \ totali}$;
 		\item valore preferibile: 100\%;
-		\item valore accettabile: 75\%.
+		\item valore accettabile: 80\%.
 		\end{itemize}
 		\subsubsection{Documentazione - Metriche}
 		\paragraph{Indice di Gulpease}
