@@ -91,7 +91,7 @@ In questa fase il costo per ogni ruolo è il seguente:
 \end{table}
 I dati ottenuti possono essere riassunti nel seguente areogramma:
 %collegare all'indice delle figure;
-\begin{figure}[!h]
+\begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
 		\pie{11.9/Responsabile, 23.8/Amministartore, 31.8/Analista, 32.5/Verificatore}
@@ -104,13 +104,173 @@ I dati ottenuti possono essere riassunti nel seguente areogramma:
 
 \subsection{Fase di Progettazione architetturale}
 \subsubsection{Prospetto orario}
+Nella fase di Progettazione architetturale la distribuzione oraria è la seguente:
+
+\begin{table}[H]
+	\rowcolors{2}{lightest-grayest}{white}
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|}
+		\hline
+		\rowcolor{lighter-grayer}
+		Nome & Re & Am & An & Pt & Pm & Ve & Totale ore\\
+		\hline
+		Badan Antonio & 4 & - & - &  10 & 4 & 7 & 23 \\
+		\hline
+		Bertoldo Damiano & 6 & - & - & - & 10 & 9 & 23 \\
+		\hline
+		Budai Matteo & - & 9 & - & - & 5 & 11 & 23 \\
+		\hline
+		De Grandi Samuele & - & 7 & - & 5 & 4 & 9 & 23 \\
+		\hline
+		Piacere Ivan & - & 8 & - & - & 4 & 13 & 23 \\
+		\hline
+		Privitera Sara & 6 & - & - & 10 & 6 & 3 & 23 \\
+		\hline
+		Spigolon Daniele & 4 & - & - & - & 10 & 11 & 23 \\
+		\hline
+		Ore totali & 10 & 10 & 40 & 61 & - & 40 & 161 \\
+		\hline
+	\end{tabular}
+	\caption*{\textbf{Tabella 15}: Distribuzione delle ore nel periodo di Progettazione architetturale\\}
+\end{table}	
+I dati ottenuti possono essere riassunti nel seguente istogramma:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{res/images/Figura11.png}
+	\caption*{\textbf{Figura11}: Istogramma della suddivisione delle ore durante il periodo di Progettazione architetturale}
+	\label{fig:Figura10}
+\end{figure}
+
 
 \subsubsection{Prospetto economico}
+In questa fase il costo per ogni ruolo è il seguente:
+
+\begin{table}[H]
+	\rowcolors{2}{lightest-grayest}{white}
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\rowcolor{lighter-grayer}
+		Ruolo & Ore & Costo \\
+		\hline
+		Responsabile & 10 & 300,00\euro \\%30
+		\hline
+		Amministratore & 10 & 200,00\euro \\%20
+		\hline
+		Analista & 40 & 1000,00\euro \\%25
+		\hline
+		Progettista & 61 & 1331,00\euro \\%22
+		\hline
+		Programmatore & - & -\euro \\%15
+		\hline
+		Verificatore & 40 & 600,00\euro \\%15
+		\hline
+		Totale & 161 &  3431,00\euro \\
+		\hline
+	\end{tabular}
+	\caption*{\textbf{Tabella 16}: Prospetto dei costi per ruolo nel periodo di Progettazione architetturale\\}
+\end{table}
+
+I dati ottenuti possono essere riassunti nel seguente areogramma:
+
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\pie{11.9/Responsabile, 17.1/Amministratore, 37.1/Analista, 4.8/Progettista, 29.1/Verificatore}
+	\end{tikzpicture}
+	\caption*{\textbf{Figura 10}: Areogramma della ripartizione di ore per ruolo in Progettazione architetturale}
+	\label{fig:Figura10}
+\end{figure}
+
+
 
 \subsection{Fase di Progettazione di dettaglio e codifica}
 \subsubsection{Prospetto orario}
+Nella fase di Progettazione di dettaglio e codifica la distribuzione oraria è la seguente:
+
+\begin{table}[H]
+	\rowcolors{2}{lightest-grayest}{white}
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|}
+		\hline
+		\rowcolor{lighter-grayer}
+		Nome & Re & Am & An & Pt & Pm & Ve & Totale ore\\
+		\hline
+		Badan Antonio & 4 & 0 & 0 &  10 & 4 & 7 & 50 \\
+		\hline
+		Bertoldo Damiano & 6 & 0 & 0 & 0 & 10 & 9 & 50 \\
+		\hline
+		Budai Matteo & 0 & 9 & 0 & 0 & 5 & 11 & 50 \\
+		\hline
+		De Grandi Samuele & 0 & 7 & 0 & 5 & 4 & 9 & 50 \\
+		\hline
+		Piacere Ivan & 0 & 8 & 0 & 0 & 4 & 13 & 50 \\
+		\hline
+		Privitera Sara & 6 & 0 & 0 & 10 & 6 & 3 & 50 \\
+		\hline
+		Spigolon Daniele & 4 & 0 & 0 & 0 & 10 & 11 & 50 \\
+		\hline
+		Ore totali & 35 & 40 & 5 & 20 & 150 & 100 & 350 \\
+		\hline
+	\end{tabular}
+	\caption*{\textbf{Tabella 15}: Distribuzione delle ore nel periodo di Progettazione di dettaglio e codifica\\}
+\end{table}	
+I dati ottenuti possono essere riassunti nel seguente istogramma:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{res/images/Figura11.png}
+	\caption*{\textbf{Figura11}: Istogramma della suddivisione delle ore durante il periodo di Progettazione di dettaglio e codifica}
+	\label{fig:Figura10}
+\end{figure}
+
 
 \subsubsection{Prospetto economico}
+In questa fase il costo per ogni ruolo è il seguente:
+
+\begin{table}[H]
+	\rowcolors{2}{lightest-grayest}{white}
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\rowcolor{lighter-grayer}
+		Ruolo & Ore & Costo \\
+		\hline
+		Responsabile & 35 & 1050,00\euro \\%30
+		\hline
+		Amministratore & 40 & 800,00\euro \\%20
+		\hline
+		Analista & 5 & 125\euro \\%25
+		\hline
+		Progettista & 20 & 440\euro \\%22
+		\hline
+		Programmatore & 150 & 2250,00\euro \\%15
+		\hline
+		Verificatore & 100 & 1500,00\euro \\%15
+		\hline
+		Totale & 350 &  6165,00\euro \\
+		\hline
+	\end{tabular}
+	\caption*{\textbf{Tabella 16}: Prospetto dei costi per ruolo nel periodo di Progettazione di dettaglio e codifica\\}
+\end{table}
+
+I dati ottenuti possono essere riassunti nel seguente areogramma:
+
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\pie{11.9/Responsabile, 17.1/Amministratore, 37.1/Analista, 4.8/Progettista, 29.1/Verificatore}
+	\end{tikzpicture}
+	\caption*{\textbf{Figura 10}: Areogramma della ripartizione di ore per ruolo in Progettazione di dettaglio e codifica}
+	\label{fig:Figura10}
+\end{figure}
 
 \subsection{Fase di Validazione e collaudo}
 \subsubsection{Prospetto orario}
@@ -187,7 +347,7 @@ In questa fase il costo per ogni ruolo è il seguente:
 I dati ottenuti possono essere riassunti nel seguente areogramma:
 
 
-\begin{figure}[!h]
+\begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
 		\pie{11.9/Responsabile, 17.1/Amministratore, 37.1/Analista, 4.8/Progettista, 29.1/Verificatore}
@@ -271,7 +431,7 @@ Nella seguente tabella vengono mostrati i costi complessivi per ogni ruolo:
 I dati ottenuti possono essere riassunti nel seguente areogramma:
 
 
-\begin{figure}[!h]
+\begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
 		\pie{11.9/Responsabile, 17.1/Amministratore, 37.1/Analista, 4.8/Progettista, 29.1/Verificatore}
@@ -354,7 +514,7 @@ Nella seguente tabella vengono mostrati i costi complessivi rendicontati per ogn
 I dati ottenuti possono essere riassunti nel seguente areogramma:
 
 
-\begin{figure}[!h]
+\begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
 		\pie{11.9/Responsabile, 17.1/Amministratore, 37.1/Analista, 4.8/Progettista, 29.1/Verificatore}
