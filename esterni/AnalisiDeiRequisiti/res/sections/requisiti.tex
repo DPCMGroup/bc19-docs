@@ -114,7 +114,30 @@ R1F7&L'amministratore deve poter esplorare la storia delle postazioni occupate d
 			R1F7.2&L'amministratore deve poter effettuare una ricerca tra le postazioni occupate da un utente. I valori che si possono specificare per la ricerca sono: codice della postazione e periodo all'interno del quale l'utente occupava la postazione	& 	Capitolato - UC7.2\\
 					\hline
 R1F8&L'amministratore deve poter ottenere una tabella delle sanificazioni di tutte le postazioni, con data e ora in cui sono avvenute.	&Capitolato - UC8 	\\
+					
 					\hline
+					R1F9&Il dipendente deve poter visualizzare lo stato di una postazione, tramite tagRFID.	&Capitolato - UC9 	\\
+					\hline
+			R1F10&Il dipendente deve poter segnalare la propria presenza su una postazione in tempo reale, tramite tagRFID.	&Capitolato - UC10 	\\
+		\hline
+		R1F10.1&Il dipendente deve poter registrare i momenti di inizio e di fine della sua occupazione di una postazione, tramite Ethereum.	&Interna - UC10.3 	\\
+		\hline	
+		R1F11&Il dipendente deve poter effettuare una pulizia autonoma di una postazione, tramite il kit aziendale.	&Capitolato - UC11	\\
+		\hline		
+		R1F11.1&Il dipendente, dopo aver effettuato una igienizzazione, deve poter marcare la postazione come libera e igienizzata.	&Interna - UC11.1	\\
+		\hline	
+		R1F11.2&Il dipendente deve poter registrare l'avvenuta igienizzazione autonoma della postazione, tramite Ethereum.	&Capitolato - UC11.2	\\
+		\hline	
+		R1F12&Il dipendente deve poter ricercare una postazione in base alla data, all'orario e all'identificativo della stanza.	&Interna - UC12.1	\\
+		\hline
+		R1F12.1&Il dipendente deve poter visualizzare le postazioni di una stanza.	&Capitolato - UC12.2	\\
+		\hline
+		R1F12.2&Il dipendente deve poter visualizzare l'identificativo della prima postazione igienizzata e libera in una stanza.	&Capitolato - UC12.4	\\
+		\hline
+		R1F12.3&Il dipendente deve poter selezionare una postazione di una stanza.	&Interna - UC12.5	\\
+		\hline
+		R1F12.4&Il dipendente deve poter prenotare una postazione selezionata.	&Capitolato - UC12.6	\\
+		\hline
 R1F13&L'addetto alle pulizie riceve l'elenco delle stanze e delle postazioni che necessitano di igienizzazione	& Interno - UC13	\\
 						\hline
 			R1F13.1&	L'addetto alle pulizie riceve l'elenco delle stanze che necessitano di igienizzazione& 	Capitolato - UC13.1\\
@@ -225,6 +248,10 @@ Non sono stati individuati requisiti prestazionali. Uno dei motivi sta nel fatto
 R2F4.1
 R2F4.2	 
 R1F5.13
+R1F10.1
+R1F11.1
+R1F12
+R1F12.3
 R1F13
 R1F13.2
 R1F14
@@ -258,6 +285,13 @@ Capitolato & \multicolumn1{p{20mm}}
 	R1F7.1
 	R1F7.2
 	R1F8
+	R1F9
+	R1F10
+	R1F11
+	R1F11.2
+	R1F12.1
+	R3F12.2
+	R1F12.4
 	R1F13.1
 	R1F14.1
 	R1V1
@@ -378,6 +412,28 @@ UC7.1& R1F7.1 \\
 UC7.2& R1F7.2 \\
 \hline
 UC8& R1F8\\
+\hline
+UC9& R1F9\\
+\hline
+UC10& R1F10\\
+\hline
+UC10.3& R1F10.1\\
+\hline
+UC11& R1F11\\
+\hline
+UC11.1& R1F11.1\\
+\hline
+UC11.2& R1F11.2\\
+\hline
+UC12.1& R1F12\\
+\hline
+UC12.2& R1F12.1\\
+\hline
+UC12.4& R3F12.2\\
+\hline
+UC12.5& R1F12.3\\
+\hline
+UC12.6& R1F12.4\\
 \hline
 UC13& R1F13\\
 \hline
@@ -641,6 +697,67 @@ R1F8	& \multicolumn1{p{20mm}}
 	}\\
 
 	\hline
+R1F9	& \multicolumn1{p{20mm}}
+{
+	Capitolato
+	UC9
+}\\
+\hline	
+R1F10	& \multicolumn1{p{20mm}}
+{
+	Capitolato
+	UC10
+}\\
+\hline	
+R1F10.1	& \multicolumn1{p{20mm}}
+{
+	Interna
+	UC10.3
+}\\
+\hline
+R1F11	& \multicolumn1{p{20mm}}
+{
+	Capitolato
+	UC11
+}\\
+R1F11.1	& \multicolumn1{p{20mm}}
+{
+	Interna
+	UC11.1
+}\\
+\hline	
+R1F11.2	& \multicolumn1{p{20mm}}
+{
+	Capitolato
+	UC11.2
+}\\
+\hline
+R1F12	& \multicolumn1{p{20mm}}
+{
+	Interna
+	UC12.1
+}\\
+R1F12.1	& \multicolumn1{p{20mm}}
+{
+	Capitolato
+	UC12.2
+}\\
+R1F12.2	& \multicolumn1{p{20mm}}
+{
+	Capitolato
+	UC12.4
+}\\
+R1F12.3	& \multicolumn1{p{20mm}}
+{
+	Interna
+	UC12.5
+}\\
+R1F12.4	& \multicolumn1{p{20mm}}
+{
+	Capitolato
+	UC12.6
+}\\
+\hline
 R1F13	& \multicolumn1{p{20mm}}
 	{
 		Interno
