@@ -180,7 +180,7 @@ R1V7&Deve essere sviluppata un'applicazione per Android o iOS	& Capitolato	\\
 R1V8&Devono essere scritti dei test che abbiamo una copertura di almeno l'80 per cento del codice e deve essere fornito il report della loro esecuzione	& 	\\
 		\hline
 
-R1V9&Devono essere eseguiti dei test che mettano in realzione la precisione del sistema e il consumo della batteria dei cellulari	& Capitolato - Verbale esterno 2020-12-18	\\
+R1V9&Devono essere eseguiti dei test che mettano in realzione la precisione del sistema e il consumo della batteria dei cellulari	& Capitolato - Verbale 2020-12-18	\\
 		\hline
 R1V10&Deve essere fornita una documentazione delle scelte implementative e progettuali accompagnate dalle loro motivazioni	& Capitolato	\\
 		\hline
@@ -208,6 +208,192 @@ Non sono stati individuati requisiti prestazionali. Uno dei motivi sta nel fatto
 %\end{center}
 
 \subsection{Tracciamento}
+\subsubsection{Fonte - Requisiti}
+\begin{center}
+	\rowcolors{2}{lightest-grayest}{white}
+	\begin{longtable}{|p{20mm}|p{20mm}|}
+		\hline
+		\rowcolor{lighter-grayer}
+		\textbf{Fonte} &  \textbf{Requisiti}  \\
+		\hline
+		\endfirsthead
+		
+		% ----- Modificare da qui -----
+		 Interno & \multicolumn1{p{20mm}}
+		 {R2F1
+ R1F3
+R2F4.1
+R2F4.2	 
+R1F5.13
+R1F13
+R1F13.2
+R1F14
+R1F14.2
+R1Q1
+}\\
+Capitolato & \multicolumn1{p{20mm}}
+{
+	R2F4
+	R1F5
+	R1F5.1
+	R1F5.2
+	R1F5.3
+	R1F5.4
+	R1F5.5
+	R1F5.6
+	R1F5.8
+	R1F5.10
+	R1F5.11
+	R1F5.14
+	R1F5.16
+	R1F5.18
+	R1F6
+	R1F6.1
+	R1F6.2
+	R1F6.3
+	R1F6.4
+	R1F6.5
+	R1F7
+	R1F7.1
+	R1F7.2
+	R1F8
+	R1F13.1
+	R1F14.1
+	R1V1
+	R3V1.1
+	R1V2
+	R1V2.1
+	R1V3
+	R1V4
+	R2V5
+	R2V6
+	R1V7
+	R1V8
+	R1V9
+	R1V10
+	R1V11
+}
+		    \\
+		\hline
+		Verbale 2020-12-18 & \multicolumn1{p{20mm}}
+		{
+			R1F5.12
+			R1F5.20
+			R1F5.21
+			R1V9
+		} \\
+	\hline
+	Verbale 2021-01-04 & \multicolumn1{p{20mm}}
+	{
+		R1F5.7
+		R1F5.9
+		R1F5.15
+		R1F5.17
+		R1F5.19
+		R1F6.2
+		R1F6.5
+		R1F14.3
+	} \\
+\hline
+UC1 & R2F1  \\
+\hline
+UC3 & R1F3  \\
+\hline
+UC4& R2F4 \\
+\hline
+UC4.1&R2F4.1 \\
+\hline
+UC4.2&  R2F4.2\\
+\hline
+UC5& R1F5 \\
+\hline
+UC5.1& \multicolumn1{p{20mm}}
+{
+	R1F5.1
+	R1F5.2
+	R1F5.3
+	R1F5.4
+} \\
+\hline
+UC5.1.1& R1F5.5 \\
+\hline
+UC5.2.1& R1F5.13\\
+\hline
+UC5.2& \multicolumn1{p{20mm}}
+{
+	R1F5.6
+	R1F5.7
+}   \\
+\hline
+UC5.3& \multicolumn1{p{20mm}}
+{
+	R1F5.8
+	R1F5.9
+}   \\
+\hline
+UC5.4& R1F5.10\\
+\hline
+UC5.4.1& R1F5.11 \\
+\hline
+UC5.6.1& R1F5.12 \\
+\hline
+
+UC5.5&  \multicolumn1{p{20mm}}
+{
+R1F5.14
+R1F5.15	
+}   \\
+UC5.5.1 & R1F5.20  \\
+\hline
+UC5.5.2 & R1F5.21 \\
+\hline
+\hline
+UC5.6&  \multicolumn1{p{20mm}}
+{
+	R1F5.16
+	R1F5.17	
+}  \\
+\hline
+UC5.7& \multicolumn1{p{20mm}}
+{
+	R1F5.18
+	R1F5.19	
+}  \\
+\hline
+UC6& R1F6 \\
+\hline
+UC6.1& R1F6.1 \\
+\hline
+UC6.2& R1F6.2  \\
+\hline
+UC6.3& R1F6.3\\
+\hline
+UC6.4& R1F6.4 \\
+\hline
+UC7& R1F7 \\
+\hline
+UC7.1& R1F7.1 \\
+\hline
+UC7.2& R1F7.2 \\
+\hline
+UC8& R1F8\\
+\hline
+UC13& R1F13\\
+\hline
+UC13.1& R1F13.1 \\
+\hline
+UC13.2& R1F13.2 \\
+\hline
+UC14&R1F14 \\
+\hline
+UC14.1& R1F14.1\\
+\hline
+UC14.2&R1F14.2 \\
+\hline	
+	\end{longtable}
+\end{center}
+
+\subsubsection{Requisito - Fonti}
 \begin{center}
 	\rowcolors{2}{lightest-grayest}{white}
 	\begin{longtable}{|c|c|}
@@ -218,10 +404,10 @@ Non sono stati individuati requisiti prestazionali. Uno dei motivi sta nel fatto
 		\endfirsthead
 		
 		% ----- Modificare da qui -----
-		 R & \\
-		\hline
+		
 		
 	\end{longtable}
 \end{center}
+
 \subsection{Considerazioni}
 Durante l'avanzamento del progetto i requisiti individuati potranno essere modificati e ampliati, e potranno esserne aggiunti di nuovi.
