@@ -43,114 +43,114 @@ Il significato delle seguenti voci è:
 		% ----- Modificare da qui -----
 		 R2F1 & L'utente può leggere una breve guida per il login e ill funzionamento & Interno - UC1 \\
 		\hline
+		R1F2	&	L'utente non autenticato deve potersi autenticare dal sistema& Interno - UC2	\\
+		\hline
+		R1F2.1	&	L'utente non autenticato deve ricevere un messaggio di errore nel caso abbia sbagliato a inserire le credenziali& Interno - UC2.1	\\
+		\hline
+		R1F2.2	&	L'utente non autenticato deve poter ricevere un messaggio di errore nel caso il suo account venga disabilitato& Interno - UC2.2	\\
+		\hline
 		R1F3	&	L'utente autenticato deve potersi disautenticare dal sistema& Interno - UC3	\\
 		\hline
-		R2F4	&L'amminitratore deve poter gestire le impostazioni del sistema	& Capitolato - UC4	\\
+			R1F4&L'amministratore deve poter gestire le stanze e le postazioni salvate nel sistema	& Capitolato - UC4	\\
 					\hline
-		R2F4.1	&	L'amministratore deve poter visualizzare la durata dei periodi che servono per accertare l'occupazione e la liberazione di una postazione da parte di un utente& Interno - UC4.1	\\
+			R1F4.1&L'amministratore deve poter visualizzare le stanze e le postazioni salvate nel sistema in modo schematico	& Capitolato - UC4.1	\\
 					\hline
-			R2F4.2&L'amministratore deve poter modificare la durata dei periodi che servono per accertare l'occupazione e la liberazione di una postazione da parte di un utente	&Interno - UC4.2 	\\
+			R1F4.2&	L'amministratore deve poter vede le postazioni colorate in base al loro stato attuale.& Capitolato - UC4.1	\\
 					\hline
-			R1F5&L'amministratore deve poter gestire le stanze e le postazioni salvate nel sistema	& Capitolato - UC5	\\
+			R1F4.3&	Gli stati delle postazioni devono essere i seguenti: libera e igienizzata, libera e non igienizzata, occupata, prenotata e igienizzata, prenotata e non igienizzata e inaccessibile& 	Capitolato - UC4.1\\
 					\hline
-			R1F5.1&L'amministratore deve poter visualizzare le stanze e le postazioni salvate nel sistema in modo schematico	& Capitolato - UC5.1	\\
+			R1F4.4&Per ogni stanza deve essere indicato il numero di occupanti attuali	& Capitolato - UC4.1	\\
 					\hline
-			R1F5.2&	L'amministratore deve poter vede le postazioni colorate in base al loro stato attuale.& Capitolato - UC5.1	\\
+			R1F4.5&L'amministratore deve poter visualizzare un calendario delle prenotazioni delle postazioni	& Capitolato - UC4.1.1	\\
 					\hline
-			R1F5.3&	Gli stati delle postazioni devono essere i seguenti: libera e igienizzata, libera e non igienizzata, occupata, prenotata e igienizzata, prenotata e non igienizzata e inaccessibile& 	Capitolato - UC5.1\\
-					\hline
-			R1F5.4&Per ogni stanza deve essere indicato il numero di occupanti attuali	& Capitolato - UC5.1	\\
-					\hline
-			R1F5.5&L'amministratore deve poter visualizzare un calendario delle prenotazioni delle postazioni	& Capitolato - UC5.1.1	\\
-					\hline
-				R1F5.6&L'amministratore deve poter aggiungere una stanza al sistema e assegnarle un nome	& Capitolato - UC5.2	\\
+				R1F4.6&L'amministratore deve poter aggiungere una stanza al sistema e assegnarle un nome	& Capitolato - UC4.2	\\
 						\hline
-				R1F5.7&	La creazione di una nuova stanza va salvata in Ethereum&Verbale 2021-01-04 - UC5.2 	\\
+				R1F4.7&	La creazione di una nuova stanza va salvata in Ethereum&Verbale 2021-01-04 - UC4.2 	\\
 						\hline
-				R1F5.8&L'amministratore deve poter eliminare una stanza dal sistema	& Capitolato - UC5.3	\\
+				R1F4.8&L'amministratore deve poter eliminare una stanza dal sistema	& Capitolato - UC4.3	\\
 						\hline
-				R1F5.9&L'eliminazione di una stanza va salvata in Ethereum	& Verbale 2021-01-04 - UC5.3	\\
+				R1F4.9&L'eliminazione di una stanza va salvata in Ethereum	& Verbale 2021-01-04 - UC4.3	\\
 						\hline
-				R1F5.10&L'amministratore deve poter modificare il nome di una stanza	& Capitolato - UC5.4	\\
+				R1F4.10&L'amministratore deve poter modificare il nome di una stanza	& Capitolato - UC4.4	\\
 						\hline
-			R1F5.11&L'amministratore deve poter impostare una stanza come inaccessibile per alcuni giorni, a partire anche da un giorno diverso da quello odierno	& Capitolato - UC5.4.1	\\
+			R1F4.11&L'amministratore deve poter impostare una stanza come inaccessibile per alcuni giorni, a partire anche da un giorno diverso da quello odierno	& Capitolato - UC4.4.1	\\
 					\hline
-			R1F5.12&Gli utenti che hanno prenotato una postazione devono essere avvisati se la postazione stessa o la stanza in cui si trova diventa non disponibile	& Verbale 2020-12-18 - UC5.6.1	\\
+			R1F4.12&Gli utenti che hanno prenotato una postazione devono essere avvisati se la postazione stessa o la stanza in cui si trova diventa non disponibile	& Verbale 2020-12-18 - UC4.6.1	\\
 					\hline
-R1F5.13&Se si tenta di creare una stanza o modificarla con un nome attualmente assegnato a un'altra, si riceve un messaggio d'errore e la stanza non viene creata o modificata	& Interno - UC5.2.1	\\
+R1F4.13&Se si tenta di creare una stanza o modificarla con un nome attualmente assegnato a un'altra, si riceve un messaggio d'errore e la stanza non viene creata o modificata	& Interno - UC4.2.1	\\
 						\hline
-			R1F5.14&L'amministratore deve poter aggiungere una postazione in una stanza, specificando: codice della postazione, codice del tag RFID che la identifica e posizione all'interno di una stanza	& Capitolato - UC5.5	\\
+			R1F4.14&L'amministratore deve poter aggiungere una postazione in una stanza, specificando: codice della postazione, codice del tag RFID che la identifica e posizione all'interno di una stanza	& Capitolato - UC4.5	\\
 					\hline
-			R1F5.15&L'aggiunta di una postazioni va salvata in Ethereum	&Verbale 2021-01-04 - UC5.5 	\\
+			R1F4.15&L'aggiunta di una postazioni va salvata in Ethereum	&Verbale 2021-01-04 - UC4.5 	\\
 					\hline
-R1F5.16&L'amministratore deve poter eliminare una postazione	& Capitolato - UC5.6	\\
+R1F4.16&L'amministratore deve poter eliminare una postazione	& Capitolato - UC4.6	\\
 						\hline
-		R1F5.17	&L'eliminazione di una postazione va salvata in Ethereum	& Verbale 2021-01-04 - UC5.6	\\
+		R1F4.17	&L'eliminazione di una postazione va salvata in Ethereum	& Verbale 2021-01-04 - UC4.6	\\
 					\hline
-			R1F5.18&L'amministratore deve poter modificare i dati e la posizione di una postazione	& Capitolato - UC5.7	\\
+			R1F4.18&L'amministratore deve poter modificare i dati e la posizione di una postazione	& Capitolato - UC4.7	\\
 					\hline
-R1F5.19&	La modifica di una postazione va salvata in Ethereum& Verbale 2021-01-04 - UC5.7	\\
+R1F4.19&	La modifica di una postazione va salvata in Ethereum& Verbale 2021-01-04 - UC4.7	\\
 					\hline
-R1F5.20&	Se si tenta di creare o modificare una postazione assegnandole un codice già in utilizzo l'azione deve fallire e deve comparire un messaggio d'errore& Verbale 2020-12-18 - UC5.5.1 	\\
+R1F4.20&	Se si tenta di creare o modificare una postazione assegnandole un codice già in utilizzo l'azione deve fallire e deve comparire un messaggio d'errore& Verbale 2020-12-18 - UC4.5.1 	\\
 						\hline
-			R1F5.21&Se si tenta di creare o modificare una postazione assegnandole un codice del tag già in utilizzo l'azione deve fallire e deve comparire un messaggio d'errore	&Verbale 2020-12-18 - UC5.5.2 	\\
+			R1F4.21&Se si tenta di creare o modificare una postazione assegnandole un codice del tag già in utilizzo l'azione deve fallire e deve comparire un messaggio d'errore	&Verbale 2020-12-18 - UC4.5.2 	\\
 					\hline
-			R1F6&L'amministratore deve poter gestire le credenziali degli utenti	& Capitolato - UC6		\\
+			R1F5&L'amministratore deve poter gestire le credenziali degli utenti	& Capitolato - UC5		\\
 					\hline
-R1F6.1&L'amministratore deve poter visualizzare una lista delle credenziali di tutti gli utente del sistema	& Capitolato - UC6.1	\\
+R1F5.1&L'amministratore deve poter visualizzare una lista delle credenziali di tutti gli utente del sistema	& Capitolato - UC5.1	\\
 					\hline
-R1F6.2&L'amministratore deve poter creare nuove credenziali per accedere al sistema. Le informazioni contenute nel profilo di un utente sono: Nome, Cognome, Nome utente, Password e E-mail. Tra queste le informazioni necessarie per l'accesso sono password ed e-mail	& Capitolato - Verbale 2021-01-04 - UC6.2	\\
+R1F5.2&L'amministratore deve poter creare nuove credenziali per accedere al sistema. Le informazioni contenute nel profilo di un utente sono: Nome, Cognome, Nome utente, Password e E-mail. Tra queste le informazioni necessarie per l'accesso sono password ed e-mail	& Capitolato - Verbale 2021-01-04 - UC5.2	\\
 						\hline
-			R1F6.3&L'amministratore può modificare le credenziali degli utenti del sistema	&Capitolato - UC6.3 	\\
+			R1F5.3&L'amministratore può modificare le credenziali degli utenti del sistema	&Capitolato - UC5.3 	\\
 					\hline
-			R1F6.4&L'amministratore deve poter eliminare credenziali di utenti del sistema	& Capitolato - UC6.4	\\
+			R1F5.4&L'amministratore deve poter eliminare credenziali di utenti del sistema	& Capitolato - UC5.4	\\
 					\hline
-R1F6.5&Il sistema deve poter memorizzare più credenziali per ogni categoria di utenti: amministratori, dipendenti e addetti	& Capitolato - Verbale 2021-01-04	\\
+R1F5.5&Il sistema deve poter memorizzare più credenziali per ogni categoria di utenti: amministratori, dipendenti e addetti	& Capitolato - Verbale 2021-01-04	\\
 					\hline
-R1F7&L'amministratore deve poter esplorare la storia delle postazioni occupate da uno specifico utente	& Capitolato - UC7	\\
+R1F6&L'amministratore deve poter esplorare la storia delle postazioni occupate da uno specifico utente	& Capitolato - UC6	\\
 						\hline
-			R1F7.1&L'amministratore deve poter visualizzare in forma tabellare le occupazioni di postazioni da parte di un utente specifico, con date e orari di inizio e fine delle occupazioni e codici delle postazioni.	&Capitolato - UC7.1 	\\
+			R1F6.1&L'amministratore deve poter visualizzare in forma tabellare le occupazioni di postazioni da parte di un utente specifico, con date e orari di inizio e fine delle occupazioni e codici delle postazioni.	&Capitolato - UC6.1 	\\
 					\hline
-			R1F7.2&L'amministratore deve poter effettuare una ricerca tra le postazioni occupate da un utente. I valori che si possono specificare per la ricerca sono: codice della postazione e periodo all'interno del quale l'utente occupava la postazione	& 	Capitolato - UC7.2\\
+			R1F6.2&L'amministratore deve poter effettuare una ricerca tra le postazioni occupate da un utente. I valori che si possono specificare per la ricerca sono: codice della postazione e periodo all'interno del quale l'utente occupava la postazione	& 	Capitolato - UC6.2\\
 					\hline
-R1F8&L'amministratore deve poter ottenere una tabella delle sanificazioni di tutte le postazioni, con data e ora in cui sono avvenute.	&Capitolato - UC8 	\\
+R1F7&L'amministratore deve poter ottenere una tabella delle sanificazioni di tutte le postazioni, con data e ora in cui sono avvenute.	&Capitolato - UC7 	\\
 					
 					\hline
-					R1F9&Il dipendente deve poter visualizzare lo stato di una postazione, tramite tagRFID.	&Capitolato - UC9 	\\
+					R1F8&Il dipendente deve poter visualizzare lo stato di una postazione, tramite tagRFID.	&Capitolato - UC8 	\\
 					\hline
-			R1F10&Il dipendente deve poter segnalare la propria presenza su una postazione in tempo reale, tramite tagRFID.	&Capitolato - UC10 	\\
+			R1F9&Il dipendente deve poter segnalare la propria presenza su una postazione in tempo reale, tramite tagRFID.	&Capitolato - UC9 	\\
 		\hline
-		R1F10.1&Il dipendente deve poter registrare i momenti di inizio e di fine della sua occupazione di una postazione, tramite Ethereum.	&Interna - UC10.3 	\\
+		R1F9.1&Il dipendente deve poter registrare i momenti di inizio e di fine della sua occupazione di una postazione, tramite Ethereum.	&Interna - UC9.3 	\\
 		\hline	
-		R1F11&Il dipendente deve poter effettuare una pulizia autonoma di una postazione, tramite il kit aziendale.	&Capitolato - UC11	\\
+		R1F10&Il dipendente deve poter effettuare una pulizia autonoma di una postazione, tramite il kit aziendale.	&Capitolato - UC10	\\
 		\hline		
-		R1F11.1&Il dipendente, dopo aver effettuato una igienizzazione, deve poter marcare la postazione come libera e igienizzata.	&Interna - UC11.1	\\
+		R1F10.1&Il dipendente, dopo aver effettuato una igienizzazione, deve poter marcare la postazione come libera e igienizzata.	&Interna - UC10.1	\\
 		\hline	
-		R1F11.2&Il dipendente deve poter registrare l'avvenuta igienizzazione autonoma della postazione, tramite Ethereum.	&Capitolato - UC11.2	\\
+		R1F10.2&Il dipendente deve poter registrare l'avvenuta igienizzazione autonoma della postazione, tramite Ethereum.	&Capitolato - UC10.2	\\
 		\hline	
-		R1F12&Il dipendente deve poter ricercare una postazione in base alla data, all'orario e all'identificativo della stanza.	&Interna - UC12.1	\\
+		R1F11&Il dipendente deve poter ricercare una postazione in base alla data, all'orario e all'identificativo della stanza.	&Interna - UC11.1	\\
 		\hline
-		R1F12.1&Il dipendente deve poter visualizzare le postazioni di una stanza.	&Capitolato - UC12.2	\\
+		R1F11.1&Il dipendente deve poter visualizzare le postazioni di una stanza.	&Capitolato - UC11.2	\\
 		\hline
-		R1F12.2&Il dipendente deve poter visualizzare l'identificativo della prima postazione igienizzata e libera in una stanza.	&Capitolato - UC12.4	\\
+		R1F11.2&Il dipendente deve poter visualizzare l'identificativo della prima postazione igienizzata e libera in una stanza.	&Capitolato - UC11.4	\\
 		\hline
-		R1F12.3&Il dipendente deve poter selezionare una postazione di una stanza.	&Interna - UC12.5	\\
+		R1F11.3&Il dipendente deve poter selezionare una postazione di una stanza.	&Interna - UC11.5	\\
 		\hline
-		R1F12.4&Il dipendente deve poter prenotare una postazione selezionata.	&Capitolato - UC12.6	\\
+		R1F11.4&Il dipendente deve poter prenotare una postazione selezionata.	&Capitolato - UC11.6	\\
 		\hline
-R1F13&L'addetto alle pulizie riceve l'elenco delle stanze e delle postazioni che necessitano di igienizzazione	& Interno - UC13	\\
+R1F12&L'addetto alle pulizie riceve l'elenco delle stanze e delle postazioni che necessitano di igienizzazione	& Interno - UC12	\\
 						\hline
-			R1F13.1&	L'addetto alle pulizie riceve l'elenco delle stanze che necessitano di igienizzazione& 	Capitolato - UC13.1\\
+			R1F12.1&	L'addetto alle pulizie riceve l'elenco delle stanze che necessitano di igienizzazione& 	Capitolato - UC12.1\\
 					\hline
-			R1F13.2&L'addetto alle pulizie riceve l'elenco delle postazioni che necessitano di igienizzazione	& Interno - UC13.2	\\
+			R1F12.2&L'addetto alle pulizie riceve l'elenco delle postazioni che necessitano di igienizzazione	& Interno - UC12.2	\\
 					\hline
-R1F14&L'addeto alle pulizie deve registrare sulla blockchain con l'utilizzo di ethereum quando igienizza una stanza o una postazione	& Interno - UC14	\\
+R1F13&L'addeto alle pulizie deve registrare sulla blockchain con l'utilizzo di ethereum quando igienizza una stanza o una postazione	& Interno - UC13	\\
 					\hline
-R1F14.1&L'addetto alle pulizie deve poter marcare, nella sezione apposita, una stanza come igienizzata	& Capitoato - UC14.1	\\
+R1F13.1&L'addetto alle pulizie deve poter marcare, nella sezione apposita, una stanza come igienizzata	& Capitoato - UC13.1	\\
 						\hline
-			R1F14.2&L'addetto alle pulizie deve poter marcare, nella sezione apposita, una postazione come igienizzata	&Interno - UC14.2 	\\
+			R1F13.2&L'addetto alle pulizie deve poter marcare, nella sezione apposita, una postazione come igienizzata	&Interno - UC13.2 	\\
 					\hline
-			R1F14.3&L'addetto alle pulizie non può pulire postazioni o stanze occupate	& Verbale 2021-01-04	\\
+			R1F13.3&L'addetto alle pulizie non può pulire postazioni o stanze occupate	& Verbale 2021-01-04	\\
 					\hline
 						
 	\end{longtable}
@@ -199,17 +199,17 @@ R1F14.1&L'addetto alle pulizie deve poter marcare, nella sezione apposita, una s
 		\endfirsthead
 		
 		% ----- Modificare da qui -----
-		 R1V1 &avere il server che esponga, in aggiunta a eventuali altri protocolli per l’interazione con il servizio specifico, delle API Rest attraverso le quali sia possibile utilizzare l'applicativo &Capitolato \\
+		 R1V1 &Avere il server che esponga, in aggiunta a eventuali altri protocolli per l’interazione con il servizio specifico, delle API Rest attraverso le quali sia possibile utilizzare l'applicativo &Capitolato \\
 		\hline
-		R3V1.1&è possibile utilizzare gRPC come soluzione alternativa al Rest	& Capitolato	\\
+		R3V1.1&Deve essere possibile utilizzare gRPC come soluzione alternativa al Rest	& Capitolato	\\
 		\hline
-R1V2&scansione dei codici nel tempo sufficiente a certificare la presenza  della persona in postazione.	& Capitolato	\\
+R1V2&Scansione dei codici nel tempo sufficiente a certificare la presenza  della persona in postazione.	& Capitolato	\\
 		\hline
 R1V2.1&L’utilizzo del lettore RFID riduce in modo rilevante l’autonomia dei cellulari, l’applicazione è da sviluppare in maniera tale da bilanciare nel miglior modo possibile batteria e scansioni. È richiesto un resoconto delle scelte fatte e dei test effettuati per garantire il miglior rapporto raggiunto.	& Capitolato	\\
 		\hline
 		R1V3&Avere le componenti applicative correlate da test unitari e d’integrazione.	& Capitolato	\\
 		\hline
-R1V4&è richiesto che il sistema venga testato nella sua interezza tramite test end-to-end	& Capitolato	\\
+R1V4&Viene richiesto che il sistema sia testato nella sua interezza tramite test end-to-end	& Capitolato	\\
 		\hline
 R2V5&Le comunicazioni tra app e server devono essere cifrate	& Capitolato	\\
 		\hline
@@ -261,56 +261,56 @@ Non sono stati individuati requisiti prestazionali. Uno dei motivi sta nel fatto
 		% ----- Modificare da qui -----
 		 Interno & \multicolumn1{p{20mm}}
 		 {R2F1
- R1F3
-R2F4.1
-R2F4.2	 
-R1F5.13
+		 	R1F2
+		 	R1F2.1
+		 	R1F2.2
+ R1F3	 
+R1F4.13
+R1F9.1
 R1F10.1
-R1F11.1
+R1F11
+R1F11.3
 R1F12
-R1F12.3
+R1F12.2
 R1F13
 R1F13.2
-R1F14
-R1F14.2
 R1Q1
 }\\
 \hline
 Capitolato & \multicolumn1{p{20mm}}
 {
-	R2F4
+	R1F4
+	R1F4.1
+	R1F4.2
+	R1F4.3
+	R1F4.4
+	R1F4.5
+	R1F4.6
+	R1F4.8
+	R1F4.10
+	R1F4.11
+	R1F4.14
+	R1F4.16
+	R1F4.18
 	R1F5
 	R1F5.1
 	R1F5.2
 	R1F5.3
 	R1F5.4
 	R1F5.5
-	R1F5.6
-	R1F5.8
-	R1F5.10
-	R1F5.11
-	R1F5.14
-	R1F5.16
-	R1F5.18
 	R1F6
 	R1F6.1
 	R1F6.2
-	R1F6.3
-	R1F6.4
-	R1F6.5
 	R1F7
-	R1F7.1
-	R1F7.2
 	R1F8
 	R1F9
 	R1F10
-	R1F11
-	R1F11.2
+	R1F10.2
+	R1F11.1
+	R3F11.2
+	R1F11.4
 	R1F12.1
-	R3F12.2
-	R1F12.4
-	R1F13.1
-	R1F14.1	
+	R1F13.1	
 	R1Q2
 	R1Q3
 	R3Q4
@@ -336,140 +336,140 @@ Capitolato & \multicolumn1{p{20mm}}
 		\hline
 		Verbale 2020-12-18 & \multicolumn1{p{20mm}}
 		{
-			R1F5.12
-			R1F5.20
-			R1F5.21
+			R1F4.12
+			R1F4.20
+			R1F4.21
 			R1V9
 		} \\
 	\hline
 	Verbale 2021-01-04 & \multicolumn1{p{20mm}}
 	{
-		R1F5.7
-		R1F5.9
-		R1F5.15
-		R1F5.17
-		R1F5.19
-		R1F6.2
-		R1F6.5
-		R1F14.3
+		R1F4.7
+		R1F4.9
+		R1F4.15
+		R1F4.17
+		R1F4.19
+		R1F5.2
+		R1F5.5
+		R1F13.3
 	} \\
 \hline
 UC1 & R2F1  \\
 \hline
+UC2 & R1F2  \\
+\hline
+UC2.1 & R1F2.1  \\
+\hline\\
+UC2.2 & R1F2.2  \\
+\hline
 UC3 & R1F3  \\
 \hline
-UC4& R2F4 \\
+UC4& R1F4 \\
 \hline
-UC4.1&R2F4.1 \\
+UC4.1& \multicolumn1{p{20mm}}
+{
+	R1F4.1
+	R1F4.2
+	R1F4.3
+	R1F4.4
+} \\
 \hline
-UC4.2&  R2F4.2\\
+UC4.1.1& R1F4.5 \\
+\hline
+UC4.2.1& R1F4.13\\
+\hline
+UC4.2& \multicolumn1{p{20mm}}
+{
+	R1F4.6
+	R1F4.7
+}   \\
+\hline
+UC4.3& \multicolumn1{p{20mm}}
+{
+	R1F4.8
+	R1F4.9
+}   \\
+\hline
+UC4.4& R1F4.10\\
+\hline
+UC4.4.1& R1F4.11 \\
+\hline
+UC4.6.1& R1F4.12 \\
+\hline
+
+UC4.5&  \multicolumn1{p{20mm}}
+{
+R1F4.14
+R1F4.15	
+}   \\
+UC4.5.1 & R1F4.20  \\
+\hline
+UC4.5.2 & R1F4.21 \\
+\hline
+\hline
+UC4.6&  \multicolumn1{p{20mm}}
+{
+	R1F4.16
+	R1F4.17	
+}  \\
+\hline
+UC4.7& \multicolumn1{p{20mm}}
+{
+	R1F4.18
+	R1F4.19	
+}  \\
 \hline
 UC5& R1F5 \\
 \hline
-UC5.1& \multicolumn1{p{20mm}}
-{
-	R1F5.1
-	R1F5.2
-	R1F5.3
-	R1F5.4
-} \\
+UC5.1& R1F5.1 \\
 \hline
-UC5.1.1& R1F5.5 \\
+UC5.2& R1F5.2  \\
 \hline
-UC5.2.1& R1F5.13\\
+UC5.3& R1F5.3\\
 \hline
-UC5.2& \multicolumn1{p{20mm}}
-{
-	R1F5.6
-	R1F5.7
-}   \\
-\hline
-UC5.3& \multicolumn1{p{20mm}}
-{
-	R1F5.8
-	R1F5.9
-}   \\
-\hline
-UC5.4& R1F5.10\\
-\hline
-UC5.4.1& R1F5.11 \\
-\hline
-UC5.6.1& R1F5.12 \\
-\hline
-
-UC5.5&  \multicolumn1{p{20mm}}
-{
-R1F5.14
-R1F5.15	
-}   \\
-UC5.5.1 & R1F5.20  \\
-\hline
-UC5.5.2 & R1F5.21 \\
-\hline
-\hline
-UC5.6&  \multicolumn1{p{20mm}}
-{
-	R1F5.16
-	R1F5.17	
-}  \\
-\hline
-UC5.7& \multicolumn1{p{20mm}}
-{
-	R1F5.18
-	R1F5.19	
-}  \\
+UC5.4& R1F5.4 \\
 \hline
 UC6& R1F6 \\
 \hline
 UC6.1& R1F6.1 \\
 \hline
-UC6.2& R1F6.2  \\
+UC6.2& R1F6.2 \\
 \hline
-UC6.3& R1F6.3\\
-\hline
-UC6.4& R1F6.4 \\
-\hline
-UC7& R1F7 \\
-\hline
-UC7.1& R1F7.1 \\
-\hline
-UC7.2& R1F7.2 \\
+UC7& R1F7\\
 \hline
 UC8& R1F8\\
 \hline
 UC9& R1F9\\
 \hline
+UC9.3& R1F9.1\\
+\hline
 UC10& R1F10\\
 \hline
-UC10.3& R1F10.1\\
+UC10.1& R1F10.1\\
 \hline
-UC11& R1F11\\
+UC10.2& R1F10.2\\
 \hline
-UC11.1& R1F11.1\\
+UC11.1& R1F11\\
 \hline
-UC11.2& R1F11.2\\
+UC11.2& R1F11.1\\
 \hline
-UC12.1& R1F12\\
+UC11.4& R3F11.2\\
 \hline
-UC12.2& R1F12.1\\
+UC11.5& R1F11.3\\
 \hline
-UC12.4& R3F12.2\\
+UC11.6& R1F11.4\\
 \hline
-UC12.5& R1F12.3\\
+UC12& R1F12\\
 \hline
-UC12.6& R1F12.4\\
+UC12.1& R1F12.1 \\
 \hline
-UC13& R1F13\\
+UC12.2& R1F12.2 \\
 \hline
-UC13.1& R1F13.1 \\
+UC13&R1F13 \\
 \hline
-UC13.2& R1F13.2 \\
+UC13.1& R1F13.1\\
 \hline
-UC14&R1F14 \\
-\hline
-UC14.1& R1F14.1\\
-\hline
-UC14.2&R1F14.2 \\
+UC13.2&R1F13.2 \\
 \hline	
 	\end{longtable}
 \end{center}
@@ -491,29 +491,169 @@ UC14.2&R1F14.2 \\
 			UC1
 		}\\
 	\hline
+		R1F2 & \multicolumn1{p{20mm}}
+	{
+		Interno
+		UC2
+	}\\
+	\hline
+		R1F2.1 & \multicolumn1{p{20mm}}
+	{
+		Interno
+		UC2.1
+	}\\
+	\hline
+		R1F2.2 & \multicolumn1{p{20mm}}
+	{
+		Interno
+		UC2.2
+	}\\
+	\hline
 		R1F3 & \multicolumn1{p{20mm}}
 	{
 		Interno
 		UC3
 	}\\
 	\hline
-		R2F4 & \multicolumn1{p{20mm}}
+R1F4	& \multicolumn1{p{20mm}}
 	{
-		Capitolato
-		UC4
+	Capitolato	
+	UC4
 	}\\
 	\hline
-	R2F4.1	 & \multicolumn1{p{20mm}}
+R1F4.1	& \multicolumn1{p{20mm}}
 	{
-	Interno
+	Capitolato
+	UC4.1	
+	}\\
+
+	\hline
+R1F4.2	& \multicolumn1{p{20mm}}
+	{
+	Capitolato
 	UC4.1	
 	}\\
 	\hline
-R2F4.2	& \multicolumn1{p{20mm}}
+R1F4.3	& \multicolumn1{p{20mm}}
 	{
-	Interno
+	Capitolato
+	UC4.1	
+	}\\
+
+	\hline
+R1F4.4	& \multicolumn1{p{20mm}}
+	{
+	Capitolato
+	UC4.1	
+	}\\
+	\hline
+R1F4.5	& \multicolumn1{p{20mm}}
+	{
+	Capitolato
+	UC4.1.1	
+	}\\
+	\hline
+R1F4.6	& \multicolumn1{p{20mm}}
+	{
+	Capitolato
 	UC4.2	
 	}\\
+	\hline
+R1F4.7	& \multicolumn1{p{20mm}}
+	{
+	Verbale 2021-01-04
+	UC4.2	
+	}\\
+	\hline
+R1F4.8	& \multicolumn1{p{20mm}}
+	{
+	Capitolato
+	UC4.3	
+	}\\
+	\hline
+R1F4.9	& \multicolumn1{p{20mm}}
+	{
+	Verbale 2021-01-04
+	UC4.3	
+	}\\
+	\hline
+R1F4.10	& \multicolumn1{p{20mm}}
+	{
+	Capitolato	
+	UC4.4
+	}\\
+	\hline
+R1F4.11	& \multicolumn1{p{20mm}}
+	{
+	Capitolato
+	UC4.4.1	
+	}\\
+
+	\hline
+R1F4.12	& \multicolumn1{p{20mm}}
+	{
+	Verbale 2020-12-18	
+	UC4.6.1
+	}\\
+	\hline
+R1F4.13	& \multicolumn1{p{20mm}}
+	{
+	Interno
+	UC4.2.1	
+	}\\
+
+	\hline
+R1F4.14	& \multicolumn1{p{20mm}}
+	{
+	Capitolato
+	UC4.5	
+	}\\
+	\hline
+R1F4.15	& \multicolumn1{p{20mm}}
+	{
+	Verbale 2021-01-04
+	UC4.5	
+	}\\
+
+	\hline
+R1F4.16	& \multicolumn1{p{20mm}}
+	{
+	Capitolato
+	UC4.6	
+	}\\
+	\hline
+R1F4.17	& \multicolumn1{p{20mm}}
+	{
+		Verbale 2021-01-04
+		UC4.6
+	}\\
+
+	\hline
+R1F4.18	& \multicolumn1{p{20mm}}
+	{
+	Capitolato	
+	UC4.7
+	}\\
+	\hline
+R1F4.19	& \multicolumn1{p{20mm}}
+	{
+	Verbale 2021-01-04
+	UC4.7	
+	}\\
+
+	\hline
+R1F4.20	& \multicolumn1{p{20mm}}
+	{
+	Verbale 2020-12-18	
+	UC4.5.1
+	}\\
+	\hline
+R1F4.21	& \multicolumn1{p{20mm}}
+	{
+	Verbale 2020-12-18	
+	UC4.5.2
+	}\\
+
 	\hline
 R1F5	& \multicolumn1{p{20mm}}
 	{
@@ -523,304 +663,164 @@ R1F5	& \multicolumn1{p{20mm}}
 	\hline
 R1F5.1	& \multicolumn1{p{20mm}}
 	{
-	Capitolato
-	UC5.1	
+	Capitolato	
+	UC5.1
 	}\\
 
 	\hline
 R1F5.2	& \multicolumn1{p{20mm}}
 	{
-	Capitolato
-	UC5.1	
+	Capitolato	
+	Verbale 2021-01-04
+	UC5.2
 	}\\
 	\hline
 R1F5.3	& \multicolumn1{p{20mm}}
 	{
 	Capitolato
-	UC5.1	
+	UC5.3	
 	}\\
 
 	\hline
 R1F5.4	& \multicolumn1{p{20mm}}
 	{
 	Capitolato
-	UC5.1	
+	UC5.4	
 	}\\
 	\hline
 R1F5.5	& \multicolumn1{p{20mm}}
 	{
-	Capitolato
-	UC5.1.1	
-	}\\
-	\hline
-R1F5.6	& \multicolumn1{p{20mm}}
-	{
-	Capitolato
-	UC5.2	
-	}\\
-	\hline
-R1F5.7	& \multicolumn1{p{20mm}}
-	{
-	Verbale 2021-01-04
-	UC5.2	
-	}\\
-	\hline
-R1F5.8	& \multicolumn1{p{20mm}}
-	{
-	Capitolato
-	UC5.3	
-	}\\
-	\hline
-R1F5.9	& \multicolumn1{p{20mm}}
-	{
-	Verbale 2021-01-04
-	UC5.3	
-	}\\
-	\hline
-R1F5.10	& \multicolumn1{p{20mm}}
-	{
 	Capitolato	
-	UC5.4
-	}\\
-	\hline
-R1F5.11	& \multicolumn1{p{20mm}}
-	{
-	Capitolato
-	UC5.4.1	
-	}\\
-
-	\hline
-R1F5.12	& \multicolumn1{p{20mm}}
-	{
-	Verbale 2020-12-18	
-	UC5.6.1
-	}\\
-	\hline
-R1F5.13	& \multicolumn1{p{20mm}}
-	{
-	Interno
-	UC5.2.1	
-	}\\
-
-	\hline
-R1F5.14	& \multicolumn1{p{20mm}}
-	{
-	Capitolato
-	UC5.5	
-	}\\
-	\hline
-R1F5.15	& \multicolumn1{p{20mm}}
-	{
 	Verbale 2021-01-04
-	UC5.5	
-	}\\
-
-	\hline
-R1F5.16	& \multicolumn1{p{20mm}}
-	{
-	Capitolato
-	UC5.6	
-	}\\
-	\hline
-R1F5.17	& \multicolumn1{p{20mm}}
-	{
-		Verbale 2021-01-04
-		UC5.6
-	}\\
-
-	\hline
-R1F5.18	& \multicolumn1{p{20mm}}
-	{
-	Capitolato	
-	UC5.7
-	}\\
-	\hline
-R1F5.19	& \multicolumn1{p{20mm}}
-	{
-	Verbale 2021-01-04
-	UC5.7	
-	}\\
-
-	\hline
-R1F5.20	& \multicolumn1{p{20mm}}
-	{
-	Verbale 2020-12-18	
-	UC5.5.1
-	}\\
-	\hline
-R1F5.21	& \multicolumn1{p{20mm}}
-	{
-	Verbale 2020-12-18	
-	UC5.5.2
 	}\\
 
 	\hline
 R1F6	& \multicolumn1{p{20mm}}
 	{
-	Capitolato	
-	UC6
+		Capitolato
+		UC6
 	}\\
 	\hline
 R1F6.1	& \multicolumn1{p{20mm}}
 	{
-	Capitolato	
-	UC6.1
+		Capitolato
+		UC6.1
 	}\\
 
 	\hline
 R1F6.2	& \multicolumn1{p{20mm}}
 	{
-	Capitolato	
-	Verbale 2021-01-04
-	UC6.2
+		Capitolato
+		UC6.2
 	}\\
-	\hline
-R1F6.3	& \multicolumn1{p{20mm}}
-	{
-	Capitolato
-	UC6.3	
-	}\\
-
-	\hline
-R1F6.4	& \multicolumn1{p{20mm}}
-	{
-	Capitolato
-	UC6.4	
-	}\\
-	\hline
-R1F6.5	& \multicolumn1{p{20mm}}
-	{
-	Capitolato	
-	Verbale 2021-01-04
-	}\\
-
 	\hline
 R1F7	& \multicolumn1{p{20mm}}
 	{
 		Capitolato
 		UC7
 	}\\
-	\hline
-R1F7.1	& \multicolumn1{p{20mm}}
-	{
-		Capitolato
-		UC7.1
-	}\\
 
-	\hline
-R1F7.2	& \multicolumn1{p{20mm}}
-	{
-		Capitolato
-		UC7.2
-	}\\
 	\hline
 R1F8	& \multicolumn1{p{20mm}}
-	{
-		Capitolato
-		UC8
-	}\\
-
-	\hline
+{
+	Capitolato
+	UC8
+}\\
+\hline	
 R1F9	& \multicolumn1{p{20mm}}
 {
 	Capitolato
 	UC9
 }\\
 \hline	
+R1F9.1	& \multicolumn1{p{20mm}}
+{
+	Interna
+	UC9.3
+}\\
+\hline
 R1F10	& \multicolumn1{p{20mm}}
 {
 	Capitolato
 	UC10
 }\\
-\hline	
 R1F10.1	& \multicolumn1{p{20mm}}
 {
 	Interna
-	UC10.3
+	UC10.1
+}\\
+\hline	
+R1F10.2	& \multicolumn1{p{20mm}}
+{
+	Capitolato
+	UC10.2
 }\\
 \hline
 R1F11	& \multicolumn1{p{20mm}}
 {
-	Capitolato
-	UC11
-}\\
-R1F11.1	& \multicolumn1{p{20mm}}
-{
 	Interna
 	UC11.1
 }\\
-\hline	
-R1F11.2	& \multicolumn1{p{20mm}}
+R1F11.1	& \multicolumn1{p{20mm}}
 {
 	Capitolato
 	UC11.2
 }\\
+R1F11.2	& \multicolumn1{p{20mm}}
+{
+	Capitolato
+	UC11.4
+}\\
+R1F11.3	& \multicolumn1{p{20mm}}
+{
+	Interna
+	UC11.5
+}\\
+R1F11.4	& \multicolumn1{p{20mm}}
+{
+	Capitolato
+	UC11.6
+}\\
 \hline
 R1F12	& \multicolumn1{p{20mm}}
-{
-	Interna
-	UC12.1
-}\\
+	{
+		Interno
+		UC12
+	}\\
+	\hline
 R1F12.1	& \multicolumn1{p{20mm}}
-{
-	Capitolato
-	UC12.2
-}\\
+	{
+		Capitolato
+		UC12.1
+	}\\
+
+	\hline
 R1F12.2	& \multicolumn1{p{20mm}}
-{
-	Capitolato
-	UC12.4
-}\\
-R1F12.3	& \multicolumn1{p{20mm}}
-{
-	Interna
-	UC12.5
-}\\
-R1F12.4	& \multicolumn1{p{20mm}}
-{
-	Capitolato
-	UC12.6
-}\\
-\hline
+	{
+		Interno
+		UC12.2
+	}\\
+	\hline
 R1F13	& \multicolumn1{p{20mm}}
 	{
 		Interno
 		UC13
 	}\\
 	\hline
-R1F13.1	& \multicolumn1{p{20mm}}
+R1F13.1		& \multicolumn1{p{20mm}}
 	{
-		Capitolato
-		UC13.1
+	Capitolato
+	UC13.1	
 	}\\
-
 	\hline
 R1F13.2	& \multicolumn1{p{20mm}}
 	{
-		Interno
-		UC13.2
-	}\\
-	\hline
-R1F14	& \multicolumn1{p{20mm}}
-	{
-		Interno
-		UC14
-	}\\
-	\hline
-R1F14.1		& \multicolumn1{p{20mm}}
-	{
-	Capitolato
-	UC14.1	
-	}\\
-	\hline
-R1F14.2	& \multicolumn1{p{20mm}}
-	{
 	Interno
-	UC14.2	
+	UC13.2	
 	}\\
 	
 	\hline
-R1F14.3	& Verbale 2021-01-04 \\
+R1F13.3	& Verbale 2021-01-04 \\
 	\hline
 R1Q1	& Interno\\
 	\hline
