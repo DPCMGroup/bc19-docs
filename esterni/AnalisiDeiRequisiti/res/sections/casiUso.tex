@@ -515,6 +515,26 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza le informazioni specificate dalla sua ricerca.
 \end{itemize}
 
+\subsubsection{ UC6.1.2 - Ottenimento report delle occupazioni di uno specifico utente con indicazione delle ore trascorse ad ogni postazione}
+\begin{itemize}
+	\item\textbf{Attori Primari:} 
+	amministratore.
+	\item\textbf{Descrizione:} 
+	l'amministratore ottiene informazioni in forma tabellare sulle postazioni occupate da uno specifico utente con l'indicazione delle ore trascorse ad ogni postazione.
+	\item\textbf{Scenario principale:} 
+	l'amministratore raggiunge la pagina per la ricerca delle occupazioni delle postazioni e inserisce il nickname oppure il Nome e Cognome dell'utente a cui è interessato.
+	Nel report vengono visualizzate le date di inizio e fine delle occupazioni, i codici delle postazioni e le ore trascorse.
+	\item\textbf{Estensione:}
+	\begin{itemize}
+		\item[$-$] Scaricamento del report delle occupazioni in un formato leggibile(UC6.3).
+		\item[$-$] Ricerca tra le postazioni occupate da uno specifico utente (UC6.1.1).
+	\end{itemize}
+	\item\textbf{Precondizione:} 
+	l'utente è autenticato come amministratore.
+	\item\textbf{Postcondizione:}
+	l'utente visualizza le informazioni.
+\end{itemize}
+
 \subsubsection{ UC6.2 - Ottenimento report degli utenti che hanno occupato una specifica postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 

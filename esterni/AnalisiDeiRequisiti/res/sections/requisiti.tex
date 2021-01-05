@@ -107,23 +107,31 @@ R1F5.2&L'amministratore deve poter creare nuove credenziali per accedere al sist
 					\hline
 R1F5.5&Il sistema deve poter memorizzare più credenziali per ogni categoria di utenti: amministratori, dipendenti e addetti	& Capitolato - Verbale 2021-01-04	\\
 					\hline
-R1F6&L'amministratore deve poter esplorare la storia delle occupazionidelle postazioni	& Capitolato - UC6 - Verbale*	\\
+R1F6&L'amministratore deve poter esplorare la storia delle occupazioni delle postazioni	& Capitolato - UC6 - Verbale 2021-01-08	\\
 						\hline
-			R1F6.1&L'amministratore deve poter visualizzare in forma tabellare le occupazioni di postazioni da parte di un utente specifico, con date e orari di inizio e fine delle occupazioni e codici delle postazioni.	&Capitolato - UC6.1 - Verbale*	\\
+			R1F6.1&L'amministratore deve poter visualizzare in forma tabellare le occupazioni di postazioni da parte di un utente specifico, con date e orari di inizio e fine delle occupazioni e codici delle postazioni.	&Capitolato - UC6.1 - Verbale 2021-01-08	\\
 					\hline
-			R1F6.1.1&L'amministratore deve poter effettuare una ricerca tra le postazioni occupate da un utente specificando il periodo all'interno del quale l'utente occupava la postazione. & 	Capitolato - UC6.1.1 - Verbale*\\
+			R1F6.1.1&L'amministratore deve poter effettuare una ricerca tra le postazioni occupate da un utente specificando il periodo all'interno del quale l'utente occupava la postazione. & 	Capitolato - UC6.1.1 - Verbale 2021-01-08\\
 					\hline
-			R1F6.2&L'amministratore deve poter visualizzare in forma tabellare le occupazioni di una postazione specifica, con date e orari di inizio e fine delle occupazioni e nomi e cognomi dei dipendenti.	&Capitolato - UC6.2 - Verbale*	\\
+			R2F6.1.2&L'amministratore deve poter visualizzare in forma tabellare le occupazioni di postazioni da parte di un utente specifico, con date e orari di inizio e fine delle occupazioni,  codici delle postazioni e ore trascorse alla postazione. & 	Capitolato - UC6.1.2 - Verbale 2021-01-08\\
 			\hline
-			R1F6.2.1&L'amministratore deve poter effettuare una ricerca tra le occupazioni di una specifica postazione indicando il periodo all'interno del quale l'utente occupava la postazione	& 	Capitolato - UC6.2.1 - Verbale*\\
+			R1F6.2&L'amministratore deve poter visualizzare in forma tabellare le occupazioni di una postazione specifica, con date e orari di inizio e fine delle occupazioni e nomi e cognomi dei dipendenti.	&Capitolato - UC6.2 - Verbale 2021-01-08	\\
 			\hline
-			R1F6.3 & L'amministratore deve poter scaricare il report delle occupazioni che sta visualizzando in un formato leggibile & Capitolato - UC6.3 - Verbale*\\
+			R1F6.2.1&L'amministratore deve poter effettuare una ricerca tra le occupazioni di una specifica postazione indicando il periodo all'interno del quale l'utente occupava la postazione	& 	Capitolato - UC6.2.1 - Verbale 2021-01-08\\
 			\hline
-			R1F6.3.1 & L'amministratore deve poter scaricare il report delle occupazioni che sta visualizzando nel formato PDF & Capitolato - UC6.3.1 - Verbale*\\
+			R1F6.3 & L'amministratore deve poter scaricare il report delle occupazioni che sta visualizzando in un formato leggibile & Capitolato - UC6.3 - Verbale 2021-01-08\\
 			\hline
-R1F7&L'amministratore deve poter ottenere una tabella delle sanificazioni di tutte le postazioni, con data e ora in cui sono avvenute.	&Capitolato - UC7 	\\
+			R2F6.3.1 & L'amministratore deve poter scaricare il report delle occupazioni che sta visualizzando nel formato PDF & Capitolato - UC6.3.1 - Verbale 2021-01-08\\
+			\hline
+R2F7&L'amministratore deve poter ottenere una tabella delle sanificazioni di tutte le postazioni, con data e ora in cui sono avvenute, nome e cognome di chi le ha eseguite e il suo ruolo.	&Capitolato - UC7 - Verbale 2021-01-08	\\
 					
 					\hline
+R2F7.1&L'amministratore deve poter scaricare il report delle sanificazioni che sta visualizzando in un formato leggibile.	&Capitolato - UC7.1 Verbale 2021-01-08	\\
+
+\hline
+R2F7.1.1&L'amministratore deve poter scaricare il report delle sanificazioni che sta visualizzando nel formato PDF.	&Capitolato - UC7.1.1 - Verbale 2021-01-08	\\
+
+\hline
 					R1F8&Il dipendente deve poter visualizzare lo stato di una postazione, tramite tagRFID.	&Capitolato - UC8 	\\
 					\hline
 			R1F9&Il dipendente deve poter segnalare la propria presenza su una postazione in tempo reale, tramite tagRFID.	&Capitolato - UC9 	\\
@@ -308,8 +316,15 @@ Capitolato & \multicolumn1{p{20mm}}
 	R1F5.5
 	R1F6
 	R1F6.1
+	R1F6.1.1
+	R2F6.1.2
 	R1F6.2
-	R1F7
+	R1F6.2.1
+	R1F6.3
+	R2F6.3.1
+	R2F7
+	R2F7.1
+	R2F7.1.1
 	R1F8
 	R1F9
 	R1F10
@@ -361,6 +376,21 @@ Capitolato & \multicolumn1{p{20mm}}
 		R1F5.5
 		R1F13.3
 	} \\
+\hline
+Verbale 2021-01-08 & \multicolumn1{p{20mm}}
+{
+	R1F6
+	R1F6.1
+	R1F6.1.1
+	R1F6.1.2
+	R1F6.2
+	R1F6.2.1
+	R1F6.3
+	R2F6.3.1
+	R2F7
+	R2F7.1
+	R2F7.1.1
+} \\
 \hline
 UC1 & R2F1  \\
 \hline
@@ -441,9 +471,23 @@ UC6& R1F6 \\
 \hline
 UC6.1& R1F6.1 \\
 \hline
+UC6.1.1& R1F6.1.1 \\
+\hline
+UC6.1.2& R2F6.1.2 \\
+\hline
 UC6.2& R1F6.2 \\
 \hline
-UC7& R1F7\\
+UC6.2.1& R1F6.2.1 \\
+\hline
+UC6.3& R1F63 \\
+\hline
+UC6.3.1& R2F6.3.1 \\
+\hline
+UC7& R2F7\\
+\hline
+UC7.1& R2F7.1\\
+\hline
+UC7.1& R2F7.1.1\\
 \hline
 UC8& R1F8\\
 \hline
@@ -707,26 +751,77 @@ R1F6	& \multicolumn1{p{20mm}}
 	{
 		Capitolato
 		UC6
+		Verbale 2021-01-08
 	}\\
 	\hline
 R1F6.1	& \multicolumn1{p{20mm}}
 	{
 		Capitolato
 		UC6.1
+		Verbale 2021-01-08
 	}\\
+\hline
+R1F6.1.1	& \multicolumn1{p{20mm}}
+{
+	Capitolato
+	UC6.1.1
+	Verbale 2021-01-08
+}\\
+\hline
+R2F6.1.2	& \multicolumn1{p{20mm}}
+{
+	Capitolato
+	UC6.1.2
+	Verbale 2021-01-08
+}\\
 
 	\hline
 R1F6.2	& \multicolumn1{p{20mm}}
 	{
 		Capitolato
 		UC6.2
+		Verbale 2021-01-08
 	}\\
 	\hline
-R1F7	& \multicolumn1{p{20mm}}
+R1F6.2.1	& \multicolumn1{p{20mm}}
+{
+	Capitolato
+	UC6.2.1
+	Verbale 2021-01-08
+}\\
+\hline
+R1F6.3	& \multicolumn1{p{20mm}}
+{
+	Capitolato
+	UC6.3
+	Verbale 2021-01-08
+}\\
+R2F6.3.1	& \multicolumn1{p{20mm}}
+{
+	Capitolato
+	UC6.3.1
+	Verbale 2021-01-08
+}\\
+	\hline
+R2F7	& \multicolumn1{p{20mm}}
 	{
 		Capitolato
 		UC7
+		Verbale 2021-01-08
 	}\\
+	\hline
+R2F7.1	& \multicolumn1{p{20mm}}
+{
+	Capitolato
+	UC7.1
+	Verbale 2021-01-08
+}\\
+R2F7.1.1	& \multicolumn1{p{20mm}}
+{
+	Capitolato
+	UC7.1.1
+	Verbale 2021-01-08
+}\\
 
 	\hline
 R1F8	& \multicolumn1{p{20mm}}
