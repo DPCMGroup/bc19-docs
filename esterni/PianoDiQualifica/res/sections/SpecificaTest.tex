@@ -15,7 +15,7 @@ Per la classificazione dei test si fa riferimento alla sezioni Verifica\footnote
 	\subsection{Test di Sistema}
 	\begin{center}
 		\rowcolors{2}{white}{lightest-grayest}
-		\begin{longtable}{|c|C{10cm}|c|}
+		\begin{longtable}{|c|p{10cm}|c|}
 			\hline
 			\rowcolor{lighter-grayer}
 			\textbf{Codice} & \textbf{Descrizione} & \textbf{Stato}  \\ 
@@ -25,13 +25,142 @@ Per la classificazione dei test si fa riferimento alla sezioni Verifica\footnote
 			
 			\hline
 			% Test di sistema per i requisiti funzionali %
-			TS1F1 & desc & NI \\
+			TS2F1 & L'utente deve poter accedere alla guida per il login e applicazione. & NI \\
 			\hline
-			TS1F1 & desc & NI \\			
+			TS1F2 & L'utente non ancora autenticato deve poter autenticarsi. & NI \\			
 			\hline
-			% Test di sistema per i requisiti prestazionali %
+			TS1F2.1 & L'utente non ancora autenticato deve ricevere un messaggio di errore nel caso abbia inserito le credenziali scorrette. & NI \\			
+			\hline
+			TS1F2.2 & L'utente non ancora autenticato deve ricevere un messaggio di errore nel caso l'account sia disabilitato. & NI \\			
+			\hline
+			TS1F3 & L'utente autenticato deve potersi disconnettere dal sistema. & NI \\			
+			\hline
+			TS1F4 & L'amministratore può gestire le stanze e le postazioni salvate. & NI \\			
+			\hline
+			TS1F4.1 & L'amministratore può visualizzare le stanze e le postazioni in modo schematico. & NI \\			
+			\hline
+			TS1F4.2 & L'amministratore può vedere le postazioni colorate in base al loro stato attuale. & NI \\			
+			\hline
+			TS1F4.3 & Gli stati delle postazioni possono essere i seguenti:
+			 \begin{itemize}
+			 	\item libera e igienizzata;
+			 	\item libera e non igienizzata;
+			 	\item occupata;
+			 	\item prenotata e igienizzata;
+			 	\item prenotata e non igienizzata;
+			 	\item inaccessibile.
+			 \end{itemize}
+			 & NI \\			
+			\hline
+			TS1F4.4 & Per ogni stanza deve essere indicato il numero di occupanti attuali. & NI \\			
+			\hline
+			TS1F4.5 & L'amministratore può visualizzare il calendario delle prenotazioni delle postazioni. & NI \\			
+			\hline
+			TS1F4.6 & L'amministratore può aggiungere una stanza al sistema e assegnarle un nome. & NI \\			
+			\hline
+			TS1F4.7 & La creazione di una stanza inizia il processo di salvataggio in Ethereum. & NI \\			
+			\hline
+			TS1F4.8 & L'amministratore può eliminare una stanza al sistema. & NI \\			
+			\hline
+			TS1F4.9 & L'eliminazione di una stanza inizia il processo di salvataggio in Ethereum. & NI \\			
+			\hline
+			TS1F4.10 & L'amministratore può modificare il nome di una stanza. & NI \\			
+			\hline
+			TS1F4.11 & L'amministratore può impostare una stanza come inaccessibile per un determinato periodo di tempo, con data inizio e fine arbitraria. & NI \\			
+			\hline
+			TS1F4.12 & Gli utenti che hanno una prenotazione, devono ricevere una notifica se la stanza in cui hanno la prenotazione diventa non disponibile. & NI \\			
+			\hline
+			TS1F4.13 & La creazione o modifica del nome di una stanza con un nome già assegnato provoca un messaggio di errore. La stanza non viene creata o modificata. & NI \\			
+			\hline
+			TS1F4.14 & L'amministratore può aggiungere una postazione in una stanza, specificando:
+			\begin{itemize}
+				\item codice della postazione;
+				\item codice tag RFID.
+			\end{itemize}
+			& NI \\			
+			\hline			
+			TS1F4.15 & L'aggiunta di una postazione inizia il processo di salvataggio in Ethereum. & NI \\			
+			\hline		
+			TS1F4.16 & L'amministratore può eliminare una postazione. & NI \\			
+			\hline		
+			TS1F4.17 & L'eliminazione di una postazione inizia il processo di salvataggio in Ethereum. & NI \\			
+			\hline	
+			TS1F4.18 & L'amministratore può modificare i dati e la posizione di una postazione. & NI \\			
+			\hline	
+			TS1F4.19 & La modifica di una postazione inizia il processo di salvataggio in Ethereum. & NI \\			
+			\hline	
+			TS1F4.20 & La creazione o modifica del codice di una postazione con un codice già assegnato provoca un messaggio di errore. La postazione non viene creata o modificata. & NI \\	
+			\hline	
+			TS1F4.21 & La creazione o modifica del codice tag di una postazione con un codice tag già assegnato provoca un messaggio di errore. La postazione non viene creata o modificata. & NI \\	
+			\hline	
+			TS1F5 & L'amministratore gestisce le credenziali degli utenti. & NI \\	
+			\hline
+			TS1F5.1 & L'amministratore può visualizzare una lista delle credenziali di tutti gli utenti & NI \\	
+			\hline
+			TS1F5.2 & L'amministratore può creare nuove credenziali. Le informazioni contenute nel profilo di un utente sono:
+			\begin{itemize}
+				\item nome;
+				\item cognome;
+				\item nome utente;
+				\item password;
+				\item email.
+			\end{itemize} & NI \\	
+			\hline
+			TS1F5.3 & L’amministratore può modificare le credenziali degli utenti del sistema. & NI \\	
+			\hline
+			TS1F5.4 & L’amministratore può eliminare le credenziali degli utenti del sistema. & NI \\	
+			\hline
+			TS1F5.5 & Il sistema può memorizzare più credenziali per ogni tipologia di utente. & NI \\	
+			\hline
+			TS1F5.5 & Il sistema può memorizzare più credenziali per ogni tipologia di utente. & NI \\	
+			\hline
+			TS1F6 & L'amministratore può vedere lo storico delle postazioni occupate da un utente. & NI \\	
+			\hline
+			TS1F6.1 & L'amministratore deve vedere lo storico delle postazioni occupate da un utente in modo tabellare, con data e orari di inizio e fine delle occupazioni e codici delle prenotazioni. & NI \\	
+			\hline
+			TS1F6.2 & L'amministratore può effettuare una ricerca nello storico delle postazioni occupate da un utente. I valori che si possono specificare per la ricerca sono codice della postazione e periodo all'interno del quale l'utente occupava la postazione. & NI \\	
+			\hline
+			TS1F7 & L'amministrazione può vedere lo storico delle sanificazioni di tutte le postazioni in modo tabellare, con data e ora in cui sono avvenute. & NI \\	
+			\hline
+			TS1F8 & Il dipendente deve poter vedere lo stato di una postazione tramite la scansione del tag RFID. & NI \\	
+			\hline
+			TS1F9 & Il dipendente deve poter segnare la propria presenza su una postazione tramite la scansione del tag RFID. & NI \\	
+			\hline
+			TS1F9.1 & Il dipendente deve poter segnare la propria presenza, di inizio e fine occupazione, su una postazione tramite Ethereum. & NI \\	
+			\hline
+			TS1F10 & Il dipendente può effettuare una pulizia autonoma della postazione. & NI \\	
+			\hline
+			TS1F10.1 & Il dipendente può marcare la postazione come libera e igienizzata. & NI \\	
+			\hline
+			TS1F10.2 & Il dipendente deve poter registrare l'avvenuta igienizzazione autonoma tramite Ethereum. & NI \\	
+			\hline
+			TS1F11 & Il dipendente può ricercare una postazione in base alla data, all'orario e all'identificativo della stanza. & NI \\	
+			\hline
+			TS1F11.1 & Il dipendente può visualizzare le postazioni di una stanza. & NI \\	
+			\hline
+			TS1F11.2 & Il dipendete può visualizzare l'identificativo della prima postazione igienizzata e libera in una stanza. & NI \\	
+			\hline
+			TS1F11.3 & Il dipendente può selezionare una postazione di una stanza. & NI \\	
+			\hline
+			TS1F11.4 & Il dipendente può prenotare una postazione selezionata. & NI \\	
+			\hline
+			TS1F12 & L'addetto delle pulizie riceve l'elenco delle stanze che necessitano di igienizzazione. & NI \\	
+			\hline
+			TS1F12.1 & L'addetto delle pulizie riceve l'elenco delle stanze che necessitano igienizzazione. & NI \\	
+			\hline
+			TS1F12.2 & L'addetto delle pulizie riceve l'elenco delle postazioni che necessitano igienizzazione. & NI \\	
+			\hline
+			TS1F13 & L'addetto delle pulizie deve registrare su Ethereum quando igienizza una stanza o una postazione. & NI \\	
+			\hline
+			TS1F13.1 & L'addetto delle pulizie può marcare una stanza igienizzata. & NI \\	
+			\hline
+			TS1F13.2 & L'addetto delle pulizie può marcare una postazione igienizzata. & NI \\	
+			\hline
+			TS1F13.3 & L'addetto delle pulizie non può segnare come pulita una postazione occupata. & NI \\	
+			\hline
 			% Test di sistema per i requisiti di qualità %
-			% Test di sistema per i requisiti di vincolo %		
+			% Test di sistema per i requisiti di vincolo %	
+			% Test di sistema per i requisiti prestazionali %	
 			\hiderowcolors
 			\caption{Tabella dei test di sistema}		
 		\end{longtable}	
