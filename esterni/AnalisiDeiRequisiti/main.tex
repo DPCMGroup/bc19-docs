@@ -1,0 +1,93 @@
+%!TEX output_directory = .cache
+% ---------------------------
+%	  [ NOME DOCUMENTO ]
+%	----------------------
+%	      DPCM2077
+%  Progetto di SWE (2020-21)
+%    Template by Maxelweb
+% ---------------------------
+
+% Configurazione primaria del documento
+
+% --------------
+
+\newcommand{\docNome}{ ANALISI DEI REQUISITI }
+\newcommand{\docNomeProgetto}{  BlockCOVID }
+\newcommand{\docVersione}{1.0.0}
+\newcommand{\docStatus}{in redazione}
+\newcommand{\docUso}{esterno}
+
+
+% --------------
+
+\newcommand{\docDestinatari}{
+	Prof.~Tullio Vardanega \\&
+	Prof.~Riccardo Cardin \\&
+	DPCM 2077
+}
+\newcommand{\docRedattori}{
+	Matteo Budai \\&
+	Samuele De Grandi \\&
+	Ivan Piacere
+}
+\newcommand{\docVerificatori}{
+	Sara Privitera\\&
+    Daniele Spigolon
+}
+\newcommand{\docApprovazione}{
+    Damiano Bertoldo
+}
+
+% ----- NON MODIFICARE SOTTO QUESTA RIGA -----
+
+% ---------------------------
+% Configurazioni
+% ---------------------------
+
+\documentclass[11pt,a4paper,table]{article}
+
+\input{res/configurazione}    
+
+% ---------------------------
+% Dati frontespizio
+% ---------------------------
+
+\title{\hr \huge \textsc{\docNome} \\ 
+        \vspace{11pt} \large \textsc{\docNomeProgetto} \hr}
+
+\author{} % Non toccare
+\date{} % Non toccare
+
+% ---------------------------
+% Composizione del documento
+% ---------------------------
+
+\begin{document} 
+
+% Frontespizio
+
+\pagenumbering{gobble}
+\DeactivateBG
+\include{res/frontespizio}
+
+% Registro delle modifiche
+
+\newpage
+\ActivateBG
+\pagenumbering{arabic}
+\include{res/registro}
+
+% Tabella dei contenuti
+
+\newpage
+\tableofcontents
+
+% Sezioni
+
+\newpage
+\input{res/sezioni}
+
+\end{document}
+
+
+% EOF
