@@ -25,6 +25,11 @@
 \usepackage{tikz}
 \usepackage{titlesec}
 \usepackage{lipsum}
+%\usepackage{fullpage}
+\usepackage{pgf-pie}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pdflscape}
 
 
 % Impostazione sottotitolo di quarto livello e quinto livello
@@ -71,12 +76,12 @@
 \renewcommand{\headrulewidth}{0pt}
 \fancyhead{}
 \lhead{\includegraphics[height=10mm]{res/images/logo.png}}
-\rhead{\raisebox{1.4\height}{\leftmark}}
+\rhead{\raisebox{1.4\height}{\rightmark}}
 
 
 \renewcommand{\footrulewidth}{0.1pt}
 \fancyfoot{}
-\lfoot{ \textcolor{footer-gray}{\docNome - v\docVersione} }
+\lfoot{ \textcolor{footer-gray}{\docNome - v. \docVersione} }
 
 \renewcommand{\footrule}{\hbox to\headwidth{\color{light-grayer}\leaders\hrule height \footrulewidth\hfill}}
 \rfoot{ \textcolor{footer-gray}{Pagina \thepage \hspace{1pt} di \pageref*{LastPage}} }
@@ -112,15 +117,17 @@
 
 % Configurazione sfondo
 
+% Configurazione sfondo
+
 \newcommand\DeactivateBG{\backgroundsetup{contents={}}}
 \newcommand\ActivateBG{ \backgroundsetup{
-    scale=1.0,
-    color=black,
-    opacity=1.0,
-    angle=0,
-    contents={%
-      \includegraphics[height=297mm]{res/images/background.png}
-      }%
+		scale=1.0,
+		color=black,
+		opacity=1.0,
+		angle=0,
+		contents={%
+			\includegraphics[height=297mm]{res/images/background.png}
+		}%
 }}
 
 % Codice e snippet
