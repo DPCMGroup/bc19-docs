@@ -1,0 +1,29 @@
+\section*{Introduzione}
+\subsection*{Dettagli e-mail}
+\begin{itemize}
+	\item \textbf{Autore dell'e-mail per DPCM 2077:} Ivan Piacere;
+	\item \textbf{Autori dell'e-mail per Imola Informatica:} Lorenzo Patera, Luca Cappelletti;
+	\item \textbf{periodo:} 2020-12-02 - 2020-12-04;
+\end{itemize}
+
+\section*{Svolgimento}
+Il verbale riporta una selezione delle domande e relative risposte nello scambio di e-mail avvenuto nel periodo 2020-12-02 - 2020-12-04.
+\subsection*{Quando un dipendente richiede di utilizzare una postazione in una determinata stanza, secondo quale criterio bisogna scegliere la postazione sanificata da assegnargli? \\
+	Per esempio: \\
+	- non c'è criterio \\
+	- tenendo più distanza possibile con altre persone presenti in quel momento in laboratorio \\
+	- alternando tutte le postazioni}
+
+Non abbiamo pensato ad un preciso criterio, è una delle libertà che vi lasciamo. Ciononostante, se pensiamo ad un'applicazione ben fatta sarebbe opportuno che questa consigli il posto che garantisca maggiore distanza dai colleghi. Per l'algoritmo lasciamo spazio alle vostre idee, si può pensare alla distanza di punti su una "matrice" oppure a qualcosa di più semplice. In ogni caso lo categorizzerei come requisito opzionale.
+
+\subsection*{Al giorno d'oggi non tutti gli smartphone sono dotati di un lettore NFC, necessario per la scansione dei tag RFID. Sarebbe utile da parte nostra pensare all'utilizzo di una tecnologia alternativa più diffusa, quale per esempio il Bluetooth?}
+
+\subsubsection*{Lorenzo Patera}
+
+Abbiamo pensato alla tecnologia NFC vista la sua proprietà di lettura veramente ravvicinata del tag. Non mi risulta che con il Bluetooth si riesca ad avere la stessa precisione nel posizionamento di un utente nello spazio (avete visto qualche utilizzo avanzato interessante per il nostro caso d'uso?). Possiamo pensare ad una soluzione alternativa all'NFC (da affiancare sui dispositivi compatibili e sostitutiva in quelli non compatibili) magari attraverso l'utilizzo di QR code da scannerizzare, anche se con soluzioni simili perderemmo il tracciamento in tempo reale dell'utente.
+In generale, ci aspettiamo una strutturazione del codice tale da poter permettere facilmente estensioni verso nuove modalità di tracciamento. \\
+
+\subsubsection*{Luca Cappelletti}
+
+anche il Bluetooth low energy è adatto a questo tipo di applicazioni, è la tecnologia usata per l'app immuni e per il dialogo con tutti i dispositivi indossabili di supporto alle persona anziana. 
+C'è una compatibilità pressochè totale con i dispositivi moderni (oltre 90\%), per intenderci l'adozione di Apple su Iphone risale al 2011.
