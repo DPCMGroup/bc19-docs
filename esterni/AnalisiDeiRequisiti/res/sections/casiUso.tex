@@ -131,7 +131,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\end{itemize}
 	per ogni stanza è indicato il numero di occupanti attuali.
 	\item\textbf{Estensioni:}
-	visualizzazione a calendario delle postazioni prenotate (4.1.1)
+	visualizzazione a calendario delle postazioni prenotate (UC4.1.1)
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
@@ -213,8 +213,8 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente preme un pulsante per la modifica di una stanza. Gli viene chiesto di inserire il nuovo nome e di confermare la modifica. La stanza ha ora il nome aggiornato.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] rendere una stanza inaccessibile per alcuni giorni (4.4.1);
-		\item[$-$] se è già presente una stanza con lo stesso nome l'utente viene avvisato (4.2.1).
+		\item[$-$] rendere una stanza inaccessibile per alcuni giorni (UC4.4.1);
+		\item[$-$] se è già presente una stanza con lo stesso nome l'utente viene avvisato (UC4.2.1).
 	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato.
@@ -232,7 +232,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente imposta le date di inizio e fine del periodo di inaccessibilità della stanza e conferma l'impostazione attraverso un pulsante.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] cancellazione delle prenotazioni per quella postazione e notifica agli utenti che avevano prenotato (4.6.1).
+		\item[$-$] cancellazione delle prenotazioni per quella postazione e notifica agli utenti che avevano prenotato (UC4.6.1).
 	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore e ha raggiunto l'area dedicata a questa azione.
@@ -258,8 +258,8 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	L'amministratore preme un bottone per la conferma dei dati e la postazione viene aggiunta all'interno della stanza. La nuova configurazione della stanza viene comunicata a Ethereum.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] avviso codice postazione già presente (4.5.1);
-		\item[$-$] avviso codice tag già presente (4.5.2).
+		\item[$-$] avviso codice postazione già presente (UC4.5.1);
+		\item[$-$] avviso codice tag già presente (UC4.5.2).
 	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato.
@@ -311,7 +311,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente raggiunge l'area di eliminazione delle postazioni, ne seleziona una ed esegue l'eliminazione. La nuova configurazione della stanza viene inviata a Ethereum.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] cancellazione delle prenotazioni per quella postazione e notifica agli utenti che avevano prenotato (4.6.1).
+		\item[$-$] cancellazione delle prenotazioni per quella postazione e notifica agli utenti che avevano prenotato (UC4.6.1).
 	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
@@ -686,7 +686,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	\item\textbf{Postcondizione:} l’utente conosce lo stato della postazione.
            	\item\textbf{Estensioni:}
            	\begin{itemize}
-           		\item[$-$] visualizzazione errore: lo smartphone è troppo distante dal tag RFID per effettuare correttamente la scansione (UC 9.2).
+           		\item[$-$] visualizzazione errore: lo smartphone è troppo distante dal tag RFID per effettuare correttamente la scansione (UC9.2).
            	\end{itemize}
 \end{itemize}
 \subsubsection{ UC8.1 - Scansione tag RFID}
@@ -740,7 +740,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	\item\textbf{Estensioni:} 
            	\begin{itemize}
            		\item[$-$] visualizzazione errore: se sposto lo smartphone dal tag RFID (ad esempio per una telefonata), 
-           		dopo un timeout di qualche minuto(ad esempio 10 minuti), viene visualizzato un messaggio di errore (UC 10.2);
+           		dopo un timeout di qualche minuto(ad esempio 10 minuti), viene visualizzato un messaggio di errore (UC10.2);
            		\item[$-$] visualizzazione errore: se l'utente si dimentica di premere il bottone della fine dell'occupazione della postazione, viene visualizzato un messaggio di errore (UC 10.4).
            	\end{itemize}
 \end{itemize}
@@ -836,17 +836,17 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:} l’utente vuole prenotare una postazione di una stanza in un determinato giorno e orario.
 	\item\textbf{Scenario principale:} 
 	\begin{itemize}
-		\item[$-$] l’utente inserisce la data (UC 10.1.1);
-		\item[$-$] l’utente inserisce l'orario (UC 10.1.3);
-		\item[$-$] l’utente inserisce l'identificativo della stanza (UC 10.1.5).
+		\item[$-$] l’utente inserisce la data (UC10.1.1);
+		\item[$-$] l’utente inserisce l'orario (UC10.1.3);
+		\item[$-$] l’utente inserisce l'identificativo della stanza (UC10.1.5).
 	\end{itemize}
 	\item\textbf{Precondizione:} l’utente sta navigando nella sezione dell'applicazione dedicata alla ricerca di una postazione.
 	\item\textbf{Postcondizione:} l’utente sta navigando nella sezione dell'applicazione dedicata alla ricerca di una postazione.
 	\item\textbf{Estensioni:} l’utente inserisce i campi necessari alla ricerca della postazione desiderata.
 	\begin{itemize}
-		\item[$-$] l’utente inserisce una data non valida (UC 10.1.2);
-		\item[$-$] l’utente inserisce un orario non valida (UC 10.1.4);
-		\item[$-$] l’utente inserisce una stanza non valida (UC 10.1.6).
+		\item[$-$] l’utente inserisce una data non valida (UC10.1.2);
+		\item[$-$] l’utente inserisce un orario non valida (UC10.1.4);
+		\item[$-$] l’utente inserisce una stanza non valida (UC10.1.6).
 	\end{itemize}
 \end{itemize}
 \subsubsection{ UC11.1.1 - Inserimento data }
@@ -936,7 +936,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item[$-$] viene visualizzato un messaggio di errore che consiglia di selezionare un'altra fascia oraria.
 	\end{itemize}
 	\item\textbf{Precondizione:} l’utente ha compilato i campi data, orario, stanza oppure ha selezionato la sezione prima postazione 
-	disponibile (UC 12.4).
+	disponibile (UC12.4).
 	\item\textbf{Postcondizione:} l’utente visualizza un messaggio di errore specifico e non porta a termine l’azione.
 \end{itemize}
 \subsubsection{ UC11.4 - Prima postazione libera }
@@ -944,12 +944,12 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente riceve l'identificativo di una postazione igienizzata e libera in una determinata stanza, 
 	in modo automatico e in base a un criterio di distanziamento dalle altre postazioni.
-	\item\textbf{Scenario principale:} viene fornito l'identificativo di una postazione libera e igienizzata, oppure di una libera e non igienizzata (si veda UC 11).
+	\item\textbf{Scenario principale:} viene fornito l'identificativo di una postazione libera e igienizzata, oppure di una libera e non igienizzata (si veda UC11).
 	\item\textbf{Precondizione:} l’utente preme il bottone nella sezione della prima postazione disponibile.
 	\item\textbf{Postcondizione:} l’utente riceve l'identificativo di una postazione.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] tutte le postazioni nella stanza selezionata sono occupate o guaste (UC 12.3).
+		\item[$-$] tutte le postazioni nella stanza selezionata sono occupate o guaste (UC12.3).
 	\end{itemize}
 \end{itemize}
 \subsubsection{ UC11.5 - Selezione postazione }
@@ -970,7 +970,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l'utente prenota la postazione.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] nel caso in cui si scelga di prenotare una postazione libera e sporca si veda il caso d'uso "Pulizia autonoma"(UC 11),
+		\item[$-$] nel caso in cui si scelga di prenotare una postazione libera e sporca si veda il caso d'uso "Pulizia autonoma"(UC11),
 		per poi tornare allo scenario principale.
 	\end{itemize}
 \end{itemize}
@@ -983,7 +983,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\end{figure}
 \begin{itemize}
            	\item\textbf{Attori Primari:} addetto pulizie.
-           	\item\textbf{Descrizione:} l'utente riceve un elenco delle postazioni[UC12.2] e delle stanze[UC12.1] che necessitano di igienizzazione.
+           	\item\textbf{Descrizione:} l'utente riceve un elenco delle postazioni(UC12.2) e delle stanze(UC12.1) che necessitano di igienizzazione.
            	\item\textbf{Scenario principale:} l'utente si trova all'interno del sistema e verifica tutte le postazioni che sono state utilizzate almeno da un dipendente, che saranno quindi da igienizzare, oppure può decidere di igienizzare l’intera stanza.
            	\item\textbf{Precondizione:} l'utente va nella sezione dedicata nel sistema e deve premere un bottone.
            	\item\textbf{Postcondizione:} l'utente verifica quali postazioni sono state occupate da almeno un dipendente, così da ottenere un elenco delle stanze e postazioni da igienizzare.
@@ -1017,7 +1017,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	\item\textbf{Attori Primari:} addetto pulizie.
 		\item\textbf{Attori Secondario:} Ethereum.
            	\item\textbf{Descrizione:} dopo l'igienizzazione l'utente marca le stanze o le postazioni che ha pulito come igienizzate.
-           	\item\textbf{Scenario principale:} l'utente igienizza la stanza[UC13.1] o la postazione[UC13.2], in seguito accede al sistema e la marca come igienizzata attraverso l'utilizzo di Ethereum.
+           	\item\textbf{Scenario principale:} l'utente igienizza la stanza(UC13.1) o la postazione(UC13.2), in seguito accede al sistema e la marca come igienizzata attraverso l'utilizzo di Ethereum.
            	\item\textbf{Precondizione:} l'utente ottiene l'elenco delle stanze e delle postazioni da igienizzare.
            	\item\textbf{Postcondizione:} l'utente, dopo l'igienizzazione, marca le stanze e le postazioni come igienizzate.
 \end{itemize}
