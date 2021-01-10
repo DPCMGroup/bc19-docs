@@ -7,11 +7,12 @@ Per ogni requisito delle tabelle sottostanti è stata decisa la seguente struttu
 \item\textbf{Fonti:} ogni requisito può derivare dalle seguenti fonti:
 	\begin{itemize}
 		\item Capitolato: si tratta di un requisito individuato dalla lettura del capitolato;
-		\item Interno: si tratta di un requisito individuato nella fase di analisi;
+		\item Interna: si tratta di un requisito individuato nella fase di analisi;
 		\item Caso d'uso: si tratta di un requisito estrapolato dai casi d'uso individuati;
 		\item Verbale: si tratta di un requisito individuato nel verbale in seguito ai chiarimenti con il proponente.
 	\end{itemize}
 \end{itemize}
+I verbali esterni che costituiscono fonte di requisiti sono stati approvati da Lorenzo Patera, referente di Imola Informatica.
 
 
 \subsection{Requisiti funzionali}
@@ -25,15 +26,15 @@ Per ogni requisito delle tabelle sottostanti è stata decisa la seguente struttu
 		\endhead
 		
 		% ----- Modificare da qui -----
-		 R2F1 & L'utente può leggere una breve guida per il login e il funzionamento & Interno - UC1 \\
+		 R2F1 & L'utente può leggere una breve guida per il login e il funzionamento & Interna - UC1 \\
 		\hline
-		R1F2	&	L'utente non autenticato deve potersi autenticare dal sistema& Interno - UC2	\\
+		R1F2	&	L'utente non autenticato deve potersi autenticare dal sistema& Capitolato - UC2	\\
 		\hline
-		R1F2.1	&	L'utente non autenticato deve ricevere un messaggio di errore nel caso abbia sbagliato a inserire le credenziali& Interno - UC2.1	\\
+		R1F2.1	&	L'utente non autenticato deve ricevere un messaggio di errore nel caso abbia sbagliato a inserire le credenziali& Interna - UC2.1	\\
 		\hline
-		R1F2.2	&	L'utente non autenticato deve poter ricevere un messaggio di errore nel caso il suo account venga disabilitato& Interno - UC2.2	\\
+		R1F2.2	&	L'utente non autenticato deve poter ricevere un messaggio di errore nel caso il suo account venga disabilitato& Interna - UC2.2	\\
 		\hline
-		R1F3	&	L'utente autenticato deve potersi disautenticare dal sistema& Interno - UC3	\\
+		R1F3	&	L'utente autenticato deve potersi disautenticare dal sistema& Interna - UC3	\\
 		\hline
 			R1F4&L'amministratore deve poter gestire le stanze e le postazioni salvate nel sistema	& Capitolato - UC4	\\
 					\hline
@@ -61,7 +62,7 @@ Per ogni requisito delle tabelle sottostanti è stata decisa la seguente struttu
 					\hline
 			R1F4.12&Gli utenti che hanno prenotato una postazione devono essere avvisati se la postazione stessa o la stanza in cui si trovano diventa non disponibile	& Verbale esterno 2020-12-18 - UC4.6.1	\\
 					\hline
-R1F4.13&Se si tenta di creare una stanza o modificarla con un nome attualmente assegnato a un'altra, si riceve un messaggio d'errore e la stanza non viene creata o modificata	& Interno - UC4.2.1	\\
+R1F4.13&Se si tenta di creare una stanza o modificarla con un nome attualmente assegnato a un'altra, si riceve un messaggio d'errore e la stanza non viene creata o modificata	& Interna - UC4.2.1	\\
 						\hline
 			R1F4.14&L'amministratore deve poter aggiungere una postazione in una stanza, specificando: codice della postazione, codice del tag RFID che la identifica e posizione all'interno di una stanza	& Capitolato - UC4.5	\\
 					\hline
@@ -138,17 +139,17 @@ R2F7.1.1&L'amministratore deve poter scaricare il report delle sanificazioni che
 		\hline
 		R1F11.4&Il dipendente deve poter prenotare una postazione selezionata.	&Capitolato - UC11.6	\\
 		\hline
-R1F12&L'addetto alle pulizie riceve l'elenco delle stanze e delle postazioni che necessitano di igienizzazione	& Interno - UC12	\\
+R1F12&L'addetto alle pulizie riceve l'elenco delle stanze e delle postazioni che necessitano di igienizzazione	& Interna - UC12	\\
 						\hline
 			R1F12.1&	L'addetto alle pulizie riceve l'elenco delle stanze che necessitano di igienizzazione& 	Capitolato - UC12.1\\
 					\hline
-			R1F12.2&L'addetto alle pulizie riceve l'elenco delle postazioni che necessitano di igienizzazione	& Interno - UC12.2	\\
+			R1F12.2&L'addetto alle pulizie riceve l'elenco delle postazioni che necessitano di igienizzazione	& Interna - UC12.2	\\
 					\hline
-R1F13&L'addetto alle pulizie deve registrare sulla blockchain, con l'utilizzo di Ethereum, quando igienizza una stanza o una postazione	& Interno - UC13	\\
+R1F13&L'addetto alle pulizie deve registrare sulla blockchain, con l'utilizzo di Ethereum, quando igienizza una stanza o una postazione	& Interna - UC13	\\
 					\hline
 R1F13.1&L'addetto alle pulizie deve poter marcare, nella sezione apposita, una stanza come igienizzata	& Capitolato - UC13.1	\\
 						\hline
-			R1F13.2&L'addetto alle pulizie deve poter marcare, nella sezione apposita, una postazione come igienizzata	&Interno - UC13.2 	\\
+			R1F13.2&L'addetto alle pulizie deve poter marcare, nella sezione apposita, una postazione come igienizzata	&Interna - UC13.2 	\\
 					\hline
 			R1F13.3&L'addetto alle pulizie non può pulire postazioni o stanze occupate	& Verbale esterno 2021-01-01	\\
 					\hline
@@ -167,7 +168,7 @@ I requisiti R1Q3 e R1Q4 definiti nella tabella sottostante sono stati riportati 
 		\endhead
 		
 		% ----- Modificare da qui -----
-		 R1Q1 &La progettazione e la codifica devono rispettare le norme e le metriche definite nel documento \dext{Piano di qualifica v1.0.0} & Interno\\
+		 R1Q1 &La progettazione e la codifica devono rispettare le norme e le metriche definite nel documento \dext{Piano di qualifica v1.0.0} & Interna\\
 		\hline	
 		R1Q2 &Deve essere realizzato e consegnato un Docker file
 		contenente la componente applicativa. & Capitolato\\
@@ -257,9 +258,8 @@ Non sono stati individuati requisiti prestazionali. Uno dei motivi sta nel fatto
 		% ----- Modificare da qui -----
 		
 		
-		 Interno & 
+		 Interna & 
 		 R2F1 \newline
-		 	R1F2 \newline
 		 	R1F2.1 \newline
 		 	R1F2.2 \newline
 			R1F3 \newline 	 
@@ -310,7 +310,7 @@ Verbale esterno 2021-01-04 &
 \\
 \hline
 Capitolato & 
-
+	R1F2 \newline
 	R1F4  \newline
 	R1F4.1\newline
 	R1F4.2\newline
@@ -513,27 +513,27 @@ UC13.2&R1F13.2 \\
 		
 		% ----- Modificare da qui -----
 		R2F1 & 
-			Interno \newline
+			Interna \newline
 			UC1
 		\\
 	\hline
 		R1F2 & 
-		Interno \newline
+		Capitolato \newline
 		UC2
 	\\
 	\hline
 		R1F2.1 & 
-		Interno \newline
+		Interna \newline
 		UC2.1
 	\\
 	\hline
 		R1F2.2 & 
-		Interno \newline
+		Interna \newline
 		UC2.2
 	\\
 	\hline
 		R1F3 & 
-		Interno \newline
+		Interna \newline
 		UC3
 	\\
 	\hline
@@ -606,7 +606,7 @@ R1F4.12	&
 	\\
 	\hline
 R1F4.13	& 
-	Interno \newline
+	Interna \newline
 	UC4.2.1	
 	\\
 
@@ -808,7 +808,7 @@ R1F11.4	&
 \\
 \hline
 R1F12	& 
-		Interno \newline
+		Interna \newline
 		UC12
 \\
 	\hline
@@ -817,12 +817,12 @@ R1F12.1	&
 		UC12.1 \\
 	\hline
 R1F12.2	& 
-		Interno \newline
+		Interna \newline
 		UC12.2
 \\
 	\hline
 R1F13	& 
-		Interno \newline
+		Interna \newline
 		UC13
 \\
 	\hline
@@ -832,14 +832,14 @@ R1F13.1		&
 	\\
 	\hline
 R1F13.2	& 
-	Interno \newline
+	Interna \newline
 	UC13.2	
 	\\
 	
 	\hline
 R1F13.3	& Verbale esterno 2021-01-01 \\
 	\hline
-R1Q1	& Interno\\
+R1Q1	& Interna\\
 	\hline
 R1Q2	& Capitolato\\
 \hline
