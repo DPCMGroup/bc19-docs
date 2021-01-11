@@ -1,0 +1,36 @@
+name: LaTeX Artifact
+
+on: 
+  push:
+    branches:
+      - develop
+      - master
+    paths:
+      - 'esterni/**'
+      - 'interni/**'
+      - 'template/**'
+      - '.github/**'
+
+jobs:
+  artifacts:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo content
+      uses: actions/checkout@v2
+    
+    - name: Search and Compiling Latex Files
+      uses: Maxelweb/Latex-multicompiler@d22ea5b
+      with:
+        path_to_list: .github/filesToCompile
+        artifact: true
+    
+    - name: Upload to Google Drive
+      uses: satackey/action-google-drive@v1
+      with:
+        skicka-tokencache-json: ${{ secrets.SKICKA_TOKENCACHE_JSON }}
+        upload-from: ./Documents
+        upload-to: /DPCM 2077/Artifacts
+        google-client-id: ${{ secrets.GOOGLE_CLIENT_ID }}
+        google-client-secret: ${{ secrets.GOOGLE_CLIENT_SECRET }}
