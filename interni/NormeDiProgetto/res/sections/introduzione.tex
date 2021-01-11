@@ -1,65 +1,48 @@
 \section{Introduzione}
 
 \subsection{Scopo del Documento}
-Lo scopo di questo documento è fissare tutte le  regole e le \glock{procedure} fondamentali per assicurare al \glock{gruppo} DPCM 2077 un modo di lavorare comune che garantisca quantificabilità, efficacia ed efficienza.
+Lo scopo di questo documento è fissare tutte le  regole e le procedure fondamentali per assicurare al \glock{gruppo} DPCM 2077 un modo di lavorare comune che garantisca quantificabilità, efficacia ed efficienza.
 In quest’ottica, questo documento deve essere visionato da tutti i componenti di DPCM 2077 a ogni sua approvazione. 
 I membri di DPCM 2077 sono obbligati ad applicare quanto scritto al fine di mantenere omogeneità e coesione in ogni aspetto del progetto. Saranno inoltre elencati e discussi tutti gli   
 strumenti software scelti internamente al gruppo per rispettare le regole e attuare le procedure.
 
 \subsection{Composizione del Documento}
-La struttura del documento si ispira alla suddivisione dei \glock{processi} in tre tipologie desunta dallo standard \dext{ISO/IEC 12207:1995}:
+La struttura del documento si ispira alla suddivisione dei \glock{processi} in tre tipologie desunta dallo standard ISO/IEC 12207:1995:
 \begin{itemize}
 \item{\textbf{Primari}: acquisizione, fornitura, sviluppo, gestione operativa e manutenzione;\footnote{nel presente documento vengono trattati solamente \textit{fornitura} e \textit{sviluppo}}}
 \item{\textbf{Supporto}: documentazione, gestione della configurazione, accertamento della qualità, verifica, validazione, revisioni congiunte con il cliente, verifiche ispettive interne e risoluzione dei problemi;}
 \item{\textbf{Organizzativi}: gestione dei processi, gestione delle infrastrutture tecniche, miglioramento del processo e formazione del personale.}
 \end{itemize}
-\subsection{Scopo del Prodotto}
-Lo scopo del prodotto è di sviluppare un’\glock{applicazione} in grado di
-segnalare a un \glock{server} dedicato la presenza di un \glock{utente} su una determinata \glock{postazione} appartenente a
-una stanza. 
-Nel server deve essere possibile gestire più stanze e postazioni per:
-\begin{itemize}
-\item{sapere in ogni momento se la postazione è occupata, prenotata oppure da pulire;}
-\item{controllare quali postazioni sono prenotate e bloccare le prenotazioni per una determinata
-stanza (e.g. all'esaurimento delle postazioni disponibili);}
-\item{garantire una \glock{tracciatura} autenticata delle presenze e la registrazione di tutti i cambiamenti di stato relativi alla pulizia della
-postazione, nonché le informazioni su chi ha igienizzato la postazione.}
-\end{itemize}
-L'applicazione dovrà essere in grado di svolgere i seguenti compiti:
-\begin{itemize}
-\item{recupero lista delle postazioni libere;}
-\item{prenotazione di una postazione;}
-\item{tracciatura delle postazioni in tempo reale tramite \glock{tag } \glock{RFID};}
-\item{pulizia di una postazione (per pulizia si intende segnare come igienizzata una postazione)};
-\item{generare uno storico delle postazioni occupate e igienizzate.}
-\end{itemize}
-\glock{Client} e server comunicano tra loro nel momento in cui lo smartphone viene  a contatto con il tag RFID.
 
-\subsection{Glossario}
-All’interno del  documento sono presenti termini che presentano significati ambigui a seconda del contesto.
-Per evitare questa ambiguità è stato creato un  documento di nome Glossario che  conterrà tali termini con il loro significato specifico. Per segnalare che un termine del testo è presente all’ interno del Glossario  
-verrà aggiunta una G pedice posta a fianco del termine ambiguo. 
-Se viene indicata una D pedice significa che si sta facendo riferimento a un documento.
+\subsection{Scopo del prodotto}
+Il prodotto da sviluppare ha lo scopo di monitorare e regolare l'utilizzo e l'igienizzazione delle \glock{postazioni} all'interno di uno spazio condiviso, al fine di ridurre il rischio di trasmissione di un'infezione e di adempiere alle norme di legge. 
+\subsection{Glossario e documenti} 
+All'interno del  documento sono presenti termini che assumono significati diversi a seconda del contesto.
+Per evitare ambiguità, è stato creato un  documento di nome Glossario che  conterrà tali termini con il loro significato specifico. Per segnalare che un termine del testo è presente all'interno del Glossario, verrà aggiunta una G pedice posta a fianco del termine ambiguo.
+Quando si fa riferimento a un altro documento riguardante questo progetto vi si pone a pedice una D.
 
 \subsection{Riferimenti}
 \subsubsection{Riferimenti Normativi}
 \begin{itemize}
 \item{Capitolato \\
 \url{https://www.math.unipd.it/~tullio/IS-1/2020/Progetto/C1.pdf}}
-\item{VE\_2020\_12\_18}
+\item \dext{VE\_2020\_12\_18 v. 1.0.0}
 \end{itemize}
 
 \subsubsection{Riferimenti Informativi}
 \begin{itemize}
+\item \dext{Piano di Qualifica v. 1.0.0}
 \item{Standard ISO/IEC 12207:1995 \\
 \url{https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf}}
+\item{Standard ISO 8601 \\
+	\url{https://www.iso.org/iso-8601-date-and-time-format.html}}
 \item{Sito ufficiale di \glock{git} \\
 \url{https://git-scm.com/}}
 \item{Documentazione ufficiale di Git} \\
 \url{https://git-scm.com/doc}
 \item{L’Arte di Scrivere con \LaTeX \\
 \url{http://www.lorenzopantieri.net/LaTeX_files/ArteLaTeX.pdf}}
-\item{Libro di Ingegneria del Software: Software Engineering - Ian Sommerville}
+\item{Libro di Ingegneria del Software: Software Engineering - Ian Sommerville - 10th edition}
 \item{Sito ufficiale di Java} \\
 \url{https://www.java.com/it/}
 \item{Sito ufficiale di Python} \\

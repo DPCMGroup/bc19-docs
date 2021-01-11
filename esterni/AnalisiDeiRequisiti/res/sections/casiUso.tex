@@ -686,7 +686,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	\item\textbf{Postcondizione:} l’utente conosce lo stato della postazione.
            	\item\textbf{Estensioni:}
            	\begin{itemize}
-           		\item[$-$] visualizzazione errore: lo smartphone è troppo distante dal tag RFID per effettuare correttamente la scansione (UC9.2).
+           		\item[$-$] visualizzazione errore: lo smartphone è troppo distante dal tag RFID per effettuare correttamente la scansione (UC8.2).
            	\end{itemize}
 \end{itemize}
 \subsubsection{ UC8.1 - Scansione tag RFID}
@@ -739,16 +739,16 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	\item\textbf{Postcondizione:} l’utente segnala in tempo reale la presenza alla postazione e registra questa azione su Ethereum.
            	\item\textbf{Estensioni:} 
            	\begin{itemize}
-           		\item[$-$] visualizzazione errore: se sposto lo smartphone dal tag RFID (ad esempio per una telefonata), 
-           		dopo un timeout di qualche minuto(ad esempio 10 minuti), viene visualizzato un messaggio di errore (UC10.2);
-           		\item[$-$] visualizzazione errore: se l'utente si dimentica di premere il bottone della fine dell'occupazione della postazione, viene visualizzato un messaggio di errore (UC 10.4).
+           		\item[$-$] visualizzazione errore: se l'utente sposta lo smartphone dal tag RFID (ad esempio per una telefonata), 
+           		dopo un timeout di qualche minuto, viene visualizzato un messaggio di errore (UC9.2);
+           		\item[$-$] visualizzazione errore: se l'utente si dimentica di premere il bottone di fine occupazione della postazione, viene visualizzato un messaggio di errore (UC9.4).
            	\end{itemize}
 \end{itemize}
 \subsubsection{ UC9.1 - Presenza in tempo reale}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Attori Secondari:} tag RFID.
-	\item\textbf{Descrizione:} l’utente segnala in tempo reale la presenza alla postazione, appoggiando il cellulare sul tag RFID.
+	\item\textbf{Descrizione:} l’utente segnala in tempo reale la presenza alla postazione, appoggiando lo smartphone sul tag RFID.
 	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tag RFID e segnala in questo modo la propria presenza in tempo reale.
 	\item\textbf{Precondizione:} l’utente occupa una postazione e ha attivato nel proprio smartphone la possibilità di effettuare scansioni con tag RFID.
 	\item\textbf{Postcondizione:} l’utente segnala in tempo reale la presenza alla postazione.
@@ -836,17 +836,17 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:} l’utente vuole prenotare una postazione di una stanza in un determinato giorno e orario.
 	\item\textbf{Scenario principale:} 
 	\begin{itemize}
-		\item[$-$] l’utente inserisce la data (UC10.1.1);
-		\item[$-$] l’utente inserisce l'orario (UC10.1.3);
-		\item[$-$] l’utente inserisce l'identificativo della stanza (UC10.1.5).
+		\item[$-$] l’utente inserisce la data (UC11.1.1);
+		\item[$-$] l’utente inserisce l'orario (UC11.1.3);
+		\item[$-$] l’utente inserisce l'identificativo della stanza (UC11.1.5).
 	\end{itemize}
 	\item\textbf{Precondizione:} l’utente sta navigando nella sezione dell'applicazione dedicata alla ricerca di una postazione.
-	\item\textbf{Postcondizione:} l’utente sta navigando nella sezione dell'applicazione dedicata alla ricerca di una postazione.
+	\item\textbf{Postcondizione:} l’utente inserisce i campi necessari alla ricerca della postazione desiderata.
 	\item\textbf{Estensioni:} l’utente inserisce i campi necessari alla ricerca della postazione desiderata.
 	\begin{itemize}
-		\item[$-$] l’utente inserisce una data non valida (UC10.1.2);
-		\item[$-$] l’utente inserisce un orario non valida (UC10.1.4);
-		\item[$-$] l’utente inserisce una stanza non valida (UC10.1.6).
+		\item[$-$] l’utente inserisce una data non valida (UC11.1.2);
+		\item[$-$] l’utente inserisce un orario non valido (UC11.1.4);
+		\item[$-$] l’utente inserisce una stanza non valida (UC11.1.6).
 	\end{itemize}
 \end{itemize}
 \subsubsection{ UC11.1.1 - Inserimento data }
@@ -894,8 +894,8 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \subsubsection{ UC11.1.5 - Inserimento stanza }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} l’utente sta cercando una postazione disponibile e deve compilare il campo identificativo della stanza.
-	\item\textbf{Scenario principale:} l’utente ha compilato il campo stanza.
+	\item\textbf{Descrizione:} l’utente sta cercando una postazione disponibile e deve compilare il campo dell'identificativo della stanza.
+	\item\textbf{Scenario principale:} l’utente ha compilato il campo dell'identificativo della stanza.
 	\item\textbf{Precondizione:} l’utente sta compilando i campi richiesti per effettuare la ricerca.
 	\item\textbf{Postcondizione:} l’utente ha compilato il campo richiesto.
 \end{itemize}
@@ -905,7 +905,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \item\textbf{Descrizione:} l’utente ha compilato un campo per l'identificativo della stanza, ma è in un formato non corretto.
 \item\textbf{Scenario principale:} 
 \begin{itemize}
-	\item[$-$] l’utente ha inserito il campo per la stanza;
+	\item[$-$] l’utente ha inserito il campo per l'identificativo della stanza;
 	\item[$-$] il sistema elabora la richiesta;
 	\item[$-$] viene visualizzato un errore che segnala che l'identificativo della stanza non è valido.
 \end{itemize}
@@ -922,10 +922,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l’utente visualizza le postazioni nella stanza.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] visualizzazione errore: tutte le postazioni nella stanza selezionata sono occupate o guaste (UC 12.3).
+		\item[$-$] visualizzazione errore: tutte le postazioni nella stanza selezionata sono occupate o guaste (UC11.3).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC11.3 - Visualizzazione errore: stanze occupate }
+\subsubsection{ UC11.3 - Visualizzazione errore: postazioni occupate }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente visualizza un messaggio di errore, in quanto non ci sono postazioni prenotabili.
@@ -933,10 +933,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\begin{itemize}
 		\item[$-$] l’utente ha inserito i campi data, orario, stanza;
 		\item[$-$] il sistema elabora la richiesta;
-		\item[$-$] viene visualizzato un messaggio di errore che consiglia di selezionare un'altra fascia oraria.
+		\item[$-$] viene visualizzato un messaggio di errore che consiglia di selezionare un'altra fascia oraria o stanza.
 	\end{itemize}
 	\item\textbf{Precondizione:} l’utente ha compilato i campi data, orario, stanza oppure ha selezionato la sezione prima postazione 
-	disponibile (UC12.4).
+	disponibile (UC11.4).
 	\item\textbf{Postcondizione:} l’utente visualizza un messaggio di errore specifico e non porta a termine l’azione.
 \end{itemize}
 \subsubsection{ UC11.4 - Prima postazione libera }
@@ -944,12 +944,12 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente riceve l'identificativo di una postazione igienizzata e libera in una determinata stanza, 
 	in modo automatico e in base a un criterio di distanziamento dalle altre postazioni.
-	\item\textbf{Scenario principale:} viene fornito l'identificativo di una postazione libera e igienizzata, oppure di una libera e non igienizzata (si veda UC11).
+	\item\textbf{Scenario principale:} viene fornito l'identificativo di una postazione libera e igienizzata, oppure di una libera e non igienizzata (si veda UC10).
 	\item\textbf{Precondizione:} l’utente preme il bottone nella sezione della prima postazione disponibile.
 	\item\textbf{Postcondizione:} l’utente riceve l'identificativo di una postazione.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] tutte le postazioni nella stanza selezionata sono occupate o guaste (UC12.3).
+		\item[$-$] tutte le postazioni nella stanza selezionata sono occupate o guaste (UC11.3).
 	\end{itemize}
 \end{itemize}
 \subsubsection{ UC11.5 - Selezione postazione }
@@ -970,7 +970,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l'utente prenota la postazione.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] nel caso in cui si scelga di prenotare una postazione libera e sporca si veda il caso d'uso "Pulizia autonoma"(UC11),
+		\item[$-$] nel caso in cui l'utente scelga di prenotare una postazione libera e sporca si veda UC10,
 		per poi tornare allo scenario principale.
 	\end{itemize}
 \end{itemize}
