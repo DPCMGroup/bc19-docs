@@ -1,0 +1,225 @@
+
+\section{Specifica dei Test}
+I test permettono di verificare sia la correttezza delle parti di programma sviluppate, sia che tutti gli aspetti del progetto siano implementati e corretti.
+Per assicurare la qualità del software prodotto, il gruppo \textit{DPCM 2077} utilizza come modello di sviluppo il \glock{Modello a V}.
+\\
+Per la classificazione dei test si fa riferimento alle sezioni Verifica\footnote{Sezione §3.4} e Validazione\footnote{Sezione §3.5} del documento \dext{Norme di Progetto v. 1.0.0}.
+	\subsection{Tipi di test}
+	Vengono individuate quattro tipologie di test:
+	\begin{itemize}
+		\item \textbf{Test di Sistema [TS]};
+		\item \textbf{Test di Accettazione [TA]};
+		\item \textbf{Test di Integrazione [TI]};
+		\item \textbf{Test di Unità [TU]}.
+	\end{itemize}
+	\subsection{Test di Sistema}
+	\begin{center}
+		\rowcolors{2}{white}{lightest-grayest}
+		\begin{longtable}{|c|p{10cm}|c|}
+			\hline
+			\rowcolor{lighter-grayer}
+			\textbf{Codice} & \textbf{Descrizione} & \textbf{Stato}  \\ 
+						
+			\hline
+			\endhead
+			
+			\hline
+			% Test di sistema per i requisiti funzionali %
+			TS2F1 & L'utente deve poter accedere alla guida per il login e per applicazione. & NI \\
+			\hline
+			TS1F2 & L'utente non ancora autenticato deve poter autenticarsi. & NI \\			
+			\hline
+			TS1F2.1 & L'utente non ancora autenticato deve ricevere un messaggio di errore nel caso abbia inserito le credenziali errate. & NI \\			
+			\hline
+			TS1F2.2 & L'utente non ancora autenticato deve ricevere un messaggio di errore nel caso l'account sia disabilitato. & NI \\			
+			\hline
+			TS1F3 & L'utente autenticato deve potersi disconnettere dal sistema. & NI \\			
+			\hline
+			TS1F4 & L'amministratore può gestire le stanze e le postazioni salvate. & NI \\			
+			\hline
+			TS1F4.1 & L'amministratore può visualizzare le stanze e le postazioni in modo schematico. & NI \\			
+			\hline
+			TS1F4.2 & L'amministratore può vedere le postazioni colorate in base al loro stato attuale. & NI \\			
+			\hline
+			TS1F4.3 & Gli stati delle postazioni possono essere i seguenti:
+			 \begin{itemize}
+			 	\item libera e igienizzata;
+			 	\item libera e non igienizzata;
+			 	\item occupata;
+			 	\item prenotata e igienizzata;
+			 	\item prenotata e non igienizzata;
+			 	\item inaccessibile.
+			 \end{itemize}
+			 & NI \\			
+			\hline
+			TS1F4.4 & Per ogni stanza deve essere indicato il numero di occupanti attuali. & NI \\			
+			\hline
+			TS1F4.5 & L'amministratore può visualizzare il calendario delle prenotazioni delle postazioni. & NI \\			
+			\hline
+			TS1F4.6 & L'amministratore può aggiungere una stanza al sistema e assegnarle un nome. & NI \\			
+			\hline
+			TS1F4.7 & La creazione di una stanza inizia il processo di salvataggio in Ethereum. & NI \\			
+			\hline
+			TS1F4.8 & L'amministratore può eliminare una stanza al sistema. & NI \\			
+			\hline
+			TS1F4.9 & L'eliminazione di una stanza inizia il processo di salvataggio in Ethereum. & NI \\			
+			\hline
+			TS1F4.10 & L'amministratore può modificare il nome di una stanza. & NI \\			
+			\hline
+			TS1F4.11 & L'amministratore può impostare una stanza come inaccessibile per un determinato periodo di tempo, con data inizio e fine arbitraria. & NI \\			
+			\hline
+			TS1F4.12 & Gli utenti che hanno una prenotazione, devono ricevere una notifica se la stanza in cui hanno la prenotazione diventa non disponibile. & NI \\			
+			\hline
+			TS1F4.13 & La creazione o modifica del nome di una stanza con un nome già assegnato provoca un messaggio di errore. La stanza non viene creata o modificata. & NI \\			
+			\hline
+			TS1F4.14 & L'amministratore può aggiungere una postazione in una stanza, specificando:
+			\begin{itemize}
+				\item codice della postazione;
+				\item codice tag RFID.
+			\end{itemize}
+			& NI \\			
+			\hline			
+			TS1F4.15 & L'aggiunta di una postazione inizia il processo di salvataggio in Ethereum. & NI \\			
+			\hline		
+			TS1F4.16 & L'amministratore può eliminare una postazione. & NI \\			
+			\hline		
+			TS1F4.17 & L'eliminazione di una postazione inizia il processo di salvataggio in Ethereum. & NI \\			
+			\hline	
+			TS1F4.18 & L'amministratore può modificare i dati e la posizione di una postazione. & NI \\			
+			\hline	
+			TS1F4.19 & La modifica di una postazione inizia il processo di salvataggio in Ethereum. & NI \\			
+			\hline	
+			TS1F4.20 & La creazione o modifica del codice di una postazione con un codice già assegnato provoca un messaggio di errore. La postazione non viene creata o modificata. & NI \\	
+			\hline	
+			TS1F4.21 & La creazione o modifica del codice tag di una postazione con un codice tag già assegnato provoca un messaggio di errore. La postazione non viene creata o modificata. & NI \\	
+			\hline	
+			TS1F5 & L'amministratore gestisce le credenziali degli utenti. & NI \\	
+			\hline
+			TS1F5.1 & L'amministratore può visualizzare una lista delle credenziali di tutti gli utenti. & NI \\	
+			\hline
+			TS1F5.2 & L'amministratore può creare nuove credenziali. Le informazioni contenute nel profilo di un utente sono:
+			\begin{itemize}
+				\item nome;
+				\item cognome;
+				\item nome utente;
+				\item password;
+				\item email.
+			\end{itemize}
+			Tra queste le informazioni necessarie per l’accesso sono password e nome utente. & NI \\	
+			\hline
+			TS1F5.3 & L’amministratore può modificare le credenziali degli utenti del sistema. & NI \\	
+			\hline
+			TS1F5.4 & L’amministratore può eliminare le credenziali degli utenti del sistema. & NI \\	
+			\hline
+			TS1F5.5 & Il sistema può memorizzare più credenziali per ogni tipologia di utente. & NI \\	
+			\hline
+			TS1F6 & L'amministratore può vedere lo storico delle postazioni occupate da un utente. & NI \\	
+			\hline
+			TS1F6.1 & L'amministratore deve vedere lo storico delle postazioni occupate da un utente in modo tabellare, con data e orari di inizio e fine delle occupazioni e codici delle prenotazioni. & NI \\	
+			\hline
+			TS1F6.1.1 & L'amministratore deve poter effettuare una ricerca delle postazioni occupate da un utente, specificando il periodo all'interno del quale l'utente occupava la postazione. & NI \\	
+			\hline
+			TS2F6.1.2 & L'amministratore deve vedere lo storico delle postazioni occupate da un utente specifico in modo tabellare, con data e orari di inizio e fine delle occupazioni, codici delle prenotazioni e ore trascorse alla postazione. & NI \\	
+			\hline
+			TS1F6.2 & L'amministratore deve vedere lo storico delle occupazioni di una postazione specifica in modo tabellare, con data e orari di inizio e fine delle occupazioni e nomi e cognomi dei dipendenti. & NI \\		
+			\hline
+			TS1F6.2.1 & L'amministratore deve poter effettuare una ricerca tra le occupazioni di una specifica postazione, specificando il periodo all'interno del quale l'utente occupava la postazione. & NI \\		
+			\hline
+			TS1F6.3 & L'amministratore può scaricare il report delle occupazioni in modo leggibile. & NI \\		
+			\hline
+			TS2F6.3.1 & L'amministratore può scaricare il report delle occupazioni in formato PDF. & NI \\		
+			\hline
+			TS2F7 & L'amministrazione può vedere lo storico delle sanificazioni di tutte le postazioni in modo tabellare, con data e ora in cui sono avvenute, nome e cognome di chi le ha eseguite e il loro ruolo. & NI \\	
+			\hline
+			TS2F7.1 & L'amministratore può scaricare il report delle sanificazioni in modo leggibile. & NI \\	
+			\hline
+			TS2F7.1.1 & L'amministratore può scaricare il report delle sanificazioni in formato PDF. & NI \\	
+			\hline
+			TS1F8 & Il dipendente deve poter vedere lo stato di una postazione tramite la scansione del tag RFID. & NI \\	
+			\hline
+			TS1F9 & Il dipendente deve poter segnare la propria presenza su una postazione tramite la scansione del tag RFID. & NI \\	
+			\hline
+			TS1F9.1 & Il dipendente deve poter segnare la propria presenza, di inizio e fine occupazione, su una postazione tramite Ethereum. & NI \\	
+			\hline
+			TS1F10 & Il dipendente può effettuare una pulizia autonoma della postazione. & NI \\	
+			\hline
+			TS1F10.1 & Il dipendente può marcare la postazione come libera e igienizzata. & NI \\	
+			\hline
+			TS1F10.2 & Il dipendente deve poter registrare l'avvenuta igienizzazione autonoma tramite Ethereum. & NI \\	
+			\hline
+			TS1F11 & Il dipendente può ricercare una postazione in base alla data, all'orario e all'identificativo della stanza. & NI \\	
+			\hline
+			TS1F11.1 & Il dipendente può visualizzare le postazioni di una stanza. & NI \\	
+			\hline
+			TS1F11.2 & Il dipendete può visualizzare l'identificativo della prima postazione igienizzata e libera in una stanza. & NI \\	
+			\hline
+			TS1F11.3 & Il dipendente può selezionare una postazione di una stanza. & NI \\	
+			\hline
+			TS1F11.4 & Il dipendente può prenotare una postazione selezionata. & NI \\	
+			\hline
+			TS1F12 & L'addetto delle pulizie riceve l'elenco delle stanze e delle postazioni che necessitano di igienizzazione. & NI \\	
+			\hline
+			TS1F12.1 & L'addetto delle pulizie riceve l'elenco delle stanze che necessitano igienizzazione. & NI \\	
+			\hline
+			TS1F12.2 & L'addetto delle pulizie riceve l'elenco delle postazioni che necessitano igienizzazione. & NI \\	
+			\hline
+			TS1F13 & L'addetto delle pulizie deve registrare su Ethereum quando igienizza una stanza o una postazione. & NI \\	
+			\hline
+			TS1F13.1 & L'addetto delle pulizie può marcare una stanza igienizzata. & NI \\	
+			\hline
+			TS1F13.2 & L'addetto delle pulizie può marcare una postazione igienizzata. & NI \\	
+			\hline
+			TS1F13.3 & L'addetto delle pulizie non può segnare come pulita una postazione occupata. & NI \\	
+			\hline
+			% Test di sistema per i requisiti di qualità%			
+			TS1Q1 & Si verifichi che vengano rispettate le norme e metriche definite nel documento \dext{Piano di Qualifica v. 1.0.0}. & NI \\	
+			\hline			
+			TS1Q2 & Si verifichi il corretto funzionamento del Docker file. & NI \\	
+			\hline	
+			TS1Q3 & Si verifichi che ogni componente applicativo sia correlato a test unitari e d'integrazione. & NI \\	
+			\hline
+			TS1Q4 & Il sistema deve essere testato nella sua interezza tramite test end-to-end. & NI \\	
+			\hline
+			TS1Q5 & La copertura dei test deve essere maggiore o uguale dell'ottanta per cento. & NI \\	
+			\hline
+			TS1Q6 & Si verifichi l'efficienza dell'applicazione al consumo della batteria del cellulare. & NI \\	
+			\hline
+			% Test di sistema per i requisiti di vincolo %
+			TS1V1 & Si verifichi che il server esponga delle API Rest attraverso le quali sia possibile utilizzare l'applicativo. & NI \\	
+			\hline
+			TS3V1.1 & Si verifichi che possa essere utilizzato gRPC come soluzione alternativa al Rest. & NI \\	
+			\hline
+			TS1V2 & Si verifichi che la scansione dei codici nel tempo sia sufficiente a certificare la presenza della persona. & NI \\	
+			\hline
+			TS1V2.1 & Si verifichi che il rapporto dell'utilizzo del lettore RFID del cellulare sia ottimale per la durata della batteria. & NI \\	
+			\hline
+			TS1V3 & Si verifichi che le componenti applicative siano correlate da test unitari e d'integrazione. & NI \\	
+			\hline
+			TS1V4 & Si verifichi che il sistema sia testato nella sua interezza tramite test end-to-end. & NI \\	
+			\hline
+			TS2V5 & Si verifichi che le comunicazione tra app e server siano cifrate. & NI \\	
+			\hline
+			TS2V6 & Si verifichi che il servizio cloud riesca a gestire i servizi per gli utenti. & NI \\	
+			\hline
+			TS1V7 & Si verifichi che l'applicazione sia sviluppata per Android o iOS. & NI \\	
+			\hline
+			TS1V8 & Si verifichi che la copertura dei test  sia di almeno l'ottanta per cento. & NI \\	
+			\hline
+			TS1V9 & Si verifichi che il rapporto dell'utilizzo del lettore RFID del cellulare sia ottimale per la durata della batteria. & NI \\	
+			\hline
+			TS1V10 & Si verifichi che sia stata sviluppata una documentazione delle scelte implementative e progettuali. & NI \\	
+			\hline
+			TS1V11 & Si verifichi che sia stata sviluppata una documentazione dei problemi non risolti con proposta di soluzione. & NI \\	
+			\hline
+			% Test di sistema per i requisiti prestazionali %	
+			\hiderowcolors
+			\caption{Tabella dei test di sistema}		
+		\end{longtable}	
+	\end{center}
+
+	\subsection{Test di Accettazione}
+	Il test di accettazione comprende l'esecuzione dei test di sistema con la partecipazione dei committenti. Dunque, è in tale circostanza che si eseguiranno i test di accettazione. 
+	\subsection{Test di Integrazione}
+	Le specifiche di questi test verranno scritte successivamente utilizzando il Modello a V.
+	\subsection{Test di Unità}
+	Le specifiche di questi test verranno scritte successivamente utilizzando il Modello a V.

@@ -1,0 +1,19 @@
+name: Glossario Norification
+on: 
+  push:    
+    paths:
+      - 'esterni/glossario/**'
+
+jobs:
+  send_notification:
+    runs-on: ubuntu-latest
+    steps:     
+      - name: Notify Discord Glossario
+        uses: sarisia/actions-status-discord@v1
+        if: always()
+        with:
+          webhook: ${{ secrets.GLOSSARIO_WEBHOOK }}
+          title: "Aggiornamento Glossario"
+          description: "E' stato aggiornato il glossario"
+          username: Glossario
+            

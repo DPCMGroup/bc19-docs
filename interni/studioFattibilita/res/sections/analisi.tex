@@ -1,0 +1,322 @@
+\section{Analisi di fattibilità dei capitolati}
+Per ogni capitolato:
+\begin{itemize}
+	\item vengono fornite informazioni di carattere generale;
+	\item viene data una breve descrizione degli obiettivi richiesti dal capitolato;
+	\item viene stimato il dominio del capitolato o più informalmente il suo "mondo": quali competenze teoriche sono necessarie durante il progetto, quali sono le tecnologie richieste da padroneggiare, quali linguaggi conoscere, qual è il mercato di riferimento, etc\dots 
+	\item vengono evidenziati fattori positivi e criticità;
+	\item vengono stilate le prime conclusioni.
+\end{itemize}
+
+% BlockCOVID - Imola Informatica
+\subsection{Capitolato 1 - BlockCOVID}
+\subsubsection{Informazioni generali}
+\begin{description}
+	\item[Nome:] BlockCOVID: supporto digitale al contrasto della pandemia;
+	\item[Proponente:] Imola Informatica;
+	\item[Committente:] prof.~Tullio Vardanega e prof.~Riccardo Cardin.
+\end{description}
+\subsubsection{Descrizione del capitolato}
+BlockCOVID prevede la creazione di un'\glock{applicazione} che permetta di contrastare il \glock{Covid-19} in spazi chiusi (laboratori, aule, aziende) tramite il tracciamento immutabile e certificato delle presenze e della pulizia delle postazioni.
+BlockCOVID richiede la configurazione di un \glock{server} \glock{back-end} completo di \glock{GUI} e un'applicazione mobile per il funzionamento dell'applicazione, le quali devono garantire:
+\begin{itemize}
+\item il monitoraggio delle presenze nelle postazioni in maniera certificata e trasparente;
+\item la realizzazione di una reportistica certificata;
+\item la prenotazione della postazione da remoto;
+\item la consultazione della lista dei locali utilizzati;
+\item funzionalità dedicata a seconda dell'utente (amministratore, utente generico, operatore delle pulizie).
+\end{itemize}
+\subsubsection{Studio del dominio}
+Per la parte tecnologica:
+\begin{itemize}
+\item \glock{Java}, \glock{Python} o \glock{Node.js} per lo sviluppo del server back-end;
+\item \glock{protocolli} \glock{asincroni} per le comunicazioni applicazione mobile - server;
+\item un sistema \glock{Blockchain} per salvare con opponibilità a terzi i dati di \glock{sanificazione};
+\item \glock{IAAS} \glock{Kubernetes} o di un \glock{PaaS} (\glock{Openshift} o \glock{Rancher}) per il rilascio delle componenti del server e la gestione della \glock{scalabilità} orizzontale;
+\item \glock{Docker}.
+\end{itemize}
+\subsubsection{Pro e Contro}
+\paragraph*{Pro}
+\begin{itemize}
+	\item non sono previste restrizione di linguaggio e la scelta tecnologica è abbastanza libera;
+	\item competenze parzialmente acquisite su Docker e Blockchain (corso tecnologie open-source, seminari tecnologici di Imola Informatica e SanMarco Informatica);
+	\item server a disposizione;
+	\item Blockchain è una tecnologia in crescita negli ultimi anni.
+\end{itemize}
+\paragraph*{Contro}
+\begin{itemize}
+	\item tematica fortemente attuale ma che perderebbe di utilità nel caso svanisse la pandemia. Un utilizzo alternativo potrebbe essere per le pulizie (facendo pulizie mirate e più approfondite nei posti più frequentati e più superficiali altrove).
+\end{itemize}
+\subsubsection{Conclusioni}
+BlockCOVID ha colpito positivamente il gruppo per chiarezza nell'esposizione degli obiettivi e delle tecnologie consigliate. Il rischio della forte attualità del prodotto e un suo incerto uso nel futuro non preoccupa troppo in quanto le competenze acquisite durante il progetto sono valide per il futuro.
+
+% EmporioLambda - Red Label
+\subsection{Capitolato 2 - EmporioLambda}
+\subsubsection{Informazioni generali}
+\begin{description}
+	\item[Nome:] EmporioLambda: piattaforma di \glock{e-commerce} in stile \glock{serverless};
+	\item[Proponente:] Red Label;
+	\item[Committente:] prof.~Tullio Vardanega e prof.~Riccardo Cardin.
+\end{description}
+\subsubsection{Descrizione del capitolato}
+Il capitolato riguarda la creazione di un sito e-commerce serverless utilizzando \glock{AWS Lambda}.
+\subsubsection{Studio del dominio}
+Per la parte tecnologica:
+\begin{itemize}
+	\item piattaforma Node.js;
+	\item \glock{Typescript} per \glock{front-end} e back-end;
+	\item AWS Lambda per la distribuzione.
+\end{itemize}
+Per la parte di approfondimento teorico:
+\begin{itemize}
+	\item e-commerce (caratteristiche, dinamiche, attori coinvolti);
+	\item programmazione asincrona;
+	\item \glock{architettura} serverless.
+\end{itemize}
+\subsubsection{Pro e Contro}
+\paragraph*{Pro}
+\begin{itemize}
+	\item AWS è una tecnologia rilevante perché spesso utilizzata in ambito aziendale;
+	\item affiancamento costante durante il progetto: Red Babel si aspetta che i gruppi partecipanti siano pro-attivi, ricerchino il dialogo con loro e forniscano dei feedback sul prosieguo dei lavori.
+\end{itemize}
+\paragraph*{Contro}
+\begin{itemize}
+	\item poca flessibilità sui linguaggi di programmazione e tecnologie;
+	\item il documento con le specifiche è scritto in inglese (può lasciare a dubbi interpretativi);
+	\item assenza di seminari di approfondimento.
+\end{itemize}
+\subsubsection{Conclusioni}
+È un capitolato ben definito nelle richieste tecnologiche, ma non entusiasma il gruppo.
+
+% GDP - Sync Lab
+\subsection{Capitolato 3 - GDP}
+\subsubsection{Informazioni generali}
+\begin{description}
+	\item[Nome:] GDP: Gathering Detection Platform;
+	\item[Proponente:] Sync Lab;
+	\item[Committente:] prof.~Tullio Vardanega e prof.~Riccardo Cardin.
+\end{description}
+\subsubsection{Descrizione del capitolato}
+GDP prevede la creazione di una \glock{piattaforma} che rappresenti, graficamente, zone potenzialmente a rischio di assembramento e le riesca a prevenire. GDP richiede di realizzare un \glock{software} in grado di acquisire, monitorare, utilizzare e correlare tra loro tutti i dati che descrivono il traffico provenienti da fonti specifiche (videocamere, dispositivi conta-persone, prenotazioni \glock{Uber}, orari dei mezzi di trasporto pubblici, etc\dots), con lo scopo di identificare i possibili eventi che concorrono all'insorgere di variazioni di flussi di utenti.
+\subsubsection{Studio del dominio}
+Per la parte relativa alle tecnologie:
+\begin{itemize}
+	\item piattaforma \glock{Apache Kafka} per elaborazioni di stream di dati in tempo reale;
+	\item conoscenza dei linguaggi Java, Python, \glock{Javascript};
+	\item \glock{framework} \glock{Angular} per lo sviluppo di applicazioni web;
+	\item protocolli asicroni per la comunicazione fra le diverse componenti: \glock{publish/subscribe}, \glock{MQTT}; 
+	\item librerie:
+	\begin{itemize}
+		\item \glock{Leaflet} per sviluppare mappe geografiche interattive;
+		\item \glock{TensorFlow} (con l'interfaccia \glock{Keras}), \glock{Pytorch}, \glock{Scikit-learn} per l'\glock{apprendimento automatico}; 
+		\item \glock{Theano} e \glock{Numpy} per ottimizzare e valutare in modo efficiente espressioni matematiche che coinvolgono array multidimensionali;
+		\item \glock{Pandas} per la manipolazione e l'analisi dei dati.
+	\end{itemize}
+\end{itemize}
+\subsubsection{Pro e Contro}
+\paragraph*{Pro}
+\begin{itemize}
+\item lo sviluppo di software in funzione della regolazione del flusso nei luoghi pubblici è un obiettivo di forte attualità, utile per la collettività;
+\item si possono trovare degli esempi esistenti;
+\item l'azienda mette a disposizione figure con diverse esperienza in modo da supportare al meglio le esigenze dei fornitori;
+\item sono disponibili server nei quali si potranno effettuare le installazioni dei componenti applicativi sviluppati.
+\end{itemize}
+\paragraph*{Contro}
+\begin{itemize}
+	\item il traffico è uno scenario complesso da analizzare;
+	\item sono presenti molteplici tecnologie non note ai membri del gruppo e quindi di difficile stima per l'apprendimento;
+	\item la modalità di scelta di un algoritmo rispetto ad un'altra, per allenare il modello, è sembrata poco chiara.
+\end{itemize}
+\subsubsection{Conclusioni}
+Le tematiche affrontate dal capitolato (apprendimento automatico e scenari di traffico complessi) sono di interesse per il gruppo e il capitolato appare molto stimolante. Preoccupa la complessità dello scenario da descrivere e comprendere e come orientare la scelta fra le numerose tecnologie a disposizione.
+
+% HD Viz - Zucchetti
+\subsection{Capitolato 4 - HD Viz}
+\subsubsection{Informazioni generali}
+\begin{description}
+	\item[Nome:] HD Viz: visualizzazione di dati multidimensionali;
+	\item[Proponente:] Zucchetti;
+	\item[Committente:] prof.~Tullio Vardanega e prof.~Riccardo Cardin.
+\end{description}
+\subsubsection{Descrizione del capitolato}
+HD Viz ha per oggetto la realizzazione di un'applicazione di visualizzazione di dati con molte dimensioni a supporto della fase esplorativa dell'analisi dei dati. HD Viz richiede che l'applicazione abbia le seguenti visualizzazioni:
+\begin{itemize}
+	\item \textbf{Scatter plot matrix} (fino a un massimo di 5 dimensioni): consiste in una presentazione dei dati disposti a matrice di tutte le combinazioni di scatter plot; aiuta a trovare dimensioni con forte correlazione e che condividono la stessa informazione.
+	\item \textbf{Force field}: consiste in una presentazione dei dati, che posiziona i dati nello spazio a seconda della loro vicinanza, generando poli attrattivi o repulsivi; è un grafico che esegue una riduzione dimensionale preservando le strutture presenti nei dati.
+	\item \textbf{Heat map}: trasforma la distanza tra i punti in colori più o meno intensi, facendo così capire quali oggetti sono vicini tra loro e quali sono distanti; risulta importante ordinare i punti per evidenziare i cluster presenti nei dati.
+	\item \textbf{Proiezione lineare multi asse}: posiziona i punti dello spazio multidimensionale in un piano cartesiano, riducendo a 2 dimensioni anche dati con molte più dimensioni.
+	\item Altre \textbf{visualizzazioni opzionali} regolabili nel corso del progetto.
+\end{itemize}
+\subsubsection{Studio del dominio}
+Per la parte relativa alla visualizzazione dei dati:
+\begin{itemize}
+	\item \glock{HTML};
+	\item \glock{CSS};
+	\item JavaScript;
+	\item libreria \glock{D3.js}.
+\end{itemize}
+Per la parte server di supporto alla presentazione dei dati:
+\begin{itemize}
+	\item database \glock{SQL} o \glock{NoSQL};
+	\item Java con server \glock{Tomcat} o in Javascript con server Node.js.
+\end{itemize}
+Per la parte teorica:
+\begin{itemize}
+	\item conoscenze minime di data science.
+\end{itemize}
+\subsubsection{Pro e Contro}
+\paragraph*{Pro}
+\begin{itemize}
+\item la libreria D3.js è ricca di esempi;
+\item parte delle competenze sono state acquisite o lo saranno a breve: HTML, CSS, Javascript (tecnologie web); database (basi di dati);
+\item possibilità di variare i requisiti opzionali;
+\item varietà di requisiti opzionali;
+\item possibilità di confrontare le visualizzazioni prodotte dall'applicazione con altre già esistenti e corrette;
+\item dati per testare l'applicazione forniti da Zucchetti.
+\end{itemize}
+\paragraph*{Contro}
+\begin{itemize}
+	\item tempo indefinito legato alla formazione, seppur minima, in data science;
+	\item mantenibilità del codice; questione valida per tutti i capitolati ma specialmente per HD Viz, visto che il proponente ha insistito molto sul fatto che Zucchetti è una software house;
+	\item assenza di esempi per le visualizzazioni inedite prodotte dall'applicazione. 
+\end{itemize}
+\subsubsection{Conclusioni}
+Inizialmente il capitolato non aveva riscontrato molto successo perché non erano chiare né le richieste dell'azienda né il dominio del capitolato. Successivamente al seminario di approfondimento tecnologico offerto dall'azienda, il perimetro delle competenze richieste e delle tecnologie da padroneggiare per poter affrontare serenamente il capitolato si è fatto più definito.
+
+% PORTACS - SanMarco Informatica
+\subsection{Capitolato 5 - PORTACS}
+\subsubsection{Informazioni generali}
+\begin{description}
+	\item[Nome:] PORTACS: piattaforma di controllo mobilità autonoma;
+	\item[Proponente:] SanMarco Informatica;
+	\item[Committente:] prof.~Tullio Vardanega e prof.~Riccardo Cardin.
+\end{description}
+\subsubsection{Descrizione del capitolato}
+L'oggetto di PORTACS richiede un sistema per governare gli spostamenti di più mezzi in un qualsiasi ambiente. Ogni mezzo dovrà raggiungere i suoi punti di interesse evitando gli ostacoli, che possono essere costituiti dalla configurazione dell'ambiente stesso, dagli altri mezzi in circolazione e dai pedoni.
+\subsubsection{Studio del dominio}
+Per la parte tecnologica le uniche richieste specifiche sono:
+\begin{itemize}
+	\item Docker, per la consegna delle applicazioni;
+	\item un sistema di \glock{versionamento}, per la consegna del codice sorgente.
+\end{itemize}
+
+Per la parte di approfondimento teorico:
+\begin{itemize}
+	\item monitoraggio e analisi \glock{real-time};
+	\item predizione degli eventi e decisioni real-time;
+	\item logistica.
+\end{itemize}
+\subsubsection{Pro e Contro}
+\paragraph*{Pro}
+\begin{itemize}
+	\item interesse del gruppo per le tematiche affrontate;
+	\item tematiche sentite molto attuali.
+\end{itemize}
+\paragraph*{Contro}
+\begin{itemize}
+	\item non è stata indicato alcuna tecnologia oltre a quelle per la consegna. Bisogna quindi considerare il tempo necessario per individuare le tecnologie più adatte e per comprenderle sufficientemente;
+	\item l'approfondimento teorico richiesto è vasto e difficilmente quantificabile.
+\end{itemize}
+\subsubsection{Conclusioni}
+Il capitolato è interessante per l'acquisizione di competenze, visto che possono essere applicate in molteplici ambiti. Preoccupa la mancanza di tecnologie consigliate e il confine incerto delle competenze necessarie per affrontare con serenità il capitolato.
+
+% RGP - Zero12
+\subsection{Capitolato 6 - RGP}
+\subsubsection{Informazioni generali}
+\begin{description}
+	\item[Nome:] RGP: Realtime Gaming Platform;
+	\item[Proponente:] Zero12;
+	\item[Committente:] prof.~Tullio Vardanega e prof.~Riccardo Cardin.
+\end{description}
+\subsubsection{Descrizione del capitolato}
+RGP prevede la realizzazione di un videogioco a scorrimento verticale fruibile da dispositivo mobile con la possibilità di giocare in modalità multi-giocatore real-time (il gioco si ispira a Aero Fighters, videogioco degli anni '90). Il capitolato richiede che:
+\begin{itemize}
+	\item la sfida sia a eliminazione: l'ultimo giocatore sopravvissuto vince;
+	\item sia possibile giocare in modalità singolo giocatore oppure multi-giocatore, con preferenza per la seconda; 
+	\item nella modalità multi-giocatore sia possibile vedere in tempo reale i movimenti del rivale e garantire la stessa partita per tutti i giocatori (con gli stessi nemici e \glock{power-up});
+	\item nella modalità singolo giocatore i livelli siano infiniti e di difficoltà crescente;
+	\item il gioco termini quando il giocatore ha esaurito le proprie vite o non ha raccolto i power-up per mantenere il suo oggetto attivo.
+\end{itemize}
+\subsubsection{Studio del dominio}
+Per la parte di individuazione delle tecnologie più adatte al gaming:
+\begin{itemize}
+	\item \glock{AWS GameLift}, \glock{AWS Appsync};
+	\item architetture serverless;
+	\item architetture \glock{cloud};
+	\item Node.js per i servizi che richiedono sviluppo di codice.
+\end{itemize}
+Per la parte di sincronizzazione dei dati:
+\begin{itemize}
+	\item protocollo MQTT;
+	\item protocollo \glock{WebSocket} (gestito con Appsync);
+	\item \glock{GraphQL} (Tecnologia \glock{API}) (permette di leggere, scrivere e ricevere dati in tempo reale);
+	\item \glock{AWS Amplify} per collegare il front-end ai servizi cloud.
+\end{itemize}
+Per la parte di implementazione del gioco per piattaforma mobile è previsto l'uso di tecnologie native (si può scegliere una o entrambe):
+\begin{itemize}
+	\item \glock{iOS} (preferito): il linguaggio sarà \glock{Swift}/\glock{SwiftUI} (con \glock{SceneKit}/\glock{SpriteKit}) - target minimo iOS 13; (se verrà scelto iOS zero12 fornirà il certificato "Apple Developer" per esecuzione nei propri dispositivi)
+	\item \glock{Android}: il linguaggio sarà \glock{Kotlin} - minimo Android 8.
+\end{itemize}
+\subsubsection{Pro e Contro}
+\paragraph*{Pro}
+\begin{itemize}
+	\item possibilità di scelta se sviluppare per Android o iOS o entrambe;
+	\item descrizione chiara del risultato finale tramite un esempio video per lo stile del gioco;
+	\item libertà nella scelta dello stile estetico del gioco;
+	\item accompagnamento nella formazione;
+	\item CV: certificazione Apple developer.
+\end{itemize}
+\paragraph*{Contro}
+\begin{itemize}
+	\item molte competenze non presenti all'interno del gruppo e che richiedono largo tempo per ottenerle: studio di Node.js e nel caso di sviluppo nativo Swift/SwiftUI e Kotlin, studio e valutazione di AWS.
+\end{itemize}
+\subsubsection{Conclusioni}
+Il proponente sembra voler fornire un buon livello di supporto. Nel complesso il progetto ha riscontrato molto interesse per il gruppo grazie anche ai requisiti e lo scopo del progetto che sono stati ben definiti. Preoccupa il notevole rischio legato alla quantità di tempo per imparare ad usare le varie tecnologie.
+
+% SSD - Zextras
+\subsection{Capitolato 7 - SSD}
+\subsubsection{Informazioni generali}
+\begin{description}
+	\item[Nome:] SSD: soluzioni di sincronizzazione desktop;
+	\item[Proponente:] Zextras;
+	\item[Committente:] prof.~Tullio Vardanega e prof.~Riccardo Cardin.
+\end{description}
+\subsubsection{Descrizione del capitolato}
+SSD ha per oggetto la definizione di un algoritmo per la sincronizzazione desktop a uso professionale e il suo utilizzo in contesto \glock{Zextras Drive}. SSD precisamente richiede che:
+\begin{itemize}
+	\item l'algoritmo consenta il salvataggio in cloud del lavoro e la sincronizzazione dei cambiamenti presenti in cloud;
+	\item venga sviluppata un'\glock{interfaccia} multi-piattaforma per l'uso dell'algoritmo nei sistemi desktop \glock{MacOS}, \glock{Windows} e \glock{Linux};
+	\item l'algoritmo venga utilizzato per acquisire e fornire contenuti in sincronizzazione verso il prodotto aziendale Zextras Drive.
+\end{itemize}
+\subsubsection{Studio del dominio}
+Per la parte tecnologica:
+\begin{itemize}
+	\item libreria \glock{Qt} per la GUI;
+	\item linguaggio Python per la parte di back-end;
+	\item linguaggio GraphQL per lo sviluppo delle API.
+\end{itemize} 
+
+Per la parte relativa all'approfondimento di prodotti esistenti sul mercato e degli algoritmi che utilizzano:
+\begin{itemize}
+	\item \glock{Dropbox};
+	\item \glock{Google Drive};
+	\item \glock{Nextcloud};
+	\item \glock{Open Exchange};
+	\item \glock{Zimbra};
+\end{itemize} 
+\subsubsection{Pro e Contro}
+\paragraph*{Pro}
+\begin{itemize}
+	\item competenze presenti nel gruppo: esperienza pregressa con Qt e pattern \glock{MVC} (corso di Programmazione a Oggetti) di tutto il gruppo;
+	\item sincronizzazione dei dati: concetto fondamentale e quindi da conoscere, anche se dato per scontato;
+	\item acquisizione di buone prassi: operando su strumenti collaborativi professionali e analizzandoli potremmo acquisire buone prassi per il nostro gruppo e futuro lavorativo.	
+\end{itemize}
+\paragraph*{Contro}
+\begin{itemize}
+	\item tematica di scarso rilievo per il nostro futuro. Il settore appare abbastanza stabilizzato, con soluzioni software definite e monopolizzato da grandi realtà. La percezione è che nel settore sia già stato inventato tutto;
+	\item studio di algoritmi già esistenti e definizione di nuovi algoritmi efficienti ed efficaci;
+	\item Python e GraphQL: linguaggi non dominati dal gruppo;
+	\item assenza di seminari di approfondimento.
+\end{itemize}
+\subsubsection{Conclusioni}
+Il capitolato risulta poco allettante per il gruppo viste le tematiche affrontate e le competenze che si potrebbero acquisire.

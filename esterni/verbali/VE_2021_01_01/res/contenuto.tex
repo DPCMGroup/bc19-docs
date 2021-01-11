@@ -1,0 +1,37 @@
+\section*{Introduzione}
+\subsection*{Dettagli e-mail}
+\begin{itemize}
+	\item \textbf{Autore dell'e-mail per DPCM 2077:} Ivan Piacere;
+	\item \textbf{Autore dell'e-mail per Imola Informatica:} Dr.~Lorenzo Patera;
+	\item \textbf{periodo:} 2020-12-29 - 2021-01-01;
+\end{itemize}
+
+\section*{Svolgimento}
+Il verbale riporta una selezione delle domande e relative risposte nello scambio di e-mail avvenuto nel periodo: 2020-12-29 - 2021-01-01.
+\subsection*{Nei casi d'uso dell'analisi dei requisiti dobbiamo considerare i login dei vari utenti come differenti oppure possiamo astrarre il tutto ad un unico caso?}
+Come preferite. Sicuramente le interfacce saranno diverse a seconda se lo user è un dipendente oppure un addetto alle pulizie. Per la parte di login vedete voi come preferite farlo. Spesso anche una parte del nome utente può far riferimento alla tipologia di account (es. D0001 e A0001 per dipendente/addetto), ma in generale come preferite.
+\subsection*{Come credenziali per l'accesso sono sufficienti e-mail e password o dovremmo aggiungere altro?}
+Sufficiente username e password. La mail la terrei come un campo dati separato, visto che può variare nel tempo.
+\subsection*{Dobbiamo prevedere una registrazione per i dipendenti e gli addetti oppure l'unico modo per ottenere credenziali è chiederle direttamente all'amministratore? In quest'ultimo caso dobbiamo prevedere un modo per notificare all'amministratore la richiesta di credenziali e se sì quali informazioni sarebbe utile comunicargli? Nome e e-mail dell'utente o anche altro?}
+Le credenziali vengono fornite al dipendente/addetto al momento del censimento della persona nei tool aziendali, azione manuale che si fa per tutti i dipendenti e addetti. In quell'occasione verrà attivata l'utenza per la vostra app e verranno rilasciate le credenziali per l'accesso. Ovviamente l'amministratore potrà creare/cancellare/modificare utenti.
+\subsection*{Abbiamo visto che in alcuni progetti degli anni scorsi è stato utilizzato \glock{Metamask} per interfacciarsi con la blockchain. Consigli anche a noi di utilizzarlo?}
+Come preferite. Il software per l'integrazione della Blockchain è a vostra scelta. Ovviamente cercate di valutare bene pro e contro delle soluzioni che adotterete.
+\subsection*{Non ci è chiaro se oltre alla blockchain dobbiamo avere un altro database in cui conservare i dati delle occupazioni e delle pulizie delle postazioni.}
+Sicuramente un secondo database per utenti, password, topologia delle stanze, ecc. risulta necessario. Poi se avere una copia delle informazioni salvate sulla blockchain oppure no è una seconda scelta. In generale se tenete delle copie, fate in modo che i riferimenti siano precisi (ad esempio aggiungete l'id della transazione sulla blockchain così da avere verificabilità facile dell'evento).
+\subsection*{Non ci è chiaro con quale frequenza dobbiamo memorizzare nella blockchain i dati.}
+ In che senso? La frequenza di salvataggio dipende dalla frequenza con la quale le azioni arrivano. Ci aspettiamo che un azione di pulizia venga salvata sulla blockchain in tempo "reale".
+\subsection*{L'addetto alle pulizie può igienizzare delle postazioni all'interno di una stanza anche mentre altre postazioni nella stessa stanza sono occupate? Oppure le pulizie avvengono solo fuori dall'orario di lavoro?}
+Le pulizie avvengono solitamente fuori dall'orario di lavoro ad uffici vuoti. In generale però si potrebbe sanificare una sala che in quel momento non è utilizzata.
+\subsection*{L'amministratore può modificare lo stato delle postazioni? Per esempio può assegnare a una postazione teoricamente pulita lo stato "da igienizzare"?}
+Non mi vengono in mente casi in cui sia necessaria tale azione. In generale anche l'amministratore potrà utilizzare l'app come dipendente e pulire/"sporcare" postazioni.
+\subsection*{Ci sono più amministratori o solo uno? In altre parole per l'accesso degli amministratori dobbiamo prevedere:
+	\begin{itemize}
+	\item più account;
+	\item un solo account accessibile contemporaneamente da più persone;
+	\item un account accessibile da una sola persona alla volta.
+	\end{itemize}}
+Più account amministratore. Vedetelo come un dominio a cui appartiene l'account (eventualmente può anche essere revocato e tornare dipendente semplice).
+\subsection*{Ci hai detto che solo l'amministratore deve avere uno schema in tempo reale delle postazioni e delle stanze ma non ci è ancora chiara la visualizzazione che devono avere dipendenti e addetti. I dipendenti devono ricevere una sola postazione o una lista tra cui scegliere? Le postazioni che indichiamo ai dipendenti e agli addetti devono essere fornite solo con il loro identificativo o anche collocate in una scacchiera per segnalarne la posizione?}
+Una vista a matrice della stanza mi sembra un buon livello di astrazione tra l'elenco piatto e la topologia completa (la stanza potrebbe avere forme strane). Mi aspetto che la vista amministratore sia coerente con la matrice. Da mobile vedete voi come rendere user friendly la scelta del posto. In generale la vista a matrice permette a due dipendenti di scegliere di stare abbastanza vicini (molto utile se lavorano sullo stesso progetto).
+\subsection*{Se indichiamo a un utente che può occupare una postazione ma che essa è prenotata per un certo orario, dobbiamo indicargli anche chi ha prenotato la postazione?}
+Si, farei in modo che compaia il nome di chi ha prenotato la postazione. In generale è utile saperlo per posizionarsi vicini ai colleghi.

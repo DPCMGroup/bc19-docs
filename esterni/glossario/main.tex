@@ -1,0 +1,109 @@
+%!TEX output_directory = .cache
+% ---------------------------
+%	  [ NOME DOCUMENTO ]
+%	----------------------
+%	      DPCM2077
+%  Progetto di SWE (2020-21)
+%    Template by Maxelweb
+% ---------------------------
+
+% Configurazione primaria del documento
+
+% --------------
+
+\newcommand{\docNome}{ GLOSSARIO }
+\newcommand{\docNomeProgetto}{ BlockCOVID }
+\newcommand{\docVersione}{1.0.0}
+\newcommand{\docStatus}{approvato}
+\newcommand{\docUso}{esterno}
+
+
+% --------------
+
+\newcommand{\docDestinatari}{
+    Prof.~Tullio Vardanega \\&
+    Prof.~Riccardo Cardin \\&
+    Imola Informatica \\&
+    DPCM 2077
+}
+\newcommand{\docRedattori}{
+	Damiano Bertoldo \\&
+	Ivan Piacere
+}
+\newcommand{\docVerificatori}{
+	Matteo Budai \\&
+	Ivan Piacere
+}
+\newcommand{\docApprovazione}{
+	Samuele De Grandi
+    
+}
+
+% ----- NON MODIFICARE SOTTO QUESTA RIGA -----
+
+% ---------------------------
+% Configurazioni
+% ---------------------------
+
+\documentclass[11pt,a4paper,table]{article}
+
+\input{res/configurazione}    
+
+% ---------------------------
+% + CONFIGURAZIONE AGGIUNTIVA
+% ---------------------------
+
+\setcounter{secnumdepth}{0} % No section number
+\setcounter{tocdepth}{2} % No section number
+\usepackage{sectsty}
+
+\makeatletter
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+	{-3.25ex\@plus -1ex \@minus -.2ex}%
+	{-1.5ex \@plus .2ex}%
+	{\normalfont\large\bfseries}}
+\makeatother
+
+% ---------------------------
+% Dati frontespizio
+% ---------------------------
+
+\title{\hr \huge \textsc{\docNome} \\ 
+        \vspace{11pt} \large \textsc{\docNomeProgetto} \hr}
+
+\author{} % Non toccare
+\date{} % Non toccare
+
+% ---------------------------
+% Composizione del documento
+% ---------------------------
+
+\begin{document} 
+ 
+% Frontespizio
+
+\pagenumbering{gobble}
+\DeactivateBG
+\include{res/frontespizio}
+
+% Registro delle modifiche
+
+\newpage
+\ActivateBG
+\pagenumbering{arabic}
+\include{res/registro}
+
+
+
+%per glossario
+\sectionfont{\huge}
+
+% Sezioni
+
+\newpage
+\input{res/sezioni}
+
+\end{document}
+
+
+% EOF
