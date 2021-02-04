@@ -21,7 +21,7 @@ jobs:
       uses: actions/checkout@v2
     
     - name: Search and Compiling Latex Files
-      uses: ToldoDM/Latex-multicompiler@9ebb0e6
+      uses: ToldoDM/Latex-multicompiler@9ebb0e65ed44ba1b23e5f439361ed114a9adda95
       with:
         path_to_list: .github/filesToCompile
         artifact: true
