@@ -13,7 +13,7 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v2
       - name: Search and Compiling Latex Files
-        uses: Jatus93/Latex-multicompiler@1
+        uses: ToldoDM/Latex-multicompiler@1
         with:
           path_to_list: .github/filesToCompile
 
