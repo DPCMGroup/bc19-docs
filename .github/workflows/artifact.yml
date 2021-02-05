@@ -8,8 +8,6 @@ on:
     paths:
       - 'esterni/**'
       - 'interni/**'
-      - 'template/**'
-      - '.github/**'
 
 jobs:
   artifacts:
