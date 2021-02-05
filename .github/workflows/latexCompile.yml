@@ -19,7 +19,7 @@ jobs:
         continue-on-error: true
 
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag danteev/texlive:latest
+        run: docker build . --file '/home/runner/work/_actions/ToldoDM/Latex-multicompiler/1/Dockerfile' --tag danteev/texlive:latest
 
       - name: Search and Compiling Latex Files
         uses: ToldoDM/Latex-multicompiler@1
