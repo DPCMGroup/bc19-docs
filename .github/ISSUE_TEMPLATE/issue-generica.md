@@ -7,15 +7,15 @@ assignees: ''
 
 ---
 
-# Redattore
+## Redattore: nome_redattore
 - [ ] 1a cosa da fare
 - [ ] 2a cosa da fare
 - [ ] etc...
 
-# Verificatore
+## Verificatore: nome_verificatore
 - [ ] 1a cosa verificata
 - [ ] 2a cosa verificata
 - [ ] etc...
 
-# Responsabile
+## Responsabile: nome_responsabile
 - [ ] approvazione
