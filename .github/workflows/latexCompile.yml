@@ -17,7 +17,7 @@ jobs:
         uses: actions/cache@v2.1.4
         with:
           path: /tmp/docker-save
-          key: docker-save-${{ hashFiles('Dockerfile') }}
+          key: docker-save-${{ hashFiles('/home/runner/work/_actions/ToldoDM/Latex-multicompiler/1/Dockerfile') }}
 
       - name: docker load
         run: docker load -i /tmp/docker-save/snapshot.tar || true
