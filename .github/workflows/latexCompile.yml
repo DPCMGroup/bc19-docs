@@ -13,11 +13,20 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v2
         
+      - name: Docker pull
+        run: docker-compose pull
+        
+      - name: Docker Cache
+        uses: satackey/action-docker-layer-caching@v0.0.11
+        continue-on-error: true
+        
+      - name: Docker up
+        run: docker-compose up --build
+        
       - name: Search and Compiling Latex Files
         uses: ToldoDM/Latex-multicompiler@1
         with:
           path_to_list: .github/filesToCompile
-
 
       - name: Notify Discord if failure
         uses: sarisia/actions-status-discord@v1
