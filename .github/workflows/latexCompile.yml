@@ -11,25 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
-        uses: actions/checkout@v2
-               
-      - name: cache-docker
-        uses: actions/cache@v2.1.4
-        with:
-          path: /tmp/docker-save
-          key: docker-save-${{ hashFiles('/home/runner/work/_actions/ToldoDM/Latex-multicompiler/1/Dockerfile') }}
-
-      - name: docker load
-        run: docker load -i /tmp/docker-save/snapshot.tar || true
-        if: steps.cache-docker.outputs.cache-hit == 'true'
-        
-      - name: docker build
-        run: docker build . -t thing --cache-from=thing-cache
-        
-      - name: docker tag
-        run: docker tag thing thing-cache && mkdir -p /tmp/docker-save && docker save thing-cache -o /tmp/docker-save/snapshot.tar && ls -lh /tmp/docker-save || true
-        if: always() && steps.cache-docker.outputs.cache-hit != 'true'
-               
+        uses: actions/checkout@v2              
+      
       - name: Search and Compiling Latex Files
         uses: ToldoDM/Latex-multicompiler@1
         with:
