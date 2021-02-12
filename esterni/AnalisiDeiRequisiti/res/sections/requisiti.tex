@@ -139,25 +139,24 @@ R2F7.1.1&L'amministratore deve poter scaricare il report delle sanificazioni che
 		\hline
 		R1F11.4&Il dipendente deve poter prenotare una postazione selezionata.	&Capitolato - UC11.6	\\
 		\hline
-R1F12&L'addetto alle pulizie riceve l'elenco delle stanze e delle postazioni che necessitano di igienizzazione	& Interna - UC12	\\
+R1F14&L'addetto alle pulizie riceve l'elenco delle stanze e delle postazioni che necessitano di igienizzazione	& Interna - UC14	\\
 						\hline
-			R1F12.1&	L'addetto alle pulizie riceve l'elenco delle stanze che necessitano di igienizzazione& 	Capitolato - UC12.1\\
+			R1F14.1&	L'addetto alle pulizie riceve l'elenco delle stanze che necessitano di igienizzazione& 	Capitolato - UC14.1\\
 					\hline
-			R1F12.2&L'addetto alle pulizie riceve l'elenco delle postazioni che necessitano di igienizzazione	& Interna - UC12.2	\\
+			R1F14.2&L'addetto alle pulizie riceve l'elenco delle postazioni che necessitano di igienizzazione	& Interna - UC14.2	\\
 					\hline
-R1F13&L'addetto alle pulizie deve registrare sulla blockchain, con l'utilizzo di Ethereum, quando igienizza una stanza o una postazione	& Interna - UC13	\\
+R1F15&L'addetto alle pulizie deve registrare sulla blockchain, con l'utilizzo di Ethereum, quando igienizza una stanza o una postazione	& Interna - UC15	\\
 					\hline
-R1F13.1&L'addetto alle pulizie deve poter marcare, nella sezione apposita, una stanza come igienizzata	& Capitolato - UC13.1	\\
+R1F15.1&L'addetto alle pulizie deve poter marcare, nella sezione apposita, una stanza come igienizzata	& Capitolato - UC15.1	\\
 						\hline
-			R1F13.2&L'addetto alle pulizie deve poter marcare, nella sezione apposita, una postazione come igienizzata	&Interna - UC13.2 	\\
+			R1F15.2&L'addetto alle pulizie deve poter marcare, nella sezione apposita, una postazione come igienizzata	&Interna - UC15.2 	\\
 					\hline
-			R1F13.3&L'addetto alle pulizie non può pulire postazioni o stanze occupate	& Verbale esterno 2021-01-01	\\
+			R1F15.3&L'addetto alle pulizie non può pulire postazioni o stanze occupate	& Verbale esterno 2021-01-01	\\
 					\hline
 						
 	\end{longtable}
 \end{center}
 \subsection{Requisiti di qualità}
-I requisiti R1Q3 e R1Q4 definiti nella tabella sottostante sono stati riportati anche tra i requisiti di vincolo in quanto imposti dal proponente.
 \begin{center}
 	\rowcolors{2}{lightest-grayest}{white}
 	\begin{longtable}{|c|p{10cm}|p{4cm}|}
@@ -182,7 +181,19 @@ I requisiti R1Q3 e R1Q4 definiti nella tabella sottostante sono stati riportati 
 		R1Q6 &Devono essere riportati dei report sui test effettuati relativamente all’ottimizzazione dell’applicazione rispetto al consumo della
 		batteria dei cellulari. & Capitolato\\
 		\hline
+		R2Q7&	Deve essere fornita un'analisi del numero di utenti da supportare e del servizio cloud più adatto per adempiervi, analizzando prezzo, stabilità del servizio ed assistenza (supponendo di disporre di massimo 2 CPU e 1Gi2 per istanza del server).& Capitolato	\\
+		\hline
+		R1Q8&Deve essere fornita una documentazione delle scelte implementative e progettuali accompagnate dalle loro motivazioni	& Capitolato	\\
+		\hline
+		R1Q9	&Deve essere fornita una documentazione dei problemi che rimangono aperti con eventuali proposte di soluzioni	& Capitolato	\\
+		\hline
+		R1Q10&Devono essere scritti dei test che abbiamo una copertura di almeno l'80 per cento del codice e deve essere fornito il report della loro esecuzione	& 	Capitolato \\
+		\hline
 		
+		R1Q11&Devono essere eseguiti dei test che mettano in relazione la precisione del sistema e il consumo della batteria dei cellulari	& Capitolato - Verbale esterno 2020-12-18	\\
+		\hline
+		R1Q12&L’utilizzo del lettore RFID riduce in modo rilevante l’autonomia dei cellulari, l’applicazione è da sviluppare in maniera tale da bilanciare nel miglior modo possibile batteria e scansioni. È richiesto un resoconto delle scelte fatte e dei test effettuati per garantire il miglior rapporto raggiunto.	& Capitolato	\\
+		\hline
 	\end{longtable}
 \end{center}
 \subsection{Requisiti di vincolo}
@@ -202,27 +213,14 @@ I requisiti R1Q3 e R1Q4 definiti nella tabella sottostante sono stati riportati 
 		\hline
 R1V2&Scansione dei codici nel tempo sufficiente a certificare la presenza  della persona in postazione.	& Capitolato	\\
 		\hline
-R1V2.1&L’utilizzo del lettore RFID riduce in modo rilevante l’autonomia dei cellulari, l’applicazione è da sviluppare in maniera tale da bilanciare nel miglior modo possibile batteria e scansioni. È richiesto un resoconto delle scelte fatte e dei test effettuati per garantire il miglior rapporto raggiunto.	& Capitolato	\\
+
+R2V3&Le comunicazioni tra app e server devono essere cifrate	& Capitolato	\\
+	
 		\hline
-		R1V3&Avere le componenti applicative correlate da test unitari e d’integrazione.	& Capitolato	\\
-		\hline
-R1V4&Viene richiesto che il sistema sia testato nella sua interezza tramite test end-to-end	& Capitolato	\\
-		\hline
-R2V5&Le comunicazioni tra app e server devono essere cifrate	& Capitolato	\\
-		\hline
-		R2V6&	Deve essere fornita un'analisi del numero di utenti da supportare e del servizio cloud più adatto per adempiervi, analizzando prezzo, stabilità del servizio ed assistenza (supponendo di disporre di massimo 2 CPU e 1Gi2 per istanza del server).& Capitolato	\\
-		\hline
-R1V7&Deve essere sviluppata un'applicazione per Android o \glock{iOS}	& Capitolato	\\
-		\hline
-R1V8&Devono essere scritti dei test che abbiamo una copertura di almeno l'80 per cento del codice e deve essere fornito il report della loro esecuzione	& 	Capitolato \\
+R1V4&Deve essere sviluppata un'applicazione per Android o \glock{iOS}	& Capitolato	\\
 		\hline
 
-R1V9&Devono essere eseguiti dei test che mettano in relazione la precisione del sistema e il consumo della batteria dei cellulari	& Capitolato - Verbale esterno 2020-12-18	\\
-		\hline
-R1V10&Deve essere fornita una documentazione delle scelte implementative e progettuali accompagnate dalle loro motivazioni	& Capitolato	\\
-		\hline
-	R1V11	&Deve essere fornita una documentazione dei problemi che rimangono aperti con eventuali proposte di soluzioni	& Capitolato	\\
-		\hline
+
 	\end{longtable}
 \end{center}
 
@@ -268,10 +266,10 @@ Non sono stati individuati requisiti prestazionali. Uno dei motivi sta nel fatto
 			R1F10.1 \newline
 			R1F11 \newline
 			R1F11.3 \newline
-			R1F12 \newline
-			R1F12.2 \newline
-			R1F13 \newline
-			R1F13.2 \newline
+			R1F14 \newline
+			R1F14.2 \newline
+			R1F15 \newline
+			R1F15.2 \newline
 			R1Q1
 	    \\
 		\hline
@@ -280,7 +278,7 @@ Non sono stati individuati requisiti prestazionali. Uno dei motivi sta nel fatto
 			R1F4.12 \newline
 			R1F4.20 \newline
 			R1F4.21 \newline
-			R1V9
+			R1V6
 	\\
 	\hline
 	Verbale esterno 2021-01-01 & 
@@ -291,7 +289,7 @@ Non sono stati individuati requisiti prestazionali. Uno dei motivi sta nel fatto
 		R1F4.19 \newline
 		R1F5.2 \newline
 		R1F5.5 \newline
-		R1F13.3
+		R1F15.3
 \\
 \hline
 Verbale esterno 2021-01-04 & 
@@ -351,26 +349,25 @@ Capitolato &
 	R1F11.1\newline
 	R3F11.2\newline
 	R1F11.4\newline
-	R1F12.1\newline
-	R1F13.1	\newline
+	R1F14.1\newline
+	R1F15.1	\newline
 	R1Q2  \newline
 	R1Q3  \newline
 	R1Q4   \newline	
 	R1Q5  \newline
 	R1Q6  \newline
+	R2Q7  \newline
+	R1Q8  \newline
+	R1Q9  \newline
+	R1Q10   \newline	
+	R1Q11 \newline
+	R1Q12 \newline
 	R1V1 \newline
 	R3V1.1\newline
 	R1V2 \newline
 	R1V2.1\newline
-	R1V3  \newline
-	R1V4  \newline
-	R2V5  \newline
-	R2V6  \newline
-	R1V7  \newline
-	R1V8  \newline
-	R1V9  \newline
-	R1V10  \newline
-	R1V11
+	R2V3  \newline
+	R1V4   
 \\
 \hline
 UC1 & R2F1  \\
@@ -486,17 +483,17 @@ UC11.5& R1F11.3\\
 \hline
 UC11.6& R1F11.4\\
 \hline
-UC12& R1F12\\
+UC14& R1F14\\
 \hline
-UC12.1& R1F12.1 \\
+UC14.1& R1F14.1 \\
 \hline
-UC12.2& R1F12.2 \\
+UC14.2& R1F14.2 \\
 \hline
-UC13&R1F13 \\
+UC15&R1F15 \\
 \hline
-UC13.1& R1F13.1\\
+UC15.1& R1F15.1\\
 \hline
-UC13.2&R1F13.2 \\
+UC15.2&R1F15.2 \\
 \hline	
 	\end{longtable}
 \end{center}
@@ -807,37 +804,37 @@ R1F11.4	&
 	UC11.6
 \\
 \hline
-R1F12	& 
+R1F14	& 
 		Interna \newline
-		UC12
+		UC14
 \\
 	\hline
-R1F12.1	& 
+R1F14.1	& 
 		Capitolato \newline
-		UC12.1 \\
+		UC14.1 \\
 	\hline
-R1F12.2	& 
+R1F14.2	& 
 		Interna \newline
-		UC12.2
+		UC14.2
 \\
 	\hline
-R1F13	& 
+R1F15	& 
 		Interna \newline
-		UC13
+		UC15
 \\
 	\hline
-R1F13.1		& 
+R1F15.1		& 
 	Capitolato \newline
-	UC13.1	
+	UC15.1	
 	\\
 	\hline
-R1F13.2	& 
+R1F15.2	& 
 	Interna \newline
-	UC13.2	
+	UC15.2	
 	\\
 	
 	\hline
-R1F13.3	& Verbale esterno 2021-01-01 \\
+R1F15.3	& Verbale esterno 2021-01-01 \\
 	\hline
 R1Q1	& Interna\\
 	\hline
@@ -851,6 +848,20 @@ R1Q5	& Capitolato\\
 \hline
 R1Q6	& Capitolato\\
 \hline
+R2Q7	& Capitolato\\
+\hline
+R1Q8	& Capitolato\\
+\hline
+R1Q9	& Capitolato\\
+\hline
+R1Q10	& Capitolato\\
+\hline
+R1Q11	& Capitolato\newline	
+Verbale esterno 2020-12-18 
+\\
+\hline
+R1Q12	& Capitolato\\
+\hline
 R1V1	& Capitolato\\
 	\hline
 R3V1.1	& Capitolato\\
@@ -859,26 +870,9 @@ R1V2	& Capitolato\\
 	\hline
 R1V2.1	& Capitolato\\
 	\hline
-R1V3	& Capitolato\\
+R2V3	& Capitolato\\
 	\hline
 R1V4	& Capitolato\\
-	\hline
-R2V5	& Capitolato\\
-	\hline
-R2V6	& Capitolato\\
-	\hline
-R1V7	& Capitolato\\
-	\hline
-R1V8	& Capitolato\\
-	\hline
-R1V9	& 
-	Capitolato \newline	
-	Verbale esterno 2020-12-18
-	\\
-	\hline
-R1V10	& Capitolato\\
-	\hline
-R1V11	& Capitolato\\
 	\hline
 	
 	\end{longtable}
