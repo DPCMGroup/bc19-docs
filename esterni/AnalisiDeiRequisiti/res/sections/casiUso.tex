@@ -152,28 +152,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente non è autenticato nel sistema.
 \end{itemize}
 
-
-\subsubsection{ UC4 - Gestione stanze e postazioni}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=18cm]{res/images/UC4.png}
-	\caption{Gestione stanze e postazioni}
-	\label{fig:Gestione stanze e postazioni}
-\end{figure}
-\begin{itemize}
-           	\item\textbf{Attori Primari:} 
-           	amministratore.
-           	\item\textbf{Descrizione:} 
-           	l'amministratore visualizza, crea e modifica le caratteristiche di stanze e postazioni al loro interno.
-           	\item\textbf{Scenario principale:} 
-           	l'amministratore raggiunge l'area di gestione delle stanze e delle postazioni. Da lì può eseguire le azioni di visualizzazione, creazione e modifica.
-           	\item\textbf{Precondizione:} 
-           	l'utente è autenticato come amministratore.
-           	\item\textbf{Postcondizione:}
-           	l'utente ha eseguito delle azioni di gestione delle stanze o delle postazioni.
-\end{itemize}
-
-\subsubsection{ UC4.1 - Visualizzazione stanze e postazioni}
+\subsubsection{ UC7 - Visualizzazione stanze e postazioni}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -190,15 +169,14 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item[$-$] inaccessibile.
 	\end{itemize}
 	per ogni stanza è indicato il numero di occupanti attuali.
-	\item\textbf{Estensioni:}
-	visualizzazione a calendario delle postazioni prenotate (UC4.1.1)
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
 	l'amministratore visualizza lo schema delle stanze e delle postazioni.
 \end{itemize}
 
-\subsubsection{ UC4.1.1 - Visualizzazione a calendario delle postazioni prenotate}
+
+\subsubsection{ UC8 - Visualizzazione a calendario delle postazioni prenotate}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -212,7 +190,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'amministratore visualizza il calendario delle prenotazioni delle postazioni.
 \end{itemize}
 
-\subsubsection{ UC4.2 - Creazione di una stanza}
+\subsubsection{ UC9 - Creazione di una stanza}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -232,7 +210,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	è stata aggiunta una stanza vuota con le caratteristiche specificate.
 \end{itemize}
 
-\subsubsection{ UC4.2.1 - Avviso nome stanza già utilizzato}
+\subsubsection{ UC9.1 - Avviso nome stanza già utilizzato}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -247,7 +225,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza il messaggio d'errore.
 \end{itemize}
 
-\subsubsection{ UC4.3 - Eliminazione di una stanza}
+\subsubsection{ UC10 - Eliminazione di una stanza}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -263,7 +241,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	è stata eliminata la stanza specificata, con tutte le postazioni al suo interno.
 \end{itemize}
 
-\subsubsection{UC4.4 - Modifica di una stanza}
+\subsubsection{UC11 - Modifica di una stanza}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -282,7 +260,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	il codice della stanza selezionata è stato modificato.
 \end{itemize}
 
-\subsubsection{UC4.4.1 - Impostazione di una stanza come inaccessibile.}
+\subsubsection{UC11.1 - Impostazione di una stanza come inaccessibile.}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -300,7 +278,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	il codice della stanza selezionata è stato modificato.
 \end{itemize}
 
-\subsubsection{UC4.5 - Creazione di una postazione}
+\subsubsection{UC12 - Creazione di una postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -329,7 +307,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 
 
 
-\subsubsection{UC4.5.1 - Avviso codice postazione già utilizzato}
+\subsubsection{UC12.1 - Avviso codice postazione già utilizzato}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -344,7 +322,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza il messaggio d'errore.
 \end{itemize}
 
-\subsubsection{UC4.5.2 - Avviso codice tag già utilizzato}
+\subsubsection{UC12.2 - Avviso codice tag già utilizzato}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -359,7 +337,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza il messaggio d'errore.
 \end{itemize}
 
-\subsubsection{UC4.6 - Eliminazione di una postazione}
+\subsubsection{UC13 - Eliminazione di una postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -369,17 +347,13 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente elimina una postazione.
 	\item\textbf{Scenario principale:} 
 	l'utente raggiunge l'area di eliminazione delle postazioni, ne seleziona una ed esegue l'eliminazione. La nuova configurazione della stanza viene inviata a Ethereum.
-	\item\textbf{Estensioni:}
-	\begin{itemize}
-		\item[$-$] cancellazione delle prenotazioni per quella postazione e notifica agli utenti che avevano prenotato (UC4.6.1).
-	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
 	una postazione è stata eliminata.
 \end{itemize}
 
-\subsubsection{ UC4.6.1 - Avviso agli utenti che hanno prenotato}
+\subsubsection{ UC14 - Avviso agli utenti che hanno prenotato}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -395,7 +369,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	la postazione non è disponibile e i dipendenti interessati sono stati avvisati.
 \end{itemize}
 
-\subsubsection{ UC4.7 - Modifica di una postazione}
+\subsubsection{ UC15 - Modifica di una postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -415,6 +389,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:}
 	sono stati aggiornati gli attributi della postazione selezionata.
 \end{itemize}
+
 
 \subsubsection{ UC5 - Gestione credenziali}
 \begin{figure}[H]
