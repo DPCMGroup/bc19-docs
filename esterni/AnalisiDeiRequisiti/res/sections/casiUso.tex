@@ -52,6 +52,11 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	\item\textbf{Attori Primari:} utente non autenticato.
            	\item\textbf{Descrizione:} l’utente tenta di autenticarsi all'applicativo.
            	\item\textbf{Scenario principale:} l’utente non è ancora autenticato ed esegue il login.
+           	\item\textbf{Estensioni:}
+           	\begin{itemize}
+           		\item UC2.1 - Visualizzazione messaggio di errore
+           		\item UC2.2 - Visualizzazione schermata relativa a utente non abilitato
+           	\end{itemize}
            	\item\textbf{Precondizione:} l’utente non si è autenticato nell'applicativo. 
            	\item\textbf{Postcondizione:} l’utente si è autenticato con successo, ed è stato identificato dal sistema
            	nel ruolo di amministratore, dipendente o addetto alle pulizie. A seconda della tipologia di utente vengono rese
@@ -83,6 +88,11 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Attori Primari:} utente non autenticato.
 	\item\textbf{Descrizione:} l’utente tenta di autenticarsi all'applicativo.
 	\item\textbf{Scenario principale:} l’utente non è ancora autenticato ed esegue il login.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item UC3.1 - Visualizzazione messaggio di errore
+		\item UC3.2 - Visualizzazione schermata relativa a utente non abilitato
+	\end{itemize}
 	\item\textbf{Precondizione:} l’utente non si è autenticato nell'applicativo. 
 	\item\textbf{Postcondizione:} l’utente si è autenticato con successo, ed è stato identificato dal sistema
 	nel ruolo di amministratore, dipendente o addetto alle pulizie. A seconda della tipologia di utente vengono rese
@@ -203,7 +213,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	L'utente compila il campo e preme un pulsante per confermare la creazione della stanza.
 	Se non è gia presente una stanza con il codice inserito, essa viene creata e la sua configurazione viene inviata a Ethereum per essere salvata.
 	\item\textbf{Estensione:}
-	se è gia presente una stanza con lo stesso nome l'utente viene avvisato (UC4.2.1).
+	\item UC9.1 - Avviso nome stanza già utilizzato
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
@@ -251,8 +261,8 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente preme un pulsante per la modifica di una stanza. Gli viene chiesto di inserire il nuovo nome e di confermare la modifica. La stanza ha ora il nome aggiornato.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] rendere una stanza inaccessibile per alcuni giorni (UC4.4.1);
-		\item[$-$] se è già presente una stanza con lo stesso nome l'utente viene avvisato (UC4.2.1).
+		\item[$-$] UC11.1 - Impostazione di una stanza come inaccessibile;
+		\item[$-$] UC9.1 - Avviso nome stanza già utilizzato
 	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato.
@@ -268,10 +278,6 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente rende una stanza inaccessibile per alcuni giorni.
 	\item\textbf{Scenario principale:} 
 	l'utente imposta le date di inizio e fine del periodo di inaccessibilità della stanza e conferma l'impostazione attraverso un pulsante.
-	\item\textbf{Estensioni:}
-	\begin{itemize}
-		\item[$-$] cancellazione delle prenotazioni per quella postazione e notifica agli utenti che avevano prenotato (UC4.6.1).
-	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore e ha raggiunto l'area dedicata a questa azione.
 	\item\textbf{Postcondizione:}
@@ -296,8 +302,8 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	L'amministratore preme un bottone per la conferma dei dati e la postazione viene aggiunta all'interno della stanza. La nuova configurazione della stanza viene comunicata a Ethereum.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] avviso codice postazione già presente (UC4.5.1);
-		\item[$-$] avviso codice tag già presente (UC4.5.2).
+		\item[$-$] UC12.1 - Avviso codice postazione già utilizzato;
+		\item[$-$] UC12.2 - Avviso codice tag già utilizzato.
 	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato.
@@ -381,8 +387,8 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente preme sul pulsante per la modifica di una postazione. Gli vengono richiesti i nuovi dati da inserire e la nuova posizione della postazione. Il sistema invia i nuovi dati a Ethereum.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] avviso codice postazione già presente (UC4.5.1);
-		\item[$-$] avviso codice tag già presente (UC4.5.2).
+		\item[$-$] UC12.1 - Avviso codice postazione già utilizzato;
+		\item[$-$] UC12.2 - Avviso codice tag già utilizzato.
 	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
