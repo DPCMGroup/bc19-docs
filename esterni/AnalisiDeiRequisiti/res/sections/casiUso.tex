@@ -47,7 +47,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	\item\textbf{Postcondizione:} il sistema fornisce all’utente, attraverso la lettura della guida, tutte le istruzioni necessarie a effettuare il login.
 \end{itemize}
 
-\subsubsection{ UC2 - Login}
+\subsubsection{ UC2 - Login webserver}
 \begin{itemize}
            	\item\textbf{Attori Primari:} utente non autenticato.
            	\item\textbf{Descrizione:} l’utente tenta di autenticarsi all'applicativo.
@@ -68,6 +68,37 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \end{itemize}
 \subsubsection{ UC2.2 - Visualizzazione schermata relativa a utente non abilitato}
 \begin{itemize}
+	\item\textbf{Attori Primari:} utente non autenticato.
+	\item\textbf{Descrizione:} l'utente tenta di autenticarsi nell'applicativo, tuttavia a causa della disabilitazione del suo account, il login viene interrotto, e
+	l'utente visualizza il messaggio di errore che illustra la causa della disabilitazione dell'account.
+	\item\textbf{Scenario principale:} l’utente non autenticato con account disabilitato tenta di autenticarsi. 
+	La procedura di autenticazione viene bloccata a causa dello stato dell'account.
+	\item\textbf{Precondizione:} un utente non autenticato, registrato all'applicativo e con account disabilitato tenta di effettuare il login automatico. 
+	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore per informare l'utente del fatto che il 
+	proprio account è stato disabilitato dall'amministratore. Se quest'ultimo, durante la procedura di disabilitazione, ha inserito un messaggio contenente la causa di tale azione, allora tale messaggio viene visualizzato.
+\end{itemize}
+
+\subsubsection{ UC3 - Login applicazione mobile}
+\begin{itemize}
+	\item\textbf{Attori Primari:} utente non autenticato.
+	\item\textbf{Descrizione:} l’utente tenta di autenticarsi all'applicativo.
+	\item\textbf{Scenario principale:} l’utente non è ancora autenticato ed esegue il login.
+	\item\textbf{Precondizione:} l’utente non si è autenticato nell'applicativo. 
+	\item\textbf{Postcondizione:} l’utente si è autenticato con successo, ed è stato identificato dal sistema
+	nel ruolo di amministratore, dipendente o addetto alle pulizie. A seconda della tipologia di utente vengono rese
+	disponibili diverse funzionalità.
+\end{itemize}
+
+\subsubsection{ UC3.1 - Visualizzazione messaggio di errore}
+\begin{itemize}
+	\item\textbf{Attori Primari:} utente non autenticato.
+	\item\textbf{Descrizione:} l'utente visualizza un messaggio di errore dovuto al fatto che ha tentato il login ma ha sbagliato a inserire le credenziali.
+	\item\textbf{Scenario principale:} l’utente tenta di eseguire la procedura di login all'applicativo.
+	\item\textbf{Precondizione:} l'utente tenta di autenticarsi nell'applicativo.
+	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore per informare l'utente del fatto che ha sbagliato a inserire le credenziali.
+\end{itemize}
+\subsubsection{ UC3.2 - Visualizzazione schermata relativa a utente non abilitato}
+\begin{itemize}
            	\item\textbf{Attori Primari:} utente non autenticato.
            	\item\textbf{Descrizione:} l'utente tenta di autenticarsi nell'applicativo, tuttavia a causa della disabilitazione del suo account, il login viene interrotto, e
            	l'utente visualizza il messaggio di errore che illustra la causa della disabilitazione dell'account.
@@ -78,16 +109,45 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	proprio account è stato disabilitato dall'amministratore. Se quest'ultimo, durante la procedura di disabilitazione, ha inserito un messaggio contenente la causa di tale azione, allora tale messaggio viene visualizzato.
 \end{itemize}
 
-\subsubsection{ UC3 - Logout}
+
+\subsubsection{ UC4 - Logout amministratore}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
-	utente autenticato.
+	amministratore.
 	\item\textbf{Descrizione:} 
-	l'utente si disautentica dal sistema.
+	l'amministratore si disautentica dal sistema.
 	\item\textbf{Scenario principale:} 
 	l'utente autenticato preme un pulsante per la disautenticazione ed essa viene eseguita.
 	\item\textbf{Precondizione:} 
-	l'utente è autenticato nel sistema.
+	l'utente è autenticato nel sistema come amministratore.
+	\item\textbf{Postcondizione:}
+	l'utente non è autenticato nel sistema.
+\end{itemize}
+
+\subsubsection{ UC5 - Logout dipendente}
+\begin{itemize}
+	\item\textbf{Attori Primari:} 
+	dipendente.
+	\item\textbf{Descrizione:} 
+	il dipendente si disautentica dal sistema.
+	\item\textbf{Scenario principale:} 
+	l'utente autenticato preme un pulsante per la disautenticazione ed essa viene eseguita.
+	\item\textbf{Precondizione:} 
+	l'utente è autenticato nel sistema come dipendente.
+	\item\textbf{Postcondizione:}
+	l'utente non è autenticato nel sistema.
+\end{itemize}
+
+\subsubsection{ UC6 - Logout addetto alle pulizie}
+\begin{itemize}
+	\item\textbf{Attori Primari:} 
+	addetto alle pulizie.
+	\item\textbf{Descrizione:} 
+	l'addetto alle pulizie si disautentica dal sistema.
+	\item\textbf{Scenario principale:} 
+	l'utente autenticato preme un pulsante per la disautenticazione ed essa viene eseguita.
+	\item\textbf{Precondizione:} 
+	l'utente è autenticato nel sistema come addetto alle pulizie.
 	\item\textbf{Postcondizione:}
 	l'utente non è autenticato nel sistema.
 \end{itemize}
