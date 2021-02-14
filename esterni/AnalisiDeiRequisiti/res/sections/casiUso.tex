@@ -264,7 +264,6 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente preme un pulsante per la modifica di una stanza. Gli viene chiesto di inserire il nuovo nome e di confermare la modifica. La stanza ha ora il nome aggiornato.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] UC11.1 - Impostazione di una stanza come inaccessibile;
 		\item[$-$] UC9.1 - Avviso nome stanza già utilizzato
 	\end{itemize}
 	\item\textbf{Precondizione:} 
@@ -273,7 +272,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	il codice della stanza selezionata è stato modificato.
 \end{itemize}
 
-\subsubsection{UC11.1 - Impostazione di una stanza come inaccessibile.}
+\subsubsection{UC12 - Impostazione di una stanza come inaccessibile.}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -287,7 +286,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	il codice della stanza selezionata è stato modificato.
 \end{itemize}
 
-\subsubsection{UC12 - Creazione di una postazione}
+\subsubsection{UC13 - Creazione di una postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -305,8 +304,8 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	L'amministratore preme un bottone per la conferma dei dati e la postazione viene aggiunta all'interno della stanza. La nuova configurazione della stanza viene comunicata a Ethereum.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] UC12.1 - Avviso codice postazione già utilizzato;
-		\item[$-$] UC12.2 - Avviso codice tag già utilizzato.
+		\item[$-$] UC13.1 - Avviso codice postazione già utilizzato;
+		\item[$-$] UC13.2 - Avviso codice tag già utilizzato.
 	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato.
@@ -316,7 +315,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 
 
 
-\subsubsection{UC12.1 - Avviso codice postazione già utilizzato}
+\subsubsection{UC13.1 - Avviso codice postazione già utilizzato}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -331,7 +330,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza il messaggio d'errore.
 \end{itemize}
 
-\subsubsection{UC12.2 - Avviso codice tag già utilizzato}
+\subsubsection{UC13.2 - Avviso codice tag già utilizzato}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -346,7 +345,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza il messaggio d'errore.
 \end{itemize}
 
-\subsubsection{UC13 - Eliminazione di una postazione}
+\subsubsection{UC14 - Eliminazione di una postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -362,7 +361,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	una postazione è stata eliminata.
 \end{itemize}
 
-\subsubsection{ UC14 - Avviso agli utenti che hanno prenotato}
+\subsubsection{ UC15 - Avviso agli utenti che hanno prenotato}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -378,7 +377,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	la postazione non è disponibile e i dipendenti interessati sono stati avvisati.
 \end{itemize}
 
-\subsubsection{ UC15 - Modifica di una postazione}
+\subsubsection{ UC16 - Modifica di una postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -390,8 +389,8 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente preme sul pulsante per la modifica di una postazione. Gli vengono richiesti i nuovi dati da inserire e la nuova posizione della postazione. Il sistema invia i nuovi dati a Ethereum.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] UC12.1 - Avviso codice postazione già utilizzato;
-		\item[$-$] UC12.2 - Avviso codice tag già utilizzato.
+		\item[$-$] UC13.1 - Avviso codice postazione già utilizzato;
+		\item[$-$] UC13.2 - Avviso codice tag già utilizzato.
 	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
@@ -400,7 +399,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \end{itemize}
 
 
-\subsubsection{ UC16 - Gestione credenziali}
+\subsubsection{ UC17 - Gestione credenziali}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=15cm]{res/images/UC5.png}
@@ -420,7 +419,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	l'utente ha visualizzato, creato, modificato oppure eliminato credenziali.
 \end{itemize}
 
-\subsubsection{ UC16.1 - Visualizzazione lista credenziali}
+\subsubsection{ UC17.1 - Visualizzazione lista credenziali}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -434,7 +433,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza la lista delle credenziali.
 \end{itemize}
 
-\subsubsection{ UC16.2 - Creazione di una credenziale}
+\subsubsection{ UC17.2 - Creazione di una credenziale}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -457,7 +456,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente ha creato una nuova credenziale.
 \end{itemize}
 
-\subsubsection{ UC16.3 - Modifica di una credenziale}
+\subsubsection{ UC17.3 - Modifica di una credenziale}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -480,7 +479,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente ha modificato un profilo utente.
 \end{itemize}
 
-\subsubsection{ UC16.4 - Eliminazione di una credenziale}
+\subsubsection{ UC17.4 - Eliminazione di una credenziale}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -496,7 +495,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	le credenziali selezionate non sono più presenti nel sistema.
 \end{itemize}
 
-\subsubsection{ UC17 - Esplorazione occupazioni delle postazioni}
+\subsubsection{ UC18 - Esplorazione occupazioni delle postazioni}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=18cm]{res/images/UC6.png}
@@ -516,7 +515,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza le informazioni.
 \end{itemize}
 
-\subsubsection{ UC17.1 - Ottenimento report delle postazioni occupate da uno specifico utente}
+\subsubsection{ UC18.1 - Ottenimento report delle postazioni occupate da uno specifico utente}
 \begin{itemize}
            	\item\textbf{Attori Primari:} 
            	amministratore.
@@ -536,7 +535,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	l'utente visualizza le informazioni.
 \end{itemize}
 
-\subsubsection{ UC17.1.1 - Ricerca tra le postazioni occupate da uno specifico utente}
+\subsubsection{ UC18.1.1 - Ricerca tra le postazioni occupate da uno specifico utente}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -558,7 +557,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza le informazioni specificate dalla sua ricerca.
 \end{itemize}
 
-\subsubsection{ UC17.1.2 - Ottenimento report delle occupazioni di uno specifico utente con indicazione delle ore trascorse a ogni postazione}
+\subsubsection{ UC18.1.2 - Ottenimento report delle occupazioni di uno specifico utente con indicazione delle ore trascorse a ogni postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -578,7 +577,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza le informazioni.
 \end{itemize}
 
-\subsubsection{ UC17.2 - Ottenimento report degli utenti che hanno occupato una specifica postazione}
+\subsubsection{ UC18.2 - Ottenimento report degli utenti che hanno occupato una specifica postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -598,7 +597,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza le informazioni specificate dalla sua ricerca.
 \end{itemize}
 
-\subsubsection{ UC17.2.1 - Ricerca tra le occupazioni di una specifica postazione}
+\subsubsection{ UC18.2.1 - Ricerca tra le occupazioni di una specifica postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -620,7 +619,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza le informazioni specificate dalla sua ricerca.
 \end{itemize}
 
-\subsubsection{ UC17.3 - Scaricamento del report delle occupazioni in un formato leggibile}
+\subsubsection{ UC18.3 - Scaricamento del report delle occupazioni in un formato leggibile}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -634,7 +633,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente ha scaricato il report.
 \end{itemize}
 
-\subsubsection{ UC17.3.1 - Scaricamento del report delle occupazioni in formato PDF}
+\subsubsection{ UC18.3.1 - Scaricamento del report delle occupazioni in formato PDF}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -656,7 +655,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 
 
 
-\subsubsection{ UC18 - Report sanificazioni postazione}
+\subsubsection{ UC19 - Report sanificazioni postazione}
 \begin{itemize}
            	\item\textbf{Attori Primari:} 
            	amministratore.
@@ -679,7 +678,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	l'utente visualizza le informazioni.
 \end{itemize}
 
-\subsubsection{ UC18.1 - Scaricamento del report delle igienizzazioni in un formato leggibile}
+\subsubsection{ UC19.1 - Scaricamento del report delle igienizzazioni in un formato leggibile}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -689,7 +688,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'amministratore preme un pulsante per lo scaricamento del report che sta visualizzando.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] scaricamento del report delle igienizzazioni in un formato leggibile (UC7.1.1).
+		\item[$-$] UC18.1.1 - Scaricamento del report delle igienizzazioni in formato PDF.
 	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente sta visualizzando un report.
@@ -697,7 +696,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente ha scaricato il report.
 \end{itemize}
 
-\subsubsection{ UC18.1.1 - Scaricamento del report delle igienizzazioni in formato PDF}
+\subsubsection{ UC19.1.1 - Scaricamento del report delle igienizzazioni in formato PDF}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -715,7 +714,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 
 
 
-\subsubsection{ UC19 - Scansione tag RFID}
+\subsubsection{ UC20 - Scansione tag RFID}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Attori Secondari:} tag RFID.
@@ -728,7 +727,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item[$-$] visualizzazione errore: lo smartphone è troppo distante dal tag RFID per effettuare correttamente la scansione (UC9.1).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC19.1 - Visualizzazione errore scansione: tag RFID troppo distante}
+\subsubsection{ UC20.1 - Visualizzazione errore scansione: tag RFID troppo distante}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente visualizza un messaggio di errore in quanto tenta di effettuare una scansione del tag RFID, ma appoggia lo smartphone non abbastanza vicino al sensore.
@@ -737,7 +736,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Precondizione:} l’utente ha tentato di effettuare una scansione del tag RFID.
 	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore specifico.
 \end{itemize}
-\subsubsection{ UC20 - Visualizzazione stato postazione}
+\subsubsection{ UC21 - Visualizzazione stato postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Attori Secondari:} tag RFID.
@@ -754,7 +753,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l’utente conosce lo stato della postazione.
 \end{itemize}
 
-\subsubsection{ UC21 - Segnalazione presenza}
+\subsubsection{ UC22 - Segnalazione presenza}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=15cm]{res/images/UC11.png}
@@ -776,7 +775,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item[$-$] visualizzazione errore: se l'utente si dimentica di premere il bottone di fine occupazione della postazione, viene visualizzato un messaggio di errore (UC11.4).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC21.1 - Presenza in tempo reale}
+\subsubsection{ UC22.1 - Presenza in tempo reale}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Attori Secondari:} tag RFID.
@@ -785,7 +784,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Precondizione:} l’utente occupa una postazione e ha attivato nel proprio smartphone la possibilità di effettuare scansioni con tag RFID.
 	\item\textbf{Postcondizione:} l’utente segnala in tempo reale la presenza alla postazione.
 \end{itemize}
-\subsubsection{ UC21.2 - Visualizzazione errore spostamento smartphone}
+\subsubsection{ UC22.2 - Visualizzazione errore spostamento smartphone}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente visualizza un messaggio di errore in quanto sposta lo smartphone dal tag RFID.
@@ -793,7 +792,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Precondizione:} l’utente sposta il proprio smartphone dal tag RFID.
 	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore specifico.
 \end{itemize}
-\subsubsection{ UC21.3 - Registrazione presenza}
+\subsubsection{ UC22.3 - Registrazione presenza}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Attori Secondari:} Ethereum.
@@ -803,7 +802,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Precondizione:} l’utente occupa una postazione e preme i bottoni di inizio e fine dell'occupazione della postazione.
 	\item\textbf{Postcondizione:} l'azione della precondizione viene registrata.
 \end{itemize}
-\subsubsection{ UC21.4 - Visualizzazione errore fine occupazione}
+\subsubsection{ UC22.4 - Visualizzazione errore fine occupazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente visualizza un messaggio di errore in quanto si dimentica di segnalare la fine dell'occupazione della postazione.
@@ -812,7 +811,17 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Precondizione:} l’utente non preme il bottone per la fine dell'occupazione della postazione.
 	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore specifico.
 \end{itemize}
-\subsubsection{ UC21 - Pulizia autonoma}
+
+\subsubsection{ UC23 - Avviso indisponibilità postazione prenotata }
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Attori Secondari:}
+	\item\textbf{Descrizione:} il dipendente che ha una prenotazione per una postazione viene avvisato nel caso la postazione non sia più disponibile
+	\item\textbf{Scenario principale:} il dipente riceve una notifica che lo avvisa dell'indisponibilità di una postazione prenotata.
+	\item\textbf{Precondizione:} l’utente è autenticato nell'applicazione mobile e ha almeno una postazione prenotata.
+	\item\textbf{Postcondizione:} l'utente riceve una notifica che lo avvisa dell'indisponibilità di una delle postazioni che ha prenotato.
+\end{itemize}
+\subsubsection{ UC24 - Pulizia autonoma}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=15cm]{res/images/UC12.png}
@@ -829,7 +838,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	autonoma della postazione.
 	\item\textbf{Postcondizione:} l’utente modifica lo stato della postazione in libera e igienizzata e registra l'avvenuta pulizia autonoma della postazione.
 \end{itemize}
-\subsubsection{ UC21.1 - Modifica stato postazione }
+\subsubsection{ UC24.1 - Modifica stato postazione }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente dopo aver igienizzato autonomamente la postazione con il kit aziendale, modifica lo stato della stessa.
@@ -838,7 +847,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l’utente modifica lo stato della postazione.
 \end{itemize}
 
-\subsubsection{ UC21.2 - Registrazione pulizia autonoma }
+\subsubsection{ UC24.2 - Registrazione pulizia autonoma }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Attori Secondari:} Ethereum.
@@ -848,7 +857,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	registrazione della pulizia autonoma.
 	\item\textbf{Postcondizione:} l’utente registra l'avvenuta igienizzazione autonoma della postazione.
 \end{itemize}
-\subsubsection{ UC22 - Gestione prenotazione }
+\subsubsection{ UC25 - Gestione prenotazione }
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=18cm]{res/images/UC13.png}
@@ -862,7 +871,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Precondizione:} l’utente si è autenticato nell'applicazione mobile e sta navigando nella sezione di gestione delle prenotazioni.
 	\item\textbf{Postcondizione:} l’utente ha visualizzato o gestito le prenotazioni all’interno del sistema.
 \end{itemize}
-\subsubsection{ UC22.1 - Cerca postazione}
+\subsubsection{ UC25.1 - Cerca postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente vuole prenotare una postazione di una stanza in un determinato giorno e orario.
@@ -875,7 +884,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Precondizione:} l’utente sta navigando nella sezione dell'applicazione dedicata alla ricerca di una postazione.
 	\item\textbf{Postcondizione:} l’utente inserisce i campi necessari alla ricerca della postazione desiderata.
 \end{itemize}
-\subsubsection{ UC22.1.1 - Inserimento data }
+\subsubsection{ UC25.1.1 - Inserimento data }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente sta cercando una postazione disponibile e deve compilare il campo della data.
@@ -887,7 +896,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item[$-$] l’utente inserisce una data non valida (UC13.1.2);
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC22.1.2 - Visualizzazione errore: data non valida  }
+\subsubsection{ UC25.1.2 - Visualizzazione errore: data non valida  }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente ha compilato un campo per la data, ma è in un formato non corretto.
@@ -904,7 +913,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item[$-$] l’utente inserisce un orario non valido (UC13.1.4);
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC22.1.3 - Inserimento ora }
+\subsubsection{ UC25.1.3 - Inserimento ora }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente sta cercando una postazione disponibile e deve compilare il campo orario con granularità di un'ora.
@@ -916,7 +925,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item[$-$] l’utente inserisce una stanza non valida (UC13.1.6).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC22.1.4 - Visualizzazione errore: orario non valido }
+\subsubsection{ UC25.1.4 - Visualizzazione errore: orario non valido }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente ha compilato un campo per l'orario, ma è in un formato non corretto.
@@ -929,7 +938,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Precondizione:} l’utente ha compilato il campo per l'orario.
 	\item\textbf{Postcondizione:} l’utente visualizza un messaggio di errore specifico e non porta a termine l’azione.
 \end{itemize}
-\subsubsection{ UC22.1.5 - Inserimento stanza }
+\subsubsection{ UC25.1.5 - Inserimento stanza }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente sta cercando una postazione disponibile e deve compilare il campo dell'identificativo della stanza.
@@ -937,7 +946,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Precondizione:} l’utente sta compilando i campi richiesti per effettuare la ricerca.
 	\item\textbf{Postcondizione:} l’utente ha compilato il campo richiesto.
 \end{itemize}
-\subsubsection{ UC22.1.6 - Visualizzazione errore: stanza non valida }
+\subsubsection{ UC25.1.6 - Visualizzazione errore: stanza non valida }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente ha compilato un campo per l'identificativo della stanza, ma è in un formato non corretto.
@@ -950,7 +959,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Precondizione:} l’utente ha compilato il campo per la stanza.
 	\item\textbf{Postcondizione:} l’utente visualizza un messaggio di errore specifico e non porta a termine l’azione.
 \end{itemize}
-\subsubsection{ UC22.2 - Visualizzazione postazioni  }
+\subsubsection{ UC25.2 - Visualizzazione postazioni  }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente visualizza le postazioni con colori diversi in base allo stato. L'identificativo di una postazione è costituito da una lettera seguita da un numero (ad esempio: D10). 
@@ -963,7 +972,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item[$-$] visualizzazione errore: tutte le postazioni nella stanza selezionata sono occupate o guaste (UC13.3).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC22.3 - Visualizzazione errore: postazioni occupate }
+\subsubsection{ UC25.3 - Visualizzazione errore: postazioni occupate }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente visualizza un messaggio di errore, in quanto non ci sono postazioni prenotabili.
@@ -977,7 +986,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	disponibile (UC13.4).
 	\item\textbf{Postcondizione:} l’utente visualizza un messaggio di errore specifico e non porta a termine l’azione.
 \end{itemize}
-\subsubsection{ UC22.4 - Prima postazione libera }
+\subsubsection{ UC25.4 - Prima postazione libera }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente riceve l'identificativo di una postazione igienizzata e libera in una determinata stanza, 
@@ -990,7 +999,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item[$-$] tutte le postazioni nella stanza selezionata sono occupate o guaste (UC13.3).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC22.5 - Selezione postazione }
+\subsubsection{ UC25.5 - Selezione postazione }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente dopo aver visualizzato le postazioni con colori diversi in base allo stato, ne seleziona una. E' possibile scegliere una postazione libera e igienizzata o non igienizzata.
@@ -998,7 +1007,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Precondizione:} l’utente ha visualizzato correttamente le postazioni di una stanza.
 	\item\textbf{Postcondizione:} l’utente seleziona una postazione.
 \end{itemize}
-\subsubsection{ UC22.6 - Prenotazione postazione }
+\subsubsection{ UC25.6 - Prenotazione postazione }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente dopo aver selezionato la postazione, effettua la prenotazione. 
@@ -1012,7 +1021,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		per poi tornare allo scenario principale (13.7).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC23 - Elenco stanze e postazioni da igienizzare}
+\subsubsection{ UC26 - Elenco stanze e postazioni da igienizzare}
 \begin{figure}[H]
 		\centering
 		\includegraphics[width=15cm]{res/images/UC14.png}
@@ -1027,7 +1036,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	\item\textbf{Postcondizione:} l'utente verifica quali postazioni sono state occupate da almeno un dipendente, così da ottenere un elenco delle stanze e postazioni da igienizzare.
 \end{itemize}
 
-\subsubsection{UC23.1 - Elenco stanze da igienizzare}
+\subsubsection{UC26.1 - Elenco stanze da igienizzare}
 \begin{itemize}
            	\item\textbf{Attori Primari:} addetto pulizie.
            	\item\textbf{Descrizione:} l'utente riceve un elenco delle stanze che necessitano di igienizzazione.
@@ -1035,7 +1044,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	\item\textbf{Precondizione:} l'utente va nella sezione dedicata nel sistema e deve premere un bottone.
            	\item\textbf{Postcondizione:} l'utente verifica quali stanze sono state occupate da almeno un dipendente, così da ottenere un elenco delle stanze da igienizzare.
 \end{itemize}
-\subsubsection{UC23.2 - Elenco postazioni da igienizzare}
+\subsubsection{UC26.2 - Elenco postazioni da igienizzare}
 \begin{itemize}
            	\item\textbf{Attori Primari:} addetto pulizie.
            	\item\textbf{Descrizione:} l'utente riceve un elenco delle postazioni che necessitano di igienizzazione.
@@ -1044,7 +1053,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	\item\textbf{Postcondizione:} l'utente verifica quali postazioni sono state occupate da almeno un dipendente, così da ottenere un elenco delle postazioni da igienizzare.
 \end{itemize}
 
-\subsubsection{ UC24 - Marcatura stanza e postazione come igienizzata}
+\subsubsection{ UC27 - Marcatura stanza e postazione come igienizzata}
 \begin{figure}[H]
 		\centering
 		\includegraphics[width=18cm]{res/images/UC15.png}
@@ -1059,7 +1068,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	\item\textbf{Precondizione:} l'utente ottiene l'elenco delle stanze e delle postazioni da igienizzare.
            	\item\textbf{Postcondizione:} l'utente, dopo l'igienizzazione, marca le stanze e le postazioni come igienizzate.
 \end{itemize}
-\subsubsection{UC24.1 - Marcatura stanza come igienizzata}
+\subsubsection{UC27.1 - Marcatura stanza come igienizzata}
 \begin{itemize}
            	\item\textbf{Attori Primari:} addetto pulizie.
 		\item\textbf{Attore Secondario:} Ethereum.
@@ -1068,7 +1077,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	\item\textbf{Precondizione:} l'utente ottiene l'elenco delle stanze da igienizzare.
            	\item\textbf{Postcondizione:} l'utente, dopo l'igienizzazione, marca le stanze come igienizzate.
 \end{itemize}
-\subsubsection{UC24.2 - Marcatura postazione come igienizzata}
+\subsubsection{UC27.2 - Marcatura postazione come igienizzata}
 \begin{itemize}
            	\item\textbf{Attori Primari:} addetto pulizie.
 		\item\textbf{Attore Secondario:} Ethereum.
