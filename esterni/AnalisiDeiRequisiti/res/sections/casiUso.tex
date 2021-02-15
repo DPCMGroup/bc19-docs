@@ -494,12 +494,6 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \end{itemize}
 
 \subsubsection{ UC18 - Esplorazione occupazioni delle postazioni}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=18cm]{res/images/UC18.png}
-	\caption{Esplorazione occupazioni delle postazioni}
-	\label{fig:Esplorazione occupazioni delle postazioni}
-\end{figure}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -545,10 +539,6 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\end{itemize}
 	\item\textbf{Scenario principale:} 
 	l'amministratore seleziona i valori con cui vuole precisare la sua ricerca e ottiene la lista delle occupazioni con le relative informazioni.
-	\item\textbf{Estensione:}
-	\begin{itemize}
-		\item[$-$] scaricamento del report delle occupazioni in un formato leggibile (UC18.3).
-	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente si trova sulla pagina dedicata alla ricerca delle postazioni occupate.
 	\item\textbf{Postcondizione:}
@@ -564,11 +554,6 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Scenario principale:} 
 	l'amministratore raggiunge la pagina per la ricerca delle occupazioni delle postazioni e inserisce il nickname oppure il nome e cognome dell'utente a cui è interessato.
 	Nel report vengono visualizzate le date di inizio e fine delle occupazioni, i codici delle postazioni e le ore trascorse.
-	\item\textbf{Estensione:}
-	\begin{itemize}
-		\item[$-$] scaricamento del report delle occupazioni in un formato leggibile (UC18.3);
-		\item[$-$] ricerca tra le postazioni occupate da uno specifico utente (UC18.1.1).
-	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
@@ -584,11 +569,6 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Scenario principale:} 
 	l'amministratore raggiunge la pagina per la ricerca delle occupazioni delle postazioni e inserisce il codice della postazione a cui è interessato.
 	Nel report vengono visualizzate le date di inizio e fine delle occupazioni e i nomi degli utenti.
-	\item\textbf{Estensione:}
-	\begin{itemize}
-		\item[$-$] scaricamento del report delle occupazioni in un formato leggibile (UC18.3);
-		\item[$-$] ricerca tra le occupazioni di una specifica postazione (UC18.2.1).
-	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
@@ -607,10 +587,6 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\end{itemize}
 	\item\textbf{Scenario principale:} 
 	l'amministratore seleziona i valori con cui vuole precisare la sua ricerca e ottiene la lista delle occupazioni con le relative informazioni.
-	\item\textbf{Estensione:}
-	\begin{itemize}
-		\item[$-$] scaricamento del report delle occupazioni in un formato leggibile (UC18.3).
-	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente si trova sulla pagina dedicata alla ricerca delle occupazioni.
 	\item\textbf{Postcondizione:}
@@ -625,10 +601,6 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'amministratore scarica il report delle occupazioni che sta visualizzando in un formato leggibile.
 	\item\textbf{Scenario principale:} 
 	l'amministratore preme un pulsante per lo scaricamento del report che sta visualizzando.
-	\item\textbf{Estensione:}
-	\begin{itemize}
-		\item[$-$] scaricamento del report delle occupazioni in formato PDF (UC18.3.1).
-	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente sta visualizzando un report.
 	\item\textbf{Postcondizione:}
@@ -643,6 +615,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'amministratore scarica il report delle occupazioni che sta visualizzando in formato \glock{PDF}.
 	\item\textbf{Scenario principale:} 
 	l'amministratore preme un pulsante per lo scaricamento del report che sta visualizzando in formato PDF.
+	\item\textbf{Generalizzazione:}
+	\begin{itemize}
+		\item[$-$] scaricamento del report delle occupazioni in un formato leggibile (UC18.3).
+	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente sta visualizzando un report.
 	\item\textbf{Postcondizione:}
@@ -663,10 +639,6 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	\end{itemize}
            	\item\textbf{Scenario principale:} 
            	l'amministratore raggiunge la pagina di esplorazione delle sanificazioni e visualizza la lista delle sanificazioni con le informazioni correlate.
-			\item\textbf{Estensioni:}
-			\begin{itemize}
-				\item[$-$] scaricamento del report delle igienizzazioni in un formato leggibile(UC19.1).
-			\end{itemize}
            	\item\textbf{Precondizione:} 
            	l'utente è autenticato come amministratore.
            	\item\textbf{Postcondizione:}
@@ -681,10 +653,6 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'amministratore scarica il report delle igienizzazioni che sta visualizzando in un formato leggibile.
 	\item\textbf{Scenario principale:} 
 	l'amministratore preme un pulsante per lo scaricamento del report che sta visualizzando.
-	\item\textbf{Estensioni:}
-	\begin{itemize}
-		\item[$-$] scaricamento del report delle igienizzazioni in formato PDF (UC19.1.1).
-	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente sta visualizzando un report.
 	\item\textbf{Postcondizione:}
@@ -699,6 +667,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'amministratore scarica il report delle igienizzazioni che sta visualizzando in formato PDF.
 	\item\textbf{Scenario principale:} 
 	l'amministratore preme un pulsante per lo scaricamento del report che sta visualizzando.
+	\item\textbf{Generalizzazione:}
+	\begin{itemize}
+		\item[$-$] scaricamento del report delle igienizzazioni in un formato leggibile (UC19.1).
+	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente sta visualizzando un report.
 	\item\textbf{Postcondizione:}
