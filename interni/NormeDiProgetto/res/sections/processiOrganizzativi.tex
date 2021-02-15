@@ -57,8 +57,7 @@ Nello svolgimento delle riunioni è compito del segretario nominato (a rotazione
 	\end{itemize}
 \item{\textbf{presenze}}
 	\begin{itemize}
-	\item{numero dei componenti presenti, ad esempio: 7 su 7;}
-	\item{presenti: nominativi dei componenti presenti;}
+	\item{assenti: nominativi dei componenti eventualmente assenti;}
 	\end{itemize}
 \item{\textbf{svolgimento}: contiene le annotazioni circa gli argomenti discussi e non discussi tra quelli presenti nell’Ordine del giorno, le decisioni prese o non prese e le motivazioni che hanno portato a tali decisioni.}
 \item{\textbf{tracciamento delle decisioni}: riepilogo in in forma tabellare delle decisioni prese nel corso della riunione;}
@@ -251,7 +250,7 @@ GitHub offre modelli di workflow CI per una varietà di linguaggi e framework.
 Non è stato immediatamente scartato TravisCI in quanto già conosciuto da parte dei membri del team, ma non integrato su GitHub tanto quanto GitHub Actions.
 La Continuos Integration che utilizza GitHub Actions offre workflow che possono creare il codice nel repository ed eseguire i test. 
 I workflow possono essere eseguiti su macchine virtuali ospitate da GitHub o su macchine ospitate personalmente.
-GitHub esegue i test di CI e fornisce i risultati di ogni test nella richiesta pull, così è possibile vedere se la modifica di un ramo introduce un errore. 
+GitHub esegue i test di CI e fornisce i risultati di ogni test nella richiesta \glock{pull}, così è possibile vedere se la modifica di un ramo introduce un errore. 
 Quando tutti i test CI in un workflow vengono superati, le modifiche inviate sono pronte per essere riviste da un membro del team. 
 Quando un test fallisce, una delle modifiche apportate potrebbe aver causato il fallimento. 
 
