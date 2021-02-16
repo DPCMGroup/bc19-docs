@@ -51,15 +51,18 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \begin{itemize}
            	\item\textbf{Attori Primari:} utente non autenticato.
            	\item\textbf{Descrizione:} l’utente tenta di autenticarsi all'applicativo.
-           	\item\textbf{Scenario principale:} l’utente non è ancora autenticato ed esegue il login.
+           	\item\textbf{Scenario principale:} l’utente non è ancora autenticato ed esegue il login inserendo nell'interfaccia del web server le seguenti credenziali:
+           	\begin{itemize}
+           		\item nome utente;
+           		\item password.
+           	\end{itemize}
            	\item\textbf{Estensioni:}
            	\begin{itemize}
            		\item UC2.1 - Visualizzazione messaggio di errore
            		\item UC2.2 - Visualizzazione schermata relativa a utente non abilitato
            	\end{itemize}
            	\item\textbf{Precondizione:} l’utente non si è autenticato nell'applicativo. 
-           	\item\textbf{Postcondizione:} l’utente si è autenticato con successo, ed è stato identificato dal sistema
-           	nel ruolo di amministratore, dipendente o addetto alle pulizie. A seconda della tipologia di utente vengono rese
+           	\item\textbf{Postcondizione:} l’utente si è autenticato con successo, ed è stato identificato dal sistema nel ruolo di amministratore, dipendente o addetto alle pulizie. A seconda della tipologia di utente vengono rese
            	disponibili diverse funzionalità.
 \end{itemize}
 
@@ -87,7 +90,11 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \begin{itemize}
 	\item\textbf{Attori Primari:} utente non autenticato.
 	\item\textbf{Descrizione:} l’utente tenta di autenticarsi all'applicativo.
-	\item\textbf{Scenario principale:} l’utente non è ancora autenticato ed esegue il login.
+	\item\textbf{Scenario principale:} l’utente non è ancora autenticato ed esegue il login inserendo nell'interfaccia dell'applicazione mobile le seguenti credenziali:
+	\begin{itemize}
+		\item nome utente;
+		\item password.
+	\end{itemize}
 	\item\textbf{Estensioni:}
 	\begin{itemize}
 		\item UC3.1 - Visualizzazione messaggio di errore
@@ -304,8 +311,9 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	L'amministratore preme un bottone per la conferma dei dati e la postazione viene aggiunta all'interno della stanza. La nuova configurazione della stanza viene comunicata a Ethereum.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] UC13.1 - Avviso codice postazione già utilizzato;
-		\item[$-$] UC13.2 - Avviso codice tag già utilizzato.
+		\item[$-$] Avviso codice postazione già utilizzato (UC13.1);
+		\item[$-$] Avviso codice tag già utilizzato (UC13.2);
+		\item[$-$] Avviso posizione già occupata (UC13.3).
 	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato.
@@ -339,6 +347,21 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	La postazione non viene creata e alla vista dell'utente compare un avviso che indica che il codice del tag è già assegnato a una postazione.
 	\item\textbf{Precondizione:}
 	l'utente si trova sulla pagina di creazione o quella di modifica di una postazione.
+	\item\textbf{Postcondizione:}
+	l'utente visualizza il messaggio d'errore.
+\end{itemize}
+
+\subsubsection{UC13.3 - Avviso posizione già occupata}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:}
+	l'utente tenta di assegnare a una postazione giù occupata.
+	\item\textbf{Scenario principale:}
+	l'utente sta assegnando una posizione ad una postazione, ma la posizione è già occupata.
+	La postazione non viene creata e alla vista dell'utente compare un avviso che indica che la posizione è occupata.
+	\item\textbf{Precondizione:}
+	l'utente sta assegnando la posizione ad una postazione.
 	\item\textbf{Postcondizione:}
 	l'utente visualizza il messaggio d'errore.
 \end{itemize}
@@ -387,8 +410,9 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente preme sul pulsante per la modifica di una postazione. Gli vengono richiesti i nuovi dati da inserire e la nuova posizione della postazione. Il sistema invia i nuovi dati a Ethereum.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] UC13.1 - Avviso codice postazione già utilizzato;
-		\item[$-$] UC13.2 - Avviso codice tag già utilizzato.
+		\item[$-$] Avviso codice postazione già utilizzato (UC13.1);
+		\item[$-$] Avviso codice tag già utilizzato (UC13.2);
+		\item[$-$] Avviso posizione già occupata (UC13.3).
 	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
