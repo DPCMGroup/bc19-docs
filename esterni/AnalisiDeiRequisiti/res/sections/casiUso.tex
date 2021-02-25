@@ -717,10 +717,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item[$-$]occupata;
 		\item[$-$]non accessibile.
 	\end{itemize}
-	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tag RFID e visualizza nell'applicazione mobile lo stato della postazione.
+	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tag RFID e visualizza nell'applicazione mobile lo stato della postazione. Nel caso in cui quest'ultima risulta occupata, viene mostrato il nome del dipendente che la occupa. 
 	\item\textbf{Precondizione:} l’utente sta navigando nella sezione per la visualizzazione dello stato della postazione e 
 	scansiona con il proprio smarthphone il tag RFID della postazione desiderata e visualizza il suo stato.
-	\item\textbf{Postcondizione:} l’utente conosce lo stato della postazione.
+	\item\textbf{Postcondizione:} l’utente conosce lo stato della postazione ed eventualmente il nome del dipendente che la occupa.
 \end{itemize}
 
 \subsubsection{ UC21 - Segnalazione presenza}
@@ -733,7 +733,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Attori Secondari:} tag RFID, Ethereum.
-	\item\textbf{Descrizione:} l’utente segnala in tempo reale la propria presenza alla postazione, appoggiando lo smartphone sul tag RFID. Inoltre, registra il tempo di inizio e di fine di questa azione grazie all'utilizzo di Ethereum.
+	\item\textbf{Descrizione:} l’utente segnala in tempo reale la propria presenza alla postazione, appoggiando lo smartphone sul tag RFID. Inoltre, registra il tempo di inizio e di fine di questa azione grazie all'utilizzo di Ethereum. Il primo è determinato da un timeout di un minuto in cui si lascia appoggiato lo smartphone sul tagRFID, mentre il secondo dal tempo di fine della prenotazione.
 	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tag RFID e segnala in questo modo la propria presenza.
 	Il tempo di inizio e di fine di questa azione vengono memorizzati grazie all'utilizzo di Ethereum.
 	\item\textbf{Precondizione:} l’utente si è autenticato nell'applicazione mobile e occupa una postazione.
@@ -741,9 +741,43 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Estensioni:} 
 	\begin{itemize}
 		\item[$-$] visualizzazione errore: se l'utente sposta lo smartphone dal tag RFID (ad esempio per una telefonata), dopo un timeout di qualche minuto, viene visualizzato un messaggio di errore (UC21.2);
-		\item[$-$] visualizzazione errore: se l'utente si dimentica di premere il bottone di fine occupazione della postazione, viene visualizzato un messaggio di errore (UC21.4).
+		\item[$-$] visualizzazione errore: se l'utente alza lo smartphone dal tag RFID e abbandona la postazione in modo prematuro rispetto al tempo di fine prenotazione, dopo mezzora viene visualizzato un messaggio di errore e disdetta la prenotazione per il tempo successivo (UC21.4).
 	\end{itemize}
 \end{itemize}
+
+\subsubsection{ UC - Visualizzazione lista di prenotazioni}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l'utente visualizza la lista delle prenotazioni. Ogni prenotazione contiene le seguenti informazioni:
+	\begin{itemize}
+		\item[$-$] orario di inizio prenotazione;
+		\item[$-$] orario di fine prenotazione;
+		\item[$-$] nome e cognome del dipendente che ha effettuato la prenotazione;
+	\end{itemize}
+	\item\textbf{Scenario principale:} l’utente visualizza la lista delle prenotazioni da lui effettuate.
+	\item\textbf{Precondizione:} l'utente sta navigando nella sezione della lista delle prenotazioni effettuate.
+	\item\textbf{Postcondizione:} l’utente visualizza le prenotazioni effettuate.
+\end{itemize}
+
+\subsubsection{ UC - Selezione prenotazione effettuata}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente visualizza la lista delle prenotazioni effettuate e ne seleziona una.
+	\item\textbf{Scenario principale:} l’utente seleziona una prenotazione che desidera cancellare.
+	\item\textbf{Precondizione:} l'utente sta navigando nella sezione della lista delle prenotazioni effettuate.
+	\item\textbf{Postcondizione:} l’utente seleziona una prenotazione effettuata in precedenza.
+\end{itemize}
+
+\subsubsection{ UC - Disdetta prenotazione}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente disdice una prenotazione. 
+	\item\textbf{Scenario principale:} l’utente desidera disdire una prenotazione effettuata in precedenza.
+	\item\textbf{Precondizione:} l'utente sta navigando nella sezione della lista delle prenotazioni effettuate e ne ha selezionata una.
+	\item\textbf{Postcondizione:} l’utente effettua la disdetta della prenotazione selezionata.
+\end{itemize}
+
+
 \subsubsection{ UC21.1 - Presenza in tempo reale}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
