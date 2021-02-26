@@ -737,28 +737,26 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 
 
 
+
+\subsubsection{ UC - Guida introduttiva dipendente}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l'utente riceve una guida riguardo il login e il funzionamento.
+	\item\textbf{Scenario principale:} l’utente accede alla pagina introduttiva e visualizza la guida.
+	\item\textbf{Precondizione:} il sistema è raggiungibile e funzionante, l’utente accede alla pagina iniziale del sito della piattaforma.
+	\item\textbf{Postcondizione:} il sistema fornisce all’utente, attraverso la lettura della guida, tutte le istruzioni necessarie a effettuare il login.
+\end{itemize}
+
 \subsubsection{ UC19 - Scansione tag NFC}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Attori Secondari:} tag NFC.
 	\item\textbf{Descrizione:} l’utente scansiona il tag NFC presente nella postazione per ricevere indicazioni sullo stato della stessa.
 	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tag NFC.
-	\item\textbf{Precondizione:} l’utente si è autenticato nell'applicazione mobile e accede alla sezione per la scansione del sensore.
+	\item\textbf{Precondizione:} l’utente si è autenticato nell'applicazione mobile e attiva la funzionalità di scansione NFC.
 	\item\textbf{Postcondizione:} l’utente ha effettuato correttamente la scansione.
-	\item\textbf{Estensioni:}
-	\begin{itemize}
-		\item[$-$] visualizzazione errore: lo smartphone è troppo distante dal tag NFC per effettuare correttamente la scansione (UC19.1).
-	\end{itemize}
 \end{itemize}
-\subsubsection{ UC19.1 - Visualizzazione errore scansione: tag NFC troppo distante}
-\begin{itemize}
-	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} l’utente visualizza un messaggio di errore in quanto tenta di effettuare una scansione del tag NFC, ma appoggia lo smartphone non abbastanza vicino al sensore.
-	\item\textbf{Scenario principale:} viene visualizzato un messaggio di errore che segnala che lo smartphone non è stato appoggiato in un punto abbastanza vicino
-	al tag NFC.
-	\item\textbf{Precondizione:} l’utente ha tentato di effettuare una scansione del tag NFC.
-	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore specifico.
-\end{itemize}
+
 \subsubsection{ UC20 - Visualizzazione stato postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
@@ -767,13 +765,14 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\begin{itemize}
 		\item[$-$]libera e igienizzata;
 		\item[$-$]libera e non igienizzata;
-		\item[$-$]occupata;
+		\item[$-$]prenotata;
 		\item[$-$]non accessibile.
 	\end{itemize}
-	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tag NFC e visualizza nell'applicazione mobile lo stato della postazione. Nel caso in cui quest'ultima risulta occupata, viene mostrato il nome del dipendente che la occupa. 
+	Nel caso in cui una postazione risulti prenotata, viene mostrato il nome del dipendente che ha compiuto tale azione.
+	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tag NFC e visualizza nell'applicazione mobile lo stato della postazione. 
 	\item\textbf{Precondizione:} l’utente sta navigando nella sezione per la visualizzazione dello stato della postazione e 
 	scansiona con il proprio smarthphone il tag NFC della postazione desiderata e visualizza il suo stato.
-	\item\textbf{Postcondizione:} l’utente conosce lo stato della postazione ed eventualmente il nome del dipendente che la occupa.
+	\item\textbf{Postcondizione:} l’utente conosce lo stato della postazione ed eventualmente il nome del dipendente che ha effettuato la prenotazione della stessa.
 \end{itemize}
 
 \subsubsection{ UC21 - Segnalazione presenza}
@@ -786,49 +785,13 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Attori Secondari:} tag NFC, Ethereum.
-	\item\textbf{Descrizione:} l’utente segnala in tempo reale la propria presenza alla postazione, appoggiando lo smartphone sul tag NFC. Inoltre, registra il tempo di inizio e di fine di questa azione grazie all'utilizzo di Ethereum. Il primo è determinato da un timeout di un minuto in cui si lascia appoggiato lo smartphone sul tagNFC, mentre il secondo dal tempo di fine della prenotazione.
+	\item\textbf{Descrizione:} l’utente segnala in tempo reale la propria presenza alla postazione, appoggiando lo smartphone sul tag NFC. Inoltre, registra il tempo di inizio e di fine di questa azione grazie all'utilizzo di Ethereum. Il primo è determinato da un timeout di un minuto in cui si lascia lo smartphone appoggiato sul tagNFC, mentre il secondo dal tempo di fine della prenotazione.
 	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tag NFC e segnala in questo modo la propria presenza.
 	Il tempo di inizio e di fine di questa azione vengono memorizzati grazie all'utilizzo di Ethereum.
 	\item\textbf{Precondizione:} l’utente si è autenticato nell'applicazione mobile e occupa una postazione.
 	\item\textbf{Postcondizione:} l’utente segnala in tempo reale la presenza alla postazione e registra questa azione su Ethereum.
-	\item\textbf{Estensioni:} 
-	\begin{itemize}
-		\item[$-$] visualizzazione errore: se l'utente sposta lo smartphone dal tag NFC (ad esempio per una telefonata), dopo un timeout di qualche minuto, viene visualizzato un messaggio di errore (UC21.2);
-		\item[$-$] visualizzazione errore: se l'utente alza lo smartphone dal tag NFC e abbandona la postazione in modo prematuro rispetto al tempo di fine prenotazione, dopo mezzora viene visualizzato un messaggio di errore e disdetta la prenotazione per il tempo successivo (UC21.4).
-	\end{itemize}
 \end{itemize}
 
-\subsubsection{ UC - Visualizzazione lista di prenotazioni}
-\begin{itemize}
-	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} l'utente visualizza la lista delle prenotazioni. Ogni prenotazione contiene le seguenti informazioni:
-	\begin{itemize}
-		\item[$-$] orario di inizio prenotazione;
-		\item[$-$] orario di fine prenotazione;
-		\item[$-$] nome e cognome del dipendente che ha effettuato la prenotazione;
-	\end{itemize}
-	\item\textbf{Scenario principale:} l’utente visualizza la lista delle prenotazioni da lui effettuate.
-	\item\textbf{Precondizione:} l'utente sta navigando nella sezione della lista delle prenotazioni effettuate.
-	\item\textbf{Postcondizione:} l’utente visualizza le prenotazioni effettuate.
-\end{itemize}
-
-\subsubsection{ UC - Selezione prenotazione effettuata}
-\begin{itemize}
-	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} l’utente visualizza la lista delle prenotazioni effettuate e ne seleziona una.
-	\item\textbf{Scenario principale:} l’utente seleziona una prenotazione che desidera cancellare.
-	\item\textbf{Precondizione:} l'utente sta navigando nella sezione della lista delle prenotazioni effettuate.
-	\item\textbf{Postcondizione:} l’utente seleziona una prenotazione effettuata in precedenza.
-\end{itemize}
-
-\subsubsection{ UC - Disdetta prenotazione}
-\begin{itemize}
-	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} l’utente disdice una prenotazione. 
-	\item\textbf{Scenario principale:} l’utente desidera disdire una prenotazione effettuata in precedenza.
-	\item\textbf{Precondizione:} l'utente sta navigando nella sezione della lista delle prenotazioni effettuate e ne ha selezionata una.
-	\item\textbf{Postcondizione:} l’utente effettua la disdetta della prenotazione selezionata.
-\end{itemize}
 
 
 \subsubsection{ UC21.1 - Presenza in tempo reale}
@@ -840,43 +803,49 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Precondizione:} l’utente occupa una postazione e ha attivato nel proprio smartphone la possibilità di effettuare scansioni con tag NFC.
 	\item\textbf{Postcondizione:} l’utente segnala in tempo reale la presenza alla postazione.
 \end{itemize}
-\subsubsection{ UC21.2 - Visualizzazione errore spostamento smartphone}
-\begin{itemize}
-	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} l’utente visualizza un messaggio di errore in quanto sposta lo smartphone dal tag NFC.
-	\item\textbf{Scenario principale:} viene visualizzato un messaggio di errore che consiglia di riposizionare lo smartphone correttamente sul tag NFC.
-	\item\textbf{Precondizione:} l’utente sposta il proprio smartphone dal tag NFC.
-	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore specifico.
-\end{itemize}
+
+
 \subsubsection{ UC21.3 - Registrazione presenza}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Attori Secondari:} Ethereum.
 	\item\textbf{Descrizione:} l’utente registra l'inizio e la fine della propria occupazione della postazione.
-	\item\textbf{Scenario principale:} l’utente sta navigando nella sezione della segnalazione della presenza e preme i bottoni di inizio e fine occupazione della postazione,
-	nei corrispondenti momenti. Questa azione viene registrata grazie a Ethereum.
-	\item\textbf{Precondizione:} l’utente occupa una postazione e preme i bottoni di inizio e fine dell'occupazione della postazione.
+	\item\textbf{Scenario principale:} l'utente registra il tempo di inizio e di fine dell'occupazione di una postazione in modo automatico, grazie all'utilizzo di Ethereum. Il primo è determinato da un timeout di un minuto in cui si lascia lo smartphone appoggiato sul tagNFC, mentre il secondo dal tempo di fine della prenotazione.
+	\item\textbf{Precondizione:} l’utente occupa una postazione e appoggia correttamente lo smartphone sul tag NFC. 
 	\item\textbf{Postcondizione:} l'azione della precondizione viene registrata.
-\end{itemize}
-\subsubsection{ UC21.4 - Visualizzazione errore fine occupazione}
-\begin{itemize}
-	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} l’utente visualizza un messaggio di errore in quanto si dimentica di segnalare la fine dell'occupazione della postazione.
-	\item\textbf{Scenario principale:} dopo 30 minuti, viene visualizzato un messaggio di errore in cui si notifica
-	all'utente la fine della sua occupazione della postazione.
-	\item\textbf{Precondizione:} l’utente non preme il bottone per la fine dell'occupazione della postazione.
-	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore specifico.
+	\item\textbf{Estensioni:} 
+	\begin{itemize}
+		\item[$-$] visualizzazione errore fine occupazione: se l'utente alza lo smartphone dal tag NFC e abbandona la postazione in modo prematuro rispetto al tempo di fine prenotazione, dopo mezzora viene visualizzato un messaggio di errore e avviene la disdetta automatica della prenotazione per il tempo rimanente (UC).
+	\end{itemize}
 \end{itemize}
 
-\subsubsection{ UC22 - Avviso indisponibilità postazione prenotata }
+\subsubsection{ UC - Visualizzazione errore fine prematura occupazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Attori Secondari:}
-	\item\textbf{Descrizione:} il dipendente che ha una prenotazione per una postazione viene avvisato nel caso la postazione non sia più disponibile
-	\item\textbf{Scenario principale:} il dipente riceve una notifica che lo avvisa dell'indisponibilità di una postazione prenotata.
-	\item\textbf{Precondizione:} l’utente è autenticato nell'applicazione mobile e ha almeno una postazione prenotata.
-	\item\textbf{Postcondizione:} l'utente riceve una notifica che lo avvisa dell'indisponibilità di una delle postazioni che ha prenotato.
+	\item\textbf{Descrizione:} l’utente visualizza un messaggio di errore in quanto sposta lo smartphone dal tag NFC, durante l'orario di prenotazione della postazione.
+	\item\textbf{Scenario principale:} viene visualizzato un messaggio di errore e avviene la disdetta automatica della prenotazione per il tempo restante.
+	\item\textbf{Precondizione:} l’utente sposta il proprio smartphone dal tag NFC per un periodo di tempo maggiore o uguale a trenta minuti, oppure non si presenta alla postazione sempre entro lo stesso periodo di tempo, rispetto all'orario di inizio prenotazione. 
+	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore specifico e avviene la disdetta automatica della prenotazione per il tempo rimanente.
 \end{itemize}
+
+\subsubsection{ UC - Visualizzazione messaggio inizio occupazione}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente visualizza un messaggio di inizio della prenotazione, un'ora prima che essa avvenga.
+	\item\textbf{Scenario principale:} viene visualizzato un promemoria di inizio della prenotazione.
+	\item\textbf{Precondizione:} l’utente ha effettuato una prenotazione almeno un'ora prima dell'inizio della stessa.
+	\item\textbf{Postcondizione:} viene visualizzato un messaggio di inizio occupazione della postazione.
+\end{itemize}
+
+\subsubsection{ UC - Visualizzazione messaggio fine occupazione}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente visualizza un messaggio di fine della prenotazione, cinque minuti prima che essa avvenga.
+	\item\textbf{Scenario principale:} viene visualizzato un promemoria di fine della prenotazione.
+	\item\textbf{Precondizione:} l’utente ha effettuato una prenotazione.
+	\item\textbf{Postcondizione:} viene visualizzato un messaggio di fine occupazione della postazione.
+\end{itemize}
+
 \subsubsection{ UC23 - Pulizia autonoma}
 \begin{figure}[H]
 	\centering
@@ -888,7 +857,8 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Attori Secondari:} Ethereum.
 	\item\textbf{Descrizione:} l’utente pulisce in autonomia la postazione e lo segnala sull'applicazione mobile. Inoltre, 
-	registra di aver effettuato questa azione, grazie all'utilizzo di Ethereum.	\item\textbf{Scenario principale:} l’utente dopo aver igienizzato la postazione con il kit aziendale, modifica lo stato della postazione in libera e igienizzata. Inoltre, 
+	registra di aver effettuato questa azione, grazie all'utilizzo di Ethereum.	
+	\item\textbf{Scenario principale:} l’utente dopo aver igienizzato la postazione con il kit aziendale, modifica lo stato della postazione in libera e igienizzata. Inoltre, 
 	registra di aver effettuato questa azione, grazie all'utilizzo di Ethereum.
 	\item\textbf{Precondizione:} l’utente è autenticato nell'applicazione mobile, ha igienizzato la propria postazione e sta navigando nella sezione per la pulizia 
 	autonoma della postazione.
@@ -936,6 +906,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item[$-$] l’utente inserisce la data (UC24.1.1);
 		\item[$-$] l’utente inserisce l'orario (UC24.1.3);
 		\item[$-$] l’utente inserisce l'identificativo della stanza (UC24.1.5).
+		\item[$-$] l’utente inserisce in modo opzionale il nome e il cognome del collega a cui si vuole sedere vicino (UC).
 	\end{itemize}
 	\item\textbf{Precondizione:} l’utente sta navigando nella sezione dell'applicazione dedicata alla ricerca di una postazione.
 	\item\textbf{Postcondizione:} l’utente inserisce i campi necessari alla ricerca della postazione desiderata.
@@ -1015,12 +986,38 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Precondizione:} l’utente ha compilato il campo per la stanza.
 	\item\textbf{Postcondizione:} l’utente visualizza un messaggio di errore specifico e non porta a termine l’azione.
 \end{itemize}
+
+\subsubsection{ UC24.1.3 - Inserimento nome dipendente }
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente sta cercando una postazione disponibile e deve compilare il campo nome e cognome del dipendente a cui si vuole sedere vicino e che ha già effettuato una prenotazione.
+	\item\textbf{Scenario principale:} l’utente ha compilato il campo nome e cognome.
+	\item\textbf{Precondizione:} l’utente sta compilando il campo opzionale per effettuare la ricerca.
+	\item\textbf{Postcondizione:} l’utente ha compilato il campo richiesto.
+	\item\textbf{Estensioni:} l’utente inserisce i campi necessari alla ricerca della postazione desiderata.
+	\begin{itemize}
+		\item[$-$] l’utente inserisce una nome non valido (UC).
+	\end{itemize}
+\end{itemize}
+\subsubsection{ UC24.1.4 - Visualizzazione errore: nome dipendente non valido }
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente ha compilato un campo per il nome e il cognome del dipendente a cui si vuole sedere vicino, ma è in un formato non corretto.
+	\item\textbf{Scenario principale:} 
+	\begin{itemize}
+		\item[$-$] l’utente ha inserito il campo per il nome e il cognome;
+		\item[$-$] il sistema elabora la richiesta;
+		\item[$-$] viene visualizzato un errore che segnala che  il nome e il cognome non sono validi.
+	\end{itemize}
+	\item\textbf{Precondizione:} l’utente ha compilato il campo per il nome e il cognome.
+	\item\textbf{Postcondizione:} l’utente visualizza un messaggio di errore specifico e non porta a termine l’azione.
+\end{itemize}
 \subsubsection{ UC24.2 - Visualizzazione postazioni  }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente visualizza le postazioni con colori diversi in base allo stato. L'identificativo di una postazione è costituito da una lettera seguita da un numero (ad esempio: D10). 
 	\item\textbf{Scenario principale:} viene visualizzato lo schema delle postazioni, rappresentato con colori diversi in base allo stato in cui si trovano.
-	\item\textbf{Precondizione:} l’utente ha inserito i campi data, orario e stanza correttamente e premuto il bottone di ricerca, nella sezione 
+	\item\textbf{Precondizione:} l’utente ha inserito i campi data, orario, stanza e in modo opzionale nome e cognome, correttamente e premuto il bottone di ricerca, nella sezione 
 	medesima.
 	\item\textbf{Postcondizione:} l’utente visualizza le postazioni nella stanza.
 	\item\textbf{Estensioni:}
@@ -1075,6 +1072,80 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item[$-$] nel caso in cui l'utente scelga di prenotare una postazione libera e sporca si veda UC23, per poi tornare allo scenario principale (24.7).
 	\end{itemize}
 \end{itemize}
+
+\subsubsection{ UC - Prenotazione postazione automatica}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente dopo aver scansionato con il proprio smartphone il tag NFC per un tempo maggiore o uguale ad un minuto, prenota in modo automatico la postazione per l'intera giornata lavorativa. 
+	\item\textbf{Scenario principale:} l’utente dopo aver scansionato con il proprio smartphone il tag NFC per un tempo maggiore o uguale ad un minuto, prenota in modo automatico la postazione per l'intera giornata lavorativa. Lo stato della postazione deve essere libera e igienizzata, e non prenotata durante il resto della giornata.
+	\item\textbf{Precondizione:} l'utente lascia il telefono appoggiato al tag NFC di una postazione libera, più di un minuto.
+	\item\textbf{Postcondizione:} l'utente prenota in modo automatico la postazione.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] nel caso in cui l'utente scansiona per più di un minuto una postazione libera e non igienizzata si veda UC, per poi tornare allo scenario principale (24.7).
+		\item[$-$] nel caso in cui l'utente scansiona per più di un minuto una postazione prenotata, viene emesso un segnale sonoro.
+		\item[$-$] nel caso in cui l'utente scansiona per più di un minuto una postazione libera e igienizzata, ma prenotata in un determinato momento successivo della giornata, questa viene prenotata fino all'inizio della prenotazione successiva.
+	\end{itemize}
+\end{itemize}
+\subsubsection{ UC - Emissione messaggio errore sonoro: postazione occupata}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l'utente sta scansionando per più di un minuto il tag NFC di una postazione prenotata, per cui viene emesso un segnale sonoro per farlo allontanare.
+	\item\textbf{Scenario principale:} l’utente scansiona per più di un minuto il tag NFC di una postazione prenotata da un altro utente in precedenza.
+	\item\textbf{Precondizione:} l'utente scansiona per più di un minuto una postazione prenotata.
+	\item\textbf{Postcondizione:} viene emesso un segnale sonoro.
+\end{itemize}
+
+\subsubsection{ UC - Postazione prenotata massimo tempo disponibile}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l'utente sta scansionando per più di un minuto una postazione libera e igienizzata, ma prenotata in un determinato momento successivo della giornata. Quindi quest'ultima viene prenotata fino all'inizio della prenotazione successiva, che equivale al massimo tempo disponibile.
+	\item\textbf{Scenario principale:} l'utente scansiona per più di un minuto il tag NFC di una postazione prenotata nelle ore successive.
+	\item\textbf{Precondizione:} l'utente scansiona il tag NFC di una postazione prenotata nelle ore successive della giornata lavorativa.
+	\item\textbf{Postcondizione:} l'utente prenota in modo automatico una postazione fino all'inizio della prenotazione successiva.
+\end{itemize}
+
+\subsubsection{ UC - Visualizzazione lista prenotazioni}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l'utente visualizza la lista delle prenotazioni effettuate in precedenza. Ogni prenotazione contiene le seguenti informazioni:
+	\begin{itemize}
+		\item[$-$] orario di inizio prenotazione;
+		\item[$-$] orario di fine prenotazione;
+		\item[$-$] nome e cognome del dipendente che ha effettuato la prenotazione;
+	\end{itemize}
+	\item\textbf{Scenario principale:} l’utente visualizza la lista delle prenotazioni da lui effettuate.
+	\item\textbf{Precondizione:} l'utente sta navigando nella sezione della lista delle prenotazioni effettuate.
+	\item\textbf{Postcondizione:} l’utente visualizza le prenotazioni effettuate.
+\end{itemize}
+
+\subsubsection{ UC - Selezione prenotazione effettuata}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente visualizza la lista delle prenotazioni effettuate e ne seleziona una.
+	\item\textbf{Scenario principale:} l’utente seleziona una prenotazione che desidera cancellare.
+	\item\textbf{Precondizione:} l'utente sta navigando nella sezione della lista delle prenotazioni effettuate.
+	\item\textbf{Postcondizione:} l’utente seleziona una prenotazione effettuata in precedenza.
+\end{itemize}
+
+\subsubsection{ UC - Disdetta prenotazione}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente disdice una prenotazione. 
+	\item\textbf{Scenario principale:} l’utente disdice una prenotazione da lui effettuata in precedenza.
+	\item\textbf{Precondizione:} l'utente sta navigando nella sezione della lista delle prenotazioni effettuate e ne ha selezionata una.
+	\item\textbf{Postcondizione:} l’utente effettua la disdetta della prenotazione selezionata.
+\end{itemize}
+
+\subsubsection{ UC22 - Avviso indisponibilità postazione prenotata }
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} il dipendente che ha una prenotazione per una postazione viene avvisato nel caso la postazione non sia più disponibile.
+	\item\textbf{Scenario principale:} il dipente riceve una notifica che lo avvisa dell'indisponibilità di una postazione prenotata.
+	\item\textbf{Precondizione:} l’utente è autenticato nell'applicazione mobile e ha almeno una postazione prenotata.
+	\item\textbf{Postcondizione:} l'utente riceve una notifica che lo avvisa dell'indisponibilità di una delle postazioni che ha prenotato.
+\end{itemize}
+
 
 
 \subsubsection{ UC - Avviso pre-prenotazione }
