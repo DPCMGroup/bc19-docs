@@ -169,10 +169,52 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente non è autenticato nel sistema.
 \end{itemize}
 
-\subsubsection{ UC7 - Visualizzazione stanze e postazioni}
+\subsubsection{ UC7 - Guida amministratore}
+\begin{itemize}
+	\item\textbf{Attori Primari:} 
+	amministratore.
+	\item\textbf{Descrizione:} 
+	l'amministratore ottiene una guida completa delle varie funzionalità.
+	\item\textbf{Scenario principale:} 
+	l'utente autenticato preme un pulsante per ottenere la guida completa.
+	\item\textbf{Precondizione:} 
+	l'utente è autenticato nel sistema come amministratore e vuole ottenere una guida.
+	\item\textbf{Postcondizione:}
+	l'utente può leggere la guida.
+\end{itemize}
+
+\subsubsection{ UC8 - Guida dipendente}
+\begin{itemize}
+	\item\textbf{Attori Primari:} 
+	dipendente.
+	\item\textbf{Descrizione:} 
+	il dipendente ottiene una guida completa delle varie funzionalità.
+	\item\textbf{Scenario principale:} 
+	l'utente autenticato preme un pulsante per ottenere la guida completa.
+	\item\textbf{Precondizione:} 
+	l'utente è autenticato nel sistema come dipendente e vuole ottenere una guida.
+	\item\textbf{Postcondizione:}
+	l'utente può leggere la guida.
+\end{itemize}
+
+\subsubsection{ UC9 - Guida addetto alle pulizie}
+\begin{itemize}
+	\item\textbf{Attori Primari:} 
+	addetto alle pulizie.
+	\item\textbf{Descrizione:} 
+	l'addetto alle pulizie ottiene una guida completa delle varie funzionalità.
+	\item\textbf{Scenario principale:} 
+	l'utente autenticato preme un pulsante per ottenere la guida completa.
+	\item\textbf{Precondizione:} 
+	l'utente è autenticato nel sistema come addetto alle pulizie e vuole ottenere una guida.
+	\item\textbf{Postcondizione:}
+	l'utente può leggere la guida.
+\end{itemize}
+
+\subsubsection{ UC10 - Visualizzazione stanze e postazioni}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=15cm]{res/images/UC7.png}
+	\includegraphics[width=15cm]{res/images/UC10.png}
 	\caption{Gestione credenziali}
 	\label{fig:stati postazioni}
 \end{figure}
@@ -200,7 +242,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \end{itemize}
 
 
-\subsubsection{ UC8 - Visualizzazione a calendario delle postazioni prenotate}
+\subsubsection{ UC11 - Visualizzazione a calendario delle postazioni prenotate}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -214,7 +256,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'amministratore visualizza il calendario delle prenotazioni delle postazioni.
 \end{itemize}
 
-\subsubsection{ UC9 - Creazione di una stanza}
+\subsubsection{ UC12 - Creazione di una stanza}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -228,7 +270,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	Se non è gia presente una stanza con il codice inserito, essa viene creata e la sua configurazione viene inviata a Ethereum per essere salvata.
 	\item\textbf{Estensione:}
 	\begin{itemize}
-		\item UC9.1 - Avviso nome stanza già utilizzato
+		\item UC12.1 - Avviso nome stanza già utilizzato
 	\end{itemize}
 	
 	\item\textbf{Precondizione:} 
@@ -237,7 +279,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	è stata aggiunta una stanza vuota con le caratteristiche specificate.
 \end{itemize}
 
-\subsubsection{ UC9.1 - Avviso nome stanza già utilizzato}
+\subsubsection{ UC12.1 - Avviso nome stanza già utilizzato}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -252,7 +294,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza il messaggio d'errore.
 \end{itemize}
 
-\subsubsection{ UC10 - Eliminazione di una stanza}
+\subsubsection{ UC13 - Eliminazione di una stanza}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -268,7 +310,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	è stata eliminata la stanza specificata, con tutte le postazioni al suo interno.
 \end{itemize}
 
-\subsubsection{UC11 - Modifica di una stanza}
+\subsubsection{UC14 - Modifica di una stanza}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -278,7 +320,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente preme un pulsante per la modifica di una stanza. Gli viene chiesto di inserire il nuovo nome e di confermare la modifica. La stanza ha ora il nome aggiornato.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] UC9.1 - Avviso nome stanza già utilizzato
+		\item[$-$] UC12.1 - Avviso nome stanza già utilizzato
 	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato.
@@ -286,7 +328,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	il codice della stanza selezionata è stato modificato.
 \end{itemize}
 
-\subsubsection{UC12 - Impostazione di una stanza come inaccessibile.}
+\subsubsection{UC15 - Impostazione di una stanza come inaccessibile.}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -300,7 +342,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	il codice della stanza selezionata è stato modificato.
 \end{itemize}
 
-\subsubsection{UC13 - Creazione di una postazione}
+\subsubsection{UC16 - Creazione di una postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -318,9 +360,9 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	L'amministratore preme un bottone per la conferma dei dati e la postazione viene aggiunta all'interno della stanza. La nuova configurazione della stanza viene comunicata a Ethereum.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] Avviso codice postazione già utilizzato (UC13.1);
-		\item[$-$] Avviso codice tag già utilizzato (UC13.2);
-		\item[$-$] Avviso posizione già occupata (UC13.3).
+		\item[$-$] Avviso codice postazione già utilizzato (UC16.1);
+		\item[$-$] Avviso codice tag già utilizzato (UC16.2);
+		\item[$-$] Avviso posizione già occupata (UC16.3).
 	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato.
@@ -328,7 +370,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	è stata inserita una nuova postazione all'interno di una stanza.
 \end{itemize}
 
-\subsubsection{UC13.1 - Avviso codice postazione già utilizzato}
+\subsubsection{UC16.1 - Avviso codice postazione già utilizzato}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -343,7 +385,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza il messaggio d'errore.
 \end{itemize}
 
-\subsubsection{UC13.2 - Avviso codice tag già utilizzato}
+\subsubsection{UC16.2 - Avviso codice tag già utilizzato}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -358,7 +400,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza il messaggio d'errore.
 \end{itemize}
 
-\subsubsection{UC13.3 - Avviso posizione già occupata}
+\subsubsection{UC16.3 - Avviso posizione già occupata}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -373,7 +415,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza il messaggio d'errore.
 \end{itemize}
 
-\subsubsection{UC14 - Eliminazione di una postazione}
+\subsubsection{UC17 - Eliminazione di una postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -389,7 +431,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	una postazione è stata eliminata.
 \end{itemize}
 
-\subsubsection{ UC15 - Modifica di una postazione}
+\subsubsection{ UC18 - Modifica di una postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -401,9 +443,9 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente preme sul pulsante per la modifica di una postazione. Gli vengono richiesti i nuovi dati da inserire e la nuova posizione della postazione. Il sistema invia i nuovi dati a Ethereum.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] Avviso codice postazione già utilizzato (UC13.1);
-		\item[$-$] Avviso codice tag già utilizzato (UC13.2);
-		\item[$-$] Avviso posizione già occupata (UC13.3).
+		\item[$-$] Avviso codice postazione già utilizzato (UC16.1);
+		\item[$-$] Avviso codice tag già utilizzato (UC16.2);
+		\item[$-$] Avviso posizione già occupata (UC16.3).
 	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
@@ -412,10 +454,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \end{itemize}
 
 
-\subsubsection{ UC16 - Gestione credenziali}
+\subsubsection{ UC19 - Gestione credenziali}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=15cm]{res/images/UC16.png}
+	\includegraphics[width=15cm]{res/images/UC19.png}
 	\caption{Gestione credenziali}
 	\label{fig:Gestione credenziali}
 \end{figure}
@@ -432,7 +474,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	l'utente ha visualizzato, creato, modificato oppure eliminato credenziali.
 \end{itemize}
 
-\subsubsection{ UC16.1 - Visualizzazione lista credenziali}
+\subsubsection{ UC19.1 - Visualizzazione lista credenziali}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -446,7 +488,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza la lista delle credenziali.
 \end{itemize}
 
-\subsubsection{ UC16.2 - Creazione di una credenziale}
+\subsubsection{ UC19.2 - Creazione di una credenziale}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -469,7 +511,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente ha creato una nuova credenziale.
 \end{itemize}
 
-\subsubsection{ UC16.3 - Modifica di una credenziale}
+\subsubsection{ UC19.3 - Modifica di una credenziale}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -492,7 +534,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente ha modificato un profilo utente.
 \end{itemize}
 
-\subsubsection{ UC16.4 - Eliminazione di una credenziale}
+\subsubsection{ UC19.4 - Eliminazione di una credenziale}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -508,7 +550,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	le credenziali selezionate non sono più presenti nel sistema.
 \end{itemize}
 
-\subsubsection{ UC17 - Esplorazione occupazioni delle postazioni}
+\subsubsection{ UC20 - Esplorazione occupazioni delle postazioni}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -522,7 +564,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza le informazioni.
 \end{itemize}
 
-\subsubsection{ UC17.1 - Ottenimento report delle postazioni occupate da uno specifico utente}
+\subsubsection{ UC20.1 - Ottenimento report delle postazioni occupate da uno specifico utente}
 \begin{itemize}
            	\item\textbf{Attori Primari:} 
            	amministratore.
@@ -537,7 +579,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	l'utente visualizza le informazioni.
 \end{itemize}
 
-\subsubsection{ UC17.1.1 - Ricerca tra le postazioni occupate da uno specifico utente}
+\subsubsection{ UC20.1.1 - Ricerca tra le postazioni occupate da uno specifico utente}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -555,7 +597,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza le informazioni specificate dalla sua ricerca.
 \end{itemize}
 
-\subsubsection{ UC17.1.2 - Ottenimento report delle occupazioni di uno specifico utente con indicazione delle ore trascorse a ogni postazione}
+\subsubsection{ UC20.1.2 - Ottenimento report delle occupazioni di uno specifico utente con indicazione delle ore trascorse a ogni postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -570,7 +612,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza le informazioni.
 \end{itemize}
 
-\subsubsection{ UC17.2 - Ottenimento report degli utenti che hanno occupato una specifica postazione}
+\subsubsection{ UC20.2 - Ottenimento report degli utenti che hanno occupato una specifica postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -585,7 +627,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza le informazioni specificate dalla sua ricerca.
 \end{itemize}
 
-\subsubsection{ UC17.2.1 - Ricerca tra le occupazioni di una specifica postazione}
+\subsubsection{ UC20.2.1 - Ricerca tra le occupazioni di una specifica postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -603,7 +645,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza le informazioni specificate dalla sua ricerca.
 \end{itemize}
 
-\subsubsection{ UC17.3 - Scaricamento del report delle occupazioni in un formato leggibile}
+\subsubsection{ UC20.3 - Scaricamento del report delle occupazioni in un formato leggibile}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -617,7 +659,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente ha scaricato il report.
 \end{itemize}
 
-\subsubsection{ UC17.3.1 - Scaricamento del report delle occupazioni in formato PDF}
+\subsubsection{ UC20.3.1 - Scaricamento del report delle occupazioni in formato PDF}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -627,7 +669,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'amministratore preme un pulsante per lo scaricamento del report che sta visualizzando in formato PDF.
 	\item\textbf{Generalizzazione:}
 	\begin{itemize}
-		\item[$-$] scaricamento del report delle occupazioni in un formato leggibile (UC18.3).
+		\item[$-$] scaricamento del report delle occupazioni in un formato leggibile (UC20.3).
 	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente sta visualizzando un report.
@@ -636,7 +678,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \end{itemize}
 
 
-\subsubsection{ UC18 - Report sanificazioni postazione}
+\subsubsection{ UC21 - Report sanificazioni postazione}
 \begin{itemize}
            	\item\textbf{Attori Primari:} 
            	amministratore.
@@ -655,7 +697,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	l'utente visualizza le informazioni.
 \end{itemize}
 
-\subsubsection{ UC18.1 - Scaricamento del report delle igienizzazioni in un formato leggibile}
+\subsubsection{ UC21.1 - Scaricamento del report delle igienizzazioni in un formato leggibile}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -669,7 +711,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente ha scaricato il report.
 \end{itemize}
 
-\subsubsection{ UC18.1.1 - Scaricamento del report delle igienizzazioni in formato PDF}
+\subsubsection{ UC21.1.1 - Scaricamento del report delle igienizzazioni in formato PDF}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -679,13 +721,15 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'amministratore preme un pulsante per lo scaricamento del report che sta visualizzando.
 	\item\textbf{Generalizzazione:}
 	\begin{itemize}
-		\item[$-$] scaricamento del report delle igienizzazioni in un formato leggibile (UC19.1).
+		\item[$-$] scaricamento del report delle igienizzazioni in un formato leggibile (UC21.1).
 	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente sta visualizzando un report.
 	\item\textbf{Postcondizione:}
 	l'utente ha scaricato il report.
 \end{itemize}
+
+
 
 
 
