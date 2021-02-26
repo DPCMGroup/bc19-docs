@@ -1077,25 +1077,25 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \end{itemize}
 
 
-\subsection{ UC - Avviso pre-prenotazione }
+\subsubsection{ UC - Avviso pre-prenotazione }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} 
-	\item\textfb{Scenario Principale:} un'ora prima dell'inizio della prossima prenotazione il dipendente riceve un notifica dall'applicazione che gli indica l'imminenza dell'evento.
+	\item\textbf{Descrizione:} il dipendente viene avvisato dell'imminte inizio di una sua prenotazione.
+	\item\textbf{Scenario Principale:} un'ora prima dell'inizio della prossima prenotazione il dipendente riceve un notifica dall'applicazione che gli indica l'imminenza dell'evento.
 	\item\textbf{Precondizione:} il dipendente ha una prenotazione su una postazione.
 	\item\textbf{Postcondizione:} il dipendente è stato avvisato tramite notifica dell'imminenza di una sua prenotazione.
 \end{itemize}
 
 
-\subsection{ UC - Avviso disdetta automatica prenotazione }
+\subsubsection{ UC - Avviso disdetta automatica prenotazione }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} 
-	\item\textfb{Scenario Principale:} 30 minuti dopo l'inizio della prenotazione, se l'utente non ha ancora appoggiato il telefono sul tag NFC:
-	\begin{enumrate}
-		\item la sua prenotazione viene disdetta
-		\item l'utente viene avvisato della disdetta tramite una notifica dell'applicazione
-	\end{itemize}
+	\item\textbf{Descrizione:} il dipendente viene avvisato della disdetta automatica di una sua prenotazione.
+	\item\textbf{Scenario Principale:} 30 minuti dopo l'inizio della prenotazione, se l'utente non ha ancora appoggiato il telefono sul tag NFC:
+	\begin{enumerate}
+		\item la sua prenotazione viene disdetta;
+		\item l'utente viene avvisato della disdetta tramite una notifica dell'applicazione.
+	\end{enumerate}
 	\item\textbf{Precondizione:} il dipendente ha una prenotazione su una postazione.
 	\item\textbf{Postcondizione:} il dipendente è stato avvisato tramite notifica della disdetta automatica della sua prenotazione.
 \end{itemize}
