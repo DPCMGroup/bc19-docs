@@ -1077,17 +1077,17 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \end{itemize}
 
 
-\subsubsection{ UC - Avviso pre-prenotazione }
+\subsubsection{ UC - Avviso pre-inizio prenotazione }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} il dipendente viene avvisato dell'imminte inizio di una sua prenotazione.
-	\item\textbf{Scenario Principale:} un'ora prima dell'inizio della prossima prenotazione il dipendente riceve un notifica dall'applicazione che gli indica l'imminenza dell'evento.
+	\item\textbf{Scenario Principale:} 1 ora prima dell'inizio della prossima prenotazione il dipendente riceve un notifica dall'applicazione che gli indica l'imminenza dell'evento.
 	\item\textbf{Precondizione:} il dipendente ha una prenotazione su una postazione.
 	\item\textbf{Postcondizione:} il dipendente è stato avvisato tramite notifica dell'imminenza di una sua prenotazione.
 \end{itemize}
 
 
-\subsubsection{ UC - Avviso disdetta automatica prenotazione }
+\subsubsection{ UC - Avviso disdetta automatica prenotazione per ritardo }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} il dipendente viene avvisato della disdetta automatica di una sua prenotazione.
@@ -1100,6 +1100,27 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} il dipendente è stato avvisato tramite notifica della disdetta automatica della sua prenotazione.
 \end{itemize}
 
+\subsubsection{ UC - Avviso pre-fine prenotazione}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} il dipendente viene avvisato dell'imminente fine della prenotazione della postazione che sta occupando.
+	\item\textbf{Scenario Principale:} 5 minuti prima della fine della prenotazione di cui sta usufruendo, il dipendente riceve un notifica dall'applicazione che gli indica l'imminenza dell'evento.
+	\item\textbf{Precondizione:} il dipendente sta occupando una postazione.
+	\item\textbf{Postcondizione:} il dipendente è stato avvisato tramite notifica dell'imminenza della fine della sua prenotazione.
+\end{itemize}
+
+\subsubsection{ UC - Avviso fine occupazione per assenza prolungata}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} se il telefono del dipendente rimane non appoggiato al tag NFC della postazione, l'occupazione viene terminata e l'utente ne viene avvisato.
+	\item\textbf{Scenario Principale:} se il dipendente ha tenuto il telefono non appoggiato al tag per 30 minuti:
+	\begin{enumerate}
+		\item la sua occupazione viene terminata;
+		\item egli viene avvisato della fine dell'occupazione.
+	\end{enumerate}
+	\item\textbf{Precondizione:} il dipendente stava occupando un postazione ma ha sollevato il telefono dal tag NFC.
+	\item\textbf{Postcondizione:} l'occupazione del dipendente è stata chiusa ed egli ne è stato avvisato.
+\end{itemize}
 
 \subsubsection{ UC25 - Elenco stanze e postazioni da igienizzare}
 \begin{figure}[H]
