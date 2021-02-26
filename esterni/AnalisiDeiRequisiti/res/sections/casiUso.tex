@@ -1075,6 +1075,32 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item[$-$] nel caso in cui l'utente scelga di prenotare una postazione libera e sporca si veda UC23, per poi tornare allo scenario principale (24.7).
 	\end{itemize}
 \end{itemize}
+
+
+\subsection{ UC - Avviso pre-prenotazione }
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} 
+	\item\textfb{Scenario Principale:} un'ora prima dell'inizio della prossima prenotazione il dipendente riceve un notifica dall'applicazione che gli indica l'imminenza dell'evento.
+	\item\textbf{Precondizione:} il dipendente ha una prenotazione su una postazione.
+	\item\textbf{Postcondizione:} il dipendente è stato avvisato tramite notifica dell'imminenza di una sua prenotazione.
+\end{itemize}
+
+
+\subsection{ UC - Avviso disdetta automatica prenotazione }
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} 
+	\item\textfb{Scenario Principale:} 30 minuti dopo l'inizio della prenotazione, se l'utente non ha ancora appoggiato il telefono sul tag NFC:
+	\begin{enumrate}
+		\item la sua prenotazione viene disdetta
+		\item l'utente viene avvisato della disdetta tramite una notifica dell'applicazione
+	\end{itemize}
+	\item\textbf{Precondizione:} il dipendente ha una prenotazione su una postazione.
+	\item\textbf{Postcondizione:} il dipendente è stato avvisato tramite notifica della disdetta automatica della sua prenotazione.
+\end{itemize}
+
+
 \subsubsection{ UC25 - Elenco stanze e postazioni da igienizzare}
 \begin{figure}[H]
 		\centering
