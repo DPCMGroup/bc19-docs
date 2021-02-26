@@ -29,7 +29,7 @@ Si riferisce a un utente che si è autenticato nel sistema con il ruolo di dipen
 Si riferisce a un utente che si è autenticato nel sistema con il ruolo di addetto alle pulizie.\\
 
 \subsubsection{Attori secondari}
-\textbf{Tag RFID}\\
+\textbf{Tag NFC}\\
 Si riferisce ai tag presenti sulle postazioni. Ogni tag è assegnato a una postazione e permette di identificarla digitalmente.\\
 \\
 \textbf{Ethereum}\\
@@ -356,7 +356,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'amministratore preme un pulsante per aggiungere una nuova postazione. Gli viene chiesto di inserire i seguenti campi:
 	\begin{itemize}
 		\item[$-$] codice della postazione;
-		\item[$-$] codice del tag RFID che identifica la postazione.
+		\item[$-$] codice del tag NFC che identifica la postazione.
 	\end{itemize}
 	inoltre gli viene chiesto di indicare la posizione della postazione su una scacchiera rappresentante la stanza.
 	L'amministratore preme un bottone per la conferma dei dati e la postazione viene aggiunta all'interno della stanza. La nuova configurazione della stanza viene comunicata a Ethereum.
@@ -737,42 +737,42 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 
 
 
-\subsubsection{ UC19 - Scansione tag RFID}
+\subsubsection{ UC19 - Scansione tag NFC}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Attori Secondari:} tag RFID.
-	\item\textbf{Descrizione:} l’utente scansiona il tag RFID presente nella postazione per ricevere indicazioni sullo stato della stessa.
-	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tag RFID.
+	\item\textbf{Attori Secondari:} tag NFC.
+	\item\textbf{Descrizione:} l’utente scansiona il tag NFC presente nella postazione per ricevere indicazioni sullo stato della stessa.
+	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tag NFC.
 	\item\textbf{Precondizione:} l’utente si è autenticato nell'applicazione mobile e accede alla sezione per la scansione del sensore.
 	\item\textbf{Postcondizione:} l’utente ha effettuato correttamente la scansione.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] visualizzazione errore: lo smartphone è troppo distante dal tag RFID per effettuare correttamente la scansione (UC19.1).
+		\item[$-$] visualizzazione errore: lo smartphone è troppo distante dal tag NFC per effettuare correttamente la scansione (UC19.1).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC19.1 - Visualizzazione errore scansione: tag RFID troppo distante}
+\subsubsection{ UC19.1 - Visualizzazione errore scansione: tag NFC troppo distante}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} l’utente visualizza un messaggio di errore in quanto tenta di effettuare una scansione del tag RFID, ma appoggia lo smartphone non abbastanza vicino al sensore.
+	\item\textbf{Descrizione:} l’utente visualizza un messaggio di errore in quanto tenta di effettuare una scansione del tag NFC, ma appoggia lo smartphone non abbastanza vicino al sensore.
 	\item\textbf{Scenario principale:} viene visualizzato un messaggio di errore che segnala che lo smartphone non è stato appoggiato in un punto abbastanza vicino
-	al tag RFID.
-	\item\textbf{Precondizione:} l’utente ha tentato di effettuare una scansione del tag RFID.
+	al tag NFC.
+	\item\textbf{Precondizione:} l’utente ha tentato di effettuare una scansione del tag NFC.
 	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore specifico.
 \end{itemize}
 \subsubsection{ UC20 - Visualizzazione stato postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Attori Secondari:} tag RFID.
-	\item\textbf{Descrizione:} l’utente scansiona il tag RFID presente nella postazione per ricevere indicazioni sullo stato della stessa. I possibili stati sono:
+	\item\textbf{Attori Secondari:} tag NFC.
+	\item\textbf{Descrizione:} l’utente scansiona il tag NFC presente nella postazione per ricevere indicazioni sullo stato della stessa. I possibili stati sono:
 	\begin{itemize}
 		\item[$-$]libera e igienizzata;
 		\item[$-$]libera e non igienizzata;
 		\item[$-$]occupata;
 		\item[$-$]non accessibile.
 	\end{itemize}
-	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tag RFID e visualizza nell'applicazione mobile lo stato della postazione. Nel caso in cui quest'ultima risulta occupata, viene mostrato il nome del dipendente che la occupa. 
+	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tag NFC e visualizza nell'applicazione mobile lo stato della postazione. Nel caso in cui quest'ultima risulta occupata, viene mostrato il nome del dipendente che la occupa. 
 	\item\textbf{Precondizione:} l’utente sta navigando nella sezione per la visualizzazione dello stato della postazione e 
-	scansiona con il proprio smarthphone il tag RFID della postazione desiderata e visualizza il suo stato.
+	scansiona con il proprio smarthphone il tag NFC della postazione desiderata e visualizza il suo stato.
 	\item\textbf{Postcondizione:} l’utente conosce lo stato della postazione ed eventualmente il nome del dipendente che la occupa.
 \end{itemize}
 
@@ -785,16 +785,16 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \end{figure}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Attori Secondari:} tag RFID, Ethereum.
-	\item\textbf{Descrizione:} l’utente segnala in tempo reale la propria presenza alla postazione, appoggiando lo smartphone sul tag RFID. Inoltre, registra il tempo di inizio e di fine di questa azione grazie all'utilizzo di Ethereum. Il primo è determinato da un timeout di un minuto in cui si lascia appoggiato lo smartphone sul tagRFID, mentre il secondo dal tempo di fine della prenotazione.
-	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tag RFID e segnala in questo modo la propria presenza.
+	\item\textbf{Attori Secondari:} tag NFC, Ethereum.
+	\item\textbf{Descrizione:} l’utente segnala in tempo reale la propria presenza alla postazione, appoggiando lo smartphone sul tag NFC. Inoltre, registra il tempo di inizio e di fine di questa azione grazie all'utilizzo di Ethereum. Il primo è determinato da un timeout di un minuto in cui si lascia appoggiato lo smartphone sul tagNFC, mentre il secondo dal tempo di fine della prenotazione.
+	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tag NFC e segnala in questo modo la propria presenza.
 	Il tempo di inizio e di fine di questa azione vengono memorizzati grazie all'utilizzo di Ethereum.
 	\item\textbf{Precondizione:} l’utente si è autenticato nell'applicazione mobile e occupa una postazione.
 	\item\textbf{Postcondizione:} l’utente segnala in tempo reale la presenza alla postazione e registra questa azione su Ethereum.
 	\item\textbf{Estensioni:} 
 	\begin{itemize}
-		\item[$-$] visualizzazione errore: se l'utente sposta lo smartphone dal tag RFID (ad esempio per una telefonata), dopo un timeout di qualche minuto, viene visualizzato un messaggio di errore (UC21.2);
-		\item[$-$] visualizzazione errore: se l'utente alza lo smartphone dal tag RFID e abbandona la postazione in modo prematuro rispetto al tempo di fine prenotazione, dopo mezzora viene visualizzato un messaggio di errore e disdetta la prenotazione per il tempo successivo (UC21.4).
+		\item[$-$] visualizzazione errore: se l'utente sposta lo smartphone dal tag NFC (ad esempio per una telefonata), dopo un timeout di qualche minuto, viene visualizzato un messaggio di errore (UC21.2);
+		\item[$-$] visualizzazione errore: se l'utente alza lo smartphone dal tag NFC e abbandona la postazione in modo prematuro rispetto al tempo di fine prenotazione, dopo mezzora viene visualizzato un messaggio di errore e disdetta la prenotazione per il tempo successivo (UC21.4).
 	\end{itemize}
 \end{itemize}
 
@@ -834,18 +834,18 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \subsubsection{ UC21.1 - Presenza in tempo reale}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Attori Secondari:} tag RFID.
-	\item\textbf{Descrizione:} l’utente segnala in tempo reale la presenza alla postazione, appoggiando lo smartphone sul tag RFID.
-	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tag RFID e segnala in questo modo la propria presenza in tempo reale.
-	\item\textbf{Precondizione:} l’utente occupa una postazione e ha attivato nel proprio smartphone la possibilità di effettuare scansioni con tag RFID.
+	\item\textbf{Attori Secondari:} tag NFC.
+	\item\textbf{Descrizione:} l’utente segnala in tempo reale la presenza alla postazione, appoggiando lo smartphone sul tag NFC.
+	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tag NFC e segnala in questo modo la propria presenza in tempo reale.
+	\item\textbf{Precondizione:} l’utente occupa una postazione e ha attivato nel proprio smartphone la possibilità di effettuare scansioni con tag NFC.
 	\item\textbf{Postcondizione:} l’utente segnala in tempo reale la presenza alla postazione.
 \end{itemize}
 \subsubsection{ UC21.2 - Visualizzazione errore spostamento smartphone}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} l’utente visualizza un messaggio di errore in quanto sposta lo smartphone dal tag RFID.
-	\item\textbf{Scenario principale:} viene visualizzato un messaggio di errore che consiglia di riposizionare lo smartphone correttamente sul tag RFID.
-	\item\textbf{Precondizione:} l’utente sposta il proprio smartphone dal tag RFID.
+	\item\textbf{Descrizione:} l’utente visualizza un messaggio di errore in quanto sposta lo smartphone dal tag NFC.
+	\item\textbf{Scenario principale:} viene visualizzato un messaggio di errore che consiglia di riposizionare lo smartphone correttamente sul tag NFC.
+	\item\textbf{Precondizione:} l’utente sposta il proprio smartphone dal tag NFC.
 	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore specifico.
 \end{itemize}
 \subsubsection{ UC21.3 - Registrazione presenza}
