@@ -53,13 +53,13 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	\item\textbf{Descrizione:} l’utente tenta di autenticarsi all'applicativo.
            	\item\textbf{Scenario principale:} l’utente non è ancora autenticato ed esegue il login inserendo nell'interfaccia del web server le seguenti credenziali:
            	\begin{itemize}
-           		\item nome utente;
-           		\item password.
+           		\item[$-$] nome utente;
+           		\item[$-$] password.
            	\end{itemize}
            	\item\textbf{Estensioni:}
            	\begin{itemize}
-           		\item UC2.1 - Visualizzazione messaggio di errore
-           		\item UC2.2 - Visualizzazione schermata relativa a utente non abilitato
+           		\item[$-$] UC2.1 - Visualizzazione messaggio di errore
+           		\item[$-$] UC2.2 - Visualizzazione schermata relativa a utente non abilitato
            	\end{itemize}
            	\item\textbf{Precondizione:} l’utente non si è autenticato nell'applicativo. 
            	\item\textbf{Postcondizione:} l’utente si è autenticato con successo, ed è stato identificato dal sistema nel ruolo di amministratore, dipendente o addetto alle pulizie. A seconda della tipologia di utente vengono rese
@@ -92,13 +92,13 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:} l’utente tenta di autenticarsi all'applicativo.
 	\item\textbf{Scenario principale:} l’utente non è ancora autenticato ed esegue il login inserendo nell'interfaccia dell'applicazione mobile le seguenti credenziali:
 	\begin{itemize}
-		\item nome utente;
-		\item password.
+		\item[$-$] nome utente;
+		\item[$-$] password.
 	\end{itemize}
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item UC3.1 - Visualizzazione messaggio di errore
-		\item UC3.2 - Visualizzazione schermata relativa a utente non abilitato
+		\item[$-$] UC3.1 - Visualizzazione messaggio di errore
+		\item[$-$] UC3.2 - Visualizzazione schermata relativa a utente non abilitato
 	\end{itemize}
 	\item\textbf{Precondizione:} l’utente non si è autenticato nell'applicativo. 
 	\item\textbf{Postcondizione:} l’utente si è autenticato con successo, ed è stato identificato dal sistema
@@ -270,7 +270,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	Se non è gia presente una stanza con il codice inserito, essa viene creata e la sua configurazione viene inviata a Ethereum per essere salvata.
 	\item\textbf{Estensione:}
 	\begin{itemize}
-		\item UC12.1 - Avviso nome stanza già utilizzato
+		\item[$-$] UC12.1 - Avviso nome stanza già utilizzato
 	\end{itemize}
 	
 	\item\textbf{Precondizione:} 
@@ -710,8 +710,8 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\begin{enumerate}
 		\item l'amministratore inserisce:
 		\begin{itemize}
-			\item nome utente oppure nome e cognome del dipendente a cui è interessato
-			\item distanza in numero di postazioni
+			\item[$-$] nome utente oppure nome e cognome del dipendente a cui è interessato
+			\item[$-$] distanza in numero di postazioni
 		\end{itemize}
 		\item l'amministratore riceve una lista degli utenti vicini di postazione dell'utente selezionato. I vicini sono raggruppati per occupazione dell'utente selezionato: per ogni occupazione sono indicati gli utenti che in quel caso erano vicini a quello selezionato. Inoltre per ogni vicino sono indicate l'ora e la data di inizio e fine della vicinanza. Per ogni occupazione del dipendente e di ogni vicino sono indicati anche l'hash corrispondente e l'indirizzo della blockchain su cui l'hash è salvato.
 	\end{enumerate}
@@ -731,8 +731,8 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\begin{enumerate}
 		\item l'amministratore inserisce:
 		\begin{itemize}
-			\item data di inizio del periodo di ricerca
-			\item data di fine del periodo di ricerca
+			\item[$-$] data di inizio del periodo di ricerca
+			\item[$-$] data di fine del periodo di ricerca
 		\end{itemize}
 		\item l'amministratore riceve una lista degli utenti vicini di postazione dell'utente selezionato nel periodo specificato. I vicini sono raggruppati per occupazione dell'utente selezionato: per ogni occupazione sono indicati gli utenti che in quel caso erano vicini a quello selezionato. Inoltre per ogni vicino sono indicate l'ora e la data di inizio e fine della vicinanza. Per ogni occupazione del dipendente e di ogni vicino sono indicati anche l'hash corrispondente e l'indirizzo della blockchain su cui l'hash è salvato.
 	\end{enumerate}
