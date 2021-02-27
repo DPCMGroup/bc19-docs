@@ -576,7 +576,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	\begin{enumerate}
            		\item l'utente inserisce il nome utente oppure il nome e cognome dell'utente a cui è interessato.
            		\item Nel report vengono visualizzate le date e ore di inizio e fine delle occupazioni e i codici delle postazioni.
-           		Per ogni occupazione vengono visualizzati anche gli hash salvati sulla blockchain corrispondenti all'inizio e alla fine dell'occupazione e l'indirizzo a cui essi sono salvati.
+           		Per ogni occupazione vengono visualizzati anche gli hash salvati sulla blockchain corrispondenti all'inizio e alla fine dell'occupazione e gli indirizzi in cui essi sono salvati.
            	\end{enumerate}
            	\item\textbf{Precondizione:} 
            	l'utente si trova sulla pagina per la ricerca delle occupazioni di uno specifico utente
@@ -597,7 +597,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Scenario principale:} 
 	\begin{enumerate}
 		\item l'amministratore seleziona i valori con cui vuole precisare la sua ricerca
-		\item l'amministratore ottiene la lista delle occupazioni con le relative informazioni. Per ogni occupazione vengono visualizzati anche gli hash salvati sulla blockchain corrispondenti all'inizio e alla fine dell'occupazione e l'indirizzo a cui essi sono salvati.
+		\item l'amministratore ottiene la lista delle occupazioni con le relative informazioni. Per ogni occupazione vengono visualizzati anche gli hash salvati sulla blockchain corrispondenti all'inizio e alla fine dell'occupazione e gli indirizzi a cui essi sono salvati.
 	\end{enumerate}
 	\item\textbf{Precondizione:} 
 	l'utente si trova sulla pagina dedicata alla ricerca delle postazioni occupate.
@@ -615,7 +615,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\begin{enumerate}
 		\item l'ammistratore inserisce il nickname oppure il nome e cognome dell'utente a cui è interessato.
 		\item Nel report vengono visualizzate la data e ora di inizio e fine delle occupazioni, i codici delle postazioni e le ore trascorse.
-		Per ogni occupazione vengono visualizzati anche gli hash salvati sulla blockchain corrispondenti all'inizio e alla fine dell'occupazione e l'indirizzo a cui essi sono salvati.
+		Per ogni occupazione vengono visualizzati anche gli hash salvati sulla blockchain corrispondenti all'inizio e alla fine dell'occupazione e gli indirizzi a cui essi sono salvati.
 	\end{enumerate}
 	\item\textbf{Precondizione:} 
 	l'amministratore si trova sulla pagina per la ricerca delle occupazioni delle postazioni
@@ -632,7 +632,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Scenario principale:} 
 	\begin{enumerate}
 		\item l'amministratore inserisce il codice della postazione a cui è interessato.
-		\item Nel report vengono visualizzate le date di inizio e fine delle occupazioni e i nomi degli utenti. Per ogni occupazione vengono visualizzati anche gli hash salvati sulla blockchain corrispondenti all'inizio e alla fine dell'occupazione e l'indirizzo a cui essi sono salvati.
+		\item Nel report vengono visualizzate le date di inizio e fine delle occupazioni e i nomi degli utenti. Per ogni occupazione vengono visualizzati anche gli hash salvati sulla blockchain corrispondenti all'inizio e alla fine dell'occupazione e gli indirizzi a cui essi sono salvati.
 	\end{enumerate}
 	\item\textbf{Precondizione:} 
 	l'amministratore si trova sulla pagina per la ricerca delle occupazioni delle postazioni
@@ -653,7 +653,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Scenario principale:} 
 	\begin{enumerate}
 		\item l'amministratore seleziona i valori con cui vuole precisare la sua ricerca
-		\item l'amministratore ottiene la lista delle occupazioni con le relative informazioni. Per ogni occupazione vengono visualizzati anche gli hash salvati sulla blockchain corrispondenti all'inizio e alla fine dell'occupazione e l'indirizzo a cui essi sono salvati.
+		\item l'amministratore ottiene la lista delle occupazioni con le relative informazioni. Per ogni occupazione vengono visualizzati anche gli hash salvati sulla blockchain corrispondenti all'inizio e alla fine dell'occupazione e gli indirizzi a cui essi sono salvati.
 	\end{enumerate}
 	\item\textbf{Precondizione:} 
 	l'utente si trova sulla pagina dedicata alla ricerca delle occupazioni.
@@ -713,7 +713,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 			\item[$-$] nome utente oppure nome e cognome del dipendente a cui è interessato
 			\item[$-$] distanza in numero di postazioni
 		\end{itemize}
-		\item l'amministratore riceve una lista degli utenti vicini di postazione dell'utente selezionato. I vicini sono raggruppati per occupazione dell'utente selezionato: per ogni occupazione sono indicati gli utenti che in quel caso erano vicini a quello selezionato. Inoltre per ogni vicino sono indicate l'ora e la data di inizio e fine della vicinanza. Per ogni occupazione del dipendente e di ogni vicino sono indicati anche l'hash corrispondente e l'indirizzo della blockchain su cui l'hash è salvato.
+		\item l'amministratore riceve una lista degli utenti vicini di postazione dell'utente selezionato. I vicini sono raggruppati per occupazione dell'utente selezionato: per ogni occupazione sono indicati gli utenti che in quel caso erano vicini a quello selezionato. Inoltre per ogni vicino sono indicate l'ora e la data di inizio e fine della vicinanza. Per ogni occupazione del dipendente e di ogni vicino sono indicati anche l'hash corrispondente e l'indirizzo sulla blockchain in cui l'hash è salvato.
 	\end{enumerate}
 	\item\textbf{Precondizione:} 
 	l'amministratore si trova sulla pagina di esplorazione occupazioni
@@ -734,7 +734,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 			\item[$-$] data di inizio del periodo di ricerca
 			\item[$-$] data di fine del periodo di ricerca
 		\end{itemize}
-		\item l'amministratore riceve una lista degli utenti vicini di postazione dell'utente selezionato nel periodo specificato. I vicini sono raggruppati per occupazione dell'utente selezionato: per ogni occupazione sono indicati gli utenti che in quel caso erano vicini a quello selezionato. Inoltre per ogni vicino sono indicate l'ora e la data di inizio e fine della vicinanza. Per ogni occupazione del dipendente e di ogni vicino sono indicati anche l'hash corrispondente e l'indirizzo della blockchain su cui l'hash è salvato.
+		\item l'amministratore riceve una lista degli utenti vicini di postazione dell'utente selezionato nel periodo specificato. I vicini sono raggruppati per occupazione dell'utente selezionato: per ogni occupazione sono indicati gli utenti che in quel caso erano vicini a quello selezionato. Inoltre per ogni vicino sono indicate l'ora e la data di inizio e fine della vicinanza. Per ogni occupazione del dipendente e di ogni vicino sono indicati anche l'hash corrispondente e l'indirizzo sulla blockchain in cui l'hash è salvato.
 	\end{enumerate}
 	\item\textbf{Precondizione:} 
 	l'amministratore visualizza il report dei vicini di un dipendente
@@ -756,7 +756,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            		\item[$-$] ruolo di chi le ha eseguite (dipendente o addetto alle pulizie).
            	\end{itemize}
            	\item\textbf{Scenario principale:} 
-           	l'amministratore visualizza la lista delle sanificazioni con le informazioni correlate. Per ogni occupazione viene visualizzato anche l'hash salvato sulla blockchain corrispondente alla sanificazione e l'indirizzo a cui esso è salvato.
+           	l'amministratore visualizza la lista delle sanificazioni con le informazioni correlate. Per ogni occupazione viene visualizzato anche l'hash salvato sulla blockchain corrispondente alla sanificazione e l'indirizzo in cui esso è salvato.
            	\item\textbf{Precondizione:} 
            	l'amministratore si trova sulla pagina di esplorazione delle sanificazioni.
            	\item\textbf{Postcondizione:}
