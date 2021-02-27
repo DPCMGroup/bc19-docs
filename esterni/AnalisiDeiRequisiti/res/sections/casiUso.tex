@@ -134,7 +134,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:} 
 	l'amministratore si disautentica dal sistema.
 	\item\textbf{Scenario principale:} 
-	l'utente autenticato preme un pulsante per la disautenticazione ed essa viene eseguita.
+	\begin{enumerate}
+		\item l'utente autenticato preme un pulsante per la disautenticazione
+		\item l'utente viene disautenticato e portato alla schermata di login
+	\end{enumerate}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato nel sistema come amministratore.
 	\item\textbf{Postcondizione:}
@@ -148,7 +151,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:} 
 	il dipendente si disautentica dal sistema.
 	\item\textbf{Scenario principale:} 
-	l'utente autenticato preme un pulsante per la disautenticazione ed essa viene eseguita.
+	\begin{enumerate}
+		\item l'utente autenticato preme un pulsante per la disautenticazione
+		\item l'utente viene disautenticato e portato alla schermata di login
+	\end{enumerate}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato nel sistema come dipendente.
 	\item\textbf{Postcondizione:}
@@ -162,7 +168,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:} 
 	l'addetto alle pulizie si disautentica dal sistema.
 	\item\textbf{Scenario principale:} 
-	l'utente autenticato preme un pulsante per la disautenticazione ed essa viene eseguita.
+	\begin{enumerate}
+		\item l'utente autenticato preme un pulsante per la disautenticazione
+		\item l'utente viene disautenticato e portato alla schermata di login
+	\end{enumerate}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato nel sistema come addetto alle pulizie.
 	\item\textbf{Postcondizione:}
@@ -224,17 +233,20 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:}
 	il sistema mostra all'amministratore lo schema delle stanze e delle postazioni aggiornato rispetto alle azioni salvate su Ethereum.
 	\item\textbf{Scenario principale:}
-	l'amministratore raggiunge la pagina di visione delle stanze delle postazioni e le visualizza. Le postazioni sono colorate in base al loro stato e gli stati possibili sono:
-	\begin{itemize}
-		\item[$-$] libera e igienizzata;
-		\item[$-$] libera e non igienizzata;
-		\item[$-$] occupata;
-		\item[$-$] prenotata e igienizzata;
-		\item[$-$] prenotata e non igienizzata;
-		\item[$-$] guasta e igienizzata;
-		\item[$-$] guasta e non igienizzata.
-	\end{itemize}
-	per ogni stanza è indicato il numero di occupanti attuali.
+	\begin{enumerate}
+		\item l'amministratore raggiunge la pagina di visione delle stanze e delle postazioni
+		\item l'amministratore visualizza le stanze e le postazioni colorate in base al loro stato. Le postazioni sono colorate in base al loro stato e gli stati possibili sono:
+		\begin{itemize}
+			\item[$-$] libera e igienizzata;
+			\item[$-$] libera e non igienizzata;
+			\item[$-$] occupata;
+			\item[$-$] prenotata e igienizzata;
+			\item[$-$] prenotata e non igienizzata;
+			\item[$-$] guasta e igienizzata;
+			\item[$-$] guasta e non igienizzata.
+		\end{itemize}
+		Per ogni stanza è indicato il numero di occupanti attuali.
+	\end{enumerate}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
@@ -265,14 +277,18 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:} 
 	l'utente aggiunge una stanza al sistema.
 	\item\textbf{Scenario principale:} 
-	l'utente autenticato preme un pulsante per creare una nuova stanza. Compare quindi il campo "Nome della stanza" da compilare.
-	L'utente compila il campo e preme un pulsante per confermare la creazione della stanza.
-	Se non è gia presente una stanza con il codice inserito, essa viene creata e la sua configurazione viene inviata a Ethereum per essere salvata.
+	\begin{enumerate}
+		\item l'utente autenticato preme un pulsante per creare una nuova stanza;
+		\item compare quindi il campo "Nome della stanza" da compilare;
+		\item l'utente compila il campo;
+		\item l'utente preme un pulsante per confermare la creazione della stanza
+		\item se non è gia presente una stanza con il codice inserito, essa viene creata 
+		\item la configurazione della stanza viene inviata a Ethereum per essere salvata.
+	\end{enumerate}
 	\item\textbf{Estensione:}
 	\begin{itemize}
 		\item[$-$] UC12.1 - Avviso nome stanza già utilizzato
 	\end{itemize}
-	
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
@@ -286,8 +302,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:}
 	l'utente tenta di assegnare alla stanza che sta creando un nome già utilizzato per un'altra stanza nel sistema e ne viene avvisato.
 	\item\textbf{Scenario principale:}
-	l'utente sta creando una stanza e inserisce come nome un valore già utilizzato.
-	La stanza non viene creata e alla vista dell'utente compare un avviso che indica che il nome è già stato utilizzato.
+	\begin{enumerate}
+		\item l'utente inserisce come nome un valore già utilizzato.
+		\item La stanza non viene creata e alla vista dell'utente compare un avviso che indica che il nome è già stato utilizzato. 
+	\end{enumerate}
 	\item\textbf{Precondizione:}
 	l'utente si trova sulla pagina di creazione di una stanza.
 	\item\textbf{Postcondizione:}
@@ -303,7 +321,11 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:} 
 	l'utente elimina dal sistema una stanza con tutte le postazioni in essa presenti.
 	\item\textbf{Scenario principale:} 
-	l'utente preme sul pulsante per l'eliminazione di una stanza. La stanza viene eliminata dal sistema con tutte le postazioni al suo interno e l'azione viene comunicata a Ethereum.
+	\begin{enumerate}
+		\item l'utente preme sul pulsante per l'eliminazione di una stanza;
+		\item la stanza viene eliminata dal sistema con tutte le postazioni al suo interno;
+		\item l'azione viene comunicata a Ethereum.
+	\end{enumerate}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato.
 	\item\textbf{Postcondizione:}
@@ -319,7 +341,13 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:}
 	l'utente modifica il codice identificativo di una stanza.
 	\item\textbf{Scenario principale:} 
-	l'utente preme un pulsante per la modifica di una stanza. Gli viene chiesto di inserire il nuovo nome e di confermare la modifica. La stanza ha ora il nome aggiornato e l'azione viene comunicata a Ethereum.
+	\begin{enumerate}
+		\item l'utente preme un pulsante per la modifica di una stanza;
+		\item l'utente inserisce il nuovo nome;
+		\item l'utente conferma il nuovo nome tramite un pulsante;
+		\item se il nome non è già in utilizzo da parte di un'altra stanza, alla stanza selezionata viene assegnato il nome inserito;
+		\item l'azione viene comunicata a Ethereum.
+	\end{enumerate}
 	\item\textbf{Estensioni:}
 	\begin{itemize}
 		\item[$-$] UC12.1 - Avviso nome stanza già utilizzato
@@ -337,11 +365,19 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:}
 	l'utente rende una stanza inaccessibile per alcuni giorni.
 	\item\textbf{Scenario principale:} 
-	l'utente imposta le date di inizio e fine del periodo di inaccessibilità della stanza e conferma l'impostazione attraverso un pulsante.
+	\begin{enumerate}
+		\item l'utente imposta:
+			\begin{itemize}
+				\item[$-$] data di inizio del periodo di inaccessibilità;
+				\item{$-$] data di fine del periodo di inaccessibilità;
+			\end{itemize}
+		\item l'utente conferma il periodo;
+		\item l'inaccessibilità della stanza viene programmata per il periodo specificato.
+	\end{enumerate}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore e ha raggiunto l'area dedicata a questa azione.
 	\item\textbf{Postcondizione:}
-	il codice della stanza selezionata è stato modificato.
+	l'inaccessibilità della stanza è stata programmata per le date specificate.
 \end{itemize}
 
 \subsubsection{UC16 - Creazione di una postazione}
@@ -353,13 +389,18 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:}
 	l'amministratore crea una postazione e la assegna a una stanza.
 	\item\textbf{Scenario principale:} 
-	l'amministratore preme un pulsante per aggiungere una nuova postazione. Gli viene chiesto di inserire i seguenti campi:
-	\begin{itemize}
-		\item[$-$] codice della postazione;
-		\item[$-$] codice del tag NFC che identifica la postazione.
-	\end{itemize}
-	inoltre gli viene chiesto di indicare la posizione della postazione su una scacchiera rappresentante la stanza.
-	L'amministratore preme un bottone per la conferma dei dati e la postazione viene aggiunta all'interno della stanza. La nuova configurazione della stanza viene comunicata a Ethereum.
+	\begin{enumerate}
+		\item l'amministratore preme un pulsante per aggiungere una nuova postazione;
+		\item l'amministratore fornisce le seguenti informazioni:
+		\begin{itemize}
+			\item[$-$] codice della postazione;
+			\item[$-$] codice del tag NFC che identifica la postazione;
+			\item[$-$] posizione della postazione su una scacchiera rappresentante la stanza;
+		\end{itemize}
+		\item l'amministratore preme un bottone per la conferma dei dati;
+		\item la postazione viene aggiunta all'interno della stanza;
+		\item la nuova configurazione della stanza viene comunicata a Ethereum.
+	\end{enumerate}
 	\item\textbf{Estensioni:}
 	\begin{itemize}
 		\item[$-$] Avviso codice postazione già utilizzato (UC16.1);
@@ -379,8 +420,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:}
 	l'utente tenta di assegnare a una postazione un codice già utilizzato attualmente per un'altra.
 	\item\textbf{Scenario principale:}
-	l'utente sta creando o modificando una postazione e inserisce come codice un valore già utilizzato.
-	La postazione non viene creata e alla vista dell'utente compare un avviso che indica che il codice è attualmente utilizzato.
+	\begin{enumerate}
+		\item l'utente sta creando o modificando una postazione e inserisce come codice un valore già utilizzato;
+		\item la postazione non viene creata e alla vista dell'utente compare un avviso che indica che il codice è attualmente utilizzato.
+	\end{enumerate}
 	\item\textbf{Precondizione:}
 	l'utente si trova sulla pagina di creazione o quella di modifica di una postazione.
 	\item\textbf{Postcondizione:}
@@ -394,8 +437,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:}
 	l'utente tenta di assegnare a una postazione il codice di un tag già utilizzato attualmente per un'altra.
 	\item\textbf{Scenario principale:}
-	l'utente sta creando o modificando una postazione e inserisce come codice del tag corrispondente un valore già utilizzato.
-	La postazione non viene creata e alla vista dell'utente compare un avviso che indica che il codice del tag è già assegnato a una postazione.
+	\begin{enumerate}
+		\item l'utente sta creando o modificando una postazione e inserisce come codice del tag corrispondente un valore già utilizzato;
+		\item la postazione non viene creata e alla vista dell'utente compare un avviso che indica che il codice del tag è già assegnato a una postazione.
+	\end{enumerate}
 	\item\textbf{Precondizione:}
 	l'utente si trova sulla pagina di creazione o quella di modifica di una postazione.
 	\item\textbf{Postcondizione:}
@@ -409,8 +454,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:}
 	l'utente tenta di assegnare a una postazione giù occupata.
 	\item\textbf{Scenario principale:}
-	l'utente sta assegnando una posizione ad una postazione, ma la posizione è già occupata.
-	La postazione non viene creata e alla vista dell'utente compare un avviso che indica che la posizione è occupata.
+	\begin{enumerate}
+		\item l'utente sta assegnando una posizione ad una postazione, ma la posizione è già occupata;
+		\item la postazione non viene creata e alla vista dell'utente compare un avviso che indica che la posizione è occupata.
+	\end{enumerate}
 	\item\textbf{Precondizione:}
 	l'utente sta assegnando la posizione ad una postazione.
 	\item\textbf{Postcondizione:}
@@ -426,7 +473,12 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:}
 	l'utente elimina una postazione.
 	\item\textbf{Scenario principale:} 
-	l'utente raggiunge l'area di eliminazione delle postazioni, ne seleziona una ed esegue l'eliminazione. La nuova configurazione della stanza viene inviata a Ethereum.
+	\begin{enumerate}
+		\item l'utente raggiunge l'area di eliminazione delle postazioni;
+		\item l'utente preme un pulsante per l'eliminazione di una postazione;
+		\item la postazione viene eliminata;
+		\item la nuova configurazione della stanza viene inviata ad Ethereum.
+	\end{enumerate}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
@@ -442,7 +494,13 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:}
 	l'utente modifica gli attributi di una postazione.
 	\item\textbf{Scenario principale:} 
-	l'utente preme sul pulsante per la modifica di una postazione. Gli vengono richiesti i nuovi dati da inserire e la nuova posizione della postazione. Il sistema invia i nuovi dati a Ethereum.
+	\begin{enumerate}
+		\item l'utente preme sul pulsante per la modifica di una postazione;
+		\item inserisce i nuovi dati;
+		\item conferma i nuovi dati premendo un pulsante;
+		\item i dati della postazione vengono modificati;
+		\item il sistema invia i nuovi dati a Ethereum.
+	\end{enumerate}
 	\item\textbf{Estensioni:}
 	\begin{itemize}
 		\item[$-$] Avviso codice postazione già utilizzato (UC16.1);
@@ -497,16 +555,19 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:} 
 	l'amministratore crea una credenziale riservata a un qualsiasi utente del sistema: amministratore, dipendente o addetto alle pulizie.
 	\item\textbf{Scenario principale:} 
-	l'amministratore naviga nell'interfaccia del sito web in modo da raggiungere l'ambiente di creazione delle credenziali.
-	Il sito presenta all'utente i seguenti campi da compilare:
-	\begin{itemize}
-		\item[$-$] nome;
-		\item[$-$] cognome;
-		\item[$-$] nome utente;
-		\item[$-$] password;
-		\item[$-$] e-mail.
-	\end{itemize}
-	successivamente l'utente preme il pulsante per la conferma dei dati e la nuova credenziale viene salvata nel sistema.
+	\begin{enumerate}
+		\item l'amministratore naviga nell'interfaccia del sito web in modo da raggiungere l'ambiente di creazione delle credenziali;
+		\item l'amministratore compila i seguenti campi:
+		\begin{itemize}
+			\item[$-$] nome;
+			\item[$-$] cognome;
+			\item[$-$] nome utente;
+			\item[$-$] password;
+			\item[$-$] e-mail.
+		\end{itemize}
+		\item l'amministratore preme il pulsante per la conferma dei dati;
+		\item la nuova credenziale viene salvata nel sistema;
+	\end{enumerate}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
@@ -520,16 +581,19 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:} 
 	l'utente modifica i valori di un profilo utente.
 	\item\textbf{Scenario principale:} 
-	l'amministratore naviga nell'interfaccia del sito web per accedere all'ambiente di modifica delle credenziali.
-	Il sito presenta all'utente i seguenti campi da modificare:
-	\begin{itemize}
-		\item[$-$] nome;
-		\item[$-$] cognome;
-		\item[$-$] nome utente;
-		\item[$-$] password;
-		\item[$-$] e-mail.
-	\end{itemize}
-	successivamente l'utente preme il pulsante per la conferma dei dati e i dati già salvati nel sistema vengono aggiornati.
+	\begin{enumerate}
+		\item l'amministratore naviga nell'interfaccia del sito web per accedere all'ambiente di modifica delle credenziali;
+		\item l'amministratore inserisce i seguenti campi:
+		\begin{itemize}
+			\item[$-$] nome;
+			\item[$-$] cognome;
+			\item[$-$] nome utente;
+			\item[$-$] password;
+			\item[$-$] e-mail.
+		\end{itemize}		
+		\item l'amministratore preme il pulsante per la conferma dei dati;
+		\item i dati vengono aggiornati.
+	\end{enumerate}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
@@ -543,9 +607,11 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:} 
 	l'amministratore elimina delle credenziali dal sistema.
 	\item\textbf{Scenario principale:} 
-	l'amministratore naviga nel sito web per raggiungere l'ambiente di eliminazione delle credenziali.
-	L'amministratore preme sul pulsante per l'eliminazione delle credenziali.
-	Le credenziali selezionate sono eliminate dal sistema.
+	\begin{enumerate}
+		\item l'amministratore naviga nel sito web per raggiungere l'ambiente di eliminazione delle credenziali;
+		\item l'amministratore preme sul pulsante per l'eliminazione delle credenziali;
+		\item le credenziali selezionate sono eliminate dal sistema.
+	\end{enumerate}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
@@ -559,7 +625,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:} 
 	l'amministratore ottiene informazioni sugli eventi di occupazione.
 	\item\textbf{Scenario principale:} 
-	l'amministratore raggiunge la pagina per la ricerca delle occupazioni delle postazioni e ricerca le informazioni a cui è interessato.
+	\begin{enumerate}
+		\item l'amministratore raggiunge la pagina per la ricerca delle occupazioni delle postazioni;
+		\item ricerca le informazioni a cui è interessato.
+	\end{enumerate}	 e 
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
