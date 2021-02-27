@@ -936,7 +936,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	registrazione della pulizia autonoma.
 	\item\textbf{Postcondizione:} l’utente registra l'avvenuta igienizzazione autonoma della postazione.
 \end{itemize}
-\subsubsection{ UC26 - Gestione prenotazione }
+\subsubsection{ UC26 - Prenotazione postazione }
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=18cm]{res/images/UC24.png}
@@ -1095,9 +1095,31 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente riceve l'identificativo di una postazione igienizzata e libera in una determinata stanza, 
-	in modo automatico e in base a un criterio di distanziamento dalle altre postazioni.
-	\item\textbf{Scenario principale:} viene fornito l'identificativo di una postazione libera e igienizzata, oppure di una libera e non igienizzata (si veda UC25).
+	in modo automatico.
+	\item\textbf{Scenario principale:} viene fornito l'identificativo di una postazione libera e igienizzata.
 	\item\textbf{Precondizione:} l’utente preme il bottone nella sezione della prima postazione disponibile.
+	\item\textbf{Postcondizione:} l’utente riceve l'identificativo di una postazione.
+\end{itemize}
+\subsubsection{ UC26.4.1 - Prima postazione libera random}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente riceve l'identificativo di una postazione igienizzata e libera in una determinata stanza, 
+	in modo automatico. La postazione proposta è libera per tutta la giornata lavorativa.
+	\item\textbf{Scenario principale:} viene fornito l'identificativo di una postazione libera e igienizzata.
+	\item\textbf{Precondizione:} l’utente preme il bottone nella sezione della prima postazione disponibile, libera per tutta la giornata lavorativa.
+	\item\textbf{Postcondizione:} l’utente riceve l'identificativo di una postazione.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] tutte le postazioni nella stanza selezionata sono occupate o guaste (UC26.3).
+	\end{itemize}
+\end{itemize}
+\subsubsection{ UC26.4.2 - Prima postazione libera distante}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente riceve l'identificativo di una postazione igienizzata e libera in una determinata stanza, 
+	in modo automatico e in base a un criterio di distanziamento dalle altre postazioni.
+	\item\textbf{Scenario principale:} viene fornito l'identificativo di una postazione libera e igienizzata.
+	\item\textbf{Precondizione:} l’utente preme il bottone nella sezione della prima postazione disponibil, libera per tutta la giornata lavorativa e distanziata maggiormente dalle altre.
 	\item\textbf{Postcondizione:} l’utente riceve l'identificativo di una postazione.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
