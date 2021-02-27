@@ -573,10 +573,13 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	\item\textbf{Descrizione:} 
            	l'amministratore ottiene informazioni in forma tabellare sulle postazioni occupate da uno specifico utente.
            	\item\textbf{Scenario principale:} 
-           	l'amministratore raggiunge la pagina per la ricerca delle occupazioni delle postazioni e inserisce il nickname oppure il nome e cognome dell'utente a cui è interessato.
-           	Nel report vengono visualizzate le date di inizio e fine delle occupazioni e i codici delle postazioni.
+           	\begin{enumerate}
+           		\item l'utente inserisce il nome utente oppure il nome e cognome dell'utente a cui è interessato.
+           		\item Nel report vengono visualizzate le date e ore di inizio e fine delle occupazioni e i codici delle postazioni.
+           		Per ogni occupazione vengono visualizzati anche gli hash salvati sulla blockchain corrispondenti all'inizio e alla fine dell'occupazione e l'indirizzo a cui essi sono salvati.
+           	\end{enumerate}
            	\item\textbf{Precondizione:} 
-           	l'utente è autenticato come amministratore.
+           	l'utente si trova sulla pagina per la ricerca delle occupazioni di uno specifico utente
            	\item\textbf{Postcondizione:}
            	l'utente visualizza le informazioni.
 \end{itemize}
@@ -592,7 +595,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item[$-$] periodo all'interno del quale l'utente occupava la postazione.
 	\end{itemize}
 	\item\textbf{Scenario principale:} 
-	l'amministratore seleziona i valori con cui vuole precisare la sua ricerca e ottiene la lista delle occupazioni con le relative informazioni.
+	\begin{enumerate}
+		\item l'amministratore seleziona i valori con cui vuole precisare la sua ricerca
+		\item l'amministratore ottiene la lista delle occupazioni con le relative informazioni. Per ogni occupazione vengono visualizzati anche gli hash salvati sulla blockchain corrispondenti all'inizio e alla fine dell'occupazione e l'indirizzo a cui essi sono salvati.
+	\end{enumerate}
 	\item\textbf{Precondizione:} 
 	l'utente si trova sulla pagina dedicata alla ricerca delle postazioni occupate.
 	\item\textbf{Postcondizione:}
@@ -605,11 +611,14 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	amministratore.
 	\item\textbf{Descrizione:} 
 	l'amministratore ottiene informazioni in forma tabellare sulle postazioni occupate da uno specifico utente con l'indicazione delle ore trascorse in ogni postazione.
-	\item\textbf{Scenario principale:} 
-	l'amministratore raggiunge la pagina per la ricerca delle occupazioni delle postazioni e inserisce il nickname oppure il nome e cognome dell'utente a cui è interessato.
-	Nel report vengono visualizzate le date di inizio e fine delle occupazioni, i codici delle postazioni e le ore trascorse.
+	\item\textbf{Scenario principale:}
+	\begin{enumerate}
+		\item l'ammistratore inserisce il nickname oppure il nome e cognome dell'utente a cui è interessato.
+		\item Nel report vengono visualizzate la data e ora di inizio e fine delle occupazioni, i codici delle postazioni e le ore trascorse.
+		Per ogni occupazione vengono visualizzati anche gli hash salvati sulla blockchain corrispondenti all'inizio e alla fine dell'occupazione e l'indirizzo a cui essi sono salvati.
+	\end{enumerate}
 	\item\textbf{Precondizione:} 
-	l'utente è autenticato come amministratore.
+	l'amministratore si trova sulla pagina per la ricerca delle occupazioni delle postazioni
 	\item\textbf{Postcondizione:}
 	l'utente visualizza le informazioni.
 \end{itemize}
@@ -621,10 +630,12 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:} 
 	l'amministratore ottiene informazioni in forma tabellare sulle occupazioni di una postazione.
 	\item\textbf{Scenario principale:} 
-	l'amministratore raggiunge la pagina per la ricerca delle occupazioni delle postazioni e inserisce il codice della postazione a cui è interessato.
-	Nel report vengono visualizzate le date di inizio e fine delle occupazioni e i nomi degli utenti.
+	\begin{enumerate}
+		\item l'amministratore inserisce il codice della postazione a cui è interessato.
+		\item Nel report vengono visualizzate le date di inizio e fine delle occupazioni e i nomi degli utenti. Per ogni occupazione vengono visualizzati anche gli hash salvati sulla blockchain corrispondenti all'inizio e alla fine dell'occupazione e l'indirizzo a cui essi sono salvati.
+	\end{enumerate}
 	\item\textbf{Precondizione:} 
-	l'utente è autenticato come amministratore.
+	l'amministratore si trova sulla pagina per la ricerca delle occupazioni delle postazioni
 	\item\textbf{Postcondizione:}
 	l'utente visualizza le informazioni specificate dalla sua ricerca.
 \end{itemize}
@@ -640,7 +651,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item[$-$] periodo all'interno del quale l'utente occupava la postazione.
 	\end{itemize}
 	\item\textbf{Scenario principale:} 
-	l'amministratore seleziona i valori con cui vuole precisare la sua ricerca e ottiene la lista delle occupazioni con le relative informazioni.
+	\begin{enumerate}
+		\item l'amministratore seleziona i valori con cui vuole precisare la sua ricerca
+		\item l'amministratore ottiene la lista delle occupazioni con le relative informazioni. Per ogni occupazione vengono visualizzati anche gli hash salvati sulla blockchain corrispondenti all'inizio e alla fine dell'occupazione e l'indirizzo a cui essi sono salvati.
+	\end{enumerate}
 	\item\textbf{Precondizione:} 
 	l'utente si trova sulla pagina dedicata alla ricerca delle occupazioni.
 	\item\textbf{Postcondizione:}
@@ -654,7 +668,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:} 
 	l'amministratore scarica il report delle occupazioni che sta visualizzando in un formato leggibile.
 	\item\textbf{Scenario principale:} 
-	l'amministratore preme un pulsante per lo scaricamento del report che sta visualizzando.
+	\begin{enumerate}
+		\item l'amministratore preme un pulsante per lo scaricamento del report che sta visualizzando.
+		\item il report viene scaricato.
+	\end{enumerate}
 	\item\textbf{Precondizione:} 
 	l'utente sta visualizzando un report.
 	\item\textbf{Postcondizione:}
@@ -668,7 +685,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:} 
 	l'amministratore scarica il report delle occupazioni che sta visualizzando in formato \glock{PDF}.
 	\item\textbf{Scenario principale:} 
-	l'amministratore preme un pulsante per lo scaricamento del report che sta visualizzando in formato PDF.
+	\begin{enumerate}
+		\item l'amministratore preme un pulsante per lo scaricamento del report che sta visualizzando in formato PDF.
+		\item il report viene scaricato in formato PDF.
+	\end{enumerate}
 	\item\textbf{Generalizzazione:}
 	\begin{itemize}
 		\item[$-$] scaricamento del report delle occupazioni in un formato leggibile (UC20.3).
@@ -692,9 +712,9 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            		\item[$-$] ruolo di chi le ha eseguite (dipendente o addetto alle pulizie).
            	\end{itemize}
            	\item\textbf{Scenario principale:} 
-           	l'amministratore raggiunge la pagina di esplorazione delle sanificazioni e visualizza la lista delle sanificazioni con le informazioni correlate.
+           	l'amministratore visualizza la lista delle sanificazioni con le informazioni correlate. Per ogni occupazione viene visualizzato anche l'hash salvato sulla blockchain corrispondente alla sanificazione e l'indirizzo a cui esso è salvato.
            	\item\textbf{Precondizione:} 
-           	l'utente è autenticato come amministratore.
+           	l'amministratore si trova sulla pagina di esplorazione delle sanificazioni.
            	\item\textbf{Postcondizione:}
            	l'utente visualizza le informazioni.
 \end{itemize}
@@ -706,7 +726,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:} 
 	l'amministratore scarica il report delle igienizzazioni che sta visualizzando in un formato leggibile.
 	\item\textbf{Scenario principale:} 
-	l'amministratore preme un pulsante per lo scaricamento del report che sta visualizzando.
+	\begin{enumerate}
+		\item l'amministratore preme un pulsante per lo scaricamento del report che sta visualizzando.
+		\item il report viene scaricato.
+	\end{enumerate}
 	\item\textbf{Precondizione:} 
 	l'utente sta visualizzando un report.
 	\item\textbf{Postcondizione:}
@@ -720,7 +743,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:} 
 	l'amministratore scarica il report delle igienizzazioni che sta visualizzando in formato PDF.
 	\item\textbf{Scenario principale:} 
-	l'amministratore preme un pulsante per lo scaricamento del report che sta visualizzando.
+	\begin{enumerate}
+		\item l'amministratore preme un pulsante per lo scaricamento del report che sta visualizzando in formato PDF.
+		\item il report viene scaricato in formato PDF.
+	\end{enumerate}
 	\item\textbf{Generalizzazione:}
 	\begin{itemize}
 		\item[$-$] scaricamento del report delle igienizzazioni in un formato leggibile (UC21.1).
@@ -1142,7 +1168,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \subsubsection{ UC - Avviso pre-inizio prenotazione }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} il dipendente viene avvisato dell'imminte inizio di una sua prenotazione.
+	\item\textbf{Descrizione:} il dipendente viene ato dell'imminte inizio di una sua prenotazione.
 	\item\textbf{Scenario Principale:} 1 ora prima dell'inizio della prossima prenotazione il dipendente riceve un notifica dall'applicazione che gli indica l'imminenza dell'evento.
 	\item\textbf{Precondizione:} il dipendente ha una prenotazione su una postazione.
 	\item\textbf{Postcondizione:} il dipendente è stato avvisato tramite notifica dell'imminenza di una sua prenotazione.
