@@ -623,49 +623,6 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza le informazioni.
 \end{itemize}
 
-\subsubsection{ UC - Report vicini di postazione}
-\begin{itemize}
-	\item\textbf{Attori Primari:} 
-	amministratore.
-	\item\textbf{Descrizione:} 
-	l'amministratore ottiene un report di tutti i vicini che l'utente selezionato ha avuto nel tempo.
-	\item\textbf{Scenario principale:} 
-	\begin{enumerate}
-		\item l'amministratore inserisce:
-		\begin{itemize}
-			\item nome utente oppure nome e cognome del dipendente a cui è interessato
-			\item distanza in numero di postazioni
-		\end{itemize}
-		\item l'amministratore riceve una lista degli utenti vicini di postazione dell'utente selezionato. I vicini sono raggruppati per occupazione dell'utente selezionato: per ogni occupazione sono indicati gli utenti che in quel caso erano vicini a quello selezionato. Inoltre per ogni vicino sono indicate l'ora e la data di inizio e fine della vicinanza. Per ogni occupazione del dipendente e di ogni vicino sono indicati anche l'hash corrispondente e l'indirizzo della blockchain su cui l'hash è salvato.
-	\end{enumerate}
-	\item\textbf{Precondizione:} 
-	l'amministratore si trova sulla pagina di esplorazione occupazioni
-	\item\textbf{Postcondizione:}
-	l'amministratore visualizza un report di tutti i vicini che l'utente selezionato ha avuto nel tempo.
-\end{itemize}
-
-\subsubsection{ UC - Report vicini di postazione in un periodo}
-\begin{itemize}
-	\item\textbf{Attori Primari:} 
-	amministratore.
-	\item\textbf{Descrizione:} 
-	l'amministratore ottiene un report dei vicini che l'utente selezionato ha avuto nel periodo specificato.
-	\item\textbf{Scenario principale:} 
-	\begin{enumerate}
-		\item l'amministratore inserisce:
-		\begin{itemize}
-			\item data di inizio del periodo di ricerca
-			\item data di fine del periodo di ricerca
-		\end{itemize}
-		\item l'amministratore riceve una lista degli utenti vicini di postazione dell'utente selezionato nel periodo specificato. I vicini sono raggruppati per occupazione dell'utente selezionato: per ogni occupazione sono indicati gli utenti che in quel caso erano vicini a quello selezionato. Inoltre per ogni vicino sono indicate l'ora e la data di inizio e fine della vicinanza. Per ogni occupazione del dipendente e di ogni vicino sono indicati anche l'hash corrispondente e l'indirizzo della blockchain su cui l'hash è salvato.
-	\end{enumerate}
-	\item\textbf{Precondizione:} 
-	l'amministratore visualizza il report dei vicini di un dipendente
-	\item\textbf{Postcondizione:}
-	l'amministratore visualizza un report dei vicini che l'utente selezionato ha avuto nel periodo specificato.
-\end{itemize}
-
-
 \subsubsection{ UC20.2 - Ottenimento report degli utenti che hanno occupato una specifica postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
@@ -741,6 +698,50 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:}
 	l'utente ha scaricato il report in formato PDF.
 \end{itemize}
+
+
+\subsubsection{ UC20.4 - Report vicini di postazione}
+\begin{itemize}
+	\item\textbf{Attori Primari:} 
+	amministratore.
+	\item\textbf{Descrizione:} 
+	l'amministratore ottiene un report di tutti i vicini che l'utente selezionato ha avuto nel tempo.
+	\item\textbf{Scenario principale:} 
+	\begin{enumerate}
+		\item l'amministratore inserisce:
+		\begin{itemize}
+			\item nome utente oppure nome e cognome del dipendente a cui è interessato
+			\item distanza in numero di postazioni
+		\end{itemize}
+		\item l'amministratore riceve una lista degli utenti vicini di postazione dell'utente selezionato. I vicini sono raggruppati per occupazione dell'utente selezionato: per ogni occupazione sono indicati gli utenti che in quel caso erano vicini a quello selezionato. Inoltre per ogni vicino sono indicate l'ora e la data di inizio e fine della vicinanza. Per ogni occupazione del dipendente e di ogni vicino sono indicati anche l'hash corrispondente e l'indirizzo della blockchain su cui l'hash è salvato.
+	\end{enumerate}
+	\item\textbf{Precondizione:} 
+	l'amministratore si trova sulla pagina di esplorazione occupazioni
+	\item\textbf{Postcondizione:}
+	l'amministratore visualizza un report di tutti i vicini che l'utente selezionato ha avuto nel tempo.
+\end{itemize}
+
+\subsubsection{ UC20.4.1 - Report vicini di postazione in un periodo}
+\begin{itemize}
+	\item\textbf{Attori Primari:} 
+	amministratore.
+	\item\textbf{Descrizione:} 
+	l'amministratore ottiene un report dei vicini che l'utente selezionato ha avuto nel periodo specificato.
+	\item\textbf{Scenario principale:} 
+	\begin{enumerate}
+		\item l'amministratore inserisce:
+		\begin{itemize}
+			\item data di inizio del periodo di ricerca
+			\item data di fine del periodo di ricerca
+		\end{itemize}
+		\item l'amministratore riceve una lista degli utenti vicini di postazione dell'utente selezionato nel periodo specificato. I vicini sono raggruppati per occupazione dell'utente selezionato: per ogni occupazione sono indicati gli utenti che in quel caso erano vicini a quello selezionato. Inoltre per ogni vicino sono indicate l'ora e la data di inizio e fine della vicinanza. Per ogni occupazione del dipendente e di ogni vicino sono indicati anche l'hash corrispondente e l'indirizzo della blockchain su cui l'hash è salvato.
+	\end{enumerate}
+	\item\textbf{Precondizione:} 
+	l'amministratore visualizza il report dei vicini di un dipendente
+	\item\textbf{Postcondizione:}
+	l'amministratore visualizza un report dei vicini che l'utente selezionato ha avuto nel periodo specificato.
+\end{itemize}
+
 
 
 \subsubsection{ UC21 - Report sanificazioni postazione}
@@ -831,7 +832,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \subsubsection{ UC24 - Segnalazione presenza}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=15cm]{res/images/UC21.png}
+	\includegraphics[width=15cm]{res/images/UC24.png}
 	\caption{Segnalazione presenza}
 	\label{fig:Segnalazione presenza}
 \end{figure}
@@ -868,7 +869,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l'azione della precondizione viene registrata.
 	\item\textbf{Estensioni:} 
 	\begin{itemize}
-		\item[$-$] visualizzazione errore fine occupazione: se l'utente alza lo smartphone dal tag NFC e abbandona la postazione in modo prematuro rispetto al tempo di fine prenotazione, dopo mezzora viene visualizzato un messaggio di errore e avviene la disdetta automatica della prenotazione per il tempo rimanente (UC24.3).
+		\item[$-$] visualizzazione errore fine prematura occupazione: se l'utente alza lo smartphone dal tag NFC e abbandona la postazione in modo prematuro rispetto al tempo di fine prenotazione, dopo mezzora viene visualizzato un messaggio di errore e avviene la disdetta automatica della prenotazione per il tempo rimanente (UC24.3).
+	\end{itemize}
+	\begin{itemize}
+	\item[$-$] visualizzazione errore postazione non igienizzata: se la postazione non è pulita viene segnalato all'utente di igienizzarla (UC24.4).
 	\end{itemize}
 \end{itemize}
 
@@ -879,6 +883,14 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Scenario principale:} viene visualizzato un messaggio di errore e avviene la disdetta automatica della prenotazione per il tempo restante.
 	\item\textbf{Precondizione:} l’utente sposta il proprio smartphone dal tag NFC per un periodo di tempo maggiore o uguale a trenta minuti, oppure non si presenta alla postazione sempre entro lo stesso periodo di tempo, rispetto all'orario di inizio prenotazione. 
 	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore specifico e avviene la disdetta automatica della prenotazione per il tempo rimanente.
+\end{itemize}
+
+\subsubsection{ UC24.4 - Visualizzazione errore postazione non igienizzata}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente visualizza un messaggio di errore in quanto non può occupare una postazione non igienizzata.
+	\item\textbf{Precondizione:} l’utente appoggia il proprio cellulare sul tag NFC per segnalare la presenza. 
+	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore specifico che avvisa che finchè la postazione non viene igienizzata non può essere occupata.
 \end{itemize}
 
 \subsubsection{ UC24.2.1 - Visualizzazione messaggio inizio occupazione}
@@ -900,46 +912,21 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \end{itemize}
 
 \subsubsection{ UC25 - Pulizia autonoma}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=15cm]{res/images/UC23.png}
-	\caption{Pulizia autonoma}
-	\label{fig:Pulizia autonoma}
-\end{figure}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Attori Secondari:} Ethereum.
 	\item\textbf{Descrizione:} l’utente pulisce in autonomia la postazione e lo segnala sull'applicazione mobile. Inoltre, 
 	registra di aver effettuato questa azione, grazie all'utilizzo di Ethereum.	
-	\item\textbf{Scenario principale:} l’utente dopo aver igienizzato la postazione con il kit aziendale, modifica lo stato della postazione in libera e igienizzata. Inoltre, 
-	registra di aver effettuato questa azione, grazie all'utilizzo di Ethereum.
+	\item\textbf{Scenario principale:} l’utente dopo aver igienizzato la postazione con il kit aziendale, modifica lo stato della postazione in libera e igienizzata o prenotata e igienizzata. Inoltre, registra di aver effettuato questa azione, grazie all'utilizzo di Ethereum.
 	\item\textbf{Precondizione:} l’utente è autenticato nell'applicazione mobile, ha igienizzato la propria postazione e sta navigando nella sezione per la pulizia 
 	autonoma della postazione.
-	\item\textbf{Postcondizione:} l’utente modifica lo stato della postazione in libera e igienizzata e registra l'avvenuta pulizia autonoma della postazione.
-\end{itemize}
-\subsubsection{ UC25.1 - Modifica stato postazione }
-\begin{itemize}
-	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} l’utente dopo aver igienizzato autonomamente la postazione con il kit aziendale, modifica lo stato della stessa.
-	\item\textbf{Scenario principale:} l’utente modifica lo stato della postazione in libera e igienizzata.
-	\item\textbf{Precondizione:} l’utente sta navigando all'interno della sezione pulizia autonoma delle postazioni.
-	\item\textbf{Postcondizione:} l’utente modifica lo stato della postazione.
+	\item\textbf{Postcondizione:} l’utente modifica lo stato della postazione in libera e igienizzata o prenotata e igienizzata e registra l'avvenuta pulizia autonoma della postazione.
 \end{itemize}
 
-\subsubsection{ UC25.2 - Registrazione pulizia autonoma }
-\begin{itemize}
-	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Attori Secondari:} Ethereum.
-	\item\textbf{Descrizione:} l’utente segnala all'applicazione mobile di aver igienizzato autonomamente la postazione con il kit aziendale.
-	\item\textbf{Scenario principale:} l’utente igienizza la postazione con il kit aziendale e registra questa azione grazie all'utilizzo di Ethereum.
-	\item\textbf{Precondizione:} l’utente è autenticato nell'applicazione mobile, ha pulito la postazione e sta navigando nella sezione di 
-	registrazione della pulizia autonoma.
-	\item\textbf{Postcondizione:} l’utente registra l'avvenuta igienizzazione autonoma della postazione.
-\end{itemize}
 \subsubsection{ UC26 - Prenotazione postazione }
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=18cm]{res/images/UC24.png}
+	\includegraphics[width=18cm]{res/images/UC26.png}
 	\caption{Gestione prenotazione}
 	\label{fig:Gestione prenotazione}
 \end{figure}
@@ -1219,7 +1206,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l’utente effettua la disdetta della prenotazione selezionata.
 \end{itemize}
 
-\subsubsection{ UC - Avviso indisponibilità postazione prenotata }
+\subsubsection{ UC29 - Avviso indisponibilità postazione prenotata }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} il dipendente che ha una prenotazione per una postazione viene avvisato nel caso la postazione non sia più disponibile.
@@ -1228,69 +1215,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l'utente riceve una notifica che lo avvisa dell'indisponibilità di una delle postazioni che ha prenotato.
 \end{itemize}
 
-
-
-\subsubsection{ UC - Avviso pre-inizio prenotazione }
-\begin{itemize}
-	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} il dipendente viene ato dell'imminte inizio di una sua prenotazione.
-	\item\textbf{Scenario Principale:} 1 ora prima dell'inizio della prossima prenotazione il dipendente riceve un notifica dall'applicazione che gli indica l'imminenza dell'evento.
-	\item\textbf{Precondizione:} il dipendente ha una prenotazione su una postazione.
-	\item\textbf{Postcondizione:} il dipendente è stato avvisato tramite notifica dell'imminenza di una sua prenotazione.
-\end{itemize}
-
-
-\subsubsection{ UC - Avviso disdetta automatica prenotazione per ritardo }
-\begin{itemize}
-	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} il dipendente viene avvisato della disdetta automatica di una sua prenotazione.
-	\item\textbf{Scenario Principale:} 30 minuti dopo l'inizio della prenotazione, se l'utente non ha ancora appoggiato il telefono sul tag NFC:
-	\begin{enumerate}
-		\item la sua prenotazione viene disdetta;
-		\item l'utente viene avvisato della disdetta tramite una notifica dell'applicazione.
-	\end{enumerate}
-	\item\textbf{Precondizione:} il dipendente ha una prenotazione su una postazione.
-	\item\textbf{Postcondizione:} il dipendente è stato avvisato tramite notifica della disdetta automatica della sua prenotazione.
-\end{itemize}
-
-\subsubsection{ UC - Avviso pre-fine prenotazione}
-\begin{itemize}
-	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} il dipendente viene avvisato dell'imminente fine della prenotazione della postazione che sta occupando.
-	\item\textbf{Scenario Principale:} 5 minuti prima della fine della prenotazione di cui sta usufruendo, il dipendente riceve un notifica dall'applicazione che gli indica l'imminenza dell'evento.
-	\item\textbf{Precondizione:} il dipendente sta occupando una postazione.
-	\item\textbf{Postcondizione:} il dipendente è stato avvisato tramite notifica dell'imminenza della fine della sua prenotazione.
-\end{itemize}
-
-\subsubsection{ UC - Avviso fine occupazione per assenza prolungata}
-\begin{itemize}
-	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} se il telefono del dipendente rimane non appoggiato al tag NFC della postazione, l'occupazione viene terminata e l'utente ne viene avvisato.
-	\item\textbf{Scenario Principale:} se il dipendente ha tenuto il telefono non appoggiato al tag per 30 minuti:
-	\begin{enumerate}
-		\item la sua occupazione viene terminata;
-		\item egli viene avvisato della fine dell'occupazione.
-	\end{enumerate}
-	\item\textbf{Precondizione:} il dipendente stava occupando un postazione ma ha sollevato il telefono dal tag NFC.
-	\item\textbf{Postcondizione:} l'occupazione del dipendente è stata chiusa ed egli ne è stato avvisato.
-\end{itemize}
-
-\subsubsection{ UC25 - Elenco stanze e postazioni da igienizzare}
-\begin{figure}[H]
-		\centering
-		\includegraphics[width=15cm]{res/images/UC25.png}
-		\caption{Elenco stanze e postazioni da igienizzare}
-		\label{fig:Elenco stanze e postazioni da igienizzare}
-	\end{figure}
-\begin{itemize}
-           	\item\textbf{Attori Primari:} addetto pulizie.
-           	\item\textbf{Descrizione:} l'utente riceve un elenco delle postazioni(UC25.2) e delle stanze(UC25.1) che necessitano di igienizzazione.
-           	\item\textbf{Scenario principale:} l'utente si trova all'interno del sistema e verifica tutte le postazioni che sono state utilizzate almeno da un dipendente, che saranno quindi da igienizzare, oppure può decidere di igienizzare l’intera stanza.
-           	\item\textbf{Precondizione:} l'utente va nella sezione dedicata nel sistema e deve premere un bottone.
-           	\item\textbf{Postcondizione:} l'utente verifica quali postazioni sono state occupate da almeno un dipendente, così da ottenere un elenco delle stanze e postazioni da igienizzare.
-\end{itemize}
-
-\subsubsection{UC25.1 - Elenco stanze da igienizzare}
+\subsubsection{UC30 - Elenco stanze da igienizzare}
 \begin{itemize}
            	\item\textbf{Attori Primari:} addetto pulizie.
            	\item\textbf{Descrizione:} l'utente riceve un elenco delle stanze che necessitano di igienizzazione.
@@ -1298,7 +1223,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	\item\textbf{Precondizione:} l'utente va nella sezione dedicata nel sistema e deve premere un bottone.
            	\item\textbf{Postcondizione:} l'utente verifica quali stanze sono state occupate da almeno un dipendente, così da ottenere un elenco delle stanze da igienizzare.
 \end{itemize}
-\subsubsection{UC25.2 - Elenco postazioni da igienizzare}
+\subsubsection{UC31 - Elenco postazioni da igienizzare}
 \begin{itemize}
            	\item\textbf{Attori Primari:} addetto pulizie.
            	\item\textbf{Descrizione:} l'utente riceve un elenco delle postazioni che necessitano di igienizzazione.
@@ -1307,22 +1232,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	\item\textbf{Postcondizione:} l'utente verifica quali postazioni sono state occupate da almeno un dipendente, così da ottenere un elenco delle postazioni da igienizzare.
 \end{itemize}
 
-\subsubsection{ UC26 - Marcatura stanza e postazione come igienizzata}
-\begin{figure}[H]
-		\centering
-		\includegraphics[width=18cm]{res/images/UC26.png}
-		\caption{Marcatura stanza e postazione come igienizzata}
-		\label{fig:Marcatura stanza e postazione come igienizzata}
-	\end{figure}
-\begin{itemize}
-           	\item\textbf{Attori Primari:} addetto pulizie.
-		\item\textbf{Attore Secondario:} Ethereum.
-           	\item\textbf{Descrizione:} dopo l'igienizzazione l'utente marca le stanze o le postazioni che ha pulito come igienizzate.
-           	\item\textbf{Scenario principale:} l'utente igienizza la stanza(UC26.1) o la postazione(UC26.2), in seguito accede al sistema e la marca come igienizzata attraverso l'utilizzo di Ethereum.
-           	\item\textbf{Precondizione:} l'utente ottiene l'elenco delle stanze e delle postazioni da igienizzare.
-           	\item\textbf{Postcondizione:} l'utente, dopo l'igienizzazione, marca le stanze e le postazioni come igienizzate.
-\end{itemize}
-\subsubsection{UC26.1 - Marcatura stanza come igienizzata}
+\subsubsection{UC32 - Marcatura stanza come igienizzata}
 \begin{itemize}
            	\item\textbf{Attori Primari:} addetto pulizie.
 		\item\textbf{Attore Secondario:} Ethereum.
@@ -1331,7 +1241,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	\item\textbf{Precondizione:} l'utente ottiene l'elenco delle stanze da igienizzare.
            	\item\textbf{Postcondizione:} l'utente, dopo l'igienizzazione, marca le stanze come igienizzate.
 \end{itemize}
-\subsubsection{UC26.2 - Marcatura postazione come igienizzata}
+\subsubsection{UC33 - Marcatura postazione come igienizzata}
 \begin{itemize}
            	\item\textbf{Attori Primari:} addetto pulizie.
 		\item\textbf{Attore Secondario:} Ethereum.
