@@ -235,7 +235,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Scenario principale:}
 	\begin{enumerate}
 		\item l'amministratore raggiunge la pagina di visione delle stanze e delle postazioni
-		\item l'amministratore visualizza le stanze e le postazioni colorate in base al loro stato. Le postazioni sono colorate in base al loro stato e gli stati possibili sono:
+		\item l'amministratore visualizza le stanze e lo stato delle postazioni. I possibili stati delle postazioni sono:
 		\begin{itemize}
 			\item[$-$] libera e igienizzata;
 			\item[$-$] libera e non igienizzata;
@@ -250,7 +250,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
-	l'amministratore visualizza lo schema delle stanze e delle postazioni.
+	L'amministratore visualizza l'elenco delle stanze. Ogni stanza è rappresentata tramite uno scacchiera. Ogni casella della scacchiera può indicare una postazione con il suo rispettivo stato.
 \end{itemize}
 
 
@@ -631,7 +631,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\begin{enumerate}
 		\item l'amministratore raggiunge la pagina per la ricerca delle occupazioni delle postazioni;
 		\item ricerca le informazioni a cui è interessato.
-	\end{enumerate}	 e 
+	\end{enumerate}	
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
@@ -857,7 +857,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Attori Secondari:} tag NFC, Ethereum.
-	\item\textbf{Descrizione:} l’utente segnala in tempo reale la propria presenza alla postazione, appoggiando lo smartphone sul tag NFC. Inoltre, registra il tempo di inizio e di fine di questa azione grazie all'utilizzo di Ethereum. Il primo è determinato da un timeout di un minuto in cui si lascia lo smartphone appoggiato sul tagNFC, mentre il secondo dal tempo di fine della prenotazione.
+	\item\textbf{Descrizione:} l’utente segnala in tempo reale la propria presenza alla postazione, appoggiando lo smartphone sul tag NFC. Inoltre, registra il tempo di inizio e di fine di questa azione grazie all'utilizzo di Ethereum. Il primo è determinato da un timeout di un minuto in cui si lascia lo smartphone appoggiato sul tagNFC, mentre il secondo dal tempo di fine occupazione.
 	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tag NFC e segnala in questo modo la propria presenza.
 	Il tempo di inizio e di fine di questa azione vengono memorizzati grazie all'utilizzo di Ethereum.
 	\item\textbf{Precondizione:} l’utente si è autenticato nell'applicazione mobile e occupa una postazione.
@@ -882,7 +882,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Attori Secondari:} Ethereum.
 	\item\textbf{Descrizione:} l’utente registra l'inizio e la fine della propria occupazione della postazione.
-	\item\textbf{Scenario principale:} l'utente registra il tempo di inizio e di fine dell'occupazione di una postazione in modo automatico, grazie all'utilizzo di Ethereum. Il primo è determinato da un timeout di un minuto in cui si lascia lo smartphone appoggiato sul tagNFC, mentre il secondo dal tempo di fine della prenotazione.
+	\item\textbf{Scenario principale:} l'utente registra il tempo di inizio e di fine dell'occupazione di una postazione in modo automatico, grazie all'utilizzo di Ethereum. Il primo è determinato da un timeout di un minuto in cui si lascia lo smartphone appoggiato sul tagNFC, mentre il secondo dal tempo di fine occupazione.
 	\item\textbf{Precondizione:} l’utente occupa una postazione e appoggia correttamente lo smartphone sul tag NFC. 
 	\item\textbf{Postcondizione:} l'azione della precondizione viene registrata.
 	\item\textbf{Estensioni:} 
@@ -892,6 +892,24 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\begin{itemize}
 	\item[$-$] visualizzazione errore postazione non igienizzata: se la postazione non è pulita viene segnalato all'utente di igienizzarla (UC24.4).
 	\end{itemize}
+\end{itemize}
+
+\subsubsection{ UC24.2.1 - Visualizzazione messaggio promemoria di inizio occupazione}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente visualizza un messaggio di inizio della prenotazione, un'ora prima che essa avvenga.
+	\item\textbf{Scenario principale:} viene visualizzato un promemoria di inizio della prenotazione.
+	\item\textbf{Precondizione:} l’utente ha effettuato una prenotazione almeno un'ora prima dell'inizio della stessa.
+	\item\textbf{Postcondizione:} viene visualizzato un messaggio promemoria di inizio occupazione della postazione.
+\end{itemize}
+
+\subsubsection{ UC24.2.2 - Visualizzazione messaggio promemoria di fine occupazione}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente visualizza un messaggio di fine della prenotazione, cinque minuti prima che essa avvenga.
+	\item\textbf{Scenario principale:} viene visualizzato un promemoria di fine della prenotazione.
+	\item\textbf{Precondizione:} l’utente ha effettuato una prenotazione.
+	\item\textbf{Postcondizione:} viene visualizzato un messaggio promemoria di fine occupazione della postazione.
 \end{itemize}
 
 \subsubsection{ UC24.3 - Visualizzazione errore fine prematura occupazione}
@@ -924,23 +942,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore specifico che avvisa che finchè la postazione non viene igienizzata non può essere occupata.
 \end{itemize}
 
-\subsubsection{ UC24.2.1 - Visualizzazione messaggio inizio occupazione}
-\begin{itemize}
-	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} l’utente visualizza un messaggio di inizio della prenotazione, un'ora prima che essa avvenga.
-	\item\textbf{Scenario principale:} viene visualizzato un promemoria di inizio della prenotazione.
-	\item\textbf{Precondizione:} l’utente ha effettuato una prenotazione almeno un'ora prima dell'inizio della stessa.
-	\item\textbf{Postcondizione:} viene visualizzato un messaggio di inizio occupazione della postazione.
-\end{itemize}
 
-\subsubsection{ UC24.2.2 - Visualizzazione messaggio fine occupazione}
-\begin{itemize}
-	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} l’utente visualizza un messaggio di fine della prenotazione, cinque minuti prima che essa avvenga.
-	\item\textbf{Scenario principale:} viene visualizzato un promemoria di fine della prenotazione.
-	\item\textbf{Precondizione:} l’utente ha effettuato una prenotazione.
-	\item\textbf{Postcondizione:} viene visualizzato un messaggio di fine occupazione della postazione.
-\end{itemize}
 
 \subsubsection{ UC25 - Pulizia autonoma}
 \begin{itemize}
@@ -1067,7 +1069,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l’utente ha compilato il campo richiesto.
 	\item\textbf{Estensioni:} l’utente inserisce i campi necessari alla ricerca della postazione desiderata.
 	\begin{itemize}
-		\item[$-$] l’utente inserisce una nome non valido (UC).
+		\item[$-$] l’utente inserisce un nome non valido (UC26.1.8).
 	\end{itemize}
 \end{itemize}
 \subsubsection{ UC26.1.8 - Visualizzazione errore: nome dipendente non valido }
@@ -1137,7 +1139,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Descrizione:} l’utente riceve l'identificativo di una postazione igienizzata e libera in una determinata stanza, 
 	in modo automatico e in base a un criterio di distanziamento dalle altre postazioni.
 	\item\textbf{Scenario principale:} viene fornito l'identificativo di una postazione libera e igienizzata.
-	\item\textbf{Precondizione:} l’utente preme il bottone nella sezione della prima postazione disponibil, libera per tutta la giornata lavorativa e distanziata maggiormente dalle altre.
+	\item\textbf{Precondizione:} l’utente preme il bottone nella sezione della prima postazione disponibile, libera per tutta la giornata lavorativa e distanziata maggiormente dalle altre.
 	\item\textbf{Postcondizione:} l’utente riceve l'identificativo di una postazione.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
