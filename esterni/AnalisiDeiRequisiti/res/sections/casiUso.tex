@@ -646,8 +646,9 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	l'amministratore ottiene informazioni in forma tabellare sulle postazioni occupate da uno specifico utente.
            	\item\textbf{Scenario principale:} 
            	\begin{enumerate}
-           		\item l'utente inserisce il nome utente oppure il nome e cognome dell'utente a cui è interessato;
-           		\item Nel report vengono visualizzate le date e ore di inizio e fine delle occupazioni e i codici delle postazioni.
+           		\item l'utente inserisce il nome utente oppure il nome e cognome dell'utente a cui è interessato e il periodo all'interno del quale cercare, indicando date di inizio e di fine;
+           		\item l'utente può opzionalmente specificare una postazione indicandone il codice;
+           		\item nel report vengono visualizzate le date e ore di inizio e fine delle occupazioni e i codici delle postazioni.
            		Per ogni occupazione vengono visualizzati anche gli hash salvati sulla blockchain corrispondenti all'inizio e alla fine dell'occupazione e gli indirizzi in cui essi sono salvati.
            	\end{enumerate}
            	\item\textbf{Precondizione:} 
@@ -656,29 +657,8 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	l'utente visualizza le informazioni.
 \end{itemize}
 
-\subsubsection{ UC20.1.1 - Ricerca tra le postazioni occupate da uno specifico utente}
-\begin{itemize}
-	\item\textbf{Attori Primari:} 
-	amministratore.
-	\item\textbf{Descrizione:} 
-	l'amministratore esegue una ricerca specifica tra le postazioni occupate.
-	I valori che permettono di precisare la ricerca sono:
-	\begin{itemize}
-		\item[$-$] data di inizio del periodo all'interno del quale l'utente occupava la postazione.
-		\item[$-$] data di fine del periodo all'interno del quale l'utente occupava la postazione.
-	\end{itemize}
-	\item\textbf{Scenario principale:} 
-	\begin{enumerate}
-		\item l'amministratore seleziona i valori con cui vuole precisare la sua ricerca;
-		\item l'amministratore ottiene la lista delle occupazioni con le relative informazioni. Per ogni occupazione vengono visualizzati anche gli hash salvati sulla blockchain corrispondenti all'inizio e alla fine dell'occupazione e gli indirizzi a cui essi sono salvati.
-	\end{enumerate}
-	\item\textbf{Precondizione:} 
-	l'utente si trova sulla pagina dedicata alla ricerca delle postazioni occupate.
-	\item\textbf{Postcondizione:}
-	l'utente visualizza le informazioni specificate dalla sua ricerca.
-\end{itemize}
 
-\subsubsection{ UC20.1.2 - Ottenimento report delle occupazioni di uno specifico utente con indicazione delle ore trascorse a ogni postazione}
+\subsubsection{ UC20.1.1 - Ottenimento report delle occupazioni di uno specifico utente con indicazione delle ore trascorse a ogni postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -686,8 +666,9 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'amministratore ottiene informazioni in forma tabellare sulle postazioni occupate da uno specifico utente con l'indicazione delle ore trascorse in ogni postazione.
 	\item\textbf{Scenario principale:}
 	\begin{enumerate}
-		\item l'ammistratore inserisce il nickname oppure il nome e cognome dell'utente a cui è interessato;
-		\item Nel report vengono visualizzate la data e ora di inizio e fine delle occupazioni, i codici delle postazioni e le ore trascorse;
+		\item l'ammistratore inserisce il nickname oppure il nome e cognome dell'utente a cui è interessato e periodo all'interno del quale cercare, indicando date di inizio e di fine;
+		\item l'utente può opzionalmente specificare una postazione indicandone il codice;
+		\item nel report vengono visualizzate la data e ora di inizio e fine delle occupazioni, i codici delle postazioni e le ore trascorse;
 		Per ogni occupazione vengono visualizzati anche gli hash salvati sulla blockchain corrispondenti all'inizio e alla fine dell'occupazione e gli indirizzi a cui essi sono salvati.
 	\end{enumerate}
 	\item\textbf{Precondizione:} 
@@ -704,8 +685,9 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'amministratore ottiene informazioni in forma tabellare sulle occupazioni di una postazione.
 	\item\textbf{Scenario principale:} 
 	\begin{enumerate}
-		\item l'amministratore inserisce il codice della postazione a cui è interessato;
-		\item Nel report vengono visualizzate le date di inizio e fine delle occupazioni e i nomi degli utenti. Per ogni occupazione vengono visualizzati anche gli hash salvati sulla blockchain corrispondenti all'inizio e alla fine dell'occupazione e gli indirizzi a cui essi sono salvati.
+		\item l'amministratore inserisce il codice della postazione a cui è interessato e il periodo, indicando date di inizio e fine;
+		\item l'utente può opzionalmente specificare un utente tramite nome utente oppure nome e cognome;
+		\item nel report vengono visualizzate le date di inizio e fine delle occupazioni e i nomi degli utenti. Per ogni occupazione vengono visualizzati anche gli hash salvati sulla blockchain corrispondenti all'inizio e alla fine dell'occupazione e gli indirizzi a cui essi sono salvati.
 	\end{enumerate}
 	\item\textbf{Precondizione:} 
 	l'amministratore si trova sulla pagina per la ricerca delle occupazioni delle postazioni
@@ -713,27 +695,6 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza le informazioni specificate dalla sua ricerca.
 \end{itemize}
 
-\subsubsection{ UC20.2.1 - Ricerca tra le occupazioni di una specifica postazione}
-\begin{itemize}
-	\item\textbf{Attori Primari:} 
-	amministratore.
-	\item\textbf{Descrizione:} 
-	l'amministratore esegue una ricerca specifica tra gli utenti che hanno occupato una specifica postazione.
-	I valori che permettono di precisare la ricerca sono:
-	\begin{itemize}
-		\item[$-$] data di inizio del periodo all'interno del quale l'utente occupava la postazione.
-		\item[$-$] data di fine del periodo all'interno del quale l'utente occupava la postazione.
-	\end{itemize}
-	\item\textbf{Scenario principale:} 
-	\begin{enumerate}
-		\item l'amministratore seleziona i valori con cui vuole precisare la sua ricerca;
-		\item l'amministratore ottiene la lista delle occupazioni con le relative informazioni. Per ogni occupazione vengono visualizzati anche gli hash salvati sulla blockchain corrispondenti all'inizio e alla fine dell'occupazione e gli indirizzi a cui essi sono salvati.
-	\end{enumerate}
-	\item\textbf{Precondizione:} 
-	l'utente si trova sulla pagina dedicata alla ricerca delle occupazioni.
-	\item\textbf{Postcondizione:}
-	l'utente visualizza le informazioni specificate dalla sua ricerca.
-\end{itemize}
 
 \subsubsection{ UC20.3 - Scaricamento del report delle occupazioni in un formato leggibile}
 \begin{itemize}
@@ -779,13 +740,16 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Attori Primari:} 
 	amministratore.
 	\item\textbf{Descrizione:} 
-	l'amministratore ottiene un report di tutti i vicini che l'utente selezionato ha avuto nel tempo.
+	l'amministratore ottiene un report dei vicini che l'utente selezionato ha avuto.
 	\item\textbf{Scenario principale:} 
 	\begin{enumerate}
 		\item l'amministratore inserisce:
 		\begin{itemize}
 			\item[$-$] nome utente oppure nome e cognome del dipendente a cui è interessato;
 			\item[$-$] distanza in numero di postazioni;
+			\item[$-$] data di inizio del periodo da considerare;
+			\item[$-$] data di fine del periodo da considerare;
+			\item[$-$] (opzionalmente) nome utente o nome e cognome di uno specifico utente da cercare tra i vicini.
 		\end{itemize}
 		\item l'amministratore riceve una lista degli utenti vicini di postazione dell'utente selezionato. I vicini sono raggruppati per occupazione dell'utente selezionato: per ogni occupazione sono indicati gli utenti che in quel caso erano vicini a quello selezionato. Inoltre per ogni vicino sono indicate l'ora e la data di inizio e fine della vicinanza. Per ogni occupazione del dipendente e di ogni vicino sono indicati anche l'hash corrispondente e l'indirizzo sulla blockchain in cui l'hash è salvato.
 	\end{enumerate}
@@ -794,28 +758,6 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:}
 	l'amministratore visualizza un report di tutti i vicini che l'utente selezionato ha avuto nel tempo.
 \end{itemize}
-
-\subsubsection{ UC20.4.1 - Report vicini di postazione in un periodo}
-\begin{itemize}
-	\item\textbf{Attori Primari:} 
-	amministratore.
-	\item\textbf{Descrizione:} 
-	l'amministratore ottiene un report dei vicini che l'utente selezionato ha avuto nel periodo specificato.
-	\item\textbf{Scenario principale:} 
-	\begin{enumerate}
-		\item l'amministratore inserisce:
-		\begin{itemize}
-			\item[$-$] data di inizio del periodo di ricerca;
-			\item[$-$] data di fine del periodo di ricerca;
-		\end{itemize}
-		\item l'amministratore riceve una lista degli utenti vicini di postazione dell'utente selezionato nel periodo specificato. I vicini sono raggruppati per occupazione dell'utente selezionato: per ogni occupazione sono indicati gli utenti che in quel caso erano vicini a quello selezionato. Inoltre per ogni vicino sono indicate l'ora e la data di inizio e fine della vicinanza. Per ogni occupazione del dipendente e di ogni vicino sono indicati anche l'hash corrispondente e l'indirizzo sulla blockchain in cui l'hash è salvato.
-	\end{enumerate}
-	\item\textbf{Precondizione:} 
-	l'amministratore visualizza il report dei vicini di un dipendente
-	\item\textbf{Postcondizione:}
-	l'amministratore visualizza un report dei vicini che l'utente selezionato ha avuto nel periodo specificato.
-\end{itemize}
-
 
 
 \subsubsection{ UC21 - Report sanificazioni postazione}
