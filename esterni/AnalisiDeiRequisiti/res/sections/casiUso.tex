@@ -899,11 +899,24 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente visualizza un messaggio di errore in quanto sposta lo smartphone dal tag NFC, durante l'orario di prenotazione della postazione.
 	\item\textbf{Scenario principale:} viene visualizzato un messaggio di errore e avviene la disdetta automatica della prenotazione per il tempo restante.
-	\item\textbf{Precondizione:} l’utente sposta il proprio smartphone dal tag NFC per un periodo di tempo maggiore o uguale a trenta minuti, oppure non si presenta alla postazione sempre entro lo stesso periodo di tempo, rispetto all'orario di inizio prenotazione. 
+	\item\textbf{Precondizione:} l’utente sposta il proprio smartphone dal tag NFC per un periodo di tempo maggiore o uguale a trenta minuti.
 	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore specifico e avviene la disdetta automatica della prenotazione per il tempo rimanente.
 \end{itemize}
 
-\subsubsection{ UC24.4 - Visualizzazione errore postazione non igienizzata}
+\subsubsection{ UC24.4 - Visualizzazione errore utente assente }
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l'utente viene avvisato della disdetta automatica di una sua prenotazione.
+	\item\textbf{Scenario Principale:} l'utente non ha ancora appoggiato il telefono sul tag NFC dopo trenta minuti l'inizio della prenotazione:
+	\begin{enumerate}
+		\item la sua prenotazione viene disdetta;
+		\item l'utente viene avvisato della disdetta tramite una notifica dell'applicazione.
+	\end{enumerate}
+	\item\textbf{Precondizione:} l'utente ha una prenotazione su una postazione.
+	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore specifico e avviene la disdetta automatica della prenotazione per il tempo rimanente.
+\end{itemize}
+
+\subsubsection{ UC24.5 - Visualizzazione errore postazione non igienizzata}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente visualizza un messaggio di errore in quanto non può occupare una postazione non igienizzata.
