@@ -58,12 +58,13 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R1F10.2&L'amministratore deve poter visualizzare le stanze e le postazioni salvate nel sistema colorate in base al loro stato attuale. Gli stati possibili sono:
 		\begin{itemize}
-			\item libera e igienizzata
-			\item libera e non igienizzata
-			\item occupata
-			\item prenotata e igienizzata
-			\item prenotata e non igienizzata
-			\item inaccessibile
+			\item libera e igienizzata;
+			\item libera e non igienizzata;
+			\item occupata;
+			\item prenotata e igienizzata;
+			\item prenotata e non igienizzata;
+			\item guasta e igienizzata;
+			\item guasta e non igienizzata.
 		\end{itemize}& Capitolato - UC10	\\
 		\hline
 		R1F10.3&Per ogni stanza deve essere indicato il numero di occupanti attuali	& Capitolato - UC10	\\
@@ -119,73 +120,114 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R1F19.5&Il sistema deve poter memorizzare più credenziali per ogni categoria di utenti: amministratori, dipendenti e addetti	& Capitolato - VE\_2021\_01\_01v.1.0.0	\\
 		\hline
-		R1F17&L'amministratore deve poter esplorare la storia delle occupazioni delle postazioni	& Capitolato - UC17 - VE\_2021\_01\_04v.1.0.0	\\
+		R1F20&L'amministratore deve poter esplorare la storia delle occupazioni delle postazioni	& Capitolato - UC20 - VE\_2021\_01\_04v.1.0.0	\\
 		\hline
-		R1F17.1&L'amministratore deve poter visualizzare in forma tabellare le occupazioni di postazioni da parte di un utente specifico, con date e orari di inizio e fine delle occupazioni e codici delle postazioni.	&Capitolato - UC17.1 - VE\_2021\_01\_04v.1.0.0	\\
+		R1F20.1&L'amministratore deve poter visualizzare in forma tabellare le occupazioni di postazioni da parte di un utente specifico, con date e orari di inizio e fine delle occupazioni e codici delle postazioni.	&Capitolato - UC20.1 - VE\_2021\_01\_04v.1.0.0	\\
 		\hline
-		R1F17.1.1&L'amministratore deve poter effettuare una ricerca tra le postazioni occupate da un utente, specificando il periodo all'interno del quale l'utente occupava la postazione. & 	Capitolato - UC17.1.1 - VE\_2021\_01\_04v.1.0.0\\
+		R1F20.1.1&L'amministratore deve poter effettuare una ricerca tra le postazioni occupate da un utente, specificando il periodo all'interno del quale l'utente occupava la postazione. & 	Capitolato - UC20.1.1 - VE\_2021\_01\_04v.1.0.0\\
 		\hline
-		R2F17.1.2&L'amministratore deve poter visualizzare in forma tabellare le occupazioni di postazioni da parte di un utente specifico, con date e orari di inizio e fine delle occupazioni,  codici delle postazioni e ore trascorse alla postazione. & 	Capitolato - UC17.1.2 - VE\_2021\_01\_04v.1.0.0\\
+		R2F20.1.2&L'amministratore deve poter visualizzare in forma tabellare le occupazioni di postazioni da parte di un utente specifico, con date e orari di inizio e fine delle occupazioni,  codici delle postazioni e ore trascorse alla postazione. & 	Capitolato - UC20.1.1 - VE\_2021\_01\_04v.1.0.0\\
 		\hline
-		R1F17.2&L'amministratore deve poter visualizzare in forma tabellare le occupazioni di una postazione specifica, con date e orari di inizio e fine delle occupazioni e nomi e cognomi dei dipendenti.	&Capitolato - UC17.2 - VE\_2021\_01\_04v.1.0.0	\\
+		R1F20.2&L'amministratore deve poter visualizzare in forma tabellare le occupazioni di una postazione specifica, con date e orari di inizio e fine delle occupazioni e nomi e cognomi dei dipendenti.	&Capitolato - UC20.2 - VE\_2021\_01\_04v.1.0.0	\\
 		\hline
-		R1F17.2.1&L'amministratore deve poter effettuare una ricerca tra le occupazioni di una specifica postazione indicando il periodo all'interno del quale l'utente occupava la postazione	& 	Capitolato - UC17.2.1 - VE\_2021\_01\_04v.1.0.0\\
+		R1F20.3 & L'amministratore deve poter scaricare il report delle occupazioni che sta visualizzando in un formato leggibile & Capitolato - UC20.3 - VE\_2021\_01\_04v.1.0.0\\
 		\hline
-		R1F17.3 & L'amministratore deve poter scaricare il report delle occupazioni che sta visualizzando in un formato leggibile & Capitolato - UC17.3 - VE\_2021\_01\_04v.1.0.0\\
+		R2F20.3.1 & L'amministratore deve poter scaricare il report delle occupazioni che sta visualizzando nel formato PDF & Capitolato - UC20.3.1 - VE\_2021\_01\_04v.1.0.0\\
 		\hline
-		R2F17.3.1 & L'amministratore deve poter scaricare il report delle occupazioni che sta visualizzando nel formato PDF & Capitolato - UC17.3.1 - VE\_2021\_01\_04v.1.0.0\\
+		R2F20.4 & L'amministratore deve poter ottenere un report dei vicini di postazione di un determinato utente in un determinato periodo & Capitolato - UC20.4 - VE\_2021\_01\_04v.1.0.0\\
 		\hline
-		R2F18&L'amministratore deve poter ottenere una tabella delle sanificazioni di tutte le postazioni, con data e ora in cui sono avvenute, nome e cognome di chi le ha eseguite e il suo ruolo.	&Capitolato - UC18 - VE\_2021\_01\_04v.1.0.0	\\
+		R2F21&L'amministratore deve poter ottenere una tabella delle sanificazioni di tutte le postazioni, con data e ora in cui sono avvenute, nome e cognome di chi le ha eseguite e il suo ruolo.	&Capitolato - UC21 - VE\_2021\_01\_04v.1.0.0	\\
 		\hline
-		R2F18.1&L'amministratore deve poter scaricare il report delle sanificazioni che sta visualizzando in un formato leggibile.	&Capitolato - UC18.1 - VE\_2021\_01\_04v.1.0.0	\\
+		R2F21.1&L'amministratore deve poter scaricare il report delle sanificazioni che sta visualizzando in un formato leggibile.	&Capitolato - UC21.1 - VE\_2021\_01\_04v.1.0.0	\\
 		\hline
-		R2F18.1.1&L'amministratore deve poter scaricare il report delle sanificazioni che sta visualizzando nel formato PDF.	&Capitolato - UC18.1.1 - VE\_2021\_01\_04v.1.0.0	\\
+		R2F21.1.1&L'amministratore deve poter scaricare il report delle sanificazioni che sta visualizzando nel formato PDF.	&Capitolato - UC21.1.1 - VE\_2021\_01\_04v.1.0.0	\\
 		\hline
-		R1F19 & Il dipendente deve poter effettuare una scansione del tag NFC presente su una postazione & Capitolato - UC19 \\
+		R1F22 & Il dipendente deve poter effettuare una scansione del tag NFC presente su una postazione & Capitolato - UC22 \\
 		\hline
-		R1F19.1 & Se il dipendente tenta di effettuare una scansione del tag NFC ma il telefono si trova ad una distanza troppo elevata dal tag, viene visualizzato un errore & Interna - UC19.1 \\
+		R1F23&Il dipendente deve poter visualizzare lo stato di una postazione, tramite tag NFC.	&Capitolato - UC23 	\\
 		\hline
-		R1F20&Il dipendente deve poter visualizzare lo stato di una postazione, tramite tag NFC.	&Capitolato - UC20 	\\
+		R1F24 & Il dipendente deve poter segnalare la propria presenza su una postazione in tempo reale. & Interna - UC24 \\
 		\hline
-		R1F21&Il dipendente deve poter segnalare la propria presenza su una postazione in tempo reale, tramite tag NFC.	&Capitolato - UC21 	\\
+		R1F24.1&Il dipendente deve poter segnalare la propria presenza su una postazione in tempo reale, tramite tag NFC.	&Capitolato - UC24.1 	\\
 		\hline
-		R1F21.1&Il dipendente deve poter registrare i momenti di inizio e di fine della sua occupazione di una postazione, tramite Ethereum.	&Interna - UC21.3 	\\
+		R1F24.2&Il dipendente deve poter registrare i momenti di inizio e di fine della sua occupazione di una postazione, tramite Ethereum.	&Interna - UC24.2 	\\
 		\hline
-		R1F22 & Se un dipendente ha effettuato una prenotazione su una postazione e quella postazione diventa non disponibile, egli deve riceverne notifica & Interna - UC22 \\
-		R1F23&Il dipendente deve poter effettuare una pulizia autonoma di una postazione, tramite il kit aziendale.	&Capitolato - UC23	\\
-		\hline		
-		R1F23.1&Il dipendente, dopo aver effettuato una igienizzazione, deve poter marcare la postazione come libera e igienizzata.	&Interna - UC23.1	\\
+		R1F24.2.1&Il dipendente visualizza un messaggio di inizio della prenotazione, un’ora prima che essa avvenga.	&Interna - UC24.2.1 	\\
+		\hline
+		R1F24.2.2&Il dipendente visualizza un messaggio di fine della prenotazione, cinque minuti prima che essa avvenga.	&Interna - UC24..2.2 	\\
+		\hline
+		R1F24.3&Se l'utente sposta il proprio smartphone dal tag NFC per un periodo di tempo maggiore o uguale a trenta minuti avviene la disdetta automatica della prenotazione per il tempo restante.	&Interna - UC24.3 	\\
+		\hline
+		R1F24.4&l’utente viene avvisato della disdetta automatica di una sua prenotazione se sposta il proprio smartphone dal tag NFC per più di 30 minuti.	&Interna - UC24.4 	\\
+		\hline
+		R1F24.5&Il dipendente visualizza un messaggio di errore se prova a d occupare una postazione non igienizzata. &Interna - UC24.5 	\\
 		\hline	
-		R1F23.2&Il dipendente deve poter registrare l'avvenuta igienizzazione autonoma della postazione, tramite Ethereum.	&Capitolato - UC23.2	\\
+		R1F25&Il dipendente deve poter registrare l'avvenuta igienizzazione autonoma della postazione, tramite Ethereum.	&Capitolato - UC25	\\
 		\hline	
-		R1F24&Il dipendente deve poter ricercare una postazione in base alla data, all'orario e all'identificativo della stanza.	&Interna - UC24.1	\\
+			R1F26&Il dipendente deve poter ricercare una postazione.	&Interna - UC26	\\
 		\hline
-		R1F24.1&Il dipendente deve poter visualizzare le postazioni di una stanza.	&Capitolato - UC24.2	\\
+		R1F26.1&Il dipendente deve poter ricercare una postazione in base alla data, all'orario e all'identificativo della stanza.	&Interna - UC26.1	\\
 		\hline
-		R1F24.2&Il dipendente deve poter visualizzare l'identificativo della prima postazione igienizzata e libera in una stanza.	&Capitolato - UC24.4	\\
+			R1F26.1.1&Il dipendente deve compilare il campo della data per cercare una postazione.	&Interna - UC26.1.1	\\
 		\hline
-		R1F24.3&Il dipendente deve poter selezionare una postazione di una stanza.	&Interna - UC24.5	\\
+			R1F26.1.2&Il dipendente visualizza un messaggio di errore se il campo data ha un valore non valido.	&Interna - UC26.1.2	\\
 		\hline
-		R1F24.4&Il dipendente deve poter prenotare una postazione selezionata.	&Capitolato - UC24.6	\\
+			R1F26.1.3&Il dipendente deve compilare il campo dell'ora per cercare una postazione.	&Interna - UC26.1.3	\\
 		\hline
-		R1F25&Gli utenti che hanno prenotato una postazione devono essere avvisati se la postazione stessa o la stanza in cui si trovano diventa non disponibile	& VE\_2020\_12\_18v.1.0.0	\\
+			R1F26.1.4&Il dipendente visualizza un messaggio di errore se il campo ora ha un valore non valido.	&Interna - UC26.1.4	\\
 		\hline
-		
-		R1F26&L'addetto alle pulizie riceve l'elenco delle stanze e delle postazioni che necessitano di igienizzazione	& Interna - UC26	\\
+			R1F26.1.5&Il dipendente deve compilare il campo della stanza per cercare una postazione.		&Interna - UC26.1.5	\\
 		\hline
-		R1F26.1&	L'addetto alle pulizie riceve l'elenco delle stanze che necessitano di igienizzazione& 	Capitolato - UC26.1\\
+			R1F26.1.6&Il dipendente visualizza un messaggio di errore se il campo stanza ha un valore non valido.	&Interna - UC26.1.6	\\
 		\hline
-		R1F26.2&L'addetto alle pulizie riceve l'elenco delle postazioni che necessitano di igienizzazione	& Interna - UC26.2	\\
+			R1F26.1.7&Il dipendente deve compilare il campo nome dipendente per cercare una postazione.	&Interna - UC26.1.7	\\
 		\hline
-		R1F27&L'addetto alle pulizie deve registrare sulla blockchain, con l'utilizzo di Ethereum, quando igienizza una stanza o una postazione	& Interna - UC27	\\
+			R1F26.1.8&Il dipendente visualizza un messaggio di errore se il campo nome dipendente ha un valore non valido.	&Interna - UC26.1.8	\\
 		\hline
-		R1F27.1&L'addetto alle pulizie deve poter marcare, nella sezione apposita, una stanza come igienizzata	& Capitolato - UC27.1	\\
+		R1F26.2&Il dipendente deve poter visualizzare le postazioni di una stanza.	&Capitolato - UC26.2	\\
 		\hline
-		R1F27.2&L'addetto alle pulizie deve poter marcare, nella sezione apposita, una postazione come igienizzata	&Interna - UC27.2 	\\
+			R1F26.3&Il dipendente visualizza un messaggio di errore se non ci sono postazioni prenotabili.	&Interna - UC26.3	\\
 		\hline
-		R1F27.3&L'addetto alle pulizie non può pulire postazioni o stanze occupate	& VE\_2021\_01\_01v.1.0.0	\\
+		R1F26.4&Il dipendente deve poter visualizzare l'identificativo della prima postazione igienizzata e libera in una stanza.	&Capitolato - UC26.4	\\
 		\hline
-		R1F28 &Deve essere realizzato e consegnato un Docker file contenente la componente applicativa. & Capitolato\\
+		R1F26.4.1&Il dipendente deve poter visualizzare l'identificativo di una postazione igienizzata e libera in una stanza scelta con criterio random.	&Capitolato - UC26.4.1	\\
+		\hline
+		R2F26.4.2&Il dipendente deve poter visualizzare l'identificativo di una postazione igienizzata e libera in una stanza scelta con criterio top distanza dalle altre postazioni occupate.	&Capitolato - UC26.4.2	\\
+		\hline
+		R1F26.5&Il dipendente deve poter selezionare una postazione di una stanza.	&Interna - UC26.5	\\
+		\hline
+		R1F26.6&Il dipendente deve poter prenotare una postazione selezionata.	&Capitolato - UC26.6	\\
+		\hline
+		R1F26.7&Il dipendente visualizza un messaggio di errore se la postazione non è prenotabile.	&Capitolato - UC26.7	\\
+		\hline
+		R1F27&Se il dipendente scansiona con il proprio smartphone il tag NFC per un tempo maggiore o uguale ad un minuto, prenota in modo automatico la postazione per l’intera giornata lavorativa. &Interna- UC27	\\
+		\hline
+		R1F27.1&Se la postazione è occupata, viene emesso un segnale sonoro per avvisare il dipendente.	& Interna - UC27.1	\\
+		\hline
+		R1F27.2&Se il dipendente scansiona con il proprio smartphone il tag NFC per un tempo maggiore o uguale ad un minuto, e questa risulta prenotata in un momento successivo della giornata, la postazione viene prenotata fino all'inizio della prenotazione successiva.	&Interna - UC27.2 	\\
+		\hline	
+		R1F28&Il dipendente deve poter disdire una prenotazione.	& Capitolato - UC28	\\
+		\hline
+		R1F28.1&Il dipendente deve poter visualizzare un elenco delle prenotazioni che ha effettuato. & Capitolato - UC28.1	\\
+		\hline
+		R1F28.2&Il dipendente deve poter selezionare una prenotazione che vuole disdire	&Capitolato - UC28.2 	\\
+		\hline
+		R1F28.3&Il dipendente, dopo aver selezionato una prenotazione, deve poterla disdire.	&Capitolato - UC28.3 	\\
+		\hline
+		R1F29&Gli utenti che hanno prenotato una postazione devono essere avvisati se la postazione stessa o la stanza in cui si trovano diventa non disponibile.	& VE\_2020\_12\_18v.1.0.0 - UC29	\\
+		\hline
+
+		R1F30&	L'addetto alle pulizie riceve l'elenco delle stanze che necessitano di igienizzazione.& 	Capitolato - UC30\\
+		\hline
+		R1F31&L'addetto alle pulizie riceve l'elenco delle postazioni che necessitano di igienizzazione.	& Interna - UC31	\\
+		\hline
+		R1F32&L'addetto alle pulizie deve poter marcare, nella sezione apposita, una stanza come igienizzata, tramite Ethereum.	& Capitolato - UC32	\\
+		\hline
+		R1F33&L'addetto alle pulizie deve poter marcare, nella sezione apposita, una postazione come igienizzata, tramite Ethereum.	&Interna - UC33 	\\
+		\hline
+		R1F34&L'addetto alle pulizie non può pulire postazioni o stanze occupate.	& VE\_2021\_01\_01v.1.0.0	\\
+		\hline
+		R1F35 &Deve essere realizzato e consegnato un Docker file contenente la componente applicativa. & Capitolato\\
 		\hline
 						
 	\end{longtable}
@@ -203,9 +245,9 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\endhead
 		
 		% ----- Modificare da qui -----
-		 R1Q1 &La progettazione e la codifica devono rispettare le norme e le metriche definite nel documento \dext{Piano di qualifica v1.0.0} & Interna\\
+		 R1Q1 &La progettazione e la codifica devono rispettare le norme e le metriche definite nel documento. \dext{Piano di qualifica v1.0.0} & Interna\\
 		\hline	
-		R1Q2 &Deve essere prodotto un manuale sviluppatore & Capitolato\\
+		R1Q2 &Deve essere prodotto un manuale sviluppatore. & Capitolato\\
 		\hline
 		R1Q3 &Le componenti applicative devono essere correlate da test unitari e d’integrazione. & Capitolato\\
 		\hline
@@ -217,18 +259,18 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R2Q7&	Deve essere fornita un'analisi del numero di utenti da supportare e del servizio cloud più adatto per adempiervi, analizzando prezzo, stabilità del servizio ed assistenza (supponendo di disporre di massimo 2 CPU e 1Gi2 per istanza del server).& Capitolato	\\
 		\hline
-		R1Q8&Deve essere fornita una documentazione delle scelte implementative e progettuali accompagnate dalle loro motivazioni	& Capitolato	\\
+		R1Q8&Deve essere fornita una documentazione delle scelte implementative e progettuali accompagnate dalle loro motivazioni.	& Capitolato	\\
 		\hline
-		R1Q9	&Deve essere fornita una documentazione dei problemi che rimangono aperti con eventuali proposte di soluzioni	& Capitolato	\\
+		R1Q9	&Deve essere fornita una documentazione dei problemi che rimangono aperti con eventuali proposte di soluzioni.	& Capitolato	\\
 		\hline
-		R1Q10&Devono essere scritti dei test che abbiamo una copertura di almeno l'80 per cento del codice e deve essere fornito il report della loro esecuzione	& 	Capitolato \\
+		R1Q10&Devono essere scritti dei test che abbiamo una copertura di almeno l'80 per cento del codice e deve essere fornito il report della loro esecuzione.	& 	Capitolato \\
 		\hline
 		
-		R1Q11&Devono essere eseguiti dei test che mettano in relazione la precisione del sistema e il consumo della batteria dei cellulari	& Capitolato - VE\_2020\_12\_18v.1.0.0	\\
+		R1Q11&Devono essere eseguiti dei test che mettano in relazione la precisione del sistema e il consumo della batteria dei cellulari.	& Capitolato - VE\_2020\_12\_18v.1.0.0	\\
 		\hline
 		R1Q12&L’utilizzo del lettore NFC riduce in modo rilevante l’autonomia dei cellulari, l’applicazione è da sviluppare in maniera tale da bilanciare nel miglior modo possibile batteria e scansioni. È richiesto un resoconto delle scelte fatte e dei test effettuati per garantire il miglior rapporto raggiunto.	& Capitolato	\\
 		\hline
-		R1Q13& Deve essere prodotto un manuale utente	& Capitolato	\\
+		R1Q13& Deve essere prodotto un manuale utente.	& Capitolato	\\
 		\hline
 	\end{longtable}
 \end{center}
@@ -243,17 +285,17 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\endhead
 		
 		% ----- Modificare da qui -----
-		 R1V1 &Avere il server che esponga, in aggiunta a eventuali altri protocolli per l’interazione con il servizio specifico, delle API Rest, o in altrernativa gRPC, attraverso le quali sia possibile utilizzare l’applicativo & Capitolato \\
+		 R1V1 &Avere il server che esponga, in aggiunta a eventuali altri protocolli per l’interazione con il servizio specifico, delle API Rest, o in altrernativa gRPC, attraverso le quali sia possibile utilizzare l’applicativo. & Capitolato \\
 		\hline
-		R3V1.1&Deve essere possibile utilizzare gRPC come soluzione alternativa al Rest & Capitolato \\
+		R3V1.1&Deve essere possibile utilizzare gRPC come soluzione alternativa al Rest. & Capitolato \\
 		\hline
 R1V2&Scansione dei codici nel tempo sufficiente a certificare la presenza  della persona in postazione.	& Capitolato	\\
 		\hline
 
-R2V3&Le comunicazioni tra app e server devono essere cifrate	& Capitolato	\\
+R2V3&Le comunicazioni tra app e server devono essere cifrate.	& Capitolato	\\
 	
 		\hline
-R1V4&Deve essere sviluppata un'applicazione per Android o \glock{iOS}	& Capitolato	\\
+R1V4&Deve essere sviluppata un'applicazione per Android o \glock{iOS}. Come versioni minime sono state stabilite Android 6.0 Marshmallow e iOS9.	& Capitolato	\\
 		\hline
 
 
