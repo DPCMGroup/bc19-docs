@@ -735,7 +735,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \end{itemize}
 
 
-\subsubsection{ UC20.4 - Report vicini di postazione}
+\subsubsection{ UC20.4 - Report vicini utente}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -746,15 +746,14 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item l'amministratore inserisce:
 		\begin{itemize}
 			\item[$-$] nome utente oppure nome e cognome del dipendente a cui è interessato;
-			\item[$-$] distanza in numero di postazioni;
 			\item[$-$] data di inizio del periodo da considerare;
 			\item[$-$] data di fine del periodo da considerare;
 			\item[$-$] (opzionalmente) nome utente o nome e cognome di uno specifico utente da cercare tra i vicini.
 		\end{itemize}
-		\item l'amministratore riceve una lista degli utenti vicini di postazione dell'utente selezionato. I vicini sono raggruppati per occupazione dell'utente selezionato: per ogni occupazione sono indicati gli utenti che in quel caso erano vicini a quello selezionato. Inoltre per ogni vicino sono indicate l'ora e la data di inizio e fine della vicinanza. Per ogni occupazione del dipendente e di ogni vicino sono indicati anche l'hash corrispondente e l'indirizzo sulla blockchain in cui l'hash è salvato.
+		\item l'amministratore riceve una lista degli utenti che hanno condiviso la stanza con l'utente selezionato. I vicini sono raggruppati per occupazione dell'utente selezionato: per ogni occupazione sono indicati gli utenti che in quel caso erano vicini a quello selezionato. Inoltre per ogni vicino sono indicate l'ora e la data di inizio e fine della vicinanza. Per ogni occupazione del dipendente e di ogni vicino sono indicati anche l'hash corrispondente e l'indirizzo sulla blockchain in cui l'hash è salvato.
 	\end{enumerate}
 	\item\textbf{Precondizione:} 
-	l'amministratore si trova sulla pagina di esplorazione occupazioni
+	l'amministratore si trova sulla pagina di esplorazione occupazioni.
 	\item\textbf{Postcondizione:}
 	l'amministratore visualizza un report di tutti i vicini che l'utente selezionato ha avuto nel tempo.
 \end{itemize}
