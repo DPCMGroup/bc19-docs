@@ -26,6 +26,8 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\endhead
 		
 		% ----- Modificare da qui -----
+		
+		%inizio requisiti funzionali%
 		 R2F1 & L'utente può leggere una breve guida per il login e il funzionamento & Interna - UC1 \\
 		\hline
 		R1F2	&	L'utente non autenticato deve potersi autenticare nel webserver inserendo come credenziali: nome utente e password & Capitolato - UC2	\\
@@ -229,6 +231,7 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R1F35 &Deve essere realizzato e consegnato un Docker file contenente la componente applicativa. & Capitolato\\
 		\hline
+		%fine requisiti funzionali%
 						
 	\end{longtable}
 \end{center}
@@ -245,6 +248,8 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\endhead
 		
 		% ----- Modificare da qui -----
+		
+		%inizio requisiti qualita%
 		 R1Q1 &La progettazione e la codifica devono rispettare le norme e le metriche definite nel documento. \dext{Piano di qualifica v1.0.0} & Interna\\
 		\hline	
 		R1Q2 &Deve essere prodotto un manuale sviluppatore. & Capitolato\\
@@ -272,6 +277,8 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R1Q13& Deve essere prodotto un manuale utente.	& Capitolato	\\
 		\hline
+		%fine requisiti qualita%
+		
 	\end{longtable}
 \end{center}
 \subsection{Requisiti di vincolo}
@@ -285,6 +292,8 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\endhead
 		
 		% ----- Modificare da qui -----
+		
+		%inizio requisiti vincolo%
 		 R1V1 &Avere il server che esponga, in aggiunta a eventuali altri protocolli per l’interazione con il servizio specifico, delle API Rest, o in altrernativa gRPC, attraverso le quali sia possibile utilizzare l’applicativo. & Capitolato \\
 		\hline
 		R3V1.1&Deve essere possibile utilizzare gRPC come soluzione alternativa al Rest. & Capitolato \\
@@ -297,6 +306,7 @@ R2V3&Le comunicazioni tra app e server devono essere cifrate.	& Capitolato	\\
 		\hline
 R1V4&Deve essere sviluppata un'applicazione per Android o \glock{iOS}. Come versioni minime sono state stabilite Android 6.0 Marshmallow e iOS9.	& Capitolato	\\
 		\hline
+		%inizio requisiti vincolo%
 
 
 	\end{longtable}
@@ -333,25 +343,20 @@ Non sono stati individuati requisiti prestazionali. Uno dei motivi sta nel fatto
 		
 		% ----- Modificare da qui -----
 
+%inizio tracciamento fonte-requisiti%
 Capitolato &
 
 R1F2 \newline
 
 R1F3 \newline
 
-R1F7 \newline
-
-R1F7.1 \newline
-
-R1F7.2 \newline
-
-R1F7.3 \newline
-
-R1F8 \newline
-
-R1F9 \newline
-
 R1F10 \newline
+
+R1F10.1 \newline
+
+R1F10.2 \newline
+
+R1F10.3 \newline
 
 R1F11 \newline
 
@@ -365,62 +370,85 @@ R1F15 \newline
 
 R1F16 \newline
 
-R1F16.1 \newline
-
-R1F16.2 \newline
-
-R1F16.3 \newline
-
-R1F16.4 \newline
-
-R1F16.5 \newline
-
 R1F17 \newline
 
-R1F17.1 \newline
-
-R1F17.1.1 \newline
-
-R2F17.1.2 \newline
-\\
-\hline
-Capitolato &
-
-R1F17.2 \newline
-
-R1F17.2.1 \newline
-
-R1F17.3 \newline
-
-R2F17.3.1 \newline
-
-R2F18 \newline
-
-R2F18.1 \newline
-
-R2F18.1.1 \newline
+R1F18 \newline
 
 R1F19 \newline
 
+R1F19
+\\
+\hline
+Capitolato &
+R1F19.1 \newline
+
+R1F19.2 \newline
+
+R1F19.3 \newline
+
+R1F19.4 \newline
+
+R1F19.5 \newline
+
 R1F20 \newline
 
-R1F21 \newline
+R1F20.1 \newline
+
+R1F20.1.1 \newline
+
+R2F20.1.2 \newline
+
+R1F20.2 \newline
+
+R1F20.3 \newline
+
+R2F20.3.1 \newline
+
+R2F20.4 \newline
+
+R2F21 \newline
+
+R2F21.1 \newline
+
+R2F21.1.1 \newline
+
+R1F22 \newline
 
 R1F23 \newline
 
-R1F23.2 \newline
-
 R1F24.1 \newline
 
-R1F24.2 \newline
+R1F25 \newline
 
-R1F24.4 \newline
+R1F26.2 \newline
 
-R1F26.1 \newline
+R1F26.4 \newline
 
-R1F27.1 \newline
+R1F26.4.1 \newline
+
+R1F26.4.1
+\\
+\hline
+Capitolato &
+R2F26.4.2 \newline
+
+R1F26.6 \newline
+
+R1F26.7 \newline
 
 R1F28 \newline
+
+R1F28.1 \newline
+
+R1F28.2 \newline
+
+R1F28.3 \newline
+
+R1F30 \newline
+
+R1F32 \newline
+
+R1F35 \newline
 
 R1Q2 \newline
 
@@ -433,9 +461,6 @@ R1Q5 \newline
 R1Q6 \newline
 
 R2Q7 \newline
-\\
-\hline
-Capitolato &
 
 R1Q8 \newline
 
@@ -449,8 +474,12 @@ R1Q12 \newline
 
 R1Q13 \newline
 
-R1V1 \newline
+ R1V1 \newline
 
+ R1V1
+\\
+\hline
+Capitolato &
 R3V1.1 \newline
 
 R1V2 \newline
@@ -461,7 +490,8 @@ R1V4 \newline
 \\
 \hline
 Interna &
-R2F1 \newline
+
+ R2F1 \newline
 
 R1F2.1 \newline
 
@@ -477,42 +507,127 @@ R1F5 \newline
 
 R1F6 \newline
 
-R1F9.1 \newline
+R1F7 \newline
 
-R1F19.1 \newline
+R1F8 \newline
 
-R1F21.1 \newline
+R1F9 \newline
 
-R1F22 \newline
-
-R1F23.1 \newline
+R1F12.2 \newline
 
 R1F24 \newline
 
+R1F24.2 \newline
+
+R1F24.2.1 \newline
+
+R1F24.2.2 \newline
+
 R1F24.3 \newline
+
+R1F24.4 \newline
+
+R1F24.5 \newline
 
 R1F26 \newline
 
-R1F26.2 \newline
+R1F26.1 \newline
 
-R1F27 \newline
+R1F26.1.1 \newline
+
+R1F26.1.2 \newline
+
+R1F26.1.2
+\\
+\hline
+Interna &
+R1F26.1.3 \newline
+
+R1F26.1.4 \newline
+
+R1F26.1.5 \newline
+
+R1F26.1.6 \newline
+
+R1F26.1.7 \newline
+
+R1F26.1.8 \newline
+
+R1F26.3 \newline
+
+R1F26.5 \newline
+
+R1F27.1 \newline
 
 R1F27.2 \newline
 
-R1Q1 \newline
+R1F31 \newline
+
+R1F33 \newline
+
+ R1Q1 \newline
 \\
 \hline
-Verbale esterno 2020-12-18 &
+VE\_2020\_12\_18v.1.0.0 &
+
+R1F16.2 \newline
+
+R1F16.3 \newline
+
+R1F16.4 \newline
+
+R1F29 \newline
+
+R1Q11 \newline
 \\
 \hline
-Verbale esterno 2021-01-01 &
+VE\_2021\_01\_01v.1.0.0 &
+
+R1F12.1 \newline
+
+R1F13.1 \newline
+
+R1F16.1 \newline
+
+R1F17.1 \newline
+
+R1F18.1 \newline
+
+R1F19.2 \newline
+
+R1F19.5 \newline
+
+R1F34 \newline
 \\
 \hline
-Verbale esterno 2021-01-04 &
+VE\_2021\_01\_04v.1.0.0 &
+
+R1F20 \newline
+
+R1F20.1 \newline
+
+R1F20.1.1 \newline
+
+R2F20.1.2 \newline
+
+R1F20.2 \newline
+
+R1F20.3 \newline
+
+R2F20.3.1 \newline
+
+R2F20.4 \newline
+
+R2F21 \newline
+
+R2F21.1 \newline
+
+R2F21.1.1 \newline
 \\
 \hline
 UC1 &
-R2F1 \newline
+
+ R2F1 \newline
 \\
 \hline
 UC2 &
@@ -563,12 +678,6 @@ R1F6 \newline
 UC7 &
 
 R1F7 \newline
-
-R1F7.1 \newline
-
-R1F7.2 \newline
-
-R1F7.3 \newline
 \\
 \hline
 UC8 &
@@ -579,32 +688,6 @@ R1F8 \newline
 UC9 &
 
 R1F9 \newline
-
-R1F9 \newline
-\\
-\hline
-VE\_2021\_01\_01v.1.0.0 &
-
-R1F9 \newline
-
-R1F10.1 \newline
-
-R1F13.1 \newline
-
-R1F14.1 \newline
-
-R1F15.1 \newline
-
-R1F16.2 \newline
-
-R1F16.5 \newline
-
-R1F27.3 \newline
-\\
-\hline
-UC9.1 &
-
-R1F9.1 \newline
 \\
 \hline
 UC10 &
@@ -612,6 +695,10 @@ UC10 &
 R1F10 \newline
 
 R1F10.1 \newline
+
+R1F10.2 \newline
+
+R1F10.3 \newline
 \\
 \hline
 UC11 &
@@ -622,6 +709,13 @@ R1F11 \newline
 UC12 &
 
 R1F12 \newline
+
+R1F12.1 \newline
+\\
+\hline
+UC12.1 &
+
+R1F12.2 \newline
 \\
 \hline
 UC13 &
@@ -631,69 +725,34 @@ R1F13 \newline
 R1F13.1 \newline
 \\
 \hline
-VE\_2020\_12\_18v.1.0.0 &
-
-R1F13.2 \newline
-
-R1F13.3 \newline
-
-R1F13.4 \newline
-
-R1F25 \newline
-
-R1Q11 \newline
-\\
-\hline
-UC13.1 &
-
-R1F13.2 \newline
-\\
-\hline
-UC13.2 &
-
-R1F13.3 \newline
-\\
-\hline
-UC13.3 &
-
-R1F13.4 \newline
-\\
-\hline
 UC14 &
 
 R1F14 \newline
-
-R1F14.1 \newline
 \\
 \hline
 UC15 &
 
 R1F15 \newline
-
-R1F15.1 \newline
 \\
 \hline
 UC16 &
 
 R1F16 \newline
-\\
-\hline
-UC16.1 &
 
 R1F16.1 \newline
 \\
 \hline
-UC16.2 &
+UC16.1 &
 
 R1F16.2 \newline
 \\
 \hline
-UC16.3 &
+UC16.2 &
 
 R1F16.3 \newline
 \\
 \hline
-UC16.4 &
+UC16.3 &
 
 R1F16.4 \newline
 \\
@@ -701,81 +760,15 @@ R1F16.4 \newline
 UC17 &
 
 R1F17 \newline
-\\
-\hline
-VE\_2021\_01\_04v.1.0.0 &
-
-R1F17 \newline
 
 R1F17.1 \newline
-
-R1F17.1.1 \newline
-
-R2F17.1.2 \newline
-
-R1F17.2 \newline
-
-R1F17.2.1 \newline
-
-R1F17.3 \newline
-
-R2F17.3.1 \newline
-
-R2F18 \newline
-
-R2F18.1 \newline
-
-R2F18.1.1 \newline
-\\
-\hline
-UC17.1 &
-
-R1F17.1 \newline
-\\
-\hline
-UC17.1.1 &
-
-R1F17.1.1 \newline
-\\
-\hline
-UC17.1.2 &
-
-R2F17.1.2 \newline
-\\
-\hline
-UC17.2 &
-
-R1F17.2 \newline
-\\
-\hline
-UC17.2.1 &
-
-R1F17.2.1 \newline
-\\
-\hline
-UC17.3 &
-
-R1F17.3 \newline
-\\
-\hline
-UC17.3.1 &
-
-R2F17.3.1 \newline
 \\
 \hline
 UC18 &
 
-R2F18 \newline
-\\
-\hline
-UC18.1 &
+R1F18 \newline
 
-R2F18.1 \newline
-\\
-\hline
-UC18.1.1 &
-
-R2F18.1.1 \newline
+R1F18.1 \newline
 \\
 \hline
 UC19 &
@@ -788,19 +781,71 @@ UC19.1 &
 R1F19.1 \newline
 \\
 \hline
+UC19.2 &
+
+R1F19.2 \newline
+\\
+\hline
+UC19.3 &
+
+R1F19.3 \newline
+\\
+\hline
+UC19.4 &
+
+R1F19.4 \newline
+\\
+\hline
 UC20 &
 
 R1F20 \newline
 \\
 \hline
-UC21 &
+UC20.1 &
 
-R1F21 \newline
+R1F20.1 \newline
 \\
 \hline
-UC21.3 &
+UC20.1.1 &
 
-R1F21.1 \newline
+R1F20.1.1 \newline
+
+R2F20.1.2 \newline
+\\
+\hline
+UC20.2 &
+
+R1F20.2 \newline
+\\
+\hline
+UC20.3 &
+
+R1F20.3 \newline
+\\
+\hline
+UC20.3.1 &
+
+R2F20.3.1 \newline
+\\
+\hline
+UC20.4 &
+
+R2F20.4 \newline
+\\
+\hline
+UC21 &
+
+R2F21 \newline
+\\
+\hline
+UC21.1 &
+
+R2F21.1 \newline
+\\
+\hline
+UC21.1.1 &
+
+R2F21.1.1 \newline
 \\
 \hline
 UC22 &
@@ -813,39 +858,49 @@ UC23 &
 R1F23 \newline
 \\
 \hline
-UC23.1 &
-
-R1F23.1 \newline
-\\
-\hline
-UC23.2 &
-
-R1F23.2 \newline
-\\
-\hline
-UC24.1 &
+UC24 &
 
 R1F24 \newline
 \\
 \hline
-UC24.2 &
+UC24.1 &
 
 R1F24.1 \newline
 \\
 \hline
-UC24.4 &
+UC24.2 &
 
 R1F24.2 \newline
 \\
 \hline
-UC24.5 &
+UC24.2.1 &
+
+R1F24.2.1 \newline
+\\
+\hline
+UC24..2.2 &
+
+R1F24.2.2 \newline
+\\
+\hline
+UC24.3 &
 
 R1F24.3 \newline
 \\
 \hline
-UC24.6 &
+UC24.4 &
 
 R1F24.4 \newline
+\\
+\hline
+UC24.5 &
+
+R1F24.5 \newline
+\\
+\hline
+UC25 &
+
+R1F25 \newline
 \\
 \hline
 UC26 &
@@ -858,12 +913,87 @@ UC26.1 &
 R1F26.1 \newline
 \\
 \hline
+UC26.1.1 &
+
+R1F26.1.1 \newline
+\\
+\hline
+UC26.1.2 &
+
+R1F26.1.2 \newline
+\\
+\hline
+UC26.1.3 &
+
+R1F26.1.3 \newline
+\\
+\hline
+UC26.1.4 &
+
+R1F26.1.4 \newline
+\\
+\hline
+UC26.1.5 &
+
+R1F26.1.5 \newline
+\\
+\hline
+UC26.1.6 &
+
+R1F26.1.6 \newline
+\\
+\hline
+UC26.1.7 &
+
+R1F26.1.7 \newline
+\\
+\hline
+UC26.1.8 &
+
+R1F26.1.8 \newline
+\\
+\hline
 UC26.2 &
 
 R1F26.2 \newline
 \\
 \hline
-UC27 &
+UC26.3 &
+
+R1F26.3 \newline
+\\
+\hline
+UC26.4 &
+
+R1F26.4 \newline
+\\
+\hline
+UC26.4.1 &
+
+R1F26.4.1 \newline
+\\
+\hline
+UC26.4.2 &
+
+R2F26.4.2 \newline
+\\
+\hline
+UC26.5 &
+
+R1F26.5 \newline
+\\
+\hline
+UC26.6 &
+
+R1F26.6 \newline
+\\
+\hline
+UC26.7 &
+
+R1F26.7 \newline
+\\
+\hline
+Interna- UC27 &
 
 R1F27 \newline
 \\
@@ -878,6 +1008,51 @@ UC27.2 &
 R1F27.2 \newline
 \\
 \hline
+UC28 &
+
+R1F28 \newline
+\\
+\hline
+UC28.1 &
+
+R1F28.1 \newline
+\\
+\hline
+UC28.2 &
+
+R1F28.2 \newline
+\\
+\hline
+UC28.3 &
+
+R1F28.3 \newline
+\\
+\hline
+UC29 &
+
+R1F29 \newline
+\\
+\hline
+UC30 &
+
+R1F30 \newline
+\\
+\hline
+UC31 &
+
+R1F31 \newline
+\\
+\hline
+UC32 &
+
+R1F32 \newline
+\\
+\hline
+UC33 &
+
+R1F33 \newline
+\\
+\hline%fine tracciamento fonte-requisiti%
 
 	\end{longtable}
 \end{center}
@@ -894,8 +1069,9 @@ R1F27.2 \newline
 		
 		% ----- Modificare da qui -----
 
+%inizio tracciamento requisito-fonti%
 
-R2F1 &
+ R2F1 &
 Interna \newline
 UC1 \newline
 \\
@@ -956,50 +1132,20 @@ UC6 \newline
 \hline
 
 R1F7 &
-Capitolato \newline
-UC7 \newline
-\\
-\hline
-
-R1F7.1 &
-Capitolato \newline
-UC7 \newline
-\\
-\hline
-
-R1F7.2 &
-Capitolato \newline
-UC7 \newline
-\\
-\hline
-
-R1F7.3 &
-Capitolato \newline
+Interna \newline
 UC7 \newline
 \\
 \hline
 
 R1F8 &
-Capitolato \newline
+Interna \newline
 UC8 \newline
 \\
 \hline
 
 R1F9 &
-Capitolato \newline
-UC9 \newline
-\\
-\hline
-
-R1F9 &
-VE\_2021\_01\_01v.1.0.0 \newline
-UC9 \newline
-\\
-\hline
-
-R1F9.1 &
 Interna \newline
-UC9.1 \newline
+UC9 \newline
 \\
 \hline
 
@@ -1010,7 +1156,19 @@ UC10 \newline
 \hline
 
 R1F10.1 &
-VE\_2021\_01\_01v.1.0.0 \newline
+Capitolato \newline
+UC10 \newline
+\\
+\hline
+
+R1F10.2 &
+Capitolato \newline
+UC10 \newline
+\\
+\hline
+
+R1F10.3 &
+Capitolato \newline
 UC10 \newline
 \\
 \hline
@@ -1027,6 +1185,18 @@ UC12 \newline
 \\
 \hline
 
+R1F12.1 &
+VE\_2021\_01\_01v.1.0.0 \newline
+UC12 \newline
+\\
+\hline
+
+R1F12.2 &
+Interna \newline
+UC12.1 \newline
+\\
+\hline
+
 R1F13 &
 Capitolato \newline
 UC13 \newline
@@ -1039,44 +1209,14 @@ UC13 \newline
 \\
 \hline
 
-R1F13.2 &
-VE\_2020\_12\_18v.1.0.0 \newline
-UC13.1 \newline
-\\
-\hline
-
-R1F13.3 &
-VE\_2020\_12\_18v.1.0.0 \newline
-UC13.2 \newline
-\\
-\hline
-
-R1F13.4 &
-VE\_2020\_12\_18v.1.0.0 \newline
-UC13.3 \newline
-\\
-\hline
-
 R1F14 &
 Capitolato \newline
 UC14 \newline
 \\
 \hline
 
-R1F14.1 &
-VE\_2021\_01\_01v.1.0.0 \newline
-UC14 \newline
-\\
-\hline
-
 R1F15 &
 Capitolato \newline
-UC15 \newline
-\\
-\hline
-
-R1F15.1 &
-VE\_2021\_01\_01v.1.0.0 \newline
 UC15 \newline
 \\
 \hline
@@ -1088,110 +1228,50 @@ UC16 \newline
 \hline
 
 R1F16.1 &
-Capitolato \newline
-UC16.1 \newline
+VE\_2021\_01\_01v.1.0.0 \newline
+UC16 \newline
 \\
 \hline
 
 R1F16.2 &
-Capitolato \newline
-VE\_2021\_01\_01v.1.0.0 \newline
-UC16.2 \newline
+VE\_2020\_12\_18v.1.0.0 \newline
+UC16.1 \newline
 \\
 \hline
 
 R1F16.3 &
-Capitolato \newline
-UC16.3 \newline
+VE\_2020\_12\_18v.1.0.0 \newline
+UC16.2 \newline
 \\
 \hline
 
 R1F16.4 &
-Capitolato \newline
-UC16.4 \newline
-\\
-\hline
-
-R1F16.5 &
-Capitolato \newline
-VE\_2021\_01\_01v.1.0.0 \newline
+VE\_2020\_12\_18v.1.0.0 \newline
+UC16.3 \newline
 \\
 \hline
 
 R1F17 &
 Capitolato \newline
 UC17 \newline
-VE\_2021\_01\_04v.1.0.0 \newline
 \\
 \hline
 
 R1F17.1 &
-Capitolato \newline
-UC17.1 \newline
-VE\_2021\_01\_04v.1.0.0 \newline
+VE\_2021\_01\_01v.1.0.0 \newline
+UC17 \newline
 \\
 \hline
 
-R1F17.1.1 &
-Capitolato \newline
-UC17.1.1 \newline
-VE\_2021\_01\_04v.1.0.0 \newline
-\\
-\hline
-
-R2F17.1.2 &
-Capitolato \newline
-UC17.1.2 \newline
-VE\_2021\_01\_04v.1.0.0 \newline
-\\
-\hline
-
-R1F17.2 &
-Capitolato \newline
-UC17.2 \newline
-VE\_2021\_01\_04v.1.0.0 \newline
-\\
-\hline
-
-R1F17.2.1 &
-Capitolato \newline
-UC17.2.1 \newline
-VE\_2021\_01\_04v.1.0.0 \newline
-\\
-\hline
-
-R1F17.3 &
-Capitolato \newline
-UC17.3 \newline
-VE\_2021\_01\_04v.1.0.0 \newline
-\\
-\hline
-
-R2F17.3.1 &
-Capitolato \newline
-UC17.3.1 \newline
-VE\_2021\_01\_04v.1.0.0 \newline
-\\
-\hline
-
-R2F18 &
+R1F18 &
 Capitolato \newline
 UC18 \newline
-VE\_2021\_01\_04v.1.0.0 \newline
 \\
 \hline
 
-R2F18.1 &
-Capitolato \newline
-UC18.1 \newline
-VE\_2021\_01\_04v.1.0.0 \newline
-\\
-\hline
-
-R2F18.1.1 &
-Capitolato \newline
-UC18.1.1 \newline
-VE\_2021\_01\_04v.1.0.0 \newline
+R1F18.1 &
+VE\_2021\_01\_01v.1.0.0 \newline
+UC18 \newline
 \\
 \hline
 
@@ -1202,31 +1282,115 @@ UC19 \newline
 \hline
 
 R1F19.1 &
-Interna \newline
+Capitolato \newline
 UC19.1 \newline
+\\
+\hline
+
+R1F19.2 &
+Capitolato \newline
+VE\_2021\_01\_01v.1.0.0 \newline
+UC19.2 \newline
+\\
+\hline
+
+R1F19.3 &
+Capitolato \newline
+UC19.3 \newline
+\\
+\hline
+
+R1F19.4 &
+Capitolato \newline
+UC19.4 \newline
+\\
+\hline
+
+R1F19.5 &
+Capitolato \newline
+VE\_2021\_01\_01v.1.0.0 \newline
 \\
 \hline
 
 R1F20 &
 Capitolato \newline
 UC20 \newline
+VE\_2021\_01\_04v.1.0.0 \newline
 \\
 \hline
 
-R1F21 &
+R1F20.1 &
+Capitolato \newline
+UC20.1 \newline
+VE\_2021\_01\_04v.1.0.0 \newline
+\\
+\hline
+
+R1F20.1.1 &
+Capitolato \newline
+UC20.1.1 \newline
+VE\_2021\_01\_04v.1.0.0 \newline
+\\
+\hline
+
+R2F20.1.2 &
+Capitolato \newline
+UC20.1.1 \newline
+VE\_2021\_01\_04v.1.0.0 \newline
+\\
+\hline
+
+R1F20.2 &
+Capitolato \newline
+UC20.2 \newline
+VE\_2021\_01\_04v.1.0.0 \newline
+\\
+\hline
+
+R1F20.3 &
+Capitolato \newline
+UC20.3 \newline
+VE\_2021\_01\_04v.1.0.0 \newline
+\\
+\hline
+
+R2F20.3.1 &
+Capitolato \newline
+UC20.3.1 \newline
+VE\_2021\_01\_04v.1.0.0 \newline
+\\
+\hline
+
+R2F20.4 &
+Capitolato \newline
+UC20.4 \newline
+VE\_2021\_01\_04v.1.0.0 \newline
+\\
+\hline
+
+R2F21 &
 Capitolato \newline
 UC21 \newline
+VE\_2021\_01\_04v.1.0.0 \newline
 \\
 \hline
 
-R1F21.1 &
-Interna \newline
-UC21.3 \newline
+R2F21.1 &
+Capitolato \newline
+UC21.1 \newline
+VE\_2021\_01\_04v.1.0.0 \newline
+\\
+\hline
+
+R2F21.1.1 &
+Capitolato \newline
+UC21.1.1 \newline
+VE\_2021\_01\_04v.1.0.0 \newline
 \\
 \hline
 
 R1F22 &
-Interna \newline
+Capitolato \newline
 UC22 \newline
 \\
 \hline
@@ -1237,50 +1401,57 @@ UC23 \newline
 \\
 \hline
 
-R1F23.1 &
-Interna \newline
-UC23.1 \newline
-\\
-\hline
-
-R1F23.2 &
-Capitolato \newline
-UC23.2 \newline
-\\
-\hline
-
 R1F24 &
 Interna \newline
-UC24.1 \newline
+UC24 \newline
 \\
 \hline
 
 R1F24.1 &
 Capitolato \newline
-UC24.2 \newline
+UC24.1 \newline
 \\
 \hline
 
 R1F24.2 &
-Capitolato \newline
-UC24.4 \newline
+Interna \newline
+UC24.2 \newline
+\\
+\hline
+
+R1F24.2.1 &
+Interna \newline
+UC24.2.1 \newline
+\\
+\hline
+
+R1F24.2.2 &
+Interna \newline
+UC24..2.2 \newline
 \\
 \hline
 
 R1F24.3 &
 Interna \newline
-UC24.5 \newline
+UC24.3 \newline
 \\
 \hline
 
 R1F24.4 &
-Capitolato \newline
-UC24.6 \newline
+Interna \newline
+UC24.4 \newline
+\\
+\hline
+
+R1F24.5 &
+Interna \newline
+UC24.5 \newline
 \\
 \hline
 
 R1F25 &
-VE\_2020\_12\_18v.1.0.0 \newline
+Capitolato \newline
+UC25 \newline
 \\
 \hline
 
@@ -1291,25 +1462,114 @@ UC26 \newline
 \hline
 
 R1F26.1 &
-Capitolato \newline
+Interna \newline
 UC26.1 \newline
 \\
 \hline
 
-R1F26.2 &
+R1F26.1.1 &
 Interna \newline
+UC26.1.1 \newline
+\\
+\hline
+
+R1F26.1.2 &
+Interna \newline
+UC26.1.2 \newline
+\\
+\hline
+
+R1F26.1.3 &
+Interna \newline
+UC26.1.3 \newline
+\\
+\hline
+
+R1F26.1.4 &
+Interna \newline
+UC26.1.4 \newline
+\\
+\hline
+
+R1F26.1.5 &
+Interna \newline
+UC26.1.5 \newline
+\\
+\hline
+
+R1F26.1.6 &
+Interna \newline
+UC26.1.6 \newline
+\\
+\hline
+
+R1F26.1.7 &
+Interna \newline
+UC26.1.7 \newline
+\\
+\hline
+
+R1F26.1.8 &
+Interna \newline
+UC26.1.8 \newline
+\\
+\hline
+
+R1F26.2 &
+Capitolato \newline
 UC26.2 \newline
 \\
 \hline
 
-R1F27 &
+R1F26.3 &
 Interna \newline
-UC27 \newline
+UC26.3 \newline
+\\
+\hline
+
+R1F26.4 &
+Capitolato \newline
+UC26.4 \newline
+\\
+\hline
+
+R1F26.4.1 &
+Capitolato \newline
+UC26.4.1 \newline
+\\
+\hline
+
+R2F26.4.2 &
+Capitolato \newline
+UC26.4.2 \newline
+\\
+\hline
+
+R1F26.5 &
+Interna \newline
+UC26.5 \newline
+\\
+\hline
+
+R1F26.6 &
+Capitolato \newline
+UC26.6 \newline
+\\
+\hline
+
+R1F26.7 &
+Capitolato \newline
+UC26.7 \newline
+\\
+\hline
+
+R1F27 &
+Interna- UC27 \newline
 \\
 \hline
 
 R1F27.1 &
-Capitolato \newline
+Interna \newline
 UC27.1 \newline
 \\
 \hline
@@ -1320,17 +1580,71 @@ UC27.2 \newline
 \\
 \hline
 
-R1F27.3 &
+R1F28 &
+Capitolato \newline
+UC28 \newline
+\\
+\hline
+
+R1F28.1 &
+Capitolato \newline
+UC28.1 \newline
+\\
+\hline
+
+R1F28.2 &
+Capitolato \newline
+UC28.2 \newline
+\\
+\hline
+
+R1F28.3 &
+Capitolato \newline
+UC28.3 \newline
+\\
+\hline
+
+R1F29 &
+VE\_2020\_12\_18v.1.0.0 \newline
+UC29 \newline
+\\
+\hline
+
+R1F30 &
+Capitolato \newline
+UC30 \newline
+\\
+\hline
+
+R1F31 &
+Interna \newline
+UC31 \newline
+\\
+\hline
+
+R1F32 &
+Capitolato \newline
+UC32 \newline
+\\
+\hline
+
+R1F33 &
+Interna \newline
+UC33 \newline
+\\
+\hline
+
+R1F34 &
 VE\_2021\_01\_01v.1.0.0 \newline
 \\
 \hline
 
-R1F28 &
+R1F35 &
 Capitolato \newline
 \\
 \hline
 
-R1Q1 &
+ R1Q1 &
 Interna \newline
 \\
 \hline
@@ -1396,7 +1710,7 @@ Capitolato \newline
 \\
 \hline
 
-R1V1 &
+ R1V1 &
 Capitolato \newline
 \\
 \hline
@@ -1419,7 +1733,7 @@ Capitolato \newline
 R1V4 &
 Capitolato \newline
 \\
-\hline
+\hline%fine tracciamento requisito-fonti%
 	
 	\end{longtable}
 \end{center}
