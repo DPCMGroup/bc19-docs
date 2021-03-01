@@ -1,0 +1,65 @@
+\section*{Introduzione}
+\subsection*{Dettagli e-mail}
+\begin{itemize}
+	\item \textbf{Autore dell'e-mail per DPCM 2077:} Ivan Piacere;
+	\item \textbf{Autore dell'e-mail per Imola Informatica:} Lorenzo Patera;
+	\item \textbf{periodo:} 2021-02-20 - 2021-03-01;
+\end{itemize}
+
+\section*{Svolgimento}
+
+
+
+\subsection*{Tema}
+1. Dobbiamo fare in modo che le informazioni caricate sulla blockchain siano criptate, o anche solo hashate, in modo che se in futuro si dovesse usare una rete pubblica invece di una privata, le nostre informazioni non potrebbero essere lette da altri?
+
+\subsection*{Tema}
+2. Può essere utile fornire un report dei vicini che un dipendente ha avuto ad ogni occupazione, magari dando la possibilità di scegliere quanto vicini (1, 2 o più postazioni di distanza, volendo anche tutti quelli che hanno condiviso la stanza con lui)?
+
+\subsection*{Tema}
+3. Quando un utente occupa una postazione c'è il rischio che qualcun altro prenoti la stessa postazione a partire da un periodo di poco successivo. Per esempio, se alle 15:00 l'utente U1 sta occupando la postazione P, l'utente U2 può prenotarla a partire anche dalle 15:30. In questo caso U1 dovrà, dopo 30 minuti, liberare la postazione.
+Per evitare questo problema avremmo potuto porre un intervallo di tempo, per esempio 1 ora, successivo all'inizio dell'occupazione, entro il quale nessun altro potesse prenotare la postazione.
+Un altra soluzione sarebbe quella di porre un lasso di tempo minimo tra il momento in cui prenoto e per cui prenoto. Per esempio, se il lasso fosse di 24 ore e ora fossero le 15:00, io potrei prenotare postazioni solo a partire dalle 15:00 di domani.
+Abbiamo però pensato ad una soluzione più generale, che ti chiediamo di valutare: consideriamo le occupazioni come prenotazioni.
+Quindi quando un utente intende occupare una postazione igienizzata, gli viene chiesto per quanto tempo la vuole occupare. Per la durata specificata la postazione risulterà prenotata dall'utente, e quindi non sarà disponibile per altre prenotazioni. Per esempio: l'utente U occupa la postazione P a partire dalle 15:00. Gli viene chiesto quanto a lungo la prenoterà e lui indica 3 ore. Allora la postazione P risulterà prenotata per 3 ore, o fino a quando U non la libererà, se dovesse farlo prima delle 3 ore.
+Per rendere il processo di occupazione semplice ma anche efficace abbiamo pensato ad altre funzionalità:
+1- Per cominciare un'occupazione l'utente deve scansionare il tag di una postazione. Se la postazione è igienizzata, l'applicazione chiede all'utente per quanto tempo vuole occuparla. A questo punto l'utente può indicare la durata oppure può semplicemente lasciare il telefono sul tag.
+In questo secondo caso, dopo un (1) intervallo di tempo , la prenotazione viene effettuata automaticamente impostando la (2) durata a un certo valore. Potresti indicarci dei valori di riferimento per l'intervallo(1) prima della prenotazione automatica e per la sua durata(2)?
+Inoltre, quando l'utente sceglie quanto a lungo prenotare la postazione, abbiamo pensato che lo può fare in più modi:
+a- fino a quando (voglio occupare fino alle 12:30)
+b- per quanto tempo (voglio occupare per 3 ore)
+c- come preferisce, devono essere presenti entrambe le modalità
+Qual è la possibilità migliore?
+2- Se durante l'occupazione l'utente solleva il telefono dal tag gli viene chiesto se se ne sta andando. Se risponde sì la sua occupazione viene chiusa. Se invece dice di no, ci sono due possibilità:
+a- la prenotazione viene mantenuta attiva al massimo fino alla sue fine naturale, indipendentemente che l'utente torni o meno
+b- la prenotazione viene mantenuta attiva per un certo intervallo di tempo, ma se l'utente non riporta il telefono sul tag entro questo intervallo l'occupazione viene chiusa.
+Quale delle due possibilità è preferibile?
+Un altro modo di gestire l'abbandono prematuro della postazione consisterebbe nel non occuparsene affatto, e quindi non chiedere all'utente se se ne sta andando, ma mantenere sempre la prenotazione attiva fino alla sua fine naturale. Questo sistema potrebbe portare ad un utilizzo poco efficiente delle postazioni ma te lo proponiamo comunque, nel caso questo tipo di efficienza non sia di importanza primaria.
+
+\subsection*{Tema}
+4. Oltre alle questioni sopra riportate ce ne sono alcune riguardanti le prenotazioni in generale:
+1- L'utente deve ricevere una notifica quando l'inizio di una sua prenotazione si sta avvicinando? quanto tempo prima?
+2- Quando la fine della prenotazione si sta avvicinando, l'utente deve esserne avvisato? Quanto tempo prima della fine questo deve succedere?
+3- Abbiamo pensato di implementare anche la possibilità di modificare le prenotazioni. Per ogni postazione quindi si potrebbero cambiare:
+a- dataora di inizio
+b- dataora di fine
+c- postazione prenotata
+Nel caso io stia usufruendo di una prenotazione, non potrò modificare la dataora di inizio né la postazione, ma potrò modificare la dataora di fine.
+Questa funzionalità può andare bene?
+4- Con quale granularità vanno gestiti gli orari delle prenotazioni? Abbiamo pensato di gestirle con granularità al livello dei minuti. Per esempio possono prenotare dalle 15:34 alle 18:22. Può andare bene?
+
+\subsection*{Tema}
+5. Nel caso qualcuno voglia avere un certificato dei dati di sanificazione e occupazione, come si deve procedere? Sono sufficienti i report di cui si parla nel capitolato? ovvero le seguenti 2 tabelle:
+- utilizzo (utente - postazione - dataora inizio utilizzo - dataora fine utilizzo - durata utilizzo)
+- pulizia (utente che ha effettuato la pulizia - ruolo utente(dipendente/addetto) - postazione pulita - dataora esecuzione pulizia)
+Lo chiediamo perché questo non fornisce alcuna indicazione che i dati siano salvati su una blockchain. E' forse necessario fornire gli hash dei blocchi della blockchain?
+
+\subsection*{Tema}
+6. Quali versioni di Android e iOS dobbiamo supportare?
+
+\subsection*{Tema}
+7. Nel capitolato si parla di "scansione dei codici nel tempo sufficiente a certificare la presenza della persona in postazione". Cosa si intende per tempo sufficiente? E' un limite superiore entro il quale non possiamo assolutamente salire? Se sì, a quanto corrisponde?
+
+\subsection*{Tema}
+Inoltre avremmo un'altra richiesta, indipendente dal prodotto:
+A breve (circa una settimana), dovremo far provare il primo prototipo ai professori e per farlo dovremo ospitare la parte backend su un server pubblico. Sul documento di presentazione del capitolato avete indicato che ci potete fornire dei server per l'installazione dei prodotti. Potresti darci più informazioni al riguardo, e magari, se sono già disponibili, dirci come accedervi?
