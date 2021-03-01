@@ -235,7 +235,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Scenario principale:}
 	\begin{enumerate}
 		\item l'amministratore raggiunge la pagina di visione delle stanze e delle postazioni
-		\item l'amministratore visualizza le stanze e lo stato delle postazioni. I possibili stati delle postazioni sono:
+		\item l'amministratore visualizza le stanze e le postazioni colorate in base al loro stato. Le postazioni sono colorate in base al loro stato e gli stati possibili sono:
 		\begin{itemize}
 			\item[$-$] libera e igienizzata;
 			\item[$-$] libera e non igienizzata;
@@ -250,7 +250,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
-	L'amministratore visualizza l'elenco delle stanze. Ogni stanza è rappresentata tramite uno scacchiera. Ogni casella della scacchiera può indicare una postazione con il suo rispettivo stato.
+	L'amministratore visualizza l'elenco delle stanze. Ogni stanza è rappresentata tramite una scacchiera. Ogni casella della scacchiera può indicare una postazione con il suo rispettivo stato e colore.
 \end{itemize}
 
 
@@ -666,7 +666,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'amministratore ottiene informazioni in forma tabellare sulle postazioni occupate da uno specifico utente con l'indicazione delle ore trascorse in ogni postazione.
 	\item\textbf{Scenario principale:}
 	\begin{enumerate}
-		\item l'ammistratore inserisce il nickname oppure il nome e cognome dell'utente a cui è interessato e periodo all'interno del quale cercare, indicando date di inizio e di fine;
+		\item l'ammistratore inserisce il nome utente oppure il nome e cognome dell'utente a cui è interessato e periodo all'interno del quale cercare, indicando date di inizio e di fine;
 		\item l'utente può opzionalmente specificare una postazione indicandone il codice;
 		\item nel report vengono visualizzate la data e ora di inizio e fine delle occupazioni, i codici delle postazioni e le ore trascorse;
 		Per ogni occupazione vengono visualizzati anche gli hash salvati sulla blockchain corrispondenti all'inizio e alla fine dell'occupazione e gli indirizzi a cui essi sono salvati.
@@ -847,37 +847,37 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l’utente conosce lo stato della postazione ed eventualmente il nome del dipendente che ha effettuato la prenotazione della stessa.
 \end{itemize}
 
-\subsubsection{ UC24 - Segnalazione presenza}
+\subsubsection{ UC24 - Segnalazione occupazione}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=15cm]{res/images/UC24.png}
-	\caption{Segnalazione presenza}
-	\label{fig:Segnalazione presenza}
+	\caption{Segnalazione occupazione}
+	\label{fig:Segnalazione occupazione}
 \end{figure}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Attori Secondari:} tag NFC, Ethereum.
-	\item\textbf{Descrizione:} l’utente segnala in tempo reale la propria presenza alla postazione, appoggiando lo smartphone sul tag NFC. Inoltre, registra il tempo di inizio e di fine di questa azione grazie all'utilizzo di Ethereum. Il primo è determinato da un timeout di un minuto in cui si lascia lo smartphone appoggiato sul tagNFC, mentre il secondo dal tempo di fine occupazione.
-	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tag NFC e segnala in questo modo la propria presenza.
+	\item\textbf{Descrizione:} l’utente segnala in tempo reale la propria occupazione alla postazione, appoggiando lo smartphone sul tag NFC. Inoltre, registra il tempo di inizio e di fine di questa azione grazie all'utilizzo di Ethereum. Il primo è determinato da un timeout di un minuto in cui si lascia lo smartphone appoggiato sul tagNFC, mentre il secondo dal tempo di fine occupazione.
+	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tag NFC e segnala in questo modo la propria occupazione.
 	Il tempo di inizio e di fine di questa azione vengono memorizzati grazie all'utilizzo di Ethereum.
 	\item\textbf{Precondizione:} l’utente si è autenticato nell'applicazione mobile e occupa una postazione.
-	\item\textbf{Postcondizione:} l’utente segnala in tempo reale la presenza alla postazione e registra questa azione su Ethereum.
+	\item\textbf{Postcondizione:} l’utente segnala in tempo reale l'occupazione alla postazione e registra questa azione su Ethereum.
 \end{itemize}
 
 
 
-\subsubsection{ UC24.1 - Presenza in tempo reale}
+\subsubsection{ UC24.1 - occupazione in tempo reale}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Attori Secondari:} tag NFC.
-	\item\textbf{Descrizione:} l’utente segnala in tempo reale la presenza alla postazione, appoggiando lo smartphone sul tag NFC.
-	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tag NFC e segnala in questo modo la propria presenza in tempo reale.
+	\item\textbf{Descrizione:} l’utente segnala in tempo reale l'occupazione alla postazione, appoggiando lo smartphone sul tag NFC.
+	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tag NFC e segnala in questo modo la propria occupazione in tempo reale.
 	\item\textbf{Precondizione:} l’utente occupa una postazione e ha attivato nel proprio smartphone la possibilità di effettuare scansioni con tag NFC.
-	\item\textbf{Postcondizione:} l’utente segnala in tempo reale la presenza alla postazione.
+	\item\textbf{Postcondizione:} l’utente segnala in tempo reale l'occupazione alla postazione.
 \end{itemize}
 
 
-\subsubsection{ UC24.2 - Registrazione presenza}
+\subsubsection{ UC24.2 - Registrazione occupazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Attori Secondari:} Ethereum.
@@ -894,31 +894,31 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\end{itemize}
 \end{itemize}
 
-\subsubsection{ UC24.2.1 - Visualizzazione messaggio promemoria di inizio occupazione}
+\subsubsection{ UC24.2.1 - Visualizzazione messaggio promemoria di inizio prenotazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} l’utente visualizza un messaggio di inizio della prenotazione, un'ora prima che essa avvenga.
+	\item\textbf{Descrizione:} l’utente visualizza un messaggio di inizio della prenotazione, 30 minuti prima che essa avvenga.
 	\item\textbf{Scenario principale:} viene visualizzato un promemoria di inizio della prenotazione.
 	\item\textbf{Precondizione:} l’utente ha effettuato una prenotazione almeno un'ora prima dell'inizio della stessa.
-	\item\textbf{Postcondizione:} viene visualizzato un messaggio promemoria di inizio occupazione della postazione.
+	\item\textbf{Postcondizione:} viene visualizzato un messaggio promemoria di inizio prenotazione della postazione.
 \end{itemize}
 
-\subsubsection{ UC24.2.2 - Visualizzazione messaggio promemoria di fine occupazione}
+\subsubsection{ UC24.2.2 - Visualizzazione messaggio promemoria di fine prenotazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente visualizza un messaggio di fine della prenotazione, cinque minuti prima che essa avvenga.
 	\item\textbf{Scenario principale:} viene visualizzato un promemoria di fine della prenotazione.
 	\item\textbf{Precondizione:} l’utente ha effettuato una prenotazione.
-	\item\textbf{Postcondizione:} viene visualizzato un messaggio promemoria di fine occupazione della postazione.
+	\item\textbf{Postcondizione:} viene visualizzato un messaggio promemoria di fine prenotazione della postazione.
 \end{itemize}
 
-\subsubsection{ UC24.3 - Visualizzazione errore fine prematura occupazione}
+\subsubsection{ UC24.3 - Visualizzazione fine prematura occupazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} l’utente visualizza un messaggio di errore in quanto sposta lo smartphone dal tag NFC, durante l'orario di prenotazione della postazione.
-	\item\textbf{Scenario principale:} viene visualizzato un messaggio di errore e avviene la disdetta automatica della prenotazione per il tempo restante.
+	\item\textbf{Descrizione:} l’utente visualizza un messaggio in quanto sposta lo smartphone dal tag NFC, durante l'orario di prenotazione della postazione.
+	\item\textbf{Scenario principale:} viene visualizzato un messaggio e avviene la disdetta automatica della prenotazione per il tempo restante.
 	\item\textbf{Precondizione:} l’utente sposta il proprio smartphone dal tag NFC per un periodo di tempo maggiore o uguale a trenta minuti.
-	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore specifico e avviene la disdetta automatica della prenotazione per il tempo rimanente.
+	\item\textbf{Postcondizione:} viene visualizzato un messaggio specifico e avviene la disdetta automatica della prenotazione per il tempo rimanente.
 \end{itemize}
 
 \subsubsection{ UC24.4 - Visualizzazione errore utente assente }
@@ -938,7 +938,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente visualizza un messaggio di errore in quanto non può occupare una postazione non igienizzata.
-	\item\textbf{Precondizione:} l’utente appoggia il proprio cellulare sul tag NFC per segnalare la presenza. 
+	\item\textbf{Precondizione:} l’utente appoggia il proprio cellulare sul tag NFC per segnalare l'occupazione. 
 	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore specifico che avvisa che finchè la postazione non viene igienizzata non può essere occupata.
 \end{itemize}
 
@@ -1228,7 +1228,8 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\begin{itemize}
 		\item[$-$] orario di inizio prenotazione;
 		\item[$-$] orario di fine prenotazione;
-		\item[$-$] nome e cognome del dipendente che ha effettuato la prenotazione;
+		\item[$-$] data;
+		\item[$-$] identificativo postazione.
 	\end{itemize}
 	\item\textbf{Scenario principale:} l’utente visualizza la lista delle prenotazioni da lui effettuate.
 	\item\textbf{Precondizione:} l'utente sta navigando nella sezione della lista delle prenotazioni effettuate.
