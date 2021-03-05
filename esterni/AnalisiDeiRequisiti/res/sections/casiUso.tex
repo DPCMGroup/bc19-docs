@@ -58,8 +58,8 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	\end{itemize}
            	\item\textbf{Estensioni:}
            	\begin{itemize}
-           		\item[$-$] UC2.1 - Visualizzazione messaggio di errore
-           		\item[$-$] UC2.2 - Visualizzazione schermata relativa a utente non abilitato
+           		\item[$-$] UC2.1 - Visualizzazione messaggio di errore;
+           		\item[$-$] UC2.2 - Visualizzazione schermata relativa a utente non abilitato.
            	\end{itemize}
            	\item\textbf{Precondizione:} l’utente non si è autenticato nell'applicativo. 
            	\item\textbf{Postcondizione:} l’utente si è autenticato con successo, ed è stato identificato dal sistema nel ruolo di amministratore, dipendente o addetto alle pulizie. A seconda della tipologia di utente vengono rese
@@ -97,8 +97,8 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\end{itemize}
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] UC3.1 - Visualizzazione messaggio di errore
-		\item[$-$] UC3.2 - Visualizzazione schermata relativa a utente non abilitato
+		\item[$-$] UC3.1 - Visualizzazione messaggio di errore;
+		\item[$-$] UC3.2 - Visualizzazione schermata relativa a utente non abilitato.
 	\end{itemize}
 	\item\textbf{Precondizione:} l’utente non si è autenticato nell'applicativo. 
 	\item\textbf{Postcondizione:} l’utente si è autenticato con successo, ed è stato identificato dal sistema
@@ -135,8 +135,8 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'amministratore si disautentica dal sistema.
 	\item\textbf{Scenario principale:} 
 	\begin{enumerate}
-		\item l'utente autenticato preme un pulsante per la disautenticazione
-		\item l'utente viene disautenticato e portato alla schermata di login
+		\item l'utente autenticato preme un pulsante per la disautenticazione;
+		\item l'utente viene disautenticato e portato alla schermata di login.
 	\end{enumerate}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato nel sistema come amministratore.
@@ -152,8 +152,8 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	il dipendente si disautentica dal sistema.
 	\item\textbf{Scenario principale:} 
 	\begin{enumerate}
-		\item l'utente autenticato preme un pulsante per la disautenticazione
-		\item l'utente viene disautenticato e portato alla schermata di login
+		\item l'utente autenticato preme un pulsante per la disautenticazione;
+		\item l'utente viene disautenticato e portato alla schermata di login.
 	\end{enumerate}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato nel sistema come dipendente.
@@ -169,8 +169,8 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'addetto alle pulizie si disautentica dal sistema.
 	\item\textbf{Scenario principale:} 
 	\begin{enumerate}
-		\item l'utente autenticato preme un pulsante per la disautenticazione
-		\item l'utente viene disautenticato e portato alla schermata di login
+		\item l'utente autenticato preme un pulsante per la disautenticazione;
+		\item l'utente viene disautenticato e portato alla schermata di login.
 	\end{enumerate}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato nel sistema come addetto alle pulizie.
@@ -281,8 +281,8 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item l'utente autenticato preme un pulsante per creare una nuova stanza;
 		\item compare quindi il campo "Nome della stanza" da compilare;
 		\item l'utente compila il campo;
-		\item l'utente preme un pulsante per confermare la creazione della stanza
-		\item se non è gia presente una stanza con il codice inserito, essa viene creata 
+		\item l'utente preme un pulsante per confermare la creazione della stanza;
+		\item se non è già presente una stanza con il codice inserito, essa viene creata;
 		\item la configurazione della stanza viene inviata a Ethereum per essere salvata.
 	\end{enumerate}
 	\item\textbf{Estensione:}
@@ -303,7 +303,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente tenta di assegnare alla stanza che sta creando un nome già utilizzato per un'altra stanza nel sistema e ne viene avvisato.
 	\item\textbf{Scenario principale:}
 	\begin{enumerate}
-		\item l'utente inserisce come nome un valore già utilizzato.
+		\item l'utente inserisce come nome un valore già utilizzato;
 		\item La stanza non viene creata e alla vista dell'utente compare un avviso che indica che il nome è già stato utilizzato. 
 	\end{enumerate}
 	\item\textbf{Precondizione:}
@@ -396,7 +396,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\begin{itemize}
 			\item[$-$] codice della postazione;
 			\item[$-$] codice del tag NFC che identifica la postazione;
-			\item[$-$] posizione della postazione su una scacchiera rappresentante la stanza;
+			\item[$-$] posizione della postazione su una scacchiera rappresentante la stanza.
 		\end{itemize}
 		\item l'amministratore preme un bottone per la conferma dei dati;
 		\item la postazione viene aggiunta all'interno della stanza;
@@ -497,7 +497,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Scenario principale:} 
 	\begin{enumerate}
 		\item l'utente preme sul pulsante per la modifica di una postazione;
-		\item inserisce i nuovi dati. Se la postazione non è occupata, è possibile impostarla come guasta. Se essa è già impostata come guasta, è possibile impostarla come libera. Lo stato di igienizzazione della postazione rimane invariato, come da diagramma degli stati di UC10.
+		\item inserisce i nuovi dati. Se la postazione non è occupata, è possibile impostarla come guasta. Se essa è già impostata come guasta, è possibile impostarla come libera. Lo stato di igienizzazione della postazione rimane invariato, come da diagramma degli stati di UC10;
 		\item conferma i nuovi dati premendo un pulsante;
 		\item i dati della postazione vengono modificati;
 		\item il sistema invia i nuovi dati a Ethereum.
@@ -568,7 +568,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\end{itemize}
 		Le credenziali vengono sempre create e abilitate. Questa proprietà può essere modificata successivamente, come descritto in UC19.3.
 		\item l'amministratore preme il pulsante per la conferma dei dati;
-		\item la nuova credenziale viene salvata nel sistema;
+		\item la nuova credenziale viene salvata nel sistema.
 	\end{enumerate}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
