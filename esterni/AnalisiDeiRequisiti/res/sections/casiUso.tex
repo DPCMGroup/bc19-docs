@@ -235,7 +235,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Scenario principale:}
 	\begin{enumerate}
 		\item l'amministratore raggiunge la pagina di visione delle stanze e delle postazioni
-		\item l'amministratore visualizza le stanze e le postazioni colorate in base al loro stato. Le postazioni sono colorate in base al loro stato e gli stati possibili sono:
+		\item l'amministratore visualizza le stanze e le postazioni colorate in base al loro stato. Gli stati possibili sono:
 		\begin{itemize}
 			\item[$-$] libera e igienizzata;
 			\item[$-$] libera e non igienizzata;
@@ -250,7 +250,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
-	L'amministratore visualizza l'elenco delle stanze. Ogni stanza è rappresentata tramite una scacchiera. Ogni casella della scacchiera può indicare una postazione con il suo rispettivo stato e colore.
+	l'amministratore visualizza l'elenco delle stanze. Ogni stanza è rappresentata tramite una scacchiera. Ogni casella della scacchiera può indicare una postazione con il suo rispettivo stato e colore.
 \end{itemize}
 
 
@@ -456,11 +456,11 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente tenta di assegnare a una postazione giù occupata.
 	\item\textbf{Scenario principale:}
 	\begin{enumerate}
-		\item l'utente sta assegnando una posizione ad una postazione, ma la posizione è già occupata;
+		\item l'utente sta assegnando una posizione a una postazione, ma la posizione è già occupata;
 		\item la postazione non viene creata e alla vista dell'utente compare un avviso che indica che la posizione è occupata.
 	\end{enumerate}
 	\item\textbf{Precondizione:}
-	l'utente sta assegnando la posizione ad una postazione.
+	l'utente sta assegnando la posizione a una postazione.
 	\item\textbf{Postcondizione:}
 	l'utente visualizza il messaggio d'errore.
 \end{itemize}
@@ -759,21 +759,21 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \end{itemize}
 
 
-\subsubsection{ UC21 - Report sanificazioni postazione}
+\subsubsection{ UC21 - Report igienizzazioni postazione}
 \begin{itemize}
            	\item\textbf{Attori Primari:} 
            	amministratore.
            	\item\textbf{Descrizione:} 
-           	l'amministratore ottiene una tabella delle sanificazioni di tutte le postazioni con:
+           	l'amministratore ottiene una tabella delle igienizzazioni di tutte le postazioni con:
            	\begin{itemize}
            		\item[$-$] data e ora in cui sono avvenute;
            		\item[$-$] nome e cognome di chi le ha eseguite;
            		\item[$-$] ruolo di chi le ha eseguite (dipendente o addetto alle pulizie).
            	\end{itemize}
            	\item\textbf{Scenario principale:} 
-           	l'amministratore visualizza la lista delle sanificazioni con le informazioni correlate. Per ogni occupazione viene visualizzato anche l'hash salvato sulla blockchain corrispondente alla sanificazione e l'indirizzo in cui esso è salvato.
+           	l'amministratore visualizza la lista delle igienizzazioni con le informazioni correlate. Per ogni occupazione viene visualizzato anche l'hash salvato sulla blockchain corrispondente alla sanificazione e l'indirizzo in cui esso è salvato.
            	\item\textbf{Precondizione:} 
-           	l'amministratore si trova sulla pagina di esplorazione delle sanificazioni.
+           	l'amministratore si trova sulla pagina di esplorazione delle igienizzazioni.
            	\item\textbf{Postcondizione:}
            	l'utente visualizza le informazioni.
 \end{itemize}
