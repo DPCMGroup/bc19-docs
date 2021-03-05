@@ -279,8 +279,8 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Scenario principale:} 
 	\begin{enumerate}
 		\item l'utente autenticato preme un pulsante per creare una nuova stanza;
-		\item compare quindi il campo "Nome della stanza" da compilare;
-		\item l'utente compila il campo;
+		\item compaiono i campi: "Nome della stanza" e "Dimensione della stanza" da compilare;
+		\item l'utente compila i campi;
 		\item l'utente preme un pulsante per confermare la creazione della stanza;
 		\item se non è già presente una stanza con il codice inserito, essa viene creata;
 		\item la configurazione della stanza viene inviata a Ethereum per essere salvata.
@@ -493,7 +493,15 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Attori Secondari:}
 	Ethereum.
 	\item\textbf{Descrizione:}
+	
 	l'utente modifica gli attributi di una postazione.
+	Gli attributi di una postazione sono:
+	\begin{enumerate}
+	\item codice della postazione;
+	\item codice del tag NFC che identifica la postazione;
+	\item posizione della postazione su una scacchiera rappresentante la stanza.
+	\end{enumerate}.
+	\end{enumerate}.
 	\item\textbf{Scenario principale:} 
 	\begin{enumerate}
 		\item l'utente preme sul pulsante per la modifica di una postazione;
@@ -626,7 +634,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Attori Primari:} 
 	amministratore.
 	\item\textbf{Descrizione:} 
-	l'amministratore ottiene informazioni sugli eventi di occupazione.
+	l'amministratore ottiene informazioni sugli eventi di occupazione, ovvero lo stato e da quali utenti sono occupate le postazioni.
 	\item\textbf{Scenario principale:} 
 	\begin{enumerate}
 		\item l'amministratore raggiunge la pagina per la ricerca delle occupazioni delle postazioni;

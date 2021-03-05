@@ -77,7 +77,7 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R1F12.1&	La creazione di una nuova stanza va salvata in Ethereum&VE\_2021\_01\_01v.1.0.0 - UC12 	\\
 		\hline
-		R1F12.2 & Se l'amministratore tenta di assegnare a una stanza un nome già in utilizzo per un'altra stanza deve essergli impedito e deve essere avvisato dell'errore & Interna - UC12.1 \\
+		R1F12.2 & Se l'amministratore tenta di assegnare a una stanza un nome già in utilizzo per un'altra stanza o delle dimensioni impossibili deve essergli impedito e deve essere avvisato dell'errore & Interna - UC12.1 \\
 		R1F13&L'amministratore deve poter eliminare una stanza dal sistema	& Capitolato - UC13	\\
 		\hline
 		R1F13.1&L'eliminazione di una stanza va salvata in Ethereum	& VE\_2021\_01\_01v.1.0.0 - UC13	\\
@@ -95,7 +95,7 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R1F16.1&L'aggiunta di una postazione va salvata in Ethereum	&VE\_2021\_01\_01v.1.0.0 - UC16 	\\
 		\hline
-		R1F16.2&	Se si tenta di creare o modificare una postazione assegnandole un codice già in utilizzo, l'azione deve fallire e deve comparire un messaggio d'errore& VE\_2020\_12\_18v.1.0.0 - UC16.1 	\\
+		R1F16.2&	Se si tenta di creare o modificare una postazione assegnandole un codice della postazione già in utilizzo, l'azione deve fallire e deve comparire un messaggio d'errore& VE\_2020\_12\_18v.1.0.0 - UC16.1 	\\
 		\hline
 		R1F16.3&Se si tenta di creare o modificare una postazione assegnandole un codice del tag già in utilizzo, l'azione deve fallire e deve comparire un messaggio d'errore	&VE\_2020\_12\_18v.1.0.0 - UC16.2 	\\
 		\hline
@@ -298,13 +298,11 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R3V1.1&Deve essere possibile utilizzare gRPC come soluzione alternativa al Rest. & Capitolato \\
 		\hline
-R1V2&Scansione dei codici nel tempo sufficiente a certificare la presenza  della persona in postazione.	& Capitolato	\\
-		\hline
 
-R2V3&Le comunicazioni tra app e server devono essere cifrate.	& Capitolato	\\
+R2V2&Le comunicazioni tra app e server devono essere cifrate.	& Capitolato	\\
 	
 		\hline
-R1V4&Deve essere sviluppata un'applicazione per Android o \glock{iOS}. Come versioni minime sono state stabilite Android 6.0 Marshmallow e iOS9.	& Capitolato	\\
+R1V3&Deve essere sviluppata un'applicazione per Android o \glock{iOS}. Come versioni minime sono state stabilite Android 6.0 Marshmallow e iOS9.	& Capitolato	\\
 		\hline
 		%inizio requisiti vincolo%
 
@@ -474,14 +472,12 @@ R1Q13 \newline
 
 R3V1.1 \newline
 
-R1V2 \newline
+R2V2 \newline
 
-R2V3
+R1V3
 \\
 \hline
-Capitolato &
-R1V4 \newline
-\\
+
 \hline
 Interna &
 
@@ -1715,20 +1711,17 @@ Capitolato \newline
 \\
 \hline
 
-R1V2 &
+R2V2 &
 Capitolato \newline
 \\
 \hline
 
-R2V3 &
+R1V3 &
 Capitolato \newline
 \\
 \hline
 
-R1V4 &
-Capitolato \newline
-\\
-\hline%fine tracciamento requisito-fonti%
+%fine tracciamento requisito-fonti%
 	
 	\end{longtable}
 \end{center}
