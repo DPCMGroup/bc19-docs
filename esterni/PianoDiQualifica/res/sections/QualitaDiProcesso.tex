@@ -84,6 +84,32 @@ Il risultato sono i processi presentati di seguito.
 		\item valore accettabile: $\geq 0$.
 		\end{itemize}
 		
+		\paragraph{AdP: Accuratezza della Pianificazione}
+		Viene registrato lo scostamento orario rispetto alla pianificazione settimanale per ogni specifico ruolo e per tutti i ruoli complessivamente.
+		L' obiettivo è quello di avere uno strumento che ci permette di verificare quanto sta migliorando la capacità di \textit{DPCM 2077} nel pianificare correttamente le attività da svolgere.
+		\textit{Di seguito elenchiamo una notazione utile per interpretare al meglio i grafici in §6.2.1. Per apprendere al meglio tale sezione, è necessario quindi analizzare anche §6.2.1.}
+		\begin{itemize}
+		\item sovrastima: tempo speso in ore inferiore a quanto pianificato;
+		\item sottostima: tempo speso in ore superiore a quanto pianificato;
+		\item  totale: somma della sovrastima e della sottostima.
+		\end{itemize}
+		\begin{enumerate}
+		\item Valori preferibili e accettabili per lo scostamento orario rispetto a quanto pianificato di ogni singolo ruolo:
+		\begin{itemize}
+		\item valore preferibile sottostima: $0 < ore < 1$;
+		\item valore accettabile sottostima: $2 < ore < 3$;
+		\item valore preferibile sovrastima: $0 < ore < 2$;
+		\item valore accettabile sovrastima: $2 < ore < 4$.
+		\end{itemize}
+		\item Valori preferibili e accettabili per lo scostamento orario rispetto a quanto pianificato di tutti i ruoli complessivamente:
+		\begin{itemize}
+		\item valore preferibile sottostima: 0 ore;
+		\item valore accettabile sottostima: numero di ore < 5;
+		\item valore preferibile sovrastima: $0 < ore < 5$;
+		\item valore accettabile sovrastima: 10 ore.
+		\end{itemize}
+		\end{enumerate}
+		
 	\subsection{Processi di supporto}
 		\subsubsection{Verifica - Metriche}
 		\paragraph{CC: Code Coverage}
@@ -139,6 +165,16 @@ Il risultato sono i processi presentati di seguito.
 			\hline
 			Indice di Gulpease & $60 < I < 100$ & $40 < I < 100$ \\
 			\hline
+			AdP: sottostima per singolo ruolo &  $0 < ore < 1$ & $2 < ore < 3$ \\
+			\hline
+			AdP: sovrastima per singolo ruolo & $0 < ore < 2$ & $2 < ore < 4$ \\
+			\hline
+			AdP: sottostima per tutti i ruoli & 0 ore & numero di ore < 5 \\
+			\hline
+			AdP: sovrastima per tutti i ruoli & $0 < ore < 5$ & 10 ore \\
+			\hline
+
+			
 				
 			\hiderowcolors
 			\caption{Tabella dei test di sistema}		
