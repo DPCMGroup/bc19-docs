@@ -43,3 +43,86 @@ Il bilancio risultante è negativo e di seguito sono esposte le cause dei ritard
 \subsection{Preventivo a finire}
 Il preventivo a finire presenta un surplus di 264\euro, poiché in questo periodo di analisi sono state necessarie più ore del previsto.
 Ciò non è ritenuto un problema in quanto le ore lavorative e i costi sostenuti in questo periodo non verranno rendicontati.
+\subsection{Preventivo a finire}
+
+\begin{table}[H]
+	\rowcolors{2}{lightest-grayest}{white}
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{|c|p{10mm}|p{10mm}|p{10mm}|p{10mm}|p{10mm}|p{10mm}|}
+		\hline
+		\rowcolor{lighter-grayer}
+		Attività & Re & Am & An & Pt & Pm & Ve \\ \hline
+		Aggiornamento PdQ & \cellcolor{white}  &  &  &  &  & 20 \\
+		Aggiornamento Adr & \cellcolor{white} &     & 40 &  &  & 2 \\
+		Aggiornamento NdP & \multirow{-3}*{\cellcolor{white}2} & 6 &  &  &  & 2 \\ \hline
+		Aggiornamento PdP     & 10	&   &    &    &  & 2  \\ \hline
+		Technology baseline   & 1	&   &    & 20 &  &    \\ \hline
+		Proof of concept      & 1	&   &    & 40 &  &    \\ \hline
+		Attività accessorie   & 2& 5 & 1  & 2  &  & 4  \\ \hline
+		Comunicazione con docenti               & 2&   &    &    &  &    \\ \hline
+		Comunicazione con proponente            & 2&   &    &    &  &    \\ \hline
+		Presentazione         & 1& 1 & 1  & 1  &  & 1 \\
+		\hline
+	\end{tabular}
+	\caption*{\textbf{Tabella n}: Pianificazione riguardante il periodo di Progettazione architetturale\\}
+\end{table}
+I motivi dello sforamento rispetto alla pianificazione settimanale sono riportati di seguito:
+\begin{itemize}
+	\item sono stati riscontrati dei dubbi imprevisti da chiarire con il proponente e con i docenti, in particolare 
+per quanto riguarda l'analisi dei requisiti, si è deciso di sfruttare appieno l'interazione con la tecnologia NFC e
+quindi modificare i relativi casi d'uso.
+\item sono stati implementati degli strumenti gestionali per la definizione del nostro cruscotto, che ci hanno aiutato nella pianificazione 
+e verifica di quest'ultima. 
+\item si è riscontrata una certa difficoltà a chiudere alcune issues in breve tempo. 
+A tal proposito si è deciso di scrivere issues con compiti più definiti e
+a grana ancora più fine. In questo modo 
+chi le dovrà svolgere sarà meno disorientato, il progresso del lavoro risulterà più semplice da calcolare
+e la verifica più puntuale. Ciò comporta una rivalutazione al rialzo delle ore da assegnare al responsabile, in quanto
+presente in tutte le attività per coordinare al meglio il gruppo e per determinare le issue stesse.
+
+\item si è impiegato più tempo del previsto nell'integrazione fra le parti del Poc, in particolare back-end e Ethereum, attraverso la libreria web3.py. Si è provveduto a fornire una guida per la configurazione di queste tecnologie, in modo da evitare incongruenze e/o perdite di tempo all'interno del gruppo.
+\end{itemize}
+
+
+Il preventivo a finire presenta un risparmio di 820\euro,
+poiché in questo periodo di progettazione architetturale
+sono state necessarie meno ore del previsto.
+I motivi sono i seguenti:
+\begin{itemize}
+	\item sono state dedicate più ore alla formazione personale dei membri del gruppo riguardo alle tecnologie individuate,
+	rispetto all'effettivo sviluppo del Poc. In questo caso, solo la seconda è un'attiva rendicontabile, mentre la prima no.
+	\item sono state preventivate più ore del necessario per l'aggiornamento della documentazione.
+\end{itemize}
+Si è deciso di reinvestire le ore risparmiate, nel lavoro di codifica
+e allo sviluppo di funzionalità opzionali nel periodo successivo di progettazione di dettaglio e codifica.
+
+Progettazione di dettaglio e codifica
+Attività da svolgere e distribuzione delle ore prevista
+\begin{table}[H]
+	\rowcolors{2}{lightest-grayest}{white}
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{|c|p{10mm}|p{10mm}|p{10mm}|p{10mm}|p{10mm}|p{10mm}|}
+		\hline
+		\rowcolor{lighter-grayer}
+		Attività & Re & Am & An & Pt & Pm & Ve \\ \hline
+		Aggiornamento PdQ& 1 &    &    &    &    & 20 \\ \hline
+		Aggiornamento AdR& 1 &    & 20 &    &    & 2  \\ \hline
+		Aggiornamento NdP& 1 & 10 &    &    &    & 2  \\ \hline
+		Aggiornamento PdP& 10&    &    &    &    & 2  \\ \hline
+		Product baseline & 2 &    &    & 18 &    & 2  \\ \hline
+		Codifica della struttura delle componenti     & 2 &    &    &    & 35 & 15 \\ \hline
+		\begin{tabular}[x]{@{}c@{}}Codifica delle interazioni \\ tra le componenti interne\end{tabular}      & 2 &    &    &    & 35 & 15 \\ \hline
+		Codifica delle interazioni con gli attori esterni  & 2 &    &    &    & 35 & 15 \\ \hline
+		\begin{tabular}[x]{@{}c@{}}Codifica delle funzionalità secondarie \\ non ancora implementate\end{tabular} & 1 &    &    &    & 32 & 15 \\ \hline
+		Stesura manuale utente& \cellcolor{white}  & 12 &    &    &    & 4  \\
+		Stesura manuale manutentore & \multirow{-2}*{\cellcolor{white}1}  & 12 &    &    &    & 4  \\ \hline
+		Attività accessorie    & 2 & 5  & 1  & 1  & 2  & 3  \\ \hline
+		Comunicazione con docenti   & 2 &    &    &    &    &    \\ \hline
+		Comunicazione con proponente& 2 &    &    &    &    &    \\ \hline
+		Presentazione    & 1 & 1  & 1  & 1  & 1  & 1 \\
+		\hline
+	\end{tabular}
+	\caption*{\textbf{Tabella n1}: Pianificazione riguardante il periodo di Progettazione di dettaglio e codifica\\}
+\end{table}
