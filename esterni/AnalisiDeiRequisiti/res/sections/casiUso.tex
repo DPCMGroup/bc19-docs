@@ -453,7 +453,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Attori Primari:}
 	amministratore.
 	\item\textbf{Descrizione:}
-	l'utente tenta di assegnare a una postazione giù occupata.
+	l'utente tenta di assegnare una posizione a una postazione già occupata.
 	\item\textbf{Scenario principale:}
 	\begin{enumerate}
 		\item l'utente sta assegnando una posizione a una postazione, ma la posizione è già occupata;
@@ -946,7 +946,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente visualizza un messaggio di errore in quanto non può occupare una postazione non igienizzata.
 	\item\textbf{Precondizione:} l’utente appoggia il proprio cellulare sul tag NFC per segnalare l'occupazione. 
-	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore specifico che avvisa finchè la postazione non viene igienizzata non può essere occupata.
+	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore specifico che avvisa finché la postazione non viene igienizzata non può essere occupata.
 \end{itemize}
 
 
@@ -1014,7 +1014,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item[$-$] viene visualizzato un errore che segnala che la data non è valida.
 	\end{itemize}
 	\item\textbf{Precondizione:} l’utente ha compilato il campo per la data.
-	\item\textbf{Postcondizione:} l’utente visualizza un messaggio di errore specifico e non porta a termine l’azione.
+	\item\textbf{Postcondizione:} l'utente visualizza un messaggio di errore specifico e l'azione non viene portata a termine.
 	\item\textbf{Estensioni:} l’utente inserisce i campi necessari alla ricerca della postazione desiderata.
 	\begin{itemize}
 		\item[$-$] l’utente inserisce un orario non valido (UC26.1.4).
@@ -1192,7 +1192,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l'utente prenota in modo automatico la postazione e inizia l'occupazione.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] nel caso in cui l'utente scansiona per più di un minuto una postazione prenotata, viene emesso un segnale sonoro (UC27.1).;
+		\item[$-$] nel caso in cui l'utente scansiona per più di un minuto una postazione prenotata, viene emesso un segnale sonoro (UC27.1);
 		\item[$-$] nel caso in cui l'utente scansiona per più di un minuto una postazione libera e igienizzata, ma prenotata in un determinato momento successivo della giornata, questa viene prenotata fino all'inizio della prenotazione successiva (UC27.2).
 	\end{itemize}
 \end{itemize}
