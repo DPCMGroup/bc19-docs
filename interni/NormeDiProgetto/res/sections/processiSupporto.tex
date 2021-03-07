@@ -188,12 +188,15 @@
 		   			\item \textbf{remoto}: pubblicato su \textit{GitHub}, contiene il lavoro svolto da ogni componente e che viene condiviso con i membri di DPCM 2077.
 		   	\end{itemize}
 		   	\paragraph{Configurazione del workflow}
-	Si è deciso di stabilire il seguente canone di \glock{workflow} per quanto concerne la documentazione:
-	\begin{itemize}
-	\item \textbf{master branch:} branch principale su cui vengono fatti i rilasci ad ogni \glock{milestone};
-	\item \textbf{develop branch:} branch di sviluppo su cui viene fatta integrazione di nuove funzionalità concluse;
-	\item \textbf{feature/... branch:} i puntini saranno sostituiti dal nome del documento a cui si riferisce il branch. Questo tipo di branch viene aperto al momento della crezione del documento a cui si riferisce e chiuso solo al momento dell'approvazione e rilascio.
-	\end{itemize}
+		   	Si è deciso di stabilire il seguente canone di \glock{workflow}.
+				\subparagraph{Utilizzo dei branch}
+					\begin{itemize}
+					\item \textbf{master branch:} branch principale su cui vengono fatti i rilasci ad ogni \glock{milestone};
+					\item \textbf{develop branch:} branch di sviluppo su cui viene fatta integrazione di nuove funzionalità concluse;
+					\item \textbf{feature/... branch:} i puntini saranno sostituiti dal nome del documento a cui si riferisce il branch. Questo tipo di branch viene aperto al momento di effettuare una modifica ad una parte di codice, in modo tale da rendere le correzioni/implementazioni il più indipendenti possibile tra loro.
+					\end{itemize}
+				\subparagraph{Utilizzo delle \glock{Pull Request}}
+					Al termine dell'implementazione di una feature, sviluppato nel feature branch, viene aperta una Pull Request verso il develop branch: qui è possibile discutere di possibili correzioni su parte del codice introdotto, visualizzare tutte le modifiche effettuate e molto altro a supporto della gestione del codice. Una volta completate le modifiche richieste discusse, il responsabile può approvare la Pull Request introducendo le modifiche all'interno del ramo develop.
 		   	
 	\subsection{Garanzia della Qualità}
 		\subsubsection{Scopo}
