@@ -7,26 +7,19 @@
 \end{itemize}
 
 \section*{Svolgimento}
-Viene fornito un resoconto della discussione incentrato sui chiarimenti dati dal proponente.
+Viene fornito un resoconto della discussione incentrato sui chiarimenti dati dal proponente e suddiviso tra i temi trattati.
 
 
-\subsection*{È necessario criptare o hashare le informazioni salvate su blockchain}
+\subsection*{È necessario criptare o hashare le informazioni salvate su blockchain?}
 Dobbiamo assumere di trovarci sempre su un sistema blockchain pubblico.
 Sulla blockchain va salvato l'hash della nostra informazione, e, visto che da esso non si può ottenere l'informazione che l'ha generato, non è un problema che sia pubblico.
----
-1. Dobbiamo fare in modo che le informazioni caricate sulla blockchain siano criptate, o anche solo hashate, in modo che se in futuro si dovesse usare una rete pubblica invece di una privata, le nostre informazioni non potrebbero essere lette da altri?
-
-\subsubsection*{Risposta}
-1. Assumete di trovarvi sempre su un sistema blockchain pubblico. Quello che ci interessa è avere un hash (riassunto one-way) dei dati salvato a cadenza "regolare" (decidete voi, anche singola transazione) sulla blockchain in modo da avere una evidenza immutabile che quel dato è stato prodotto in un determinato giorno-orario. Il controllo è demandato a "terzi", ovvero, vi dovete occupare di conservare il documento che genera l'hash, l'hash (giusto per un controllo di coerenza, essendo generabile a partire dal documento) e un link alla transazione blockchain che lo contiene, così da consentire la ricerca e l'evidenza che quel particolare hash è presente in quella transazione. Sulla blockchain pubblica non è un problema che ci sia l'hash in chiaro visto che non consente di tornare al documento originale.
 
 
 \subsection*{Può essere utile fornire un report dei vicini che un dipendente ha avuto ad ogni occupazione, magari dando la possibilità di scegliere quanto vicini (1, 2 o più postazioni di distanza, volendo anche tutti quelli che hanno condiviso la stanza con lui)?}
 Possiamo pensare di implementarlo se avanza tempo. Lo dobbiamo considerare come requisito desiderabile/opzionale.
----
-\subsubsection*{Risposta}
-2. Non è nei requisiti. Sicuramente può essere utile, ma lasciatelo come requisito desiderabile/opzionale. Se vi avanza tempo può essere una bella espansione.
 
 
+\subsection{Quando un utente occupa una postazione c’è il rischio che qualcun altro prenoti la stessa postazione a partire da un periodo di poco successivo. Per esempio, se alle 15:00 l’utente U1 sta occupando la postazione P, l’utente U2 può prenotarla a partire anche dalle 15:30. In questo caso U1 dovrà, dopo 30 minuti, liberare la postazione. Come evitare questo problema}
 \subsection*{Tema}
 3. Quando un utente occupa una postazione c'è il rischio che qualcun altro prenoti la stessa postazione a partire da un periodo di poco successivo. Per esempio, se alle 15:00 l'utente U1 sta occupando la postazione P, l'utente U2 può prenotarla a partire anche dalle 15:30. In questo caso U1 dovrà, dopo 30 minuti, liberare la postazione.
 Per evitare questo problema avremmo potuto porre un intervallo di tempo, per esempio 1 ora, successivo all'inizio dell'occupazione, entro il quale nessun altro potesse prenotare la postazione.
@@ -49,66 +42,43 @@ Un altro modo di gestire l'abbandono prematuro della postazione consisterebbe ne
 \subsubsection*{Risposta}
 3. Capisco le perplessità con il sistema di occupazione/prenotazione postazioni. Direi di farlo più facile di come lo state pensando: l'utente può prenotare una postazione per lo stesso giorno solo se questa risulta libera in quel momento. Non è inusuale che in azienda una persona prenoti la postazione per 3 ore durante la mattina e poi si protragga in azienda per più tempo. Attualmente il nostro sistema di prenotazione "basic" prevede di prenotare la presenza per l'intera giornata. Tutti i ragionamenti che mi avete descritto sono sensati, se volete "complicare" la proposta potete sviluppare quello che ritenete più opportuno. Riguardo alle "conferme" di checkout postazione, direi di gestirle tramite timeout (personalizzabili). Se un utente ha il cell scarico non vogliamo che resti per sempre sulla postazione, così come "gli sciattoni" devono risultare assenti dopo un lasso di tempo.
 
-\subsection*{Tema}
-4. Oltre alle questioni sopra riportate ce ne sono alcune riguardanti le prenotazioni in generale:
-1- L'utente deve ricevere una notifica quando l'inizio di una sua prenotazione si sta avvicinando? quanto tempo prima?
-\subsubsection*{Risposta}
-4.1 - Gradita, non nel capitolato. In generale 30 minuti direi che mi sembra un buon lasso di tempo. Ovviamente fate in modo che sia facilmente modificabile :)
+\subsection*{Notifica pre-inizio prenotazione}
+Sarebbe una cosa gradita. Nel caso si facesse, 30 minuti sarebbe un buon anticipo. \newline
+Questo lasso di tempo deve comunque essere modificabile dall'amministratore.
 
-\subsection*{Tema}
-2- Quando la fine della prenotazione si sta avvicinando, l'utente deve esserne avvisato? Quanto tempo prima della fine questo deve succedere?
-\subsubsection*{Risposta}
-4.2 - Vedi 3, il sistema di prenotazione lo farei più semplice di come lo state pensando. In generale in una buona applicazione l'utente dovrebbe sempre essere avvisato.\\
+\subsection*{Notifica pre-fine prenotazione}
+5 min
+Sarebbe una cosa buona. 5 minuti andrebbero bene come intervallo. La durata dovrebbe essere una cosa modificabile dall'amministratore.
 
-\subsection*{Abbiamo pensato di implementare anche la possibilità di modificare le prenotazioni. Per ogni postazione quindi si potrebbero cambiare:
-	a- dataora di inizio
-	b- dataora di fine
-	c- postazione prenotata
-	Nel caso io stia usufruendo di una prenotazione, non potrò modificare la dataora di inizio né la postazione, ma potrò modificare la dataora di fine.
-	Questa funzionalità può andare bene?}
-\subsubsection*{Risposta}
-4.3 - Come prima, funzionalità gradita.\\
+\subsection*{Abbiamo pensato di implementare anche la possibilità di modificare le prenotazioni. Per ogni postazione quindi si potrebbero cambiare: a- dataora di inizio b- dataora di fine	c- postazione prenotata	Nel caso io stia usufruendo di una prenotazione, non potrò modificare la dataora di inizio né la postazione, ma potrò modificare la dataora di fine.	Questa funzionalità può andare bene?}
+Come prima, funzionalità gradita.
 
 
 \subsection*{Granularità orari prenotazioni}
 Vanno bene granularità al livello delle ore o delle mezze giornate.
 Un dipendente solitamente arriva, occupa ed è difficile che vada via per il resto della giornata, o almeno per la mezza giornata.
----
-4- Con quale granularità vanno gestiti gli orari delle prenotazioni? Abbiamo pensato di gestirle con granularità al livello dei minuti. Per esempio possono prenotare dalle 15:34 alle 18:22. Può andare bene?
-\subsubsection*{Risposta}
-4.4 - Granularità molto più larghe vanno benissimo. Anche di ore o sulla mezza giornata. Non stiamo facendo uno scheduler dei processi, tenete presente che un dipendente solitamente arriva, occupa ed è difficile che vada via per il resto della giornata, o almeno per la mezza giornata.
+
 
 
 \subsection*{Come fornire dati certificati su occupazioni e igienizzazioni}
 I report delle occupazioni e igienizzazioni devono fornire anche:
 \begin{itemize}
-	\item l'informazioni leggibile
+	\item l'informazione leggibile
 	\item l'hash dell'informazione
 	\item l'indirizzo della transazioni nella quale risiede l'hash
 \end{itemize}
----
-5. Nel caso qualcuno voglia avere un certificato dei dati di sanificazione e occupazione, come si deve procedere? Sono sufficienti i report di cui si parla nel capitolato? ovvero le seguenti 2 tabelle:
-- utilizzo (utente - postazione - dataora inizio utilizzo - dataora fine utilizzo - durata utilizzo)
-- pulizia (utente che ha effettuato la pulizia - ruolo utente(dipendente/addetto) - postazione pulita - dataora esecuzione pulizia)
-Lo chiediamo perché questo non fornisce alcuna indicazione che i dati siano salvati su una blockchain. E' forse necessario fornire gli hash dei blocchi della blockchain?
-\subsubsection*{Risposta}
-5. In parte vi ho risposto in 1. Nei report serve sapere dove trovare la transazione e il documento originale che genera l'hash.
 
 \subsection*{Versioni di Android e iOS da supportare}
-6. Quali versioni di Android e iOS dobbiamo supportare?
-\subsubsection*{Risposta}
 Android: 6.0 Marshmallow
 iOS: iOS9
 
 
-\subsection*{Tema}
-7. Nel capitolato si parla di "scansione dei codici nel tempo sufficiente a certificare la presenza della persona in postazione". Cosa si intende per tempo sufficiente? E' un limite superiore entro il quale non possiamo assolutamente salire? Se sì, a quanto corrisponde?
-\subsubsection*{Risposta}
+\subsection*{Nel capitolato si parla di "scansione dei codici nel tempo sufficiente a certificare la presenza della persona in postazione". Cosa si intende per tempo sufficiente? E' un limite superiore entro il quale non possiamo assolutamente salire? Se sì, a quanto corrisponde?}
 7. Qui dovete testare qual è il migliore il trade-off per bilanciare il conoscere con esattezza la posizione di un dipendente (monitoring continuo) e la durata della batteria (non monitoro mai). Si intende che dovete controllare a intervalli larghi abbastanza da non spegnere il cellulare in 1 ora e stretti abbastanza da sapere che il dipendente è andato via, ma con un margine non di ore.
 
 
 \subsection*{Disponibilità server aziendali}
-I server sono interni all'azienda e ad ognuno di noi potranno essere fornite credenziali personali perl'accesso via VPN.
+I server sono interni all'azienda e ad ognuno di noi potranno essere fornite credenziali personali per l'accesso via VPN.
 
 
 
