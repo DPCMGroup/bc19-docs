@@ -289,20 +289,26 @@ Ciò non è ritenuto un problema in quanto le ore lavorative e i costi sostenuti
 		\hline
 		\rowcolor{lighter-grayer}
 		Attività & Re & Am & An & Pt & Pm & Ve \\ \hline
-		Aggiornamento PdQ & \cellcolor{white}  &  &  &  &  & 20 \\
-		Aggiornamento Adr & \cellcolor{white} &     & 40 &  &  & 2 \\
-		Aggiornamento NdP & \multirow{-3}*{\cellcolor{white}2} & 6 &  &  &  & 2 \\ \hline
-		Aggiornamento PdP     & 10	&   &    &    &  & 2  \\ \hline
-		Technology baseline   & 1	&   &    & 20 &  &    \\ \hline
-		Proof of concept      & 1	&   &    & 40 &  &    \\ \hline
-		Attività accessorie   & 2& 5 & 1  & 2  &  & 4  \\ \hline
-		Comunicazione con docenti               & 2&   &    &    &  &    \\ \hline
-		Comunicazione con proponente            & 2&   &    &    &  &    \\ \hline
-		Presentazione         & 1& 1 & 1  & 1  &  & 1 \\
+		Aggiornamento PdQ& 1 & - & - & - & - & 20 \\ \hline
+		Aggiornamento AdR& 1 & - & 20 & - & - & 2  \\ \hline
+		Aggiornamento NdP& 1 & 10 & - & - & - & 2  \\ \hline
+		Aggiornamento PdP& 10& - & - & - & - & 2  \\ \hline
+		Product baseline & 2 & - & - & 18 & - & 2  \\ \hline
+		Codifica della struttura delle componenti     & 2 & - & - & - & 35 & 15 \\ \hline
+		\begin{tabular}[x]{@{}c@{}}Codifica delle interazioni \\ tra le componenti interne\end{tabular}      & 2 & - & - & - & 35 & 15 \\ \hline
+		Codifica delle interazioni con gli attori esterni  & 2 & - & - & - & 35 & 15 \\ \hline
+		\begin{tabular}[x]{@{}c@{}}Codifica delle funzionalità secondarie \\ non ancora implementate\end{tabular} & 1 & - & - & - & 32 & 15 \\ \hline
+		Stesura manuale utente& \cellcolor{white}  & 12 & - & - & - & 4  \\
+		Stesura manuale manutentore & \multirow{-2}*{\cellcolor{white}1}  & 12 & - & - & - & 4  \\ \hline
+		Attività accessorie    & 2 & 5  & 1  & 1  & 2  & 3  \\ \hline
+		Comunicazione con docenti   & 2 & - & - & - & - & -   \\ \hline
+		Comunicazione con proponente& 2 & - & - & - & - & -   \\ \hline
+		Presentazione    & 1 & 1  & 1  & 1  & 1  & 1 \\
 		\hline
 	\end{tabular}
-	\caption*{\textbf{Tabella n}: Pianificazione riguardante il periodo di Progettazione architetturale\\}
+	\caption*{\textbf{Tabella 2}: Pianificazione riguardante il periodo di Progettazione di dettaglio e codifica\\}
 \end{table}
+
 I motivi dello sforamento rispetto alla pianificazione settimanale sono riportati di seguito:
 \begin{itemize}
 	\item sono stati riscontrati dei dubbi imprevisti da chiarire con il proponente e con i docenti, in particolare 
@@ -331,9 +337,10 @@ I motivi sono i seguenti:
 	\item sono state preventivate più ore del necessario per l'aggiornamento della documentazione.
 \end{itemize}
 Si è deciso di reinvestire le ore risparmiate, nel lavoro di codifica
-e allo sviluppo di funzionalità opzionali nel periodo successivo di progettazione di dettaglio e codifica.
+del PoC mobile e per l'introduzione di strumenti di qualità del codice
+di analisi statica, dinamica e di continuous integration, nel periodo successivo di progettazione di dettaglio e codifica.
 
-Progettazione di dettaglio e codifica
+Progettazione di validazione e collaudo
 Attività da svolgere e distribuzione delle ore prevista
 \begin{table}[H]
 	\rowcolors{2}{lightest-grayest}{white}
@@ -343,22 +350,16 @@ Attività da svolgere e distribuzione delle ore prevista
 		\hline
 		\rowcolor{lighter-grayer}
 		Attività & Re & Am & An & Pt & Pm & Ve \\ \hline
-		Aggiornamento PdQ& 1 &    &    &    &    & 20 \\ \hline
-		Aggiornamento AdR& 1 &    & 20 &    &    & 2  \\ \hline
-		Aggiornamento NdP& 1 & 10 &    &    &    & 2  \\ \hline
-		Aggiornamento PdP& 10&    &    &    &    & 2  \\ \hline
-		Product baseline & 2 &    &    & 18 &    & 2  \\ \hline
-		Codifica della struttura delle componenti     & 2 &    &    &    & 35 & 15 \\ \hline
-		\begin{tabular}[x]{@{}c@{}}Codifica delle interazioni \\ tra le componenti interne\end{tabular}      & 2 &    &    &    & 35 & 15 \\ \hline
-		Codifica delle interazioni con gli attori esterni  & 2 &    &    &    & 35 & 15 \\ \hline
-		\begin{tabular}[x]{@{}c@{}}Codifica delle funzionalità secondarie \\ non ancora implementate\end{tabular} & 1 &    &    &    & 32 & 15 \\ \hline
-		Stesura manuale utente& \cellcolor{white}  & 12 &    &    &    & 4  \\
-		Stesura manuale manutentore & \multirow{-2}*{\cellcolor{white}1}  & 12 &    &    &    & 4  \\ \hline
-		Attività accessorie    & 2 & 5  & 1  & 1  & 2  & 3  \\ \hline
-		Comunicazione con docenti   & 2 &    &    &    &    &    \\ \hline
-		Comunicazione con proponente& 2 &    &    &    &    &    \\ \hline
-		Presentazione    & 1 & 1  & 1  & 1  & 1  & 1 \\
+		Aggiornamento PdQ          & 1  & 10 & - & - & - & 10 \\ \hline
+		Aggiornamento NdP          & 1  & 10 & - & - & - & 5  \\ \hline
+		Aggiornamento PdP          & 10 & - & - & - & - & 4  \\ \hline
+		Validazione                & 2  & - & - & 12 & 21 & 20 \\ \hline
+		Collaudo                   & 2  & - & - & 11 & 20 & 20 \\ \hline
+		Attività accessorie 	   & 2  & 7  & - & 1  & 1  & 3  \\ \hline
+		Comunicazione con docenti  & 2  & - & - & - & - & -   \\ \hline
+		Comunicazione con proponente& 2  & - & - & - & - & -   \\ \hline
+		Presentazione              & 1  & 1  & - & 1  & 1  & 1 \\
 		\hline
 	\end{tabular}
-	\caption*{\textbf{Tabella n1}: Pianificazione riguardante il periodo di Progettazione di dettaglio e codifica\\}
+	\caption*{\textbf{Tabella 3}: Pianificazione riguardante il periodo di Validazione e collaudo\\}
 \end{table}
