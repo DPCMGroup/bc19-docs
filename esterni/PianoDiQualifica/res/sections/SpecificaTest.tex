@@ -25,7 +25,7 @@ Per la classificazione dei test si fa riferimento alle sezioni Verifica\footnote
 			
 			\hline
 			% Test di sistema per i requisiti funzionali %
-			TS2F1 & L'utente deve poter accedere alla guida per il login e per applicazione. & NI \\
+			TS2F1 & L'utente deve poter accedere alla guida per il login e per l'applicazione. & NI \\
 			\hline
 			TS1F2 & L'utente non ancora autenticato deve poter autenticarsi nel web server. & NI \\			
 			\hline
@@ -62,7 +62,8 @@ Per la classificazione dei test si fa riferimento alle sezioni Verifica\footnote
 			 	\item occupata;
 			 	\item prenotata e igienizzata;
 			 	\item prenotata e non igienizzata;
-			 	\item inaccessibile.
+			 	\item guasta e igienizzata;
+			 	\item guasta e non igienizzata.
 			 \end{itemize}
 			 & NI \\			
 			\hline
@@ -74,7 +75,7 @@ Per la classificazione dei test si fa riferimento alle sezioni Verifica\footnote
 			\hline
 			TS1F12.1 & La creazione di una stanza inizia il processo di salvataggio in Ethereum. & NI \\			
 			\hline
-			TS1F12.2 & L'amministratore non può creare una stanza con un nome già in utilizzo e deve essere avvisato con un messaggio di errore. & NI \\			
+			TS1F12.2 & L'amministratore non può creare una stanza con un nome già in utilizzo o con delle dimensioni impossibili e deve essere avvisato con un messaggio di errore. & NI \\			
 			\hline
 			TS1F13 & L'amministratore può eliminare una stanza al sistema. & NI \\			
 			\hline
@@ -144,11 +145,11 @@ Per la classificazione dei test si fa riferimento alle sezioni Verifica\footnote
 			\hline			
 			TS2F20.4 & L'amministratore può scaricare il report degli utenti che hanno condiviso la stanza con un determinato utente. & NI \\		
 			\hline
-			TS2F21 & L'amministrazione può vedere lo storico delle sanificazioni di tutte le postazioni in modo tabellare, con data e ora in cui sono avvenute, nome e cognome di chi le ha eseguite e il loro ruolo. & NI \\	
+			TS2F21 & L'amministrazione può vedere lo storico delle igienizzazioni di tutte le postazioni in modo tabellare, con data e ora in cui sono avvenute, nome e cognome di chi le ha eseguite e il loro ruolo. & NI \\	
 			\hline
-			TS2F21.1 & L'amministratore può scaricare il report delle sanificazioni in un formato leggibile. & NI \\	
+			TS2F21.1 & L'amministratore può scaricare il report delle igienizzazioni in un formato leggibile. & NI \\	
 			\hline
-			TS2F21.1.1 & L'amministratore può scaricare il report delle sanificazioni in formato PDF. & NI \\	
+			TS2F21.1.1 & L'amministratore può scaricare il report delle igienizzazioni in formato PDF. & NI \\	
 			\hline			
 			TS1F22 & Il dipendente deve poter scansionare un tag NFC presente in una postazione. & NI \\	
 			\hline
@@ -160,7 +161,7 @@ Per la classificazione dei test si fa riferimento alle sezioni Verifica\footnote
 			\hline
 			TS1F24.2 & Il dipendente deve poter registrare la propria presenza, di inizio e fine occupazione, su una postazione tramite Ethereum. & NI \\	
 			\hline			
-			TS1F24.2.1 & Il dipendente visualizza un messaggio di inizio della prenotazione, un'ora prima che essa avvenga. & NI \\	
+			TS1F24.2.1 & Il dipendente visualizza un messaggio di inizio della prenotazione, 30 minuti prima che essa avvenga. & NI \\	
 			\hline						
 			TS1F24.2.2 & Il dipendente visualizza un messaggio di fine della prenotazione, cinque minuti prima che essa avvenga. & NI \\	
 			\hline					
@@ -268,11 +269,9 @@ Per la classificazione dei test si fa riferimento alle sezioni Verifica\footnote
 			\hline
 			TS3V1.1 & Deve essere possibile utilizzare gRPC in alternativa al Rest. & NI \\	
 			\hline
-			TS1V2 & Si verifichi che la scansione dei codici nel tempo sia sufficiente a certificare la presenza della persona. & NI \\	
+			TS2V2 & Si verifichi che le comunicazione tra app e server siano cifrate. & NI \\	
 			\hline
-			TS2V3 & Si verifichi che le comunicazione tra app e server siano cifrate. & NI \\	
-			\hline
-			TS1V4 & Si verifichi che l'applicazione sia sviluppata per Android o iOS. La versione minima supportata deve essere  Android 6.0 "Marshmallow" e iOS9. & NI \\	
+			TS1V3 & Si verifichi che l'applicazione sia sviluppata per Android o iOS. La versione minima supportata deve essere  Android 6.0 "Marshmallow" e iOS9. & NI \\	
 			\hline
 			% Test di sistema per i requisiti prestazionali %	
 			\hiderowcolors
