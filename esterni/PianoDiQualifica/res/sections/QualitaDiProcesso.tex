@@ -86,7 +86,7 @@ Il risultato sono i processi presentati di seguito.
 		
 		\paragraph{AdP: Accuratezza della Pianificazione}
 		Viene registrato lo scostamento orario rispetto alla pianificazione settimanale per ogni specifico ruolo e per tutti i ruoli complessivamente.
-		L' obiettivo è quello di avere uno strumento che ci permette di verificare quanto sta migliorando la capacità di \textit{DPCM 2077} nel pianificare correttamente le attività da svolgere.
+		L' obiettivo è avere uno strumento che ci permette di verificare quanto sta migliorando la capacità di \textit{DPCM 2077} nel pianificare correttamente le attività da svolgere.
 		\textit{Di seguito elenchiamo una notazione utile per interpretare al meglio i grafici in §6.2.1. Per apprendere al meglio tale sezione, è necessario quindi analizzare anche §6.2.1.}
 		\begin{itemize}
 		\item sovrastima: tempo speso in ore inferiore a quanto pianificato;
@@ -96,17 +96,17 @@ Il risultato sono i processi presentati di seguito.
 		\begin{enumerate}
 		\item Valori preferibili e accettabili per lo scostamento orario rispetto a quanto pianificato di ogni singolo ruolo:
 		\begin{itemize}
-		\item valore preferibile sottostima: $0 < ore < 1$;
-		\item valore accettabile sottostima: $2 < ore < 3$;
-		\item valore preferibile sovrastima: $0 < ore < 2$;
-		\item valore accettabile sovrastima: $2 < ore < 4$.
+		\item valore preferibile sottostima: $0 <= ore <= 1$;
+		\item valore accettabile sottostima: $2 <= ore <= 3$;
+		\item valore preferibile sovrastima: $0 <= ore <= 2$;
+		\item valore accettabile sovrastima: $3 <= ore <= 4$.
 		\end{itemize}
 		\item Valori preferibili e accettabili per lo scostamento orario rispetto a quanto pianificato di tutti i ruoli complessivamente:
 		\begin{itemize}
-		\item valore preferibile sottostima: 0 ore;
-		\item valore accettabile sottostima: numero di ore < 5;
-		\item valore preferibile sovrastima: $0 < ore < 5$;
-		\item valore accettabile sovrastima: 10 ore.
+		\item valore preferibile sottostima: $ 0 <= ore <= 3 $;
+		\item valore accettabile sottostima: $ 4 <= ore <= 5 $;
+		\item valore preferibile sovrastima: $0 <= ore <= 5$;
+		\item valore accettabile sovrastima: $ 6 <= ore <= 10 $.
 		\end{itemize}
 		\end{enumerate}
 		
