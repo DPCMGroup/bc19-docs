@@ -3,7 +3,7 @@
 \begin{itemize}
 	\item \textbf{Autore dell'e-mail per DPCM 2077:} Ivan Piacere;
 	\item \textbf{Autore dell'e-mail per Imola Informatica:} Lorenzo Patera;
-	\item \textbf{periodo:} 2021-02-20 - 2021-03-01;
+	\item \textbf{periodo:} 2021-02-20 - 2021-03-01.
 \end{itemize}
 
 \section{Svolgimento}
@@ -20,38 +20,36 @@ Possiamo pensare di implementarlo se avanza tempo. Lo dobbiamo considerare come 
 \subsection*{Gestione interferenza tra più prenotazioni/occupazioni}
 Quando un utente occupa una postazione c'è il rischio che qualcun altro prenoti la stessa postazione a partire da un periodo di poco successivo. Per esempio, se alle 15:00 l'utente U1 sta occupando la postazione P, l'utente U2 può prenotarla a partire anche dalle 15:30. In questo caso U1 dovrà, dopo 30 minuti, liberare la postazione.
 Per evitare questo problema avremmo potuto porre un intervallo di tempo, per esempio 1 ora, successivo all'inizio dell'occupazione, entro il quale nessun altro potesse prenotare la postazione.
-Un altra soluzione sarebbe quella di porre un lasso di tempo minimo tra il momento in cui prenoto e per cui prenoto. Per esempio, se il lasso fosse di 24 ore e ora fossero le 15:00, io potrei prenotare postazioni solo a partire dalle 15:00 di domani.
+Un'altra soluzione sarebbe quella di porre un lasso di tempo minimo tra il momento in cui prenoto e per cui prenoto. Per esempio, se il lasso fosse di 24 ore e ora fossero le 15:00, io potrei prenotare postazioni solo a partire dalle 15:00 di domani.
 Abbiamo però pensato ad una soluzione più generale, che ti chiediamo di valutare: consideriamo le occupazioni come prenotazioni.
 Quindi quando un utente intende occupare una postazione igienizzata, gli viene chiesto per quanto tempo la vuole occupare. Per la durata specificata la postazione risulterà prenotata dall'utente, e quindi non sarà disponibile per altre prenotazioni. Per esempio: l'utente U occupa la postazione P a partire dalle 15:00. Gli viene chiesto quanto a lungo la prenoterà e lui indica 3 ore. Allora la postazione P risulterà prenotata per 3 ore, o fino a quando U non la libererà, se dovesse farlo prima delle 3 ore.
 Per rendere il processo di occupazione semplice ma anche efficace abbiamo pensato alla seguente funzionalità: \newline
 Per cominciare un'occupazione l'utente deve scansionare il tag di una postazione. Se la postazione è igienizzata, l'applicazione chiede all'utente per quanto tempo vuole occuparla. A questo punto l'utente può indicare la durata oppure può semplicemente lasciare il telefono sul tag.
-In questo secondo caso, dopo un intervallo di tempo , la prenotazione viene effettuata automaticamente impostando la durata a un certo valore.
+In questo secondo caso, dopo un intervallo di tempo, la prenotazione viene effettuata automaticamente impostando la durata a un certo valore.
 Inoltre, quando l'utente sceglie quanto a lungo prenotare la postazione, abbiamo pensato che lo può fare in più modi:
 \begin{enumerate}
-\item fino a quando (voglio occupare fino alle 12:30)
-\item per quanto tempo (voglio occupare per 3 ore)
-\item come preferisce, devono essere presenti entrambe le modalità
+\item indicando l'ora di fine della prenotazione (voglio occupare fino alle 12:30);
+\item indicando la durata della prenotazione (voglio occupare per 3 ore);
+\item devono essere presenti entrambe le modalità.
 \end{enumerate}
 \indent Il proponente ha detto che la proposta è valida, ma è sufficiente un sistema meno complicato: l'utente può prenotare una postazione per lo stesso giorno solo se questa risulta libera in quel momento. Bisogna infatti considerare che non è inusuale che in azienda una persona prenoti la postazione per 3 ore durante la mattina e poi si protragga in azienda per più tempo.
 
 \subsection*{Come gestire l'abbandono della postazione da parte dell'utente}
 La postazione va considerata abbandonata dopo un intervallo di 30 minuti da quando il telefono è stato sollevato dal tag. Questo intervallo deve poter essere modificato facilmente a livello di codice.
 
-
 \subsection*{Notifica pre inizio prenotazione}
 Sarebbe una cosa gradita. Nel caso si facesse, 30 minuti sarebbe un buon anticipo. \newline
 Questo lasso di tempo deve comunque essere modificabile dall'amministratore.
 
 \subsection*{Notifica pre fine prenotazione}
-5 min
 Sarebbe una cosa buona. 5 minuti andrebbero bene come intervallo. La durata dovrebbe essere una cosa modificabile dall'amministratore.
 
 \subsection*{Deve essere possibile modificare una prenotazione? }
 Per ogni postazione si potrebbero cambiare:
 \begin{enumerate}
-	\item dataora di inizio
-	\item dataora di fine	
-	\item postazione prenotata
+	\item dataora di inizio;
+	\item dataora di fine;
+	\item postazione prenotata.
 \end{enumerate}	
 Nel caso io stia usufruendo di una prenotazione, non potrei modificare la dataora di inizio né la postazione, ma potrei modificare la dataora di fine.\newline
 Per il proponente la funzionalità sarebbe gradita.
@@ -63,9 +61,9 @@ Un dipendente solitamente arriva, occupa ed è difficile che vada via per il res
 \subsection*{Come fornire dati certificati su occupazioni e igienizzazioni}
 I report delle occupazioni e igienizzazioni devono fornire anche:
 \begin{itemize}
-	\item l'informazione leggibile
-	\item l'hash dell'informazione
-	\item l'indirizzo della transazioni nella quale risiede l'hash
+	\item l'informazione leggibile;
+	\item l'hash dell'informazione;
+	\item l'indirizzo della transazione nella quale risiede l'hash.
 \end{itemize}
 
 \subsection*{Versioni di Android e iOS da supportare}
