@@ -1,8 +1,8 @@
 %!TEX output_directory = .cache
 % ---------------------------
-%	  [ NOME DOCUMENTO ]
+%	  	  [ Verbale ]
 %	----------------------
-%	      DPCM2077
+%	       DPCM2077
 %  Progetto di SWE (2020-21)
 %    Template by Maxelweb
 % ---------------------------
@@ -11,33 +11,22 @@
 
 % --------------
 
-\newcommand{\docNome}{ GLOSSARIO }
-\newcommand{\docNomeProgetto}{ BlockCOVID }
-\newcommand{\docVersione}{1.1.2}
-\newcommand{\docStatus}{approvato}
+\newcommand{\docNome}{ VERBALE E-MAIL \#5 }
+\newcommand{\docVersione}{0.0.1}
+\newcommand{\docNomeProgetto}{ 20 febbraio 2021 - 1 marzo 2021 }
+\newcommand{\docStatus}{in redazione}
 \newcommand{\docUso}{esterno}
-
 
 % --------------
 
-\newcommand{\docDestinatari}{
-    Prof.~Tullio Vardanega \\&
-    Prof.~Riccardo Cardin \\&
-    Imola Informatica \\&
-    DPCM 2077
-}
 \newcommand{\docRedattori}{
-	Antonio Badan \\&
-	Damiano Bertoldo \\&
 	Ivan Piacere
 }
 \newcommand{\docVerificatori}{
-	Matteo Budai \\&
-	Ivan Piacere
+	Sara Privitera
 }
 \newcommand{\docApprovazione}{
-	Samuele De Grandi
-    
+	Daniele Spigolon
 }
 
 % ----- NON MODIFICARE SOTTO QUESTA RIGA -----
@@ -49,21 +38,6 @@
 \documentclass[11pt,a4paper,table]{article}
 
 \input{res/configurazione}    
-
-% ---------------------------
-% + CONFIGURAZIONE AGGIUNTIVA
-% ---------------------------
-
-\setcounter{secnumdepth}{0} % No section number
-\setcounter{tocdepth}{2} % No section number
-\usepackage{sectsty}
-
-\makeatletter
-\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
-	{-3.25ex\@plus -1ex \@minus -.2ex}%
-	{-1.5ex \@plus .2ex}%
-	{\normalfont\large\bfseries}}
-\makeatother
 
 % ---------------------------
 % Dati frontespizio
@@ -80,7 +54,7 @@
 % ---------------------------
 
 \begin{document} 
- 
+
 % Frontespizio
 
 \pagenumbering{gobble}
@@ -91,16 +65,21 @@
 
 \newpage
 \ActivateBG
-\pagenumbering{arabic}
+\pagenumbering{Roman}
 \include{res/registro}
 
-%per glossario
-\sectionfont{\huge}
 
-% Sezioni
+% Contenuto
 
 \newpage
-\input{res/sezioni}
+\input{res/contenuto}
+
+
+
+% Registro Decisioni
+
+\newpage
+\input{res/tracciamenti}
 
 \end{document}
 
