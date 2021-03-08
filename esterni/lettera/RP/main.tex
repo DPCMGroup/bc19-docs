@@ -1,0 +1,66 @@
+%!TEX output_directory = .cache
+
+
+\documentclass[12pt]{letter}
+
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{eurosym}
+\usepackage{charter}
+
+\geometry{a4paper,top=3cm,bottom=3cm,left=3.5cm,right=3.5cm,heightrounded,bindingoffset=5mm}
+
+
+% Unicode per simbolo euro
+\DeclareUnicodeCharacter{20AC}{\euro}
+
+\pagenumbering{gobble}
+
+
+\signature{ 
+	\begin{center}
+		Damiano Bertoldo \\	
+		\textit{Responsabile di Progetto} \\		
+		\includegraphics[width=0.3\textwidth, height=5mm]{images/firma2}
+	\end{center}
+}
+\address{ Via Trieste 63 \\ Padova \\ PD 35121, Italia}
+\date{8 Marzo 2021}
+
+
+\begin{letter}
+{
+	Alla cortese attenzione di:\\
+	prof.~Tullio Vardanega \\
+ 	prof.~Riccardo Cardin
+}
+
+\begin{document}
+
+\includegraphics[scale=0.17]{images/logo.png}
+
+\opening{}
+Con la presente il gruppo \textit{DPCM 2077} intende comunicarVi ufficialmente la partecipazione alla Revisione di Progettazione.
+
+Di seguito Vi presentiamo il contenuto della nostra offerta:
+\begin{itemize}
+	\item \textit{Norme di Progetto v. 2.0.0};
+	\item \textit{Analisi dei Requisiti v. 2.0.0};
+	\item \textit{Piano di Progetto v. 2.0.0};
+	\item \textit{Piano di Qualifica v. 2.0.0};
+	\item \textit{Glossario v. 2.0.0};
+	\item \textit{Verbale interno del 2021-02-01 v.1.0.0};
+	\item \textit{Verbale interno del 2021-02-11 v.1.0.0};
+	\item \textit{Verbale interno del 2021-02-16 v.1.0.0};
+	\item \textit{Verbale interno del 2021-02-28 v.1.0.0};
+	\item \textit{Verbale esterno del 2021-02-20 v.1.0.0}.
+\end{itemize}
+
+\closing{Cordialmente,}
+\end{letter}
+
+\let\clearpage\relax
+
+\end{document}

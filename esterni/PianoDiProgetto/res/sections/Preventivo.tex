@@ -11,18 +11,21 @@ Per facilitare la lettura delle successive tabelle sono state utilizzate le segu
 \end{itemize}
 Inoltre per determinare le ore nulle nelle successive tabelle verrà usato il simbolo -, che ne indica l'assenza.
 
-Si può notare che tutti i componenti hanno, per ogni fase, almeno un'ora indicata nei ruoli di Responsabile, Amministratore e Verificatore. Ciò deriva dalle attività di produzione dei verbali delle riunioni. Ogni riunione infatti implica la produzione di un verbale, che coinvolge tre componenti nei tre ruoli appena citati. Per garantire una distribuzione equa del lavoro, questo compito è assegnato con la seguente rotazione alfabetica: se un verbale è redatto da Badan Antonio, verificato da Bertoldo Damiano e approvato da Budai Matteo, il successivo verbale sarà redatto da Bertoldo Damiano, verificato da Budai Matteo e approvato da De Grandi Samuele e così via.
+Per assegnare le attività e determinare le ore si utilizza lo strumento di pianificazione "rotazione dei ruoli" presente nel cruscotto di pianificazione.
+Questo permette di stabilire in anticipo quale componente del gruppo deve svolgere una determinata attività e consente di fare esperienza in ogni ruolo suddividendo equamente il carico di lavoro. 
 
-Ogni documento diverso dai verbali è prodotto invece da chi sta effettivamente ricoprendo il ruolo preposto per quel documento. Per esempio il Piano di progetto è stato redatto dai responsabili, che nella fase di Analisi sono Budai Matteo, De Grandi Samuele e Piacere Ivan, come si può notare dalla tabella sottostante. 
+Si può notare che tutti i componenti hanno, per ogni periodo, almeno un'ora indicata nei ruoli di Responsabile, Amministratore e Verificatore. Ciò deriva dalle attività di produzione dei verbali delle riunioni. Ogni riunione infatti implica la produzione di un verbale, che coinvolge tre componenti nei tre ruoli appena citati. Per garantire una distribuzione equa del lavoro, questo compito è assegnato con la seguente rotazione alfabetica: se un verbale è redatto da Badan Antonio, verificato da Bertoldo Damiano e approvato da Budai Matteo, il successivo verbale sarà redatto da Bertoldo Damiano, verificato da Budai Matteo e approvato da De Grandi Samuele e così via.
 
-La produzione dei documenti diversi dai verbali è organizzata in modo da evitare il conflitto di interessi. Questo significa che dalla stesura all'approvazione di un documento nella versione $X.Y.Z$ con $X$ fissato (vedi \dext{Norme di Progetto v.1.0.0} - sezione 3.2.2.1), una persona si può occupare o della stesura o della verifica o dell'approvazione del documento. È ammesso che nella versione $X.Y.Z$ con $X$ fissato, un redattore possa essere anche verificatore purché in parti diverse del documento: ossia stesura della sezione $a$ e verifica della sezione $b$ con $a \neq b$. 
+Ogni documento diverso dai verbali è prodotto invece da chi sta effettivamente ricoprendo il ruolo preposto per quel documento. Per esempio il Piano di progetto v. 1.0.0 è stato redatto dai responsabili, che nel periodo di Analisi sono Budai Matteo, De Grandi Samuele e Piacere Ivan, come si può notare dalla tabella sottostante. 
+
+La produzione dei documenti diversi dai verbali è organizzata in modo da evitare il conflitto di interessi. La stesura e la verifica del documento in una stessa versione sono svolte da persone distinte per evitare un conflitto di interessi.
 
 Nei registri delle modifiche dei documenti, chi verifica è sempre indicato nel ruolo di Verificatore e chi approva, sempre nel ruolo di Responsabile. 
 
 
-\subsection{Fase di Analisi}
+\subsection{Periodo di Analisi}
 \subsubsection{Prospetto orario}
-Nella fase di Analisi la distribuzione oraria è la seguente:
+Nel periodo di Analisi la distribuzione oraria è la seguente:
 \begin{table}[H]
 	\rowcolors{2}{lightest-grayest}{white}
 	\centering
@@ -41,7 +44,7 @@ Spigolon Daniele & 1 & 20 & - & - & - & 16 & 37 \\ \hline
 \textbf{Totale} & 34 & 64 & 79 & - & - & 82 & 259 \\ \hline
 		
 \end{tabular}
-\caption*{\textbf{Tabella 1}: Distribuzione delle ore nella Fase di Analisi\\}
+\caption*{\textbf{Tabella 9}: Distribuzione delle ore nel periodo di Analisi\\}
 \end{table}	
 
 I dati ottenuti possono essere riassunti nel seguente istogramma:
@@ -49,12 +52,12 @@ I dati ottenuti possono essere riassunti nel seguente istogramma:
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{res/images/IstogrammaFase1.png}
-	\caption*{\textbf{Figura 6}: Istogramma della suddivisione delle ore durante la Fase di Analisi}
-	\label{fig:Figura2}
+	\caption*{\textbf{Figura 3}: Istogramma della suddivisione delle ore durante il periodo di Analisi}
+	\label{fig:IstogrammaFase1}
 \end{figure}
 
 \subsubsection{Prospetto economico}
-In questa fase il costo per ogni ruolo è il seguente:
+In questa periodo il costo per ogni ruolo è il seguente:
 
 \begin{table}[H]
 	\rowcolors{2}{lightest-grayest}{white}
@@ -72,7 +75,7 @@ Programmatore & - & 0\euro \\ \hline
 Verificatore & 82 & 1312\euro \\ \hline
 \textbf{Totale} & 259 & 5715\euro \\ \hline
 \end{tabular}
-	\caption*{\textbf{Tabella 2}: Prospetto dei costi per ruolo nella Fase di Analisi\\}
+	\caption*{\textbf{Tabella 10}: Prospetto dei costi per ruolo nel periodo di Analisi\\}
 \end{table}
 I dati ottenuti possono essere riassunti nel seguente areogramma:
 %collegare all'indice delle figure;
@@ -81,15 +84,15 @@ I dati ottenuti possono essere riassunti nel seguente areogramma:
 	\begin{tikzpicture}
 		\pie{13.1/Responsabile, 24.7/Amministratore, 30.5/Analista, 31.7/Verificatore}
 	\end{tikzpicture}
-	\caption*{\textbf{Figura 7}:  Areogramma della ripartizione di ore per ruolo nella Fase di Analisi}
-	\label{fig:Figura3}
+	\caption*{\textbf{Figura 4}:  Areogramma della ripartizione di ore per ruolo nel periodo di Analisi}
+	\label{fig:AreogrammaFase1}
 \end{figure}	
 
 
 
-\subsection{Fase di Progettazione architetturale}
+\subsection{Periodo di Progettazione architetturale}
 \subsubsection{Prospetto orario}
-Nella fase di Progettazione architetturale la distribuzione oraria è la seguente:
+Nel periodo di Progettazione architetturale la distribuzione oraria è la seguente:
 
 \begin{table}[H]
 	\rowcolors{2}{lightest-grayest}{white}
@@ -108,20 +111,20 @@ Privitera Sara & 3 & 2 & 6 & 7 & - & 6 & 24 \\ \hline
 Spigolon Daniele & 3 & 2 & 6 & 7 & - & 6 & 24 \\ \hline
 \textbf{Totale} & 15 & 10 & 42 & 61 & - & 40 & 168 \\ \hline
 	\end{tabular}
-	\caption*{\textbf{Tabella 3}: Distribuzione delle ore nel periodo di Progettazione architetturale\\}
+	\caption*{\textbf{Tabella 11}: Distribuzione delle ore nel periodo di Progettazione architetturale\\}
 \end{table}	
 I dati ottenuti possono essere riassunti nel seguente istogramma:
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{res/images/IstogrammaFase2.png}
-	\caption*{\textbf{Figura 8}: Istogramma della suddivisione delle ore durante il periodo di Progettazione architetturale}
-	\label{fig:Figura10}
+	\caption*{\textbf{Figura 5}: Istogramma della suddivisione delle ore durante il periodo di Progettazione architetturale}
+	\label{fig:IstogrammaFase2}
 \end{figure}
 
 
 \subsubsection{Prospetto economico}
-In questa fase il costo per ogni ruolo è il seguente:
+In questo periodo il costo per ogni ruolo è il seguente:
 
 \begin{table}[H]
 	\rowcolors{2}{lightest-grayest}{white}
@@ -139,7 +142,7 @@ Programmatore & - & 0\euro \\ \hline
 Verificatore & 40 & 640\euro \\ \hline
 \textbf{Totale} & 168 & 3824\euro \\ \hline
 	\end{tabular}
-	\caption*{\textbf{Tabella 4}: Prospetto dei costi per ruolo nel periodo di Progettazione architetturale\\}
+	\caption*{\textbf{Tabella 12}: Prospetto dei costi per ruolo nel periodo di Progettazione architetturale\\}
 \end{table}
 
 I dati ottenuti possono essere riassunti nel seguente areogramma:
@@ -150,15 +153,15 @@ I dati ottenuti possono essere riassunti nel seguente areogramma:
 	\begin{tikzpicture}
 		\pie{8.9/Responsabile, 6/Amministratore, 25/Analista, 36.3/Progettista, 23.8/Verificatore}
 	\end{tikzpicture}
-	\caption*{\textbf{Figura 9}: Areogramma della ripartizione di ore per ruolo nella fase di Progettazione architetturale}
-	\label{fig:Figura10}
+	\caption*{\textbf{Figura 6}: Areogramma della ripartizione di ore per ruolo nel periodo di Progettazione architetturale}
+	\label{fig:AreogrammaFase2}
 \end{figure}
 
 
 
-\subsection{Fase di Progettazione di dettaglio e codifica}
+\subsection{Periodo di Progettazione di dettaglio e codifica}
 \subsubsection{Prospetto orario}
-Nella fase di Progettazione di dettaglio e codifica la distribuzione oraria è la seguente:
+Nel periodo di Progettazione di dettaglio e codifica la distribuzione oraria è la seguente:
 
 \begin{table}[H]
 	\rowcolors{2}{lightest-grayest}{white}
@@ -177,20 +180,20 @@ Privitera Sara & 4 & 6 & 3 & - & 19 & 18 & 50 \\ \hline
 Spigolon Daniele & 4 & 6 & 5 & 2 & 21 & 12 & 50 \\ \hline
 \textbf{Totale} & 30 & 40 & 20 & 20 & 140 & 100 & 350 \\ \hline
 	\end{tabular}
-	\caption*{\textbf{Tabella 5}: Distribuzione delle ore nel periodo di Progettazione di dettaglio e codifica\\}
+	\caption*{\textbf{Tabella 13}: Distribuzione delle ore nel periodo di Progettazione di dettaglio e codifica\\}
 \end{table}	
 I dati ottenuti possono essere riassunti nel seguente istogramma:
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{res/images/IstogrammaFase3.png}
-	\caption*{\textbf{Figura 10}: Istogramma della suddivisione delle ore durante il periodo di Progettazione di dettaglio e codifica}
-	\label{fig:Figura10}
+	\caption*{\textbf{Figura 7}: Istogramma della suddivisione delle ore durante il periodo di Progettazione di dettaglio e codifica}
+	\label{fig:IstogrammaFase3}
 \end{figure}
 
 
 \subsubsection{Prospetto economico}
-In questa fase il costo per ogni ruolo è il seguente:
+In questo periodo il costo per ogni ruolo è il seguente:
 
 \begin{table}[H]
 	\rowcolors{2}{lightest-grayest}{white}
@@ -208,7 +211,7 @@ Programmatore & 140 & 2240\euro \\ \hline
 Verificatore & 100 & 1600\euro \\ \hline
 \textbf{Totale} & 350 & 6600\euro \\ \hline
 	\end{tabular}
-	\caption*{\textbf{Tabella 6}: Prospetto dei costi per ruolo nel periodo di Progettazione di dettaglio e codifica\\}
+	\caption*{\textbf{Tabella 14}: Prospetto dei costi per ruolo nel periodo di Progettazione di dettaglio e codifica\\}
 \end{table}
 
 I dati ottenuti possono essere riassunti nel seguente areogramma:
@@ -219,13 +222,13 @@ I dati ottenuti possono essere riassunti nel seguente areogramma:
 	\begin{tikzpicture}
 		\pie{8.6/Responsabile, 11.4/Amministratore, 5.7/Analista, 5.7/Progettista, 40/Programmatore, 28.6/Verificatore}
 	\end{tikzpicture}
-	\caption*{\textbf{Figura 11}: Areogramma della ripartizione di ore per ruolo in Progettazione di dettaglio e codifica}
-	\label{fig:Figura10}
+	\caption*{\textbf{Figura 8}: Areogramma della ripartizione di ore per ruolo in Progettazione di dettaglio e codifica}
+	\label{fig:AreogrammaFase3}
 \end{figure}
 
-\subsection{Fase di Validazione e collaudo}
+\subsection{Periodo di Validazione e collaudo}
 \subsubsection{Prospetto orario}
-Nella fase di Validazione e collaudo la distribuzione oraria è la seguente:
+Nel periodo di Validazione e collaudo la distribuzione oraria è la seguente:
 
 \begin{table}[H]
 	\rowcolors{2}{lightest-grayest}{white}
@@ -244,20 +247,20 @@ Privitera Sara & 6 & 1 & - & 10 & 6 & 3 & 26 \\ \hline
 Spigolon Daniele & 4 & 1 & - & - & 10 & 11 & 26 \\ \hline
 \textbf{Totale} & 23 & 28 & - & 25 & 43 & 63 & 182 \\ \hline
 	\end{tabular}
-	\caption*{\textbf{Tabella 7}: Distribuzione delle ore nel periodo di Validazione e collaudo\\}
+	\caption*{\textbf{Tabella 15}: Distribuzione delle ore nel periodo di Validazione e collaudo\\}
 \end{table}	
 	I dati ottenuti possono essere riassunti nel seguente istogramma:
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{res/images/IstogrammaFase4.png}
-	\caption*{\textbf{Figura 12}: Istogramma della suddivisione delle ore durante il periodo di Validazione e collaudo}
-	\label{fig:Figura10}
+	\caption*{\textbf{Figura 9}: Istogramma della suddivisione delle ore durante il periodo di Validazione e collaudo}
+	\label{fig:IstogrammaFase4}
 \end{figure}
 	
 	
 \subsubsection{Prospetto economico}
-In questa fase il costo per ogni ruolo è il seguente:
+In questo periodo il costo per ogni ruolo è il seguente:
 
 \begin{table}[H]
 	\rowcolors{2}{lightest-grayest}{white}
@@ -275,7 +278,7 @@ Programmatore & 43 & 688\euro \\ \hline
 Verificatore & 63 & 1008\euro \\ \hline
 \textbf{Totale} & 182 & 3602\euro \\ \hline
 	\end{tabular}
-\caption*{\textbf{Tabella 8}: Prospetto dei costi per ruolo nel periodo di Validazione e collaudo\\}
+\caption*{\textbf{Tabella 16}: Prospetto dei costi per ruolo nel periodo di Validazione e collaudo\\}
 \end{table}
 
 I dati ottenuti possono essere riassunti nel seguente areogramma:
@@ -286,14 +289,14 @@ I dati ottenuti possono essere riassunti nel seguente areogramma:
 	\begin{tikzpicture}
 		\pie{12.6/Responsabile, 15.4/Amministratore, 13.7/Progettista, 23.6/Programmatore, 34.6/Verificatore}
 	\end{tikzpicture}
-	\caption*{\textbf{Figura 13}: Areogramma della ripartizione di ore per ruolo in Validazione e collaudo}
-	\label{fig:Figura10}
+	\caption*{\textbf{Figura 10}: Areogramma della ripartizione di ore per ruolo in Validazione e collaudo}
+	\label{fig:AreogrammaFase4}
 \end{figure}
 
 \subsection{Riepilogo}
 \subsubsection{Ore totali}
 \paragraph{Prospetto orario totale}
-Nella seguente tabella viene riportata la distribuzione oraria di tutte le fasi:
+Nella seguente tabella viene riportata la distribuzione oraria di tutti i periodi :
 
 \begin{table}[H]
 	\rowcolors{2}{lightest-grayest}{white}
@@ -312,15 +315,15 @@ Privitera Sara & 14 & 29 & 9 & 17 & 25 & 43 & 137 \\ \hline
 Spigolon Daniele & 12 & 29 & 11 & 9 & 31 & 45 & 137 \\ \hline
 \textbf{Totale} & 102 & 142 & 141 & 106 & 183 & 285 & 959 \\ \hline
 	\end{tabular}
-	\caption*{\textbf{Tabella 9}: Prospetto orario che comprende tutte le fasi trattate in precedenza\\}
+	\caption*{\textbf{Tabella 17}: Prospetto orario che comprende tutti periodi trattati in precedenza\\}
 \end{table}	
 I dati ottenuti possono essere riassunti nel seguente istogramma:
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{res/images/IstogrammaTotale.png}
-	\caption*{\textbf{Figura14}: Istogramma della suddivisione delle ore di tutte le fasi trattate in precedenza}
-	\label{fig:Figura10}
+	\caption*{\textbf{Figura 11}: Istogramma della suddivisione delle ore di tutti i periodi trattati in precedenza}
+	\label{fig:IstogrammaTotale}
 \end{figure}
 
 \paragraph{Prospetto economico totale}
@@ -342,7 +345,7 @@ Programmatore & 183 & 2928\euro \\ \hline
 Verificatore & 285 & 4560\euro \\ \hline
 \textbf{Totale} & 959 & 19741\euro \\ \hline
 	\end{tabular}
-	\caption*{\textbf{Tabella 10}: Prospetto dei costi totali per ciascun ruolo \\}
+	\caption*{\textbf{Tabella 18}: Prospetto dei costi totali per ciascun ruolo \\}
 \end{table}
 
 I dati ottenuti possono essere riassunti nel seguente areogramma:
@@ -353,13 +356,13 @@ I dati ottenuti possono essere riassunti nel seguente areogramma:
 	\begin{tikzpicture}
 		\pie{10.6/Responsabile, 14.8/Amministratore, 14.7/Analista, 11.1/Progettista, 19.1/Programmatore, 29.7/Verificatore}
 	\end{tikzpicture}
-	\caption*{\textbf{Figura 15}: Areogramma dei costi totali delle ore di investimento e rendicontate}
-    \label{fig:Figura10}
+	\caption*{\textbf{Figura 12}: Areogramma dei costi totali delle ore di investimento e rendicontate}
+    \label{fig:AreogrammaTotale}
 \end{figure}
 
 \subsubsection{Ore totali rendicontate}
 \paragraph{Prospetto orario totale rendicontato}
-Nella seguente tabella viene riportata la distribuzione oraria di tutte le fasi a carico del committente, ad esclusione quindi, dell'Analisi dei requisiti:
+Nella seguente tabella viene riportata la distribuzione oraria di tutti i periodi a carico del committente, ad esclusione quindi, dell'Analisi dei requisiti:
 
 \begin{table}[H]
 	\rowcolors{2}{lightest-grayest}{white}
@@ -378,15 +381,15 @@ Privitera Sara & 13 & 9 & 9 & 17 & 25 & 27 & 100 \\ \hline
 Spigolon Daniele & 11 & 9 & 11 & 9 & 31 & 29 & 100 \\ \hline
 \textbf{Totale} & 68 & 78 & 62 & 106 & 183 & 203 & 700 \\ \hline
 	\end{tabular}
-	\caption*{\textbf{Tabella 11}: Prospetto orario che comprende tutte le ore rendicontate\\}
+	\caption*{\textbf{Tabella 19}: Prospetto orario che comprende tutte le ore rendicontate\\}
 \end{table}	
 I dati ottenuti possono essere riassunti nel seguente istogramma:
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{res/images/IstogrammaTotaleRendicontato.png}
-	\caption*{\textbf{Figura 16}: Istogramma della suddivisione delle ore rendicontate}
-	\label{fig:Figura10}
+	\caption*{\textbf{Figura 13}: Istogramma della suddivisione delle ore rendicontate}
+	\label{fig:IstogrammaTotaleRendicontato}
 \end{figure}
 
 \paragraph{Prospetto economico totale rendicontato}
@@ -408,7 +411,7 @@ Programmatore & 183 & 2928\euro \\ \hline
 Verificatore & 203 & 3248\euro \\ \hline
 \textbf{Totale} & 700 & 14026\euro \\ \hline
 	\end{tabular}
-	\caption*{\textbf{Tabella 12}: Prospetto dei costi totali rendicontati \\}
+	\caption*{\textbf{Tabella 20}: Prospetto dei costi totali rendicontati \\}
 \end{table}
 
 I dati ottenuti possono essere riassunti nel seguente areogramma:
@@ -419,8 +422,8 @@ I dati ottenuti possono essere riassunti nel seguente areogramma:
 	\begin{tikzpicture}
 		\pie{9.7/Responsabile, 11.1/Amministratore, 8.9/Analista, 15.1/Progettista, 26.1/Programmatore, 29/Verificatore}
 	\end{tikzpicture}
-	\caption*{\textbf{Figura 17}: Areogramma delle ore rendicontate per ruolo}
-    \label{fig:Figura10}
+	\caption*{\textbf{Figura 14}: Areogramma delle ore rendicontate per ruolo}
+    \label{fig:AreogrammaTotaleRendicontato}
 \end{figure}
 
 \subsubsection{Conclusioni}

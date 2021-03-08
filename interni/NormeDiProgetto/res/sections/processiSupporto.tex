@@ -74,7 +74,7 @@
 								\item \textbf{ora di inizio:} l'ora dell'inizio dell'incontro in formato HH:MM;
 								\item \textbf{ora di fine:} l'ora della fine dell'incontro in formato HH:MM;
 								\item \textbf{ordine del giorno:} consiste in una lista degli argomenti che il gruppo si è proposto di discutere durante l'incontro;
-								\item \textbf{presenze:} contiene il numero totale dei partecipanti, la lista dei presenti e la lista degli assenti con eventuale giustifica;
+								\item \textbf{presenze:} contiene la lista dei presenti e degli assenti con eventuale giustifica;
 							\end{itemize}
 							\item \textbf{svolgimento:} per ogni punto presente nell'ordine del giorno, viene riportato un riassunto di ciò che è stato trattato durante l'incontro;
 							\item \textbf{tracciamento delle decisioni:} è un riepilogo in formato tabellare delle decisioni prese durante l'incontro; esso è composto da:
@@ -93,6 +93,27 @@
 						\item \textbf{data:} viene utilizzato lo standard ISO 8601, esempio 2020-01-22, per la rappresentazione di tutte le date presenti della documentazione;
 						\item \textbf{ora:} viene utilizzato il formato HH:MM;
 					\end{itemize}
+				\subparagraph{Grammatica e sintassi}
+					\begin{itemize}
+						\item prediligere frasi brevi, con basso livello di subordinazione e intorno a un singolo argomento;
+						\item attenzione alla concordanza fra tempi verbali: il tempo verbale deve essere coerente non solo nel singolo documento / capitolo che si scrive ma globalmente. Es. tendenzialmente non si utilizza il presente in un 								verbale e dopo due righe il passato prossimo ma solo il passato prossimo (si registrano decisioni prese) né tantomeno si cambia il tempo verbale fra capitoli appartenenti allo stesso documento;
+						\item l'uso della 'd' eufonica dovrebbe essere limitato ai casi di incontro della stessa vocale (es. ed ecco, ad andare, ad ascoltare, etc...). Per esempio non va bene ed organizzazione;
+						\item attenzione agli accenti: perché 	e non perchè oppure perche';
+						\item tutti i segni d’interpunzione seguono immediatamente la parola precedente e vanno separati con uno spazio da quella successiva;
+						\item In genere le parentesi racchiudono un inciso nel discorso (cioè una parte che si può omettere, come questa). Inoltre, attenzione agli spazi: “esempio (x, y, z) esempio” e non esempio(x,  y,z)esempio;
+						\item acronimo tutto maiuscolo. Se si usa acronimo prima volta va specificato in esteso;
+						\item nomi con l'iniziale maiuscola;
+						\item Per gli elenchi puntati:
+							\begin{itemize}
+								\item ogni voce di un elenco semplice (i cui elementi sono costituiti da un solo enunciato) comincia con l’iniziale minuscola e termina con il punto e virgola tranne l’ultima, seguita dal punto fermo;
+								\item ogni voce di un elenco complesso (in cui almeno uno degli elementi sia composto da più di un enunciato) comincia con l’iniziale maiuscola (anche dopo il segno di due punti) e termina con il punto 										fermo;
+								\item l’iniziale maiuscola è permessa se si fa riferimento a nomi di documentazione, nomi propri di persona, etc.;
+								\item non bisogna per forza uniformare tutti gli elenchi di un documento a criteri stabiliti a priori: l’importante è essere coerenti volta per volta.
+							\end{itemize}
+						\item \textbf{grassetto}: per evidenziare parole importanti.
+					\end{itemize}
+				\subparagraph{Lettere maiuscole}
+				Tutti i titoli vanno con iniziale maiuscola. Usare le maiuscole solo in caso di nomi propri e documenti (es Analisi dei requisiti. non analisi dei requisiti o Analisi dei Requisiti. È consentita l'uso della sigla AdR).
 				\subparagraph{Sigle}
 				Il progetto prevede la redazione di un insieme di documenti, suddivisi in documenti interni e documenti esterni. Essi sono elencati di seguito con le rispettive sigle.\\
 				I documenti esterni sono:
@@ -113,7 +134,7 @@
 \\
 				Le diverse fasi del progetto sono: 
 				\begin{itemize}
-				\item \textbf{Revisione dei Requisiti - RR}: studio iniziale del capitolato;
+				\item \textbf{Revisione dei Requisiti - RR}: studio iniziale del C1;
 				\item \textbf{Revisione di Progettazione - RP}: riguarda la definizione dell'architettura del software e della sua fattibilità;
 				\item \textbf{Revisione di Qualifica - RQ}: riguarda la definizione dettagliata e la codifica del prodotto;
 				\item \textbf{Revisione di Accettazione - RA}: se il prodotto soddisfa i requisiti del proponente, viene accettato e rilasciato.
@@ -143,13 +164,13 @@
 		   			\item inizia da 0;
 		   			\item viene incrementato dal responsabile di progetto all'approvazione del documento.
 		  		\end{itemize}
-		  	\item \textbf{Y}: rappresenta una versione parzialmente stabile del documento che è stata soggetta a verifica da parte di un verificatore:
+		  	\item \textbf{Y}: rappresenta una versione parzialmente stabile del documento che è stata approvata parzialmente dal responsabile di progetto:
 		  		\begin{itemize}
 		   			\item inizia da 0;
-		   			\item viene incrementato dal verificatore a ogni verifica; 
+		   			\item viene incrementato dal responsabile a ogni approvazione parziale. Per approvazione parziale si intende che una o più sezioni del documento sono pronte per il rilascio all'esterno del gruppo e che quindi non è necessario attendere l'approvazione totale del documento per poterle rilasciare.
 		   			\item quando viene incrementato X, viene riportato a 0.
 		   		\end{itemize}
-		   	\item \textbf{Z}: rappresenta una versione instabile del documento in fase di lavorazione da parte dei redattori:
+		   	\item \textbf{Z}: rappresenta una modifica verificata del documento in attesa di approvazione:
 		   		\begin{itemize}
 		   			\item inizia da 0;
 		   			\item viene incrementato dal redattore a ogni modifica; 
@@ -167,12 +188,15 @@
 		   			\item \textbf{remoto}: pubblicato su \textit{GitHub}, contiene il lavoro svolto da ogni componente e che viene condiviso con i membri di DPCM 2077.
 		   	\end{itemize}
 		   	\paragraph{Configurazione del workflow}
-	Si è deciso di stabilire il seguente canone di \glock{workflow} per quanto concerne la documentazione:
-	\begin{itemize}
-	\item \textbf{master branch:} branch principale su cui vengono fatti i rilasci ad ogni \glock{milestone};
-	\item \textbf{develop branch:} branch di sviluppo su cui viene fatta integrazione di nuove funzionalità concluse;
-	\item \textbf{feature/... branch:} i puntini saranno sostituiti dal nome del documento a cui si riferisce il branch. Questo tipo di branch viene aperto al momento della crezione del documento a cui si riferisce e chiuso solo al momento dell'approvazione e rilascio.
-	\end{itemize}
+		   	Si è deciso di stabilire il seguente canone di \glock{workflow}.
+				\subparagraph{Utilizzo dei branch}
+					\begin{itemize}
+					\item \textbf{master branch:} branch principale su cui vengono fatti i rilasci ad ogni \glock{milestone};
+					\item \textbf{develop branch:} branch di sviluppo su cui viene fatta integrazione di nuove funzionalità concluse;
+					\item \textbf{feature/... branch:} i puntini saranno sostituiti dal nome del documento a cui si riferisce il branch. Questo tipo di branch viene aperto al momento di effettuare una modifica ad una parte di codice, in modo tale da rendere le correzioni/implementazioni il più indipendenti possibile tra loro.
+					\end{itemize}
+				\subparagraph{Utilizzo delle \glock{Pull Request}}
+					Al termine dell'implementazione di una feature, sviluppata nel feature branch, viene aperta una Pull Request verso il develop branch: qui è possibile discutere di possibili correzioni su parte del codice introdotto, visualizzare tutte le modifiche effettuate e molto altro a supporto della gestione del codice. Una volta completate le modifiche richieste discusse, il responsabile può approvare la Pull Request introducendo le modifiche all'interno del ramo develop.
 		   	
 	\subsection{Garanzia della Qualità}
 		\subsubsection{Scopo}
@@ -186,6 +210,8 @@
 			\item una comunicazione chiara e semplice delle problematiche relative alla qualità tra i membri del team;
 			\item una registrazione dei risultati ottenuti.
 		\end{itemize}
+		\subsubsection{Descrizione}
+		Per una presentazione dettagliata della gestione della qualità si fa riferimento al Piano di Qualifica v. 2.0.0.
 		\subsubsection{Controllo qualità di prodotto}
 		La qualità di prodotto viene garantita dai processi di verifica e validazione e dal rispetto delle norme.
 		\begin{itemize}
@@ -193,6 +219,11 @@
 			\item \textbf{Validazione}: accerta che il prodotto rispecchi le aspettative, utilizzando un metodo sistematico, disciplinato e quantificabile;
 			\item \textbf{Norme}:   il  prodotto  deve  rispettare  le  norme  e  gli  strumenti  descritti  all’interno  di  questo documento.
 		\end{itemize}
+		Per ogni prodotto vengono descritti: 
+		\begin{itemize}
+			\item le metriche da utilizzare;
+			\item gli obiettivi da perseguire.
+			\end{itemize}
 		\subsubsection{Controllo qualità di processo}
 		La qualità di processo viene migliorata per tutto il ciclo di vita del software attraverso i principi di efficacia ed efficienza mirati al prodotto.
 			Nello specifico definiamo quanto segue:
@@ -200,6 +231,20 @@
 				\item \textbf{Efficacia:} si richiede un prodotto che soddisfi le richieste del proponente;
 				\item \textbf{Efficienza:} i processi devono convergere con costi ridotti in termini di risorse a pari qualità di prodotto.
 			\end{itemize}
+			Per ogni processo vengono descritti: 
+			\begin{itemize}
+			\item le metriche da utilizzare;
+			\item gli intervalli entro i quali le misurazioni sono ritenute preferibili e accettabili.
+			\end{itemize}
+		\subsubsection{Attività}
+		Le tre attività principali sono:
+		\begin{itemize}
+		\item \textbf{Pianificazione}: porsi degli obiettivi, definire le strategie per raggiungerli e predisporre persone e risorse per raggiungere gli obiettivi nel modo più efficiente possibile;
+		\item \textbf{Valutazione}: applicare i criteri misurando e monitorando i risultati;
+		\item \textbf{Reazione}: sulla base dei risultati applicare le proprie strategie, criteri e piani.
+		\end{itemize}
+		\subsubsection{Strumenti}
+		Gli strumenti che garantiscono la qualità sono identificati negli standard \textbf{ISO-12207} e \textbf{ISO-9126}.
 	\subsection{Verifica}
 		\subsubsection{Scopo}
 			Il processo di verifica ha come scopo la realizzazione di un prodotto corretto, basandosi sulle richieste del committente/proponente e sulle norme definite in questo documento.
@@ -224,6 +269,12 @@
 				\item \textbf{\glock{Walkthrough}}: i vari componenti di DPCM 2077 analizzano gli oggetti nella loro totalità per cercare anomalie, senza sapere inizialmente se vi siano difetti;
 				\item \textbf{\glock{Inspection}}: i verificatori usano le liste di controllo per fare ispezione cercando errori specifici in parti specifiche.
 			\end{itemize}
+			\begin{figure}[H]
+	\centering
+	\includegraphics[width=2.5cm]{res/images/verifica.png}
+	\caption{Verifica di un documento}
+	\label{fig:Verifica di un documento}
+\end{figure}
 			\item \textbf{Dinamica}: tecnica di analisi del prodotto software che richiede la sua esecuzione. Viene effettuata mediante dei test che verificano se il prodotto funziona o se ci sono anomalie.
 			\end{itemize}
 			\paragraph{Test}
