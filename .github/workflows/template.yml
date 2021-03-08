@@ -15,8 +15,7 @@ jobs:
         with:
           run: |
             latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode -cd template/documenti/main.tex     
-            latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode -cd template/lettera/RR/main.tex
-            latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode -cd template/lettera/RP/main.tex     
+            latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode -cd template/lettera/main.tex
             latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode -cd template/verbale_e-mail/main.tex
             latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode -cd template/verbale_riunione/main.tex          
             
