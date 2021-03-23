@@ -165,66 +165,58 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline	
 		R1F28&Il dipendente deve poter registrare l'avvenuta igienizzazione autonoma della postazione, tramite Ethereum.	&Capitolato - UC28	\\
 		\hline	
-			R1F26&Il dipendente deve poter ricercare una postazione.	&Interna - UC26	\\
+		R1F29&Il dipendente deve poter ricercare una postazione in base alla data, all'orario e all'identificativo della stanza.	&Interna - UC29	\\
 		\hline
-		R1F26.1&Il dipendente deve poter ricercare una postazione in base alla data, all'orario e all'identificativo della stanza.	&Interna - UC26.1	\\
+			R1F29.1&Il dipendente deve compilare il campo della data per cercare una postazione.	&Interna - UC29.1	\\
 		\hline
-			R1F26.1.1&Il dipendente deve compilare il campo della data per cercare una postazione.	&Interna - UC26.1.1	\\
+			R1F29.2&Il dipendente visualizza un messaggio di errore se il campo data ha un valore non valido.	&Interna - UC29.2	\\
 		\hline
-			R1F26.1.2&Il dipendente visualizza un messaggio di errore se il campo data ha un valore non valido.	&Interna - UC26.1.2	\\
+			R1F29.3&Il dipendente deve compilare il campo dell'ora per cercare una postazione.	&Interna - UC29.3	\\
 		\hline
-			R1F26.1.3&Il dipendente deve compilare il campo dell'ora per cercare una postazione.	&Interna - UC26.1.3	\\
+			R1F29.4&Il dipendente visualizza un messaggio di errore se il campo ora ha un valore non valido.	&Interna - UC29.4	\\
 		\hline
-			R1F26.1.4&Il dipendente visualizza un messaggio di errore se il campo ora ha un valore non valido.	&Interna - UC26.1.4	\\
+			R1F29.5&Il dipendente deve compilare il campo della stanza per cercare una postazione.		&Interna - UC29.5	\\
 		\hline
-			R1F26.1.5&Il dipendente deve compilare il campo della stanza per cercare una postazione.		&Interna - UC26.1.5	\\
+			R1F29.6&Il dipendente visualizza un messaggio di errore se il campo stanza ha un valore non valido.	&Interna - UC29.6	\\
 		\hline
-			R1F26.1.6&Il dipendente visualizza un messaggio di errore se il campo stanza ha un valore non valido.	&Interna - UC26.1.6	\\
+			R1F29.7&Il dipendente deve compilare il campo nome dipendente per cercare una postazione.	&Interna - UC29.7	\\
 		\hline
-			R1F26.1.7&Il dipendente deve compilare il campo nome dipendente per cercare una postazione.	&Interna - UC26.1.7	\\
+			R1F29.8&Il dipendente visualizza un messaggio di errore se il campo nome dipendente ha un valore non valido.	&Interna - UC29.8	\\
 		\hline
-			R1F26.1.8&Il dipendente visualizza un messaggio di errore se il campo nome dipendente ha un valore non valido.	&Interna - UC26.1.8	\\
+		R1F30&Il dipendente deve poter visualizzare le postazioni di una stanza.	&Capitolato - UC30	\\
 		\hline
-		R1F26.2&Il dipendente deve poter visualizzare le postazioni di una stanza.	&Capitolato - UC26.2	\\
+			R1F30.1&Il dipendente visualizza un messaggio di errore se non ci sono postazioni prenotabili.	&Interna - UC30.1	\\
 		\hline
-			R1F26.3&Il dipendente visualizza un messaggio di errore se non ci sono postazioni prenotabili.	&Interna - UC26.3	\\
+		R1F31&Il dipendente deve poter visualizzare l'identificativo della prima postazione igienizzata e libera in una stanza.	&Capitolato - UC31	\\
 		\hline
-		R1F26.4&Il dipendente deve poter visualizzare l'identificativo della prima postazione igienizzata e libera in una stanza.	&Capitolato - UC26.4	\\
+		R1F31.1&Il dipendente deve poter visualizzare l'identificativo di una postazione igienizzata e libera in una stanza scelta con criterio random.	&Capitolato - UC31.1	\\
 		\hline
-		R1F26.4.1&Il dipendente deve poter visualizzare l'identificativo di una postazione igienizzata e libera in una stanza scelta con criterio random.	&Capitolato - UC26.4.1	\\
+		R2F31.2&Il dipendente deve poter visualizzare l'identificativo di una postazione igienizzata e libera in una stanza scelta con criterio top distanza dalle altre postazioni occupate.	&Capitolato - UC31.2	\\
 		\hline
-		R2F26.4.2&Il dipendente deve poter visualizzare l'identificativo di una postazione igienizzata e libera in una stanza scelta con criterio top distanza dalle altre postazioni occupate.	&Capitolato - UC26.4.2	\\
+		R1F32&Il dipendente deve poter prenotare una postazione selezionata.	&Capitolato - UC32	\\
 		\hline
-		R1F26.5&Il dipendente deve poter selezionare una postazione di una stanza.	&Interna - UC26.5	\\
+		R1F32.1&Il dipendente visualizza un messaggio di errore se la postazione non è prenotabile.	&Capitolato - UC32.1	\\
 		\hline
-		R1F26.6&Il dipendente deve poter prenotare una postazione selezionata.	&Capitolato - UC26.6	\\
+		R1F33&Se il dipendente scansiona con il proprio smartphone il tag NFC per un tempo maggiore o uguale ad un minuto, prenota in modo automatico la postazione per l’intera giornata lavorativa. &Interna - UC33	\\
 		\hline
-		R1F26.7&Il dipendente visualizza un messaggio di errore se la postazione non è prenotabile.	&Capitolato - UC26.7	\\
+		R1F33.1&Se la postazione è occupata, viene emesso un segnale sonoro per avvisare il dipendente.	& Interna - UC33.1	\\
 		\hline
-		R1F27&Se il dipendente scansiona con il proprio smartphone il tag NFC per un tempo maggiore o uguale ad un minuto, prenota in modo automatico la postazione per l’intera giornata lavorativa. &Interna - UC27	\\
-		\hline
-		R1F27.1&Se la postazione è occupata, viene emesso un segnale sonoro per avvisare il dipendente.	& Interna - UC27.1	\\
-		\hline
-		R1F27.2&Se il dipendente scansiona con il proprio smartphone il tag NFC per un tempo maggiore o uguale ad un minuto, e questa risulta prenotata in un momento successivo della giornata, la postazione viene prenotata fino all'inizio della prenotazione successiva.	&Interna - UC27.2 	\\
+		R1F33.2&Se il dipendente scansiona con il proprio smartphone il tag NFC per un tempo maggiore o uguale ad un minuto, e questa risulta prenotata in un momento successivo della giornata, la postazione viene prenotata fino all'inizio della prenotazione successiva.	&Interna - UC33.2 	\\
 		\hline	
-		R1F28&Il dipendente deve poter disdire una prenotazione.	& Capitolato - UC28	\\
+		R1F34&Il dipendente deve poter visualizzare un elenco delle prenotazioni che ha effettuato. & Capitolato - UC34	\\
 		\hline
-		R1F28.1&Il dipendente deve poter visualizzare un elenco delle prenotazioni che ha effettuato. & Capitolato - UC28.1	\\
+		R1F35&Il dipendente, dopo aver selezionato una prenotazione, deve poterla disdire.	&Capitolato - UC35 	\\
 		\hline
-		R1F28.2&Il dipendente deve poter selezionare una prenotazione che vuole disdire	&Capitolato - UC28.2 	\\
-		\hline
-		R1F28.3&Il dipendente, dopo aver selezionato una prenotazione, deve poterla disdire.	&Capitolato - UC28.3 	\\
-		\hline
-		R1F29&Gli utenti che hanno prenotato una postazione devono essere avvisati se la postazione stessa o la stanza in cui si trovano diventa non disponibile.	& VE\_2020\_12\_18v.1.0.0 - UC29	\\
+		R1F36&Gli utenti che hanno prenotato una postazione devono essere avvisati se la postazione stessa o la stanza in cui si trovano diventa non disponibile.	& VE\_2020\_12\_18v.1.0.0 - UC36	\\
 		\hline
 
-		R1F30&	L'addetto alle pulizie riceve l'elenco delle stanze che necessitano di igienizzazione.& 	Capitolato - UC30\\
+		R1F37&	L'addetto alle pulizie riceve l'elenco delle stanze che necessitano di igienizzazione.& 	Capitolato - UC37\\
 		\hline
-		R1F31&L'addetto alle pulizie riceve l'elenco delle postazioni che necessitano di igienizzazione.	& Interna - UC31	\\
+		R1F38&L'addetto alle pulizie riceve l'elenco delle postazioni che necessitano di igienizzazione.	& Interna - UC38	\\
 		\hline
-		R1F32&L'addetto alle pulizie deve poter marcare, nella sezione apposita, una stanza come igienizzata, tramite Ethereum.	& Capitolato - UC32	\\
+		R1F39&L'addetto alle pulizie deve poter marcare, nella sezione apposita, una stanza come igienizzata, tramite Ethereum.	& Capitolato - UC39	\\
 		\hline
-		R1F33&L'addetto alle pulizie deve poter marcare, nella sezione apposita, una postazione come igienizzata, tramite Ethereum.	&Interna - UC33 	\\
+		R1F40&L'addetto alle pulizie deve poter marcare, nella sezione apposita, una postazione come igienizzata, tramite Ethereum.	&Interna - UC40 	\\
 		\hline
 		R1F34&L'addetto alle pulizie non può pulire postazioni o stanze occupate.	& VE\_2021\_01\_01v.1.0.0	\\
 		\hline
