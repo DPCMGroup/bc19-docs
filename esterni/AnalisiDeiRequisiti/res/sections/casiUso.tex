@@ -523,27 +523,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \end{itemize}
 
 
-\subsubsection{ UC19 - Gestione credenziali}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=15cm]{res/images/UC19.png}
-	\caption{Gestione credenziali}
-	\label{fig:Gestione credenziali}
-\end{figure}
-\begin{itemize}
-           	\item\textbf{Attori Primari:}
-           	amministratore.
-           	\item\textbf{Descrizione:} 
-           	l'amministratore visualizza, crea, modifica ed elimina le credenziali di tutti gli altri utenti.
-           	\item\textbf{Scenario principale:} 
-           	l'amministratore raggiunge l'interfaccia di gestione delle credenziali e da lì può operare su di esse.
-           	\item\textbf{Precondizione:} 
-           	l'utente è autenticato come amministratore.
-           	\item\textbf{Postcondizione:}
-           	l'utente ha visualizzato, creato, modificato oppure eliminato credenziali.
-\end{itemize}
-
-\subsubsection{ UC19.1 - Visualizzazione lista credenziali}
+\subsubsection{ UC19 - Visualizzazione lista credenziali}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -557,7 +537,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza la lista delle credenziali.
 \end{itemize}
 
-\subsubsection{ UC19.2 - Creazione di una credenziale}
+\subsubsection{ UC20 - Creazione di una credenziale}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -574,7 +554,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 			\item[$-$] password;
 			\item[$-$] e-mail.
 		\end{itemize}
-		Le credenziali vengono sempre create e abilitate. Questa proprietà può essere modificata successivamente, come descritto in UC19.3.
+		Le credenziali vengono sempre create e abilitate. Questa proprietà può essere modificata successivamente, come descritto in UC21.
 		\item l'amministratore preme il pulsante per la conferma dei dati;
 		\item la nuova credenziale viene salvata nel sistema.
 	\end{enumerate}
@@ -584,7 +564,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente ha creato una nuova credenziale.
 \end{itemize}
 
-\subsubsection{ UC19.3 - Modifica di una credenziale}
+\subsubsection{ UC21 - Modifica di una credenziale}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -611,7 +591,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente ha modificato un profilo utente.
 \end{itemize}
 
-\subsubsection{ UC19.4 - Eliminazione di una credenziale}
+\subsubsection{ UC22 - Eliminazione di una credenziale}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -629,7 +609,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	le credenziali selezionate non sono più presenti nel sistema.
 \end{itemize}
 
-\subsubsection{ UC20 - Esplorazione occupazioni delle postazioni}
+\subsubsection{ UC23 - Esplorazione occupazioni delle postazioni}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -646,7 +626,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza le informazioni.
 \end{itemize}
 
-\subsubsection{ UC20.1 - Ottenimento report delle postazioni occupate da uno specifico utente}
+\subsubsection{ UC23.1 - Ottenimento report delle postazioni occupate da uno specifico utente}
 \begin{itemize}
            	\item\textbf{Attori Primari:} 
            	amministratore.
@@ -666,7 +646,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \end{itemize}
 
 
-\subsubsection{ UC20.1.1 - Ottenimento report delle occupazioni di uno specifico utente con indicazione delle ore trascorse a ogni postazione}
+\subsubsection{ UC23.1.1 - Ottenimento report delle occupazioni di uno specifico utente con indicazione delle ore trascorse a ogni postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -685,7 +665,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza le informazioni.
 \end{itemize}
 
-\subsubsection{ UC20.2 - Ottenimento report degli utenti che hanno occupato una specifica postazione}
+\subsubsection{ UC23.2 - Ottenimento report degli utenti che hanno occupato una specifica postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -704,7 +684,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \end{itemize}
 
 
-\subsubsection{ UC20.3 - Scaricamento del report delle occupazioni in un formato leggibile}
+\subsubsection{ UC23.3 - Scaricamento del report delle occupazioni in un formato leggibile}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -716,12 +696,12 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item il report viene scaricato.
 	\end{enumerate}
 	\item\textbf{Precondizione:} 
-	l'utente sta visualizzando un report delle occupazioni, anche quello che indica i vicini di un utente(UC20.4 e UC20.4.1).
+	l'utente sta visualizzando un report delle occupazioni, anche quello che indica i vicini di un utente(UC23.4 e UC23.4.1).
 	\item\textbf{Postcondizione:}
 	l'utente ha scaricato il report.
 \end{itemize}
 
-\subsubsection{ UC20.3.1 - Scaricamento del report delle occupazioni in formato PDF}
+\subsubsection{ UC23.3.1 - Scaricamento del report delle occupazioni in formato PDF}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -734,7 +714,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\end{enumerate}
 	\item\textbf{Generalizzazione:}
 	\begin{itemize}
-		\item[$-$] scaricamento del report delle occupazioni in un formato leggibile (UC20.3).
+		\item[$-$] scaricamento del report delle occupazioni in un formato leggibile (UC23.3).
 	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente sta visualizzando un report.
@@ -743,7 +723,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \end{itemize}
 
 
-\subsubsection{ UC20.4 - Report vicini utente}
+\subsubsection{ UC23.4 - Report vicini utente}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -767,7 +747,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \end{itemize}
 
 
-\subsubsection{ UC21 - Report igienizzazioni postazione}
+\subsubsection{ UC24 - Report igienizzazioni postazione}
 \begin{itemize}
            	\item\textbf{Attori Primari:} 
            	amministratore.
@@ -786,7 +766,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	l'utente visualizza le informazioni.
 \end{itemize}
 
-\subsubsection{ UC21.1 - Scaricamento del report delle igienizzazioni in un formato leggibile}
+\subsubsection{ UC24.1 - Scaricamento del report delle igienizzazioni in un formato leggibile}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -803,7 +783,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente ha scaricato il report.
 \end{itemize}
 
-\subsubsection{ UC21.1.1 - Scaricamento del report delle igienizzazioni in formato PDF}
+\subsubsection{ UC24.1.1 - Scaricamento del report delle igienizzazioni in formato PDF}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -816,7 +796,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\end{enumerate}
 	\item\textbf{Generalizzazione:}
 	\begin{itemize}
-		\item[$-$] scaricamento del report delle igienizzazioni in un formato leggibile (UC21.1).
+		\item[$-$] scaricamento del report delle igienizzazioni in un formato leggibile (UC24.1).
 	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente sta visualizzando un report.
@@ -826,7 +806,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 
 
 
-\subsubsection{ UC22 - Scansione tag NFC}
+\subsubsection{ UC25 - Scansione tag NFC}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Attori Secondari:} tag NFC.
@@ -836,7 +816,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l’utente ha effettuato correttamente la scansione.
 \end{itemize}
 
-\subsubsection{ UC23 - Visualizzazione stato postazione}
+\subsubsection{ UC26 - Visualizzazione stato postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Attori Secondari:} tag NFC.
@@ -854,7 +834,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l’utente conosce lo stato della postazione ed eventualmente il nome del dipendente che ha effettuato la prenotazione della stessa.
 \end{itemize}
 
-\subsubsection{ UC24 - Segnalazione occupazione}
+\subsubsection{ UC27 - Segnalazione occupazione}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=15cm]{res/images/UC24.png}
@@ -873,7 +853,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 
 
 
-\subsubsection{ UC24.1 - Occupazione in tempo reale}
+\subsubsection{ UC27.1 - Occupazione in tempo reale}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Attori Secondari:} tag NFC.
@@ -884,7 +864,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \end{itemize}
 
 
-\subsubsection{ UC24.2 - Registrazione occupazione}
+\subsubsection{ UC27.2 - Registrazione occupazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Attori Secondari:} Ethereum.
@@ -894,14 +874,14 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l'azione della precondizione viene registrata.
 	\item\textbf{Estensioni:} 
 	\begin{itemize}
-		\item[$-$] visualizzazione errore fine prematura occupazione: se l'utente alza lo smartphone dal tag NFC e abbandona la postazione in modo prematuro rispetto al tempo di fine prenotazione, dopo mezzora viene visualizzato un messaggio di errore e avviene la disdetta automatica della prenotazione per il tempo rimanente (UC24.3);
+		\item[$-$] visualizzazione errore fine prematura occupazione: se l'utente alza lo smartphone dal tag NFC e abbandona la postazione in modo prematuro rispetto al tempo di fine prenotazione, dopo mezzora viene visualizzato un messaggio di errore e avviene la disdetta automatica della prenotazione per il tempo rimanente (UC27.3);
 	\end{itemize}
 	\begin{itemize}
-	\item[$-$] visualizzazione errore postazione non igienizzata: se la postazione non è pulita viene segnalato all'utente di igienizzarla (UC24.4).
+	\item[$-$] visualizzazione errore postazione non igienizzata: se la postazione non è pulita viene segnalato all'utente di igienizzarla (UC27.4).
 	\end{itemize}
 \end{itemize}
 
-\subsubsection{ UC24.2.1 - Visualizzazione messaggio promemoria di inizio prenotazione}
+\subsubsection{ UC27.2.1 - Visualizzazione messaggio promemoria di inizio prenotazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente visualizza un messaggio di inizio della prenotazione, 30 minuti prima che essa avvenga.
@@ -910,7 +890,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} viene visualizzato un messaggio promemoria di inizio prenotazione della postazione.
 \end{itemize}
 
-\subsubsection{ UC24.2.2 - Visualizzazione messaggio promemoria di fine prenotazione}
+\subsubsection{ UC27.2.2 - Visualizzazione messaggio promemoria di fine prenotazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente visualizza un messaggio di fine della prenotazione, cinque minuti prima che essa avvenga.
@@ -919,7 +899,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} viene visualizzato un messaggio promemoria di fine prenotazione della postazione.
 \end{itemize}
 
-\subsubsection{ UC24.3 - Visualizzazione fine prematura occupazione}
+\subsubsection{ UC27.3 - Visualizzazione fine prematura occupazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente visualizza un messaggio in quanto sposta lo smartphone dal tag NFC, durante l'orario di prenotazione della postazione.
@@ -928,7 +908,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} viene visualizzato un messaggio specifico e avviene la disdetta automatica della prenotazione per il tempo rimanente.
 \end{itemize}
 
-\subsubsection{ UC24.4 - Visualizzazione errore utente assente }
+\subsubsection{ UC27.4 - Visualizzazione errore utente assente }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l'utente viene avvisato della disdetta automatica di una sua prenotazione.
@@ -941,7 +921,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore specifico e avviene la disdetta automatica della prenotazione per il tempo rimanente.
 \end{itemize}
 
-\subsubsection{ UC24.5 - Visualizzazione errore postazione non igienizzata}
+\subsubsection{ UC27.5 - Visualizzazione errore postazione non igienizzata}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente visualizza un messaggio di errore in quanto non può occupare una postazione non igienizzata.
@@ -951,7 +931,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 
 
 
-\subsubsection{ UC25 - Pulizia autonoma}
+\subsubsection{ UC28 - Pulizia autonoma}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Attori Secondari:} Ethereum.
