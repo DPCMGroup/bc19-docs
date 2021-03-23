@@ -932,6 +932,12 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 
 
 \subsubsection{ UC28 - Pulizia autonoma}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=18cm]{res/images/UC28_.png}
+	\caption{Pulizia autonoma}
+	\label{fig:Pulizia autonoma}
+\end{figure}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Attori Secondari:} Ethereum.
@@ -943,35 +949,27 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l’utente modifica lo stato della postazione in libera e igienizzata o prenotata e igienizzata e registra l'avvenuta pulizia autonoma della postazione.
 \end{itemize}
 
-\subsubsection{ UC26 - Prenotazione postazione }
+\subsubsection{ UC29 - Cerca postazione}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=18cm]{res/images/UC26.png}
-	\caption{Prenotazione postazione}
-	\label{fig:Prenotazione postazione}
+	\includegraphics[width=18cm]{res/images/UC29.png}
+	\caption{Cerca postazione}
+	\label{fig:Cerca postazione}
 \end{figure}
-\begin{itemize}
-	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} l’utente vuole prenotare una postazione di una stanza in un determinato giorno e orario.
-	\item\textbf{Scenario principale:} l’utente ha visualizzato o gestito le prenotazioni di una stanza all’interno del sistema.
-	\item\textbf{Precondizione:} l’utente si è autenticato nell'applicazione mobile e sta navigando nella sezione di gestione delle prenotazioni.
-	\item\textbf{Postcondizione:} l’utente ha visualizzato o gestito le prenotazioni all’interno del sistema.
-\end{itemize}
-\subsubsection{ UC26.1 - Cerca postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente vuole prenotare una postazione di una stanza in un determinato giorno e orario.
 	\item\textbf{Scenario principale:} 
 	\begin{itemize}
-		\item[$-$] l’utente inserisce la data (UC26.1.1);
-		\item[$-$] l’utente inserisce l'orario (UC26.1.3);
-		\item[$-$] l’utente inserisce l'identificativo della stanza (UC26.1.5);
-		\item[$-$] l’utente inserisce in modo opzionale il nome e il cognome del collega a cui si vuole sedere vicino (UC26.1.7).
+		\item[$-$] l’utente inserisce la data (UC29.1);
+		\item[$-$] l’utente inserisce l'orario (UC29.3);
+		\item[$-$] l’utente inserisce l'identificativo della stanza (UC29.5);
+		\item[$-$] l’utente inserisce in modo opzionale il nome e il cognome del collega a cui si vuole sedere vicino (UC29.7).
 	\end{itemize}
 	\item\textbf{Precondizione:} l’utente sta navigando nella sezione dell'applicazione dedicata alla ricerca di una postazione.
 	\item\textbf{Postcondizione:} l’utente inserisce i campi necessari alla ricerca della postazione desiderata.
 \end{itemize}
-\subsubsection{ UC26.1.1 - Inserimento data }
+\subsubsection{ UC29.1 - Inserimento data }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente sta cercando una postazione disponibile e deve compilare il campo della data.
@@ -980,10 +978,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l’utente ha compilato il campo richiesto.
 	\item\textbf{Estensioni:} l’utente inserisce i campi necessari alla ricerca della postazione desiderata.
 	\begin{itemize}
-		\item[$-$] l’utente inserisce una data non valida (UC26.1.2).
+		\item[$-$] l’utente inserisce una data non valida (UC29.2).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC26.1.2 - Visualizzazione errore: data non valida  }
+\subsubsection{ UC29.2 - Visualizzazione errore: data non valida  }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente ha compilato un campo per la data, ma è in un formato non corretto.
@@ -997,10 +995,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l'utente visualizza un messaggio di errore specifico e l'azione non viene portata a termine.
 	\item\textbf{Estensioni:} l’utente inserisce i campi necessari alla ricerca della postazione desiderata.
 	\begin{itemize}
-		\item[$-$] l’utente inserisce un orario non valido (UC26.1.4).
+		\item[$-$] l’utente inserisce un orario non valido (UC29.4).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC26.1.3 - Inserimento ora }
+\subsubsection{ UC29.3 - Inserimento ora }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente sta cercando una postazione disponibile e deve compilare il campo orario con granularità di un'ora.
@@ -1009,10 +1007,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l’utente ha compilato il campo richiesto.
 	\item\textbf{Estensioni:} l’utente inserisce i campi necessari alla ricerca della postazione desiderata.
 	\begin{itemize}
-		\item[$-$] l’utente inserisce una stanza non valida (UC26.1.6).
+		\item[$-$] l’utente inserisce una stanza non valida (UC29.6).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC26.1.4 - Visualizzazione errore: orario non valido }
+\subsubsection{ UC29.4 - Visualizzazione errore: orario non valido }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente ha compilato un campo per l'orario, ma è in un formato non corretto.
@@ -1025,7 +1023,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Precondizione:} l’utente ha compilato il campo per l'orario.
 	\item\textbf{Postcondizione:} l’utente visualizza un messaggio di errore specifico e non viene portata a termine l'azione.
 \end{itemize}
-\subsubsection{ UC26.1.5 - Inserimento stanza }
+\subsubsection{ UC29.5 - Inserimento stanza }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente sta cercando una postazione disponibile e deve compilare il campo dell'identificativo della stanza.
@@ -1033,7 +1031,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Precondizione:} l’utente sta compilando i campi richiesti per effettuare la ricerca.
 	\item\textbf{Postcondizione:} l’utente ha compilato il campo richiesto.
 \end{itemize}
-\subsubsection{ UC26.1.6 - Visualizzazione errore: stanza non valida }
+\subsubsection{ UC29.6 - Visualizzazione errore: stanza non valida }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente ha compilato un campo per l'identificativo della stanza, ma è in un formato non corretto.
@@ -1047,7 +1045,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l’utente visualizza un messaggio di errore specifico e non viene portata a termine l'azione.
 \end{itemize}
 
-\subsubsection{ UC26.1.7 - Inserimento nome dipendente }
+\subsubsection{ UC29.7 - Inserimento nome dipendente }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente sta cercando una postazione disponibile e deve compilare il campo nome e cognome del dipendente a cui si vuole sedere vicino e che ha già effettuato una prenotazione.
@@ -1056,10 +1054,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l’utente ha compilato il campo richiesto.
 	\item\textbf{Estensioni:} l’utente inserisce i campi necessari alla ricerca della postazione desiderata.
 	\begin{itemize}
-		\item[$-$] l’utente inserisce un nome non valido (UC26.1.8).
+		\item[$-$] l’utente inserisce un nome non valido (UC29.8).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC26.1.8 - Visualizzazione errore: nome dipendente non valido }
+\subsubsection{ UC29.8 - Visualizzazione errore: nome dipendente non valido }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente ha compilato un campo per il nome e il cognome del dipendente a cui si vuole sedere vicino, ma è in un formato non corretto.
@@ -1072,7 +1070,13 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Precondizione:} l’utente ha compilato il campo per il nome e il cognome.
 	\item\textbf{Postcondizione:} l’utente visualizza un messaggio di errore specifico e non viene portata a termine l'azione.
 \end{itemize}
-\subsubsection{ UC26.2 - Visualizzazione postazioni  }
+\subsubsection{ UC30 - Visualizzazione postazioni  }
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=18cm]{res/images/UC30.png}
+	\caption{Visualizzazione postazioni }
+	\label{fig:Visualizzazione postazioni }
+\end{figure}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente visualizza le postazioni con colori diversi in base allo stato. L'identificativo di una postazione è costituito da una lettera seguita da un numero (ad esempio: D10). 
@@ -1082,10 +1086,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l’utente visualizza le postazioni nella stanza.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] visualizzazione errore: tutte le postazioni nella stanza selezionata sono occupate o guaste (UC26.3).
+		\item[$-$] visualizzazione errore: tutte le postazioni nella stanza selezionata sono occupate o guaste (UC30.1).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC26.3 - Visualizzazione errore: postazioni occupate }
+\subsubsection{ UC30.1 - Visualizzazione errore: postazioni occupate }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente visualizza un messaggio di errore, in quanto non ci sono postazioni prenotabili.
@@ -1095,10 +1099,16 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item[$-$] il sistema elabora la richiesta;
 		\item[$-$] viene visualizzato un messaggio di errore che consiglia di selezionare un'altra fascia oraria o stanza.
 	\end{itemize}
-	\item\textbf{Precondizione:} l’utente ha compilato i campi data, orario, stanza oppure ha selezionato la sezione prima postazione disponibile (UC26.4).
+	\item\textbf{Precondizione:} l’utente ha compilato i campi data, orario, stanza oppure ha selezionato la sezione prima postazione disponibile (UC31).
 	\item\textbf{Postcondizione:} l’utente visualizza un messaggio di errore specifico e non viene portata a termine l'azione.
 \end{itemize}
-\subsubsection{ UC26.4 - Prima postazione libera }
+\subsubsection{ UC31 - Prima postazione libera }
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=18cm]{res/images/UC31.png}
+	\caption{Prima postazione libera}
+	\label{fig:Prima postazione libera}
+\end{figure}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente riceve l'identificativo di una postazione igienizzata e libera in una determinata stanza, 
@@ -1107,7 +1117,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Precondizione:} l’utente preme il bottone nella sezione della prima postazione disponibile.
 	\item\textbf{Postcondizione:} l’utente riceve l'identificativo di una postazione.
 \end{itemize}
-\subsubsection{ UC26.4.1 - Prima postazione libera random}
+\subsubsection{ UC31.1 - Prima postazione libera random}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente riceve l'identificativo di una postazione igienizzata e libera in una determinata stanza, 
@@ -1117,10 +1127,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l’utente riceve l'identificativo di una postazione.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] tutte le postazioni nella stanza selezionata sono occupate o guaste (UC26.3).
+		\item[$-$] tutte le postazioni nella stanza selezionata sono occupate o guaste (UC30.1).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC26.4.2 - Prima postazione libera distante}
+\subsubsection{ UC31.2 - Prima postazione libera distante}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente riceve l'identificativo di una postazione igienizzata e libera in una determinata stanza, 
@@ -1130,18 +1140,16 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l’utente riceve l'identificativo di una postazione.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] tutte le postazioni nella stanza selezionata sono occupate o guaste (UC26.3).
+		\item[$-$] tutte le postazioni nella stanza selezionata sono occupate o guaste (UC30.1).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC26.5 - Selezione postazione }
-\begin{itemize}
-	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} l’utente dopo aver visualizzato le postazioni con colori diversi in base allo stato, ne seleziona una. E' possibile scegliere una postazione libera e igienizzata o non igienizzata.
-	\item\textbf{Scenario principale:} viene selezionata una postazione.
-	\item\textbf{Precondizione:} l’utente ha visualizzato correttamente le postazioni di una stanza.
-	\item\textbf{Postcondizione:} l’utente seleziona una postazione.
-\end{itemize}
-\subsubsection{ UC26.6 - Prenotazione postazione }
+\subsubsection{ UC32 - Prenotazione postazione }
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=18cm]{res/images/UC32.png}
+	\caption{Prenotazione postazione}
+	\label{fig:Prenotazione postazione}
+\end{figure}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente dopo aver selezionato la postazione, effettua la prenotazione. 
@@ -1151,10 +1159,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l'utente prenota la postazione.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] nel caso in cui l'utente scelga di prenotare una postazione libera e igienizzata, ma ha già effettuato una prenotazione di un'altra postazione nella stessa data e orario (UC26.7).
+		\item[$-$] nel caso in cui l'utente scelga di prenotare una postazione libera e igienizzata, ma ha già effettuato una prenotazione di un'altra postazione nella stessa data e orario (UC32.1).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC26.7 - Visualizzazione errore: postazione non prenotabile }
+\subsubsection{ UC32.1 - Visualizzazione errore: postazione non prenotabile }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente tenta di prenotare una postazione libera e igienizzata, ma ha già effettuato una prenotazione di una postazione nella stessa data e orario.
@@ -1163,7 +1171,13 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l’utente visualizza un messaggio di errore specifico e non viene portata a termine l’azione.
 \end{itemize}
 
-\subsubsection{ UC27 - Prenotazione postazione automatica}
+\subsubsection{ UC33 - Prenotazione postazione automatica}
+\begin{figure}[H]
+		\centering
+		\includegraphics[width=18cm]{res/images/UC33.png}
+		\caption{Prenotazione postazione automatica}
+		\label{fig:Prenotazione postazione automatica}
+	\end{figure}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente dopo aver scansionato con il proprio smartphone il tag NFC per un tempo maggiore o uguale ad un minuto, prenota in modo automatico la postazione per l'intera giornata lavorativa. 
@@ -1172,11 +1186,11 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l'utente prenota in modo automatico la postazione e inizia l'occupazione.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] nel caso in cui l'utente scansiona per più di un minuto una postazione prenotata, viene emesso un segnale sonoro (UC27.1);
-		\item[$-$] nel caso in cui l'utente scansiona per più di un minuto una postazione libera e igienizzata, ma prenotata in un determinato momento successivo della giornata, questa viene prenotata fino all'inizio della prenotazione successiva (UC27.2).
+		\item[$-$] nel caso in cui l'utente scansiona per più di un minuto una postazione prenotata, viene emesso un segnale sonoro (UC33.1);
+		\item[$-$] nel caso in cui l'utente scansiona per più di un minuto una postazione libera e igienizzata, ma prenotata in un determinato momento successivo della giornata, questa viene prenotata fino all'inizio della prenotazione successiva (UC33.2).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC27.1 - Emissione messaggio errore sonoro: postazione occupata}
+\subsubsection{ UC33.1 - Emissione messaggio errore sonoro: postazione occupata}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l'utente sta scansionando per più di un minuto il tag NFC di una postazione prenotata, per cui viene emesso un segnale sonoro per farlo allontanare.
@@ -1185,7 +1199,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} viene emesso un segnale sonoro.
 \end{itemize}
 
-\subsubsection{ UC27.2 - Postazione prenotata massimo tempo disponibile}
+\subsubsection{ UC33.2 - Postazione prenotata massimo tempo disponibile}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l'utente sta scansionando per più di un minuto una postazione libera e igienizzata, ma prenotata in un determinato momento successivo della giornata. Quindi quest'ultima viene prenotata fino all'inizio della prenotazione successiva, che equivale al massimo tempo disponibile.
@@ -1194,21 +1208,13 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l'utente prenota in modo automatico una postazione fino all'inizio della prenotazione successiva e inizia l'occupazione.
 \end{itemize}
 
-\subsubsection{ UC28 - Disdetta prenotazione}
+\subsubsection{ UC34 - Visualizzazione lista prenotazioni}
 \begin{figure}[H]
-	\centering
-	\includegraphics[width=18cm]{res/images/UC28.png}
-	\caption{Disdetta prenotazione}
-	\label{fig:Disdetta prenotazione}
-\end{figure}
-\begin{itemize}
-	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} l’utente vuole disdire una prenotazione.
-	\item\textbf{Scenario principale:} l’utente ha visualizzato le prenotazioni di una postazione all'interno del sistema.
-	\item\textbf{Precondizione:} l'utente sta navigando nella sezione della lista delle prenotazioni effettuate.
-	\item\textbf{Postcondizione:} l’utente effettua la disdetta della prenotazione.
-\end{itemize}
-\subsubsection{ UC28.1 - Visualizzazione lista prenotazioni}
+		\centering
+		\includegraphics[width=18cm]{res/images/UC34.png}
+		\caption{Visualizzazione lista prenotazioni}
+		\label{fig:Visualizzazione lista prenotazioni}
+	\end{figure}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l'utente visualizza la lista delle prenotazioni effettuate in precedenza. Ogni prenotazione contiene le seguenti informazioni:
@@ -1223,16 +1229,13 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l’utente visualizza le prenotazioni effettuate.
 \end{itemize}
 
-\subsubsection{ UC28.2 - Selezione prenotazione effettuata}
-\begin{itemize}
-	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} l’utente visualizza la lista delle prenotazioni effettuate e ne seleziona una.
-	\item\textbf{Scenario principale:} l’utente seleziona una prenotazione che desidera cancellare.
-	\item\textbf{Precondizione:} l'utente sta navigando nella sezione della lista delle prenotazioni effettuate.
-	\item\textbf{Postcondizione:} l’utente seleziona una prenotazione effettuata in precedenza.
-\end{itemize}
-
-\subsubsection{ UC28.3 - Disdetta prenotazione}
+\subsubsection{ UC35 - Disdetta prenotazione}
+\begin{figure}[H]
+		\centering
+		\includegraphics[width=18cm]{res/images/UC35.png}
+		\caption{Disdetta prenotazione}
+		\label{fig:Disdetta prenotazione}
+	\end{figure}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente disdice una prenotazione. 
@@ -1241,7 +1244,13 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l’utente effettua la disdetta della prenotazione selezionata.
 \end{itemize}
 
-\subsubsection{ UC29 - Avviso indisponibilità postazione prenotata }
+\subsubsection{ UC36 - Avviso indisponibilità postazione prenotata }
+\begin{figure}[H]
+		\centering
+		\includegraphics[width=18cm]{res/images/UC36.png}
+		\caption{Avviso indisponibilità postazione prenotata}
+		\label{fig:Avviso indisponibilità postazione prenotata}
+	\end{figure}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} il dipendente che ha una prenotazione per una postazione viene avvisato nel caso la postazione non sia più disponibile.
@@ -1250,7 +1259,13 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l'utente riceve una notifica che lo avvisa dell'indisponibilità di una delle postazioni che ha prenotato.
 \end{itemize}
 
-\subsubsection{UC30 - Elenco stanze da igienizzare}
+\subsubsection{UC37 - Elenco stanze da igienizzare}
+\begin{figure}[H]
+		\centering
+		\includegraphics[width=18cm]{res/images/UC37.png}
+		\caption{Elenco stanze da igienizzare}
+		\label{fig:Elenco stanze da igienizzare}
+	\end{figure}
 \begin{itemize}
            	\item\textbf{Attori Primari:} addetto pulizie.
            	\item\textbf{Descrizione:} l'utente riceve un elenco delle stanze che necessitano di igienizzazione.
@@ -1258,7 +1273,13 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	\item\textbf{Precondizione:} l'utente va nella sezione dedicata nel sistema e deve premere un bottone.
            	\item\textbf{Postcondizione:} l'utente verifica quali stanze sono state occupate da almeno un dipendente, così da ottenere un elenco delle stanze da igienizzare.
 \end{itemize}
-\subsubsection{UC31 - Elenco postazioni da igienizzare}
+\subsubsection{UC38 - Elenco postazioni da igienizzare}
+\begin{figure}[H]
+		\centering
+		\includegraphics[width=18cm]{res/images/UC38.png}
+		\caption{Elenco postazioni da igienizzare}
+		\label{fig:Elenco postazioni da igienizzare}
+	\end{figure}
 \begin{itemize}
            	\item\textbf{Attori Primari:} addetto pulizie.
            	\item\textbf{Descrizione:} l'utente riceve un elenco delle postazioni che necessitano di igienizzazione.
@@ -1267,7 +1288,13 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	\item\textbf{Postcondizione:} l'utente verifica quali postazioni sono state occupate da almeno un dipendente, così da ottenere un elenco delle postazioni da igienizzare.
 \end{itemize}
 
-\subsubsection{UC32 - Marcatura stanza come igienizzata}
+\subsubsection{UC39 - Marcatura stanza come igienizzata}
+\begin{figure}[H]
+		\centering
+		\includegraphics[width=18cm]{res/images/UC39.png}
+		\caption{Marcatura stanza come igienizzata}
+		\label{fig:Marcatura stanza come igienizzata}
+	\end{figure}
 \begin{itemize}
            	\item\textbf{Attori Primari:} addetto pulizie.
 		\item\textbf{Attore Secondario:} Ethereum.
@@ -1276,7 +1303,13 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            	\item\textbf{Precondizione:} l'utente ottiene l'elenco delle stanze da igienizzare.
            	\item\textbf{Postcondizione:} l'utente, dopo l'igienizzazione, marca le stanze come igienizzate.
 \end{itemize}
-\subsubsection{UC33 - Marcatura postazione come igienizzata}
+\subsubsection{UC40 - Marcatura postazione come igienizzata}
+\begin{figure}[H]
+		\centering
+		\includegraphics[width=18cm]{res/images/UC40.png}
+		\caption{Marcatura postazione come igienizzata}
+		\label{fig:Marcatura postazione come igienizzata}
+	\end{figure}
 \begin{itemize}
            	\item\textbf{Attori Primari:} addetto pulizie.
 		\item\textbf{Attore Secondario:} Ethereum.
