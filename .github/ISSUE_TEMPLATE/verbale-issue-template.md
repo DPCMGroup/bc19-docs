@@ -2,7 +2,7 @@
 name: Verbale Issue Template
 about: Descrizione attività stesura verbale
 title: "[VER] Stesura verbale AAAA-MM-GG"
-labels: ''
+labels: stesura, verbale
 assignees: ''
 
 ---

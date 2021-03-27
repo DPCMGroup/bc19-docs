@@ -15,8 +15,9 @@ jobs:
         with:
           run: |
             latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode -cd template/documenti/main.tex     
-            latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode -cd template/lettera/main.tex     
-            latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode -cd template/verbali/main.tex          
+            latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode -cd template/lettera/main.tex
+            latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode -cd template/verbale_e-mail/main.tex
+            latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode -cd template/verbale_riunione/main.tex          
             
       - name: Notify Discord if failure
         uses: sarisia/actions-status-discord@v1

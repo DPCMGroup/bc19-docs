@@ -1,0 +1,55 @@
+name: LaTeX Artifact
+
+on: 
+  push:
+    branches:
+      - develop
+      - master
+    paths:
+      - 'esterni/**'
+      - 'interni/**'
+
+jobs:
+  artifacts:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo content
+      uses: actions/checkout@v2
+    
+    - name: Search and Compiling Latex Files
+      uses: ToldoDM/Latex-multicompiler@9ebb0e65ed44ba1b23e5f439361ed114a9adda95
+      with:
+        path_to_list: .github/filesToCompile
+        artifact: true
+    
+    - name: Upload to Google Drive
+      uses: satackey/action-google-drive@v1
+      with:
+        skicka-tokencache-json: ${{ secrets.SKICKA_TOKENCACHE_JSON }}
+        upload-from: ./Documents
+        upload-to: /DPCM 2077/Artifacts
+        google-client-id: ${{ secrets.GOOGLE_CLIENT_ID }}
+        google-client-secret: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+        
+    - name: Notify Discord if failure
+      uses: sarisia/actions-status-discord@v1
+      if: failure()
+      with:
+        webhook: ${{ secrets.ARTIFACT_NOTIFICATION }}
+        nodetail: true
+        title: "Upload artefatti LaTeX fallito"
+        color: 0xff0000
+        
+        
+    - name: Notify Discord if success
+      uses: sarisia/actions-status-discord@v1
+      if: success()
+      with:
+        webhook: ${{ secrets.ARTIFACT_NOTIFICATION }}
+        nodetail: true
+        title: "Aggiornamento artefatti LaTeX"
+        description: "È stata aggiornata la cartella artifact in google drive"
+        color: 0x00ff00
+

@@ -1,0 +1,91 @@
+\appendix
+\section{Standard di Qualità}
+
+\subsection{ISO/IEC 9126}
+ISO/IEC 9126 è uno standard utilizzato a livello internazionale per valutare la qualità del software.
+È suddiviso in quattro parti che sono:
+\begin{itemize}
+\item \textbf{Modello della qualità del software};
+\item \textbf{Metriche per la qualità esterna};
+\item \textbf{Metriche per la qualità interna};
+\item \textbf{Metriche per la qualità in uso}.
+\end{itemize}
+
+\subsubsection{Metriche per la qualità interna}
+La qualità interna, più precisamente le metriche interne, è specificata nella norma \textit{ISO/IEC 9126-3} e si applica al software non eseguibile durante le fasi di progettazione e codifica. 
+Le misure effettuate permettono di prevedere il livello di qualità esterna e in uso del prodotto finale pronto per il rilascio, poiché gli attributi interni influiscono su quelli esterni e quelli in uso. 
+Le metriche interne permettono di catturare eventuali problemi che potrebbero influire sulla qualità finale del prodotto prima che sia realizzato il software eseguibile. 
+
+\subsubsection{Metriche per la qualità esterna}
+Le metriche esterne, specificate nella norma \textit{ISO/IEC 9126-2}, misurano i comportamenti del software sulla base dei test, dall'operatività e dall'osservazione del prodotto durante la sua esecuzione, in funzione degli obiettivi stabiliti in un contesto tecnico rilevante o di business. Sono metriche applicabili al software in esecuzione che ne misurano il comportamento attraverso vari test, in funzione degli obiettivi precedentemente stabiliti.
+
+\subsubsection{Metriche per la qualità in uso}
+La qualità in uso rappresenta il punto di vista dell'utente sul software. Sono metriche applicabili solo al prodotto finito e in uso in condizioni reali, cioè quando il prodotto sarà usato effettivamente dal cliente.
+Il livello di qualità in uso è raggiunto quando sia il livello di qualità esterna sia il livello di qualità interna sono stati raggiunti. Le norme \textit{ISO/IEC 9126-4} forniscono esempi di metriche da utilizzare per la misurazione della qualità rispetto ai tre punti di vista (interno, esterno, in uso). La qualità in uso, quindi, permette di abilitare specificati utenti a ottenere determinati obiettivi con efficacia, produttività, sicurezza e soddisfazione.
+
+\begin{itemize}
+\item \textbf{Efficacia}: la capacità del software di mettere in grado gli utenti di raggiungere gli obiettivi specificati con accuratezza e completezza;
+\item \textbf{Produttività}: la capacità di mettere in grado gli utenti di spendere una quantità di risorse appropriate in relazione all'efficacia ottenuta in uno specificato contesto d'uso;
+\item \textbf{Soddisfazione}: è la capacità del prodotto software di soddisfare gli utenti;
+\item \textbf{Sicurezza}: rappresenta la capacità del prodotto software di raggiungere accettabili livelli di rischio di danni a persone, al software, ad apparecchiature o all'ambiente operativo d'uso.
+\end{itemize}
+
+\subsubsection{Modello della qualità del software}
+Il modello di qualità stabilito nella prima parte dello standard, \textit{ISO/IEC 9126-1}, è classificato da sei caratteristiche generali (funzionalità, affidabilità, efficienza, usabilità, manutenibilità, portabilità) e varie sottocaratteristiche misurabili attraverso delle metriche, fornite in tre relazioni tecniche, quali ISO/IEC 9126-2, 3 e 4. 
+
+\paragraph{Funzionalità}
+La Funzionalità è la capacità di un prodotto software di fornire funzioni che soddisfano i requisiti stabiliti nell'\dext{Analisi dei Requisiti}, necessarie per operare sotto condizioni specifiche.
+Le caratteristiche sono:
+\begin{itemize}
+\item \textbf{appropriatezza}: rappresenta la capacità del prodotto software di fornire un adeguato insieme di funzioni per i compiti e obiettivi prefissati dall'utente;
+\item \textbf{accuratezza}: la capacità del prodotto software di fornire i risultati concordati o i precisi effetti richiesti;
+\item \textbf{interoperabilità}: è la capacità del prodotto software di interagire e operare con uno o più sistemi specificati;
+\item \textbf{conformità}: la capacità del prodotto software di aderire a standard, convenzioni e regolamentazioni;
+\item \textbf{sicurezza}: la capacità del prodotto software di proteggere informazioni e dati negando in ogni modo che persone o sistemi non autorizzati possano accedervi o modificarli.
+\end{itemize}
+
+\paragraph{Affidabilità}
+L'Affidabilità è la capacità del prodotto software di mantenere uno specifico livello di prestazioni quando usato in date condizioni e per un dato periodo di tempo. Le caratteristiche sono:
+\begin{itemize}
+\item \textbf{maturità}: capacità di un prodotto software di evitare che si verifichino errori, malfunzionamenti o anomalie nell'utilizzo del prodotto;
+\item \textbf{tolleranza agli errori}: è la capacità di mantenere livelli predeterminati di prestazioni anche in presenza di malfunzionamenti o uso non corretto del prodotto software;
+\item \textbf{recuperabilità}: è la capacità di un prodotto di ripristinare il livello appropriato di prestazioni e di recupero delle informazioni rilevanti, in seguito a un malfunzionamento.
+\item \textbf{aderenza}: è la capacità di aderire a standard, regole e direttive inerenti all'affidabilità.
+\end{itemize}
+
+\paragraph{Efficienza}
+L'efficienza è la capacità di fornire appropriate prestazioni relativamente alla quantità di risorse usate. Le caratteristiche sono:
+\begin{itemize}
+\item \textbf{comportamento rispetto al tempo}: capacità di fornire adeguati tempi di risposta, elaborazione e velocità di attraversamento, sotto determinate condizioni;
+\item \textbf{utilizzo delle risorse}: capacità di raggiungere gli obiettivi prefissati consumando le risorse minime indispensabili;
+\item \textbf{conformità}: capacità di aderire a standard, specifiche e regole sull'efficienza.
+\end{itemize}
+
+\paragraph{Usabilità}
+L'usabilità è la capacità del prodotto software di essere compreso, usato e benaccetto dall'utente, quando usato in tutte le condizioni possibili. Le caratteristiche sono:
+\begin{itemize}
+\item \textbf{comprensibilità}: capacità di esprimere la facilità di comprensione dei concetti del prodotto, mettendo in grado l'utente di comprendere se il software è adatto per i propri scopi;
+\item \textbf{apprendibilità}: capacità di ridurre l'impegno richiesto agli utenti per imparare a usare la sua applicazione;
+\item \textbf{operabilità}: capacità di mettere in condizione gli utenti di usare il prodotto per i propri scopi e controllarne l'uso;
+\item \textbf{attrattiva}: capacità del software di essere piacevole per l'utente che ne fa uso;
+\item \textbf{conformità}: capacità del software di aderire a standard o direttive relativi all'usabilità.
+\end{itemize}
+
+\paragraph{Manutenibilità}
+La manutenibilità è la capacità del software di essere modificato, subendo correzioni, miglioramenti o adattamenti. Le caratteristiche sono:
+\begin{itemize}
+\item \textbf{analizzabilità}: rappresenta la facilità con la quale è possibile analizzare il codice per localizzare un errore nello stesso;
+\item \textbf{modificabilità}: capacità del prodotto software di permettere l'implementazione di una specificata modifica;
+\item \textbf{stabilità}: capacità del software di evitare condizioni inattese derivanti da modifiche errate;
+\item \textbf{testabilità}: capacità di essere facilmente testato per validare le modifiche apportate al software.
+\end{itemize}
+
+\paragraph{Portabilità}
+La portabilità è la capacità del software di essere trasportato da un ambiente di lavoro a un altro, hardware o software (come, per esempio, il sistema operativo).
+\begin{itemize}
+\item \textbf{adattabilità}: capacità del software di essere adattato per differenti ambienti operativi senza dover modificare il software considerato;
+\item \textbf{installabilità}: capacità del software di essere installato in uno specificato ambiente;
+\item \textbf{conformità}: capacità del prodotto software di aderire a standard e direttive relative alla portabilità;
+\item \textbf{sostituibilità}: capacità di essere utilizzato al posto di un altro software per svolgere gli stessi compiti nello stesso ambiente.
+\end{itemize}
+
