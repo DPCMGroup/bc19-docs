@@ -75,7 +75,7 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R1F16&L'amministratore deve poter aggiungere una stanza al sistema e assegnarle un nome	& Capitolato - UC16	\\
 		\hline
-		R1F17 & Se l'amministratore tenta di assegnare a una stanza un nome già in utilizzo per un'altra stanza o delle dimensioni impossibili deve essergli impedito e deve essere avvisato dell'errore & Interna - UC17 \\
+		R1F17 & Se l'amministratore tenta di assegnare a una stanza un nome già in utilizzo per un'altra stanza deve essergli impedito e deve essere avvisato dell'errore & Interna - UC17 \\
 		\hline
 		R1F18&L'amministratore deve poter eliminare una stanza dal sistema	& Capitolato - UC18	\\
 		\hline
@@ -85,9 +85,9 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R1F21&L'amministratore deve poter aggiungere una postazione in una stanza, specificando:
 		\begin{itemize}
-			\item codice della postazione
-			\item codice del tag NFC che la identifica
-			\item posizione all'interno di una stanza
+			\item codice della postazione;
+			\item codice del tag NFC che la identifica;
+			\item posizione all'interno di una stanza.
 		\end{itemize} & Capitolato - UC21	\\
 		\hline
 		R1F22&	Se si tenta di creare o modificare una postazione assegnandole un codice della postazione già in utilizzo, l'azione deve fallire e deve comparire un messaggio d'errore& VE\_2020\_12\_18v.1.0.0 - UC22 	\\
@@ -104,7 +104,7 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R1F27.1&Il sistema deve poter memorizzare più credenziali per ogni categoria di utenti: amministratori, dipendenti e addetti	& Capitolato - VE\_2021\_01\_01v.1.0.0	\\
 		\hline
-		R1F28&L'amministratore deve poter creare nuove credenziali per accedere al sistema. Le informazioni contenute nel profilo di un utente sono: Nome, Cognome, Nome utente, Password e Email. Tra queste le informazioni necessarie per l'accesso sono password e nome utente	& Capitolato - VE\_2021\_01\_01v.1.0.0 - UC28	\\
+		R1F28&L'amministratore deve poter creare nuove credenziali per accedere al sistema. Le informazioni contenute nel profilo di un utente sono: Nome, Cognome, Nome utente, Password e Email.	& Capitolato - VE\_2021\_01\_01v.1.0.0 - UC28	\\
 		\hline
 		R1F29&L'amministratore può modificare le credenziali degli utenti del sistema	&Capitolato - UC29	\\
 		\hline
@@ -114,7 +114,7 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R1F32&L'amministratore deve poter effettuare una ricerca tra le postazioni occupate da un utente in un dato periodo, specificando il periodo all'interno del quale l'utente occupava la postazione e ottenere un report. & 	Capitolato - UC32 - VE\_2021\_01\_04v.1.0.0\\
 		\hline
-		R2F33&L'amministratore deve poter ottenere un report delle occupazioni di postazioni da parte di un utente specifico, con date e orari di inizio e fine delle occupazioni,  codici delle postazioni e ore trascorse alla postazione. & 	Capitolato - UC33 - VE\_2021\_01\_04v.1.0.0\\
+		R2F33&L'amministratore deve poter ottenere un report delle occupazioni di postazioni da parte di un utente specifico, con date e orari di inizio e fine delle occupazioni,  codici delle postazioni e, opzionalmente, ore trascorse alla postazione. & 	Capitolato - UC33 - VE\_2021\_01\_04v.1.0.0\\
 		\hline
 		R1F34&L'amministratore deve poter ottenere un report delle occupazioni di una postazione specifica, con date e orari di inizio e fine delle occupazioni e nomi e cognomi dei dipendenti.	&Capitolato - UC34 - VE\_2021\_01\_04v.1.0.0	\\
 		\hline
@@ -136,13 +136,13 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R1F42.1&Il dipendente deve poter segnalare la propria presenza su una postazione in tempo reale, tramite tag NFC.	&Capitolato - UC42.1 	\\
 		\hline
-		R1F42.2&Il dipendente deve poter registrare i momenti di inizio e di fine della sua occupazione di una postazione, tramite Ethereum.	&Interna - UC42.2 	\\
+		R1F42.2&Il dipendente deve poter registrare i momenti di inizio e di fine della sua occupazione di una postazione.	&Interna - UC42.2 	\\
 		\hline
 		R1F43&Se l'utente sposta il proprio smartphone dal tag NFC per un periodo di tempo maggiore o uguale a trenta minuti avviene la disdetta automatica della prenotazione per il tempo restante.	&Interna - UC43 	\\
 		\hline
-		R1F44&l’utente viene avvisato della disdetta automatica di una sua prenotazione se sposta il proprio smartphone dal tag NFC per più di 30 minuti.	&Interna - UC44 	\\
+		R1F44&l’utente viene avvisato della disdetta automatica di una sua prenotazione se dopo 30 minuti dal suo inizio non ha ancora appoggiato il telefono sul tag.	&Interna - UC44 	\\
 		\hline
-		R1F45&Il dipendente visualizza un messaggio di errore se prova a d occupare una postazione non igienizzata. &Interna - UC45 	\\
+		R1F45&Il dipendente visualizza un messaggio di errore se prova ad occupare una postazione non igienizzata. &Interna - UC45 	\\
 		\hline	
 		R1F46&Il dipendente visualizza un messaggio di inizio della prenotazione, 30 minuti prima che essa avvenga.	&Interna - UC46 	\\
 		\hline
@@ -176,7 +176,7 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R1F57&Il dipendente deve poter visualizzare l'identificativo di una postazione igienizzata e libera in una stanza scelta con criterio random.	&Capitolato - UC57	\\
 		\hline
-		R2F58&Il dipendente deve poter visualizzare l'identificativo di una postazione igienizzata e libera in una stanza scelta con criterio top distanza dalle altre postazioni occupate.	&Capitolato - UC58	\\
+		R2F58&Il dipendente deve poter visualizzare l'identificativo di una postazione igienizzata e libera in una stanza scelta con criterio di massima distanza dalle altre postazioni occupate.	&Capitolato - UC58	\\
 		\hline
 		R1F59&Il dipendente deve poter prenotare una postazione selezionata.	&Capitolato - UC59	\\
 		\hline
