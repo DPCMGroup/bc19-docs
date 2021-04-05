@@ -58,7 +58,7 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R1F14.1&L'amministratore deve poter visualizzare le stanze e le postazioni salvate nel sistema, in modo schematico.& Capitolato - UC14	\\
 		\hline
-		R1F14.2&L'amministratore deve poter visualizzare le stanze e le postazioni salvate nel sistema colorate in base al loro stato attuale. Gli stati possibili sono:
+		R1F14.2&L'amministratore deve poter visualizzare le postazioni salvate nel sistema colorate in base al loro stato attuale. Gli stati possibili sono:
 		\begin{itemize}
 			\item libera e igienizzata;
 			\item libera e non igienizzata;
@@ -67,9 +67,12 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 			\item prenotata e non igienizzata;
 			\item guasta e igienizzata;
 			\item guasta e non igienizzata.
-		\end{itemize}& Capitolato - UC14	\\
+		\end{itemize}
+		& Capitolato - UC14	\\
 		\hline
-		R1F14.3&Per ogni stanza deve essere indicato il numero di occupanti attuali.	& Capitolato - UC14	\\
+		R1F14.3&Le stanze inaccessibili devono avere un'indicazione testuale che indica la data di inizio e fine del periodo di inaccessibilità. & Interna - UC14	\\
+		\hline
+		R1F14.4&Per ogni stanza deve essere indicato il numero di occupanti attuali.	& Capitolato - UC14	\\
 		\hline
 		R1F15&L'amministratore deve poter visualizzare un calendario delle prenotazioni delle postazioni.	& Capitolato - UC15	\\
 		\hline
@@ -337,7 +340,7 @@ R1F5 \newline
 R1F14 \newline
 R1F14.1 \newline
 R1F14.2 \newline
-R1F14.3 \newline
+R1F14.4 \newline
 R1F15 \newline
 R1F16 \newline
 R1F18 \newline
@@ -410,6 +413,7 @@ R1F10 \newline
 R1F11 \newline
 R1F12 \newline
 R1F13 \newline
+R1F14.3 \newline
 R1F17 \newline
 R1F42 \newline
 R1F42.2 \newline
@@ -518,7 +522,8 @@ UC14 &
 R1F14 \newline
 R1F14.1 \newline
 R1F14.2 \newline
-R1F14.3 
+R1F14.3 \newline
+R1F14.4 
 \\
 \hline
 UC15 &
@@ -900,6 +905,12 @@ UC14
 \hline
 
 R1F14.3 &
+Interna \newline
+UC14 
+\\
+\hline
+
+R1F14.4 &
 Capitolato \newline
 UC14 
 \\

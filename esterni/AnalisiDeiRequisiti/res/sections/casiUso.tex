@@ -272,7 +272,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Scenario principale:}
 	\begin{enumerate}
 		\item l'amministratore raggiunge la pagina di visione delle stanze e delle postazioni
-		\item l'amministratore visualizza le stanze e le postazioni colorate in base al loro stato. Gli stati possibili sono:
+		\item l'amministratore visualizza le stanze, con all'interno le postazioni colorate in base al loro stato. Gli stati possibili sono:
 		\begin{itemize}
 			\item[$-$] libera e igienizzata;
 			\item[$-$] libera e non igienizzata;
@@ -282,8 +282,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 			\item[$-$] guasta e igienizzata;
 			\item[$-$] guasta e non igienizzata.
 		\end{itemize}
+		Le stanze inaccessibili hanno un'indicazione testuale che indica la data di inizio e fine del periodo di inaccessibilità. \newline
+		Per ogni stanza è indicato il numero di occupanti attuali.
 	\end{enumerate}
-	Per ogni stanza è indicato il numero di occupanti attuali.
+	
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
