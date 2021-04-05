@@ -109,7 +109,7 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R1F26.2&L'amministratore deve poter modificare lo stato di guasta di una postazione non occupata. Se essa è guasta la deve poter impostare come libera e se essa è non guasta deve poterla impostare come guasta, indicando un intervallo di date durante il quale la postazione sarà in quello stato. Se viene impostata come guasta, le prenotazioni già effettuate su quella postazione in quel periodo devono essere disdette e non deve essere possibile effettuarne di nuove, sempre all'interno del periodo.	& Capitolato - UC26.2	\\
 		\hline
-		R1F27&L'amministratore deve poter visualizzare una lista delle credenziali di tutti gli utente del sistema.	& Capitolato - UC27	\\
+		R1F27&L'amministratore deve poter visualizzare una lista delle credenziali di tutti gli utenti del sistema.	& Capitolato - UC27	\\
 		\hline
 		R1F27.1&Il sistema deve poter memorizzare più credenziali per ogni categoria di utenti: amministratori, dipendenti e addetti.	& Capitolato - VE\_2021\_01\_01v.1.0.0	\\
 		\hline
@@ -336,10 +336,8 @@ R1F5 \newline
 R1F14 \newline
 R1F14.1 \newline
 R1F14.2 \newline
-R1F14.3
-\\
-\hline
-Capitolato &R1F15 \newline
+R1F14.3 \newline
+R1F15 \newline
 R1F16 \newline
 R1F18 \newline
 R1F19 \newline
@@ -347,6 +345,8 @@ R1F20 \newline
 R1F21 \newline
 R1F25 \newline
 R1F26 \newline
+R1F26.1 \newline
+R1F26.2 \newline
 R1F27 \newline
 R1F27.1 \newline
 R1F28 \newline
@@ -365,8 +365,10 @@ R1F40 \newline
 R1F41 \newline
 R1F42.1 \newline
 R1F48 \newline
-R1F54 \newline
-R1F56 \newline
+R1F54
+\\
+\hline
+Capitolato &R1F56 \newline
 R1F57 \newline
 R2F58 \newline
 R1F59 \newline
@@ -386,10 +388,8 @@ R1Q5 \newline
 R1Q6 \newline
 R2Q7 \newline
 R1Q8 \newline
-R1Q9
-\\
-\hline
-Capitolato &R1Q10 \newline
+R1Q9 \newline
+R1Q10 \newline
 R1Q11 \newline
 R1Q12 \newline
 R1V1 \newline
@@ -566,6 +566,14 @@ R1F25
 \hline
 UC26 &
 R1F26 
+\\
+\hline
+UC26.1 &
+R1F26.1 
+\\
+\hline
+UC26.2 &
+R1F26.2 
 \\
 \hline
 UC27 &
@@ -965,6 +973,18 @@ UC25
 R1F26 &
 Capitolato \newline
 UC26 
+\\
+\hline
+
+R1F26.1 &
+Capitolato \newline
+UC26.1 
+\\
+\hline
+
+R1F26.2 &
+Capitolato \newline
+UC26.2 
 \\
 \hline
 
