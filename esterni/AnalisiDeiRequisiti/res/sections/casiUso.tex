@@ -261,12 +261,6 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \subsubsection{ UC14 - Visualizzazione stanze e postazioni}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=15cm]{res/images/statipostazioni.png}
-	\caption{Stati postazioni}
-	\label{fig:stati postazioni}
-\end{figure}
-\begin{figure}[H]
-	\centering
 	\includegraphics[width=10cm]{res/images/UC14.png}
 	\caption{Visualizzazione stanze e postazioni}
 \end{figure}
@@ -274,7 +268,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Attori Primari:}
 	amministratore.
 	\item\textbf{Descrizione:}
-	il sistema mostra all'amministratore lo schema delle stanze e delle postazioni aggiornato alla situazione attuale.
+	il sistema mostra all'amministratore lo schema delle stanze e delle postazioni aggiornato alla situazione attuale. Per la dinamica degli stati si faccia riferimento alla figura 1 della sezione §2.1.1.
 	\item\textbf{Scenario principale:}
 	\begin{enumerate}
 		\item l'amministratore raggiunge la pagina di visione delle stanze e delle postazioni
@@ -288,9 +282,9 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 			\item[$-$] guasta e igienizzata;
 			\item[$-$] guasta e non igienizzata.
 		\end{itemize}
-		Gli stati di prenotata vanno intesi come prenotazioni attualmente attive, per le quali l'utente deve ancora arrivare.
-		Per ogni stanza è indicato il numero di occupanti attuali.
 	\end{enumerate}
+	Gli stati di prenotata vanno intesi come prenotazioni attualmente attive, per le quali l'utente deve ancora arrivare. \newline
+	Per ogni stanza è indicato il numero di occupanti attuali.
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
@@ -554,7 +548,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Scenario principale:} 
 	\begin{enumerate}
 		\item l'utente preme sul pulsante per la modifica di una postazione;
-		\item inserisce i nuovi dati. Solo se la postazione non è occupata, è possibile modificarne la posizione (UC26.1) e lo stato di guasta (UC26.2);
+		\item inserisce i nuovi dati. Solo se la postazione non è occupata è possibile modificarne la posizione (UC26.1) e lo stato di guasta (UC26.2);
 		\item conferma i nuovi dati premendo un pulsante;
 		\item i dati della postazione vengono modificati.
 	\end{enumerate}
