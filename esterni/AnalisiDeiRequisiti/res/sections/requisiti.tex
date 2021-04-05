@@ -77,7 +77,7 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R1F17 & Se l'amministratore tenta di assegnare a una stanza un nome già in utilizzo per un'altra stanza deve essergli impedito e deve essere avvisato dell'errore. & Interna - UC17 \\
 		\hline
-		R1F18&L'amministratore deve poter eliminare una stanza dal sistema.	& Capitolato - UC18	\\
+		R1F18&L'amministratore deve poter eliminare una stanza dal sistema. Le prenotazioni presenti e future riguardanti postazioni all'interno di quella stanza vengono disdette.	& Capitolato - UC18	\\
 		\hline
 		R1F19&L'amministratore deve poter modificare il nome di una stanza.	& Capitolato - UC19	\\
 		\hline
@@ -96,9 +96,18 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R1F24&Se si tenta di creare o modificare una postazione assegnandole una posizione già in utilizzo, l'azione deve fallire e deve comparire un messaggio d'errore.	&VE\_2020\_12\_18v.1.0.0 - UC24 	\\
 		\hline
-		R1F25&L'amministratore deve poter eliminare una postazione.	& Capitolato - UC25	\\
+		R1F25&L'amministratore deve poter eliminare una postazione. Le prenotazioni presenti e future riguardanti quella postazione vengono disdette.	& Capitolato - UC25	\\
 		\hline
-		R1F26&L'amministratore deve poter modificare i dati di un postazione e, se non è occupata, deve poterne modificare la posizione e deve poterla impostare come guasta, indicando un intervallo di giorni, o, se già guasta, deve poterla impostare come libera. Se viene impostata come guasta, le prenotazioni già effettuate su quella postazione in quel periodo devono essere disdette e non deve essere possibile effettuarne di nuove, sempre all'interno del periodo.	& Capitolato - UC26	\\
+		R1F26&L'amministratore deve poter modificare:
+		\begin{itemize}
+			\item codice della postazione;
+			\item codice del tag NFC che la identifica;
+		\end{itemize}
+			& Capitolato - UC26	\\
+		\hline
+		R1F26.1& L'amministratore deve poter modificare la posizione di una postazione non occupata all'interno della stanza. & Capitolato - UC26.1	\\
+		\hline
+		R1F26.2&L'amministratore deve poter modificare lo stato di guasta di una postazione non occupata. Se essa è guasta la deve poter impostare come libera e se essa è non guasta deve poterla impostare come guasta, indicando un intervallo di date durante il quale la postazione sarà in quello stato. Se viene impostata come guasta, le prenotazioni già effettuate su quella postazione in quel periodo devono essere disdette e non deve essere possibile effettuarne di nuove, sempre all'interno del periodo.	& Capitolato - UC26.2	\\
 		\hline
 		R1F27&L'amministratore deve poter visualizzare una lista delle credenziali di tutti gli utente del sistema.	& Capitolato - UC27	\\
 		\hline
