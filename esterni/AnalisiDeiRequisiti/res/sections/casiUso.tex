@@ -288,6 +288,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 			\item[$-$] guasta e igienizzata;
 			\item[$-$] guasta e non igienizzata.
 		\end{itemize}
+		Gli stati di prenotata vanno intesi come prenotazioni attualmente attive, per le quali l'utente deve ancora arrivare.
 		Per ogni stanza è indicato il numero di occupanti attuali.
 	\end{enumerate}
 	\item\textbf{Precondizione:} 
@@ -372,9 +373,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\begin{enumerate}
 		\item l'utente preme sul pulsante per l'eliminazione di una stanza;
 		\item la stanza viene eliminata dal sistema con tutte le postazioni al suo interno.
+		\item le prenotazioni presenti e future su postazioni all'interno della stanza vengono disdette
 	\end{enumerate}
 	\item\textbf{Precondizione:} 
-	l'utente è autenticato.
+	l'utente è autenticato e la stanza che si vuole eliminare non ha postazioni occupate.
 	\item\textbf{Postcondizione:}
 	è stata eliminata la stanza specificata, con tutte le postazioni al suo interno.
 \end{itemize}
@@ -419,9 +421,9 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item l'utente conferma il periodo;
 		\item l'inaccessibilità della stanza viene programmata per il periodo specificato.
 	\end{enumerate}
-	Quando una stanza è impostata come inaccessibile tutte le prenotazione esistenti per postazioni all'interno di quella stanza durante il periodo indicato vengono disdette. Inoltre sarà impossibile, all'interno del periodo, eseguire nuove prenotazioni.
+	Quando una stanza è impostata come inaccessibile tutte le prenotazioni esistenti per postazioni all'interno di quella stanza durante il periodo indicato vengono disdette. Inoltre sarà impossibile, all'interno del periodo, eseguire nuove prenotazioni.
 	\item\textbf{Precondizione:} 
-	l'utente è autenticato come amministratore e ha raggiunto l'area dedicata a questa azione.
+	l'utente è autenticato come amministratore, ha raggiunto l'area dedicata a questa azione e la stanza che si vuole impostare come inaccessibile non ha postazioni occupate.
 	\item\textbf{Postcondizione:}
 	l'inaccessibilità della stanza è stata programmata per le date specificate.
 \end{itemize}
@@ -429,7 +431,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \subsubsection{UC21 - Creazione di una postazione}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=18cm]{res/images/UC21-22-23-24-25-26.png}
+	\includegraphics[width=18cm]{res/images/UC21-22-23-25-26.png}
 	\caption{Creazione, modifica ed eliminazione di una postazione}
 \end{figure}
 \begin{itemize}
@@ -523,34 +525,39 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item l'utente raggiunge l'area di eliminazione delle postazioni;
 		\item l'utente preme un pulsante per l'eliminazione di una postazione;
 		\item la postazione viene eliminata.
+		\item le prenotazioni presenti e future sulla postazione vengono disdette
 	\end{enumerate}
 	\item\textbf{Precondizione:} 
-	l'utente è autenticato come amministratore.
+	l'utente è autenticato come amministratore e la postazione che si vuole eliminare non è occupata.
 	\item\textbf{Postcondizione:}
 	una postazione è stata eliminata.
 \end{itemize}
 
 \subsubsection{ UC26 - Modifica di una postazione}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=18cm]{res/images/UC26-24.png}
+	\caption{Modifica di una postazione}
+\end{figure}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
 	\item\textbf{Descrizione:}
-	
 	l'utente modifica gli attributi di una postazione.
 	Gli attributi di una postazione sono:
 	\begin{enumerate}
 		\item codice della postazione;
 		\item codice del tag NFC che identifica la postazione;
-		\item posizione della postazione su una scacchiera rappresentante la stanza.
+		\item posizione della postazione su una scacchiera rappresentante la stanza;
+		\item stato di guasta.
 	\end{enumerate}
 	\item\textbf{Scenario principale:} 
 	\begin{enumerate}
 		\item l'utente preme sul pulsante per la modifica di una postazione;
-		\item inserisce i nuovi dati. Se la postazione non è occupata, è possibile impostarla come guasta. Se essa è già impostata come guasta, è possibile impostarla come libera. Lo stato di igienizzazione della postazione rimane invariato. Per impostarla come guasta va indicato un periodo all'interno del quale avrà questo stato, inserendo una data di inizio e una di fine.
+		\item inserisce i nuovi dati. Se la postazione non è occupata, è possibile modificarne la posizione (UC26.1) e lo stato di guasta (UC26.2).
 		\item conferma i nuovi dati premendo un pulsante;
 		\item i dati della postazione vengono modificati.
 	\end{enumerate}
-	Una postazione non è prenotabile all'interno del periodo in cui è guasta. Inoltre, le prenotazioni già presenti che intersecano il periodo in cui è guasta, vengono disdette.
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
@@ -559,8 +566,44 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\begin{itemize}
 		\item[$-$] Avviso codice postazione già utilizzato (UC22);
 		\item[$-$] Avviso codice tag già utilizzato (UC23);
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{ UC26.1 - Modifica della posizione}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:}
+	l'utente modifica la posizione di una postazione.
+	\item\textbf{Scenario principale:} 
+	\begin{enumerate}
+		\item l'utente inserisce la nuova posizione.
+	\end{enumerate}
+	\item\textbf{Precondizione:} 
+	l'utente è autenticato come amministratore e la postazione non è occupata.
+	\item\textbf{Postcondizione:}
+	è stata modificata la posizione della postazione.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
 		\item[$-$] Avviso posizione già occupata (UC24).
 	\end{itemize}
+\end{itemize}
+
+\subsubsection{ UC26.2 - Impostazione dello stato di guasta}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:}
+	l'utente imposta una postazione una postazione come guasta o libera.
+	\item\textbf{Scenario principale:} 
+	\begin{enumerate}
+		\item l'utente imposta la postazione come guasta o libera, a seconda che il suo precedentemente fosse non guasta o guasta. Lo stato di igienizzazione della postazione rimane invariato. Per impostarla come guasta va indicato un periodo all'interno del quale avrà questo stato, inserendo una data di inizio e una di fine.
+	\end{enumerate}
+	Una postazione non è prenotabile all'interno del periodo in cui è guasta. Inoltre, le prenotazioni già presenti che intersecano il periodo in cui è guasta, vengono disdette.
+	\item\textbf{Precondizione:} 
+	l'utente è autenticato come amministratore e la postazione non è occupata.
+	\item\textbf{Postcondizione:}
+	la postazione è stata impostata come guasta o libera.
 \end{itemize}
 
 
