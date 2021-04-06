@@ -27,10 +27,40 @@ L’applicazione cellulare permette operazioni come:
 Le comunicazioni tra applicazione e server avvengono nel momento in cui lo smartphone viene a contatto con il tag NFC. Grazie al tag viene registrata la presenza di una persona in una determinata postazione, che viene segnalata come occupata e quindi da pulire. Il dipendente può inoltre pulire in autonomia la postazione, tramite il kit di pulizia e segnalare questa attività sull’applicazione in una sezione dedicata.
 L’addetto alle pulizie può segnalare la pulizia di una postazione per volta, oppure segnalare la pulizia dell’intera stanza igienizzando tutte le postazioni.
 
+\subsubsection{Stati delle postazioni}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/statipostazioni.png}
+	\caption{Stati postazioni}
+	\label{fig:stati postazioni}
+\end{figure}
+Lo schema sovrastante descrive come cambiano gli stati delle postazioni. \newline
+Stati possibili:
+\begin{itemize}
+	\item O: occupata;
+	\item LI: libera e igienizzata;
+	\item LN: libera e non igienizzata;
+	\item PI: prenotata e igienizzata;
+	\item PN: prenotata e non igienizzata;
+	\item GI: guasta e igienizzata;
+	\item GN: guasta e non igienizzata.
+\end{itemize}
+Possibili transizioni:
+\begin{itemize}
+	\item occupa: un dipendente occupa la postazione;
+	\item libera: un dipendente libera la postazione che stava occupando;
+	\item inizio prenot.: scatta il momento di inizio di una prenotazione sulla postazione;
+	\item fine prenot.: scatta il momento di fine di una prenotazione sulla postazione;
+	\item libera + inizio prenot.: un utente lascia la postazione che occupava e nello stesso istante una nuova prenotazione comincia;
+	\item igienizza: un addetto alle pulizie o un dipendente igienizza la postazione;
+	\item imposta guasta: l'amministratore imposta la postazione come guasta;
+	\item imposta non guasta: l'amministratore imposta la postazione come non guasta.
+\end{itemize}
+
 \subsection{Caratteristiche degli utenti}
 Le categorie di utenti individuate nel C1 sono tre:
 \begin{itemize}
-	\item amministratore di un azienda;
+	\item amministratore di un'azienda;
 	\item dipendente di un'azienda o studente di un'università;
     \item addetto alle pulizie.
 \end{itemize}

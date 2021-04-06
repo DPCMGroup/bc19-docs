@@ -58,7 +58,7 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R1F14.1&L'amministratore deve poter visualizzare le stanze e le postazioni salvate nel sistema, in modo schematico.& Capitolato - UC14	\\
 		\hline
-		R1F14.2&L'amministratore deve poter visualizzare le stanze e le postazioni salvate nel sistema colorate in base al loro stato attuale. Gli stati possibili sono:
+		R1F14.2&L'amministratore deve poter visualizzare le postazioni salvate nel sistema colorate in base al loro stato attuale. Gli stati possibili sono:
 		\begin{itemize}
 			\item libera e igienizzata;
 			\item libera e non igienizzata;
@@ -67,9 +67,12 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 			\item prenotata e non igienizzata;
 			\item guasta e igienizzata;
 			\item guasta e non igienizzata.
-		\end{itemize}& Capitolato - UC14	\\
+		\end{itemize}
+		& Capitolato - UC14	\\
 		\hline
-		R1F14.3&Per ogni stanza deve essere indicato il numero di occupanti attuali.	& Capitolato - UC14	\\
+		R1F14.3&Le stanze inaccessibili devono avere un'indicazione testuale che indica la data di inizio e fine del periodo di inaccessibilità. & Interna - UC14	\\
+		\hline
+		R1F14.4&Per ogni stanza deve essere indicato il numero di occupanti attuali.	& Capitolato - UC14	\\
 		\hline
 		R1F15&L'amministratore deve poter visualizzare un calendario delle prenotazioni delle postazioni.	& Capitolato - UC15	\\
 		\hline
@@ -77,18 +80,19 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R1F17 & Se l'amministratore tenta di assegnare a una stanza un nome già in utilizzo per un'altra stanza deve essergli impedito e deve essere avvisato dell'errore. & Interna - UC17 \\
 		\hline
-		R1F18&L'amministratore deve poter eliminare una stanza dal sistema.	& Capitolato - UC18	\\
+		R1F18&L'amministratore deve poter eliminare una stanza dal sistema. Le prenotazioni presenti e future riguardanti postazioni all'interno di quella stanza vengono disdette.	& Capitolato - UC18	\\
 		\hline
 		R1F19&L'amministratore deve poter modificare il nome di una stanza.	& Capitolato - UC19	\\
 		\hline
-		R1F20&L'amministratore deve poter impostare una stanza come inaccessibile per alcuni giorni, a partire anche da un giorno diverso da quello odierno.	& Capitolato - UC20	\\
+		R1F20&L'amministratore deve poter impostare una stanza come inaccessibile per alcuni giorni, a partire anche da un giorno diverso da quello odierno. Le prenotazioni già effettuate su postazioni di quella stanza nel periodo indicato devono essere disdette e non deve essere possibile effettuarne di nuove, sempre all'interno del periodo.& Capitolato - UC20	\\
 		\hline
 		R1F21&L'amministratore deve poter aggiungere una postazione in una stanza, specificando:
 		\begin{itemize}
 			\item codice della postazione;
 			\item codice del tag NFC che la identifica;
 			\item posizione all'interno di una stanza.
-		\end{itemize} & Capitolato - UC21	\\
+		\end{itemize}
+		La postazione viene creata con lo stato di libera e igienizzata.& Capitolato - UC21	\\
 		\hline
 		R1F22&	Se si tenta di creare o modificare una postazione assegnandole un codice della postazione già in utilizzo, l'azione deve fallire e deve comparire un messaggio d'errore.& VE\_2020\_12\_18v.1.0.0 - UC22 	\\
 		\hline
@@ -96,11 +100,20 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R1F24&Se si tenta di creare o modificare una postazione assegnandole una posizione già in utilizzo, l'azione deve fallire e deve comparire un messaggio d'errore.	&VE\_2020\_12\_18v.1.0.0 - UC24 	\\
 		\hline
-		R1F25&L'amministratore deve poter eliminare una postazione.	& Capitolato - UC25	\\
+		R1F25&L'amministratore deve poter eliminare una postazione. Le prenotazioni presenti e future riguardanti quella postazione vengono disdette.	& Capitolato - UC25	\\
 		\hline
-		R1F26&L'amministratore deve poter modificare i dati e la posizione di una postazione.	& Capitolato - UC26	\\
+		R1F26&L'amministratore deve poter modificare:
+		\begin{itemize}
+			\item codice della postazione;
+			\item codice del tag NFC che la identifica.
+		\end{itemize}
+			& Capitolato - UC26	\\
 		\hline
-		R1F27&L'amministratore deve poter visualizzare una lista delle credenziali di tutti gli utente del sistema.	& Capitolato - UC27	\\
+		R1F26.1& L'amministratore deve poter modificare la posizione di una postazione non occupata all'interno della stanza. & Capitolato - UC26.1	\\
+		\hline
+		R1F26.2&L'amministratore deve poter modificare lo stato di guasta di una postazione non occupata. Se essa è guasta la deve poter impostare come libera e se essa è non guasta deve poterla impostare come guasta, indicando un intervallo di date durante il quale la postazione sarà in quello stato. Se viene impostata come guasta, le prenotazioni già effettuate su quella postazione in quel periodo devono essere disdette e non deve essere possibile effettuarne di nuove, sempre all'interno del periodo.	& Capitolato - UC26.2	\\
+		\hline
+		R1F27&L'amministratore deve poter visualizzare una lista delle credenziali di tutti gli utenti del sistema.	& Capitolato - UC27	\\
 		\hline
 		R1F27.1&Il sistema deve poter memorizzare più credenziali per ogni categoria di utenti: amministratori, dipendenti e addetti.	& Capitolato - VE\_2021\_01\_01v.1.0.0	\\
 		\hline
@@ -195,7 +208,7 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		R1F66&Gli utenti che hanno prenotato una postazione devono essere avvisati se la postazione stessa o la stanza in cui si trovano diventa non disponibile.	& VE\_2020\_12\_18v.1.0.0 - UC66	\\
 		\hline
 		
-		R1F67&	L'addetto alle pulizie riceve l'elenco delle stanze che necessitano di igienizzazione.& 	Capitolato - UC67\\
+		R1F67&L'addetto alle pulizie riceve l'elenco delle stanze che necessitano di igienizzazione.& 	Capitolato - UC67\\
 		\hline
 		R1F68&L'addetto alle pulizie riceve l'elenco delle postazioni che necessitano di igienizzazione.	& Interna - UC68	\\
 		\hline
@@ -236,11 +249,11 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline	
 		R1Q2 &Deve essere prodotto un manuale sviluppatore. & Capitolato\\
 		\hline
-		R1Q3 &Le componenti applicative devono essere correlate da test unitari e d’integrazione. & Capitolato\\
+		R1Q3& Deve essere prodotto un manuale utente.	& Capitolato	\\
 		\hline
-		R1Q4 &Il sistema deve essere testato nella sua interezza tramite test end-to-end. & Capitolato\\
+		R1Q4 &Le componenti applicative devono essere correlate da test unitari e d’integrazione. & Capitolato\\
 		\hline
-		R1Q5 &La copertura dei test deve essere maggiore o uguale all'ottanta per cento e correlata di report. & Capitolato\\
+		R1Q5 &Il sistema deve essere testato nella sua interezza tramite test end-to-end. & Capitolato\\
 		\hline
 		R1Q6 &Devono essere riportati dei report sui test effettuati relativamente all’ottimizzazione dell’applicazione rispetto al consumo della batteria dei cellulari. & Capitolato\\
 		\hline
@@ -257,8 +270,7 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R1Q12&L’utilizzo del lettore NFC riduce in modo rilevante l’autonomia dei cellulari, l’applicazione è da sviluppare in maniera tale da bilanciare nel miglior modo possibile batteria e scansioni. È richiesto un resoconto delle scelte fatte e dei test effettuati per garantire il miglior rapporto raggiunto.	& Capitolato	\\
 		\hline
-		R1Q13& Deve essere prodotto un manuale utente.	& Capitolato	\\
-		\hline
+		
 		%fine requisiti qualita%
 		
 	\end{longtable}
@@ -328,7 +340,7 @@ R1F5 \newline
 R1F14 \newline
 R1F14.1 \newline
 R1F14.2 \newline
-R1F14.3 \newline
+R1F14.4 \newline
 R1F15 \newline
 R1F16 \newline
 R1F18 \newline
@@ -337,6 +349,8 @@ R1F20 \newline
 R1F21 \newline
 R1F25 \newline
 R1F26 \newline
+R1F26.1 \newline
+R1F26.2 \newline
 R1F27 \newline
 R1F27.1 \newline
 R1F28 \newline
@@ -355,8 +369,10 @@ R1F40 \newline
 R1F41 \newline
 R1F42.1 \newline
 R1F48 \newline
-R1F54 \newline
-R1F56 \newline
+R1F54
+\\
+\hline
+Capitolato &R1F56 \newline
 R1F57 \newline
 R2F58 \newline
 R1F59 \newline
@@ -370,10 +386,8 @@ R1F72 \newline
 R1F73 \newline
 R1F74 \newline
 R1Q2 \newline
-R1Q3
-\\
-\hline
-Capitolato &R1Q4 \newline
+R1Q3 \newline
+R1Q4 \newline
 R1Q5 \newline
 R1Q6 \newline
 R2Q7 \newline
@@ -382,7 +396,6 @@ R1Q9 \newline
 R1Q10 \newline
 R1Q11 \newline
 R1Q12 \newline
-R1Q13 \newline
 R1V1 \newline
 R2V2 \newline
 R1V3 
@@ -400,6 +413,7 @@ R1F10 \newline
 R1F11 \newline
 R1F12 \newline
 R1F13 \newline
+R1F14.3 \newline
 R1F17 \newline
 R1F42 \newline
 R1F42.2 \newline
@@ -508,7 +522,8 @@ UC14 &
 R1F14 \newline
 R1F14.1 \newline
 R1F14.2 \newline
-R1F14.3 
+R1F14.3 \newline
+R1F14.4 
 \\
 \hline
 UC15 &
@@ -557,6 +572,14 @@ R1F25
 \hline
 UC26 &
 R1F26 
+\\
+\hline
+UC26.1 &
+R1F26.1 
+\\
+\hline
+UC26.2 &
+R1F26.2 
 \\
 \hline
 UC27 &
@@ -882,6 +905,12 @@ UC14
 \hline
 
 R1F14.3 &
+Interna \newline
+UC14 
+\\
+\hline
+
+R1F14.4 &
 Capitolato \newline
 UC14 
 \\
@@ -956,6 +985,18 @@ UC25
 R1F26 &
 Capitolato \newline
 UC26 
+\\
+\hline
+
+R1F26.1 &
+Capitolato \newline
+UC26.1 
+\\
+\hline
+
+R1F26.2 &
+Capitolato \newline
+UC26.2 
 \\
 \hline
 
@@ -1360,11 +1401,6 @@ VE\_2020\_12\_18v.1.0.0
 \hline
 
 R1Q12 &
-Capitolato 
-\\
-\hline
-
-R1Q13 &
 Capitolato 
 \\
 \hline
