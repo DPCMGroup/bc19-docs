@@ -518,6 +518,11 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \end{itemize}
 
 \subsubsection{UC21.3 - Inserimento posizione della postazione}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=18cm]{res/images/UC21.3.png}
+	\caption{Inserimento posizione di una postazione}
+\end{figure}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -531,19 +536,56 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	è stata inserita la posizione della postazione all'interno della stanza.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] Avviso posizione già occupata (UC24).
+		\item[$-$] Avviso posizione non valida (UC24).
 	\end{itemize}
 \end{itemize}
-\subsubsection{UC24 - Avviso posizione già occupata}
+
+\subsubsection{ UC21.3.1 - Inserimento x}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
 	\item\textbf{Descrizione:}
-	l'utente tenta di assegnare una posizione a una postazione già occupata.
+	l'utente inserisce l'ascissa della posizione di una postazione.
+	\item\textbf{Scenario principale:} 
+	l'utente inserisce l'ascissa della posizione.
+	\item\textbf{Precondizione:} 
+	l'utente è autenticato come amministratore e la postazione non è occupata.
+	\item\textbf{Postcondizione:}
+	è stata inserita l'ascissa della posizione della postazione.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] Avviso posizione non valida (UC24).
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{ UC21.3.2 - Inserimento y}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:}
+	l'utente inserisce l'ordinata della posizione di una postazione.
+	\item\textbf{Scenario principale:} 
+	l'utente inserisce l'ordinata della posizione.
+	\item\textbf{Precondizione:} 
+	l'utente è autenticato come amministratore e la postazione non è occupata.
+	\item\textbf{Postcondizione:}
+	è stata inserita l'ordinata della posizione della postazione.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] Avviso posizione non valida (UC24).
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{UC24 - Avviso posizione non valida}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:}
+	l'utente tenta di assegnare ad una postazione una posizione già occupata oppure che supera i limiti della stanza.
 	\item\textbf{Scenario principale:}
 	\begin{enumerate}
-		\item l'utente sta assegnando una posizione a una postazione, ma la posizione è già occupata;
-		\item la postazione non viene creata e alla vista dell'utente compare un avviso che indica che la posizione è occupata.
+		\item l'utente sta assegnando una posizione a una postazione, ma la posizione non è valida;
+		\item la postazione non viene creata e alla vista dell'utente compare un avviso che indica che la posizione non è valida.
 	\end{enumerate}
 	\item\textbf{Precondizione:}
 	l'utente sta assegnando la posizione a una postazione.
@@ -638,20 +680,61 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \end{itemize}
 
 \subsubsection{ UC26.3 - Modifica posizione}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=18cm]{res/images/UC26.3.png}
+	\caption{Modifica posizione di una postazione}
+\end{figure}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
 	\item\textbf{Descrizione:}
 	l'utente modifica la posizione di una postazione.
 	\item\textbf{Scenario principale:} 
-	l'utente inserisce la nuova posizione.
+	l'utente modifica la posizione, specificando valore di ascissa (UC26.3.1) e di ordinata (UC26.3.2).
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore e la postazione non è occupata.
 	\item\textbf{Postcondizione:}
 	è stata modificata la posizione della postazione.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] Avviso posizione già occupata (UC24).
+		\item[$-$] Avviso posizione non valida (UC24).
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{ UC26.3.1 - Modifica x}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:}
+	l'utente modifica l'ascissa della posizione di una postazione.
+	\item\textbf{Scenario principale:} 
+	l'utente modifica l'ascissa della posizione.
+	\item\textbf{Precondizione:} 
+	l'utente è autenticato come amministratore e la postazione non è occupata.
+	\item\textbf{Postcondizione:}
+	è stata modificata l'ascissa della posizione della postazione.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] Avviso posizione non valida (UC24).
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{ UC26.3.2 - Modifica y}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:}
+	l'utente modifica l'ordinata della posizione di una postazione.
+	\item\textbf{Scenario principale:} 
+	l'utente modifica l'ordinata della posizione.
+	\item\textbf{Precondizione:} 
+	l'utente è autenticato come amministratore e la postazione non è occupata.
+	\item\textbf{Postcondizione:}
+	è stata modificata l'ordinata della posizione della postazione.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] Avviso posizione non valida (UC24).
 	\end{itemize}
 \end{itemize}
 
