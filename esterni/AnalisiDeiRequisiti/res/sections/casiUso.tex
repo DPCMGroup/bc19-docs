@@ -421,6 +421,11 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \end{itemize}
 
 \subsubsection{UC21 - Creazione di una postazione}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=18cm]{res/images/UC21.png}
+	\caption{Creazione di una postazione}
+\end{figure}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -431,9 +436,9 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item l'amministratore preme un pulsante per aggiungere una nuova postazione;
 		\item l'amministratore fornisce le seguenti informazioni:
 		\begin{itemize}
-			\item[$-$] codice della postazione;
-			\item[$-$] codice del tag NFC che identifica la postazione;
-			\item[$-$] posizione della postazione su una scacchiera rappresentante la stanza.
+			\item[$-$] codice della postazione (UC21.1);
+			\item[$-$] codice del tag NFC che identifica la postazione (UC21.2);
+			\item[$-$] posizione della postazione su una scacchiera rappresentante la stanza (UC21.3).
 		\end{itemize}
 		\item l'amministratore preme un bottone per la conferma dei dati;
 		\item la postazione viene aggiunta all'interno della stanza e le viene assegnato lo stato di libera e igienizzata.
@@ -442,14 +447,25 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente è autenticato.
 	\item\textbf{Postcondizione:}
 	è stata inserita una nuova postazione all'interno di una stanza.
+\end{itemize}
+
+\subsubsection{UC21.1 - Inserimento codice della postazione}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:}
+	l'amministratore inserisce il codice identificativo da assegnare alla postazione.
+	\item\textbf{Scenario principale:} 
+	l'amministratore inserisce il codice identificativo da assegnare alla postazione.
+	\item\textbf{Precondizione:} 
+	l'utente è autenticato.
+	\item\textbf{Postcondizione:}
+	è stato inserito il codice da assegnare alla postazione.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
 		\item[$-$] Avviso codice postazione già utilizzato (UC22);
-		\item[$-$] Avviso codice tag già utilizzato (UC23);
-		\item[$-$] Avviso posizione già occupata (UC24).
 	\end{itemize}
 \end{itemize}
-
 \subsubsection{UC22 - Avviso codice postazione già utilizzato}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
@@ -467,6 +483,23 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza il messaggio d'errore.
 \end{itemize}
 
+\subsubsection{UC21.2 - Inserimento codice tag NFC}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:}
+	l'amministratore inserisce il codice del tag NFC da assegnare alla postazione.
+	\item\textbf{Scenario principale:} 
+	l'amministratore inserisce il codice del tag NFC da assegnare alla postazione.
+	\item\textbf{Precondizione:} 
+	l'utente è autenticato.
+	\item\textbf{Postcondizione:}
+	è stato inserito il codice del tag NFC da assegnare alla postazione.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] Avviso codice tag già utilizzato (UC23);
+	\end{itemize}
+\end{itemize}
 \subsubsection{UC23 - Avviso codice tag già utilizzato}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
@@ -484,6 +517,23 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza il messaggio d'errore.
 \end{itemize}
 
+\subsubsection{UC21.3 - Inserimento posizione della postazione}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:}
+	l'amministratore inserisce la posizione della postazione all'interno della stanza.
+	\item\textbf{Scenario principale:} 
+	l'amministratore inserisce la posizione della postazione all'interno della stanza.
+	\item\textbf{Precondizione:} 
+	l'utente è autenticato.
+	\item\textbf{Postcondizione:}
+	è stata inserita la posizione della postazione all'interno della stanza.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] Avviso posizione già occupata (UC24).
+	\end{itemize}
+\end{itemize}
 \subsubsection{UC24 - Avviso posizione già occupata}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
