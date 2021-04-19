@@ -104,6 +104,38 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item[$-$] Visualizzazione schermata relativa a utente non abilitato (UC7).
 	\end{itemize}
 \end{itemize}
+\subsubsection{ UC5.1 - Inserimento nome utente}
+\begin{itemize}
+	\item\textbf{Attori Primari:} utente non autenticato.
+	\item\textbf{Descrizione:} l’utente tenta di autenticarsi all'applicativo, inserendo il nome utente.
+	\item\textbf{Scenario principale:} l’utente non è ancora autenticato ed inserisce il suo nome utente.
+	\item\textbf{Precondizione:} l’utente non si è autenticato nell'applicativo. 
+	\item\textbf{Postcondizione:} l’utente ha inserito il suo nome utente nella form di login.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] Visualizzazione messaggio di errore (UC6);
+		\item[$-$] Visualizzazione schermata relativa a utente non abilitato (UC7).
+	\end{itemize}
+\end{itemize}
+\subsubsection{ UC5 - Login applicazione mobile}
+\begin{itemize}
+	\item\textbf{Attori Primari:} utente non autenticato.
+	\item\textbf{Descrizione:} l’utente tenta di autenticarsi all'applicativo.
+	\item\textbf{Scenario principale:} l’utente non è ancora autenticato ed esegue il login inserendo nell'interfaccia dell'applicazione mobile le seguenti credenziali:
+	\begin{itemize}
+		\item[$-$] nome utente;
+		\item[$-$] password.
+	\end{itemize}
+	\item\textbf{Precondizione:} l’utente non si è autenticato nell'applicativo. 
+	\item\textbf{Postcondizione:} l’utente si è autenticato con successo ed è stato identificato dal sistema
+	nel ruolo di amministratore, dipendente o addetto alle pulizie. A seconda della tipologia di utente vengono rese
+	disponibili diverse funzionalità.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] Visualizzazione messaggio di errore (UC6);
+		\item[$-$] Visualizzazione schermata relativa a utente non abilitato (UC7).
+	\end{itemize}
+\end{itemize}
 
 \subsubsection{ UC6 - Visualizzazione messaggio di errore}
 \begin{itemize}
@@ -263,6 +295,11 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \end{itemize}
 
 \subsubsection{ UC16 - Creazione di una stanza}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=18cm]{res/images/UC16Nuovo.png}
+	\caption{Creazione di una stanza}
+\end{figure}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -285,7 +322,36 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item[$-$] Avviso nome stanza già utilizzato (UC17).
 	\end{itemize}
 \end{itemize}
-
+\subsubsection{ UC16.1 - Inserimento nome della stanza}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:} 
+	l'utente inserisce il nome della stanza.
+	\item\textbf{Scenario principale:} 
+	l'utente inserisce il nome della stanza per procedere con la sua creazione.
+	\item\textbf{Precondizione:} 
+	l'utente non ha ancora inserito il nome della stanza.
+	\item\textbf{Postcondizione:}
+	l'utente ha inserito il nome della stanza.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] Avviso nome stanza già utilizzato (UC17).
+	\end{itemize}
+\end{itemize}
+\subsubsection{ UC16.2 - Inserimento dimensioni della stanza}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:} 
+	l'utente inserisce le dimensioni della stanza.
+	\item\textbf{Scenario principale:} 
+	l'utente inserisce le dimensioni della stanza per procedere con la sua creazione.
+	\item\textbf{Precondizione:} 
+	l'utente non ha ancora inserito le dimensioni della stanza.
+	\item\textbf{Postcondizione:}
+	l'utente ha ancora inserito le dimensioni della stanza.
+\end{itemize}
 \subsubsection{ UC17 - Avviso nome stanza già utilizzato}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
