@@ -463,7 +463,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	è stato inserito il codice da assegnare alla postazione.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] Avviso codice postazione già utilizzato (UC22);
+		\item[$-$] Avviso codice postazione già utilizzato (UC22).
 	\end{itemize}
 \end{itemize}
 \subsubsection{UC22 - Avviso codice postazione già utilizzato}
@@ -497,7 +497,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	è stato inserito il codice del tag NFC da assegnare alla postazione.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] Avviso codice tag già utilizzato (UC23);
+		\item[$-$] Avviso codice tag già utilizzato (UC23).
 	\end{itemize}
 \end{itemize}
 \subsubsection{UC23 - Avviso codice tag già utilizzato}
@@ -573,7 +573,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \subsubsection{ UC26 - Modifica di una postazione}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=18cm]{res/images/UC26-24.png}
+	\includegraphics[width=18cm]{res/images/UC26.png}
 	\caption{Modifica di una postazione}
 \end{figure}
 \begin{itemize}
@@ -599,14 +599,45 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
 	sono stati aggiornati gli attributi della postazione selezionata.
+\end{itemize}
+
+\subsubsection{ UC26.1 - Modifica codice postazione}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:}
+	l'utente modifica il codice identificativo della postazione.
+	\item\textbf{Scenario principale:} 
+	l'utente modifica il codice identificativo della postazione.
+	\item\textbf{Precondizione:} 
+	l'utente è autenticato come amministratore.
+	\item\textbf{Postcondizione:}
+	è stato modificato il codice della postazione.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] Avviso codice postazione già utilizzato (UC22);
+		\item[$-$] Avviso codice postazione già utilizzato (UC22).
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{ UC26.2 - Modifica codice tag NFC}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:}
+	l'utente modifica il codice del tag NFC che identifica la postazione.
+	\item\textbf{Scenario principale:} 
+	l'utente modifica il codice del tag NFC che identifica la postazione.
+	\item\textbf{Precondizione:} 
+	l'utente è autenticato come amministratore.
+	\item\textbf{Postcondizione:}
+	è stato modificato il codice del tag che identifica la postazione.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
 		\item[$-$] Avviso codice tag già utilizzato (UC23).
 	\end{itemize}
 \end{itemize}
 
-\subsubsection{ UC26.1 - Modifica della posizione}
+\subsubsection{ UC26.3 - Modifica posizione}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -624,7 +655,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\end{itemize}
 \end{itemize}
 
-\subsubsection{ UC26.2 - Impostazione dello stato di guasta}
+\subsubsection{ UC26.4 - Impostazione stato di guasta}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
