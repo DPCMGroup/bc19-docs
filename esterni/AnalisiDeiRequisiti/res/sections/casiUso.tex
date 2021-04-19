@@ -279,16 +279,12 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item compaiono i campi: "Nome della stanza" e "Dimensione della stanza" da compilare;
 		\item l'utente compila i campi;
 		\item l'utente preme un pulsante per confermare la creazione della stanza;
-		\item se non è già presente una stanza con il codice inserito, essa viene creata.
+		\item se non è già presente una stanza con il nome inserito, essa viene creata.
 	\end{enumerate}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
 	è stata aggiunta una stanza vuota con le caratteristiche specificate.
-	\item\textbf{Estensioni:}
-	\begin{itemize}
-		\item[$-$] Avviso nome stanza già utilizzato (UC17).
-	\end{itemize}
 \end{itemize}
 \subsubsection{ UC16.1 - Inserimento nome della stanza}
 \begin{itemize}
@@ -633,7 +629,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Scenario principale:} 
 	\begin{enumerate}
 		\item l'utente preme sul pulsante per la modifica di una postazione;
-		\item inserisce i nuovi dati. Solo se la postazione non è occupata è possibile modificarne la posizione (UC26.1) e lo stato di guasta (UC26.2);
+		\item inserisce i nuovi dati. Solo se la postazione non è occupata è possibile modificarne la posizione (UC26.3) e lo stato di guasta (UC26.4);
 		\item conferma i nuovi dati premendo un pulsante;
 		\item i dati della postazione vengono modificati.
 	\end{enumerate}
