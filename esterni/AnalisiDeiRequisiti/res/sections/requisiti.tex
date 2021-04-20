@@ -76,7 +76,11 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R1F15&L'amministratore deve poter visualizzare un calendario delle prenotazioni delle postazioni.	& Capitolato - UC15	\\
 		\hline
-		R1F16&L'amministratore deve poter aggiungere una stanza al sistema e assegnarle un nome.	& Capitolato - UC16	\\
+		R1F16&L'amministratore deve poter aggiungere una stanza al sistema.	& Capitolato - UC16	\\
+		\hline
+		R1F16.1&L'amministratore deve poter specificare il nome della nuova stanza.	& Capitolato - UC16.1	\\
+		\hline
+		R1F16.2&L'amministratore deve poter specificare la dimesione della nuova stanza.	& Capitolato - UC16.2	\\
 		\hline
 		R1F17 & Se l'amministratore tenta di assegnare a una stanza un nome già in utilizzo per un'altra stanza deve essergli impedito e deve essere avvisato dell'errore. & Interna - UC17 \\
 		\hline
@@ -86,13 +90,18 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R1F20&L'amministratore deve poter impostare una stanza come inaccessibile per alcuni giorni, a partire anche da un giorno diverso da quello odierno. Le prenotazioni già effettuate su postazioni di quella stanza nel periodo indicato devono essere disdette e non deve essere possibile effettuarne di nuove, sempre all'interno del periodo.& Capitolato - UC20	\\
 		\hline
-		R1F21&L'amministratore deve poter aggiungere una postazione in una stanza, specificando:
-		\begin{itemize}
-			\item codice della postazione;
-			\item codice del tag NFC che la identifica;
-			\item posizione all'interno di una stanza.
-		\end{itemize}
+		R1F21&L'amministratore deve poter aggiungere una postazione in una stanza.
 		La postazione viene creata con lo stato di libera e igienizzata.& Capitolato - UC21	\\
+		\hline
+		R1F21.1&L'amministratore deve poter specificare il codice identificativo della nuova postazione. & Capitolato - UC21.1
+		\hline
+		R1F21.2&L'amministratore deve poter specificare il codice del tag NFC associato alla nuova postazione. & Capitolato - UC21.2
+		\hline
+		R1F21.3&L'amministratore deve poter specificare la posizione della nuova postazione all'interno della stanza. & Capitolato - UC21.3
+		\hline
+		R1F21.3.1&L'amministratore deve poter specificare l'ascissa della posizione della nuova postazione all'interno della stanza. & Capitolato - UC21.3.1
+		\hline
+		R1F21.3.2&L'amministratore deve poter specificare l'ordinata della posizione della nuova postazione all'interno della stanza. & Capitolato - UC21.3.2
 		\hline
 		R1F22&	Se si tenta di creare o modificare una postazione assegnandole un codice della postazione già in utilizzo, l'azione deve fallire e deve comparire un messaggio d'errore.& VE\_2020\_12\_18v.1.0.0 - UC22 	\\
 		\hline
@@ -102,16 +111,19 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R1F25&L'amministratore deve poter eliminare una postazione. Le prenotazioni presenti e future riguardanti quella postazione vengono disdette.	& Capitolato - UC25	\\
 		\hline
-		R1F26&L'amministratore deve poter modificare:
-		\begin{itemize}
-			\item codice della postazione;
-			\item codice del tag NFC che la identifica.
-		\end{itemize}
-			& Capitolato - UC26	\\
+		R1F26&L'amministratore deve poter modificare i dati di una postazione.& Capitolato - UC26	\\
 		\hline
-		R1F26.1& L'amministratore deve poter modificare la posizione di una postazione non occupata all'interno della stanza. & Capitolato - UC26.1	\\
+		R1F26.1& L'amministratore deve poter modificare il codice identificativo della posizione. & Capitolato - UC26.1	\\
 		\hline
-		R1F26.2&L'amministratore deve poter modificare lo stato di guasta di una postazione non occupata. Se essa è guasta la deve poter impostare come libera e se essa è non guasta deve poterla impostare come guasta, indicando un intervallo di date durante il quale la postazione sarà in quello stato. Se viene impostata come guasta, le prenotazioni già effettuate su quella postazione in quel periodo devono essere disdette e non deve essere possibile effettuarne di nuove, sempre all'interno del periodo.	& Capitolato - UC26.2	\\
+		R1F26.2& L'amministratore deve poter modificare il codice del tag NFC associato  alla posizione. & Capitolato - UC26.2	\\
+		\hline
+		R1F26.3& L'amministratore deve poter modificare la posizione della postazione. & Capitolato - UC26.3	\\
+		\hline
+		R1F26.3.1& L'amministratore deve poter modificare l'ascissa della posizione della postazione. & Capitolato - UC26.3	\\
+		\hline
+		R1F26.3.2& L'amministratore deve poter modificare l'ordinata della posizione della postazione. & Capitolato - UC26.3	\\
+		\hline
+		R1F26.4&L'amministratore deve poter modificare lo stato di guasta di una postazione non occupata. Se essa è guasta la deve poter impostare come libera e se essa è non guasta deve poterla impostare come guasta, indicando un intervallo di date durante il quale la postazione sarà in quello stato. Se viene impostata come guasta, le prenotazioni già effettuate su quella postazione in quel periodo devono essere disdette e non deve essere possibile effettuarne di nuove, sempre all'interno del periodo.	& Capitolato - UC26.4	\\
 		\hline
 		R1F27&L'amministratore deve poter visualizzare una lista delle credenziali di tutti gli utenti del sistema.	& Capitolato - UC27	\\
 		\hline
@@ -185,11 +197,11 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R1F55&Il dipendente visualizza un messaggio di errore se non ci sono postazioni prenotabili.	&Interna - UC55	\\
 		\hline
-		R1F56&Il dipendente deve poter visualizzare l'identificativo della prima postazione igienizzata e libera in una stanza.	&Capitolato - UC56	\\
+		R1F56&Il dipendente deve poter vedere selezionata ed evidenziata una postazione libera e igienizzata, secondo i criteri della ricerca, tramite la pressione del bottone apposito.	&Capitolato - UC56	\\
 		\hline
-		R1F57&Il dipendente deve poter visualizzare l'identificativo di una postazione igienizzata e libera in una stanza scelta con criterio random.	&Capitolato - UC57	\\
+		R1F57&Il dipendente deve poter vedere selezionata ed evidenziata una postazione libera e igienizzata, secondo i criteri della ricerca, tramite la pressione del bottone apposito. La scelta automatica della postazione deve essere casuale. &Capitolato - UC57	\\
 		\hline
-		R2F58&Il dipendente deve poter visualizzare l'identificativo di una postazione igienizzata e libera in una stanza scelta con criterio di massima distanza dalle altre postazioni occupate.	&Capitolato - UC58	\\
+		R2F58&Il dipendente deve poter vedere selezionata ed evidenziata una postazione libera e igienizzata, secondo i criteri della ricerca, tramite la pressione del bottone apposito. La postazione scelta automaticamente deve essere tra quelle con maggiore distanza dalle postazioni occupate nel momento specificato dalla ricerca.	&Capitolato - UC58	\\
 		\hline
 		R1F59&Il dipendente deve poter prenotare una postazione selezionata.	&Capitolato - UC59	\\
 		\hline
