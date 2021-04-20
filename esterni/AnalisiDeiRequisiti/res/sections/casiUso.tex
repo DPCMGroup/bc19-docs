@@ -1301,23 +1301,19 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item[$-$] il sistema elabora la richiesta;
 		\item[$-$] viene visualizzato un messaggio di errore che consiglia di selezionare un'altra fascia oraria o stanza.
 	\end{itemize}
-	\item\textbf{Precondizione:} l’utente ha compilato i campi data, orario, stanza oppure ha selezionato la sezione prima postazione disponibile (UC56).
+	\item\textbf{Precondizione:} l’utente ha compilato i campi data, orario, stanza oppure ha selezionato la sezione selezione automatica postazione (UC56).
 	\item\textbf{Postcondizione:} l’utente visualizza un messaggio di errore specifico e non viene portata a termine l'azione.
 \end{itemize}
 
 \subsubsection{ UC56 - Selezione automatica postazione libera e igienizzata}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=18cm]{res/images/UC55-56-57-58.png}
-	\caption{Prima postazione libera}
-	\label{fig:Prima postazione libera}
-\end{figure}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} una postazione igienizzata e libera all'interno della stanza viene selezionata ed evidenziata	in modo automatico.
+	\item\textbf{Descrizione:} una postazione libera e igienizzata all'interno della stanza viene selezionata ed evidenziata	in modo automatico.
 	\item\textbf{Scenario principale:}
-	1. l'utente preme il pulsante apposito;
-	2. viene automaticamente selezionata ed evidenziata una postazione igienizzata e libera all'interno della stanza.
+	\begin{enumerate}
+		\item l'utente preme il pulsante apposito;
+		\item viene automaticamente selezionata ed evidenziata una postazione libera e igienizzata all'interno della stanza.
+	\end{enumerate}
 	\item\textbf{Precondizione:} l’utente sta visualizzando lo schema delle postazioni (UC54) ottenuto tramite una ricerca (UC49).
 	\item\textbf{Postcondizione:} viene selezionata ed evidenziata una postazione in modo automatico.
 \end{itemize}
@@ -1326,8 +1322,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} una postazione libera e igienizzata scelta casualmente all'interno della stanza viene selezionata ed evidenziata in modo automatico.
 	\item\textbf{Scenario principale:}
-	1. l'utente preme il pulsante apposito;
-	2. viene automaticamente selezionata ed evidenziata una postazione libera e igienizzata scelta in modo casuale.
+	\begin{enumerate}
+		\item l'utente preme il pulsante apposito;
+		\item viene automaticamente selezionata ed evidenziata una postazione libera e igienizzata scelta in modo casuale.
+	\end{enumerate}
 	\item\textbf{Precondizione:} l’utente sta visualizzando lo schema delle postazioni (UC54) ottenuto tramite una ricerca (UC49).
 	\item\textbf{Postcondizione:} viene selezionata ed evidenziata una postazione in modo automatico.
 	\item\textbf{Generalizzazione:}
@@ -1342,10 +1340,12 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \subsubsection{ UC58 - Selezione postazione libera e igienizzata con maggiore distanza dalle altre}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} una postazione igienizzata e libera con maggiore distanza dalle postazioni occupate o prenotate nel momento specificato all'interno della stanza viene selezionata ed evidenziata in modo automatico.
+	\item\textbf{Descrizione:} una postazione libera e igienizzata con maggiore distanza dalle postazioni occupate o prenotate nel momento specificato all'interno della stanza viene selezionata ed evidenziata in modo automatico.
 	\item\textbf{Scenario principale:}
-	1. l'utente preme il pulsante apposito;
-	2. viene automaticamente selezionata ed evidenziata una postazione libera e igienizzata con maggiore distanza dalle postazioni occupate o prenotate nel momento specificato.
+	\begin{enumerate}
+		\item l'utente preme il pulsante apposito;
+		\item viene automaticamente selezionata ed evidenziata una postazione libera e igienizzata con maggiore distanza dalle postazioni occupate o prenotate nel momento specificato.
+	\end{enumerate}
 	\item\textbf{Precondizione:} l’utente sta visualizzando lo schema delle postazioni (UC54) ottenuto tramite una ricerca (UC49).
 	\item\textbf{Postcondizione:} viene selezionata ed evidenziata una postazione in modo automatico.
 	\item\textbf{Generalizzazione:}
