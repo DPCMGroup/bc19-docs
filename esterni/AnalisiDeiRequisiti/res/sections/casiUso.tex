@@ -1095,20 +1095,34 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Attori Secondari:} tag NFC.
-	\item\textbf{Descrizione:} l’utente segnala in tempo reale la propria occupazione della postazione, appoggiando lo smartphone sul tag NFC. Inoltre, registra il tempo di inizio e di fine di questa azione. Il primo è determinato da un timeout di un minuto in cui si lascia lo smartphone appoggiato sul tagNFC, mentre il secondo dal tempo di fine occupazione.
+	\item\textbf{Descrizione:} l’utente segnala in tempo reale la propria occupazione della postazione, appoggiando lo smartphone sul tag NFC. Inoltre, registra il tempo di inizio di questa azione.
 	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tag NFC e segnala in questo modo la propria occupazione.
-	Il tempo di inizio e di fine di questa azione vengono memorizzati.
+	Il tempo di inizio di questa azione viene memorizzato.
 	\item\textbf{Precondizione:} l’utente si è autenticato nell'applicazione mobile e occupa una postazione.
 	\item\textbf{Postcondizione:} l’utente segnala in tempo reale l'occupazione della postazione.
 \end{itemize}
 
-\subsubsection{ UC42.1 - Segnalazione presenza in tempo reale}
+\subsubsection{ UC42.1 - Registrazione inizio occupazione}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Attori Secondari:} tag NFC.
+	\item\textbf{Descrizione:} l’utente registra l'inizio della propria occupazione della postazione.
+	\item\textbf{Scenario principale:} dopo un minuto da quando il telefono è appoggiato sul tag, viene automaticamente registrato l'inizio dell'occupazione di quella postazione da parte dell'utente. La fine dell'occupazione verrà registrata quando il dipendente lascerà la postazione, se ciò dovesse succedere prima della fine della sua prenotazione (UC43), o quando il tempo della prenotazione sarà decorso.
+	\item\textbf{Precondizione:} l’utente occupa una postazione e appoggia correttamente lo smartphone sul tag NFC. 
+	\item\textbf{Postcondizione:} l'inizio dell'occupazione viene registrato.
+	\item\textbf{Estensioni:} 
+	\begin{itemize}
+		\item[$-$] visualizzazione errore postazione non igienizzata: se la postazione non è pulita viene segnalato all'utente di igienizzarla (UC45).
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{ UC42.2 - Segnalazione presenza in tempo reale}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Attori Secondari:} tag NFC.
 	\item\textbf{Descrizione:} l’utente segnala in tempo reale l'occupazione alla postazione, appoggiando lo smartphone sul tag NFC.
 	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tag NFC e segnala in questo modo la propria occupazione in tempo reale.
-	\item\textbf{Precondizione:} l’utente occupa una postazione e ha attivato nel proprio smartphone la possibilità di effettuare scansioni con tag NFC.
+	\item\textbf{Precondizione:} l’utente occupa una postazione e ha attivato nel proprio smartphone la possibilità di effettuare scansioni con tag NFC. Inoltre è stato già registrato l'inizio della sua occupazione (UC42.1).
 	\item\textbf{Postcondizione:} l’utente segnala in tempo reale l'occupazione alla postazione.
 	\item\textbf{Estensioni:} 
 	\begin{itemize}
@@ -1116,27 +1130,13 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\end{itemize}
 \end{itemize}
 
-\subsubsection{ UC42.2 - Registrazione presenza}
-\begin{itemize}
-	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Attori Secondari:} tag NFC.
-	\item\textbf{Descrizione:} l’utente registra l'inizio e la fine della propria occupazione della postazione.
-	\item\textbf{Scenario principale:} l'utente registra il tempo di inizio e di fine dell'occupazione di una postazione in modo automatico. Il primo è determinato da un timeout di un minuto in cui si lascia lo smartphone appoggiato sul tag NFC, mentre il secondo dal tempo di fine occupazione.
-	\item\textbf{Precondizione:} l’utente occupa una postazione e appoggia correttamente lo smartphone sul tag NFC. 
-	\item\textbf{Postcondizione:} l'azione della precondizione viene registrata.
-	\item\textbf{Estensioni:} 
-	\begin{itemize}
-		\item[$-$] visualizzazione errore postazione non igienizzata: se la postazione non è pulita viene segnalato all'utente di igienizzarla (UC45).
-	\end{itemize}
-\end{itemize}
-
 \subsubsection{ UC43 - Visualizzazione errore fine prematura occupazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente visualizza un messaggio in quanto sposta lo smartphone dal tag NFC, durante l'orario di prenotazione della postazione.
-	\item\textbf{Scenario principale:} viene visualizzato un messaggio e avviene la disdetta automatica della prenotazione per il tempo restante.
+	\item\textbf{Scenario principale:} viene visualizzato un messaggio e avvengono la disdetta automatica della prenotazione per il tempo restante, e la conseguente registrazione della fine dell'occupazione.
 	\item\textbf{Precondizione:} l’utente sposta il proprio smartphone dal tag NFC per un periodo di tempo maggiore o uguale a trenta minuti.
-	\item\textbf{Postcondizione:} viene visualizzato un messaggio specifico e avviene la disdetta automatica della prenotazione per il tempo rimanente.
+	\item\textbf{Postcondizione:} viene visualizzato un messaggio specifico e avvengono la disdetta automatica della prenotazione per il tempo rimanente e la registrazione della fine dell'occupazione.
 \end{itemize}
 
 \subsubsection{ UC44 - Visualizzazione errore utente assente }
@@ -1349,7 +1349,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Precondizione:} l’utente sta visualizzando lo schema delle postazioni (UC54) ottenuto tramite una ricerca (UC49).
 	\item\textbf{Postcondizione:} viene selezionata ed evidenziata una postazione in modo automatico.
 \end{itemize}
-\subsubsection{ UC57 - Selezione postazione libera e igienizzata random}
+\subsubsection{ UC57 - Selezione automatica postazione libera e igienizzata random}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} una postazione libera e igienizzata scelta casualmente all'interno della stanza viene selezionata ed evidenziata in modo automatico.
@@ -1369,7 +1369,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item[$-$] tutte le postazioni nella stanza selezionata sono occupate o guaste (UC55).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC58 - Selezione postazione libera e igienizzata con maggiore distanza dalle altre}
+\subsubsection{ UC58 - Selezione automatica postazione libera e igienizzata con maggiore distanza dalle altre}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} una postazione libera e igienizzata con maggiore distanza dalle postazioni occupate o prenotate nel momento specificato all'interno della stanza viene selezionata ed evidenziata in modo automatico.
@@ -1416,8 +1416,8 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Attori Secondari:} tag NFC.
-	\item\textbf{Descrizione:} l’utente dopo aver scansionato con il proprio smartphone il tag NFC per un tempo maggiore o uguale ad un minuto, prenota in modo automatico la postazione per l'intera giornata lavorativa. 
-	\item\textbf{Scenario principale:} l’utente dopo aver scansionato con il proprio smartphone il tag NFC per un tempo maggiore o uguale ad un minuto, prenota in modo automatico la postazione per l'intera giornata lavorativa. Lo stato della postazione deve essere libera e igienizzata, e non prenotata durante il resto della giornata.
+	\item\textbf{Descrizione:} l’utente, dopo aver scansionato con il proprio smartphone il tag NFC per un tempo maggiore o uguale ad un minuto, prenota in modo automatico la postazione per l'intera giornata lavorativa. 
+	\item\textbf{Scenario principale:} l’utente, dopo aver scansionato con il proprio smartphone il tag NFC per un tempo maggiore o uguale ad un minuto, prenota in modo automatico la postazione per l'intera giornata lavorativa. Lo stato della postazione deve essere libera e igienizzata, e non prenotata durante il resto della giornata.
 	\item\textbf{Precondizione:} l'utente lascia il telefono appoggiato al tag NFC di una postazione libera, più di un minuto.
 	\item\textbf{Postcondizione:} l'utente prenota in modo automatico la postazione e inizia l'occupazione.
 	\item\textbf{Estensioni:}
