@@ -1110,6 +1110,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tag NFC e segnala in questo modo la propria occupazione in tempo reale.
 	\item\textbf{Precondizione:} l’utente occupa una postazione e ha attivato nel proprio smartphone la possibilità di effettuare scansioni con tag NFC.
 	\item\textbf{Postcondizione:} l’utente segnala in tempo reale l'occupazione alla postazione.
+	\item\textbf{Estensioni:} 
+	\begin{itemize}
+		\item[$-$] visualizzazione errore fine prematura occupazione: se l'utente alza lo smartphone dal tag NFC e abbandona la postazione in modo prematuro rispetto al tempo di fine prenotazione, dopo mezz'ora viene visualizzato un messaggio di errore e avviene la disdetta automatica della prenotazione per il tempo rimanente (UC43);
+	\end{itemize}
 \end{itemize}
 
 \subsubsection{ UC42.2 - Registrazione presenza}
@@ -1122,10 +1126,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l'azione della precondizione viene registrata.
 	\item\textbf{Estensioni:} 
 	\begin{itemize}
-		\item[$-$] visualizzazione errore fine prematura occupazione: se l'utente alza lo smartphone dal tag NFC e abbandona la postazione in modo prematuro rispetto al tempo di fine prenotazione, dopo mezz'ora viene visualizzato un messaggio di errore e avviene la disdetta automatica della prenotazione per il tempo rimanente (UC43);
-	\end{itemize}
-	\begin{itemize}
-	\item[$-$] visualizzazione errore postazione non igienizzata: se la postazione non è pulita viene segnalato all'utente di igienizzarla (UC45).
+		\item[$-$] visualizzazione errore postazione non igienizzata: se la postazione non è pulita viene segnalato all'utente di igienizzarla (UC45).
 	\end{itemize}
 \end{itemize}
 
@@ -1220,7 +1221,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item[$-$] l’utente inserisce una data non valida (UC50).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC50 - Visualizzazione errore: data non valida  }
+\subsubsection{ UC50 - Visualizzazione errore data non valida  }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente ha compilato un campo per la data, ma è in un formato non corretto.
@@ -1245,7 +1246,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item[$-$] l’utente inserisce un orario non valido (UC51).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC51 - Visualizzazione errore: orario non valido }
+\subsubsection{ UC51 - Visualizzazione errore orario non valido }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente ha compilato un campo per l'orario, ma è in un formato non corretto.
@@ -1270,7 +1271,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item[$-$] l’utente inserisce una stanza non valida (UC52).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC52 - Visualizzazione errore: stanza non valida }
+\subsubsection{ UC52 - Visualizzazione errore stanza non valida }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente ha compilato un campo per l'identificativo della stanza, ma è in un formato non corretto.
@@ -1296,7 +1297,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item[$-$] l’utente inserisce un nome non valido (UC53).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC53 - Visualizzazione errore: nome dipendente non valido }
+\subsubsection{ UC53 - Visualizzazione errore nome dipendente non valido }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente ha compilato un campo per il nome e il cognome del dipendente a cui si vuole sedere vicino, ma è in un formato non corretto.
