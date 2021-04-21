@@ -272,7 +272,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Attori Primari:}
 	amministratore.
 	\item\textbf{Descrizione:} 
-	l'utente aggiunge una stanza al sistema.
+	l'utente aggiunge una stanza al sistema. Le stanze del sistema sono sempre rettangolari e ne vanno quindi specificate due dimensioni, chiamate dimensione x e y.
 	\item\textbf{Scenario principale:} 
 	\begin{enumerate}
 		\item l'utente autenticato preme un pulsante per creare una nuova stanza;
@@ -306,14 +306,14 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \subsubsection{ UC16.2 - Inserimento dimensioni della stanza}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=18cm]{res/images/UC16.2.png}
+	\includegraphics[width=12cm]{res/images/UC16.2.png}
 	\caption{Inserimento dimensioni della stanza}
 \end{figure}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
 	\item\textbf{Descrizione:} 
-	l'utente inserisce le dimensioni della stanza.
+	l'utente inserisce le dimensioni della stanza. Le dimensioni sono chiamate x e y.
 	\item\textbf{Scenario principale:} 
 	l'utente inserisce le dimensioni della stanza per procedere con la sua creazione.
 	\item\textbf{Precondizione:} 
@@ -326,26 +326,26 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Attori Primari:}
 	amministratore.
 	\item\textbf{Descrizione:} 
-	l'utente inserisce la prima dimensione della stanza.
+	l'utente inserisce la dimensione x della stanza.
 	\item\textbf{Scenario principale:} 
-	l'utente inserisce la prima dimensione della stanza.
+	l'utente inserisce la dimensione x della stanza.
 	\item\textbf{Precondizione:} 
-	l'utente non ha ancora inserito la prima dimensione della stanza.
+	l'utente non ha ancora inserito la dimensione x della stanza.
 	\item\textbf{Postcondizione:}
-	l'utente ha inserito la prima dimensione della stanza.
+	l'utente ha inserito la dimensione x della stanza.
 \end{itemize}
 \subsubsection{ UC16.2.2 - Inserimento dimensione y della stanza}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
 	\item\textbf{Descrizione:} 
-	l'utente inserisce la seconda dimensione della stanza.
+	l'utente inserisce la dimensione y della stanza.
 	\item\textbf{Scenario principale:} 
-	l'utente inserisce la seconda dimensione della stanza.
+	l'utente inserisce la dimensione y della stanza.
 	\item\textbf{Precondizione:} 
-	l'utente non ha ancora inserito la seconda dimensione della stanza.
+	l'utente non ha ancora inserito la dimensione y della stanza.
 	\item\textbf{Postcondizione:}
-	l'utente ha inserito la seconda dimensione della stanza.
+	l'utente ha inserito la dimensione y della stanza.
 \end{itemize}
 \subsubsection{ UC17 - Avviso nome stanza già utilizzato}
 \begin{itemize}
@@ -450,7 +450,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \subsubsection{UC21 - Creazione di una postazione}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=18cm]{res/images/UC21.png}
+	\includegraphics[width=15cm]{res/images/UC21.png}
 	\caption{Creazione di una postazione}
 \end{figure}
 \begin{itemize}
@@ -547,14 +547,14 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \subsubsection{UC21.3 - Inserimento posizione della postazione}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=18cm]{res/images/UC21.3.png}
+	\includegraphics[width=12cm]{res/images/UC21.3.png}
 	\caption{Inserimento posizione di una postazione}
 \end{figure}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
 	\item\textbf{Descrizione:}
-	l'amministratore inserisce la posizione della postazione all'interno della stanza.
+	l'amministratore inserisce la posizione della postazione all'interno della stanza. Con posizione si intendono le coordinate x e y all'interno della stanza, intesa come scacchiera.
 	\item\textbf{Scenario principale:} 
 	l'amministratore inserisce la posizione della postazione all'interno della stanza.
 	\item\textbf{Precondizione:} 
@@ -572,13 +572,13 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Attori Primari:}
 	amministratore.
 	\item\textbf{Descrizione:}
-	l'utente inserisce l'ascissa della posizione di una postazione.
+	l'utente inserisce la coordinata x della posizione della postazione.
 	\item\textbf{Scenario principale:} 
-	l'utente inserisce l'ascissa della posizione.
+	l'utente inserisce la coordinata x della posizione della postazione.
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore e la postazione non è occupata.
 	\item\textbf{Postcondizione:}
-	è stata inserita l'ascissa della posizione della postazione.
+	è stata inserita la coordinata x della posizione della postazione.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
 		\item[$-$] Avviso posizione non valida (UC24).
@@ -590,13 +590,13 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Attori Primari:}
 	amministratore.
 	\item\textbf{Descrizione:}
-	l'utente inserisce l'ordinata della posizione di una postazione.
+	l'utente inserisce la coordinata y della posizione della postazione.
 	\item\textbf{Scenario principale:} 
-	l'utente inserisce l'ordinata della posizione.
+	l'utente inserisce la coordinata y della posizione della postazione.
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore e la postazione non è occupata.
 	\item\textbf{Postcondizione:}
-	è stata inserita l'ordinata della posizione della postazione.
+	è stata inserita la coordinata y della posizione della postazione.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
 		\item[$-$] Avviso posizione non valida (UC24).
@@ -642,7 +642,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \subsubsection{ UC26 - Modifica di una postazione}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=18cm]{res/images/UC26.png}
+	\includegraphics[width=15cm]{res/images/UC26.png}
 	\caption{Modifica di una postazione}
 \end{figure}
 \begin{itemize}
@@ -709,14 +709,14 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \subsubsection{ UC26.3 - Modifica posizione}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=18cm]{res/images/UC26.3.png}
+	\includegraphics[width=12cm]{res/images/UC26.3.png}
 	\caption{Modifica posizione di una postazione}
 \end{figure}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
 	\item\textbf{Descrizione:}
-	l'utente modifica la posizione di una postazione.
+	l'utente modifica la posizione di una postazione. La posizione è definita dalle coordinate x e y all'interno della stanza intesa come scacchiera.
 	\item\textbf{Scenario principale:} 
 	l'utente modifica la posizione, specificando valore di ascissa (UC26.3.1) e di ordinata (UC26.3.2).
 	\item\textbf{Precondizione:} 
@@ -734,13 +734,13 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Attori Primari:}
 	amministratore.
 	\item\textbf{Descrizione:}
-	l'utente modifica l'ascissa della posizione di una postazione.
+	l'utente modifica la coordinata x della posizione della postazione.
 	\item\textbf{Scenario principale:} 
-	l'utente modifica l'ascissa della posizione.
+	l'utente modifica la coordinata x della posizione della postazione.
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore e la postazione non è occupata.
 	\item\textbf{Postcondizione:}
-	è stata modificata l'ascissa della posizione della postazione.
+	è stata modificata la coordinata x della posizione della postazione.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
 		\item[$-$] Avviso posizione non valida (UC24).
@@ -752,13 +752,13 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Attori Primari:}
 	amministratore.
 	\item\textbf{Descrizione:}
-	l'utente modifica l'ordinata della posizione di una postazione.
+	l'utente modifica la coordinata y della posizione della postazione.
 	\item\textbf{Scenario principale:} 
-	l'utente modifica l'ordinata della posizione.
+	l'utente modifica la coordinata y della posizione della postazione.
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore e la postazione non è occupata.
 	\item\textbf{Postcondizione:}
-	è stata modificata l'ordinata della posizione della postazione.
+	è stata modificata la coordinata y della posizione della postazione.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
 		\item[$-$] Avviso posizione non valida (UC24).
