@@ -76,7 +76,15 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R1F15&L'amministratore deve poter visualizzare un calendario delle prenotazioni delle postazioni.	& Capitolato - UC15	\\
 		\hline
-		R1F16&L'amministratore deve poter aggiungere una stanza al sistema e assegnarle un nome.	& Capitolato - UC16	\\
+		R1F16&L'amministratore deve poter aggiungere una stanza al sistema.	& Capitolato - UC16	\\
+		\hline
+		R1F16.1&L'amministratore deve poter specificare il nome della nuova stanza.	& Capitolato - UC16.1	\\
+		\hline
+		R1F16.2&L'amministratore deve poter specificare le dimensioni x e y della nuova stanza.	& Capitolato - UC16.2	\\
+		\hline
+		R1F16.2.1&L'amministratore deve poter specificare la dimensione x della nuova stanza.	& Capitolato - UC16.2.1	\\
+		\hline
+		R1F16.2.2&L'amministratore deve poter specificare la dimensione y della nuova stanza.	& Capitolato - UC16.2.2	\\
 		\hline
 		R1F17 & Se l'amministratore tenta di assegnare a una stanza un nome già in utilizzo per un'altra stanza deve essergli impedito e deve essere avvisato dell'errore. & Interna - UC17 \\
 		\hline
@@ -86,32 +94,40 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R1F20&L'amministratore deve poter impostare una stanza come inaccessibile per alcuni giorni, a partire anche da un giorno diverso da quello odierno. Le prenotazioni già effettuate su postazioni di quella stanza nel periodo indicato devono essere disdette e non deve essere possibile effettuarne di nuove, sempre all'interno del periodo.& Capitolato - UC20	\\
 		\hline
-		R1F21&L'amministratore deve poter aggiungere una postazione in una stanza, specificando:
-		\begin{itemize}
-			\item codice della postazione;
-			\item codice del tag NFC che la identifica;
-			\item posizione all'interno di una stanza.
-		\end{itemize}
+		R1F21&L'amministratore deve poter aggiungere una postazione in una stanza.
 		La postazione viene creata con lo stato di libera e igienizzata.& Capitolato - UC21	\\
+		\hline
+		R1F21.1&L'amministratore deve poter specificare il codice identificativo della nuova postazione. & Capitolato - UC21.1 \\
+		\hline
+		R1F21.2&L'amministratore deve poter specificare il codice del tag NFC associato alla nuova postazione. & Capitolato - UC21.2 \\
+		\hline
+		R1F21.3&L'amministratore deve poter specificare la posizione, definita dalle coordinate x e y, della nuova postazione all'interno della stanza. & Capitolato - UC21.3 \\
+		\hline
+		R1F21.3.1&L'amministratore deve poter specificare la coordinata x della posizione della nuova postazione all'interno della stanza. & Capitolato - UC21.3.1 \\
+		\hline
+		R1F21.3.2&L'amministratore deve poter specificare la coordinata y della posizione della nuova postazione all'interno della stanza. & Capitolato - UC21.3.2 \\
 		\hline
 		R1F22&	Se si tenta di creare o modificare una postazione assegnandole un codice della postazione già in utilizzo, l'azione deve fallire e deve comparire un messaggio d'errore.& VE\_2020\_12\_18v.1.0.0 - UC22 	\\
 		\hline
 		R1F23&Se si tenta di creare o modificare una postazione assegnandole un codice del tag già in utilizzo, l'azione deve fallire e deve comparire un messaggio d'errore.	&VE\_2020\_12\_18v.1.0.0 - UC23 	\\
 		\hline
-		R1F24&Se si tenta di creare o modificare una postazione assegnandole una posizione già in utilizzo, l'azione deve fallire e deve comparire un messaggio d'errore.	&VE\_2020\_12\_18v.1.0.0 - UC24 	\\
+		R1F24&Se si tenta di creare o modificare una postazione assegnandole una posizione già in utilizzo, oppure che supera le dimensioni della stanza, l'azione deve fallire e deve comparire un messaggio d'errore.	&VE\_2020\_12\_18v.1.0.0 - UC24 	\\
 		\hline
 		R1F25&L'amministratore deve poter eliminare una postazione. Le prenotazioni presenti e future riguardanti quella postazione vengono disdette.	& Capitolato - UC25	\\
 		\hline
-		R1F26&L'amministratore deve poter modificare:
-		\begin{itemize}
-			\item codice della postazione;
-			\item codice del tag NFC che la identifica.
-		\end{itemize}
-			& Capitolato - UC26	\\
+		R1F26&L'amministratore deve poter modificare i dati di una postazione.& Capitolato - UC26	\\
 		\hline
-		R1F26.1& L'amministratore deve poter modificare la posizione di una postazione non occupata all'interno della stanza. & Capitolato - UC26.1	\\
+		R1F26.1& L'amministratore deve poter modificare il codice identificativo della posizione. & Capitolato - UC26.1	\\
 		\hline
-		R1F26.2&L'amministratore deve poter modificare lo stato di guasta di una postazione non occupata. Se essa è guasta la deve poter impostare come libera e se essa è non guasta deve poterla impostare come guasta, indicando un intervallo di date durante il quale la postazione sarà in quello stato. Se viene impostata come guasta, le prenotazioni già effettuate su quella postazione in quel periodo devono essere disdette e non deve essere possibile effettuarne di nuove, sempre all'interno del periodo.	& Capitolato - UC26.2	\\
+		R1F26.2& L'amministratore deve poter modificare il codice del tag NFC associato  alla posizione. & Capitolato - UC26.2	\\
+		\hline
+		R1F26.3& L'amministratore deve poter modificare la posizione, definita dalle coordinate x e y, della postazione.  & Capitolato - UC26.3	\\
+		\hline
+		R1F26.3.1& L'amministratore deve poter modificare la coordinata x della posizione della postazione. & Capitolato - UC26.3	\\
+		\hline
+		R1F26.3.2& L'amministratore deve poter modificare la coordinata y della posizione della postazione. & Capitolato - UC26.3	\\
+		\hline
+		R1F26.4&L'amministratore deve poter impostare la postazione come guasta o libera. Se essa è guasta la deve poter impostare come libera e se essa è non guasta e non occupata deve poterla impostare come guasta, indicando un intervallo di date durante il quale la postazione sarà in quello stato. Se viene impostata come guasta, le prenotazioni già effettuate su quella postazione in quel periodo devono essere disdette e non deve essere possibile effettuarne di nuove, sempre all'interno del periodo.	& Capitolato - UC26.4	\\
 		\hline
 		R1F27&L'amministratore deve poter visualizzare una lista delle credenziali di tutti gli utenti del sistema.	& Capitolato - UC27	\\
 		\hline
@@ -147,11 +163,11 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R1F42 & Il dipendente deve poter segnalare la propria presenza su una postazione in tempo reale. & Interna - UC42 \\
 		\hline
-		R1F42.1&Il dipendente deve poter segnalare la propria presenza su una postazione in tempo reale, tramite tag NFC.	&Capitolato - UC42.1 	\\
+		R1F42.1&Il dipendente deve poter registrare il momento di inizio della sua occupazione di una postazione.&Capitolato - UC42.1 	\\
 		\hline
-		R1F42.2&Il dipendente deve poter registrare i momenti di inizio e di fine della sua occupazione di una postazione.	&Interna - UC42.2 	\\
+		R1F42.2&Il dipendente deve poter segnalare la propria presenza su una postazione in tempo reale, tramite tag NFC.&Interna - UC42.2 	\\
 		\hline
-		R1F43&Se l'utente sposta il proprio smartphone dal tag NFC per un periodo di tempo maggiore o uguale a trenta minuti avviene la disdetta automatica della prenotazione per il tempo restante.	&Interna - UC43 	\\
+		R1F43&Se l'utente sposta il proprio smartphone dal tag NFC per un periodo di tempo maggiore o uguale a trenta minuti avviene la disdetta automatica della prenotazione per il tempo restante e viene registrata la fine dell'occupazione.	&Interna - UC43 	\\
 		\hline
 		R1F44&L’utente viene avvisato della disdetta automatica di una sua prenotazione se dopo 30 minuti dal suo inizio non ha ancora appoggiato il telefono sul tag.	&Interna - UC44 	\\
 		\hline
@@ -185,11 +201,11 @@ I verbali esterni che costituiscono fonte di requisiti sono stati approvati da L
 		\hline
 		R1F55&Il dipendente visualizza un messaggio di errore se non ci sono postazioni prenotabili.	&Interna - UC55	\\
 		\hline
-		R1F56&Il dipendente deve poter visualizzare l'identificativo della prima postazione igienizzata e libera in una stanza.	&Capitolato - UC56	\\
+		R1F56&Il dipendente deve poter vedere selezionata ed evidenziata una postazione libera e igienizzata, secondo i criteri della ricerca, tramite la pressione del bottone apposito.	&Capitolato - UC56	\\
 		\hline
-		R1F57&Il dipendente deve poter visualizzare l'identificativo di una postazione igienizzata e libera in una stanza scelta con criterio random.	&Capitolato - UC57	\\
+		R1F57&Il dipendente deve poter vedere selezionata ed evidenziata una postazione libera e igienizzata, secondo i criteri della ricerca, tramite la pressione del bottone apposito. La scelta automatica della postazione deve essere casuale. &Capitolato - UC57	\\
 		\hline
-		R2F58&Il dipendente deve poter visualizzare l'identificativo di una postazione igienizzata e libera in una stanza scelta con criterio di massima distanza dalle altre postazioni occupate.	&Capitolato - UC58	\\
+		R2F58&Il dipendente deve poter vedere selezionata ed evidenziata una postazione libera e igienizzata, secondo i criteri della ricerca, tramite la pressione del bottone apposito. La postazione scelta automaticamente deve essere tra quelle con maggiore distanza dalle postazioni occupate nel momento specificato dalla ricerca.	&Capitolato - UC58	\\
 		\hline
 		R1F59&Il dipendente deve poter prenotare una postazione selezionata.	&Capitolato - UC59	\\
 		\hline
@@ -338,19 +354,34 @@ Capitolato &
 R1F2 \newline
 R1F5 \newline
 R1F14 \newline
-R1F14.1 \newline
-R1F14.2 \newline
+R1F14.1
+\\
+\hline
+Capitolato &R1F14.2 \newline
 R1F14.4 \newline
 R1F15 \newline
 R1F16 \newline
+R1F16.1 \newline
+R1F16.2 \newline
+R1F16.2.1 \newline
+R1F16.2.2 \newline
 R1F18 \newline
 R1F19 \newline
 R1F20 \newline
 R1F21 \newline
+R1F21.1 \newline
+R1F21.2 \newline
+R1F21.3 \newline
+R1F21.3.1 \newline
+R1F21.3.2 \newline
 R1F25 \newline
 R1F26 \newline
 R1F26.1 \newline
 R1F26.2 \newline
+R1F26.3 \newline
+R1F26.3.1 \newline
+R1F26.3.2 \newline
+R1F26.4 \newline
 R1F27 \newline
 R1F27.1 \newline
 R1F28 \newline
@@ -369,14 +400,14 @@ R1F40 \newline
 R1F41 \newline
 R1F42.1 \newline
 R1F48 \newline
-R1F54
-\\
-\hline
-Capitolato &R1F56 \newline
+R1F54 \newline
+R1F56 \newline
 R1F57 \newline
 R2F58 \newline
-R1F59 \newline
-R1F60 \newline
+R1F59
+\\
+\hline
+Capitolato &R1F60 \newline
 R1F64 \newline
 R1F65 \newline
 R1F67 \newline
@@ -534,6 +565,22 @@ UC16 &
 R1F16 
 \\
 \hline
+UC16.1 &
+R1F16.1 
+\\
+\hline
+UC16.2 &
+R1F16.2 
+\\
+\hline
+UC16.2.1 &
+R1F16.2.1 
+\\
+\hline
+UC16.2.2 &
+R1F16.2.2 
+\\
+\hline
 UC17 &
 R1F17 
 \\
@@ -552,6 +599,26 @@ R1F20
 \hline
 UC21 &
 R1F21 
+\\
+\hline
+UC21.1 &
+R1F21.1 
+\\
+\hline
+UC21.2 &
+R1F21.2 
+\\
+\hline
+UC21.3 &
+R1F21.3 
+\\
+\hline
+UC21.3.1 &
+R1F21.3.1 
+\\
+\hline
+UC21.3.2 &
+R1F21.3.2 
 \\
 \hline
 UC22 &
@@ -580,6 +647,16 @@ R1F26.1
 \hline
 UC26.2 &
 R1F26.2 
+\\
+\hline
+UC26.3 &
+R1F26.3 \newline
+R1F26.3.1 \newline
+R1F26.3.2 
+\\
+\hline
+UC26.4 &
+R1F26.4 
 \\
 \hline
 UC27 &
@@ -928,6 +1005,30 @@ UC16
 \\
 \hline
 
+R1F16.1 &
+Capitolato \newline
+UC16.1 
+\\
+\hline
+
+R1F16.2 &
+Capitolato \newline
+UC16.2 
+\\
+\hline
+
+R1F16.2.1 &
+Capitolato \newline
+UC16.2.1 
+\\
+\hline
+
+R1F16.2.2 &
+Capitolato \newline
+UC16.2.2 
+\\
+\hline
+
 R1F17 &
 Interna \newline
 UC17 
@@ -955,6 +1056,36 @@ UC20
 R1F21 &
 Capitolato \newline
 UC21 
+\\
+\hline
+
+R1F21.1 &
+Capitolato \newline
+UC21.1 
+\\
+\hline
+
+R1F21.2 &
+Capitolato \newline
+UC21.2 
+\\
+\hline
+
+R1F21.3 &
+Capitolato \newline
+UC21.3 
+\\
+\hline
+
+R1F21.3.1 &
+Capitolato \newline
+UC21.3.1 
+\\
+\hline
+
+R1F21.3.2 &
+Capitolato \newline
+UC21.3.2 
 \\
 \hline
 
@@ -997,6 +1128,30 @@ UC26.1
 R1F26.2 &
 Capitolato \newline
 UC26.2 
+\\
+\hline
+
+R1F26.3 &
+Capitolato \newline
+UC26.3 
+\\
+\hline
+
+R1F26.3.1 &
+Capitolato \newline
+UC26.3 
+\\
+\hline
+
+R1F26.3.2 &
+Capitolato \newline
+UC26.3 
+\\
+\hline
+
+R1F26.4 &
+Capitolato \newline
+UC26.4 
 \\
 \hline
 
