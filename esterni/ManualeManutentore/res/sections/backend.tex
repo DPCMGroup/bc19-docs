@@ -6,13 +6,13 @@ Questa parte del prodotto è orientata all'uso da parte di tutto il software che
 Il backend permette in BlockCovid, all'app utenti e alla web-app, di fornire ad utenti e amministratori gli strumenti necessari per il funzionamento. Essendo il backend sviluppato in maniera separata ed indipendente dall'applicazione mobile e la web-app, la modalità in cui è implementato non è rilevante per gli sviluppatori \textit{bc19-andorid} e \textit{bc19-webapp}.
 \\
 \\
-Le funzionalità offerte dal backend sono quelle indicate nella sezione \textbf{§5 REST API} del Manuale. Per avere ulteriori informazioni si invita quindi a visitare la sezione indicata.
+Le funzionalità offerte dal backend sono quelle indicate nella sezione \textbf{§X REST API} del Manuale. Per avere ulteriori informazioni si invita quindi a visitare la sezione indicata.
 
 
 \subsection{Requisiti e installazione}
 Per poter sviluppare ed aggiungere funzionalità al backend del sistema BlocKCovid, sono necessari gli strumenti indicati in questa sezione.
 
-\subsubsection{prerequisiti hardware e software}
+\subsubsection{Prerequisiti hardware e software}
 È consigliato l'utilizzo di un server con risorse sufficienti per il funzionamento del backend. Questo dipende molto dalla mole di utenti e, per non incorrere in problemi in fase di sviluppo, è consigliato avere risorse hardware equivalenti ad un processore quad-core e 8 GB di RAM.
 \\\\
 Il sistema operativo di riferimento per lo sviluppo è Ubuntu 18.04 LTS e Ubuntu 20.04 LTS.
@@ -28,7 +28,7 @@ Il backend è stato sviluppato utilizzando il linguaggio di programmazione pytho
 Per l'installazione di python è sufficiente scaricare ed installare il pacchetto, rispettivo al proprio sistema operativo, dal \href{https://www.python.org/downloads/}{sito ufficiale}.
 
 \subparagraph{Installazione dependency}
-Il backend è strutturato secondo quanto messo a disposizione dal framework Django oltre ad utilizzare molte altre librerie. Il loro utilizzo è definito nel file \textbf{requirements.txt} ed è il file in cui vengono definiti i pacchetti necessari per il funzionamento del servizio.\\
+Il backend è strutturato secondo quanto messo a disposizione dal framework Django oltre ad utilizzare molte altre librerie. I pacchetti utilizzati sono definiti nel file \textbf{requirements.txt} e sono necessari per il corretto funzionamento del servizio.\\
 Per installare i pacchetti è necessario posizionarsi con il terminale allo stesso livello del file requirements.txt. Successivamente è sufficiente eseguire il seguente comando: \textit{pip install -r requirements.txt}
 
 \paragraph{YAML}
@@ -38,4 +38,19 @@ Il backend usufruisce dei workflow messi a disposizione da GitHub, chiamati GitH
 Per poter effettuare il versionamento del codice sorgente è richiesto l'utilizzo di \textbf{Git}. Se non si dispone di Git è possibile scaricarlo ed installarlo seguendo le istruzioni del \href{https://git-scm.com/downloads}{sito ufficiale}.
 
 \subsubsection{Database}
-Il backend per il suo corretto funzionamento ha bisogno di interfacciarsi ad un database. Per la sua configurazione fare riferimento alla sezione \textbf{§ x}
+Il backend per il suo corretto funzionamento ha bisogno di interfacciarsi ad un database. Per la sua configurazione fare riferimento alla sezione \textbf{§ x}.
+Nel caso in cui si volesse cambiare il database a cui Django si interfaccia, è necessario cambiare le impostazioni del file \textit{settings.py} nella sezione \textit{DATABASE}. È consigliato seguire le istruzioni del \href{https://docs.djangoproject.com/en/3.2/ref/databases/}{sito ufficiale} di Django.
+\\
+\\
+Django è configurato per l'utilizzo di un database MariaDb e necessita del file my.cnf dove all'interno sono definite le credenziali e l'endpoint di accesso. Il file deve essere allo stesso livello di \textit{manage.py}.
+
+\subsubsection{Docker container}
+Docker viene utilizzato per l'esecuzione del sevizio in produzione.
+\paragraph{Installazione di Docker su Windows}
+È possibile installare Docker su Windows visitando il suo sito ufficiale, alla \href{https://hub.docker.com/editions/community/docker-ce-desktop-windows}{seguente pagina}. La guida all'installazione e al primo utilizzo è presente nello stesso link in cui si scarica l'eseguibile per l'installazione.
+\paragraph{Installazione di Docker su MacOS}
+L'installazione per MacOS è identica a quella per Windows, ma la pagina a cui scaricarlo si trova a \href{https://hub.docker.com/editions/community/docker-ce-desktop-mac}{questo link}.
+\paragraph{Installazione Docker Linux}
+È possibile installare Docker su Ubuntu seguendo le guide presenti sul sito ufficiale, disponibili a \href{https://docs.docker.com/engine/install/ubuntu/}{questo indirizzo}.
+
+\subsection{Esecuzione}
