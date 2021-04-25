@@ -7,3 +7,35 @@ Il backend permette in BlockCovid, all'app utenti e alla web-app, di fornire ad 
 \\
 \\
 Le funzionalità offerte dal backend sono quelle indicate nella sezione \textbf{§5 REST API} del Manuale. Per avere ulteriori informazioni si invita quindi a visitare la sezione indicata.
+
+
+\subsection{Requisiti e installazione}
+Per poter sviluppare ed aggiungere funzionalità al backend del sistema BlocKCovid, sono necessari gli strumenti indicati in questa sezione.
+
+\subsubsection{prerequisiti hardware e software}
+È consigliato l'utilizzo di un server con risorse sufficienti per il funzionamento del backend. Questo dipende molto dalla mole di utenti e, per non incorrere in problemi in fase di sviluppo, è consigliato avere risorse hardware equivalenti ad un processore quad-core e 8 GB di RAM.
+\\\\
+Il sistema operativo di riferimento per lo sviluppo è Ubuntu 18.04 LTS e Ubuntu 20.04 LTS.
+
+\subsubsection{Ottenimento codice sorgente}
+Per scaricare il codice sorgente è necessario \textbf{Git}. Se non si dispone di Git è possibile scaricarlo seguendo quanto indicato nella sezione \textbf{§x.x.x}. Per scaricare il progetto, invocare il seguente comando da termiale: \textit{git clone https://github.com/DPCMGroup/bc19-api.git}.
+
+\subsubsection{Linguaggi utilizzati}
+\paragraph{Python}
+Il backend è stato sviluppato utilizzando il linguaggio di programmazione python, in particolare è stata utilizzata la versione python 3.6 per lo sviluppo del progetto.
+
+\subparagraph{Installazione di python}
+Per l'installazione di python è sufficiente scaricare ed installare il pacchetto, rispettivo al proprio sistema operativo, dal \href{https://www.python.org/downloads/}{sito ufficiale}.
+
+\subparagraph{Installazione dependency}
+Il backend è strutturato secondo quanto messo a disposizione dal framework Django oltre ad utilizzare molte altre librerie. Il loro utilizzo è definito nel file \textbf{requirements.txt} ed è il file in cui vengono definiti i pacchetti necessari per il funzionamento del servizio.\\
+Per installare i pacchetti è necessario posizionarsi con il terminale allo stesso livello del file requirements.txt. Successivamente è sufficiente eseguire il seguente comando: \textit{pip install -r requirements.txt}
+
+\paragraph{YAML}
+Il backend usufruisce dei workflow messi a disposizione da GitHub, chiamati GitHub Actions. Il workflow è definito in un file yml, in cui sono specificate le azioni da eseguire per compilare o eseguire gli unit test.
+
+\subsubsection{Source Code Management}
+Per poter effettuare il versionamento del codice sorgente è richiesto l'utilizzo di \textbf{Git}. Se non si dispone di Git è possibile scaricarlo ed installarlo seguendo le istruzioni del \href{https://git-scm.com/downloads}{sito ufficiale}.
+
+\subsubsection{Database}
+Il backend per il suo corretto funzionamento ha bisogno di interfacciarsi ad un database. Per la sua configurazione fare riferimento alla sezione \textbf{§ x}
