@@ -37,11 +37,11 @@ Per l'addetto alle pulizie l'applicazione offre le seguenti funzionalità:
 \subsection{Requisiti e installazione}
 
 \subsubsection{Requisiti}
-Per poter sviluppare sul proprio PC l'applicazione del sistema Stalker sono necessari i software e gli strumenti indicati in questa pagina. I software da installare saranno divisi in base al loro scopo.
+Per poter sviluppare sul proprio PC l'applicazione sono necessari i software e gli strumenti indicati in questa pagina. I software da installare saranno divisi in base al loro scopo.
 
-Per scaricare il codice sorgente dell'applicazione, è sufficiente andare nella pagina di GitHub che lo ospita, che si trova \href{https://github.com/DPCMGroup/bc19-mobile}{qui}, cliccare su Clone or download e successivamente premere su Download ZIP.
+Per scaricare il codice sorgente dell'applicazione bisogna andare nella pagina di GitHub che lo ospita, che si trova \href{https://github.com/DPCMGroup/bc19-mobile}{qui}, cliccare su Clone or download e successivamente premere su Download ZIP.
 
-Un'alternativa più efficace a questo procedimento è scaricare il progetto tramite Git. Se non si dispone di Git è possibile scaricarlo seguendo quanto indicato in Source Code Management. Per scaricare il progetto in questo modo, invocare il seguente comando tramite un terminale o prompt dei comandi nel sistema in uso:\\
+Un'alternativa più efficace a questo procedimento è scaricare il progetto tramite Git. Se non si dispone di Git è possibile scaricarlo seguendo quanto indicato nella sezione Source Code Management. Per scaricare il progetto in questo modo, digitare il seguente comando tramite un terminale o prompt dei comandi nel sistema in uso:\\ \\
 \textbf{https://github.com/DPCMGroup/bc19-mobile.git}
 
 \subsubsection{Prerequisiti hardware e software}
@@ -55,7 +55,7 @@ L'applicazione è stata sviluppata utilizzando l'ambiente di sviluppo Android St
 \\
 \textbf{Installazione di Android Studio su Windows}
 \\
-È possibile scaricare Android Studio su Windows visitando il sito ufficiale riportato in seguito, che inoltre fornisce un'ottima documentazione per lo sviluppo di applicazioni. Il link per la pagina da cui si può scaricare Android Studio si trova cliccando \href{https://developer.android.com/studio}{qui}, andando alla sezione "Android Studio downloads".
+È possibile scaricare Android Studio su Windows visitando il sito ufficiale riportato \href{https://developer.android.com/studio}{qui}, andando alla sezione "Android Studio downloads".
 Per eseguire l'installazione, bisognerà seguire la guida riportata nella sezione Windows cliccando nel seguente link \href{https://developer.android.com/studio/install}{qui}.
 \\
 \\
@@ -75,22 +75,38 @@ Per eseguire l'installazione, invece, bisognerà seguire la guida riportata nell
 \paragraph{Kotlin}
 \textbf{Installazione di Kotlin su Windows}
 \\
-...
+È possibile installare Kotlin su Windows visitando \href{https://plugins.jetbrains.com/plugin/6954-kotlin/versions}{questa pagina}.
+Il link porta alla pagina di jetBrains e ti permette di installare l'ultima versione di Kotlin disponibile anche con il plugin su Android Studio.
 \\
 \\
 \textbf{Installazione di Kotlin su MacOS}
 \\
-...
+L'installazione per MacOS è identica a quella per Windows.
 \\
 \\
 \textbf{Installazione di Kotlin su Ubuntu (e derivate, e altri derivati di Debian)}
 \\
-...
+È possibile installare Kotlin su sistemi Linux in modo identico a MacOs e Windows.
 
 \paragraph{XML}
-La configurazione dell'applicazione e alcune sue dipendenze sono gestite tramite un file denominato AndroidManifest.xml. Inoltre, lo sviluppo di applicazioni Android richiede una cartella di progetto denominata res che contiene file XML per gestire risorse come layout, immagini, menu, stringhe ed altro ancora. Quindi è richiesta una buona conoscenza del linguaggio XML.
+La configurazione dell'applicazione e alcune sue dipendenze sono gestite tramite un file denominato AndroidManifest.xml. Inoltre, lo sviluppo di applicazioni Android richiede una cartella di progetto denominata "res" che contiene tutti i file XML per gestire risorse come layout, immagini, menu, stringhe e altro. Quindi è richiesta una buona conoscenza del linguaggio XML.
 
 \subsubsection{Librerie utilizzate}
+
+\paragraph{Kotlin MVP auto}
+Viene utilizzata il plugin Kotlin MVP auto per generare in automatico una porzione di codice che rispetti l'architettura MVP. Il plugin è scaricabile a \href{https://plugins.jetbrains.com/plugin/12265-kotlin-mvp-auto}{questa pagina}.
+Per poterla usare vengono usate le seguenti dipendenze da aggiungere a build.gradle(:app):\\
+\begin{itemize}
+	\item implementation 'com.github.cn-ljb:kotlin-mvp-lib:1.2.0'; \\
+	\item implementation 'com.github.cn-ljb:netlib:1.0.1'; \\
+	\item implementation 'com.github.cn-ljb:daolib:1.0.1'. \\
+\end{itemize}
+
+\paragraph{OkHttp}
+OkHttp è una libreria che permette di effettuare richieste al server.
+Per usarla è necessario aggiungere nel file build.gradle(:app) la dipendenza:\\
+implementation 'com.squareup.okhttp3:okhttp:3.8.1'
+
 
 \subsubsection{Source code management}
 Per poter effettuare il versionamento del codice sorgente è richiesto di utilizzare Git. Per poterlo installare è necessario recarsi a \href{https://git-scm.com/downloads}{questa pagina}.
@@ -104,21 +120,36 @@ Tramite Gradle il progetto dell'applicazione viene compilato, testato ed eseguit
 \subsection{Estendibilità}
 
 \subsubsection{Creazione di un metodo}
-Tramite l'utilizzo dell'architettura Model View Presenter è facile da implementare dei nuovi metodi separandoli con la business logic e la vista ed in seguito creare i rispettivi collegamenti utilizzando il presenter.
+Tramite l'utilizzo dell'architettura Model View Presenter è facile da implementare dei nuovi metodi separandoli con la business logic e la vista e in seguito creare i rispettivi collegamenti utilizzando il presenter.
 
 
 \subsection{Architettura}
-
-
+Il modello architetturale scelto è il Model View Presenter che è fortemente consigliato per chi sviluppa delle applicazioni per dispositivi Android. Il MVP fornisce un modo semplice per mostrare la struttura del prodotto garantendo modularità, testabilità e in generale una base di codice più pulita e gestibile. Ne deriva quindi l'applicazione del paradigma separation of concerns, che separa la responsabilità tra le differenti parti del pattern.
+Come detto in precedenza verrà usato il plugin \href{https://git-scm.com/downloads}{Kotlin MVP auto} per generare in automatico codice che rispetti l'architettura.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=16cm]{res/images/mvp.png}
+	\caption{Model-View-Presenter}
+	\label{fig:Model-View-Presenter}
+\end{figure}
 
 \subsubsection{Model}
+Il Model è la parte dell'archittetura che ha il compito di gestire i dati e rappresenta il layer di persistenza dell'applicazione. La maggior parte delle operazioni e dei controlli vengono svolti al suo interno. Contiene anche i metodi che avviano le connessioni alle API ed interagiscono con esse eseguendo numerose funzionalità. Vi sono, ad esempio, i metodi che consentono la comunicazione con il backend.
+
 
 \subsubsection{View}
+La View ha la responsabilità di passare i dati al Presenter. Essa è implementata da:
+\begin{itemize}
+	\item Attività (Activity); \\
+	\item Qualsiasi forma grafica con cui l'utente finale dell'applicazione andrà ad interagire \\	
+\end{itemize}
 
 \subsubsection{Presenter}
+Il Presenter funge da livello intermedio tra la View e il Model. Tutta la logica di presentazione appartiene ad esso ed è responsabile dell'interrogazione del modello e l'aggiornamento della vista, reagendo alle interazioni che compie l'utente nella UI. Un valore aggiunto è che il Presenter dipende dall'astrazione della View e non dalla sua concretizzazione, quindi non conosce la sua implementazione. Tutto ciò favorisce ad una più facile attività di test.
 
 \subsubsection{Contract}
-
+Il Contract può essere visto come un contratto nel quale vengono definiti tutti i metodi che verranno utilizzati dalla View, dal Presenter e dal Model. Quando si ha intenzione di scrivere una nuova funzionalità, è buona norma scrivere un Contract. Esso descrive la comunicazione tra View-Presenter e Model-Presenter, consentendo una progettazione più pulita e diminuire le dipendenze tra le componenti.
+Il Contract è un'interfaccia e contiene le altre interfacce della View, Presenter e Model per garantire le varie comunicazioni.
 
 \subsection{Diagramma dei package}
 
