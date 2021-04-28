@@ -33,6 +33,7 @@ Per installare i pacchetti è necessario posizionarsi con il terminale allo stes
 
 \paragraph{YAML}
 Il backend usufruisce dei workflow messi a disposizione da GitHub, chiamati GitHub Actions. Il workflow è definito in un file yml, in cui sono specificate le azioni da eseguire per compilare o eseguire gli unit test.
+\\YAML viene utilizzato anche per la definizione del docker-compose su cui verrà eseguito Django.
 
 \subsubsection{Source Code Management}
 Per poter effettuare il versionamento del codice sorgente è richiesto l'utilizzo di \textbf{Git}. Se non si dispone di Git è possibile scaricarlo ed installarlo seguendo le istruzioni del \href{https://git-scm.com/downloads}{sito ufficiale}.
@@ -53,4 +54,22 @@ L'installazione per MacOS è identica a quella per Windows, ma la pagina a cui s
 \paragraph{Installazione Docker Linux}
 È possibile installare Docker su Ubuntu seguendo le guide presenti sul sito ufficiale, disponibili a \href{https://docs.docker.com/engine/install/ubuntu/}{questo indirizzo}.
 
-\subsection{Esecuzione}
+\subsubsection{Esecuzione}
+Attualmente sono presenti due modi per eseguire il backend:
+\begin{itemize}
+	\item Tramite linea di comando;
+	\item Tramite l'utilizzo di docker (consigliato).
+\end{itemize}
+\paragraph{Line di comando}
+Per eseguire il backend tramite linea di comando, è necessario posizionarsi allo stesso livello del file \textit{manage.py} ed eseguire il comando \textit{python manage.py runserver 8000}.\\Questo rende disponibile il servizio sulla porta 8000 dell'host.
+\paragraph{Docker}
+per eseguire il backend tramite docker, è necessario posizionarsi allo stesso livello del file \textit{docker-compose.yml} ed eseguire il comando \textit{docker-compose up}. Docker si occuperà di scaricare tutti i pacchetti necessari per l'esecuzione e renderà disponibile il servizio sulla porta 8000 dell'host.
+\subsection{Architettura}
+Nel backend è stato utilizzato il design pattern che utilizza Django, che si ispira al Model-View-Controller (MVC), e si chiama Model-Template-View.
+In questo caso il \textit{Model} rispecchia la gerarchia dei dati presenti nel database, la \textit{View} si occupa della elaborazione di questi dati e il \textit{Template} è la parte utilizzata per la risposta.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=16cm]{res/images/mvt.png}
+	\caption{Model-Template-View}
+	\label{fig:Model-Template-View}
+\end{figure}
