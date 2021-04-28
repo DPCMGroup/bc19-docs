@@ -3,6 +3,7 @@
 La web app costituisce l'interfaccia tramite la quale l'amministratore può interagire col sistema.
 Le funzionalità offerte sono:
 \begin{itemize}
+	\item login e logout;
 	\item visualizzazione delle stanze e delle postazioni con i relativi stati;
 	\item aggiunta, rimozione e modifica di stanze e postazioni;
 	\item impostazione di postazioni come guaste;
@@ -14,6 +15,31 @@ Le funzionalità offerte sono:
 \end{itemize}
 
 \subsection{Requisiti e installazione}
+Il codice sorgente della web-app è pubblicato su GitHub all'indirizzo \url{https://github.com/DPCMGroup/bc19-webapp}.
+Lo si può scaricare compresso in formato zip direttamente dal sito o, se si ha già installato il programma git, eseguendo il comando
+\begin{verbatim}
+	git clone https://github.com/DPCMGroup/bc19-webapp
+\end{verbatim}
+
+\subsubsection{Linguaggi}
+\paragraph{Typescript}
+Superset del linguaggio Javascript.
+
+\subsubsection{Tecnologie}
+\paragraph{Node.js}
+Programma focalizzato sull'esecuzione di codice javascript al di fuori del browser.
+Per l'installazione fare riferimento alla pagina \url{https://nodejs.org/en/download/} 
+\paragraph{npm}
+Acronimo di Node Package Manager, permette di ottenere le librerie necessarie allo sviluppo.
+Si ottiene insieme a Node.js tramite l'installazione di quest'ultimo.
+\paragraph{Angular}
+Framework per applicazioni web.
+Per l'installazione fare riferimento alla pagina \url{https://angular.io/guide/setup-local#install-the-angular-cli}
+\paragraph{Bootstrap}
+Framework per la creazione di pagine web.
+Per l'integrazione di bootstrap in angular fare riferimento alla pagina \url{https://www.npmjs.com/package/@ng-bootstrap/ng-bootstrap#installation}
+
+\subsubsection{Test}
 
 \subsection{Architettura}
 L'architettura della web-app segue il modello a componenti imposto da Angular, che, a sua volta, si basa sul pattern Model-View-ViewModel, descritto dall'immagine sottostante.
@@ -51,7 +77,7 @@ La parte visiva viene chiamata view, mentre la parte di controllo viene chiamata
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=18cm]{res/images/webapp-addEditStanzePostazioni-diagrammaSequenza.png}
-	\caption{Diagramma di sequenza per l'aoggiunta e la modifica di una stanza}
+	\caption{Diagramma di sequenza per l'aggiunta e la modifica di una stanza}
 	\label{fig:DiagrammaSequenzaStanzePostazioni2}
 \end{figure}
 \subsubsection{Gestione credenziali}
