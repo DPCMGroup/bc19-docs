@@ -89,7 +89,12 @@ L'installazione per MacOS è identica a quella per Windows.
 È possibile installare Kotlin su sistemi Linux in modo identico a MacOs e Windows.
 
 \paragraph{XML}
-La configurazione dell'applicazione e alcune sue dipendenze sono gestite tramite un file denominato AndroidManifest.xml. Inoltre, lo sviluppo di applicazioni Android richiede una cartella di progetto denominata "res" che contiene tutti i file XML per gestire risorse come layout, immagini, menu, stringhe e altro. Quindi è richiesta una buona conoscenza del linguaggio XML.
+La configurazione dell'applicazione e alcune sue dipendenze sono gestite tramite un file denominato AndroidManifest.xml. Una dipendenza importante da inserire nel file denominato AndroidManifest.xml è: android:networkSecurityConfig="@xml/network\_security\_config".  Inoltre, lo sviluppo di applicazioni Android richiede una cartella di progetto denominata "res" che contiene tutti i file XML per gestire risorse come layout, immagini, menu, stringhe e altro. 
+Per permettere la comunicazione con il server bisogna creare il file denominato network\_security\_config.xml nella cartella res/xml con il seguente contenuto:\\ "<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+<base-config cleartextTrafficPermitted="true" />
+</network-security-config>".\\
+È richiesta una buona conoscenza del linguaggio XML.
 
 \subsubsection{Librerie utilizzate}
 
@@ -141,7 +146,7 @@ Il Model è la parte dell'archittetura che ha il compito di gestire i dati e rap
 La View ha la responsabilità di passare i dati al Presenter. Essa è implementata da:
 \begin{itemize}
 	\item Attività (Activity); \\
-	\item Qualsiasi forma grafica con cui l'utente finale dell'applicazione andrà ad interagire \\	
+	\item Qualsiasi forma grafica con cui l'utente finale dell'applicazione andrà ad interagire. \\	
 \end{itemize}
 
 \subsubsection{Presenter}
