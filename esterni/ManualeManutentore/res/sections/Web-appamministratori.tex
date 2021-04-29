@@ -71,9 +71,16 @@ I file contengono, nell'ordine:
 \begin{itemize}
 	\item lo stile grafico del componente definito in css;
 	\item la struttura del componente definito in html;
-	\item i test definiti per il componente, scritti typescript;
+	\item i test definiti per il componente, scritti in typescript;
 	\item il codice che definisce la logica del componente, scritto in typescript;
 \end{itemize}
+
+La struttura del sito è definita principalmente dal modo nel quale i componenti vengono annidati l'uno dentro all'altro. Nel codice html questo annidamento è descritto dai tag:
+\begin{itemize}
+	\item \texttt{<app-nomecomponente>}
+	\item \texttt{<router-outlet>}
+\end{itemize}
+In entrambi i casi, nella pagina visualizzata, verrà inserito il componente specificato al posto del tag. Nel primo caso il componente da inserire è fisso ed è definito dal nome del tag stesso, nel secondo invece il componente inserito può variare. In quest'ultimo caso l'annidamento è definito dal'url col quale si sta visitando la pagina e dalla costante \texttt{routes} all'interno del file \texttt{src/app/app-routing.module.ts}.
 
 \subsection{Diagrammi dei package}
 \subsection{Diagrammi delle classi}
