@@ -1,0 +1,42 @@
+\section{Database}
+\subsection{Introduzione}
+Questa sezione tratterà la gestione del database dell'applicazione BlockCovid. Nel sistema implementato da DPCM2077, il database è direttamente collegato al backend.
+
+\subsubsection{Scopo}
+Il database permette al backend di memorizzare i dati che servono per il corretto funzionamento dell'applicazione. Essendo il database implementato nel backend, questa sezione è dedicata a chi gestisce il database e sviluppa il backend.
+
+\subsection{Requisiti e installazione}
+Per poter aggiungere funzionalità al database del sistema BlocKCovid, sono necessari gli strumenti indicati in questa sezione. Per semplicità è consigliato l'utilizzo di docker per l'esecuzione del servizio.
+
+\subsubsection{Prerequisiti hardware e software}
+È consigliato l'utilizzo di un server con risorse sufficienti per il funzionamento del database. Questo dipende molto dalla quantità dei dati e per questo è consigliato avere risorse hardware equivalenti ad un processore quad-core e 8 GB di RAM e sufficiente spazio su disco.
+\\\\
+Il database di riferimento è MariaDB 10.5.9.
+
+\subsubsection{Ottenimento script}
+Per scaricare gli script necessari alla creazione e popolamento database è necessario \textbf{Git}. Se non si dispone di Git è possibile scaricarlo seguendo quanto indicato nella sezione \textbf{§4.2.4}. Per scaricare il progetto, invocare il seguente comando da termiale: \textit{git clone https://github.com/DPCMGroup/bc19-db.git}.
+
+\subsubsection{Linguaggi utilizzati}
+\paragraph{SQL}
+Il linguaggio utilizzato per la creazione e popolamento delle tabelle è stato SQL.
+
+\subsubsection{Docker container}
+Docker viene utilizzato per l'esecuzione del sevizio in produzione.
+\paragraph{Installazione di Docker su Windows}
+È possibile installare Docker su Windows visitando il suo sito ufficiale, alla \href{https://hub.docker.com/editions/community/docker-ce-desktop-windows}{seguente pagina}. La guida all'installazione e al primo utilizzo è presente nello stesso link in cui si scarica l'eseguibile per l'installazione.
+\paragraph{Installazione di Docker su MacOS}
+L'installazione per MacOS è identica a quella per Windows, ma la pagina a cui scaricarlo si trova a \href{https://hub.docker.com/editions/community/docker-ce-desktop-mac}{questo link}.
+\paragraph{Installazione Docker Linux}
+È possibile installare Docker su Ubuntu seguendo le guide presenti sul sito ufficiale, disponibili a \href{https://docs.docker.com/engine/install/ubuntu/}{questo indirizzo}.
+
+\subsubsection{Esecuzione}
+Attualmente sono presenti due modi per eseguire il database:
+\begin{itemize}
+	\item Tramite servizio;
+	\item Tramite l'utilizzo di docker (consigliato).
+\end{itemize}
+\paragraph{Servizio}
+Per eseguire il database è necessario averlo installato. Se non lo si ha, si può scaricare e seguire la guida presente a \href{https://mariadb.org/download/}{questo link}. \\
+Ad installazione completata, il database verrà avviato in automatico ad ogni accensione.
+\paragraph{Docker}
+per eseguire il database tramite docker è sufficiente seguire la seguente \href{https://hub.docker.com/\_/mariadb}{guida}.

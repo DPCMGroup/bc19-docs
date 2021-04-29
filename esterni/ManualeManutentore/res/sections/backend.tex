@@ -18,7 +18,7 @@ Per poter sviluppare ed aggiungere funzionalità al backend del sistema BlocKCov
 Il sistema operativo di riferimento per lo sviluppo è Ubuntu 18.04 LTS e Ubuntu 20.04 LTS.
 
 \subsubsection{Ottenimento codice sorgente}
-Per scaricare il codice sorgente è necessario \textbf{Git}. Se non si dispone di Git è possibile scaricarlo seguendo quanto indicato nella sezione \textbf{§x.x.x}. Per scaricare il progetto, invocare il seguente comando da termiale: \textit{git clone https://github.com/DPCMGroup/bc19-api.git}.
+Per scaricare il codice sorgente è necessario \textbf{Git}. Se non si dispone di Git è possibile scaricarlo seguendo quanto indicato nella sezione \textbf{§4.2.4}. Per scaricare il progetto, invocare il seguente comando da termiale: \textit{git clone https://github.com/DPCMGroup/bc19-api.git}.
 
 \subsubsection{Linguaggi utilizzati}
 \paragraph{Python}
@@ -39,7 +39,7 @@ Il backend usufruisce dei workflow messi a disposizione da GitHub, chiamati GitH
 Per poter effettuare il versionamento del codice sorgente è richiesto l'utilizzo di \textbf{Git}. Se non si dispone di Git è possibile scaricarlo ed installarlo seguendo le istruzioni del \href{https://git-scm.com/downloads}{sito ufficiale}.
 
 \subsubsection{Database}
-Il backend per il suo corretto funzionamento ha bisogno di interfacciarsi ad un database. Per la sua configurazione fare riferimento alla sezione \textbf{§ x}.
+Il backend per il suo corretto funzionamento ha bisogno di interfacciarsi ad un database. Per la sua configurazione fare riferimento alla sezione \textbf{§5}.
 Nel caso in cui si volesse cambiare il database a cui Django si interfaccia, è necessario cambiare le impostazioni del file \textit{settings.py} nella sezione \textit{DATABASE}. È consigliato seguire le istruzioni del \href{https://docs.djangoproject.com/en/3.2/ref/databases/}{sito ufficiale} di Django.
 \\
 \\
@@ -60,13 +60,13 @@ Attualmente sono presenti due modi per eseguire il backend:
 	\item Tramite linea di comando;
 	\item Tramite l'utilizzo di docker (consigliato).
 \end{itemize}
-\paragraph{Line di comando}
+\paragraph{Linea di comando}
 Per eseguire il backend tramite linea di comando, è necessario posizionarsi allo stesso livello del file \textit{manage.py} ed eseguire il comando \textit{python manage.py runserver 8000}.\\Questo rende disponibile il servizio sulla porta 8000 dell'host.
 \paragraph{Docker}
 per eseguire il backend tramite docker, è necessario posizionarsi allo stesso livello del file \textit{docker-compose.yml} ed eseguire il comando \textit{docker-compose up}. Docker si occuperà di scaricare tutti i pacchetti necessari per l'esecuzione e renderà disponibile il servizio sulla porta 8000 dell'host.
 \subsection{Architettura}
 Nel backend è stato utilizzato il design pattern che utilizza Django, che si ispira al Model-View-Controller (MVC), e si chiama Model-Template-View.
-In questo caso il \textit{Model} rispecchia la gerarchia dei dati presenti nel database, la \textit{View} si occupa della elaborazione di questi dati e il \textit{Template} è la parte utilizzata per la risposta.
+In questo caso il \textit{Model} rispecchia la gerarchia dei dati presenti nel database, la \textit{View} si occupa della elaborazione di questi dati e il \textit{Template} è, appunto, il template utilizzato come risposta.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=16cm]{res/images/mvt.png}
