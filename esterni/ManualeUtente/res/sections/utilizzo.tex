@@ -152,7 +152,8 @@ L'applicazione mobile viene utilizzata dagli utenti che vogliono accedere ad una
 	\includegraphics[width=5cm]{res/images/login.png}
 	\caption{Login utente}
 \end{figure}
-L'utente può autenticarsi nella pagina iniziale del Login inserendo il proprio username e la propria password. 
+L'utente può autenticarsi nella pagina iniziale del login inserendo il proprio username e la propria password nelle EditText corrispondenti.
+Nel caso in cui inserisca le credenziali corrette otterrà l'accesso all'applicazione e quindi alla pagina principale, altrimenti verrà visualizzato un messaggio di errore in cui verrà comunicato di riprovare il login.
 
 \subsubsection{Logout}
 \begin{figure}[H]
@@ -160,7 +161,7 @@ L'utente può autenticarsi nella pagina iniziale del Login inserendo il proprio 
 	\includegraphics[width=5cm]{res/images/menuATendina.png}
 	\caption{Logout utente}
 \end{figure}
-L'utente può eseguire il logout aprendo il menù a tendina in alto a destra e poi cliccando su Logout.
+L'utente può eseguire il logout aprendo il menù a tendina in alto a destra e poi cliccando su logout. Avvenuta questa operazione l'utente si troverà nella pagina del login.
 
 \subsubsection{Scansione tag NFC}
 \begin{figure}[H]
@@ -205,7 +206,7 @@ l’intera giornata lavorativa. Lo stato della postazione deve essere libera e i
 	\includegraphics[width=5cm]{res/images/DescrizionePostazione3.png}
 	\caption{Igienizzazione postazione}
 \end{figure}
-L'utente igienizza una postazione il cui stato è diverso da "igienizzato" e lo segnala premendo l'apposito bottone "igienizza" nella pagina principale dell'applicazione. In modo automatico lo stato della postazione viene registrato come libera e igienizzata o prenotata e igienizzata.
+L'utente igienizza una postazione il cui stato è diverso da "igienizzato" e lo segnala premendo l'apposito bottone "igienizza" nella pagina principale dell'applicazione. In modo automatico lo stato della postazione viene registrato come libera e igienizzata, prenotata e igienizzata o guasta e igienizzata.
 \subsubsection{Visualizzazione lista prenotazioni}
 \begin{figure}[H]
 	\centering
@@ -217,10 +218,8 @@ Ogni postazione mostra le seguenti informazioni:
 \begin{itemize}
 	\item stanza della prenotazione;
 	\item posizione indicata tramite X e Y;
-	\item data di inizio della prenotazione;
-	\item orario di inizio della prenotazione;
-	\item data di fine della prenotazione;
-	\item orario di fine della prenotazione.
+	\item data/ora di inizio della prenotazione;
+	\item data/ora di fine della prenotazione.
 \end{itemize}
 \subsubsection{Disdetta prenotazione}
 \begin{figure}[H]
@@ -235,7 +234,7 @@ L’utente si trova nella sezione di visualizzazione della lista delle prenotazi
 	\includegraphics[width=5cm]{res/images/Guida.png}
 	\caption{Guida dipendente}
 \end{figure}
-L’utente accede alla pagina Guida utente cliccando la sezione apposita del menù a tendina in alto a destra e riceve una guida riguardo le funzionalità principali dell'applicazione.
+L’utente accede alla pagina Guida utente, cliccando la sezione apposita del menù a tendina in alto a destra, e riceve una guida riguardo le funzionalità principali dell'applicazione.
 \subsubsection{Prenotazione postazione}
 \begin{figure}[H]
 	\centering
@@ -243,8 +242,8 @@ L’utente accede alla pagina Guida utente cliccando la sezione apposita del men
 	\caption{Prenotazione postazione}
 \end{figure}
 Il dipendente può prenotare una postazione premendo sull'elemento della lista "Prenota postazione" del menù principale in alto a destra.
-Dopo aver premuto dovrà inserire la data, l'ora di inizio, l'ora di fine e la stanza obbligatoriamente e in modo facoltativo anche il nome del collega.
-Una volta premuto sul bottone "Cerca", se è stato inserito il nome del collega, visualizzerà tutte le sue prenotazioni effettuate nella stanza, nel range orario e nella data inseriti e scorrendo sotto visualizzerà tutte le postazioni di quella stanza con il loro stato e potrà decidere quale prenotare se disponibile. 
+Dopo aver premuto dovrà inserire la data, l'ora di inizio, l'ora di fine e la stanza obbligatoriamente e in modo facoltativo anche il nome del collega. Per facilitare l'utente nell'inserimento dei dati, a destra di ciascun EditText è presente una GUI per la selezione di una data(vista a calendario) e di un orario(vista a orologio). Una volta premuto sul bottone "Cerca", se è stato inserito il nome del collega, visualizzerà tutte le sue prenotazioni effettuate nella stanza, nel range orario e nella data inseriti e scorrendo sotto visualizzerà tutte le postazioni di quella stanza con il loro stato e potrà decidere quale prenotare se disponibile. 
+
 
 
 
