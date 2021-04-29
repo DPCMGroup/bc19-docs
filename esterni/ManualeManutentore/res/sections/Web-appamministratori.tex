@@ -93,17 +93,25 @@ I diagrammi seguenti sono scritti secondo la sintassi UML2.0. Le descrizioni tes
 
 \paragraph{Classi}
 \subparagraph{RoomsComponent}
+Classe che si occupa della visualizzazione, eliminazione e, tramite i componenti AddEditWorkstation e AddEditRoom, dell'aggiunta e modifica di postazioni e stanze.
 \textbf{Attributi}
 \begin{itemize}
-	\item \texttt{- roomMap: Map<number, Array<WorkstationData>>} \\
-		È una Map in cui ad ogni stanza sono assegnate le sue postazione, ovvero quelle con \texttt{idroom} uguale all'\texttt{id} della stanza.
-	\item \texttt{- roomsList: Array<RoomsData>} 
-	\item \texttt{- workstationList: Array<Workstation>} 
-	\item \texttt{+ searchId: string} 
-	\item \texttt{+ addEditWorkstation: WorkstationData} 
-	\item \texttt{+ workstationAction: string} 
-	\item \texttt{+ addEditRoom: RoomData} 
-	\item \texttt{+ roomAction: string} 
+	\item \texttt{- roomsMap: Map<number, Array<WorkstationData>>} \\
+		Map in cui ad ogni stanza sono assegnate le sue postazione, ovvero quelle con \texttt{idroom} uguale all'\texttt{id} della stanza. Se l'utente applica un filtro alla lista, qui verranno contenute solo le stanze e le postazioni selezionate da tale filtro.
+	\item \texttt{- roomsList: Array<RoomsData>} \\
+		Array utilizzato per contenere le stanze ottenutedal server
+	\item \texttt{- workstationList: Array<Workstation>} \\
+		Array utilizzto per contenere le postazioni ottenute dal server.
+	\item \texttt{+ searchId: string} \\
+		Id specificato dall'utente per la ricerca di una postazione.
+	\item \texttt{+ addEditWorkstation: WorkstationData} \\
+		Contiene i dati della postazione che verrà aggiunta o modificata.
+	\item \texttt{+ workstationAction: string} \\
+		Valore specificato dall'utente che provocherà la modifica o l'aggiunta della postazione salvata in \texttt{addEditWorkstation}
+	\item \texttt{+ addEditRoom: RoomData} \\
+		Contiene i dati della stanza che verrà aggiunta o modificata.
+	\item \texttt{+ roomAction: string} \\
+		Valore specificato dall'utente che provocherà la modifica o l'aggiunta della stanza salvata in \texttt{addEditRoom}
 \end{itemize}
 \textbf{Metodi}
 \begin{itemize}
@@ -128,6 +136,7 @@ I diagrammi seguenti sono scritti secondo la sintassi UML2.0. Le descrizioni tes
 \end{itemize}
 	
 \subparagraph{AddEditWorkstationComponent}
+Classe che si occupa dell'aggiunta e modifica di postazioni.
 \textbf{Attributi}
 \begin{itemize}
 	\item \texttt{+ id: number } 
@@ -153,6 +162,7 @@ I diagrammi seguenti sono scritti secondo la sintassi UML2.0. Le descrizioni tes
 	\item \texttt{- editWorkstation(): void}
 \end{itemize}
 \subparagraph{AddEditRoomComponent}
+Classe che si occupa dell'aggiunta e modifica di stanze.
 \textbf{Attributi}
 \begin{itemize}
 	\item \texttt{+ id: number 	}
@@ -201,6 +211,7 @@ I diagrammi seguenti sono scritti secondo la sintassi UML2.0. Le descrizioni tes
 	\item \texttt{+ modifyWorkstation(val: RoomData): Observable<string>}
 \end{itemize}
 \subparagraph{WorkstationData}
+Classe che contiene tutti e soli i valori necessari per il salvataggio di una postazione sul database. È utilizzata per il transito dei dati delle postazioni all'interno dell'applicazione.
 \textbf{Attributi}
 \begin{itemize}
 	\item \texttt{+ id: number 	}
@@ -214,6 +225,7 @@ I diagrammi seguenti sono scritti secondo la sintassi UML2.0. Le descrizioni tes
 	\item \texttt{+ archived: number}
 \end{itemize}
 \subparagraph{RoomData}
+Questa classe contiene tutti e soli i valori necessari per il salvataggio di una stanza sul database. È utilizzata per il transito dei dati delle stanze all'interno dell'applicazione.
 \textbf{Attributi}
 \begin{itemize}
 	\item \texttt{+ id: number 	}
@@ -223,6 +235,7 @@ I diagrammi seguenti sono scritti secondo la sintassi UML2.0. Le descrizioni tes
 	\item \texttt{+ archived: number}
 \end{itemize}
 \subparagraph{Observable<T>}
+Classe fornita dalla libreria Rxjs. Viene utilizzata per effettuare chiamate asincrone al server. Per una documnetazione più approfondita fare riferimento a \url{https://angular.io/guide/rx-library}.
 \textbf{Metodi}
 \begin{itemize}
 	\item \texttt{+ subscribe(next: (T)=>void): Subscription}
