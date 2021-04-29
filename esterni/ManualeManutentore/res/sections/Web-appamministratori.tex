@@ -90,53 +90,75 @@ I diagrammi seguenti sono scritti secondo la sintassi UML2.0. Le descrizioni tes
 	\caption{Diagramma delle classi per la gestione delle stanze e delle postazioni}
 	\label{fig:DiagrammaClassiStanzePostazioni}
 \end{figure}
+Il diagramma sovrastante rappresenta l'architettura utilizzata per la pagina di gestione delle stanze e delle postazioni. \newline
+\texttt{RoomsComponent} si occupa della visualizzazione ed eliminazione delle stanze e delle postazioni. Essa delega la creazione e modifica dei questi due dati alle classi \texttt{AddEditWorkstationComponent} e \texttt{AddEditRoomComponent}. Le tre componenti contengono un riferimento ad ognuno dei servizi di cui necessitano. I due servizi coinvolti sono \texttt{WorkstationService} e \texttt{RoomService}. Le informazini vengono ottenute dal server tramite la classe \texttt{Observable}. In generale i dati riguardanti postazioni e stanze sono scambiati utilizzando le due classi \texttt{WorkstationData} e \texttt{RoomData}.
+
 
 \paragraph{Classi}
 \subparagraph{RoomsComponent}
-Classe che si occupa della visualizzazione, eliminazione e, tramite i componenti AddEditWorkstation e AddEditRoom, dell'aggiunta e modifica di postazioni e stanze.
+Classe che si occupa della visualizzazione, eliminazione e, tramite i componenti AddEditWorkstation e AddEditRoom, dell'aggiunta e modifica di postazioni e stanze. \newline
 \textbf{Attributi}
 \begin{itemize}
-	\item \texttt{- roomsMap: Map<number, Array<WorkstationData>>} \\
+	\item \texttt{- roomsMap: Map<number, Array<WorkstationData>>} \newline
 		Map in cui ad ogni stanza sono assegnate le sue postazione, ovvero quelle con \texttt{idroom} uguale all'\texttt{id} della stanza. Se l'utente applica un filtro alla lista, qui verranno contenute solo le stanze e le postazioni selezionate da tale filtro.
-	\item \texttt{- roomsList: Array<RoomsData>} \\
+	\item \texttt{- roomsList: Array<RoomsData>} \newline
 		Array utilizzato per contenere le stanze ottenutedal server
-	\item \texttt{- workstationList: Array<Workstation>} \\
-		Array utilizzto per contenere le postazioni ottenute dal server.
-	\item \texttt{+ searchId: string} \\
+	\item \texttt{- workstationList: Array<Workstation>} \newline
+		Array utilizzato per contenere le postazioni ottenute dal server.
+	\item \texttt{+ searchId: string} \newline
 		Id specificato dall'utente per la ricerca di una postazione.
-	\item \texttt{+ addEditWorkstation: WorkstationData} \\
+	\item \texttt{+ addEditWorkstation: WorkstationData} \newline
 		Contiene i dati della postazione che verrà aggiunta o modificata.
-	\item \texttt{+ workstationAction: string} \\
+	\item \texttt{+ workstationAction: string} \newline
 		Valore specificato dall'utente che provocherà la modifica o l'aggiunta della postazione salvata in \texttt{addEditWorkstation}
-	\item \texttt{+ addEditRoom: RoomData} \\
+	\item \texttt{+ addEditRoom: RoomData} \newline
 		Contiene i dati della stanza che verrà aggiunta o modificata.
-	\item \texttt{+ roomAction: string} \\
+	\item \texttt{+ roomAction: string} \newline
 		Valore specificato dall'utente che provocherà la modifica o l'aggiunta della stanza salvata in \texttt{addEditRoom}
 \end{itemize}
 \textbf{Metodi}
 \begin{itemize}
-	\item \texttt{+ constructor(- service: SharedService, - cd: ChangeDetectorRef)} 
-	\item \texttt{+ ngOnInit(): void} 
-	\item \texttt{+ getRoomsMapKeys(): Array<number>} 
-	\item \texttt{- getRoomInfoById(): void} 
-	\item \texttt{- setRoomList(roomData: any): void} 
-	\item \texttt{- setWorkstationList(workstationData: Array<WorkstationData>): void} 
+	\item \texttt{+ constructor(private service: SharedService, private cd: ChangeDetectorRef)} 
+	\item \texttt{+ ngOnInit(): void} \newline
+	Questa funzione viene chiamata all'inizializzazione della pagina.
+	\item \texttt{+ getRoomsMapKeys(): Array<number>} \newline
+	Restituisce un array con gli id delle stanze contenute in \texttt{roomsMap}
+	\item \texttt{- getRoomInfoById(id: number): RoomData} \newline
+	Restituisce un oggetto \texttt{RoomData} con i dati della stanza identificata dall'id passato come parametro.
+	\item \texttt{- setRoomList(roomData: Array<RoomData>): void} \newline
+	Reinizializza \texttt{roomList} con i dati ricevuti
+	\item \texttt{- setWorkstationList(workstationData: Array<WorkstationData>): void} \newline
+	Reinizializza \texttt{workstationList} con i dati ricevuti
 	\item \texttt{- populateRoomsMap(filterWorkstationId: number): void} 
-	\item \texttt{- refreshAll(filterWorkstationid: number): void} 
-	\item \texttt{- deleteWorkstation(item: number): void} 
-	\item \texttt{- deleteRoom(roomId: number): void} 
-	\item \texttt{- openAddWorkstation(idroom: number): void} 
-	\item \texttt{- openEditWorkstation(workstation: WorkstationData): void} 
-	\item \texttt{- openAddRoom(): void} 
-	\item \texttt{- openEditRoom(room: RoomData): void} 
-	\item \texttt{+ closeAddEditWorkstation(): void} 
-	\item \texttt{+ closeAddEditRoom(): void} 
-	\item \texttt{+ searchWorkstation(): void} 
-	\item \texttt{+ resetFilter(): void} 
+	Reinizializza \texttt{roomsMap} ponendo come chiavi gli id delle stanze contenute in \texttt{roomList} e come valori le postazioni contenute nelle rispettive stanze. \newline
+	Se non viene specificato l'attributo \texttt{filterWorkstationId} nella mappa vengono inserite anche le stanze vuote. \newline
+	Se viene specificato l'attributo \texttt{filterWorkstationId} verrà inserita nella mappa solo la postazione con l'id indicato e la stanza che la contiene.
+	\item \texttt{- refreshAll(filterWorkstationId: number): void} \newline
+	Richiede al server le stanze e le postazione e le organizza, tramite \texttt{populateRoomsMap}, in una mappa. Il parametro \texttt{filterWorkstationId} viene passato direttamente a \texttt{populateRoomsMap}
+	\item \texttt{- deleteWorkstation(item: number): void} \newline
+	Richiede al server l'eliminazione della postazione con l'id specificato
+	\item \texttt{- deleteRoom(roomId: number): void} \newline
+	Richiede al server l'eliminazione della stanza con l'id specificato
+	\item \texttt{- openAddWorkstation(idroom: number): void} \newline
+	Rende visibile il form per l'aggiunta di una postazione. Inoltre imposta i parametri necessari all'esecuzione di questa azione.
+	\item \texttt{- openEditWorkstation(workstation: WorkstationData): void} \newline
+	Rende visibile il form per la modifica di una postazione. Inoltre imposta i parametri necessari all'esecuzione di questa azione. 
+	\item \texttt{- openAddRoom(): void} \newline
+	Rende visibile il form per l'aggiunta di una stanza. Inoltre imposta i parametri necessari all'esecuzione di questa azione.
+	\item \texttt{- openEditRoom(room: RoomData): void} \newline
+	Rende visibile il form per la modifica di una stanza. Inoltre imposta i parametri necessari all'esecuzione di questa azione.
+	\item \texttt{+ closeAddEditWorkstation(): void} \newline
+	Provoca l'aggiornamento dei dati contenuti nella pagina.
+	\item \texttt{+ closeAddEditRoom(): void} \newline
+	Provoca l'aggiornamento dei dati contenuti nella pagina.
+	\item \texttt{+ searchWorkstation(): void} \newline
+	Richiede tutti i dati sulle postazioni e sulle stanze al server specificando il filtro indicato dall'utente.
+	\item \texttt{+ resetFilter(): void} \newline
+	Richiede tutti i dati sulle postazioni e sulle stanze al server senza alcun filtro.
 \end{itemize}
 	
 \subparagraph{AddEditWorkstationComponent}
-Classe che si occupa dell'aggiunta e modifica di postazioni.
+Classe che si occupa dell'aggiunta e modifica di postazioni. \newline
 \textbf{Attributi}
 \begin{itemize}
 	\item \texttt{+ id: number } 
@@ -162,7 +184,7 @@ Classe che si occupa dell'aggiunta e modifica di postazioni.
 	\item \texttt{- editWorkstation(): void}
 \end{itemize}
 \subparagraph{AddEditRoomComponent}
-Classe che si occupa dell'aggiunta e modifica di stanze.
+Classe che si occupa dell'aggiunta e modifica di stanze. \newline
 \textbf{Attributi}
 \begin{itemize}
 	\item \texttt{+ id: number 	}
@@ -211,7 +233,7 @@ Classe che si occupa dell'aggiunta e modifica di stanze.
 	\item \texttt{+ modifyWorkstation(val: RoomData): Observable<string>}
 \end{itemize}
 \subparagraph{WorkstationData}
-Classe che contiene tutti e soli i valori necessari per il salvataggio di una postazione sul database. È utilizzata per il transito dei dati delle postazioni all'interno dell'applicazione.
+Classe che contiene tutti e soli i valori necessari per il salvataggio di una postazione sul database. È utilizzata per il transito dei dati delle postazioni all'interno dell'applicazione. \newline
 \textbf{Attributi}
 \begin{itemize}
 	\item \texttt{+ id: number 	}
@@ -225,7 +247,7 @@ Classe che contiene tutti e soli i valori necessari per il salvataggio di una po
 	\item \texttt{+ archived: number}
 \end{itemize}
 \subparagraph{RoomData}
-Questa classe contiene tutti e soli i valori necessari per il salvataggio di una stanza sul database. È utilizzata per il transito dei dati delle stanze all'interno dell'applicazione.
+Questa classe contiene tutti e soli i valori necessari per il salvataggio di una stanza sul database. È utilizzata per il transito dei dati delle stanze all'interno dell'applicazione. \newline
 \textbf{Attributi}
 \begin{itemize}
 	\item \texttt{+ id: number 	}
@@ -235,7 +257,7 @@ Questa classe contiene tutti e soli i valori necessari per il salvataggio di una
 	\item \texttt{+ archived: number}
 \end{itemize}
 \subparagraph{Observable<T>}
-Classe fornita dalla libreria Rxjs. Viene utilizzata per effettuare chiamate asincrone al server. Per una documnetazione più approfondita fare riferimento a \url{https://angular.io/guide/rx-library}.
+Classe fornita dalla libreria Rxjs. Viene utilizzata per effettuare chiamate asincrone al server. Per una documnetazione più approfondita fare riferimento a \url{https://angular.io/guide/rx-library}. \newline
 \textbf{Metodi}
 \begin{itemize}
 	\item \texttt{+ subscribe(next: (T)=>void): Subscription}
@@ -253,12 +275,15 @@ Classe fornita dalla libreria Rxjs. Viene utilizzata per effettuare chiamate asi
 	\caption{Diagramma di sequenza per la visualizzazione delle stanze e delle postazioni}
 	\label{fig:DiagrammaSequenzaStanzePostazioni1}
 \end{figure}
+Il diagramma sovrastante rappresenta un'evento scatenato dall'inizializzazione della pagina (notificata tramite la funzione \texttt{nfOnInit()}) che consiste nell'ottenimento di una lista delle postazioni e delle stanze dal server e della suddivisione delle prime in una mappa. Questa mappa verrà utilizzata dalla vista per mostrare le postazioni suddivise in stanze. L'evento rappresentato nel diagramma viene provocato ogni volta che si chiama il metodo \texttt{refreshAll()}. Questa funzionalità viene utilizzata, per esempio, dopo che una postazione è stata eliminata o modificata.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=18cm]{res/images/webapp-addEditStanzePostazioni-diagrammaSequenza.png}
 	\caption{Diagramma di sequenza per l'aggiunta e la modifica di una stanza}
 	\label{fig:DiagrammaSequenzaStanzePostazioni2}
 \end{figure}
+Il diagramma sovrastante rappresenta l'evento di aggiunta o modifica di una stanza.
+In entrambi i casi l'evento è provocato dalla chiamata del metodo \texttt{takeAction()}, provocata dalla pressione di un pulsante da parte dell'utente. A questo punto la scelta dell'una o dell'altra via è determinata dal parametro \texttt{action}, che ha assunto valore 'add' o 'edit' a seconda del comportamento dell'utente.
 \subsubsection{Gestione credenziali}
 \subsubsection{Sezione report}
 \subsubsection{Sezione notifiche}
