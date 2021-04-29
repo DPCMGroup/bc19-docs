@@ -86,14 +86,15 @@ Una volta premuto nel bottone, comparirà un popup che l'amministratore dovrà c
 \end{figure}
 
 \subsection{Dipendente}
-
+L'applicazione mobile viene utilizzata dagli utenti che vogliono accedere ad una postazione di una stanza dell'organizzazione. Essi hanno la possibilità di effettuare una prenotazione e di conoscere lo stato di una postazione, tramite la scansione del tag NFC associato. Inoltre per ogni occupazione viene registrato l'orario di inizio e di fine, e monitorata la presenza in tempo reale da parte dell'amministratore. Inoltre, ogni utente ha la possibilità di effettuare un'igienizzazione di una postazione precedentemente utilizzata. 
+\\All'utente dell'applicazione vengono offerte tutte le funzionalità indicate in questa sezione.
 \subsubsection{Login}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=5cm]{res/images/login.png}
 	\caption{Login utente}
 \end{figure}
-L'utente può autenticarsi inserendo il proprio username e la propria password. 
+L'utente può autenticarsi nella pagina iniziale del Login inserendo il proprio username e la propria password. 
 
 \subsubsection{Logout}
 \begin{figure}[H]
@@ -101,7 +102,7 @@ L'utente può autenticarsi inserendo il proprio username e la propria password.
 	\includegraphics[width=5cm]{res/images/menuATendina.png}
 	\caption{Logout utente}
 \end{figure}
-L'utente può eseguire il logout aprendo il menù a tendina e poi cliccando su Logout.
+L'utente può eseguire il logout aprendo il menù a tendina in alto a destra e poi cliccando su Logout.
 
 \subsubsection{Scansione tag NFC}
 \begin{figure}[H]
@@ -118,9 +119,18 @@ L'utente si trova nella pagina principale dell'applicazione e gli viene chiesto 
 \end{figure}
 L'utente ha effettuato la scansione di una postazione e riceve le seguenti informazioni nella pagina principale dell'applicazione:
 \begin{itemize}
-	\item stanza della prenotazione e posizione indicata tramite x e y;
+	\item stanza della prenotazione e posizione indicata tramite X e Y;
 	\item stato della postazione;
 	\item eventuale nome del dipendente che ha prenotato la postazione.
+\end{itemize}
+In base allo stato in cui si trova la postazione, l'utente visualizzerà un messaggio differente:
+\begin{itemize}
+	\item se libera e igienizzata, si invita l'utente a lasciare il telefono sul tag NFC per effettuare una prenotazione automatica della postazione;
+	\item se libera e non igienizzata, si invita l'utente ad effettuare la pulizia autonoma della postazione tramite il kit aziendale e quindi di cliccare il bottone "igienizza";
+	\item se prenotata e igienizzata, si invita l'utente ad abbandonare la postazione dato che al momento non è disponibile;
+	\item se prenotata e non igienizzata, si invita l'utente ad effettuare la pulizia autonoma della postazione tramite il kit aziendale e quindi di cliccare il bottone "igienizza";
+	\item se guasta e igienizzata, si invita l'utente ad abbandonare la postazione dato che al momento non è disponibile;
+	\item se guasta e non igienizzata, si invita l'utente ad effettuare la pulizia autonoma della postazione tramite il kit aziendale e quindi di cliccare il bottone "igienizza";
 \end{itemize}
  
 \subsubsection{Occupazione postazione}
@@ -129,8 +139,7 @@ L'utente ha effettuato la scansione di una postazione e riceve le seguenti infor
 	\includegraphics[width=5cm]{res/images/DescrizionePostazione1.png}
 	\caption{Inizio occupazione postazione}
 \end{figure}
-L'utente dopo aver scansionato con il proprio smartphone il tag NFC per
-un tempo maggiore o uguale ad un minuto, prenota in modo automatico la postazione per
+L'utente dopo aver scansionato con il proprio smartphone il tag NFC per un tempo maggiore o uguale ad un minuto, prenota in modo automatico la postazione per
 l’intera giornata lavorativa. Lo stato della postazione deve essere libera e igienizzata e non prenotata da un altro utente durante il resto della giornata.
 \subsubsection{Igienizzazione postazione}
 \begin{figure}[H]
@@ -149,7 +158,7 @@ L’utente può accedere alla sezione per la visualizzazione della lista delle p
 Ogni postazione mostra le seguenti informazioni:
 \begin{itemize}
 	\item stanza della prenotazione;
-	\item posizione indicata tramite x e y;
+	\item posizione indicata tramite X e Y;
 	\item data di inizio della prenotazione;
 	\item orario di inizio della prenotazione;
 	\item data di fine della prenotazione;
@@ -161,14 +170,14 @@ Ogni postazione mostra le seguenti informazioni:
 	\includegraphics[width=5cm]{res/images/VisualizzaPrenotazioni.png}
 	\caption{Disdetta prenotazione}
 \end{figure}
-L’utente disdice una prenotazione da lui effettuata in precedenza.
+L’utente si trova nella sezione di visualizzazione della lista delle prenotazioni, arrivatoci cliccando il menù a tendina in alto a destra, e disdice una prenotazione da lui effettuata in precedenza.
 \subsubsection{Guida utente}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=5cm]{res/images/Guida.png}
 	\caption{Guida dipendente}
 \end{figure}
-L’utente riceve una guida riguardo le funzionalità principali dell'applicazione.
+L’utente accede alla pagina Guida utente cliccando la sezione apposita del menù a tendina in alto a destra e riceve una guida riguardo le funzionalità principali dell'applicazione.
 \subsubsection{Prenotazione postazione}
 \begin{figure}[H]
 	\centering
