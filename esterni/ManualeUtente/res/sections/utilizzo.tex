@@ -1,6 +1,29 @@
 \section{Utilizzo}
 
 \subsection{Amministratore}
+\subsubsection{Login}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/login.jpg}
+	\caption{Login}
+\end{figure}
+L'amministratore può autenticarsi inserendo il proprio username e la password. L’username è da inserire nel primo campo di testo (1), la password nel secondo (2). Dopo l’inserimento dei dati può cliccare sul pulsante 'Sign in' per effettuare l'autenticazione.
+
+\subsubsection{Visualizzazione errore di autenticazione}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/error.png}
+	\caption{Visualizzazione errore}
+\end{figure}
+Se le credenziali inserite risultano errate, l’applicazione mostra un errore avvisando la persona che o non è un amministratore o ancora non è registrata.
+
+\subsubsection{Logout}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/logout.jpg}
+	\caption{Logout}
+\end{figure}
+L'amministratore, una volta effettuata l'autenticazione, può eseguire il logout da qualsiasi pagina della web-app. Sarà sufficiente cliccare sul pulsante in alto a destra denominato 'Logout'.
 
 \subsubsection{Visualizzazione di una stanza}
 \begin{figure}[H]
@@ -142,6 +165,79 @@ Una volta premuto sul bottone, comparirà un popup che l'amministratore dovrà c
 	\includegraphics[width=15cm]{res/images/editWorkstation.png}
 	\caption{Visualizzazione popup modifica postazione all'interno di una stanza}
 \end{figure}
+
+\subsubsection{Visualizzazione delle credenziali}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/credential.jpg}
+	\caption{Visualizzazione credenziali}
+\end{figure}
+L’amministratore può visualizzare la lista delle credenziali di ogni utente. Questo sarà permesso da ogni pagina cliccando sul pulsante Credentials.
+La lista di credenziali è composta dai seguenti campi:
+\begin{enumerate}
+\item Id;
+\item Username;
+\item Name;
+\item Surname;
+\item Email;
+\item Type;
+\item Option;
+\end{enumerate}
+Type indica il tipo di utente, Option presenta due pulsanti per eliminare o modificare le credenziali.
+
+\subsubsection{Aggiunta di nuove credenziali}
+Per poter aggiungere nuove credenziali, l'amministratore deve premere sul bottone 'Add Credential' di colore blu.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/addCredential.jpg}
+	\caption{Bottone di aggiunta credenziali}
+\end{figure}
+Una volta premuto sul bottone, comparirà un popup che l'amministratore dovrà compilare inserendo:
+\begin{enumerate}
+\item il nome dell'utente (1);
+\item il cognome dell'utente (2);
+\item l'username(3);
+\item l'email (4);
+\item il tipo di utente (5);
+\item la password (6);
+\end{enumerate}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/addc.jpg}
+	\caption{Visualizzazione popup di inserimento credenziali}
+\end{figure}
+
+
+\subsubsection{Eliminazione delle credenziali}
+Per poter eliminare le credenziali di un utente, l'amministratore deve premere sul bottone che raffigura il cestino.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/optionDelete.jpg}
+	\caption{Bottone di cancellazione credenziali}
+\end{figure}
+
+\subsubsection{Modifica delle credenziali}
+Per poter modificare le credenziali di un utente, l'amministratore deve premere sul bottone 'E' di colore blu.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/optionEdit.jpg}
+	\caption{Bottone di modifica credenziali}
+\end{figure}
+Una volta premuto sul bottone, comparirà un popup che l'amministratore dovrà compilare inserendo:
+\begin{enumerate}
+\item il nome dell'utente (1);
+\item il cognome dell'utente (2);
+\item l'username(3);
+\item l'email (4);
+\item il tipo di utente (5);
+\item la password (6);
+\end{enumerate}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/editc.jpg}
+	\caption{Visualizzazione popup modifica credenziali}
+\end{figure}
+
 
 \subsection{Dipendente}
 L'applicazione mobile viene utilizzata dagli utenti che vogliono accedere ad una postazione di una stanza dell'organizzazione. Essi hanno la possibilità di effettuare una prenotazione e di conoscere lo stato di una postazione, tramite la scansione del tag NFC associato. Inoltre per ogni occupazione viene registrato l'orario di inizio e di fine, e monitorata la presenza in tempo reale da parte dell'amministratore. Inoltre, ogni utente ha la possibilità di effettuare un'igienizzazione di una postazione precedentemente utilizzata. 
