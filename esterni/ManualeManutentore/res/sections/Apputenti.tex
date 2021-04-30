@@ -330,6 +330,32 @@ In seguito verranno fatte tutte le chiamate di ritorno, ovvero verrà tornato al
 In conclusione per visualizzare la lista delle prenotazioni la vista chiamerà il metodo \textit{updateBookingView}. 
 
 \subsubsection{Diagramma per ottenere le caratteristiche di una postazione}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=16cm]{res/images/apputenti-mainScanSeq.png}
+	\caption{Scan-Diagramma di sequenza}
+	\label{fig:Scan-Diagramma di sequenza}
+\end{figure}
+Questo diagramma di sequenza rappresenta la serie di azioni svolte dall'applicazione quando viene effettuata scansionato un tag NFC da un utente.
+La sequenza inizia con la creazione della vista tramite il metodo \textit{onCreate}.
+Successivamente viene richiesto al Presenter di visualizzare le caratteristiche delle postazioni in seguito alla scansione del tag NFC tramite il metodo \textit{scanTagNFC} che a sua volta le richiederà al Model attraverso il metodo \textit{getStatus}.
+Successivamente grazie a il metodo \textit{getWorkstation}, che genera un json con l'id della postazione, andrà a richiedere al Service tutte le caratteristiche. Per generare queste informazioni il Service userà il metodo \textit{httpClient}.
+In seguito verranno fatte tutte le chiamate di ritorno, ovvero verrà tornato al Model le caratteristiche della postazione che lo ritornerà al presenter che lo ritornerà a sua volta alla vista.
+In conclusione per visualizzare le informazioni di una postazione la vista chiamerà il metodo \textit{updateScan}.
+
 
 \subsubsection{Diagramma per registrare l'igienizzazione di una postazione} 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=16cm]{res/images/apputenti-mainSanitizeSeq.png}
+	\caption{Sanitize-Diagramma di sequenza}
+	\label{fig:Sanitize-Diagramma di sequenza}
+\end{figure}
+Questo diagramma di sequenza rappresenta la serie di azioni svolte dall'applicazione quando viene premuto da un utente il bottone per rendere una postazione igienizzata.
+La sequenza inizia con la creazione della vista tramite il metodo \textit{onCreate}.
+Successivamente viene richiesto al Presenter di registrare l'igienizzazione della postazione da parte di un utente tramite il metodo \textit{sanitize} che a sua volta lo richiederà al Model attraverso il metodo \textit{setSanitize}.
+Il Model per ottenere igienizzare una postazione farà prima una chiamata alla classe User con il metodo \textit{getId} per ottenere l'id dello user.
+Successivamente grazie a il metodo \textit{registerSanitization}, che genera un json con l'id della postazione e l'id dell'utente, andrà a richiedere al Service di registrarla. Per registrarla il Service userà il metodo \textit{httpClient}.
+In seguito verranno fatte tutte le chiamate di ritorno, ovvero verrà tornato al Model il risultato dell'operazione che lo ritornerà al presenter che lo ritornerà a sua volta alla vista.
+In conclusione per visualizzare le nuove informazioni sulla postazione la vista chiamerà il metodo \textit{updateSanitization}.
 
