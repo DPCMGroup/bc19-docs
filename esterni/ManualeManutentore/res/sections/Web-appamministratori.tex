@@ -165,7 +165,7 @@ Classe che si occupa della visualizzazione, eliminazione e, tramite i componenti
 \end{itemize}
 	
 \subparagraph{AddEditWorkstationComponent}
-Classe che si occupa dell'aggiunta e modifica di postazioni. \newline
+Classe che si occupa dell'aggiunta e modifica di postazioni. I primi 9 attributi sono sempre sincronizzati con il form che viene presentato all'utente. Tramite essi viene definita la postazione da aggiungere o i nuovi dati della postazione da modificare.\newline
 \textbf{Attributi}
 \begin{itemize}
 	\item \texttt{+ id: number } 
@@ -177,21 +177,28 @@ Classe che si occupa dell'aggiunta e modifica di postazioni. \newline
 	\item \texttt{+ state: bool } 
 	\item \texttt{+ sanitized: bool } 
 	\item \texttt{+ archived: bool } 
-	\item \texttt{+ passedWorkstation: WorkstationData } 
-	\item \texttt{+ action: string} 
+	\item \texttt{+ passedWorkstation: WorkstationData } \newline
+	L'oggetto che viene passato da \texttt{RoomComponent} e che indica la postazione da modificare.
+	\item \texttt{+ action: string} \newline
+	L'attributo che viene passato da \texttt{RoomComponent} e che indica il tipo di azione da eseguire: aggiunta o modifica della postazione;
 \end{itemize}
 \textbf{Metodi}
 \begin{itemize}
 	\item \texttt{+ constructor(service: WorkstationsService) }
-	\item \texttt{+ ngOnInit(): void }
-	\item \texttt{- ngOnChanges(): void }
-	\item \texttt{- getWorkstationFromLocalValues(): WorkstationData }
-	\item \texttt{+ takeAction(): void }
-	\item \texttt{- addWorkstation(): void }
-	\item \texttt{- editWorkstation(): void}
+	\item \texttt{- ngOnChanges(): void } \newline
+	Metodo chiamato ogni volta che una proprietà data-bound viene modificata. In questo caso serve per aggiornare i parametri locali in base ai valori di \texttt{passedWorkstation}.
+	\item \texttt{- getWorkstationFromLocalValues(): WorkstationData } \newline
+	Restituisce un oggetto \texttt{WorkstationData} ottenuto dai primi 9 attributi.
+	\item \texttt{+ takeAction(): void } \newline
+	Chiama il metodo \texttt{addWorkstation()} o \texttt{editWorkstation()} a seconda del valore dell'attributo action.
+	\item \texttt{- addWorkstation(): void } \newline
+	Richiede al service di aggiungere la postazione specificata.
+	\item \texttt{- editWorkstation(): void} \newline
+	Richiede al service di modificare la postazione nel modo specificato.
+	
 \end{itemize}
 \subparagraph{AddEditRoomComponent}
-Classe che si occupa dell'aggiunta e modifica di stanze. \newline
+Classe che si occupa dell'aggiunta e modifica di stanze. I primi 5 attributi sono sempre sincronizzati con il form che viene presentato all'utente. Tramite essi viene definita la stanza da aggiungere o i nuovi dati della stanza da modificare.\newline
 \textbf{Attributi}
 \begin{itemize}
 	\item \texttt{+ id: number 	}
@@ -200,21 +207,27 @@ Classe che si occupa dell'aggiunta e modifica di stanze. \newline
 	\item \texttt{+ yroom: string 	}
 	\item \texttt{+ archived: number 	}
 	\item \texttt{+ noticeChangeVariable: boolean 	}
-	\item \texttt{+ passedRoom: RoomData 	}
-	\item \texttt{+ action: string}
+	\item \texttt{+ passedRoom: RoomData 	} \newline
+	L'oggetto che viene passato da \texttt{RoomComponent} e che indica la stanza da modificare.
+	\item \texttt{+ action: string} \newline
+	L'attributo che viene passato da \texttt{RoomComponent} e che indica il tipo di azione da eseguire: aggiunta o modifica della stanza;
 \end{itemize}
 \textbf{Metodi}
 \begin{itemize}
-	\item \texttt{+ AddEditRoomComponent(service: WorkstationsService) 	}
-	\item \texttt{+ ngOnInit(): void 	}
-	\item \texttt{- ngOnChanges(): void 	}
-	\item \texttt{- getRoomFromLocalValues(): RoomData 	}
-	\item \texttt{+ takeAction(): void 	}
-	\item \texttt{- addRoom(): void 	}
-	\item \texttt{- editRoom(): void}
+	\item \texttt{+ constructor(service: WorkstationsService) 	}
+	\item \texttt{- ngOnChanges(): void 	} \newline
+	Metodo chiamato ogni volta che una proprietà data-bound viene modificata. In questo caso serve per aggiornare i parametri locali in base ai valori di \texttt{passedRoom}.
+	\item \texttt{- getRoomFromLocalValues(): RoomData 	} \newline
+	Restituisce un oggetto \texttt{RoomData} ottenuto dai primi 5 attributi.
+	\item \texttt{+ takeAction(): void 	} \newline
+	Chiama il metodo \texttt{addRoom()} o \texttt{editRoom()} a seconda del valore dell'attributo action.
+	\item \texttt{- addRoom(): void 	} \newline
+	Richiede al service di aggiungere la stanza specificata.
+	\item \texttt{- editRoom(): void} \newline
+	Richiede al service di modificare la postazione nel modo specificato.
 \end{itemize}
 \subparagraph{WorkstationsService}
-Servizio che permette di ottenere dal server informazioni sulle postazioni. Ogni metodo di questa classe, tranne il costruttore, restituisce un \textt{Observable}. Questo oggetto espone un metodo subscribe con il quale si potrà impostare una funzione di callback che verrà chiamata quando il server fornirà una risposta.
+Servizio che permette di ottenere dal server informazioni sulle postazioni. Ogni metodo di questa classe, tranne il costruttore, restituisce un \texttt{Observable}. Questo oggetto espone un metodo subscribe con il quale si potrà impostare una funzione di callback che verrà chiamata quando il server fornirà una risposta. \newline
 \textbf{Attributi}
 \begin{itemize}
 	\item \texttt{- APIUrl: string} \newline
@@ -223,17 +236,17 @@ Servizio che permette di ottenere dal server informazioni sulle postazioni. Ogni
 \textbf{Metodi}
 \begin{itemize}
 	\item \texttt{+ constructor(http: HttpClient) 	}
-	\item \texttt{+ getWorkstationList(): Observable<Array<WorkstationData>> 	}
-	Usato per ottenere una lista delle stanze.
-	\item \texttt{+ addWorkstation(val: WorkstationData): Observable<string> 	}
-	Usato per tentare di aggiungere la postazione indicata in \textt{val} e di ricevere l'esito dell'operazione.
-	\item \texttt{+ deleteWorkstation(val: number): Observable<string> 	}
-	Usato per tentare di eliminare la postazione con id \textt{val} e di ricevere l'esito dell'operazione.
-	\item \texttt{+ modifyWorkstation(val: WorkstationData): Observable<string>}
-	Usato per tentare di modificare la postazione con id pari a quello contenuto in \texttt{val} assegnandole gli altri valori dello stesso paramentro. Restituisce, tramite un \texttt{Observable}, una risposta in formato stringa.
+	\item \texttt{+ getWorkstationList(): Observable<Array<WorkstationData>> 	} \newline
+	Usato per ottenere una lista delle postazioni.
+	\item \texttt{+ addWorkstation(val: WorkstationData): Observable<string> 	} \newline
+	Usato per tentare di aggiungere la postazione indicata in \texttt{val} e di ricevere l'esito dell'operazione.
+	\item \texttt{+ deleteWorkstation(val: number): Observable<string> 	} \newline
+	Usato per tentare di eliminare la postazione con id \texttt{val} e di ricevere l'esito dell'operazione.
+	\item \texttt{+ modifyWorkstation(val: WorkstationData): Observable<string>} \newline
+	Usato per tentare di modificare la postazione con id pari a quello contenuto in \texttt{val} assegnandole gli altri valori dello stesso parametro. Restituisce, tramite un \texttt{Observable}, una risposta in formato stringa che indica l'esito dell'operazione.
 \end{itemize}
 \subparagraph{RoomsService}
-Servizio che permette di ottenere dal server informazioni sulle stanze. Ogni metodo di questa classe, tranne il costruttore, restituisce un \textt{Observable}. Questo oggetto espone un metodo subscribe con il quale si potrà impostare una funzione di callback che verrà chiamata quando il server fornirà una risposta.
+Servizio che permette di ottenere dal server informazioni sulle stanze. Ogni metodo di questa classe, tranne il costruttore, restituisce un \texttt{Observable}. Questo oggetto espone un metodo subscribe con il quale si potrà impostare una funzione di callback che verrà chiamata quando il server fornirà una risposta. \newline
 \textbf{Attributi}
 \begin{itemize}
 	\item \texttt{- APIUrl: string} \newline
@@ -242,10 +255,14 @@ Servizio che permette di ottenere dal server informazioni sulle stanze. Ogni met
 \textbf{Metodi}
 \begin{itemize}
 	\item \texttt{+ constructor(http: HttpClient) 	}
-	\item \texttt{+ getRoomsList(): Observable<Array<RoomData>> 	}
-	\item \texttt{+ addRoom(val: RoomData): Observable<string> 	}
-	\item \texttt{+ deleteWorkstation(val: number): Observable<string> 	}
-	\item \texttt{+ modifyWorkstation(val: RoomData): Observable<string>}
+	\item \texttt{+ getRoomsList(): Observable<Array<RoomData>> 	} \newline
+	Usato per ottenere una lista delle stanze.
+	\item \texttt{+ addRoom(val: RoomData): Observable<string> 	} \newline
+	Usato per tentare di aggiungere la stanza indicata in \texttt{val} e di ricevere l'esito dell'operazione.
+	\item \texttt{+ deleteWorkstation(val: number): Observable<string> 	} \newline
+	Usato per tentare di eliminare la stanza con id \texttt{val} e di ricevere l'esito dell'operazione.
+	\item \texttt{+ modifyWorkstation(val: RoomData): Observable<string>} \newline
+	Usato per tentare di modificare la stanza con id pari a quello contenuto in \texttt{val} assegnandole gli altri valori dello stesso parametro. Restituisce, tramite un \texttt{Observable}, una risposta in formato stringa che indica l'esito dell'operazione.
 \end{itemize}
 \subparagraph{WorkstationData}
 Classe che contiene tutti e soli i valori necessari per il salvataggio di una postazione sul database. È utilizzata per il transito dei dati delle postazioni all'interno dell'applicazione. \newline
