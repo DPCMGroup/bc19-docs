@@ -272,15 +272,15 @@ Un'altra funzionalità di questa attività consiste nel premere sul bottone igie
 La classe MainActivity offre i seguenti metodi:
 \begin{itemize}
 	\item \textbf{onCreate(savedInstanceState:Bundle): void}: Si occupa della creazione della parte grafica visualizzata dall'utente; 
-	\item \textbf{registerPresenter(): void}: ; 
-	\item \textbf{getLayoutId(): void}: ;
+	\item \textbf{registerPresenter(): void}: associa il Presenter alla View; 
+	\item \textbf{getLayoutId(): void}: associa il rispettivo file in formato xml alla View;
 	\item \textbf{updateScan(scan:DataWorkstation): void}: Si occupa di far visualizzare le caratteristiche di una postazione dopo la scansione; 
 	\item \textbf{updateSanitization(): void}: Si occupa di cambiare lo stato della postazione e disabilitare e nascondere il bottone per igienizzare. 
 \end{itemize}
 
 La classe MainPresenter offre i seguenti metodi:
 \begin{itemize}
-	\item \textbf{registerModel(): void}: ; 
+	\item \textbf{registerModel(): void}: associa il Model al Presenter.; 
 	\item \textbf{scanTagNFC(): void}: Si occupa di richiedere al modello le informazioni riguardanti la postazione, così poi da ritornarle alla vista; 
 	\item \textbf{sanitize(): void}: Si occupa di richiedere al modello di igienizzare una postazione, così poi da ritornarlo alla vista. 
 \end{itemize}
