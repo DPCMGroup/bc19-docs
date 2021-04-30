@@ -183,6 +183,44 @@ Nel seguente package vengono raggruppate tutte le classi ed interfacce dedicate 
 Vengono presentati di seguito i diagrammi UML delle classi relativi all'applicazione.
 
 \subsubsection{Login}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=16cm]{res/images/loginClass.png}
+	\caption{Login-Diagramma delle classi}
+	\label{fig:Login-Diagramma delle classi}
+\end{figure}
+La classe LoginActivity rappresenta la pagina dedicata all'autenticazione. L'utente inserisce username e password. Se registrato nel sistema l'utente potrà accedere all'applicazione altrimenti visualizzerà un messaggio d'errore.
+
+La classe LoginActivity offre i seguenti metodi:
+\begin{itemize}
+	\item \textbf{onCreate(savedInstanceState:Bundle): void}: Si occupa della creazione della parte grafica visualizzata dall'utente; 
+	\item \textbf{getLayoutId(): void}: associa il rispettivo file in formato xml alla View;
+	\item \textbf{registerPresenter(): void}: associa il Presenter alla View;
+	\item \textbf{initView(): void}: mappa l'Activity associandole le variabili: username, password, loginBtn, errore;
+	\item \textbf{initData(): void}: definisce l'aggiornamento della vista secondo gli input dell'utente ;
+	\item \textbf{enableBtnLogin(): void}: abilita il bottone di Login;
+	\item \textbf{isUserNameValid(in username:String): Boolean}: verifica della conformità dell'username;
+	\item \textbf{isPasswordValid(in username:String): Boolean}: verifica della conformità della password;
+	\item \textbf{updateLoginView(): void}: aggiorna la vista dopo la verifica delle credenziali ;
+\end{itemize}
+
+La classe LoginPresenter offre i seguenti metodi:
+\begin{itemize}
+	\item \textbf{makeLogin(username: String, password: String): void}: Si occupa di richiedere al modello di effettuare il login; 
+	\item \textbf{registerModel(): void}: associa il Model al Presenter.
+\end{itemize}
+
+La classe LoginModel offre i seguenti metodi:
+\begin{itemize}
+	\item \textbf{sendLogin(username: String, password: String): void}: Si occupa di richiedere al service di verificare le credenziali fornite dall'utente. 
+\end{itemize}
+
+La classe Service offre i seguenti metodi:
+\begin{itemize}
+	\item \textbf{login(in username:String, in password:String): JSONObject}: Si occupa di trasformare in un JSONObject username e password così poi da ottenere l'id dello user;
+	\item \textbf{httpClient(json:JSONObject): JSONObject}: Viene fatta la richiesta al backend per verificare le credenziali fornite dall'utente.
+	
+\end{itemize}
 
 \subsubsection{Main}
 
@@ -197,13 +235,13 @@ L'utente per visualizzare questa pagina deve premere sul menu a tendina del men�
 \subsubsection{Bookings}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=16cm]{res/images/ShowBookingsClass.png}
-	\caption{ShowBookings-Diagramma delle classi}
-	\label{fig:ShowBookings-Diagramma delle classi}
+	\includegraphics[width=16cm]{res/images/BookingsClass.png}
+	\caption{Bookings-Diagramma delle classi}
+	\label{fig:Bookings-Diagramma delle classi}
 \end{figure}
-La classe BookingActivity rappresenta la pagina dedicata alle prenotazioni effettuate da un utente. L'utente per visualizzare le prenotazioni deve premere sul menu a tendina del menù principale(MainActivity) e successivamente deve premere sulla voce "Visualizza Prenotazioni" e verrà reindirizzato alla pagina dedicata.
+La classe BookingActivity rappresenta la pagina dedicata alle prenotazioni effettuate da un utente. L'utente per visualizzare le prenotazioni deve premere sul menù a tendina del menù principale(MainActivity) e successivamente deve premere sulla voce "Visualizza Prenotazioni" e verrà reindirizzato alla pagina dedicata.
 
-In questa pagina verranno mostrate in una lista tutte le prenotazioni effettuate dall'utente. In particolare i campi visualizzati sono: 
+In questa pagina verranno mostrate in una lista tutte le prenotazioni effettuate dall'utente. Per ogni prenotazione i campi visualizzati sono: 
 \begin{itemize}
 	\item bookId; 
 	\item workName; 
@@ -217,12 +255,15 @@ Nel caso non ci siano prenotazioni effettuate verrà mostrata una semplice strin
 La classe BookingActivity offre i seguenti metodi:
 \begin{itemize}
 	\item \textbf{onCreate(savedInstanceState:Bundle): void}: Si occupa della creazione della parte grafica visualizzata dall'utente; 
-	\item \textbf{updateBookingView(in bookings:List<DataBooking>): void}: Si occupa di far visualizzare le prenotazioni di un utente in una lista se ci sono, altrimenti deve far visualizzare la stringa "Non ci sono prenotazioni effettuate". 
+	\item \textbf{getLayoutId(): void}: associa il rispettivo file in formato xml alla View;
+	\item \textbf{registerPresenter(): void}: associa il Presenter alla View;
+	\item \textbf{updateBookingView(in bookings:List<DataBooking>): void}: Si occupa di far visualizzare le prenotazioni di un utente in una lista se ci sono, altrimenti deve far visualizzare la stringa "Non ci sono prenotazioni effettuate".
 \end{itemize}
 
 La classe BookingPresenter offre i seguenti metodi:
 \begin{itemize}
-	\item \textbf{showBookings(): void}: Si occupa di richiedere al modello la lista delle prenotazioni, così poi da ritornarle alla vista. 
+	\item \textbf{showBookings(): void}: Si occupa di richiedere al modello la lista delle prenotazioni, così poi da restituirle alla vista; 
+	\item \textbf{registerModel(): void}: associa il Model al Presenter.
 \end{itemize}
 
 La classe BookingModel offre i seguenti metodi:
@@ -239,6 +280,14 @@ La classe Service offre i seguenti metodi:
 
 \subsection{Diagramma di sequenza}
 Vengono presentati di seguito i diagrammi UML di sequenza relativi all'applicazione.
+
+\subsubsection{Diagramma per il login}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=16cm]{res/images/loginSeq.png}
+	\caption{Login-Diagramma di sequenza}
+	\label{fig:Login-Diagramma di sequenza}
+\end{figure}
 
 \subsubsection{Diagramma per la visualizzazione delle prenotazioni di un utente}
 \begin{figure}[H]
