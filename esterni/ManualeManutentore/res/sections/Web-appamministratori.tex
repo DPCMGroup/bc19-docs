@@ -96,6 +96,66 @@ I diagrammi seguenti sono scritti secondo la sintassi UML. Le descrizioni testua
 	\caption{Diagramma delle classi per il login}
 	\label{fig:DiagrammaClassiLogin}
 \end{figure}
+
+\paragraph{Classi}
+
+\subparagraph{LoginComponent}
+\textbf{Attributi}
+\begin{itemize}
+	\item \texttt{+ username: string}
+	\item \texttt{+ password: string}
+	\item \texttt{+ autoLoggedIn: boolean}
+	\item \texttt{+ errorVisible: string}
+\end{itemize}
+\textbf{Metodi}
+\begin{itemize}
+	\item \texttt{+ constructor(private loginService: LoginService, private localAccountService: LocalAccountService)}
+	\item \texttt{+ ngOnInit(): void}
+	\item \texttt{+ focused(): void}
+	\item \texttt{+ autoLogin(): void}
+	\item \texttt{+ login(): void}
+	\item \texttt{+ setErrorVisible(b: boolean): void}
+\end{itemize}
+\subparagraph{LoginService}
+\textbf{Attributi}
+\begin{itemize}
+	\item \texttt{- APIUrl: string}
+\end{itemize}
+\textbf{Metodi}
+\begin{itemize}
+	\item \texttt{+ login(val: LoginData): Observable<UserData>}
+\end{itemize}
+\subparagraph{LocalAccountService}
+\textbf{Metodi}
+\begin{itemize}
+	\item \texttt{+ retrieveLocalCredentials(): LoginData}
+	\item \texttt{+ saveCredentialsLocally(creds: LoginData): void}
+	\item \texttt{+ deleteSavedCredentials(): void}
+\end{itemize}
+\subparagraph{LoginData}
+\textbf{Attributi}
+\begin{itemize}
+	\item \texttt{+ username: string}
+	\item \texttt{+ password: string}
+\end{itemize}
+\subparagraph{UserData}
+\textbf{Attributi}
+\begin{itemize}
+	\item \texttt{+ id: number}
+	\item \texttt{+ username: string}
+	\item \texttt{+ password: string}
+	\item \texttt{+ name: string}
+	\item \texttt{+ surname: string}
+	\item \texttt{+ mail: string}
+	\item \texttt{+ type: number}
+	\item \texttt{+ archived: number}
+\end{itemize}
+\subparagraph{Observable}
+\textbf{Metodi}
+\begin{itemize}
+	\item \texttt{+ subscribe(next: (T)=>void): Subscription}
+\end{itemize}
+
 \subsubsection{Gestione stanze e postazioni}
 \begin{figure}[H]
 	\centering
@@ -308,6 +368,76 @@ Classe fornita dalla libreria Rxjs. Viene utilizzata per effettuare chiamate asi
 	\caption{Diagramma delle classi per la gestione delle credenziali}
 	\label{fig:DiagrammaClassiCredenziali}
 \end{figure}
+
+\paragraph{Classi}
+\subparagraph{ShowCredentialComponent}
+\textbf{Attributi}
+\begin{itemize}
+	\item \texttt{+ CredentialList: Array<UserData>}
+	\item \texttt{+ addEditCredential: UserData}
+	\item \texttt{+ userAction: string}
+\end{itemize}
+\textbf{Metodi}
+\begin{itemize}
+	\item \texttt{+ ngOnInit(): void}
+	\item \texttt{+ addClick(): void}
+	\item \texttt{+ editClick(credential: UserData): void}
+	\item \texttt{+ closeClick(): void}
+	\item \texttt{+ refreshCredentialsList(): void}
+	\item \texttt{+ deleteClick(item: UserData): void}
+\end{itemize}
+\subparagraph{AddEditCredentialComponent}
+\textbf{Attributi}
+\begin{itemize}
+	\item \texttt{+ id: number}
+	\item \texttt{+ username: string}
+	\item \texttt{+ password: string}
+	\item \texttt{+ name: string}
+	\item \texttt{+ surname: string}
+	\item \texttt{+ mail: string}
+	\item \texttt{+ type: number}
+	\item \texttt{+ archived: number}
+	\item \texttt{+ action: string}
+	\item \texttt{+ credential: UserData}
+\end{itemize}
+\textbf{Metodi}
+\begin{itemize}
+	\item \texttt{+ ngOnChanges(): void}
+	\item \texttt{+ getCredentialFromLocalValues(): UserData}
+	\item \texttt{+ takeAction(): void}
+	\item \texttt{+ addCredential(): void}
+	\item \texttt{+ editCredential(): void}
+\end{itemize}
+\subparagraph{UserService}
+\textbf{Attributi}
+\begin{itemize}
+	\item \texttt{- APIUrl: string}
+\end{itemize}
+\textbf{Metodi}
+\begin{itemize}
+	\item \texttt{+ getUserList(): Observable<Array<UserData>>}
+	\item \texttt{+ addUser(val: UserData): Observable<string>}
+	\item \texttt{+ deleteUser(val: number): Observable<string>}
+	\item \texttt{+ modifyUser(val: UserData): Observable<string>}
+\end{itemize}
+\subparagraph{UserData}
+\textbf{Attributi}
+\begin{itemize}
+	\item \texttt{+ id: number}
+	\item \texttt{+ username: string}
+	\item \texttt{+ password: string}
+	\item \texttt{+ name: string}
+	\item \texttt{+ surname: string}
+	\item \texttt{+ mail: string}
+	\item \texttt{+ type: number}
+	\item \texttt{+ archived: number}
+\end{itemize}
+\subparagraph{Observable}
+\textbf{Metodi}
+\begin{itemize}
+	\item \texttt{+ subscribe(next: (T)=>void): Subscription}
+\end{itemize}
+
 \subsubsection{Sezione report}
 \subsubsection{Sezione notifiche}
 \subsection{Diagrammi di sequenza}
