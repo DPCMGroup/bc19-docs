@@ -444,6 +444,12 @@ Il diagramma delle classi sovrastante rappresenta le classi coinvolte nella nell
 \subsubsection{Sezione notifiche}
 \subsection{Diagrammi di sequenza}
 \subsubsection{Login}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=18cm]{res/images/webapp-autologin-diagrammSequenza.png}
+	\caption{Diagramma di sequenza per l'evento di login automatico}
+	\label{fig:DiagrammaSequenzaAutoLogin}
+\end{figure}
 \subsubsection{Gestione stanze e postazioni}
 \begin{figure}[H]
 	\centering
@@ -451,7 +457,7 @@ Il diagramma delle classi sovrastante rappresenta le classi coinvolte nella nell
 	\caption{Diagramma di sequenza per la visualizzazione delle stanze e delle postazioni}
 	\label{fig:DiagrammaSequenzaStanzePostazioni1}
 \end{figure}
-Il diagramma sovrastante rappresenta un'evento scatenato dall'inizializzazione della pagina (notificata tramite la funzione \texttt{nfOnInit()}) che consiste nell'ottenimento di una lista delle postazioni e delle stanze dal server e della suddivisione delle prime in una mappa. Questa mappa verrà utilizzata dalla vista per mostrare le postazioni suddivise in stanze. L'evento rappresentato nel diagramma viene provocato ogni volta che si chiama il metodo \texttt{refreshAll()}. Questa funzionalità viene utilizzata, per esempio, dopo che una postazione è stata eliminata o modificata.
+Il diagramma sovrastante rappresenta un'evento scatenato dall'inizializzazione della pagina (notificata tramite la funzione \texttt{ngOnInit()}) che consiste nell'ottenimento di una lista delle postazioni e delle stanze dal server e della suddivisione delle prime in una mappa. Questa mappa verrà utilizzata dalla vista per mostrare le postazioni suddivise in stanze. L'evento rappresentato nel diagramma viene provocato ogni volta che si chiama il metodo \texttt{refreshAll()}. Questa funzionalità viene utilizzata, per esempio, dopo che una postazione è stata eliminata o modificata.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=18cm]{res/images/webapp-addEditStanzePostazioni-diagrammaSequenza.png}
