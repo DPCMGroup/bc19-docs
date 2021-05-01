@@ -118,9 +118,11 @@ Nel diagramm sovrastante sono rappresentate le classi utilizzate dalla pagina di
 	\item \texttt{+ setErrorVisible(b: boolean): void}
 \end{itemize}
 \subparagraph{LoginService}
+Servizio che permette di verificare tramite il server la validità di credenziali per l'autenticazione. Ogni metodo di questa classe, tranne il costruttore, restituisce un \texttt{Observable}. Questo oggetto espone un metodo subscribe con il quale si potrà impostare una funzione di callback che verrà chiamata quando il server fornirà una risposta. \newline
 \textbf{Attributi}
 \begin{itemize}
 	\item \texttt{- APIUrl: string}
+	L'url base dell'API REST a cui il servizio fa riferimento.
 \end{itemize}
 \textbf{Metodi}
 \begin{itemize}
@@ -152,6 +154,7 @@ Nel diagramm sovrastante sono rappresentate le classi utilizzate dalla pagina di
 	\item \texttt{+ archived: number}
 \end{itemize}
 \subparagraph{Observable}
+Classe fornita dalla libreria Rxjs. Viene utilizzata per effettuare chiamate asincrone al server. Per una documentazione più approfondita fare riferimento a \url{https://angular.io/guide/rx-library}. \newline
 \textbf{Metodi}
 \begin{itemize}
 	\item \texttt{+ subscribe(next: (T)=>void): Subscription}
@@ -373,22 +376,33 @@ Il diagramma delle classi sovrastante rappresenta le classi coinvolte nella nell
 
 \paragraph{Classi}
 \subparagraph{ShowCredentialComponent}
+Classe che si occupa della visualizzazione di una lista delle credenziali ottenute tramite il service \texttt{UserService}. \newline
 \textbf{Attributi}
 \begin{itemize}
-	\item \texttt{+ CredentialList: Array<UserData>}
-	\item \texttt{+ addEditCredential: UserData}
-	\item \texttt{+ userAction: string}
+	\item \texttt{+ CredentialList: Array<UserData>} \newline
+	Array nel quale vengono salvate le credenziali ottenute dal service.
+	\item \texttt{+ addEditCredential: UserData} \newline
+	Variabile utilizzata per il passaggio delle informazione da questa classe a \texttt{AddEditCredentialComponent}. Il valore di questa variabile viene assegnato alla variabile \texttt{credential} di quest'ultima classe.
+	\item \texttt{+ userAction: string} \newline
+	Variabile utilizzata per la selezione del tipo di azione (aggiunta o modifica) da eseguire. Il valore di questa variabile viene assegnato alla variabile \texttt{action} di \texttt{AddEditCredentialComponent}.
 \end{itemize}
 \textbf{Metodi}
 \begin{itemize}
-	\item \texttt{+ ngOnInit(): void}
-	\item \texttt{+ addClick(): void}
-	\item \texttt{+ editClick(credential: UserData): void}
-	\item \texttt{+ closeClick(): void}
-	\item \texttt{+ refreshCredentialsList(): void}
-	\item \texttt{+ deleteClick(item: UserData): void}
+	\item \texttt{+ ngOnInit(): void} \newline
+	Metodo chiamato all'inizializzazione della pagina. Provoca l'aggiornamento della lista di credenziali.
+	\item \texttt{+ addClick(): void} \newline
+	Metodo chiamato nel momento in cui l'utente apre il form di creazione di una credenziale. Imposta \texttt{userAction} e \texttt{addEditCredential} in modo che possano essere usate per aggiungere una credenziale as sistema.
+	\item \texttt{+ editClick(credential: UserData): void} \newline
+	Metodo chiamato nel momento in cui l'utente apre il form di modifica di una credenziale. Imposta \texttt{userAction} e \texttt{addEditCredential} in modo che possano essere usate per modificare la credenziale.
+	\item \texttt{+ closeClick(): void} \newline
+	Metodo chiamato nel momento in cui l'utente chiude il form di creazione di una credenziale. Provoca l'aggiornamento della lista di credenziali.
+	\item \texttt{+ refreshCredentialsList(): void} \newline
+	Provoca l'aggiornamento della lista di credenziali tramite \texttt{UserService}.
+	\item \texttt{+ deleteClick(item: UserData): void} \newline
+	Metodo chiamato nel momento in cui l'utente preme sul pulsante per l'eliminazione di una credenziale. Provoca l'eliminazione tramite \texttt{UserService}.
 \end{itemize}
 \subparagraph{AddEditCredentialComponent}
+Classe che si occupa della creazione e modifica di credenziali da parte dell'utente. I primi 8 attributi sono modificabili dall'utente tramite un form e definiscono i valori della credenziale che si sta creando o modificando. \newline
 \textbf{Attributi}
 \begin{itemize}
 	\item \texttt{+ id: number}
@@ -399,30 +413,44 @@ Il diagramma delle classi sovrastante rappresenta le classi coinvolte nella nell
 	\item \texttt{+ mail: string}
 	\item \texttt{+ type: number}
 	\item \texttt{+ archived: number}
-	\item \texttt{+ action: string}
-	\item \texttt{+ credential: UserData}
+	\item \texttt{+ action: string} \newline
+	Variabile che determina il tipo di azione da eseguire ( aggiunta o modifica della credenziale). Viene impostata dalla classe \texttt{ShowCredentialComponent}.
+	\item \texttt{+ credential: UserData} \newline
+	Variabile attraverso la quale questa classe ottiene i valori iniziali della credenziale che dovrà essere modificata o aggiunta. Viene impostata dalla classe \texttt{ShowCredentialComponent}.
 \end{itemize}
 \textbf{Metodi}
 \begin{itemize}
-	\item \texttt{+ ngOnChanges(): void}
-	\item \texttt{+ getCredentialFromLocalValues(): UserData}
-	\item \texttt{+ takeAction(): void}
-	\item \texttt{+ addCredential(): void}
-	\item \texttt{+ editCredential(): void}
+	\item \texttt{+ ngOnChanges(): void} \newline
+	Metodo chiamato ogni volta che uno degli attributi data-bound, in questo caso \texttt{action} e \texttt{credential} viene modificato. Viene utilizzato per aggiornare i primi 8 attributi in base al valore dell'ultimo, che viene impostato da \texttt{ShowCredentialComponent}
+	\item \texttt{+ getCredentialFromLocalValues(): UserData} \newline
+	Restituisce un oggetto costruito a partire dai primi 8 attributi dell classe.
+	\item \texttt{+ takeAction(): void} \newline
+	Avvia l'evento di aggiunta o modifica della credenziale. La scelta tra le due possibilità è determinata dall'attributo action.
+	\item \texttt{+ addCredential(): void} \newline
+	Aggiunge la credenziale determinata dai primi 8 valori al server.
+	\item \texttt{+ editCredential(): void} \newline
+	Modifica la credenziale presente sul server con id pari all'attributo \texttt{id} impostandone gli altri valori con quelli degli altri attributi.
 \end{itemize}
 \subparagraph{UserService}
+Servizio che permette di ottenere dal server le credenziali salvate. Ogni metodo di questa classe, tranne il costruttore, restituisce un \texttt{Observable}. Questo oggetto espone un metodo subscribe con il quale si potrà impostare una funzione di callback che verrà chiamata quando il server fornirà una risposta. \newline
 \textbf{Attributi}
 \begin{itemize}
 	\item \texttt{- APIUrl: string}
+	L'url base dell'API REST a cui il servizio fa riferimento.
 \end{itemize}
 \textbf{Metodi}
 \begin{itemize}
-	\item \texttt{+ getUserList(): Observable<Array<UserData>>}
-	\item \texttt{+ addUser(val: UserData): Observable<string>}
-	\item \texttt{+ deleteUser(val: number): Observable<string>}
-	\item \texttt{+ modifyUser(val: UserData): Observable<string>}
+	\item \texttt{+ getUserList(): Observable<Array<UserData>>} \newline
+	Fornisce un'array contenente tutte le credenziali presenti sul server
+	\item \texttt{+ addUser(val: UserData): Observable<string>} \newline
+	Permette di aggiungere una credenziale al server. Restituisce l'esito dell'operazione sotto forma di stringa.
+	\item \texttt{+ deleteUser(val: number): Observable<string>} \newline
+	Permette di rimuovere una credenziale dal server, specificandone l'id. Restituisce l'esito dell'operazione sotto forma di stringa.
+	\item \texttt{+ modifyUser(val: UserData): Observable<string>} \newline
+	Permette di modificare una credenziale presente sul server. La credenziale da modificare è specificata dall'attributo \texttt{id} del parametro \texttt{val}. I nuovi valori della credenziale sono specificati dagli altri attributi del parametro. Restituisce l'esito dell'operazione sotto forma di stringa.
 \end{itemize}
 \subparagraph{UserData}
+Questa classe contiene tutti e soli i valori necessari per il salvataggio di un utente sul database. È utilizzata per il transito dei dati degli utenti all'interno dell'applicazione. \newline
 \textbf{Attributi}
 \begin{itemize}
 	\item \texttt{+ id: number}
@@ -435,6 +463,7 @@ Il diagramma delle classi sovrastante rappresenta le classi coinvolte nella nell
 	\item \texttt{+ archived: number}
 \end{itemize}
 \subparagraph{Observable}
+Classe fornita dalla libreria Rxjs. Viene utilizzata per effettuare chiamate asincrone al server. Per una documentazione più approfondita fare riferimento a \url{https://angular.io/guide/rx-library}. \newline
 \textbf{Metodi}
 \begin{itemize}
 	\item \texttt{+ subscribe(next: (T)=>void): Subscription}
@@ -446,7 +475,7 @@ Il diagramma delle classi sovrastante rappresenta le classi coinvolte nella nell
 \subsubsection{Login}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=18cm]{res/images/webapp-autologin-diagrammSequenza.png}
+	\includegraphics[width=18cm]{res/images/webapp-autologin-diagrammaSequenza.png}
 	\caption{Diagramma di sequenza per l'evento di login automatico}
 	\label{fig:DiagrammaSequenzaAutoLogin}
 \end{figure}
