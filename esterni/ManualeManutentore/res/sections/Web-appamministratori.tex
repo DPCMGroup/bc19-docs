@@ -83,6 +83,7 @@ La struttura del sito è definita principalmente dal modo nel quale i componenti
 In entrambi i casi, nella pagina visualizzata, verrà inserito il componente specificato al posto del tag. Nel primo caso il componente da inserire è fisso ed è definito dal nome del tag stesso, nel secondo invece il componente inserito può variare. In quest'ultimo caso l'annidamento è definito dal'url col quale si sta visitando la pagina e dalla costante \texttt{routes} all'interno del file \texttt{src/app/app-routing.module.ts}.
 
 \subsection{Diagrammi dei package}
+
 \subsection{Diagrammi delle classi}
 I diagrammi seguenti sono scritti secondo la sintassi UML. Le descrizioni testuali degli attributi e dei metodi delle classi riprendono alcune notazioni del linguaggio UML:
 \begin{itemize}
@@ -101,6 +102,7 @@ Nel diagramm sovrastante sono rappresentate le classi utilizzate dalla pagina di
 \paragraph{Classi}
 
 \subparagraph{LoginComponent}
+Classe che si occupa della gestione del login manuale, ovvero tramite l'inserimento delle credenziali da parte dell'utente, e di quello automatico, ovvero tramite l'utilizzo delle credenziali precedentemente salvate nel local storage del browser. \newline
 \textbf{Attributi}
 \begin{itemize}
 	\item \texttt{+ username: string}
@@ -111,11 +113,16 @@ Nel diagramm sovrastante sono rappresentate le classi utilizzate dalla pagina di
 \textbf{Metodi}
 \begin{itemize}
 	\item \texttt{+ constructor(private loginService: LoginService, private localAccountService: LocalAccountService)}
-	\item \texttt{+ ngOnInit(): void}
-	\item \texttt{+ focused(): void}
-	\item \texttt{+ autoLogin(): void}
-	\item \texttt{+ login(): void}
-	\item \texttt{+ setErrorVisible(b: boolean): void}
+	\item \texttt{+ ngOnInit(): void} \newline
+	Metodo che viene chiamato all'inizializzazione delle pagina. Provoca l'evento di login automatico.
+	\item \texttt{+ focused(): void} \newline
+	Metodo che viene chiamato nel momento in cui uno dei due campi di inserimento delle credenziali viene selezionata. Provoca l'impostazione dell'invisibilità dell'errore che indica l'incorrettezza delle credenziali inserite.
+	\item \texttt{+ autoLogin(): void} \newline
+	Metodo che effettua un tentativo di autenticazione con le credenziali salvate nel local storage. Se l'autenticazione riesce l'utente viene reindirizzato alla pagina home. Altrimenti viene visualizzata la pagina di inserimento delle credenziali.
+	\item \texttt{+ login(): void} \newline
+	Metodo che effettua un tentativo di autenticazione con le credenziali inserite dall'utente. Se l'autenticazione riesce l'utente viene reindirizzato alla pagina home. Altrimenti viene mostrato un messaggio di errore.
+	\item \texttt{+ setErrorVisible(b: boolean): void} \newline
+	Metodo che imposta la visibilità dell'errore che indica l'incorrettezza delle credenziali inserite.
 \end{itemize}
 \subparagraph{LoginService}
 Servizio che permette di verificare tramite il server la validità di credenziali per l'autenticazione. Ogni metodo di questa classe, tranne il costruttore, restituisce un \texttt{Observable}. Questo oggetto espone un metodo subscribe con il quale si potrà impostare una funzione di callback che verrà chiamata quando il server fornirà una risposta. \newline
@@ -126,9 +133,11 @@ Servizio che permette di verificare tramite il server la validità di credenzial
 \end{itemize}
 \textbf{Metodi}
 \begin{itemize}
-	\item \texttt{+ login(val: LoginData): Observable<UserData>}
+	\item \texttt{+ login(val: LoginData): Observable<UserData>} \newline
+	Verifica l'esistenza delle credenziali passate come parametro nel database. Restituisce un Observable che permette di ottenere, in un \texttt{UserData}, i dati dell'utente corrispondente alle credenziali.
 \end{itemize}
 \subparagraph{LocalAccountService}
+Servizio che permette di gestire il salvataggio delle credenziali dell'utente nel local storage del browser. \newline
 \textbf{Metodi}
 \begin{itemize}
 	\item \texttt{+ retrieveLocalCredentials(): LoginData}
@@ -136,12 +145,14 @@ Servizio che permette di verificare tramite il server la validità di credenzial
 	\item \texttt{+ deleteSavedCredentials(): void}
 \end{itemize}
 \subparagraph{LoginData}
+Classe che contiene i valori necessari per l'autenticazione di un amministratore al sistema. Viene usata per la comunicazione di questo tipo di dati all'interno dell'applicazione. \newline
 \textbf{Attributi}
 \begin{itemize}
 	\item \texttt{+ username: string}
 	\item \texttt{+ password: string}
 \end{itemize}
 \subparagraph{UserData}
+Classe che contiene tutti e soli i valori necessari per il salvataggio di un utente sul database. È utilizzata per il transito dei dati degli utenti all'interno dell'applicazione. \newline
 \textbf{Attributi}
 \begin{itemize}
 	\item \texttt{+ id: number}
