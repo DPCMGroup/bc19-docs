@@ -96,6 +96,7 @@ I diagrammi seguenti sono scritti secondo la sintassi UML. Le descrizioni testua
 	\caption{Diagramma delle classi per il login}
 	\label{fig:DiagrammaClassiLogin}
 \end{figure}
+Nel diagramm sovrastante sono rappresentate le classi utilizzate dalla pagina di login e le dipendenze tra di esse. La classe \texttt{LoginComponent} dirige la gestione del login manuale, tramite inserimento delle credenziali da parte dell'utente, e di quello automatico, tramite verifica delle credenziali precedentemente salvate nel local storage del browser. A \texttt{LoginService}, in particolare, viene delegata la verifica delle credenziali tramite il server, mentre a LocalAccountService, vengono delegate la scrittura, la lettura e l'eliminazione delle credenziali salvate nel browser. Per comunicare credenziali di accesso da una classe all'altra, viene utilizzata \texttt{LoginData}. \texttt{UserData} invece viene usata per la ricezione dal server dei dati dell'utente che si è autenticato.
 
 \paragraph{Classi}
 
@@ -368,6 +369,7 @@ Classe fornita dalla libreria Rxjs. Viene utilizzata per effettuare chiamate asi
 	\caption{Diagramma delle classi per la gestione delle credenziali}
 	\label{fig:DiagrammaClassiCredenziali}
 \end{figure}
+Il diagramma delle classi sovrastante rappresenta le classi coinvolte nella nella pagina di gestione delle credenziali, e le loro relazioni. Il funzionamento di questa pagina è simile a quello della pagina di gestione delle stanze e delle postazioni (§3.6.2). Qui la classe \texttt{ShowCredentialComponent} si occupa di ottenere la lista delle credenziali dal servizio \texttt{UserService} tramite oggetti \texttt{Observable}. Essa delega alla classe \texttt{AddEditCredentialComponent} l'aggiunta e modifica di credenziali. Il passaggio delle informazioni riguanti le credenziali viene sempre attuato tramile oggetti della classe \texttt{UserData}.
 
 \paragraph{Classi}
 \subparagraph{ShowCredentialComponent}
