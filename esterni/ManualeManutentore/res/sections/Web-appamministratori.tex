@@ -34,30 +34,30 @@ Linguaggio per la definizione dello stile grafico delle pagine web. Nella nostra
 
 \subsubsection{Tecnologie}
 \paragraph{Node.js}
-Programma focalizzato sull'esecuzione di codice javascript al di fuori del browser.
-Per l'installazione fare riferimento alla pagina \url{https://nodejs.org/en/download/} 
+Programma focalizzato sull'esecuzione di codice javascript al di fuori di un browser.
+Per l'installazione fare riferimento alla pagina \url{https://nodejs.org/en/download/}. La versione utilizzata per lo sviluppo è la 10.24.0.
 \paragraph{npm}
 Acronimo di Node Package Manager, permette di ottenere le librerie necessarie allo sviluppo.
-Si ottiene insieme a Node.js tramite l'installazione di quest'ultimo.
+Si ottiene insieme a Node.js tramite l'installazione di quest'ultimo. La versione utilizzata per lo sviluppo è la 7.6.2.
 \paragraph{Angular}
 Framework per applicazioni web.
-Per l'installazione fare riferimento alla pagina \url{https://angular.io/guide/setup-local#install-the-angular-cli}
+Per l'installazione fare riferimento alla pagina \url{https://angular.io/guide/setup-local#install-the-angular-cli}. La versione utilizzata per lo sviluppo è la 11.2.7.
 \paragraph{Bootstrap}
 Framework per la creazione di pagine web.
-Per l'integrazione di Bootstrap in Angular fare riferimento alla pagina \url{https://www.npmjs.com/package/@ng-bootstrap/ng-bootstrap#installation}
+Per l'integrazione di Bootstrap in Angular fare riferimento alla pagina \url{https://www.npmjs.com/package/@ng-bootstrap/ng-bootstrap#installation}. La versione utilizzata per lo sviluppo è la 4.5.0.
 
 \subsubsection{Test}
 Per i test abbiamo utilizzato il framework Jasmine. Per utilizzarlo con Angular è necessario installarlo col comando \texttt{npm install -g jasmine} \newline
+La versione di Jasmine utilizzata per lo sviluppo è la 2.8.0. \newline
 Per eseguire i test usare il comando \texttt{ng test} \newline
 I test verranno eseguiti tramite il programma Karma e i loro risultati saranno visualizzati in una pagina del browser aperta automaticamente.
 
 \subsubsection{IDE}
-Per lo sviluppo abbiamo utilizzato l'IDE WebStorm. Per la sua installazione riferirsi alla pagina \url{https://www.jetbrains.com/webstorm/download/}
+Per lo sviluppo abbiamo utilizzato l'IDE WebStorm. Per la sua installazione riferirsi alla pagina \url{https://www.jetbrains.com/webstorm/download/}. La versione utilizzata per lo sviluppo è la 2020.3.3.
 
 \subsubsection{Esecuzione}
 Una volta installate le tecnologie sopra elencate si potrà eseguire la webapp aprendo un terminale nella root del progetto ed eseguendo il comando \texttt{ng serve} \newline
 Verrà eseguito un server locale accessibile all'indirizzo \url{http://localhost:4200}
-
 
 
 \subsection{Architettura}
@@ -104,21 +104,59 @@ La struttura del sito è definita principalmente dal modo nel quale i componenti
 In entrambi i casi, nella pagina visualizzata, verrà inserito il componente specificato al posto del tag. Nel primo caso il componente da inserire è fisso ed è definito dal nome del tag stesso, nel secondo invece il componente inserito può variare. In quest'ultimo caso l'annidamento è definito dal'url col quale si sta visitando la pagina e dalla costante \texttt{routes} all'interno del file \texttt{src/app/app-routing.module.ts}.
 
 \subsection{Estendibilità}
-Il modello a componenti offerto da Angular, descritto nella precedente sottosezione, facilita l'estendibilità dell'applicazione. Per introdurra una nuova funzionalità per l'utente sarà infatti sufficiente creare un componente apposito tramite il comando \newline
-\texttt{ng g c nomecomponente} \newline
+Il modello a componenti offerto da Angular, descritto nella precedente sottosezione, facilita l'estendibilità dell'applicazione. Per introdurre una nuova funzionalità sarà infatti sufficiente creare un componente apposito tramite il comando \newline
+	\texttt{ng g c nomecomponente} \newline
 Per introdurre invece un servizio si dovrà usare il comando \newline
-\texttt{ng g service nomeservizio} \newline
+	\texttt{ng g service nomeservizio} \newline
 
 Per la struttura dei componenti e dei servizi fare riferimento alla sottosezione precedente.
 
 \subsection{Diagrammi dei package}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=18cm]{res/images/webapp-totale-diagrammaPackage.png}
+	\caption{Diagramma dei package della webapp}
+	\label{fig:DiagrammaPackageWebapp}
+\end{figure}
+
+\subsubsection{Base}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=8cm]{res/images/webapp-base-diagrammaPackage.png}
+	\caption{Diagramma del package base della webapp}
+	\label{fig:DiagrammaPackageBaseWebapp}
+\end{figure}
+
+\subsubsection{Login}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=8cm]{res/images/webapp-login-diagrammaPackage.png}
+	\caption{Diagramma del package login della webapp}
+	\label{fig:DiagrammaPackageLoginWebapp}
+\end{figure}
+
+\subsubsection{Models}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=8cm]{res/images/webapp-models-diagrammaPackage.png}
+	\caption{Diagramma del package models della webapp}
+	\label{fig:DiagrammaPackageModelsWebapp}
+\end{figure}
+
+\subsubsection{Services}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=8cm]{res/images/webapp-services-diagrammaPackage.png}
+	\caption{Diagramma del package services della webapp}
+	\label{fig:DiagrammaPackageServicesWebapp}
+\end{figure}
 
 \subsection{Diagrammi delle classi}
 I diagrammi seguenti sono scritti secondo la sintassi UML. Le descrizioni testuali degli attributi e dei metodi delle classi riprendono alcune notazioni del linguaggio UML:
 \begin{itemize}
 	\item +/*/- prima del nome di un attributo o metodo indica che esso è, rispettivamente, pubblico, protetto o privato;
-	\item i metodi e gli attributi il cui nome è sottolineato (\underline{nome\_esempio}) sono statici.
 \end{itemize}
+
 \subsubsection{Login}
 \begin{figure}[H]
 	\centering
