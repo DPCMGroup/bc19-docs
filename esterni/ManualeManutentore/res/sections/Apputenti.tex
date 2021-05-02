@@ -428,6 +428,11 @@ Vengono presentati di seguito i diagrammi UML di sequenza relativi all'applicazi
 	\caption{Login-Diagramma di sequenza}
 	\label{fig:Login-Diagramma di sequenza}
 \end{figure}
+Questo diagramma di sequenza rappresenta la serie di azioni svolte dall'applicazione per autenticare un utente.
+La sequenza inizia con la creazione della vista tramite il metodo \textit{onCreate}. Successivamente viene richiesto al Presenter di effettuare l'autenticazione tramite il metodo \textit{makeLogin} che a sua volta richiederà al Model di effettuare l'autenticazione attraverso il metodo \textit{sendLogin}.
+Il Model chiama \textit{login} del Service tramite il quale genera il json con username e password. Ora il Service chiede di verificare al backend se esiste un utente associato a quelle credenziali tramite il metodo \textit{httpClient}.
+Qualora l'utente esistesse viene creato un oggetto di classe User con l'id restituito da \textit{httpClient} e avvengono tutte le chiamate di ritorno.
+Infine viene aggiornata la vista tramite il metodo \textit{updateLoginView}. 
 
 \subsubsection{Diagramma per la visualizzazione delle prenotazioni di un utente}
 \begin{figure}[H]
