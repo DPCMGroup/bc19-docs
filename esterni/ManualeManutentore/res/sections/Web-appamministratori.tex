@@ -25,7 +25,7 @@ Lo si può scaricare compresso in formato zip direttamente dal sito o, se si ha 
 \paragraph{Typescript}
 Superset del linguaggio Javascript. Viene utilizzato per definire la logica dell'applicazione. \newline
 Per poterlo utilizzare con Angular, esso va prima installato col comando \newline
-\texttt{npm install -g typescript}
+	\texttt{npm install -g typescript}
 
 \paragraph{HTML}
 Linguaggio di markup utilizzato per definire la struttura delle pagine web. Non necessita di installazione.
@@ -48,16 +48,19 @@ Framework per la creazione di pagine web.
 Per l'integrazione di Bootstrap in Angular fare riferimento alla pagina \url{https://www.npmjs.com/package/@ng-bootstrap/ng-bootstrap#installation}. La versione utilizzata per lo sviluppo è la 4.5.0.
 
 \subsubsection{Test}
-Per i test abbiamo utilizzato il framework Jasmine. Per utilizzarlo con Angular è necessario installarlo col comando \texttt{npm install -g jasmine} \newline
+Per i test abbiamo utilizzato il framework Jasmine. Per utilizzarlo con Angular è necessario installarlo col comando \newline
+	\texttt{npm install -g jasmine} \newline
 La versione di Jasmine utilizzata per lo sviluppo è la 2.8.0. \newline
-Per eseguire i test usare il comando \texttt{ng test} \newline
+Per eseguire i test usare il comando \newline
+	\texttt{ng test} \newline
 I test verranno eseguiti tramite il programma Karma e i loro risultati saranno visualizzati in una pagina del browser aperta automaticamente.
 
-\subsubsection{IDE}
+\subsubsection{Ambiente di sviluppo}
 Per lo sviluppo abbiamo utilizzato l'IDE WebStorm. Per la sua installazione riferirsi alla pagina \url{https://www.jetbrains.com/webstorm/download/}. La versione utilizzata per lo sviluppo è la 2020.3.3.
 
 \subsubsection{Esecuzione}
-Una volta installate le tecnologie sopra elencate si potrà eseguire la webapp aprendo un terminale nella root del progetto ed eseguendo il comando \texttt{ng serve} \newline
+Una volta installate le tecnologie sopra elencate si potrà eseguire la webapp aprendo un terminale nella root del progetto ed eseguendo il comando \newline
+	\texttt{ng serve} \newline
 Verrà eseguito un server locale accessibile all'indirizzo \url{http://localhost:4200}
 
 
@@ -113,6 +116,8 @@ Per introdurre invece un servizio si dovrà usare il comando \newline
 Per la struttura dei componenti e dei servizi fare riferimento alla sottosezione precedente.
 
 \subsection{Diagrammi dei package}
+
+\subsubsection{Visione generale}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=18cm]{res/images/webapp-totale-diagrammaPackage.png}
@@ -182,10 +187,10 @@ Nel diagramma sovrastante sono rappresentate le classi utilizzate dalla pagina d
 Classe che si occupa della gestione del login manuale, ovvero tramite l'inserimento delle credenziali da parte dell'utente, e di quello automatico, ovvero tramite l'utilizzo delle credenziali precedentemente salvate nel local storage del browser. \newline
 Questa classe contiene i seguenti attributi:
 \begin{itemize}
-	\item \textbf{username: string}
-	\item \textbf{password: string}
-	\item \textbf{autoLoggedIn: boolean}
-	\item \textbf{errorVisible: string}
+	\item \textbf{autoLoggedIn: boolean} \newline
+	Variabile utilizzata per memorizzare il successo o meno del login automatico.
+	\item \textbf{errorVisible: string} \newline
+	Variabile che determina la visibilità dell'errore mostrato all'utente.
 \end{itemize}
 Questa classe presenta i seguenti metodi:
 \begin{itemize}
@@ -254,10 +259,10 @@ Il diagramma sovrastante rappresenta l'architettura utilizzata per la pagina di 
 Classe che si occupa della visualizzazione, eliminazione e, tramite i componenti AddEditWorkstation e AddEditRoom, dell'aggiunta e modifica di postazioni e stanze. \newline
 Questa classe contiene i seguenti attributi:
 \begin{itemize}
-	\item \textbf{roomsMap: Map<number, Array<WorkstationData>>} \newline
+	\item \textbf{roomsMap: Map<number, Array<WorkstationData> >} \newline
 		Map in cui ad ogni stanza sono assegnate le sue postazione, ovvero quelle con \texttt{idroom} uguale all'\texttt{id} della stanza. Se l'utente applica un filtro alla lista, qui verranno contenute solo le stanze e le postazioni selezionate da tale filtro.
 	\item \textbf{roomsList: Array<RoomsData>} \newline
-		Array utilizzato per contenere le stanze ottenutedal server
+		Array utilizzato per contenere le stanze ottenute dal server
 	\item \textbf{workstationList: Array<Workstation>} \newline
 		Array utilizzato per contenere le postazioni ottenute dal server.
 	\item \textbf{searchId: string} \newline
@@ -274,9 +279,9 @@ Questa classe contiene i seguenti attributi:
 Questa classe presenta i seguenti metodi:
 \begin{itemize}
 	\item \textbf{ngOnInit(): void} \newline
-	Questa funzione viene chiamata all'inizializzazione della pagina.
+	Questa funzione viene chiamata all'inizializzazione della pagina e provoca l'aggiornamento di roomsMap.
 	\item \textbf{getRoomsMapKeys(): Array<number>} \newline
-	Restituisce un array con gli id delle stanze contenute in \texttt{roomsMap}
+	Restituisce un array con gli id delle stanze contenute in \texttt{roomsMap}.
 	\item \textbf{getRoomInfoById(id: number): RoomData} \newline
 	Restituisce un oggetto \texttt{RoomData} con i dati della stanza identificata dall'id passato come parametro.
 	\item \textbf{setRoomList(roomData: Array<RoomData>): void} \newline
@@ -369,7 +374,7 @@ Questa classe contiene i seguenti attributi:
 \end{itemize}
 Questa classe presenta i seguenti metodi:
 \begin{itemize}
-	\item \textbf{getWorkstationList(): Observable<Array<WorkstationData>> 	} \newline
+	\item \textbf{getWorkstationList(): Observable<Array<WorkstationData> > 	} \newline
 	Usato per ottenere una lista delle postazioni.
 	\item \textbf{addWorkstation(val: WorkstationData): Observable<string> 	} \newline
 	Usato per tentare di aggiungere la postazione indicata in \texttt{val} e di ricevere l'esito dell'operazione.
@@ -387,7 +392,7 @@ Questa classe contiene i seguenti attributi:
 \end{itemize}
 Questa classe presenta i seguenti metodi:
 \begin{itemize}
-	\item \textbf{getRoomsList(): Observable<Array<RoomData>> 	} \newline
+	\item \textbf{getRoomsList(): Observable<Array<RoomData> > 	} \newline
 	Usato per ottenere una lista delle stanze.
 	\item \textbf{addRoom(val: RoomData): Observable<string> 	} \newline
 	Usato per tentare di aggiungere la stanza indicata in \texttt{val} e di ricevere l'esito dell'operazione.
@@ -415,7 +420,7 @@ Questa classe presenta i seguenti metodi:
 	\caption{Diagramma delle classi per la gestione delle credenziali}
 	\label{fig:DiagrammaClassiCredenziali}
 \end{figure}
-Il diagramma delle classi sovrastante rappresenta le classi coinvolte nella nella pagina di gestione delle credenziali, e le loro relazioni. Il funzionamento di questa pagina è simile a quello della pagina di gestione delle stanze e delle postazioni (§3.6.2). Qui la classe \texttt{ShowCredentialComponent} si occupa di ottenere la lista delle credenziali dal servizio \texttt{UserService} tramite oggetti \texttt{Observable}. Essa delega alla classe \texttt{AddEditCredentialComponent} l'aggiunta e modifica di credenziali. Il passaggio delle informazioni riguanti le credenziali viene sempre attuato tramile oggetti della classe \texttt{UserData}.
+Il diagramma delle classi sovrastante rappresenta le classi coinvolte nella pagina di gestione delle credenziali, e le loro relazioni. Il funzionamento di questa pagina è simile a quello della pagina di gestione delle stanze e delle postazioni. Qui la classe \texttt{ShowCredentialComponent} si occupa di ottenere la lista delle credenziali dal servizio \texttt{UserService} tramite oggetti \texttt{Observable}. Essa delega alla classe \texttt{AddEditCredentialComponent} l'aggiunta e modifica di credenziali. Il passaggio delle informazioni riguanti le credenziali viene sempre attuato tramile oggetti della classe \texttt{UserData}.
 
 \paragraph{Classi}
 \subparagraph{ShowCredentialComponent}
@@ -477,7 +482,7 @@ Questa classe contiene i seguenti attributi:
 \end{itemize}
 Questa classe presenta i seguenti metodi:
 \begin{itemize}
-	\item \textbf{getUserList(): Observable<Array<UserData>>} \newline
+	\item \textbf{getUserList(): Observable<Array<UserData> >} \newline
 	Fornisce un'array contenente tutte le credenziali presenti sul server
 	\item \textbf{addUser(val: UserData): Observable<string>} \newline
 	Permette di aggiungere una credenziale al server. Restituisce l'esito dell'operazione sotto forma di stringa.
@@ -504,7 +509,7 @@ Questa classe presenta i seguenti metodi:
 	\caption{Diagramma di sequenza per l'evento di login automatico}
 	\label{fig:DiagrammaSequenzaAutoLogin}
 \end{figure}
-Il diagramma sovrastante rappresenta l'evento di login automatico. L'evento è provocato dall'inizializzazione della pagina (\texttt{ngOnInit}). La sequenza consiste nel richiedere le credenziali salvate nel browser tramite il \texttt{LocalAccountService} ( \texttt{retrieveLocalCredentials}) e di tentare un'autenticazione al server con esse tramite il \texttt{LoginService} (\texttt{login}). In caso di esito positivo viene resituito da quest'ultimo servizio un oggetto \texttt{UserData} con i dati dell'utente che si è autenticato. La funzione \texttt{checkLogin} gestisce la risposta del server.
+Il diagramma sovrastante rappresenta l'evento di login automatico. L'evento è provocato dall'inizializzazione della pagina (\texttt{ngOnInit}). La sequenza consiste nel richiedere le credenziali salvate nel browser tramite il \texttt{LocalAccountService} ( \texttt{retrieveLocalCredentials}) e di tentare un'autenticazione al server con esse tramite il \texttt{LoginService} (\texttt{login}). In caso di esito positivo viene resituito da quest'ultimo servizio un oggetto \texttt{UserData} con i dati dell'utente che si è autenticato. La funzione \texttt{checkLoginResponse} gestisce la risposta del server provocando il reindirizzamento alla home page, in caso di successo, o la visualizzazione del form per l'inserimento delle credenziali.
 \subsubsection{Gestione stanze e postazioni}
 \begin{figure}[H]
 	\centering
@@ -512,7 +517,7 @@ Il diagramma sovrastante rappresenta l'evento di login automatico. L'evento è p
 	\caption{Diagramma di sequenza per la visualizzazione delle stanze e delle postazioni}
 	\label{fig:DiagrammaSequenzaStanzePostazioni1}
 \end{figure}
-Il diagramma sovrastante rappresenta un'evento scatenato dall'inizializzazione della pagina (notificata tramite la funzione \texttt{ngOnInit()}) che consiste nell'ottenimento di una lista delle postazioni e delle stanze dal server e della suddivisione delle prime in una mappa. Questa mappa verrà utilizzata dalla vista per mostrare le postazioni suddivise in stanze. L'evento rappresentato nel diagramma viene provocato ogni volta che si chiama il metodo \texttt{refreshAll()}. Questa funzionalità viene utilizzata, per esempio, dopo che una postazione è stata eliminata o modificata.
+Il diagramma sovrastante rappresenta un'evento scatenato dall'inizializzazione della pagina (notificata tramite la funzione \texttt{ngOnInit}) che consiste nell'ottenimento di una lista delle postazioni e delle stanze dal server e della suddivisione delle prime in una mappa. Questa mappa verrà utilizzata dalla vista per mostrare le postazioni suddivise in stanze. L'evento rappresentato nel diagramma viene provocato ogni volta che si chiama il metodo \texttt{refreshAll}. Questa funzionalità viene utilizzata anche, per esempio, dopo che una postazione è stata eliminata o modificata.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=18cm]{res/images/webapp-addEditStanzePostazioni-diagrammaSequenza.png}
@@ -520,7 +525,7 @@ Il diagramma sovrastante rappresenta un'evento scatenato dall'inizializzazione d
 	\label{fig:DiagrammaSequenzaStanzePostazioni2}
 \end{figure}
 Il diagramma sovrastante rappresenta l'evento di aggiunta o modifica di una stanza.
-In entrambi i casi l'evento è provocato dalla chiamata del metodo \texttt{takeAction()}, provocata dalla pressione di un pulsante da parte dell'utente. A questo punto la scelta dell'una o dell'altra via è determinata dal parametro \texttt{action}, che ha assunto valore 'add' o 'edit' a seconda del comportamento dell'utente.
+In entrambi i casi l'evento è provocato dalla chiamata del metodo \texttt{takeAction} successiva alla pressione di un pulsante da parte dell'utente. A questo punto la scelta dell'una o dell'altra via è determinata dal parametro \texttt{action}, che ha assunto valore 'add' o 'edit' a seconda del pulsante premuto.
 \subsubsection{Gestione credenziali}
 \begin{figure}[H]
 	\centering
@@ -535,7 +540,7 @@ Il diagramma sovrastante rappresenta l'evento di visualizzazione delle credenzia
 	\caption{Diagramma di sequenza per l'aggiunta e la modifica delle credenziali}
 	\label{fig:DiagrammaSequenzaVisualizzazioneCredenziali}
 \end{figure}
-Il diagramma sovrastanza rappresenta l'azione di aggiunta o modifica di una credenziale da parte di un'amministratore. In entramb ii casi l'azione è provocata dalla chiamata a \texttt{takeAction}, eseguita dall'utente tramite la pressione di un pulsante. Successivamente viene eseguita l'aggiunta (\texttt{addCredential}) o la modifica (\texttt{editCredential}) della credenziale specificata dai valori inseriti dall'utente.
+Il diagramma sovrastante rappresenta l'azione di aggiunta o modifica di una credenziale da parte di un'amministratore. In entrambi i casi l'azione è provocata dalla chiamata a \texttt{takeAction}, eseguita dall'utente tramite la pressione di un pulsante. Successivamente viene eseguita l'aggiunta (\texttt{addCredential}) o la modifica (\texttt{editCredential}) della credenziale definita dai valori inseriti precedentemente dall'utente.
 
 
 
