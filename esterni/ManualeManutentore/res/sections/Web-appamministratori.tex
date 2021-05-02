@@ -58,6 +58,8 @@ Per lo sviluppo abbiamo utilizzato l'IDE WebStorm. Per la sua installazione rife
 Una volta installate le tecnologie sopra elencate si potrà eseguire la webapp aprendo un terminale nella root del progetto ed eseguendo il comando \texttt{ng serve} \newline
 Verrà eseguito un server locale accessibile all'indirizzo \url{http://localhost:4200}
 
+
+
 \subsection{Architettura}
 L'architettura della web-app segue il modello a componenti imposto da Angular, che, a sua volta, si basa sul pattern Model-View-ViewModel, descritto dall'immagine sottostante.
 \begin{figure}[H]
@@ -72,7 +74,7 @@ Un componente è costituito da 4 file. Nel seguente esempio è rappresentato un 
 \begin{verbatim}
 	base.component.css
 	base.component.html
-	base.component.test.ts
+	base.component.spec.ts
 	base.component.ts
 \end{verbatim}
 I file contengono, nell'ordine:
@@ -80,7 +82,18 @@ I file contengono, nell'ordine:
 	\item lo stile grafico del componente definito in css;
 	\item la struttura del componente definito in html;
 	\item i test definiti per il componente, scritti in typescript;
-	\item il codice che definisce la logica del componente, scritto in typescript;
+	\item il codice che definisce la logica del componente, scritto in typescript.
+\end{itemize}
+
+Le funzionalità di backend dell'applicazione non vanno inserite in un componente, visto che non hanno una parte grafica. Esse vanno invece inserite in un servizio. I servizi sono definiti solo da due file. Di seguito sono mostrati i due file prendendo come esempio un servizio chiamato login. 
+\begin{verbatim}
+	login.service.spec.ts
+	login.service.ts
+\end{verbatim}
+I file, entrambi in typescript, contengono, nell'ordine:
+\begin{itemize}
+	\item i test definiti per il servizio;
+	\item il codice che definisce la logica del servizio.
 \end{itemize}
 
 La struttura del sito è definita principalmente dal modo nel quale i componenti vengono annidati l'uno dentro all'altro. Nel codice html questo annidamento è descritto dai tag:
@@ -89,6 +102,14 @@ La struttura del sito è definita principalmente dal modo nel quale i componenti
 	\item \texttt{<router-outlet>}
 \end{itemize}
 In entrambi i casi, nella pagina visualizzata, verrà inserito il componente specificato al posto del tag. Nel primo caso il componente da inserire è fisso ed è definito dal nome del tag stesso, nel secondo invece il componente inserito può variare. In quest'ultimo caso l'annidamento è definito dal'url col quale si sta visitando la pagina e dalla costante \texttt{routes} all'interno del file \texttt{src/app/app-routing.module.ts}.
+
+\subsection{Estendibilità}
+Il modello a componenti offerto da Angular, descritto nella precedente sottosezione, facilita l'estendibilità dell'applicazione. Per introdurra una nuova funzionalità per l'utente sarà infatti sufficiente creare un componente apposito tramite il comando \newline
+\texttt{ng g c nomecomponente} \newline
+Per introdurre invece un servizio si dovrà usare il comando \newline
+\texttt{ng g service nomeservizio} \newline
+
+Per la struttura dei componenti e dei servizi fare riferimento alla sottosezione precedente.
 
 \subsection{Diagrammi dei package}
 
