@@ -23,13 +23,14 @@ Lo si può scaricare compresso in formato zip direttamente dal sito o, se si ha 
 
 \subsubsection{Linguaggi}
 \paragraph{Typescript}
-Superset del linguaggio Javascript.
+Superset del linguaggio Javascript. Viene utilizzato per definire la logica dell'applicazione. \newline
+Per poterlo utilizzare con Angular, esso va prima installato col comando \texttt{npm install -g typescript}
 
 \paragraph{HTML}
-Linguaggio di markup utilizzato per definire la struttura delle pagine web.
+Linguaggio di markup utilizzato per definire la struttura delle pagine web. Non necessita di installazione.
 
 \paragraph{CSS}
-Linguaggio per la definizione dello stile grafico delle pagine web.
+Linguaggio per la definizione dello stile grafico delle pagine web. Nella nostra applicazione il codice css introdotto da noi è molto limitato perché, per questo, ci siamo affidati al framework Bootstrap. CSS non necessita di installazione.
 
 \subsubsection{Tecnologie}
 \paragraph{Node.js}
@@ -43,12 +44,19 @@ Framework per applicazioni web.
 Per l'installazione fare riferimento alla pagina \url{https://angular.io/guide/setup-local#install-the-angular-cli}
 \paragraph{Bootstrap}
 Framework per la creazione di pagine web.
-Per l'integrazione di bootstrap in angular fare riferimento alla pagina \url{https://www.npmjs.com/package/@ng-bootstrap/ng-bootstrap#installation}
+Per l'integrazione di Bootstrap in Angular fare riferimento alla pagina \url{https://www.npmjs.com/package/@ng-bootstrap/ng-bootstrap#installation}
 
 \subsubsection{Test}
+Per i test abbiamo utilizzato il framework Jasmine. Per utilizzarlo con Angular è necessario installarlo col comando \texttt{npm install -g jasmine} \newline
+Per eseguire i test usare il comando \texttt{ng test} \newline
+I test verranno eseguiti tramite il programma Karma e i loro risultati saranno visualizzati in una pagina del browser aperta automaticamente.
 
-\subsection{IDE}
+\subsubsection{IDE}
 Per lo sviluppo abbiamo utilizzato l'IDE WebStorm. Per la sua installazione riferirsi alla pagina \url{https://www.jetbrains.com/webstorm/download/}
+
+\subsubsection{Esecuzione}
+Una volta installate le tecnologie sopra elencate si potrà eseguire la webapp aprendo un terminale nella root del progetto ed eseguendo il comando \texttt{ng serve} \newline
+Verrà eseguito un server locale accessibile all'indirizzo \url{http://localhost:4200}
 
 \subsection{Architettura}
 L'architettura della web-app segue il modello a componenti imposto da Angular, che, a sua volta, si basa sul pattern Model-View-ViewModel, descritto dall'immagine sottostante.
