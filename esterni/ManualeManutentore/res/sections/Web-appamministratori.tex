@@ -97,7 +97,7 @@ I diagrammi seguenti sono scritti secondo la sintassi UML. Le descrizioni testua
 	\caption{Diagramma delle classi per il login}
 	\label{fig:DiagrammaClassiLogin}
 \end{figure}
-Nel diagramm sovrastante sono rappresentate le classi utilizzate dalla pagina di login e le dipendenze tra di esse. La classe \texttt{LoginComponent} dirige la gestione del login manuale, tramite inserimento delle credenziali da parte dell'utente, e di quello automatico, tramite verifica delle credenziali precedentemente salvate nel local storage del browser. A \texttt{LoginService}, in particolare, viene delegata la verifica delle credenziali tramite il server, mentre a LocalAccountService, vengono delegate la scrittura, la lettura e l'eliminazione delle credenziali salvate nel browser. Per comunicare credenziali di accesso da una classe all'altra, viene utilizzata \texttt{LoginData}. \texttt{UserData} invece viene usata per la ricezione dal server dei dati dell'utente che si è autenticato.
+Nel diagramma sovrastante sono rappresentate le classi utilizzate dalla pagina di login e le dipendenze tra di esse. La classe \texttt{LoginComponent} dirige la gestione del login manuale, tramite inserimento delle credenziali da parte dell'utente, e di quello automatico, tramite verifica delle credenziali precedentemente salvate nel local storage del browser. A \texttt{LoginService}, in particolare, viene delegata la verifica delle credenziali tramite il server, mentre a LocalAccountService, vengono delegate la scrittura, la lettura e l'eliminazione delle credenziali salvate nel browser. Per comunicare credenziali di accesso da una classe all'altra, viene utilizzata \texttt{LoginData}. \texttt{UserData} invece viene usata per la ricezione dal server dei dati dell'utente che si è autenticato.
 
 \paragraph{Classi}
 
@@ -164,11 +164,12 @@ Classe che contiene tutti e soli i valori necessari per il salvataggio di un ute
 	\item \texttt{+ type: number}
 	\item \texttt{+ archived: number}
 \end{itemize}
-\subparagraph{Observable}
+\subparagraph{Observable<T>}
 Classe fornita dalla libreria Rxjs. Viene utilizzata per effettuare chiamate asincrone al server. Per una documentazione più approfondita fare riferimento a \url{https://angular.io/guide/rx-library}. \newline
 \textbf{Metodi}
 \begin{itemize}
-	\item \texttt{+ subscribe(next: (T)=>void): Subscription}
+	\item \texttt{+ subscribe(next: (T)=>void): Subscription} \newline
+	Metodo che permette di eseguire la chiamata al server e di specificare la funzione di callback che gestirà la risposta.
 \end{itemize}
 
 \subsubsection{Gestione stanze e postazioni}
@@ -373,7 +374,8 @@ Questa classe contiene tutti e soli i valori necessari per il salvataggio di una
 Classe fornita dalla libreria Rxjs. Viene utilizzata per effettuare chiamate asincrone al server. Per una documentazione più approfondita fare riferimento a \url{https://angular.io/guide/rx-library}. \newline
 \textbf{Metodi}
 \begin{itemize}
-	\item \texttt{+ subscribe(next: (T)=>void): Subscription}
+	\item \texttt{+ subscribe(next: (T)=>void): Subscription} \newline
+	Metodo che permette di eseguire la chiamata al server e di specificare la funzione di callback che gestirà la risposta.
 \end{itemize}
 
 \subsubsection{Gestione credenziali}
@@ -473,15 +475,14 @@ Questa classe contiene tutti e soli i valori necessari per il salvataggio di un 
 	\item \texttt{+ type: number}
 	\item \texttt{+ archived: number}
 \end{itemize}
-\subparagraph{Observable}
+\subparagraph{Observable<T>}
 Classe fornita dalla libreria Rxjs. Viene utilizzata per effettuare chiamate asincrone al server. Per una documentazione più approfondita fare riferimento a \url{https://angular.io/guide/rx-library}. \newline
 \textbf{Metodi}
 \begin{itemize}
-	\item \texttt{+ subscribe(next: (T)=>void): Subscription}
+	\item \texttt{+ subscribe(next: (T)=>void): Subscription} \newline
+	Metodo che permette di eseguire la chiamata al server e di specificare la funzione di callback che gestirà la risposta.
 \end{itemize}
 
-\subsubsection{Sezione report}
-\subsubsection{Sezione notifiche}
 \subsection{Diagrammi di sequenza}
 \subsubsection{Login}
 \begin{figure}[H]
@@ -490,6 +491,7 @@ Classe fornita dalla libreria Rxjs. Viene utilizzata per effettuare chiamate asi
 	\caption{Diagramma di sequenza per l'evento di login automatico}
 	\label{fig:DiagrammaSequenzaAutoLogin}
 \end{figure}
+Il diagramma sovrastante rappresenta l'evento di login automatico. L'evento è provocato dall'inizializzazione della pagina (\texttt{ngOnInit}). La sequenza consiste nel richiedere le credenziali salvate nel browser tramite il \texttt{LocalAccountService} ( \texttt{retrieveLocalCredentials}) e di tentare un'autenticazione al server con esse tramite il \texttt{LoginService} (\texttt{login}). In caso di esito positivo viene resituito da quest'ultimo servizio un oggetto \texttt{UserData} con i dati dell'utente che si è autenticato. La funzione \texttt{checkLogin} gestisce la risposta del server.
 \subsubsection{Gestione stanze e postazioni}
 \begin{figure}[H]
 	\centering
@@ -513,16 +515,14 @@ In entrambi i casi l'evento è provocato dalla chiamata del metodo \texttt{takeA
 	\caption{Diagramma di sequenza per la visualizzazione delle credenziali}
 	\label{fig:DiagrammaSequenzaVisualizzazioneCredenziali}
 \end{figure}
-Il diagramma sovrastante rappresenta l'evento di scaricamento di una lista delle credenziali dal server.
+Il diagramma sovrastante rappresenta l'evento di visualizzazione delle credenziali presenti sul server. L'evento viene scatenato dall'inizializzazio della pagina (\texttt{ngOnInit}). Successivamente il componente \texttt{ShowCredentialsComponent} richiede al servizio \texttt{UserService} una lista delle credenziali. Questa lista verrà assegnata ad una variabile tramite \texttt{setCredentialsList}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=18cm]{res/images/webapp-credenzialiAddEdit-diagrammaSequenza.png}
 	\caption{Diagramma di sequenza per l'aggiunta e la modifica delle credenziali}
 	\label{fig:DiagrammaSequenzaVisualizzazioneCredenziali}
 \end{figure}
-Il diagramma sovrastanza rappresenta l'azione di aggiunta o modifica di una credenziale.
-\subsubsection{Sezione report}
-\subsubsection{Sezione notifiche}
+Il diagramma sovrastanza rappresenta l'azione di aggiunta o modifica di una credenziale da parte di un'amministratore. In entramb ii casi l'azione è provocata dalla chiamata a \texttt{takeAction}, eseguita dall'utente tramite la pressione di un pulsante. Successivamente viene eseguita l'aggiunta (\texttt{addCredential}) o la modifica (\texttt{editCredential}) della credenziale specificata dai valori inseriti dall'utente.
 
 
 
