@@ -72,8 +72,9 @@ L'architettura della web-app segue il modello a componenti imposto da Angular, c
 	\caption{Model-View-ViewModel}
 	\label{fig:Model-View-ViewModel}
 \end{figure}
-Secondo questo modello la parte visiva del sito viene suddivisa in componenti, e ognuna di queste parti viene controllata da una diversa classe.
-La parte visiva viene chiamata view, mentre la parte di controllo viene chiamata view model.
+Il modello imposta dal Angular prevede che ogni funzionalità disponibile all'utente sia costituita da una vista (view) e da una logica (viewmodel) e chiama l'insieme di queste due parti "componente".
+Gli attributi del componente sono accessibili alla vista. Questa caratteristica permette una sincronizzazione in due versi: la vista, per mano dell'utente, può modificare le variabili del view model, e se quest'ultimo modifica le proprie variabili, la vista si modifica di conseguenza.
+Oltre ai componenti Angular offre la possibilità di creare dei servizi, che costituiscono la terza componente del pattern: il model. Questi servizi si occupano della gestione dei dati. Per esempio può esserci un servizio per la comunicazione col database, uno per la lettura e scrittura dal local storage e un altro che implementa un algoritmo per la manipolazione dei dati.
 Un componente è costituito da 4 file. Nel seguente esempio è rappresentato un componente chiamato base.
 \begin{verbatim}
 	base.component.css
@@ -83,24 +84,24 @@ Un componente è costituito da 4 file. Nel seguente esempio è rappresentato un 
 \end{verbatim}
 I file contengono, nell'ordine:
 \begin{itemize}
-	\item lo stile grafico del componente definito in css;
-	\item la struttura del componente definito in html;
-	\item i test definiti per il componente, scritti in typescript;
-	\item il codice che definisce la logica del componente, scritto in typescript.
+	\item lo stile grafico della vista del componente;
+	\item la struttura della vista del componente;
+	\item i test definiti per il componente;
+	\item il codice che definisce la logica del componente.
 \end{itemize}
 
-Le funzionalità di backend dell'applicazione non vanno inserite in un componente, visto che non hanno una parte grafica. Esse vanno invece inserite in un servizio. I servizi sono definiti solo da due file. Di seguito sono mostrati i due file prendendo come esempio un servizio chiamato login. 
+I servizi sono definiti solo da due file. Di seguito sono mostrati i due file prendendo come esempio un servizio chiamato login. 
 \begin{verbatim}
 	login.service.spec.ts
 	login.service.ts
 \end{verbatim}
-I file, entrambi in typescript, contengono, nell'ordine:
+I file contengono, nell'ordine:
 \begin{itemize}
 	\item i test definiti per il servizio;
 	\item il codice che definisce la logica del servizio.
 \end{itemize}
 
-La struttura del sito è definita principalmente dal modo nel quale i componenti vengono annidati l'uno dentro all'altro. Nel codice html questo annidamento è descritto dai tag:
+La struttura del sito è definita principalmente dal modo in cui i componenti vengono annidati l'uno dentro all'altro. Nel codice html questo annidamento è descritto dai tag:
 \begin{itemize}
 	\item \texttt{<app-nomecomponente>}
 	\item \texttt{<router-outlet>}
@@ -112,7 +113,6 @@ Il modello a componenti offerto da Angular, descritto nella precedente sottosezi
 	\texttt{ng g c nomecomponente} \newline
 Per introdurre invece un servizio si dovrà usare il comando \newline
 	\texttt{ng g service nomeservizio} \newline
-
 Per la struttura dei componenti e dei servizi fare riferimento alla sottosezione precedente.
 
 \subsection{Diagrammi dei package}
@@ -509,7 +509,7 @@ Questa classe presenta i seguenti metodi:
 	\caption{Diagramma di sequenza per l'evento di login automatico}
 	\label{fig:DiagrammaSequenzaAutoLogin}
 \end{figure}
-Il diagramma sovrastante rappresenta l'evento di login automatico. L'evento è provocato dall'inizializzazione della pagina (\texttt{ngOnInit}). La sequenza consiste nel richiedere le credenziali salvate nel browser tramite il \texttt{LocalAccountService} ( \texttt{retrieveLocalCredentials}) e di tentare un'autenticazione al server con esse tramite il \texttt{LoginService} (\texttt{login}). In caso di esito positivo viene resituito da quest'ultimo servizio un oggetto \texttt{UserData} con i dati dell'utente che si è autenticato. La funzione \texttt{checkLoginResponse} gestisce la risposta del server provocando il reindirizzamento alla home page, in caso di successo, o la visualizzazione del form per l'inserimento delle credenziali.
+Il diagramma sovrastante rappresenta l'evento di login automatico. L'evento è provocato dall'inizializzazione della pagina (\texttt{ngOnInit}). La sequenza consiste nel richiedere le credenziali salvate nel browser tramite il \texttt{LocalAccountService} ( \texttt{retrieveLocalCredentials}) e nel tentare un'autenticazione al server con esse tramite il metodo \texttt{login} del \texttt{LoginService}. In caso di esito positivo viene resituito da quest'ultimo servizio un oggetto \texttt{UserData} con i dati dell'utente che si è autenticato. La funzione \texttt{checkLoginResponse} gestisce la risposta del server provocando il reindirizzamento alla home page, in caso di successo, o la visualizzazione del form per l'inserimento delle credenziali.
 \subsubsection{Gestione stanze e postazioni}
 \begin{figure}[H]
 	\centering
@@ -524,8 +524,9 @@ Il diagramma sovrastante rappresenta un'evento scatenato dall'inizializzazione d
 	\caption{Diagramma di sequenza per l'aggiunta e la modifica di una stanza}
 	\label{fig:DiagrammaSequenzaStanzePostazioni2}
 \end{figure}
+
 Il diagramma sovrastante rappresenta l'evento di aggiunta o modifica di una stanza.
-In entrambi i casi l'evento è provocato dalla chiamata del metodo \texttt{takeAction} successiva alla pressione di un pulsante da parte dell'utente. A questo punto la scelta dell'una o dell'altra via è determinata dal parametro \texttt{action}, che ha assunto valore 'add' o 'edit' a seconda del pulsante premuto.
+L'azione è provocata dalla chiamata del metodo \texttt{takeAction} successiva alla pressione di un pulsante da parte dell'utente. A questo punto la scelta dell'una o dell'altra via è determinata dal parametro \texttt{action}, che ha assunto valore 'add' o 'edit' a seconda del pulsante premuto. In entrambi i casi l'azione è eseguita inviando i dati da inserire, formattati in un \texttt{RoomData}, al servizio. Il servizio restituisce un \texttt{Observable} che permette, tramite il metodo \texttt{subscribe}, di eseguire la chiamata al server e di impostare una funzione di callback per gestire i dati di ritorno. 
 \subsubsection{Gestione credenziali}
 \begin{figure}[H]
 	\centering
@@ -540,7 +541,7 @@ Il diagramma sovrastante rappresenta l'evento di visualizzazione delle credenzia
 	\caption{Diagramma di sequenza per l'aggiunta e la modifica delle credenziali}
 	\label{fig:DiagrammaSequenzaVisualizzazioneCredenziali}
 \end{figure}
-Il diagramma sovrastante rappresenta l'azione di aggiunta o modifica di una credenziale da parte di un'amministratore. In entrambi i casi l'azione è provocata dalla chiamata a \texttt{takeAction}, eseguita dall'utente tramite la pressione di un pulsante. Successivamente viene eseguita l'aggiunta (\texttt{addCredential}) o la modifica (\texttt{editCredential}) della credenziale definita dai valori inseriti precedentemente dall'utente.
+Il diagramma sovrastante rappresenta l'azione di aggiunta o modifica di una credenziale da parte di un'amministratore. L'evento è provocato dalla chiamata a \texttt{takeAction}, eseguita dall'utente tramite la pressione di un pulsante. Successivamente viene eseguita l'aggiunta (\texttt{addCredential}) o la modifica (\texttt{editCredential}) della credenziale definita dai valori inseriti precedentemente dall'utente. In entrambi i casi il componente invia i dati all'\texttt{UserService} e riceve un Observable, col quale può, tramite il metodo \texttt{subscribe}, inviare la chiamata al server e impostare una funzione di callback per gestirne la risposta.
 
 
 
