@@ -24,7 +24,8 @@ Lo si può scaricare compresso in formato zip direttamente dal sito o, se si ha 
 \subsubsection{Linguaggi}
 \paragraph{Typescript}
 Superset del linguaggio Javascript. Viene utilizzato per definire la logica dell'applicazione. \newline
-Per poterlo utilizzare con Angular, esso va prima installato col comando \texttt{npm install -g typescript}
+Per poterlo utilizzare con Angular, esso va prima installato col comando \newline
+\texttt{npm install -g typescript}
 
 \paragraph{HTML}
 Linguaggio di markup utilizzato per definire la struttura delle pagine web. Non necessita di installazione.
@@ -159,9 +160,11 @@ Il package Models contiene le classi che vengono usate nel resto dell'applicazio
 Il package Services contiene le classi usate nel resto dell'applicazione per interagire col server e con il local storage. All'interno di questo package le classi che si occupano dell'interazione col server sono racchiuse nel package Api\_services.
 
 \subsection{Diagrammi delle classi}
-I diagrammi seguenti sono scritti secondo la sintassi UML. Le descrizioni testuali degli attributi e dei metodi delle classi riprendono alcune notazioni del linguaggio UML:
+Nelle descrizioni che seguono si possono notare alcune mancanze, di cui illustriamo ora le motivazioni:
 \begin{itemize}
-	\item +/*/- prima del nome di un attributo o metodo indica che esso è, rispettivamente, pubblico, protetto o privato;
+	\item non sono presenti i costruttori delle classi perché essi non hanno alcun effetto oltre a quello di creare gli oggetti.
+	\item per le classi del package Models non sono descritti gli attributi poiché essi sono semplicemente la copia delle informazioni contenute nel database.
+	\item per le classi legate ad un form accessibile all'utente non sono descritti gli attributi inseribili dagli utenti perché essi sono un sottoinsieme di quelli di cui si parla al punto precedente
 \end{itemize}
 
 \subsubsection{Login}
@@ -179,71 +182,59 @@ Nel diagramma sovrastante sono rappresentate le classi utilizzate dalla pagina d
 Classe che si occupa della gestione del login manuale, ovvero tramite l'inserimento delle credenziali da parte dell'utente, e di quello automatico, ovvero tramite l'utilizzo delle credenziali precedentemente salvate nel local storage del browser. \newline
 Questa classe contiene i seguenti attributi:
 \begin{itemize}
-	\item \textbf{+ username: string}
-	\item \textbf{+ password: string}
-	\item \textbf{+ autoLoggedIn: boolean}
-	\item \textbf{+ errorVisible: string}
+	\item \textbf{username: string}
+	\item \textbf{password: string}
+	\item \textbf{autoLoggedIn: boolean}
+	\item \textbf{errorVisible: string}
 \end{itemize}
 Questa classe presenta i seguenti metodi:
 \begin{itemize}
-	\item \textbf{+ constructor(private loginService: LoginService, private localAccountService: LocalAccountService)}
-	\item \textbf{+ ngOnInit(): void} \newline
+	\item \textbf{ngOnInit(): void} \newline
 	Metodo che viene chiamato all'inizializzazione delle pagina. Provoca l'evento di login automatico.
-	\item \textbf{+ focused(): void} \newline
+	\item \textbf{focused(): void} \newline
 	Metodo che viene chiamato nel momento in cui uno dei due campi di inserimento delle credenziali viene selezionata. Provoca l'impostazione dell'invisibilità dell'errore che indica l'incorrettezza delle credenziali inserite.
-	\item \textbf{+ autoLogin(): void} \newline
+	\item \textbf{autoLogin(): void} \newline
 	Metodo che effettua un tentativo di autenticazione con le credenziali salvate nel local storage. Se l'autenticazione riesce l'utente viene reindirizzato alla pagina home. Altrimenti viene visualizzata la pagina di inserimento delle credenziali.
-	\item \textbf{+ login(): void} \newline
+	\item \textbf{login(): void} \newline
 	Metodo che effettua un tentativo di autenticazione con le credenziali inserite dall'utente. Se l'autenticazione riesce l'utente viene reindirizzato alla pagina home. Altrimenti viene mostrato un messaggio di errore.
-	\item \textbf{+ setErrorVisible(b: boolean): void} \newline
+	\item \textbf{setErrorVisible(b: boolean): void} \newline
 	Metodo che imposta la visibilità dell'errore che indica l'incorrettezza delle credenziali inserite.
+	\item \textbf{checkLoginResponse(data: UserData): void} \newline
+	Metodo che indirizza l'utente alla pagina home se l'autenticazione ha avuto successo e mostra il form d login se l'autenticazione non ha avuto successo.
 \end{itemize}
 \subparagraph{LoginService}
 Servizio che permette di verificare tramite il server la validità di credenziali per l'autenticazione. Ogni metodo di questa classe, tranne il costruttore, restituisce un \texttt{Observable}. Questo oggetto espone un metodo subscribe con il quale si potrà impostare una funzione di callback che verrà chiamata quando il server fornirà una risposta. \newline
 Questa classe contiene i seguenti attributi:
 \begin{itemize}
-	\item \textbf{- APIUrl: string}
+	\item \textbf{APIUrl: string}
 	L'url base dell'API REST a cui il servizio fa riferimento.
 \end{itemize}
 Questa classe presenta i seguenti metodi:
 \begin{itemize}
-	\item \textbf{+ login(val: LoginData): Observable<UserData>} \newline
+	\item \textbf{login(val: LoginData): Observable<UserData>} \newline
 	Verifica l'esistenza delle credenziali passate come parametro nel database. Restituisce un Observable che permette di ottenere, in un \texttt{UserData}, i dati dell'utente corrispondente alle credenziali.
 \end{itemize}
 \subparagraph{LocalAccountService}
 Servizio che permette di gestire il salvataggio delle credenziali dell'utente nel local storage del browser. \newline
 Questa classe presenta i seguenti metodi:
 \begin{itemize}
-	\item \textbf{+ retrieveLocalCredentials(): LoginData}
-	\item \textbf{+ saveCredentialsLocally(creds: LoginData): void}
-	\item \textbf{+ deleteSavedCredentials(): void}
-	\item \textbf{ciao}
+	\item \textbf{retrieveLocalCredentials(): LoginData} \newline
+	Metodo che restituisce le credenziali salvate nel local storage. Se assenti restituisce un oggetto LoginData con i valori entrambi a null.
+	\item \textbf{saveCredentialsLocally(creds: LoginData): void} \newline
+	Metodo che salva le crednziali passate nel local storage.
+	\item \textbf{deleteSavedCredentials(): void} \newline
+	Metodo che elimina le credenziali salvate nel local storage.
+	
 \end{itemize}
 \subparagraph{LoginData}
 Classe che contiene i valori necessari per l'autenticazione di un amministratore al sistema. Viene usata per la comunicazione di questo tipo di dati all'interno dell'applicazione. \newline
-Questa classe contiene i seguenti attributi:
-\begin{itemize}
-	\item \textbf{+ username: string}
-	\item \textbf{+ password: string}
-\end{itemize}
 \subparagraph{UserData}
 Classe che contiene tutti e soli i valori necessari per il salvataggio di un utente sul database. È utilizzata per il transito dei dati degli utenti all'interno dell'applicazione. \newline
-Questa classe contiene i seguenti attributi:
-\begin{itemize}
-	\item \textbf{+ id: number}
-	\item \textbf{+ username: string}
-	\item \textbf{+ password: string}
-	\item \textbf{+ name: string}
-	\item \textbf{+ surname: string}
-	\item \textbf{+ mail: string}
-	\item \textbf{+ type: number}
-	\item \textbf{+ archived: number}
-\end{itemize}
 \subparagraph{Observable<T>}
 Classe fornita dalla libreria Rxjs. Viene utilizzata per effettuare chiamate asincrone al server. Per una documentazione più approfondita fare riferimento a \url{https://angular.io/guide/rx-library}. \newline
 Questa classe presenta i seguenti metodi:
 \begin{itemize}
-	\item \textbf{+ subscribe(next: (T)=>void): Subscription} \newline
+	\item \textbf{subscribe(next: (T)=>void): Subscription} \newline
 	Metodo che permette di eseguire la chiamata al server e di specificare la funzione di callback che gestirà la risposta.
 \end{itemize}
 
@@ -263,61 +254,60 @@ Il diagramma sovrastante rappresenta l'architettura utilizzata per la pagina di 
 Classe che si occupa della visualizzazione, eliminazione e, tramite i componenti AddEditWorkstation e AddEditRoom, dell'aggiunta e modifica di postazioni e stanze. \newline
 Questa classe contiene i seguenti attributi:
 \begin{itemize}
-	\item \textbf{- roomsMap: Map<number, Array<WorkstationData>>} \newline
+	\item \textbf{roomsMap: Map<number, Array<WorkstationData>>} \newline
 		Map in cui ad ogni stanza sono assegnate le sue postazione, ovvero quelle con \texttt{idroom} uguale all'\texttt{id} della stanza. Se l'utente applica un filtro alla lista, qui verranno contenute solo le stanze e le postazioni selezionate da tale filtro.
-	\item \textbf{- roomsList: Array<RoomsData>} \newline
+	\item \textbf{roomsList: Array<RoomsData>} \newline
 		Array utilizzato per contenere le stanze ottenutedal server
-	\item \textbf{- workstationList: Array<Workstation>} \newline
+	\item \textbf{workstationList: Array<Workstation>} \newline
 		Array utilizzato per contenere le postazioni ottenute dal server.
-	\item \textbf{+ searchId: string} \newline
+	\item \textbf{searchId: string} \newline
 		Id specificato dall'utente per la ricerca di una postazione.
-	\item \textbf{+ addEditWorkstation: WorkstationData} \newline
+	\item \textbf{addEditWorkstation: WorkstationData} \newline
 		Contiene i dati della postazione che verrà aggiunta o modificata.
-	\item \textbf{+ workstationAction: string} \newline
+	\item \textbf{workstationAction: string} \newline
 		Valore specificato dall'utente che provocherà la modifica o l'aggiunta della postazione salvata in \texttt{addEditWorkstation}
-	\item \textbf{+ addEditRoom: RoomData} \newline
+	\item \textbf{addEditRoom: RoomData} \newline
 		Contiene i dati della stanza che verrà aggiunta o modificata.
-	\item \textbf{+ roomAction: string} \newline
+	\item \textbf{roomAction: string} \newline
 		Valore specificato dall'utente che provocherà la modifica o l'aggiunta della stanza salvata in \texttt{addEditRoom}
 \end{itemize}
 Questa classe presenta i seguenti metodi:
 \begin{itemize}
-	\item \textbf{+ constructor(private service: SharedService, private cd: ChangeDetectorRef)} 
-	\item \textbf{+ ngOnInit(): void} \newline
+	\item \textbf{ngOnInit(): void} \newline
 	Questa funzione viene chiamata all'inizializzazione della pagina.
-	\item \textbf{+ getRoomsMapKeys(): Array<number>} \newline
+	\item \textbf{getRoomsMapKeys(): Array<number>} \newline
 	Restituisce un array con gli id delle stanze contenute in \texttt{roomsMap}
-	\item \textbf{- getRoomInfoById(id: number): RoomData} \newline
+	\item \textbf{getRoomInfoById(id: number): RoomData} \newline
 	Restituisce un oggetto \texttt{RoomData} con i dati della stanza identificata dall'id passato come parametro.
-	\item \textbf{- setRoomList(roomData: Array<RoomData>): void} \newline
+	\item \textbf{setRoomList(roomData: Array<RoomData>): void} \newline
 	Reinizializza \texttt{roomList} con i dati ricevuti
-	\item \textbf{- setWorkstationList(workstationData: Array<WorkstationData>): void} \newline
+	\item \textbf{setWorkstationList(workstationData: Array<WorkstationData>): void} \newline
 	Reinizializza \texttt{workstationList} con i dati ricevuti
-	\item \textbf{- populateRoomsMap(filterWorkstationId: number): void} \newline
+	\item \textbf{populateRoomsMap(filterWorkstationId: number): void} \newline
 	Reinizializza \texttt{roomsMap} ponendo come chiavi gli id delle stanze contenute in \texttt{roomList} e come valori le postazioni contenute nelle rispettive stanze. \newline
 	Se non viene specificato l'attributo \texttt{filterWorkstationId} nella mappa vengono inserite anche le stanze vuote. \newline
 	Se viene specificato l'attributo \texttt{filterWorkstationId} verrà inserita nella mappa solo la postazione con l'id indicato e la stanza che la contiene.
-	\item \textbf{- refreshAll(filterWorkstationId: number): void} \newline
+	\item \textbf{refreshAll(filterWorkstationId: number): void} \newline
 	Richiede al server le stanze e le postazione e le organizza, tramite \texttt{populateRoomsMap}, in una mappa. Il parametro \texttt{filterWorkstationId} viene passato direttamente a \texttt{populateRoomsMap}
-	\item \textbf{- deleteWorkstation(item: number): void} \newline
+	\item \textbf{deleteWorkstation(item: number): void} \newline
 	Richiede al server l'eliminazione della postazione con l'id specificato
-	\item \textbf{- deleteRoom(roomId: number): void} \newline
+	\item \textbf{deleteRoom(roomId: number): void} \newline
 	Richiede al server l'eliminazione della stanza con l'id specificato
-	\item \textbf{- openAddWorkstation(idroom: number): void} \newline
+	\item \textbf{openAddWorkstation(idroom: number): void} \newline
 	Rende visibile il form per l'aggiunta di una postazione. Inoltre imposta i parametri necessari all'esecuzione di questa azione.
-	\item \textbf{- openEditWorkstation(workstation: WorkstationData): void} \newline
+	\item \textbf{openEditWorkstation(workstation: WorkstationData): void} \newline
 	Rende visibile il form per la modifica di una postazione. Inoltre imposta i parametri necessari all'esecuzione di questa azione. 
-	\item \textbf{- openAddRoom(): void} \newline
+	\item \textbf{openAddRoom(): void} \newline
 	Rende visibile il form per l'aggiunta di una stanza. Inoltre imposta i parametri necessari all'esecuzione di questa azione.
-	\item \textbf{- openEditRoom(room: RoomData): void} \newline
+	\item \textbf{openEditRoom(room: RoomData): void} \newline
 	Rende visibile il form per la modifica di una stanza. Inoltre imposta i parametri necessari all'esecuzione di questa azione.
-	\item \textbf{+ closeAddEditWorkstation(): void} \newline
+	\item \textbf{closeAddEditWorkstation(): void} \newline
 	Provoca l'aggiornamento dei dati contenuti nella pagina.
-	\item \textbf{+ closeAddEditRoom(): void} \newline
+	\item \textbf{closeAddEditRoom(): void} \newline
 	Provoca l'aggiornamento dei dati contenuti nella pagina.
-	\item \textbf{+ searchWorkstation(): void} \newline
+	\item \textbf{searchWorkstation(): void} \newline
 	Richiede tutti i dati sulle postazioni e sulle stanze al server specificando il filtro indicato dall'utente.
-	\item \textbf{+ resetFilter(): void} \newline
+	\item \textbf{resetFilter(): void} \newline
 	Richiede tutti i dati sulle postazioni e sulle stanze al server senza alcun filtro.
 \end{itemize}
 	
@@ -325,131 +315,96 @@ Questa classe presenta i seguenti metodi:
 Classe che si occupa dell'aggiunta e modifica di postazioni. I primi 9 attributi sono sempre sincronizzati con il form che viene presentato all'utente. Tramite essi viene definita la postazione da aggiungere o i nuovi dati della postazione da modificare.\newline
 Questa classe contiene i seguenti attributi:
 \begin{itemize}
-	\item \textbf{+ id: number } 
-	\item \textbf{+ tag: string } 
-	\item \textbf{+ workstationname: string } 
-	\item \textbf{+ xworkstation: string } 
-	\item \textbf{+ yworkstation: string } 
-	\item \textbf{+ idroom: number } 
-	\item \textbf{+ state: bool } 
-	\item \textbf{+ sanitized: bool } 
-	\item \textbf{+ archived: bool } 
-	\item \textbf{+ passedWorkstation: WorkstationData } \newline
+	\item \textbf{passedWorkstation: WorkstationData } \newline
 	L'oggetto che viene passato da \texttt{RoomComponent} e che indica la postazione da modificare.
-	\item \textbf{+ action: string} \newline
+	\item \textbf{action: string} \newline
 	L'attributo che viene passato da \texttt{RoomComponent} e che indica il tipo di azione da eseguire: aggiunta o modifica della postazione;
 \end{itemize}
 Questa classe presenta i seguenti metodi:
 \begin{itemize}
-	\item \textbf{+ constructor(service: WorkstationsService) }
-	\item \textbf{- ngOnChanges(): void } \newline
+	\item \textbf{ngOnChanges(): void } \newline
 	Metodo chiamato ogni volta che una proprietà data-bound viene modificata. In questo caso serve per aggiornare i parametri locali in base ai valori di \texttt{passedWorkstation}.
-	\item \textbf{- getWorkstationFromLocalValues(): WorkstationData } \newline
+	\item \textbf{getWorkstationFromLocalValues(): WorkstationData } \newline
 	Restituisce un oggetto \texttt{WorkstationData} ottenuto dai primi 9 attributi.
-	\item \textbf{+ takeAction(): void } \newline
+	\item \textbf{takeAction(): void } \newline
 	Chiama il metodo \texttt{addWorkstation()} o \texttt{editWorkstation()} a seconda del valore dell'attributo action.
-	\item \textbf{- addWorkstation(): void } \newline
+	\item \textbf{addWorkstation(): void } \newline
 	Richiede al service di aggiungere la postazione specificata.
-	\item \textbf{- editWorkstation(): void} \newline
+	\item \textbf{editWorkstation(): void} \newline
 	Richiede al service di modificare la postazione nel modo specificato.
+	\item \textbf{showMessage(message: string): void} \newline
+	Metodo che mostra all'utente la stringa passata come parametro.
 	
 \end{itemize}
 \subparagraph{AddEditRoomComponent}
 Classe che si occupa dell'aggiunta e modifica di stanze. I primi 5 attributi sono sempre sincronizzati con il form che viene presentato all'utente. Tramite essi viene definita la stanza da aggiungere o i nuovi dati della stanza da modificare.\newline
 Questa classe contiene i seguenti attributi:
 \begin{itemize}
-	\item \textbf{+ id: number 	}
-	\item \textbf{+ roomname: string 	}
-	\item \textbf{+ xroom: string 	}
-	\item \textbf{+ yroom: string 	}
-	\item \textbf{+ archived: number 	}
-	\item \textbf{+ noticeChangeVariable: boolean 	}
-	\item \textbf{+ passedRoom: RoomData 	} \newline
+	\item \textbf{passedRoom: RoomData 	} \newline
 	L'oggetto che viene passato da \texttt{RoomComponent} e che indica la stanza da modificare.
-	\item \textbf{+ action: string} \newline
+	\item \textbf{action: string} \newline
 	L'attributo che viene passato da \texttt{RoomComponent} e che indica il tipo di azione da eseguire: aggiunta o modifica della stanza;
 \end{itemize}
 Questa classe presenta i seguenti metodi:
 \begin{itemize}
-	\item \textbf{+ constructor(service: WorkstationsService) 	}
-	\item \textbf{- ngOnChanges(): void 	} \newline
+	\item \textbf{ngOnChanges(): void 	} \newline
 	Metodo chiamato ogni volta che una proprietà data-bound viene modificata. In questo caso serve per aggiornare i parametri locali in base ai valori di \texttt{passedRoom}.
-	\item \textbf{- getRoomFromLocalValues(): RoomData 	} \newline
+	\item \textbf{getRoomFromLocalValues(): RoomData 	} \newline
 	Restituisce un oggetto \texttt{RoomData} ottenuto dai primi 5 attributi.
-	\item \textbf{+ takeAction(): void 	} \newline
+	\item \textbf{takeAction(): void 	} \newline
 	Chiama il metodo \texttt{addRoom()} o \texttt{editRoom()} a seconda del valore dell'attributo action.
-	\item \textbf{- addRoom(): void 	} \newline
+	\item \textbf{addRoom(): void 	} \newline
 	Richiede al service di aggiungere la stanza specificata.
-	\item \textbf{- editRoom(): void} \newline
+	\item \textbf{editRoom(): void} \newline
 	Richiede al service di modificare la postazione nel modo specificato.
+	\item \textbf{showMessage(message: string): void} \newline
+	Metodo che mostra all'utente la stringa passata come parametro.
 \end{itemize}
 \subparagraph{WorkstationsService}
 Servizio che permette di ottenere dal server informazioni sulle postazioni. Ogni metodo di questa classe, tranne il costruttore, restituisce un \texttt{Observable}. Questo oggetto espone un metodo subscribe con il quale si potrà impostare una funzione di callback che verrà chiamata quando il server fornirà una risposta. \newline
 Questa classe contiene i seguenti attributi:
 \begin{itemize}
-	\item \textbf{- APIUrl: string} \newline
+	\item \textbf{APIUrl: string} \newline
 	L'url base dell'API REST a cui il servizio fa riferimento.
 \end{itemize}
 Questa classe presenta i seguenti metodi:
 \begin{itemize}
-	\item \textbf{+ constructor(http: HttpClient) 	}
-	\item \textbf{+ getWorkstationList(): Observable<Array<WorkstationData>> 	} \newline
+	\item \textbf{getWorkstationList(): Observable<Array<WorkstationData>> 	} \newline
 	Usato per ottenere una lista delle postazioni.
-	\item \textbf{+ addWorkstation(val: WorkstationData): Observable<string> 	} \newline
+	\item \textbf{addWorkstation(val: WorkstationData): Observable<string> 	} \newline
 	Usato per tentare di aggiungere la postazione indicata in \texttt{val} e di ricevere l'esito dell'operazione.
-	\item \textbf{+ deleteWorkstation(val: number): Observable<string> 	} \newline
+	\item \textbf{deleteWorkstation(val: number): Observable<string> 	} \newline
 	Usato per tentare di eliminare la postazione con id \texttt{val} e di ricevere l'esito dell'operazione.
-	\item \textbf{+ modifyWorkstation(val: WorkstationData): Observable<string>} \newline
+	\item \textbf{modifyWorkstation(val: WorkstationData): Observable<string>} \newline
 	Usato per tentare di modificare la postazione con id pari a quello contenuto in \texttt{val} assegnandole gli altri valori dello stesso parametro. Restituisce, tramite un \texttt{Observable}, una risposta in formato stringa che indica l'esito dell'operazione.
 \end{itemize}
 \subparagraph{RoomsService}
 Servizio che permette di ottenere dal server informazioni sulle stanze. Ogni metodo di questa classe, tranne il costruttore, restituisce un \texttt{Observable}. Questo oggetto espone un metodo subscribe con il quale si potrà impostare una funzione di callback che verrà chiamata quando il server fornirà una risposta. \newline
 Questa classe contiene i seguenti attributi:
 \begin{itemize}
-	\item \textbf{- APIUrl: string} \newline
+	\item \textbf{APIUrl: string} \newline
 	L'url base dell'API REST a cui il servizio fa riferimento.
 \end{itemize}
 Questa classe presenta i seguenti metodi:
 \begin{itemize}
-	\item \textbf{+ constructor(http: HttpClient) 	}
-	\item \textbf{+ getRoomsList(): Observable<Array<RoomData>> 	} \newline
+	\item \textbf{getRoomsList(): Observable<Array<RoomData>> 	} \newline
 	Usato per ottenere una lista delle stanze.
-	\item \textbf{+ addRoom(val: RoomData): Observable<string> 	} \newline
+	\item \textbf{addRoom(val: RoomData): Observable<string> 	} \newline
 	Usato per tentare di aggiungere la stanza indicata in \texttt{val} e di ricevere l'esito dell'operazione.
-	\item \textbf{+ deleteWorkstation(val: number): Observable<string> 	} \newline
+	\item \textbf{deleteWorkstation(val: number): Observable<string> 	} \newline
 	Usato per tentare di eliminare la stanza con id \texttt{val} e di ricevere l'esito dell'operazione.
-	\item \textbf{+ modifyWorkstation(val: RoomData): Observable<string>} \newline
+	\item \textbf{modifyWorkstation(val: RoomData): Observable<string>} \newline
 	Usato per tentare di modificare la stanza con id pari a quello contenuto in \texttt{val} assegnandole gli altri valori dello stesso parametro. Restituisce, tramite un \texttt{Observable}, una risposta in formato stringa che indica l'esito dell'operazione.
 \end{itemize}
 \subparagraph{WorkstationData}
 Classe che contiene tutti e soli i valori necessari per il salvataggio di una postazione sul database. È utilizzata per il transito dei dati delle postazioni all'interno dell'applicazione. \newline
-Questa classe contiene i seguenti attributi:
-\begin{itemize}
-	\item \textbf{+ id: number 	}
-	\item \textbf{+ tag: string 	}
-	\item \textbf{+ workstationname: string 	}
-	\item \textbf{+ xworkstation: number 	}
-	\item \textbf{+ yworkstation: number 	}
-	\item \textbf{+ idroom: number 	}
-	\item \textbf{+ state: number 	}
-	\item \textbf{+ sanitized: number 	}
-	\item \textbf{+ archived: number}
-\end{itemize}
 \subparagraph{RoomData}
 Questa classe contiene tutti e soli i valori necessari per il salvataggio di una stanza sul database. È utilizzata per il transito dei dati delle stanze all'interno dell'applicazione. \newline
-Questa classe contiene i seguenti attributi:
-\begin{itemize}
-	\item \textbf{+ id: number 	}
-	\item \textbf{+ roomname: string 	}
-	\item \textbf{+ xroom: number 	}
-	\item \textbf{+ yroom: number 	}
-	\item \textbf{+ archived: number}
-\end{itemize}
 \subparagraph{Observable<T>}
 Classe fornita dalla libreria Rxjs. Viene utilizzata per effettuare chiamate asincrone al server. Per una documentazione più approfondita fare riferimento a \url{https://angular.io/guide/rx-library}. \newline
 Questa classe presenta i seguenti metodi:
 \begin{itemize}
-	\item \textbf{+ subscribe(next: (T)=>void): Subscription} \newline
+	\item \textbf{subscribe(next: (T)=>void): Subscription} \newline
 	Metodo che permette di eseguire la chiamata al server e di specificare la funzione di callback che gestirà la risposta.
 \end{itemize}
 
@@ -467,94 +422,77 @@ Il diagramma delle classi sovrastante rappresenta le classi coinvolte nella nell
 Classe che si occupa della visualizzazione di una lista delle credenziali ottenute tramite il service \texttt{UserService}. \newline
 Questa classe contiene i seguenti attributi:
 \begin{itemize}
-	\item \textbf{+ CredentialList: Array<UserData>} \newline
+	\item \textbf{CredentialList: Array<UserData>} \newline
 	Array nel quale vengono salvate le credenziali ottenute dal service.
-	\item \textbf{+ addEditCredential: UserData} \newline
+	\item \textbf{addEditCredential: UserData} \newline
 	Variabile utilizzata per il passaggio delle informazione da questa classe a \texttt{AddEditCredentialComponent}. Il valore di questa variabile viene assegnato alla variabile \texttt{credential} di quest'ultima classe.
-	\item \textbf{+ userAction: string} \newline
+	\item \textbf{userAction: string} \newline
 	Variabile utilizzata per la selezione del tipo di azione (aggiunta o modifica) da eseguire. Il valore di questa variabile viene assegnato alla variabile \texttt{action} di \texttt{AddEditCredentialComponent}.
 \end{itemize}
 Questa classe presenta i seguenti metodi:
 \begin{itemize}
-	\item \textbf{+ ngOnInit(): void} \newline
+	\item \textbf{ngOnInit(): void} \newline
 	Metodo chiamato all'inizializzazione della pagina. Provoca l'aggiornamento della lista di credenziali.
-	\item \textbf{+ addClick(): void} \newline
+	\item \textbf{addClick(): void} \newline
 	Metodo chiamato nel momento in cui l'utente apre il form di creazione di una credenziale. Imposta \texttt{userAction} e \texttt{addEditCredential} in modo che possano essere usate per aggiungere una credenziale as sistema.
-	\item \textbf{+ editClick(credential: UserData): void} \newline
+	\item \textbf{editClick(credential: UserData): void} \newline
 	Metodo chiamato nel momento in cui l'utente apre il form di modifica di una credenziale. Imposta \texttt{userAction} e \texttt{addEditCredential} in modo che possano essere usate per modificare la credenziale.
-	\item \textbf{+ closeClick(): void} \newline
+	\item \textbf{closeClick(): void} \newline
 	Metodo chiamato nel momento in cui l'utente chiude il form di creazione di una credenziale. Provoca l'aggiornamento della lista di credenziali.
-	\item \textbf{+ refreshCredentialsList(): void} \newline
+	\item \textbf{refreshCredentialsList(): void} \newline
 	Provoca l'aggiornamento della lista di credenziali tramite \texttt{UserService}.
-	\item \textbf{+ deleteClick(item: UserData): void} \newline
+	\item \textbf{deleteClick(item: UserData): void} \newline
 	Metodo chiamato nel momento in cui l'utente preme sul pulsante per l'eliminazione di una credenziale. Provoca l'eliminazione tramite \texttt{UserService}.
 \end{itemize}
 \subparagraph{AddEditCredentialComponent}
 Classe che si occupa della creazione e modifica di credenziali da parte dell'utente. I primi 8 attributi sono modificabili dall'utente tramite un form e definiscono i valori della credenziale che si sta creando o modificando. \newline
 Questa classe contiene i seguenti attributi:
 \begin{itemize}
-	\item \textbf{+ id: number}
-	\item \textbf{+ username: string}
-	\item \textbf{+ password: string}
-	\item \textbf{+ name: string}
-	\item \textbf{+ surname: string}
-	\item \textbf{+ mail: string}
-	\item \textbf{+ type: number}
-	\item \textbf{+ archived: number}
-	\item \textbf{+ action: string} \newline
+	\item \textbf{action: string} \newline
 	Variabile che determina il tipo di azione da eseguire ( aggiunta o modifica della credenziale). Viene impostata dalla classe \texttt{ShowCredentialComponent}.
-	\item \textbf{+ credential: UserData} \newline
+	\item \textbf{credential: UserData} \newline
 	Variabile attraverso la quale questa classe ottiene i valori iniziali della credenziale che dovrà essere modificata o aggiunta. Viene impostata dalla classe \texttt{ShowCredentialComponent}.
 \end{itemize}
 Questa classe presenta i seguenti metodi:
 \begin{itemize}
-	\item \textbf{+ ngOnChanges(): void} \newline
+	\item \textbf{ngOnChanges(): void} \newline
 	Metodo chiamato ogni volta che uno degli attributi data-bound, in questo caso \texttt{action} e \texttt{credential} viene modificato. Viene utilizzato per aggiornare i primi 8 attributi in base al valore dell'ultimo, che viene impostato da \texttt{ShowCredentialComponent}
-	\item \textbf{+ getCredentialFromLocalValues(): UserData} \newline
+	\item \textbf{getCredentialFromLocalValues(): UserData} \newline
 	Restituisce un oggetto costruito a partire dai primi 8 attributi dell classe.
-	\item \textbf{+ takeAction(): void} \newline
+	\item \textbf{takeAction(): void} \newline
 	Avvia l'evento di aggiunta o modifica della credenziale. La scelta tra le due possibilità è determinata dall'attributo action.
-	\item \textbf{+ addCredential(): void} \newline
+	\item \textbf{addCredential(): void} \newline
 	Aggiunge la credenziale determinata dai primi 8 valori al server.
-	\item \textbf{+ editCredential(): void} \newline
+	\item \textbf{editCredential(): void} \newline
 	Modifica la credenziale presente sul server con id pari all'attributo \texttt{id} impostandone gli altri valori con quelli degli altri attributi.
+	\item \textbf{showMessage(message: string): void} \newline
+	Metodo che mostra all'utente la stringa passata come parametro.
 \end{itemize}
 \subparagraph{UserService}
 Servizio che permette di ottenere dal server le credenziali salvate. Ogni metodo di questa classe, tranne il costruttore, restituisce un \texttt{Observable}. Questo oggetto espone un metodo subscribe con il quale si potrà impostare una funzione di callback che verrà chiamata quando il server fornirà una risposta. \newline
 Questa classe contiene i seguenti attributi:
 \begin{itemize}
-	\item \textbf{- APIUrl: string}
+	\item \textbf{APIUrl: string}
 	L'url base dell'API REST a cui il servizio fa riferimento.
 \end{itemize}
 Questa classe presenta i seguenti metodi:
 \begin{itemize}
-	\item \textbf{+ getUserList(): Observable<Array<UserData>>} \newline
+	\item \textbf{getUserList(): Observable<Array<UserData>>} \newline
 	Fornisce un'array contenente tutte le credenziali presenti sul server
-	\item \textbf{+ addUser(val: UserData): Observable<string>} \newline
+	\item \textbf{addUser(val: UserData): Observable<string>} \newline
 	Permette di aggiungere una credenziale al server. Restituisce l'esito dell'operazione sotto forma di stringa.
-	\item \textbf{+ deleteUser(val: number): Observable<string>} \newline
+	\item \textbf{deleteUser(val: number): Observable<string>} \newline
 	Permette di rimuovere una credenziale dal server, specificandone l'id. Restituisce l'esito dell'operazione sotto forma di stringa.
-	\item \textbf{+ modifyUser(val: UserData): Observable<string>} \newline
+	\item \textbf{modifyUser(val: UserData): Observable<string>} \newline
 	Permette di modificare una credenziale presente sul server. La credenziale da modificare è specificata dall'attributo \texttt{id} del parametro \texttt{val}. I nuovi valori della credenziale sono specificati dagli altri attributi del parametro. Restituisce l'esito dell'operazione sotto forma di stringa.
 \end{itemize}
 \subparagraph{UserData}
 Questa classe contiene tutti e soli i valori necessari per il salvataggio di un utente sul database. È utilizzata per il transito dei dati degli utenti all'interno dell'applicazione. \newline
-Questa classe contiene i seguenti attributi:
-\begin{itemize}
-	\item \textbf{+ id: number}
-	\item \textbf{+ username: string}
-	\item \textbf{+ password: string}
-	\item \textbf{+ name: string}
-	\item \textbf{+ surname: string}
-	\item \textbf{+ mail: string}
-	\item \textbf{+ type: number}
-	\item \textbf{+ archived: number}
-\end{itemize}
 \subparagraph{Observable<T>}
 Classe fornita dalla libreria Rxjs. Viene utilizzata per effettuare chiamate asincrone al server. Per una documentazione più approfondita fare riferimento a \url{https://angular.io/guide/rx-library}. \newline
 Questa classe presenta i seguenti metodi:
 \begin{itemize}
-	\item \textbf{+ subscribe(next: (T)=>void): Subscription} \newline
+	\item \textbf{subscribe(next: (T)=>void): Subscription} \newline
 	Metodo che permette di eseguire la chiamata al server e di specificare la funzione di callback che gestirà la risposta.
 \end{itemize}
 
