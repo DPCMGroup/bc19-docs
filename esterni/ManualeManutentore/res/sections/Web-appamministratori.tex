@@ -289,7 +289,7 @@ Questa classe presenta i seguenti metodi:
 	\item \textbf{setWorkstationList(workstationData: Array<WorkstationData>): void} \newline
 	Reinizializza \texttt{workstationList} con i dati ricevuti
 	\item \textbf{populateRoomsMap(filterWorkstationId: number): void} \newline
-	Reinizializza \texttt{roomsMap} ponendo come chiavi gli id delle stanze contenute in \texttt{roomList} e come valori le postazioni contenute nelle rispettive stanze. \newline
+	Reinizializza \texttt{roomsMap} ponendo come chiavi gli id delle stanze contenute in \texttt{roomsList} e come valori le postazioni contenute nelle rispettive stanze. In questo modo sarò facile ottenere le postazioni contenute in una stanza conoscendo l'id di quest'ultima. \newline
 	Se non viene specificato l'attributo \texttt{filterWorkstationId} nella mappa vengono inserite anche le stanze vuote. \newline
 	Se viene specificato l'attributo \texttt{filterWorkstationId} verrà inserita nella mappa solo la postazione con l'id indicato e la stanza che la contiene.
 	\item \textbf{refreshAll(filterWorkstationId: number): void} \newline
@@ -517,7 +517,7 @@ Il diagramma sovrastante rappresenta l'evento di login automatico. L'evento è p
 	\caption{Diagramma di sequenza per la visualizzazione delle stanze e delle postazioni}
 	\label{fig:DiagrammaSequenzaStanzePostazioni1}
 \end{figure}
-Il diagramma sovrastante rappresenta un'evento scatenato dall'inizializzazione della pagina (notificata tramite la funzione \texttt{ngOnInit}) che consiste nell'ottenimento di una lista delle postazioni e delle stanze dal server e della suddivisione delle prime in una mappa. Questa mappa verrà utilizzata dalla vista per mostrare le postazioni suddivise in stanze. L'evento rappresentato nel diagramma viene provocato ogni volta che si chiama il metodo \texttt{refreshAll}. Questa funzionalità viene utilizzata anche, per esempio, dopo che una postazione è stata eliminata o modificata.
+L'evento rappresentato nel diagramma sovrastante è scatenato dalla chiamata di \texttt{ngOnInit}. Come conseguenza viene chiamato il metodo \texttt{refreshAll} che fa eseguire parallelamente due richieste di dati al server, la prima per ottenere le stanze e la seconda per ottenere le postazioni. In entrambe le esecuzioni il componente chiama il metodo apposito del servizio e riceve come risposta un \texttt{Observable}. Poi, chiamando il metodo \texttt{subscribe} di questo oggetto, il componente invia la chiamata al server e imposta la funzione di callback che ne gestirà la risposta. In entrambi i dati di ritorno vengono assegnati a degli attributi del componente. Per le stanze il metodo \texttt{setRoomsList} assegna l'array di ritorno all'array locale \texttt{roomsList}. Per le stanze, invece, il metodo \texttt{setWorkstationsList} assegna l'array di ritorno all'array locale \texttt{workstationList}. Quando entrambe le risposte sono arrivate l'esecuzione procede col metodo \texttt{populateRoomsMap}, che organizza le stanze e le postazioni in una mappa. 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=18cm]{res/images/webapp-addEditStanzePostazioni-diagrammaSequenza.png}
@@ -534,7 +534,7 @@ L'azione è provocata dalla chiamata del metodo \texttt{takeAction} successiva a
 	\caption{Diagramma di sequenza per la visualizzazione delle credenziali}
 	\label{fig:DiagrammaSequenzaVisualizzazioneCredenziali}
 \end{figure}
-Il diagramma sovrastante rappresenta l'evento di visualizzazione delle credenziali presenti sul server. L'evento viene scatenato dall'inizializzazio della pagina (\texttt{ngOnInit}). Successivamente il componente \texttt{ShowCredentialsComponent} richiede al servizio \texttt{UserService} una lista delle credenziali. Questa lista verrà assegnata ad una variabile tramite \texttt{setCredentialsList}.
+Il diagramma sovrastante rappresenta l'evento di visualizzazione delle credenziali presenti sul server. L'evento viene scatenato dall'inizializzazio della pagina (\texttt{ngOnInit}). Successivamente il componente \texttt{ShowCredentialsComponent} chiama il metodo \texttt{getUserList} del servizio \texttt{UserService} e ottiene un \texttt{Observable}. Chiamando il metodo subscribe di quest'ultimo, il componente invia la chiamata la server e, essendo la risposta asincrona, imposta una funzione che gestirà i valori di ritorno. La funzione impostata in questo caso è\texttt{setCredentialsList} che, una volta chiamata, assegna all'attributo \texttt{CredentialList} i valori ottenuti.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=18cm]{res/images/webapp-credenzialiAddEdit-diagrammaSequenza.png}
