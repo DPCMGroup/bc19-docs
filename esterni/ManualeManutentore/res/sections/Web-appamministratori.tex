@@ -118,6 +118,7 @@ Per la struttura dei componenti e dei servizi fare riferimento alla sottosezione
 	\caption{Diagramma dei package della webapp}
 	\label{fig:DiagrammaPackageWebapp}
 \end{figure}
+Il diagramma sovrastante rappresenta la struttura e le relazioni dei package della webapp.
 
 \subsubsection{Base}
 \begin{figure}[H]
@@ -126,6 +127,9 @@ Per la struttura dei componenti e dei servizi fare riferimento alla sottosezione
 	\caption{Diagramma del package base della webapp}
 	\label{fig:DiagrammaPackageBaseWebapp}
 \end{figure}
+Il package Base contiene tutte le funzionalità offerte ad un amministratore autenticato.
+Le funzionalità che vi sono contenute sono la gestione delle credenziali, a sua volta racchiusa nel package Credentials, e la gestione delle stanze e delle postazioni, racchiusa nel package Rooms. La classe base component viene utilizzata per gestire la visualizzazione dell'una o dell'altra funzionalità, e permette inoltre l'azione di logout.
+Il package Base ha una dipendenza verso Models, le cui classi vengono usate per organizzare i dati, e una verso Services, le cui classi vengono usate per interagire con il server e con il local storage.
 
 \subsubsection{Login}
 \begin{figure}[H]
@@ -134,6 +138,7 @@ Per la struttura dei componenti e dei servizi fare riferimento alla sottosezione
 	\caption{Diagramma del package login della webapp}
 	\label{fig:DiagrammaPackageLoginWebapp}
 \end{figure}
+Il package Login contiene le funzionalità necessarie per l'autenticazione dell'utente.
 
 \subsubsection{Models}
 \begin{figure}[H]
@@ -142,6 +147,7 @@ Per la struttura dei componenti e dei servizi fare riferimento alla sottosezione
 	\caption{Diagramma del package models della webapp}
 	\label{fig:DiagrammaPackageModelsWebapp}
 \end{figure}
+Il package Models contiene le classi che vengono usate nel resto dell'applicazione per formattare i dati e comunicarli in modo ordinato e coeso.
 
 \subsubsection{Services}
 \begin{figure}[H]
@@ -150,6 +156,7 @@ Per la struttura dei componenti e dei servizi fare riferimento alla sottosezione
 	\caption{Diagramma del package services della webapp}
 	\label{fig:DiagrammaPackageServicesWebapp}
 \end{figure}
+Il package Services contiene le classi usate nel resto dell'applicazione per interagire col server e con il local storage. All'interno di questo package le classi che si occupano dell'interazione col server sono racchiuse nel package Api\_services.
 
 \subsection{Diagrammi delle classi}
 I diagrammi seguenti sono scritti secondo la sintassi UML. Le descrizioni testuali degli attributi e dei metodi delle classi riprendono alcune notazioni del linguaggio UML:
