@@ -280,7 +280,7 @@ La classe MainActivity offre i seguenti metodi:
 
 La classe MainPresenter offre i seguenti metodi:
 \begin{itemize}
-	\item \textbf{registerModel(): void}: associa il Model al Presenter.; 
+	\item \textbf{registerModel(): void}: associa il Model al Presenter; 
 	\item \textbf{scanTagNFC(): void}: Si occupa di richiedere al modello le informazioni riguardanti la postazione, così poi da ritornarle alla vista; 
 	\item \textbf{sanitize(): void}: Si occupa di richiedere al modello di igienizzare una postazione, così poi da ritornarlo alla vista. 
 \end{itemize}
@@ -313,17 +313,19 @@ In questa pagina verrà mostrata la guida dedicata all'utente. In base al suo id
 La classe GuideActivity offre i seguenti metodi:
 \begin{itemize}
 	\item \textbf{onCreate(savedInstanceState:Bundle): void}: Si occupa della creazione della parte grafica visualizzata dall'utente; 
-	\item \textbf{getLayouId(): void}: Si occupa di visualizzare un layout diverso in base alla tipologia di utente.
+	\item \textbf{getLayouId(): void}: associa il rispettivo file in formato xml alla View;
 	\item \textbf{updateGuideView(in filePath:String): void}: Si occupa di far visualizzare il filePath sotto forma di stringa del percorso in cui viene salvato il documento della guida. 
 \end{itemize}
 
 La classe GuidePresenter offre i seguenti metodi:
 \begin{itemize}
+	\item \textbf{registerPresenter(): void}: associa il Presenter alla View; 
 	\item \textbf{showGuide(): void}: Si occupa di richiedere al modello la guida, così poi da ritornarle alla vista. 
 \end{itemize}
 
 La classe GuideModel offre i seguenti metodi:
 \begin{itemize}
+	\item \textbf{registerModel(): void}: associa il Model al Presenter; 
 	\item \textbf{getGuide(): String}: Si occupa di ottenere il filePath della guida di una determinata tipologia di utente, in base all'identificativo di quest'ultimo. 
 \end{itemize}
 
@@ -349,17 +351,19 @@ In questa pagina i campi da compilare sono:
 La classe BookingFormActivity offre i seguenti metodi:
 \begin{itemize}
 	\item \textbf{onCreate(savedInstanceState:Bundle): void}: Si occupa della creazione della parte grafica visualizzata dall'utente; 
-	\item \textbf{getLayoutId(): void}: 
+	\item \textbf{getLayoutId(): void}: associa il rispettivo file in formato xml alla View;
 	\item \textbf{updateBookingFormView(): void}: Si occupa di far visualizzare i campi da compilare tramite EditText nella pagina. Inoltre, per il campo data è possibile visualizzare una vista a calendario e per il campo ora una vista a orologio.
 \end{itemize}
 
 La classe BookingFormPresenter offre i seguenti metodi:
 \begin{itemize}
+	\item \textbf{registerPresenter(): void}: associa il Presenter alla View; 
 	\item \textbf{showAvailability(in date:String, in startTime:String, in endTime:String, in room:String, in colleague:String): void}: Si occupa di richiedere al modello la disponibilità delle postazioni con i parametri dei campi inseriti, così poi da ritornarla alla vista. 
 \end{itemize}
 
 La classe BookingFormModel offre i seguenti metodi:
 \begin{itemize}
+	\item \textbf{registerModel(): void}: associa il Model al Presenter; 
 	\item \textbf{getAvailability(in date:String, in startTime:String, in endTime:String, in room:String, in colleague:String): void}: Si occupa di richiedere al service la disponibilità delle postazioni con i parametri selezionati dall'utente. 
 \end{itemize}
 
