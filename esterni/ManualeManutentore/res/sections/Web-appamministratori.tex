@@ -72,7 +72,7 @@ L'architettura della web-app segue il modello a componenti imposto da Angular, c
 	\caption{Model-View-ViewModel}
 	\label{fig:Model-View-ViewModel}
 \end{figure}
-Il modello imposta dal Angular prevede che ogni funzionalità disponibile all'utente sia costituita da una vista (view) e da una logica (viewmodel) e chiama l'insieme di queste due parti "componente".
+Il modello imposto da Angular prevede che ogni funzionalità disponibile all'utente sia costituita da una vista (view) e da una logica (viewmodel) e chiama l'insieme di queste due parti "componente".
 Gli attributi del componente sono accessibili alla vista. Questa caratteristica permette una sincronizzazione in due versi: la vista, per mano dell'utente, può modificare le variabili del view model, e se quest'ultimo modifica le proprie variabili, la vista si modifica di conseguenza.
 Oltre ai componenti Angular offre la possibilità di creare dei servizi, che costituiscono la terza componente del pattern: il model. Questi servizi si occupano della gestione dei dati. Per esempio può esserci un servizio per la comunicazione col database, uno per la lettura e scrittura dal local storage e un altro che implementa un algoritmo per la manipolazione dei dati.
 Un componente è costituito da 4 file. Nel seguente esempio è rappresentato un componente chiamato base.
@@ -133,14 +133,19 @@ Il diagramma sovrastante rappresenta la struttura e le relazioni dei package del
 	\caption{Diagramma del package base della webapp}
 	\label{fig:DiagrammaPackageBaseWebapp}
 \end{figure}
-Il package Base contiene tutte le funzionalità offerte ad un amministratore autenticato.
-Le funzionalità che vi sono contenute sono la gestione delle credenziali, a sua volta racchiusa nel package Credentials, e la gestione delle stanze e delle postazioni, racchiusa nel package Rooms. La classe base component viene utilizzata per gestire la visualizzazione dell'una o dell'altra funzionalità, e permette inoltre l'azione di logout.
+Il package Base contiene tutte le funzionalità offerte a un amministratore autenticato.
+Le funzionalità che vi sono contenute sono ulteriormente suddivise in due package:
+\begin{itemize}
+	\item credentials
+	\item rooms
+\end{itemize}
+Il primo contiene i componenti per la gestione delle credenziali, mentre il secondo contiene quelli per la gestione delle credenziali.la gestione delle credenziali, a sua volta racchiusa nel package Credentials, e la gestione delle stanze e delle postazioni, racchiusa nel package Rooms. La classe BaseComponent gestisce la visualizzazione del component  La classe BaseComponent viene utilizzata per gestire la visualizzazione dell'una o dell'altra funzionalità, e permette inoltre l'azione di logout.
 Il package Base ha una dipendenza verso Models, le cui classi vengono usate per organizzare i dati, e una verso Services, le cui classi vengono usate per interagire con il server e con il local storage.
 
 \subsubsection{Login}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=8cm]{res/images/webapp-login-diagrammaPackage.png}
+	\includegraphics[width=5cm]{res/images/webapp-login-diagrammaPackage.png}
 	\caption{Diagramma del package login della webapp}
 	\label{fig:DiagrammaPackageLoginWebapp}
 \end{figure}
@@ -149,7 +154,7 @@ Il package Login contiene le funzionalità necessarie per l'autenticazione dell'
 \subsubsection{Models}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=8cm]{res/images/webapp-models-diagrammaPackage.png}
+	\includegraphics[width=5cm]{res/images/webapp-models-diagrammaPackage.png}
 	\caption{Diagramma del package models della webapp}
 	\label{fig:DiagrammaPackageModelsWebapp}
 \end{figure}
@@ -167,9 +172,9 @@ Il package Services contiene le classi usate nel resto dell'applicazione per int
 \subsection{Diagrammi delle classi}
 Nelle descrizioni che seguono si possono notare alcune mancanze, di cui illustriamo ora le motivazioni:
 \begin{itemize}
-	\item non sono presenti i costruttori delle classi perché essi non hanno alcun effetto oltre a quello di creare gli oggetti.
-	\item per le classi del package Models non sono descritti gli attributi poiché essi sono semplicemente la copia delle informazioni contenute nel database.
-	\item per le classi legate ad un form accessibile all'utente non sono descritti gli attributi inseribili dagli utenti perché essi sono un sottoinsieme di quelli di cui si parla al punto precedente
+	\item non sono presenti i costruttori delle classi perché essi non hanno alcun effetto oltre a quello di creare gli oggetti;
+	\item per le classi del package Models non sono descritti gli attributi poiché essi sono semplicemente la copia delle informazioni contenute nel database;
+	\item per le classi legate a un form accessibile all'utente non sono descritti gli attributi inseribili perché essi sono un sottoinsieme di quelli di cui si parla al punto precedente.
 \end{itemize}
 
 \subsubsection{Login}
@@ -195,7 +200,7 @@ Questa classe contiene i seguenti attributi:
 Questa classe presenta i seguenti metodi:
 \begin{itemize}
 	\item \textbf{ngOnInit(): void} \newline
-	Metodo che viene chiamato all'inizializzazione delle pagina. Provoca l'evento di login automatico.
+	Metodo che viene chiamato all'inizializzazione della pagina. Provoca l'evento di login automatico.
 	\item \textbf{focused(): void} \newline
 	Metodo che viene chiamato nel momento in cui uno dei due campi di inserimento delle credenziali viene selezionata. Provoca l'impostazione dell'invisibilità dell'errore che indica l'incorrettezza delle credenziali inserite.
 	\item \textbf{autoLogin(): void} \newline
@@ -226,7 +231,7 @@ Questa classe presenta i seguenti metodi:
 	\item \textbf{retrieveLocalCredentials(): LoginData} \newline
 	Metodo che restituisce le credenziali salvate nel local storage. Se assenti restituisce un oggetto LoginData con i valori entrambi a null.
 	\item \textbf{saveCredentialsLocally(creds: LoginData): void} \newline
-	Metodo che salva le crednziali passate nel local storage.
+	Metodo che salva le credenziali passate nel local storage.
 	\item \textbf{deleteSavedCredentials(): void} \newline
 	Metodo che elimina le credenziali salvate nel local storage.
 	
@@ -260,9 +265,9 @@ Classe che si occupa della visualizzazione, eliminazione e, tramite i componenti
 Questa classe contiene i seguenti attributi:
 \begin{itemize}
 	\item \textbf{roomsMap: Map<number, Array<WorkstationData> >} \newline
-		Map in cui ad ogni stanza sono assegnate le sue postazione, ovvero quelle con \texttt{idroom} uguale all'\texttt{id} della stanza. Se l'utente applica un filtro alla lista, qui verranno contenute solo le stanze e le postazioni selezionate da tale filtro.
+		Map in cui ad ogni stanza sono assegnate le sue postazioni, ovvero quelle con \texttt{idroom} uguale all'\texttt{id} della stanza. Se l'utente applica un filtro alla lista, qui verranno contenute solo le stanze e le postazioni selezionate da tale filtro.
 	\item \textbf{roomsList: Array<RoomsData>} \newline
-		Array utilizzato per contenere le stanze ottenute dal server
+		Array utilizzato per contenere le stanze ottenute dal server.
 	\item \textbf{workstationList: Array<Workstation>} \newline
 		Array utilizzato per contenere le postazioni ottenute dal server.
 	\item \textbf{searchId: string} \newline
@@ -270,11 +275,11 @@ Questa classe contiene i seguenti attributi:
 	\item \textbf{addEditWorkstation: WorkstationData} \newline
 		Contiene i dati della postazione che verrà aggiunta o modificata.
 	\item \textbf{workstationAction: string} \newline
-		Valore specificato dall'utente che provocherà la modifica o l'aggiunta della postazione salvata in \texttt{addEditWorkstation}
+		Valore specificato dall'utente che provocherà la modifica o l'aggiunta della postazione salvata in \texttt{addEditWorkstation}.
 	\item \textbf{addEditRoom: RoomData} \newline
 		Contiene i dati della stanza che verrà aggiunta o modificata.
 	\item \textbf{roomAction: string} \newline
-		Valore specificato dall'utente che provocherà la modifica o l'aggiunta della stanza salvata in \texttt{addEditRoom}
+		Valore specificato dall'utente che provocherà la modifica o l'aggiunta della stanza salvata in \texttt{addEditRoom}.
 \end{itemize}
 Questa classe presenta i seguenti metodi:
 \begin{itemize}
@@ -293,7 +298,7 @@ Questa classe presenta i seguenti metodi:
 	Se non viene specificato l'attributo \texttt{filterWorkstationId} nella mappa vengono inserite anche le stanze vuote. \newline
 	Se viene specificato l'attributo \texttt{filterWorkstationId} verrà inserita nella mappa solo la postazione con l'id indicato e la stanza che la contiene.
 	\item \textbf{refreshAll(filterWorkstationId: number): void} \newline
-	Richiede al server le stanze e le postazione e le organizza, tramite \texttt{populateRoomsMap}, in una mappa. Il parametro \texttt{filterWorkstationId} viene passato direttamente a \texttt{populateRoomsMap}
+	Richiede al server le stanze e le postazioni e le organizza, tramite \texttt{populateRoomsMap}, in una mappa. Il parametro \texttt{filterWorkstationId} viene passato direttamente a \texttt{populateRoomsMap}
 	\item \textbf{deleteWorkstation(item: number): void} \newline
 	Richiede al server l'eliminazione della postazione con l'id specificato
 	\item \textbf{deleteRoom(roomId: number): void} \newline
@@ -323,7 +328,7 @@ Questa classe contiene i seguenti attributi:
 	\item \textbf{passedWorkstation: WorkstationData } \newline
 	L'oggetto che viene passato da \texttt{RoomComponent} e che indica la postazione da modificare.
 	\item \textbf{action: string} \newline
-	L'attributo che viene passato da \texttt{RoomComponent} e che indica il tipo di azione da eseguire: aggiunta o modifica della postazione;
+	L'attributo che viene passato da \texttt{RoomComponent} e che indica il tipo di azione da eseguire: aggiunta o modifica della postazione.
 \end{itemize}
 Questa classe presenta i seguenti metodi:
 \begin{itemize}
@@ -420,7 +425,7 @@ Questa classe presenta i seguenti metodi:
 	\caption{Diagramma delle classi per la gestione delle credenziali}
 	\label{fig:DiagrammaClassiCredenziali}
 \end{figure}
-Il diagramma delle classi sovrastante rappresenta le classi coinvolte nella pagina di gestione delle credenziali, e le loro relazioni. Il funzionamento di questa pagina è simile a quello della pagina di gestione delle stanze e delle postazioni. Qui la classe \texttt{ShowCredentialComponent} si occupa di ottenere la lista delle credenziali dal servizio \texttt{UserService} tramite oggetti \texttt{Observable}. Essa delega alla classe \texttt{AddEditCredentialComponent} l'aggiunta e modifica di credenziali. Il passaggio delle informazioni riguanti le credenziali viene sempre attuato tramile oggetti della classe \texttt{UserData}.
+Il diagramma delle classi sovrastante rappresenta le classi coinvolte nella pagina di gestione delle credenziali e le loro relazioni. Il funzionamento di questa pagina è simile a quello della pagina di gestione delle stanze e delle postazioni. Qui la classe \texttt{ShowCredentialComponent} si occupa di ottenere la lista delle credenziali dal servizio \texttt{UserService} tramite oggetti \texttt{Observable}. Essa delega alla classe \texttt{AddEditCredentialComponent} l'aggiunta e modifica di credenziali. Il passaggio delle informazioni riguardanti le credenziali viene sempre attuato tramite oggetti della classe \texttt{UserData}.
 
 \paragraph{Classi}
 \subparagraph{ShowCredentialComponent}
@@ -439,7 +444,7 @@ Questa classe presenta i seguenti metodi:
 	\item \textbf{ngOnInit(): void} \newline
 	Metodo chiamato all'inizializzazione della pagina. Provoca l'aggiornamento della lista di credenziali.
 	\item \textbf{addClick(): void} \newline
-	Metodo chiamato nel momento in cui l'utente apre il form di creazione di una credenziale. Imposta \texttt{userAction} e \texttt{addEditCredential} in modo che possano essere usate per aggiungere una credenziale as sistema.
+	Metodo chiamato nel momento in cui l'utente apre il form di creazione di una credenziale. Imposta \texttt{userAction} e \texttt{addEditCredential} in modo che possano essere usate per aggiungere una credenziale al sistema.
 	\item \textbf{editClick(credential: UserData): void} \newline
 	Metodo chiamato nel momento in cui l'utente apre il form di modifica di una credenziale. Imposta \texttt{userAction} e \texttt{addEditCredential} in modo che possano essere usate per modificare la credenziale.
 	\item \textbf{closeClick(): void} \newline
@@ -461,9 +466,9 @@ Questa classe contiene i seguenti attributi:
 Questa classe presenta i seguenti metodi:
 \begin{itemize}
 	\item \textbf{ngOnChanges(): void} \newline
-	Metodo chiamato ogni volta che uno degli attributi data-bound, in questo caso \texttt{action} e \texttt{credential} viene modificato. Viene utilizzato per aggiornare i primi 8 attributi in base al valore dell'ultimo, che viene impostato da \texttt{ShowCredentialComponent}
+	Metodo chiamato ogni volta che uno degli attributi data-bound, in questo caso \texttt{action} e \texttt{credential} viene modificato. Viene utilizzato per aggiornare i primi 8 attributi in base al valore dell'ultimo, che viene impostato da \texttt{ShowCredentialComponent}.
 	\item \textbf{getCredentialFromLocalValues(): UserData} \newline
-	Restituisce un oggetto costruito a partire dai primi 8 attributi dell classe.
+	Restituisce un oggetto costruito a partire dai primi 8 attributi della classe.
 	\item \textbf{takeAction(): void} \newline
 	Avvia l'evento di aggiunta o modifica della credenziale. La scelta tra le due possibilità è determinata dall'attributo action.
 	\item \textbf{addCredential(): void} \newline
@@ -534,7 +539,7 @@ L'azione è provocata dalla chiamata del metodo \texttt{takeAction} successiva a
 	\caption{Diagramma di sequenza per la visualizzazione delle credenziali}
 	\label{fig:DiagrammaSequenzaVisualizzazioneCredenziali}
 \end{figure}
-Il diagramma sovrastante rappresenta l'evento di visualizzazione delle credenziali presenti sul server. L'evento viene scatenato dall'inizializzazio della pagina (\texttt{ngOnInit}). Successivamente il componente \texttt{ShowCredentialsComponent} chiama il metodo \texttt{getUserList} del servizio \texttt{UserService} e ottiene un \texttt{Observable}. Chiamando il metodo subscribe di quest'ultimo, il componente invia la chiamata la server e, essendo la risposta asincrona, imposta una funzione che gestirà i valori di ritorno. La funzione impostata in questo caso è\texttt{setCredentialsList} che, una volta chiamata, assegna all'attributo \texttt{CredentialList} i valori ottenuti.
+Il diagramma sovrastante rappresenta l'evento di visualizzazione delle credenziali presenti sul server. L'evento viene scatenato dall'inizializzazione della pagina (\texttt{ngOnInit}). Successivamente il componente \texttt{ShowCredentialsComponent} chiama il metodo \texttt{getUserList} del servizio \texttt{UserService} e ottiene un \texttt{Observable}. Chiamando il metodo subscribe di quest'ultimo, il componente invia la chiamata al server e, essendo la risposta asincrona, imposta una funzione che gestirà i valori di ritorno. La funzione impostata in questo caso è \texttt{setCredentialsList} che, una volta chiamata, assegna all'attributo \texttt{CredentialList} i valori ottenuti.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=18cm]{res/images/webapp-credenzialiAddEdit-diagrammaSequenza.png}
