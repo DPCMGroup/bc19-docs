@@ -1,8 +1,8 @@
 %!TEX output_directory = .cache
 % ---------------------------
-%	  [ NOME DOCUMENTO ]
+%	  	  [ Verbale ]
 %	----------------------
-%	      DPCM2077
+%	       DPCM2077
 %  Progetto di SWE (2020-21)
 %    Template by Maxelweb
 % ---------------------------
@@ -11,32 +11,22 @@
 
 % --------------
 
-\newcommand{\docNome}{ ANALISI DEI REQUISITI }
-\newcommand{\docNomeProgetto}{ BlockCOVID }
-\newcommand{\docVersione}{2.2.5}
+\newcommand{\docNome}{ VERBALE RIUNIONE }
+\newcommand{\docVersione}{1.0.0}
+\newcommand{\docNomeProgetto}{ 30 aprile 2021 }
 \newcommand{\docStatus}{approvato}
-\newcommand{\docUso}{esterno}
-
+\newcommand{\docUso}{interno}
 
 % --------------
 
-\newcommand{\docDestinatari}{
-	Prof.~Tullio Vardanega \\&
-	Prof.~Riccardo Cardin \\&
-	Imola Informatica \\&
-	DPCM 2077
-}
 \newcommand{\docRedattori}{
-	Damiano Bertoldo\\&
-	Sara Privitera\\&
-	Daniele Spigolon
+	Matteo Budiai
 }
 \newcommand{\docVerificatori}{
-	Matteo Budai\\&
-	Ivan Piacere
+	Samuele De Grandi
 }
 \newcommand{\docApprovazione}{
-    Antonio Badan
+    Ivan Piacere
 }
 
 % ----- NON MODIFICARE SOTTO QUESTA RIGA -----
@@ -75,18 +65,21 @@
 
 \newpage
 \ActivateBG
-\pagenumbering{arabic}
+\pagenumbering{Roman}
 \include{res/registro}
 
-% Tabella dei contenuti
+
+% Contenuto
 
 \newpage
-\tableofcontents
+\input{res/contenuto}
 
-% Sezioni
+
+
+% Registro Decisioni
 
 \newpage
-\input{res/sezioni}
+\input{res/tracciamenti}
 
 \end{document}
 
