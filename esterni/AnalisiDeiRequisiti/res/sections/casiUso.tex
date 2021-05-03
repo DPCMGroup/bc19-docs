@@ -56,17 +56,17 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
            		\item[$-$] nome utente;
            		\item[$-$] password.
            	\end{itemize}
-           	\item\textbf{Estensioni:}
-           	\begin{itemize}
-           		\item[$-$] UC2.1 - Visualizzazione messaggio di errore;
-           		\item[$-$] UC2.2 - Visualizzazione schermata relativa a utente non abilitato.
-           	\end{itemize}
            	\item\textbf{Precondizione:} l’utente non si è autenticato nell'applicativo. 
            	\item\textbf{Postcondizione:} l’utente si è autenticato con successo ed è stato identificato dal sistema nel ruolo di amministratore, dipendente o addetto alle pulizie. A seconda della tipologia di utente vengono rese
            	disponibili diverse funzionalità.
+           	\item\textbf{Estensioni:}
+           	\begin{itemize}
+           		\item[$-$] Visualizzazione messaggio di errore (UC3);
+           		\item[$-$] Visualizzazione schermata relativa a utente non abilitato (UC4).
+           	\end{itemize}
 \end{itemize}
 
-\subsubsection{ UC2.1 - Visualizzazione messaggio di errore}
+\subsubsection{ UC3 - Visualizzazione messaggio di errore}
 \begin{itemize}
 	\item\textbf{Attori Primari:} utente non autenticato.
 	\item\textbf{Descrizione:} l'utente visualizza un messaggio di errore dovuto al fatto che ha tentato il login ma ha sbagliato a inserire le credenziali.
@@ -74,19 +74,18 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Precondizione:} l'utente tenta di autenticarsi nell'applicativo.
 	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore per informare l'utente del fatto che ha sbagliato a inserire le credenziali.
 \end{itemize}
-\subsubsection{ UC2.2 - Visualizzazione schermata relativa a utente non abilitato}
+\subsubsection{ UC4 - Visualizzazione schermata relativa a utente non abilitato}
 \begin{itemize}
 	\item\textbf{Attori Primari:} utente non autenticato.
 	\item\textbf{Descrizione:} l'utente tenta di autenticarsi nell'applicativo, tuttavia a causa della disabilitazione del suo account, il login viene interrotto, e
-	l'utente visualizza il messaggio di errore che illustra la causa della disabilitazione dell'account.
+	l'utente ne viene avvisato tramite un messaggio di errore.
 	\item\textbf{Scenario principale:} l’utente non autenticato con account disabilitato tenta di autenticarsi. 
 	La procedura di autenticazione viene bloccata a causa dello stato dell'account.
 	\item\textbf{Precondizione:} un utente non autenticato, registrato all'applicativo e con account disabilitato tenta di effettuare il login automatico. 
-	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore per informare l'utente del fatto che il 
-	proprio account è stato disabilitato dall'amministratore. Se quest'ultimo, durante la procedura di disabilitazione, ha inserito un messaggio contenente la causa di tale azione, allora tale messaggio viene visualizzato.
+	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore per informare l'utente del fatto che il suo account è stato disabilitato dall'amministratore.
 \end{itemize}
 
-\subsubsection{ UC3 - Login applicazione mobile}
+\subsubsection{ UC5 - Login applicazione mobile}
 \begin{itemize}
 	\item\textbf{Attori Primari:} utente non autenticato.
 	\item\textbf{Descrizione:} l’utente tenta di autenticarsi all'applicativo.
@@ -95,18 +94,18 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item[$-$] nome utente;
 		\item[$-$] password.
 	\end{itemize}
-	\item\textbf{Estensioni:}
-	\begin{itemize}
-		\item[$-$] UC3.1 - Visualizzazione messaggio di errore;
-		\item[$-$] UC3.2 - Visualizzazione schermata relativa a utente non abilitato.
-	\end{itemize}
 	\item\textbf{Precondizione:} l’utente non si è autenticato nell'applicativo. 
 	\item\textbf{Postcondizione:} l’utente si è autenticato con successo ed è stato identificato dal sistema
 	nel ruolo di amministratore, dipendente o addetto alle pulizie. A seconda della tipologia di utente vengono rese
 	disponibili diverse funzionalità.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] Visualizzazione messaggio di errore (UC6);
+		\item[$-$] Visualizzazione schermata relativa a utente non abilitato (UC7).
+	\end{itemize}
 \end{itemize}
 
-\subsubsection{ UC3.1 - Visualizzazione messaggio di errore}
+\subsubsection{ UC6 - Visualizzazione messaggio di errore}
 \begin{itemize}
 	\item\textbf{Attori Primari:} utente non autenticato.
 	\item\textbf{Descrizione:} l'utente visualizza un messaggio di errore dovuto al fatto che ha tentato il login ma ha sbagliato a inserire le credenziali.
@@ -114,20 +113,19 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Precondizione:} l'utente tenta di autenticarsi nell'applicativo.
 	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore per informare l'utente del fatto che ha sbagliato a inserire le credenziali.
 \end{itemize}
-\subsubsection{ UC3.2 - Visualizzazione schermata relativa a utente non abilitato}
+
+\subsubsection{ UC7 - Visualizzazione schermata relativa a utente non abilitato}
 \begin{itemize}
            	\item\textbf{Attori Primari:} utente non autenticato.
            	\item\textbf{Descrizione:} l'utente tenta di autenticarsi nell'applicativo, tuttavia a causa della disabilitazione del suo account, il login viene interrotto, e
-           	l'utente visualizza il messaggio di errore che illustra la causa della disabilitazione dell'account.
+           	l'utente ne viene avvisato tramite un messaggio di errore.
            	\item\textbf{Scenario principale:} l’utente non autenticato con account disabilitato tenta di autenticarsi. 
            	La procedura di autenticazione viene bloccata a causa dello stato dell'account.
            	\item\textbf{Precondizione:} un utente non autenticato, registrato all'applicativo e con account disabilitato tenta di effettuare il login automatico. 
-           	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore per informare l'utente del fatto che il 
-           	proprio account è stato disabilitato dall'amministratore. Se quest'ultimo, durante la procedura di disabilitazione, ha inserito un messaggio contenente la causa di tale azione, allora tale messaggio viene visualizzato.
+           	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore per informare l'utente del fatto che il suo account è stato disabilitato dall'amministratore.
 \end{itemize}
 
-
-\subsubsection{ UC4 - Logout amministratore}
+\subsubsection{ UC8 - Logout amministratore}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -144,7 +142,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente non è autenticato nel sistema.
 \end{itemize}
 
-\subsubsection{ UC5 - Logout dipendente}
+\subsubsection{ UC9 - Logout dipendente}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	dipendente.
@@ -161,7 +159,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente non è autenticato nel sistema.
 \end{itemize}
 
-\subsubsection{ UC6 - Logout addetto alle pulizie}
+\subsubsection{ UC10 - Logout addetto alle pulizie}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	addetto alle pulizie.
@@ -178,7 +176,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente non è autenticato nel sistema.
 \end{itemize}
 
-\subsubsection{ UC7 - Guida amministratore}
+\subsubsection{ UC11 - Guida amministratore}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -192,7 +190,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente può leggere la guida.
 \end{itemize}
 
-\subsubsection{ UC8 - Guida dipendente}
+\subsubsection{ UC12 - Guida dipendente}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	dipendente.
@@ -206,7 +204,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente può leggere la guida.
 \end{itemize}
 
-\subsubsection{ UC9 - Guida addetto alle pulizie}
+\subsubsection{ UC13 - Guida addetto alle pulizie}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	addetto alle pulizie.
@@ -220,22 +218,16 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente può leggere la guida.
 \end{itemize}
 
-\subsubsection{ UC10 - Visualizzazione stanze e postazioni}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=15cm]{res/images/UC10.png}
-	\caption{Stati postazioni}
-	\label{fig:stati postazioni}
-\end{figure}
+\subsubsection{ UC14 - Visualizzazione stanze e postazioni}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
 	\item\textbf{Descrizione:}
-	il sistema mostra all'amministratore lo schema delle stanze e delle postazioni aggiornato rispetto alle azioni salvate su Ethereum.
+	il sistema mostra all'amministratore lo schema delle stanze e delle postazioni aggiornato alla situazione attuale. Per la dinamica degli stati si faccia riferimento alla figura 1 della sezione §2.1.1.
 	\item\textbf{Scenario principale:}
 	\begin{enumerate}
 		\item l'amministratore raggiunge la pagina di visione delle stanze e delle postazioni
-		\item l'amministratore visualizza le stanze e le postazioni colorate in base al loro stato. Gli stati possibili sono:
+		\item l'amministratore visualizza le stanze, con all'interno le postazioni colorate in base al loro stato. Gli stati possibili sono:
 		\begin{itemize}
 			\item[$-$] libera e igienizzata;
 			\item[$-$] libera e non igienizzata;
@@ -245,8 +237,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 			\item[$-$] guasta e igienizzata;
 			\item[$-$] guasta e non igienizzata.
 		\end{itemize}
+		Le stanze inaccessibili hanno un'indicazione testuale che indica la data di inizio e fine del periodo di inaccessibilità. \newline
 		Per ogni stanza è indicato il numero di occupanti attuali.
 	\end{enumerate}
+	
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
@@ -254,7 +248,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 \end{itemize}
 
 
-\subsubsection{ UC11 - Visualizzazione a calendario delle postazioni prenotate}
+\subsubsection{ UC15 - Visualizzazione a calendario delle postazioni prenotate}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -268,34 +262,92 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'amministratore visualizza il calendario delle prenotazioni delle postazioni.
 \end{itemize}
 
-\subsubsection{ UC12 - Creazione di una stanza}
+\subsubsection{ UC16 - Creazione di una stanza}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=18cm]{res/images/UC16Nuovo.png}
+	\caption{Creazione di una stanza}
+\end{figure}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
-	\item\textbf{Attori Secondari:}
-	Ethereum.
 	\item\textbf{Descrizione:} 
-	l'utente aggiunge una stanza al sistema.
+	l'utente aggiunge una stanza al sistema. Le stanze del sistema sono sempre rettangolari e ne vanno quindi specificate due dimensioni, chiamate x e y.
 	\item\textbf{Scenario principale:} 
 	\begin{enumerate}
 		\item l'utente autenticato preme un pulsante per creare una nuova stanza;
 		\item compaiono i campi: "Nome della stanza" e "Dimensione della stanza" da compilare;
 		\item l'utente compila i campi;
 		\item l'utente preme un pulsante per confermare la creazione della stanza;
-		\item se non è già presente una stanza con il codice inserito, essa viene creata;
-		\item la configurazione della stanza viene inviata a Ethereum per essere salvata.
+		\item se non è già presente una stanza con il nome inserito, essa viene creata.
 	\end{enumerate}
-	\item\textbf{Estensione:}
-	\begin{itemize}
-		\item[$-$] UC12.1 - Avviso nome stanza già utilizzato
-	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
 	è stata aggiunta una stanza vuota con le caratteristiche specificate.
 \end{itemize}
-
-\subsubsection{ UC12.1 - Avviso nome stanza già utilizzato}
+\subsubsection{ UC16.1 - Inserimento nome della stanza}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:} 
+	l'utente inserisce il nome della stanza.
+	\item\textbf{Scenario principale:} 
+	l'utente inserisce il nome della stanza per procedere con la sua creazione.
+	\item\textbf{Precondizione:} 
+	l'utente non ha ancora inserito il nome della stanza.
+	\item\textbf{Postcondizione:}
+	l'utente ha inserito il nome della stanza.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] Avviso nome stanza già utilizzato (UC17).
+	\end{itemize}
+\end{itemize}
+\subsubsection{ UC16.2 - Inserimento dimensioni della stanza}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=12cm]{res/images/UC16.2.png}
+	\caption{Inserimento dimensioni della stanza}
+\end{figure}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:} 
+	l'utente inserisce le dimensioni della stanza. Le dimensioni sono chiamate x e y.
+	\item\textbf{Scenario principale:} 
+	l'utente inserisce le dimensioni della stanza per procedere con la sua creazione.
+	\item\textbf{Precondizione:} 
+	l'utente non ha ancora inserito le dimensioni della stanza.
+	\item\textbf{Postcondizione:}
+	l'utente ha inserito le dimensioni della stanza.
+\end{itemize}
+\subsubsection{ UC16.2.1 - Inserimento dimensione x della stanza}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:} 
+	l'utente inserisce la dimensione x della stanza.
+	\item\textbf{Scenario principale:} 
+	l'utente inserisce la dimensione x della stanza.
+	\item\textbf{Precondizione:} 
+	l'utente non ha ancora inserito la dimensione x della stanza.
+	\item\textbf{Postcondizione:}
+	l'utente ha inserito la dimensione x della stanza.
+\end{itemize}
+\subsubsection{ UC16.2.2 - Inserimento dimensione y della stanza}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:} 
+	l'utente inserisce la dimensione y della stanza.
+	\item\textbf{Scenario principale:} 
+	l'utente inserisce la dimensione y della stanza.
+	\item\textbf{Precondizione:} 
+	l'utente non ha ancora inserito la dimensione y della stanza.
+	\item\textbf{Postcondizione:}
+	l'utente ha inserito la dimensione y della stanza.
+\end{itemize}
+\subsubsection{ UC17 - Avviso nome stanza già utilizzato}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -312,32 +364,33 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza il messaggio d'errore.
 \end{itemize}
 
-\subsubsection{ UC13 - Eliminazione di una stanza}
+\subsubsection{ UC18 - Eliminazione di una stanza}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
-	\item\textbf{Attori Secondari:}
-	Ethereum.
 	\item\textbf{Descrizione:} 
 	l'utente elimina dal sistema una stanza con tutte le postazioni in essa presenti.
 	\item\textbf{Scenario principale:} 
 	\begin{enumerate}
 		\item l'utente preme sul pulsante per l'eliminazione di una stanza;
-		\item la stanza viene eliminata dal sistema con tutte le postazioni al suo interno;
-		\item l'azione viene comunicata a Ethereum.
+		\item la stanza viene eliminata dal sistema con tutte le postazioni al suo interno.
+		\item le prenotazioni presenti e future su postazioni all'interno della stanza vengono disdette
 	\end{enumerate}
 	\item\textbf{Precondizione:} 
-	l'utente è autenticato.
+	l'utente è autenticato e la stanza che si vuole eliminare non ha postazioni occupate.
 	\item\textbf{Postcondizione:}
 	è stata eliminata la stanza specificata, con tutte le postazioni al suo interno.
 \end{itemize}
 
-\subsubsection{UC14 - Modifica di una stanza}
+\subsubsection{UC19 - Modifica di una stanza}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=18cm]{res/images/UC19Nuovo.png}
+	\caption{Creazione di una stanza}
+\end{figure}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
-	\item\textbf{Attori Secondari:}
-	Ethereum.
 	\item\textbf{Descrizione:}
 	l'utente modifica il codice identificativo di una stanza.
 	\item\textbf{Scenario principale:} 
@@ -345,20 +398,32 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item l'utente preme un pulsante per la modifica di una stanza;
 		\item l'utente inserisce il nuovo nome;
 		\item l'utente conferma il nuovo nome tramite un pulsante;
-		\item se il nome non è già in utilizzo da parte di un'altra stanza, alla stanza selezionata viene assegnato il nome inserito;
-		\item l'azione viene comunicata a Ethereum.
+		\item se il nome non è già in utilizzo da parte di un'altra stanza, alla stanza selezionata viene assegnato il nome inserito.
 	\end{enumerate}
-	\item\textbf{Estensioni:}
-	\begin{itemize}
-		\item[$-$] UC12.1 - Avviso nome stanza già utilizzato
-	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato.
 	\item\textbf{Postcondizione:}
 	il codice della stanza selezionata è stato modificato.
 \end{itemize}
+\subsubsection{UC19.1 - Inserimento nuovo nome stanza}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:}
+	l'utente inserisce il nuovo nome della stanza.
+	\item\textbf{Scenario principale:} 
+	l'utente inserisce il nuovo nome della stanza per procedere con la sua modifica.
+	\item\textbf{Precondizione:} 
+	l'utente non ha ancora inserito il nuovo nome della stanza.
+	\item\textbf{Postcondizione:}
+	l'utente ha inserito il nuovo nome della stanza.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] Avviso nome stanza già utilizzato (UC17).
+	\end{itemize}
+\end{itemize}
 
-\subsubsection{UC15 - Impostazione di una stanza come inaccessibile.}
+\subsubsection{UC20 - Impostazione di una stanza come inaccessibile.}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -375,18 +440,22 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item l'utente conferma il periodo;
 		\item l'inaccessibilità della stanza viene programmata per il periodo specificato.
 	\end{enumerate}
+	Quando una stanza è impostata come inaccessibile tutte le prenotazioni esistenti per postazioni all'interno di quella stanza durante il periodo indicato vengono disdette. Inoltre sarà impossibile, all'interno del periodo, programmare nuove prenotazioni.
 	\item\textbf{Precondizione:} 
-	l'utente è autenticato come amministratore e ha raggiunto l'area dedicata a questa azione.
+	l'utente è autenticato come amministratore, ha raggiunto l'area dedicata a questa azione e la stanza che si vuole impostare come inaccessibile non ha postazioni occupate.
 	\item\textbf{Postcondizione:}
 	l'inaccessibilità della stanza è stata programmata per le date specificate.
 \end{itemize}
 
-\subsubsection{UC16 - Creazione di una postazione}
+\subsubsection{UC21 - Creazione di una postazione}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/UC21.png}
+	\caption{Creazione di una postazione}
+\end{figure}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
-	\item\textbf{Attori Secondari:}
-	Ethereum.
 	\item\textbf{Descrizione:}
 	l'amministratore crea una postazione e la assegna a una stanza.
 	\item\textbf{Scenario principale:} 
@@ -394,27 +463,37 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item l'amministratore preme un pulsante per aggiungere una nuova postazione;
 		\item l'amministratore fornisce le seguenti informazioni:
 		\begin{itemize}
-			\item[$-$] codice della postazione;
-			\item[$-$] codice del tag NFC che identifica la postazione;
-			\item[$-$] posizione della postazione su una scacchiera rappresentante la stanza.
+			\item[$-$] codice della postazione (UC21.1);
+			\item[$-$] codice del tag NFC che identifica la postazione (UC21.2);
+			\item[$-$] posizione della postazione su una scacchiera rappresentante la stanza (UC21.3).
 		\end{itemize}
 		\item l'amministratore preme un bottone per la conferma dei dati;
-		\item la postazione viene aggiunta all'interno della stanza;
-		\item la nuova configurazione della stanza viene comunicata a Ethereum.
+		\item la postazione viene aggiunta all'interno della stanza e le viene assegnato lo stato di libera e igienizzata.
 	\end{enumerate}
-	\item\textbf{Estensioni:}
-	\begin{itemize}
-		\item[$-$] Avviso codice postazione già utilizzato (UC16.1);
-		\item[$-$] Avviso codice tag già utilizzato (UC16.2);
-		\item[$-$] Avviso posizione già occupata (UC16.3).
-	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato.
 	\item\textbf{Postcondizione:}
 	è stata inserita una nuova postazione all'interno di una stanza.
 \end{itemize}
 
-\subsubsection{UC16.1 - Avviso codice postazione già utilizzato}
+\subsubsection{UC21.1 - Inserimento codice della postazione}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:}
+	l'amministratore inserisce il codice identificativo da assegnare alla postazione.
+	\item\textbf{Scenario principale:} 
+	l'amministratore inserisce il codice identificativo da assegnare alla postazione.
+	\item\textbf{Precondizione:} 
+	l'utente è autenticato.
+	\item\textbf{Postcondizione:}
+	è stato inserito il codice da assegnare alla postazione.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] Avviso codice postazione già utilizzato (UC22).
+	\end{itemize}
+\end{itemize}
+\subsubsection{UC22 - Avviso codice postazione già utilizzato}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -431,7 +510,24 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza il messaggio d'errore.
 \end{itemize}
 
-\subsubsection{UC16.2 - Avviso codice tag già utilizzato}
+\subsubsection{UC21.2 - Inserimento codice tag NFC}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:}
+	l'amministratore inserisce il codice del tag NFC da assegnare alla postazione.
+	\item\textbf{Scenario principale:} 
+	l'amministratore inserisce il codice del tag NFC da assegnare alla postazione.
+	\item\textbf{Precondizione:} 
+	l'utente è autenticato.
+	\item\textbf{Postcondizione:}
+	è stato inserito il codice del tag NFC da assegnare alla postazione.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] Avviso codice tag già utilizzato (UC23).
+	\end{itemize}
+\end{itemize}
+\subsubsection{UC23 - Avviso codice tag già utilizzato}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -448,16 +544,75 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza il messaggio d'errore.
 \end{itemize}
 
-\subsubsection{UC16.3 - Avviso posizione già occupata}
+\subsubsection{UC21.3 - Inserimento posizione della postazione}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=12cm]{res/images/UC21.3.png}
+	\caption{Inserimento posizione di una postazione}
+\end{figure}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
 	\item\textbf{Descrizione:}
-	l'utente tenta di assegnare una posizione a una postazione già occupata.
+	l'amministratore inserisce la posizione della postazione all'interno della stanza. Con posizione si intendono le coordinate x e y all'interno della stanza, intesa come scacchiera.
+	\item\textbf{Scenario principale:} 
+	l'amministratore inserisce la posizione della postazione all'interno della stanza.
+	\item\textbf{Precondizione:} 
+	l'utente è autenticato.
+	\item\textbf{Postcondizione:}
+	è stata inserita la posizione della postazione all'interno della stanza.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] Avviso posizione non valida (UC24).
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{ UC21.3.1 - Inserimento x}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:}
+	l'utente inserisce la coordinata x della posizione della postazione.
+	\item\textbf{Scenario principale:} 
+	l'utente inserisce la coordinata x della posizione della postazione.
+	\item\textbf{Precondizione:} 
+	l'utente è autenticato come amministratore e la postazione non è occupata.
+	\item\textbf{Postcondizione:}
+	è stata inserita la coordinata x della posizione della postazione.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] Avviso posizione non valida (UC24).
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{ UC21.3.2 - Inserimento y}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:}
+	l'utente inserisce la coordinata y della posizione della postazione.
+	\item\textbf{Scenario principale:} 
+	l'utente inserisce la coordinata y della posizione della postazione.
+	\item\textbf{Precondizione:} 
+	l'utente è autenticato come amministratore e la postazione non è occupata.
+	\item\textbf{Postcondizione:}
+	è stata inserita la coordinata y della posizione della postazione.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] Avviso posizione non valida (UC24).
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{UC24 - Avviso posizione non valida}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:}
+	l'utente tenta di assegnare a una postazione una posizione già occupata oppure che supera i limiti della stanza.
 	\item\textbf{Scenario principale:}
 	\begin{enumerate}
-		\item l'utente sta assegnando una posizione a una postazione, ma la posizione è già occupata;
-		\item la postazione non viene creata e alla vista dell'utente compare un avviso che indica che la posizione è occupata.
+		\item l'utente sta assegnando una posizione a una postazione, ma la posizione non è valida;
+		\item la postazione non viene creata e alla vista dell'utente compare un avviso che indica che la posizione non è valida.
 	\end{enumerate}
 	\item\textbf{Precondizione:}
 	l'utente sta assegnando la posizione a una postazione.
@@ -465,12 +620,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza il messaggio d'errore.
 \end{itemize}
 
-\subsubsection{UC17 - Eliminazione di una postazione}
+\subsubsection{UC25 - Eliminazione di una postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
-	\item\textbf{Attori Secondari:}
-	Ethereum.
 	\item\textbf{Descrizione:}
 	l'utente elimina una postazione.
 	\item\textbf{Scenario principale:} 
@@ -478,72 +631,157 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item l'utente raggiunge l'area di eliminazione delle postazioni;
 		\item l'utente preme un pulsante per l'eliminazione di una postazione;
 		\item la postazione viene eliminata;
-		\item la nuova configurazione della stanza viene inviata ad Ethereum.
+		\item le prenotazioni presenti e future sulla postazione vengono disdette.
 	\end{enumerate}
 	\item\textbf{Precondizione:} 
-	l'utente è autenticato come amministratore.
+	l'utente è autenticato come amministratore e la postazione che si vuole eliminare non è occupata.
 	\item\textbf{Postcondizione:}
 	una postazione è stata eliminata.
 \end{itemize}
 
-\subsubsection{ UC18 - Modifica di una postazione}
+\subsubsection{ UC26 - Modifica di una postazione}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/UC26.png}
+	\caption{Modifica di una postazione}
+\end{figure}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
-	\item\textbf{Attori Secondari:}
-	Ethereum.
 	\item\textbf{Descrizione:}
-	
 	l'utente modifica gli attributi di una postazione.
 	Gli attributi di una postazione sono:
 	\begin{enumerate}
-	\item codice della postazione;
-	\item codice del tag NFC che identifica la postazione;
-	\item posizione della postazione su una scacchiera rappresentante la stanza.
+		\item codice della postazione;
+		\item codice del tag NFC che identifica la postazione;
+		\item posizione della postazione su una scacchiera rappresentante la stanza;
+		\item guasta/libera.
 	\end{enumerate}
-	
 	\item\textbf{Scenario principale:} 
 	\begin{enumerate}
 		\item l'utente preme sul pulsante per la modifica di una postazione;
-		\item inserisce i nuovi dati. Se la postazione non è occupata, è possibile impostarla come guasta. Se essa è già impostata come guasta, è possibile impostarla come libera. Lo stato di igienizzazione della postazione rimane invariato, come da diagramma degli stati di UC10;
+		\item inserisce i nuovi dati. Solo se la postazione non è occupata è possibile modificarne la posizione (UC26.3) e impostarla come guasta o libera (UC26.4);
 		\item conferma i nuovi dati premendo un pulsante;
-		\item i dati della postazione vengono modificati;
-		\item il sistema invia i nuovi dati a Ethereum.
+		\item i dati della postazione vengono modificati.
 	\end{enumerate}
-	\item\textbf{Estensioni:}
-	\begin{itemize}
-		\item[$-$] Avviso codice postazione già utilizzato (UC16.1);
-		\item[$-$] Avviso codice tag già utilizzato (UC16.2);
-		\item[$-$] Avviso posizione già occupata (UC16.3).
-	\end{itemize}
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
 	\item\textbf{Postcondizione:}
 	sono stati aggiornati gli attributi della postazione selezionata.
 \end{itemize}
 
-
-\subsubsection{ UC19 - Gestione credenziali}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=15cm]{res/images/UC19.png}
-	\caption{Gestione credenziali}
-	\label{fig:Gestione credenziali}
-\end{figure}
+\subsubsection{ UC26.1 - Modifica codice postazione}
 \begin{itemize}
-           	\item\textbf{Attori Primari:}
-           	amministratore.
-           	\item\textbf{Descrizione:} 
-           	l'amministratore visualizza, crea, modifica ed elimina le credenziali di tutti gli altri utenti.
-           	\item\textbf{Scenario principale:} 
-           	l'amministratore raggiunge l'interfaccia di gestione delle credenziali e da lì può operare su di esse.
-           	\item\textbf{Precondizione:} 
-           	l'utente è autenticato come amministratore.
-           	\item\textbf{Postcondizione:}
-           	l'utente ha visualizzato, creato, modificato oppure eliminato credenziali.
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:}
+	l'utente modifica il codice identificativo della postazione.
+	\item\textbf{Scenario principale:} 
+	l'utente modifica il codice identificativo della postazione.
+	\item\textbf{Precondizione:} 
+	l'utente è autenticato come amministratore.
+	\item\textbf{Postcondizione:}
+	è stato modificato il codice della postazione.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] Avviso codice postazione già utilizzato (UC22).
+	\end{itemize}
 \end{itemize}
 
-\subsubsection{ UC19.1 - Visualizzazione lista credenziali}
+\subsubsection{ UC26.2 - Modifica codice tag NFC}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:}
+	l'utente modifica il codice del tag NFC che identifica la postazione.
+	\item\textbf{Scenario principale:} 
+	l'utente modifica il codice del tag NFC che identifica la postazione.
+	\item\textbf{Precondizione:} 
+	l'utente è autenticato come amministratore.
+	\item\textbf{Postcondizione:}
+	è stato modificato il codice del tag che identifica la postazione.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] Avviso codice tag già utilizzato (UC23).
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{ UC26.3 - Modifica posizione}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=12cm]{res/images/UC26.3.png}
+	\caption{Modifica posizione di una postazione}
+\end{figure}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:}
+	l'utente modifica la posizione di una postazione. La posizione è definita dalle coordinate x e y all'interno della stanza intesa come scacchiera.
+	\item\textbf{Scenario principale:} 
+	l'utente modifica la posizione, specificando coordinata x (UC26.3.1) e y (UC26.3.2).
+	\item\textbf{Precondizione:} 
+	l'utente è autenticato come amministratore e la postazione non è occupata.
+	\item\textbf{Postcondizione:}
+	è stata modificata la posizione della postazione.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] Avviso posizione non valida (UC24).
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{ UC26.3.1 - Modifica x}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:}
+	l'utente modifica la coordinata x della posizione della postazione.
+	\item\textbf{Scenario principale:} 
+	l'utente modifica la coordinata x della posizione della postazione.
+	\item\textbf{Precondizione:} 
+	l'utente è autenticato come amministratore e la postazione non è occupata.
+	\item\textbf{Postcondizione:}
+	è stata modificata la coordinata x della posizione della postazione.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] Avviso posizione non valida (UC24).
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{ UC26.3.2 - Modifica y}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:}
+	l'utente modifica la coordinata y della posizione della postazione.
+	\item\textbf{Scenario principale:} 
+	l'utente modifica la coordinata y della posizione della postazione.
+	\item\textbf{Precondizione:} 
+	l'utente è autenticato come amministratore e la postazione non è occupata.
+	\item\textbf{Postcondizione:}
+	è stata modificata la coordinata y della posizione della postazione.
+	\item\textbf{Estensioni:}
+	\begin{itemize}
+		\item[$-$] Avviso posizione non valida (UC24).
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{ UC26.4 - Impostazione stato guasto/libero}
+\begin{itemize}
+	\item\textbf{Attori Primari:}
+	amministratore.
+	\item\textbf{Descrizione:}
+	l'utente imposta una postazione come guasta o libera.
+	\item\textbf{Scenario principale:} 
+	l'utente imposta la postazione come guasta o libera, a seconda che precedentemente fosse non guasta o guasta. Lo stato di igienizzazione della postazione rimane invariato. Per impostarla come guasta va indicato un periodo all'interno del quale avrà questo stato, inserendo una data di inizio e una di fine. \newline
+	Una postazione non è prenotabile all'interno del periodo in cui è guasta. Inoltre, le prenotazioni già presenti che intersecano il periodo in cui sarà guasta, vengono disdette.
+	\item\textbf{Precondizione:} 
+	l'utente è autenticato come amministratore e la postazione non è occupata.
+	\item\textbf{Postcondizione:}
+	la postazione è stata impostata come guasta o libera.
+\end{itemize}
+
+
+\subsubsection{ UC27 - Visualizzazione lista credenziali}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -557,7 +795,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza la lista delle credenziali.
 \end{itemize}
 
-\subsubsection{ UC19.2 - Creazione di una credenziale}
+\subsubsection{ UC28 - Creazione di una credenziale}
 \begin{itemize}
 	\item\textbf{Attori Primari:}
 	amministratore.
@@ -574,7 +812,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 			\item[$-$] password;
 			\item[$-$] e-mail.
 		\end{itemize}
-		Le credenziali vengono sempre create e abilitate. Questa proprietà può essere modificata successivamente, come descritto in UC19.3.
+		Le credenziali vengono sempre create e abilitate. Questa proprietà può essere modificata, come descritto successivamente.
 		\item l'amministratore preme il pulsante per la conferma dei dati;
 		\item la nuova credenziale viene salvata nel sistema.
 	\end{enumerate}
@@ -584,7 +822,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente ha creato una nuova credenziale.
 \end{itemize}
 
-\subsubsection{ UC19.3 - Modifica di una credenziale}
+\subsubsection{ UC29 - Modifica di una credenziale}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -611,7 +849,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente ha modificato un profilo utente.
 \end{itemize}
 
-\subsubsection{ UC19.4 - Eliminazione di una credenziale}
+\subsubsection{ UC30 - Eliminazione di una credenziale}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -629,7 +867,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	le credenziali selezionate non sono più presenti nel sistema.
 \end{itemize}
 
-\subsubsection{ UC20 - Esplorazione occupazioni delle postazioni}
+\subsubsection{ UC31 - Esplorazione occupazioni delle postazioni}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -638,7 +876,8 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Scenario principale:} 
 	\begin{enumerate}
 		\item l'amministratore raggiunge la pagina per la ricerca delle occupazioni delle postazioni;
-		\item ricerca le informazioni a cui è interessato.
+		\item ricerca le informazioni a cui è interessato;
+		\item l'utente visualizza le informazioni.
 	\end{enumerate}	
 	\item\textbf{Precondizione:} 
 	l'utente è autenticato come amministratore.
@@ -646,27 +885,24 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'utente visualizza le informazioni.
 \end{itemize}
 
-\subsubsection{ UC20.1 - Ottenimento report delle postazioni occupate da uno specifico utente}
+\subsubsection{ UC32 - Ottenimento report}
 \begin{itemize}
-           	\item\textbf{Attori Primari:} 
-           	amministratore.
-           	\item\textbf{Descrizione:} 
-           	l'amministratore ottiene informazioni in forma tabellare sulle postazioni occupate da uno specifico utente.
-           	\item\textbf{Scenario principale:} 
-           	\begin{enumerate}
-           		\item l'utente inserisce il nome utente oppure il nome e cognome dell'utente a cui è interessato e il periodo all'interno del quale cercare, indicando date di inizio e di fine;
-           		\item l'utente può opzionalmente specificare una postazione indicandone il codice;
-           		\item nel report vengono visualizzate le date e ore di inizio e fine delle occupazioni e i codici delle postazioni.
-           		Per ogni occupazione vengono visualizzati anche gli hash salvati sulla blockchain corrispondenti all'inizio e alla fine dell'occupazione e gli indirizzi in cui essi sono salvati.
-           	\end{enumerate}
-           	\item\textbf{Precondizione:} 
-           	l'utente si trova sulla pagina per la ricerca delle occupazioni di uno specifico utente
-           	\item\textbf{Postcondizione:}
-           	l'utente visualizza le informazioni.
+	\item\textbf{Attori Primari:} 
+	amministratore.
+	\item\textbf{Descrizione:} 
+	l'amministratore ottiene informazioni in forma tabellare data una determinata ricerca.
+	\item\textbf{Scenario principale:} 
+	\begin{enumerate}
+		\item l'amministratore inserisce i dati per la ricerca;
+		\item l'amministratore visualizza il report richiesto con le coppie di hash: hash del resoconto giornaliero e hash della transazione giornaliera sulla blockchain.
+	\end{enumerate}
+	\item\textbf{Precondizione:} 
+	l'amministratore si trova sulla pagina di ricerca.
+	\item\textbf{Postcondizione:}
+	l'amministratore visualizza un report con le informazioni specificate dalla sua ricerca.
 \end{itemize}
 
-
-\subsubsection{ UC20.1.1 - Ottenimento report delle occupazioni di uno specifico utente con indicazione delle ore trascorse a ogni postazione}
+\subsubsection{ UC33 - Ottenimento report delle occupazioni di uno specifico utente}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -674,18 +910,21 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	l'amministratore ottiene informazioni in forma tabellare sulle postazioni occupate da uno specifico utente con l'indicazione delle ore trascorse in ogni postazione.
 	\item\textbf{Scenario principale:}
 	\begin{enumerate}
-		\item l'ammistratore inserisce il nome utente oppure il nome e cognome dell'utente a cui è interessato e periodo all'interno del quale cercare, indicando date di inizio e di fine;
-		\item l'utente può opzionalmente specificare una postazione indicandone il codice;
-		\item nel report vengono visualizzate la data e ora di inizio e fine delle occupazioni, i codici delle postazioni e le ore trascorse;
-		Per ogni occupazione vengono visualizzati anche gli hash salvati sulla blockchain corrispondenti all'inizio e alla fine dell'occupazione e gli indirizzi a cui essi sono salvati.
+		\item l'amministratore inserisce il nome utente oppure il nome e cognome dell'utente a cui è interessato e il periodo all'interno del quale cercare, indicando date di inizio e di fine;
+		\item l'amministratore può opzionalmente specificare una postazione indicandone il codice;
+		\item nel report vengono visualizzate la data e ora di inizio e fine delle occupazioni, i codici delle postazioni e opzionalmente le ore trascorse;
 	\end{enumerate}
 	\item\textbf{Precondizione:} 
-	l'amministratore si trova sulla pagina per la ricerca delle occupazioni delle postazioni
+	l'amministratore si trova sulla pagina di ricerca.
 	\item\textbf{Postcondizione:}
-	l'utente visualizza le informazioni.
+	l'amministratore visualizza un report con le informazioni specificate dalla sua ricerca.
+	\item\textbf{Generalizzazione:}
+	\begin{itemize}
+		\item[$-$] Ottenimento report (UC32).
+	\end{itemize}
 \end{itemize}
 
-\subsubsection{ UC20.2 - Ottenimento report degli utenti che hanno occupato una specifica postazione}
+\subsubsection{ UC34 - Ottenimento report degli utenti che hanno occupato una specifica postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -694,56 +933,41 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Scenario principale:} 
 	\begin{enumerate}
 		\item l'amministratore inserisce il codice della postazione a cui è interessato e il periodo, indicando date di inizio e fine;
-		\item l'utente può opzionalmente specificare un utente tramite nome utente oppure nome e cognome;
-		\item nel report vengono visualizzate le date di inizio e fine delle occupazioni e i nomi degli utenti. Per ogni occupazione vengono visualizzati anche gli hash salvati sulla blockchain corrispondenti all'inizio e alla fine dell'occupazione e gli indirizzi a cui essi sono salvati.
+		\item l'amministratore può opzionalmente specificare un utente tramite nome utente oppure nome e cognome;
+		\item nel report vengono visualizzate le date di inizio e fine delle occupazioni e i nomi degli utenti.
 	\end{enumerate}
 	\item\textbf{Precondizione:} 
-	l'amministratore si trova sulla pagina per la ricerca delle occupazioni delle postazioni
+	l'amministratore si trova sulla pagina di ricerca.
 	\item\textbf{Postcondizione:}
-	l'utente visualizza le informazioni specificate dalla sua ricerca.
-\end{itemize}
-
-
-\subsubsection{ UC20.3 - Scaricamento del report delle occupazioni in un formato leggibile}
-\begin{itemize}
-	\item\textbf{Attori Primari:} 
-	amministratore.
-	\item\textbf{Descrizione:} 
-	l'amministratore scarica il report delle occupazioni che sta visualizzando in un formato leggibile.
-	\item\textbf{Scenario principale:} 
-	\begin{enumerate}
-		\item l'amministratore preme un pulsante per lo scaricamento del report che sta visualizzando;
-		\item il report viene scaricato.
-	\end{enumerate}
-	\item\textbf{Precondizione:} 
-	l'utente sta visualizzando un report delle occupazioni, anche quello che indica i vicini di un utente(UC20.4 e UC20.4.1).
-	\item\textbf{Postcondizione:}
-	l'utente ha scaricato il report.
-\end{itemize}
-
-\subsubsection{ UC20.3.1 - Scaricamento del report delle occupazioni in formato PDF}
-\begin{itemize}
-	\item\textbf{Attori Primari:} 
-	amministratore.
-	\item\textbf{Descrizione:} 
-	l'amministratore scarica il report delle occupazioni che sta visualizzando in formato \glock{PDF}.
-	\item\textbf{Scenario principale:} 
-	\begin{enumerate}
-		\item l'amministratore preme un pulsante per lo scaricamento del report che sta visualizzando in formato PDF;
-		\item il report viene scaricato in formato PDF.
-	\end{enumerate}
+	l'amministratore visualizza un report con le informazioni specificate dalla sua ricerca.
 	\item\textbf{Generalizzazione:}
 	\begin{itemize}
-		\item[$-$] scaricamento del report delle occupazioni in un formato leggibile (UC20.3).
+		\item[$-$] Ottenimento report (UC32).
 	\end{itemize}
-	\item\textbf{Precondizione:} 
-	l'utente sta visualizzando un report.
-	\item\textbf{Postcondizione:}
-	l'utente ha scaricato il report in formato PDF.
 \end{itemize}
 
+\subsubsection{ UC35 - Ottenimento report delle occupazioni e delle igienizzazioni}
+\begin{itemize}
+	\item\textbf{Attori Primari:} 
+	amministratore.
+	\item\textbf{Descrizione:} 
+	l'amministratore ottiene un report delle occupazioni e delle igienizzazioni avvenute in un determinato periodo.
+	\item\textbf{Scenario principale:} 
+	\begin{enumerate}
+		\item l'amministratore inserisce le date di inizio e fine;
+		\item viene generato un report che presenta per ogni giorno la situazione delle occupazioni e delle igienizzazioni. 
+	\end{enumerate}
+	\item\textbf{Precondizione:} 
+	l'amministratore si trova sulla pagina di ricerca.
+	\item\textbf{Postcondizione:}
+	l'amministratore visualizza un report con le informazioni specificate dalla sua ricerca.
+	\item\textbf{Generalizzazione:}
+	\begin{itemize}
+		\item[$-$] Ottenimento report (UC32).
+	\end{itemize}
+\end{itemize}
 
-\subsubsection{ UC20.4 - Report vicini utente}
+\subsubsection{ UC36 - Ottenimento report vicini utente}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
@@ -758,75 +982,82 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 			\item[$-$] data di fine del periodo da considerare;
 			\item[$-$] (opzionalmente) nome utente o nome e cognome di uno specifico utente da cercare tra i vicini.
 		\end{itemize}
-		\item l'amministratore riceve una lista degli utenti che hanno condiviso la stanza con l'utente selezionato. I vicini sono raggruppati per occupazione dell'utente selezionato: per ogni occupazione sono indicati gli utenti che in quel caso erano vicini a quello selezionato. Inoltre per ogni vicino sono indicate l'ora e la data di inizio e fine della vicinanza. Per ogni occupazione del dipendente e di ogni vicino sono indicati anche l'hash corrispondente e l'indirizzo sulla blockchain in cui l'hash è salvato.
+		\item l'amministratore riceve una lista degli utenti che hanno condiviso la stanza con l'utente selezionato. I vicini sono raggruppati per occupazione dell'utente selezionato: per ogni occupazione sono indicati gli utenti che in quel caso erano vicini a quello selezionato.
 	\end{enumerate}
 	\item\textbf{Precondizione:} 
-	l'amministratore si trova sulla pagina di esplorazione occupazioni.
+	l'amministratore si trova sulla pagina di ricerca.
 	\item\textbf{Postcondizione:}
-	l'amministratore visualizza un report di tutti i vicini che l'utente selezionato ha avuto nel periodo selezionato.
+	l'amministratore visualizza un report con le informazioni specificate dalla sua ricerca.
+	\item\textbf{Generalizzazione:}
+	\begin{itemize}
+		\item[$-$] Ottenimento report (UC32).
+	\end{itemize}
 \end{itemize}
 
 
-\subsubsection{ UC21 - Report igienizzazioni postazione}
-\begin{itemize}
-           	\item\textbf{Attori Primari:} 
-           	amministratore.
-           	\item\textbf{Descrizione:} 
-           	l'amministratore ottiene una tabella delle igienizzazioni di tutte le postazioni con:
-           	\begin{itemize}
-           		\item[$-$] data e ora in cui sono avvenute;
-           		\item[$-$] nome e cognome di chi le ha eseguite;
-           		\item[$-$] ruolo di chi le ha eseguite (dipendente o addetto alle pulizie).
-           	\end{itemize}
-           	\item\textbf{Scenario principale:} 
-           	l'amministratore visualizza la lista delle igienizzazioni con le informazioni correlate. Per ogni occupazione viene visualizzato anche l'hash salvato sulla blockchain corrispondente alla sanificazione e l'indirizzo in cui esso è salvato.
-           	\item\textbf{Precondizione:} 
-           	l'amministratore si trova sulla pagina di esplorazione delle igienizzazioni.
-           	\item\textbf{Postcondizione:}
-           	l'utente visualizza le informazioni.
-\end{itemize}
-
-\subsubsection{ UC21.1 - Scaricamento del report delle igienizzazioni in un formato leggibile}
+\subsubsection{ UC37 - Ottenimento report igienizzazioni postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
 	\item\textbf{Descrizione:} 
-	l'amministratore scarica il report delle igienizzazioni che sta visualizzando in un formato leggibile.
+	l'amministratore ottiene una tabella delle igienizzazioni di tutte le postazioni con:
+	\begin{itemize}
+		\item[$-$] data e ora in cui sono avvenute;
+		\item[$-$] nome e cognome di chi le ha eseguite;
+		\item[$-$] ruolo di chi le ha eseguite (dipendente o addetto alle pulizie).
+	\end{itemize}
+	\item\textbf{Scenario principale:} 
+	l'amministratore visualizza la lista delle igienizzazioni con le informazioni correlate.
+	\item\textbf{Precondizione:} 
+	l'amministratore si trova sulla pagina di ricerca.
+	\item\textbf{Postcondizione:}
+	l'amministratore visualizza le informazioni richieste.
+	\item\textbf{Generalizzazione:}
+	\begin{itemize}
+		\item[$-$] Ottenimento report (UC32).
+	\end{itemize}
+\end{itemize}
+
+
+\subsubsection{ UC38 - Scaricamento del report in un formato leggibile}
+\begin{itemize}
+	\item\textbf{Attori Primari:} 
+	amministratore.
+	\item\textbf{Descrizione:} 
+	l'amministratore scarica il report che sta visualizzando in un formato leggibile.
 	\item\textbf{Scenario principale:} 
 	\begin{enumerate}
 		\item l'amministratore preme un pulsante per lo scaricamento del report che sta visualizzando;
 		\item il report viene scaricato.
 	\end{enumerate}
 	\item\textbf{Precondizione:} 
-	l'utente sta visualizzando un report.
+	l'amministratore sta visualizzando un report.
 	\item\textbf{Postcondizione:}
-	l'utente ha scaricato il report.
+	l'amministratore ha scaricato il report.
 \end{itemize}
 
-\subsubsection{ UC21.1.1 - Scaricamento del report delle igienizzazioni in formato PDF}
+\subsubsection{ UC39 - Scaricamento del report in formato PDF}
 \begin{itemize}
 	\item\textbf{Attori Primari:} 
 	amministratore.
 	\item\textbf{Descrizione:} 
-	l'amministratore scarica il report delle igienizzazioni che sta visualizzando in formato PDF.
+	l'amministratore scarica il report che sta visualizzando in formato \glock{PDF}.
 	\item\textbf{Scenario principale:} 
 	\begin{enumerate}
 		\item l'amministratore preme un pulsante per lo scaricamento del report che sta visualizzando in formato PDF;
 		\item il report viene scaricato in formato PDF.
 	\end{enumerate}
+	\item\textbf{Precondizione:} 
+	l'amministratore sta visualizzando un report.
+	\item\textbf{Postcondizione:}
+	l'amministratore ha scaricato il report in formato PDF.
 	\item\textbf{Generalizzazione:}
 	\begin{itemize}
-		\item[$-$] scaricamento del report delle igienizzazioni in un formato leggibile (UC21.1).
+		\item[$-$] Scaricamento del report in un formato leggibile (UC38).
 	\end{itemize}
-	\item\textbf{Precondizione:} 
-	l'utente sta visualizzando un report.
-	\item\textbf{Postcondizione:}
-	l'utente ha scaricato il report.
 \end{itemize}
 
-
-
-\subsubsection{ UC22 - Scansione tag NFC}
+\subsubsection{ UC40 - Scansione tag NFC}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Attori Secondari:} tag NFC.
@@ -836,7 +1067,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l’utente ha effettuato correttamente la scansione.
 \end{itemize}
 
-\subsubsection{ UC23 - Visualizzazione stato postazione}
+\subsubsection{ UC41 - Visualizzazione stato postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Attori Secondari:} tag NFC.
@@ -854,81 +1085,61 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l’utente conosce lo stato della postazione ed eventualmente il nome del dipendente che ha effettuato la prenotazione della stessa.
 \end{itemize}
 
-\subsubsection{ UC24 - Segnalazione occupazione}
+\subsubsection{ UC42 - Segnalazione occupazione}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=15cm]{res/images/UC24.png}
+	\includegraphics[width=18cm]{res/images/UC42-43-44-45.png}
 	\caption{Segnalazione occupazione}
-	\label{fig:Segnalazione occupazione}
+	\label{fig:Segnalazione occupazione }
 \end{figure}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Attori Secondari:} tag NFC, Ethereum.
-	\item\textbf{Descrizione:} l’utente segnala in tempo reale la propria occupazione alla postazione, appoggiando lo smartphone sul tag NFC. Inoltre, registra il tempo di inizio e di fine di questa azione e lo comunica a Ethereum. Il primo è determinato da un timeout di un minuto in cui si lascia lo smartphone appoggiato sul tagNFC, mentre il secondo dal tempo di fine occupazione.
+	\item\textbf{Attori Secondari:} tag NFC.
+	\item\textbf{Descrizione:} l’utente segnala in tempo reale la propria occupazione della postazione, appoggiando lo smartphone sul tag NFC. Inoltre, registra il tempo di inizio di questa azione.
 	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tag NFC e segnala in questo modo la propria occupazione.
-	Il tempo di inizio e di fine di questa azione vengono memorizzati e comunicati a Ethereum.
+	Il tempo di inizio di questa azione viene memorizzato.
 	\item\textbf{Precondizione:} l’utente si è autenticato nell'applicazione mobile e occupa una postazione.
-	\item\textbf{Postcondizione:} l’utente segnala in tempo reale l'occupazione alla postazione e registra questa azione su Ethereum.
+	\item\textbf{Postcondizione:} l’utente segnala in tempo reale l'occupazione della postazione.
 \end{itemize}
 
+\subsubsection{ UC42.1 - Registrazione inizio occupazione}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Attori Secondari:} tag NFC.
+	\item\textbf{Descrizione:} l’utente registra l'inizio della propria occupazione della postazione.
+	\item\textbf{Scenario principale:} dopo un minuto da quando il telefono è appoggiato sul tag, viene automaticamente registrato l'inizio dell'occupazione di quella postazione da parte dell'utente. La fine dell'occupazione verrà registrata quando il dipendente lascerà la postazione, se ciò dovesse succedere prima della fine della sua prenotazione (UC43), o quando il tempo della prenotazione sarà decorso.
+	\item\textbf{Precondizione:} l’utente occupa una postazione e appoggia correttamente lo smartphone sul tag NFC. 
+	\item\textbf{Postcondizione:} l'inizio dell'occupazione viene registrato.
+	\item\textbf{Estensioni:} 
+	\begin{itemize}
+		\item[$-$] visualizzazione errore postazione non igienizzata: se la postazione non è pulita viene segnalato all'utente di igienizzarla (UC45).
+	\end{itemize}
+\end{itemize}
 
-
-\subsubsection{ UC24.1 - Occupazione in tempo reale}
+\subsubsection{ UC42.2 - Segnalazione presenza in tempo reale}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Attori Secondari:} tag NFC.
 	\item\textbf{Descrizione:} l’utente segnala in tempo reale l'occupazione alla postazione, appoggiando lo smartphone sul tag NFC.
 	\item\textbf{Scenario principale:} l’utente appoggia lo smartphone sul tag NFC e segnala in questo modo la propria occupazione in tempo reale.
-	\item\textbf{Precondizione:} l’utente occupa una postazione e ha attivato nel proprio smartphone la possibilità di effettuare scansioni con tag NFC.
+	\item\textbf{Precondizione:} l’utente occupa una postazione e ha attivato nel proprio smartphone la possibilità di effettuare scansioni con tag NFC. Inoltre è stato già registrato l'inizio della sua occupazione (UC42.1).
 	\item\textbf{Postcondizione:} l’utente segnala in tempo reale l'occupazione alla postazione.
-\end{itemize}
-
-
-\subsubsection{ UC24.2 - Registrazione occupazione}
-\begin{itemize}
-	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Attori Secondari:} Ethereum.
-	\item\textbf{Descrizione:} l’utente registra l'inizio e la fine della propria occupazione della postazione.
-	\item\textbf{Scenario principale:} l'utente registra il tempo di inizio e di fine dell'occupazione di una postazione in modo automatico, grazie all'utilizzo di Ethereum. Il primo è determinato da un timeout di un minuto in cui si lascia lo smartphone appoggiato sul tagNFC, mentre il secondo dal tempo di fine occupazione.
-	\item\textbf{Precondizione:} l’utente occupa una postazione e appoggia correttamente lo smartphone sul tag NFC. 
-	\item\textbf{Postcondizione:} l'azione della precondizione viene registrata.
 	\item\textbf{Estensioni:} 
 	\begin{itemize}
-		\item[$-$] visualizzazione errore fine prematura occupazione: se l'utente alza lo smartphone dal tag NFC e abbandona la postazione in modo prematuro rispetto al tempo di fine prenotazione, dopo mezzora viene visualizzato un messaggio di errore e avviene la disdetta automatica della prenotazione per il tempo rimanente (UC24.3);
-	\end{itemize}
-	\begin{itemize}
-	\item[$-$] visualizzazione errore postazione non igienizzata: se la postazione non è pulita viene segnalato all'utente di igienizzarla (UC24.4).
+		\item[$-$] visualizzazione errore fine prematura occupazione: se l'utente alza lo smartphone dal tag NFC e abbandona la postazione in modo prematuro rispetto al tempo di fine prenotazione, dopo mezz'ora viene visualizzato un messaggio di errore e avviene la disdetta automatica della prenotazione per il tempo rimanente (UC43);
 	\end{itemize}
 \end{itemize}
 
-\subsubsection{ UC24.2.1 - Visualizzazione messaggio promemoria di inizio prenotazione}
-\begin{itemize}
-	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} l’utente visualizza un messaggio di inizio della prenotazione, 30 minuti prima che essa avvenga.
-	\item\textbf{Scenario principale:} viene visualizzato un promemoria di inizio della prenotazione.
-	\item\textbf{Precondizione:} l’utente ha effettuato una prenotazione almeno un'ora prima dell'inizio della stessa.
-	\item\textbf{Postcondizione:} viene visualizzato un messaggio promemoria di inizio prenotazione della postazione.
-\end{itemize}
-
-\subsubsection{ UC24.2.2 - Visualizzazione messaggio promemoria di fine prenotazione}
-\begin{itemize}
-	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} l’utente visualizza un messaggio di fine della prenotazione, cinque minuti prima che essa avvenga.
-	\item\textbf{Scenario principale:} viene visualizzato un promemoria di fine della prenotazione.
-	\item\textbf{Precondizione:} l’utente ha effettuato una prenotazione.
-	\item\textbf{Postcondizione:} viene visualizzato un messaggio promemoria di fine prenotazione della postazione.
-\end{itemize}
-
-\subsubsection{ UC24.3 - Visualizzazione fine prematura occupazione}
+\subsubsection{ UC43 - Visualizzazione errore fine prematura occupazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente visualizza un messaggio in quanto sposta lo smartphone dal tag NFC, durante l'orario di prenotazione della postazione.
-	\item\textbf{Scenario principale:} viene visualizzato un messaggio e avviene la disdetta automatica della prenotazione per il tempo restante.
+	\item\textbf{Scenario principale:} viene visualizzato un messaggio e avvengono la disdetta automatica della prenotazione per il tempo restante e la conseguente registrazione della fine dell'occupazione.
 	\item\textbf{Precondizione:} l’utente sposta il proprio smartphone dal tag NFC per un periodo di tempo maggiore o uguale a trenta minuti.
-	\item\textbf{Postcondizione:} viene visualizzato un messaggio specifico e avviene la disdetta automatica della prenotazione per il tempo rimanente.
+	\item\textbf{Postcondizione:} viene visualizzato un messaggio specifico e avvengono la disdetta automatica della prenotazione per il tempo rimanente e la registrazione della fine dell'occupazione.
 \end{itemize}
 
-\subsubsection{ UC24.4 - Visualizzazione errore utente assente }
+\subsubsection{ UC44 - Visualizzazione errore utente assente }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l'utente viene avvisato della disdetta automatica di una sua prenotazione.
@@ -941,57 +1152,64 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore specifico e avviene la disdetta automatica della prenotazione per il tempo rimanente.
 \end{itemize}
 
-\subsubsection{ UC24.5 - Visualizzazione errore postazione non igienizzata}
+\subsubsection{ UC45 - Visualizzazione errore postazione non igienizzata}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente visualizza un messaggio di errore in quanto non può occupare una postazione non igienizzata.
+	\item\textbf{Scenario Principale:} l'utente appoggia il cellulare sul tag NFC per occupare una postazione (è quindi trascorso un minuto dalla prima scansione) e riceve un messaggio d'errore che avvisa che la postazione non è stata igienizzata.
 	\item\textbf{Precondizione:} l’utente appoggia il proprio cellulare sul tag NFC per segnalare l'occupazione. 
 	\item\textbf{Postcondizione:} viene visualizzato un messaggio di errore specifico che avvisa finché la postazione non viene igienizzata non può essere occupata.
 \end{itemize}
 
-
-
-\subsubsection{ UC25 - Pulizia autonoma}
+\subsubsection{ UC46 - Visualizzazione messaggio promemoria di inizio prenotazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Attori Secondari:} Ethereum.
-	\item\textbf{Descrizione:} l’utente pulisce in autonomia la postazione e lo segnala sull'applicazione mobile. Inoltre, 
-	registra di aver effettuato questa azione, grazie all'utilizzo di Ethereum.	
-	\item\textbf{Scenario principale:} l’utente segnala di aver igienizzato la postazione tramite l'applicazione mobile e automaticamente lo stato della postazione viene registrata come libera e igienizzata o prenotata e igienizzata. Inoltre, registra di aver effettuato questa azione, grazie all'utilizzo di Ethereum.
+	\item\textbf{Descrizione:} l’utente visualizza un messaggio di inizio della prenotazione, 30 minuti prima che essa avvenga.
+	\item\textbf{Scenario principale:} viene visualizzato un promemoria di inizio della prenotazione.
+	\item\textbf{Precondizione:} l’utente ha effettuato una prenotazione almeno un'ora prima dell'inizio della stessa.
+	\item\textbf{Postcondizione:} viene visualizzato un messaggio promemoria di inizio prenotazione della postazione.
+\end{itemize}
+
+\subsubsection{ UC47 - Visualizzazione messaggio promemoria di fine prenotazione}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente visualizza un messaggio di fine della prenotazione, cinque minuti prima che essa avvenga.
+	\item\textbf{Scenario principale:} viene visualizzato un promemoria di fine della prenotazione.
+	\item\textbf{Precondizione:} l’utente ha effettuato una prenotazione.
+	\item\textbf{Postcondizione:} viene visualizzato un messaggio promemoria di fine prenotazione della postazione.
+\end{itemize}
+
+\subsubsection{ UC48 - Pulizia autonoma}
+\begin{itemize}
+	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Descrizione:} l’utente pulisce in autonomia la postazione e lo segnala sull'applicazione mobile. 	
+	\item\textbf{Scenario principale:} l’utente segnala di aver igienizzato la postazione tramite l'applicazione mobile e automaticamente lo stato della postazione viene registrata come libera e igienizzata o prenotata e igienizzata.
 	\item\textbf{Precondizione:} l’utente è autenticato nell'applicazione mobile, ha igienizzato la propria postazione e sta navigando nella sezione per la pulizia 
 	autonoma della postazione.
 	\item\textbf{Postcondizione:} l’utente modifica lo stato della postazione in libera e igienizzata o prenotata e igienizzata e registra l'avvenuta pulizia autonoma della postazione.
 \end{itemize}
 
-\subsubsection{ UC26 - Prenotazione postazione }
+\subsubsection{ UC49 - Cerca postazione}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=18cm]{res/images/UC26.png}
-	\caption{Prenotazione postazione}
-	\label{fig:Prenotazione postazione}
+	\includegraphics[width=18cm]{res/images/UC49-50-51-52-53.png}
+	\caption{Cerca postazione}
+	\label{fig:Cerca postazione}
 \end{figure}
-\begin{itemize}
-	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} l’utente vuole prenotare una postazione di una stanza in un determinato giorno e orario.
-	\item\textbf{Scenario principale:} l’utente ha visualizzato o gestito le prenotazioni di una stanza all’interno del sistema.
-	\item\textbf{Precondizione:} l’utente si è autenticato nell'applicazione mobile e sta navigando nella sezione di gestione delle prenotazioni.
-	\item\textbf{Postcondizione:} l’utente ha visualizzato o gestito le prenotazioni all’interno del sistema.
-\end{itemize}
-\subsubsection{ UC26.1 - Cerca postazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente vuole prenotare una postazione di una stanza in un determinato giorno e orario.
 	\item\textbf{Scenario principale:} 
 	\begin{itemize}
-		\item[$-$] l’utente inserisce la data (UC26.1.1);
-		\item[$-$] l’utente inserisce l'orario (UC26.1.3);
-		\item[$-$] l’utente inserisce l'identificativo della stanza (UC26.1.5);
-		\item[$-$] l’utente inserisce in modo opzionale il nome e il cognome del collega a cui si vuole sedere vicino (UC26.1.7).
+		\item[$-$] l’utente inserisce la data (UC49.1);
+		\item[$-$] l’utente inserisce l'orario (UC49.2);
+		\item[$-$] l’utente inserisce l'identificativo della stanza (UC49.3);
+		\item[$-$] l’utente inserisce in modo opzionale il nome e il cognome del collega a cui si vuole sedere vicino (UC49.4).
 	\end{itemize}
 	\item\textbf{Precondizione:} l’utente sta navigando nella sezione dell'applicazione dedicata alla ricerca di una postazione.
 	\item\textbf{Postcondizione:} l’utente inserisce i campi necessari alla ricerca della postazione desiderata.
 \end{itemize}
-\subsubsection{ UC26.1.1 - Inserimento data }
+\subsubsection{ UC49.1 - Inserimento data }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente sta cercando una postazione disponibile e deve compilare il campo della data.
@@ -1000,10 +1218,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l’utente ha compilato il campo richiesto.
 	\item\textbf{Estensioni:} l’utente inserisce i campi necessari alla ricerca della postazione desiderata.
 	\begin{itemize}
-		\item[$-$] l’utente inserisce una data non valida (UC26.1.2).
+		\item[$-$] l’utente inserisce una data non valida (UC50).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC26.1.2 - Visualizzazione errore: data non valida  }
+\subsubsection{ UC50 - Visualizzazione errore data non valida  }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente ha compilato un campo per la data, ma è in un formato non corretto.
@@ -1015,12 +1233,8 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\end{itemize}
 	\item\textbf{Precondizione:} l’utente ha compilato il campo per la data.
 	\item\textbf{Postcondizione:} l'utente visualizza un messaggio di errore specifico e l'azione non viene portata a termine.
-	\item\textbf{Estensioni:} l’utente inserisce i campi necessari alla ricerca della postazione desiderata.
-	\begin{itemize}
-		\item[$-$] l’utente inserisce un orario non valido (UC26.1.4).
-	\end{itemize}
 \end{itemize}
-\subsubsection{ UC26.1.3 - Inserimento ora }
+\subsubsection{ UC49.2 - Inserimento ora }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente sta cercando una postazione disponibile e deve compilare il campo orario con granularità di un'ora.
@@ -1029,10 +1243,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l’utente ha compilato il campo richiesto.
 	\item\textbf{Estensioni:} l’utente inserisce i campi necessari alla ricerca della postazione desiderata.
 	\begin{itemize}
-		\item[$-$] l’utente inserisce una stanza non valida (UC26.1.6).
+		\item[$-$] l’utente inserisce un orario non valido (UC51).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC26.1.4 - Visualizzazione errore: orario non valido }
+\subsubsection{ UC51 - Visualizzazione errore orario non valido }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente ha compilato un campo per l'orario, ma è in un formato non corretto.
@@ -1045,15 +1259,19 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Precondizione:} l’utente ha compilato il campo per l'orario.
 	\item\textbf{Postcondizione:} l’utente visualizza un messaggio di errore specifico e non viene portata a termine l'azione.
 \end{itemize}
-\subsubsection{ UC26.1.5 - Inserimento stanza }
+\subsubsection{ UC49.3 - Inserimento stanza }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente sta cercando una postazione disponibile e deve compilare il campo dell'identificativo della stanza.
 	\item\textbf{Scenario principale:} l’utente ha compilato il campo dell'identificativo della stanza.
 	\item\textbf{Precondizione:} l’utente sta compilando i campi richiesti per effettuare la ricerca.
 	\item\textbf{Postcondizione:} l’utente ha compilato il campo richiesto.
+	\item\textbf{Estensioni:} l’utente inserisce i campi necessari alla ricerca della postazione desiderata.
+	\begin{itemize}
+		\item[$-$] l’utente inserisce una stanza non valida (UC52).
+	\end{itemize}
 \end{itemize}
-\subsubsection{ UC26.1.6 - Visualizzazione errore: stanza non valida }
+\subsubsection{ UC52 - Visualizzazione errore stanza non valida }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente ha compilato un campo per l'identificativo della stanza, ma è in un formato non corretto.
@@ -1067,7 +1285,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l’utente visualizza un messaggio di errore specifico e non viene portata a termine l'azione.
 \end{itemize}
 
-\subsubsection{ UC26.1.7 - Inserimento nome dipendente }
+\subsubsection{ UC49.4 - Inserimento nome dipendente }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente sta cercando una postazione disponibile e deve compilare il campo nome e cognome del dipendente a cui si vuole sedere vicino e che ha già effettuato una prenotazione.
@@ -1076,10 +1294,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l’utente ha compilato il campo richiesto.
 	\item\textbf{Estensioni:} l’utente inserisce i campi necessari alla ricerca della postazione desiderata.
 	\begin{itemize}
-		\item[$-$] l’utente inserisce un nome non valido (UC26.1.8).
+		\item[$-$] l’utente inserisce un nome non valido (UC53).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC26.1.8 - Visualizzazione errore: nome dipendente non valido }
+\subsubsection{ UC53 - Visualizzazione errore nome dipendente non valido }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente ha compilato un campo per il nome e il cognome del dipendente a cui si vuole sedere vicino, ma è in un formato non corretto.
@@ -1092,7 +1310,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Precondizione:} l’utente ha compilato il campo per il nome e il cognome.
 	\item\textbf{Postcondizione:} l’utente visualizza un messaggio di errore specifico e non viene portata a termine l'azione.
 \end{itemize}
-\subsubsection{ UC26.2 - Visualizzazione postazioni  }
+\subsubsection{ UC54 - Visualizzazione postazioni  }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente visualizza le postazioni con colori diversi in base allo stato. L'identificativo di una postazione è costituito da una lettera seguita da un numero (ad esempio: D10). 
@@ -1102,10 +1320,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l’utente visualizza le postazioni nella stanza.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] visualizzazione errore: tutte le postazioni nella stanza selezionata sono occupate o guaste (UC26.3).
+		\item[$-$] visualizzazione errore: tutte le postazioni nella stanza selezionata sono occupate o guaste (UC55).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC26.3 - Visualizzazione errore: postazioni occupate }
+\subsubsection{ UC55 - Visualizzazione errore: postazioni occupate }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente visualizza un messaggio di errore, in quanto non ci sono postazioni prenotabili.
@@ -1115,53 +1333,64 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 		\item[$-$] il sistema elabora la richiesta;
 		\item[$-$] viene visualizzato un messaggio di errore che consiglia di selezionare un'altra fascia oraria o stanza.
 	\end{itemize}
-	\item\textbf{Precondizione:} l’utente ha compilato i campi data, orario, stanza oppure ha selezionato la sezione prima postazione disponibile (UC26.4).
+	\item\textbf{Precondizione:} l’utente ha compilato i campi data, orario, stanza oppure ha selezionato la sezione selezione automatica postazione (UC56).
 	\item\textbf{Postcondizione:} l’utente visualizza un messaggio di errore specifico e non viene portata a termine l'azione.
 \end{itemize}
-\subsubsection{ UC26.4 - Prima postazione libera }
+
+\subsubsection{ UC56 - Selezione automatica postazione libera e igienizzata}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} l’utente riceve l'identificativo di una postazione igienizzata e libera in una determinata stanza, 
-	in modo automatico.
-	\item\textbf{Scenario principale:} viene fornito l'identificativo di una postazione libera e igienizzata.
-	\item\textbf{Precondizione:} l’utente preme il bottone nella sezione della prima postazione disponibile.
-	\item\textbf{Postcondizione:} l’utente riceve l'identificativo di una postazione.
+	\item\textbf{Descrizione:} una postazione libera e igienizzata all'interno della stanza viene selezionata ed evidenziata	in modo automatico.
+	\item\textbf{Scenario principale:}
+	\begin{enumerate}
+		\item l'utente preme il pulsante apposito;
+		\item viene automaticamente selezionata ed evidenziata una postazione libera e igienizzata all'interno della stanza.
+	\end{enumerate}
+	\item\textbf{Precondizione:} l’utente sta visualizzando lo schema delle postazioni (UC54) ottenuto tramite una ricerca (UC49).
+	\item\textbf{Postcondizione:} viene selezionata ed evidenziata una postazione in modo automatico.
 \end{itemize}
-\subsubsection{ UC26.4.1 - Prima postazione libera random}
+\subsubsection{ UC57 - Selezione automatica postazione libera e igienizzata random}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} l’utente riceve l'identificativo di una postazione igienizzata e libera in una determinata stanza, 
-	in modo automatico. La postazione proposta è libera per tutta la giornata lavorativa.
-	\item\textbf{Scenario principale:} viene fornito l'identificativo di una postazione libera e igienizzata.
-	\item\textbf{Precondizione:} l’utente preme il bottone nella sezione della prima postazione disponibile, libera per tutta la giornata lavorativa.
-	\item\textbf{Postcondizione:} l’utente riceve l'identificativo di una postazione.
+	\item\textbf{Descrizione:} una postazione libera e igienizzata scelta casualmente all'interno della stanza viene selezionata ed evidenziata in modo automatico.
+	\item\textbf{Scenario principale:}
+	\begin{enumerate}
+		\item l'utente preme il pulsante apposito;
+		\item viene automaticamente selezionata ed evidenziata una postazione libera e igienizzata scelta in modo casuale.
+	\end{enumerate}
+	\item\textbf{Precondizione:} l’utente sta visualizzando lo schema delle postazioni (UC54) ottenuto tramite una ricerca (UC49).
+	\item\textbf{Postcondizione:} viene selezionata ed evidenziata una postazione in modo automatico.
+	\item\textbf{Generalizzazione:}
+	\begin{itemize}
+		\item[$-$] viene automaticamente selezionata una postazione libera e igienizzata all'interno della stanza specificata (UC56).
+	\end{itemize}
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] tutte le postazioni nella stanza selezionata sono occupate o guaste (UC26.3).
+		\item[$-$] tutte le postazioni nella stanza selezionata sono occupate o guaste (UC55).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC26.4.2 - Prima postazione libera distante}
+\subsubsection{ UC58 - Selezione automatica postazione libera e igienizzata con maggiore distanza dalle altre}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} l’utente riceve l'identificativo di una postazione igienizzata e libera in una determinata stanza, 
-	in modo automatico e in base a un criterio di distanziamento dalle altre postazioni.
-	\item\textbf{Scenario principale:} viene fornito l'identificativo di una postazione libera e igienizzata.
-	\item\textbf{Precondizione:} l’utente preme il bottone nella sezione della prima postazione disponibile, libera per tutta la giornata lavorativa e distanziata maggiormente dalle altre.
-	\item\textbf{Postcondizione:} l’utente riceve l'identificativo di una postazione.
+	\item\textbf{Descrizione:} una postazione libera e igienizzata con maggiore distanza dalle postazioni occupate o prenotate nel momento specificato all'interno della stanza viene selezionata ed evidenziata in modo automatico.
+	\item\textbf{Scenario principale:}
+	\begin{enumerate}
+		\item l'utente preme il pulsante apposito;
+		\item viene automaticamente selezionata ed evidenziata una postazione libera e igienizzata con maggiore distanza dalle postazioni occupate o prenotate nel momento specificato.
+	\end{enumerate}
+	\item\textbf{Precondizione:} l’utente sta visualizzando lo schema delle postazioni (UC54) ottenuto tramite una ricerca (UC49).
+	\item\textbf{Postcondizione:} viene selezionata ed evidenziata una postazione in modo automatico.
+	\item\textbf{Generalizzazione:}
+	\begin{itemize}
+		\item[$-$] viene automaticamente selezionata una postazione libera e igienizzata all'interno della stanza specificata (UC56).
+	\end{itemize}
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] tutte le postazioni nella stanza selezionata sono occupate o guaste (UC26.3).
+		\item[$-$] tutte le postazioni nella stanza selezionata sono occupate o guaste (UC55).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC26.5 - Selezione postazione }
-\begin{itemize}
-	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} l’utente dopo aver visualizzato le postazioni con colori diversi in base allo stato, ne seleziona una. E' possibile scegliere una postazione libera e igienizzata o non igienizzata.
-	\item\textbf{Scenario principale:} viene selezionata una postazione.
-	\item\textbf{Precondizione:} l’utente ha visualizzato correttamente le postazioni di una stanza.
-	\item\textbf{Postcondizione:} l’utente seleziona una postazione.
-\end{itemize}
-\subsubsection{ UC26.6 - Prenotazione postazione }
+
+\subsubsection{ UC59 - Prenotazione postazione }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente dopo aver selezionato la postazione, effettua la prenotazione. 
@@ -1171,10 +1400,10 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l'utente prenota la postazione.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] nel caso in cui l'utente scelga di prenotare una postazione libera e igienizzata, ma ha già effettuato una prenotazione di un'altra postazione nella stessa data e orario (UC26.7).
+		\item[$-$] nel caso in cui l'utente scelga di prenotare una postazione libera e igienizzata, ma ha già effettuato una prenotazione di un'altra postazione nella stessa data e orario (UC60).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC26.7 - Visualizzazione errore: postazione non prenotabile }
+\subsubsection{ UC60 - Visualizzazione errore: postazione non prenotabile }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente tenta di prenotare una postazione libera e igienizzata, ma ha già effettuato una prenotazione di una postazione nella stessa data e orario.
@@ -1183,52 +1412,41 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l’utente visualizza un messaggio di errore specifico e non viene portata a termine l’azione.
 \end{itemize}
 
-\subsubsection{ UC27 - Prenotazione postazione automatica}
+\subsubsection{ UC61 - Prenotazione postazione automatica}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} l’utente dopo aver scansionato con il proprio smartphone il tag NFC per un tempo maggiore o uguale ad un minuto, prenota in modo automatico la postazione per l'intera giornata lavorativa. 
-	\item\textbf{Scenario principale:} l’utente dopo aver scansionato con il proprio smartphone il tag NFC per un tempo maggiore o uguale ad un minuto, prenota in modo automatico la postazione per l'intera giornata lavorativa. Lo stato della postazione deve essere libera e igienizzata, e non prenotata durante il resto della giornata.
+	\item\textbf{Attori Secondari:} tag NFC.
+	\item\textbf{Descrizione:} l’utente, dopo aver scansionato con il proprio smartphone il tag NFC per un tempo maggiore o uguale ad un minuto, prenota in modo automatico la postazione per l'intera giornata lavorativa. 
+	\item\textbf{Scenario principale:} l’utente, dopo aver scansionato con il proprio smartphone il tag NFC per un tempo maggiore o uguale ad un minuto, prenota in modo automatico la postazione per l'intera giornata lavorativa. Lo stato della postazione deve essere libera e igienizzata, e non prenotata durante il resto della giornata.
 	\item\textbf{Precondizione:} l'utente lascia il telefono appoggiato al tag NFC di una postazione libera, più di un minuto.
 	\item\textbf{Postcondizione:} l'utente prenota in modo automatico la postazione e inizia l'occupazione.
 	\item\textbf{Estensioni:}
 	\begin{itemize}
-		\item[$-$] nel caso in cui l'utente scansiona per più di un minuto una postazione prenotata, viene emesso un segnale sonoro (UC27.1);
-		\item[$-$] nel caso in cui l'utente scansiona per più di un minuto una postazione libera e igienizzata, ma prenotata in un determinato momento successivo della giornata, questa viene prenotata fino all'inizio della prenotazione successiva (UC27.2).
+		\item[$-$] nel caso in cui l'utente scansiona per più di un minuto una postazione prenotata, viene emesso un segnale sonoro (UC62);
+		\item[$-$] nel caso in cui l'utente scansiona per più di un minuto una postazione libera e igienizzata, ma prenotata in un determinato momento successivo della giornata, questa viene prenotata fino all'inizio della prenotazione successiva (UC63).
 	\end{itemize}
 \end{itemize}
-\subsubsection{ UC27.1 - Emissione messaggio errore sonoro: postazione occupata}
+\subsubsection{ UC62 - Emissione messaggio errore sonoro: postazione occupata}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Attori Secondari:} tag NFC.
 	\item\textbf{Descrizione:} l'utente sta scansionando per più di un minuto il tag NFC di una postazione prenotata, per cui viene emesso un segnale sonoro per farlo allontanare.
 	\item\textbf{Scenario principale:} l’utente scansiona per più di un minuto il tag NFC di una postazione prenotata da un altro utente in precedenza.
 	\item\textbf{Precondizione:} l'utente scansiona per più di un minuto una postazione prenotata.
 	\item\textbf{Postcondizione:} viene emesso un segnale sonoro.
 \end{itemize}
 
-\subsubsection{ UC27.2 - Postazione prenotata massimo tempo disponibile}
+\subsubsection{ UC63 - Postazione prenotata massimo tempo disponibile}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
+	\item\textbf{Attori Secondari:} tag NFC.
 	\item\textbf{Descrizione:} l'utente sta scansionando per più di un minuto una postazione libera e igienizzata, ma prenotata in un determinato momento successivo della giornata. Quindi quest'ultima viene prenotata fino all'inizio della prenotazione successiva, che equivale al massimo tempo disponibile.
 	\item\textbf{Scenario principale:} l'utente scansiona per più di un minuto il tag NFC di una postazione prenotata nelle ore successive.
 	\item\textbf{Precondizione:} l'utente scansiona il tag NFC di una postazione prenotata nelle ore successive della giornata lavorativa.
 	\item\textbf{Postcondizione:} l'utente prenota in modo automatico una postazione fino all'inizio della prenotazione successiva e inizia l'occupazione.
 \end{itemize}
 
-\subsubsection{ UC28 - Disdetta prenotazione}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=18cm]{res/images/UC28.png}
-	\caption{Disdetta prenotazione}
-	\label{fig:Disdetta prenotazione}
-\end{figure}
-\begin{itemize}
-	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} l’utente vuole disdire una prenotazione.
-	\item\textbf{Scenario principale:} l’utente ha visualizzato le prenotazioni di una postazione all'interno del sistema.
-	\item\textbf{Precondizione:} l'utente sta navigando nella sezione della lista delle prenotazioni effettuate.
-	\item\textbf{Postcondizione:} l’utente effettua la disdetta della prenotazione.
-\end{itemize}
-\subsubsection{ UC28.1 - Visualizzazione lista prenotazioni}
+\subsubsection{ UC64 - Visualizzazione lista prenotazioni}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l'utente visualizza la lista delle prenotazioni effettuate in precedenza. Ogni prenotazione contiene le seguenti informazioni:
@@ -1243,16 +1461,7 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l’utente visualizza le prenotazioni effettuate.
 \end{itemize}
 
-\subsubsection{ UC28.2 - Selezione prenotazione effettuata}
-\begin{itemize}
-	\item\textbf{Attori Primari:} dipendente.
-	\item\textbf{Descrizione:} l’utente visualizza la lista delle prenotazioni effettuate e ne seleziona una.
-	\item\textbf{Scenario principale:} l’utente seleziona una prenotazione che desidera cancellare.
-	\item\textbf{Precondizione:} l'utente sta navigando nella sezione della lista delle prenotazioni effettuate.
-	\item\textbf{Postcondizione:} l’utente seleziona una prenotazione effettuata in precedenza.
-\end{itemize}
-
-\subsubsection{ UC28.3 - Disdetta prenotazione}
+\subsubsection{ UC65 - Disdetta prenotazione}
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} l’utente disdice una prenotazione. 
@@ -1261,47 +1470,74 @@ In questa sezione sono riportati tutti i casi d'uso individuati, ordinati per at
 	\item\textbf{Postcondizione:} l’utente effettua la disdetta della prenotazione selezionata.
 \end{itemize}
 
-\subsubsection{ UC29 - Avviso indisponibilità postazione prenotata }
+\subsubsection{ UC66 - Avviso indisponibilità postazione prenotata }
 \begin{itemize}
 	\item\textbf{Attori Primari:} dipendente.
 	\item\textbf{Descrizione:} il dipendente che ha una prenotazione per una postazione viene avvisato nel caso la postazione non sia più disponibile.
-	\item\textbf{Scenario principale:} il dipente riceve una notifica che lo avvisa dell'indisponibilità di una postazione prenotata.
+	\item\textbf{Scenario principale:} il dipendente riceve una notifica che lo avvisa dell'indisponibilità di una postazione prenotata.
 	\item\textbf{Precondizione:} l’utente è autenticato nell'applicazione mobile e ha almeno una postazione prenotata.
 	\item\textbf{Postcondizione:} l'utente riceve una notifica che lo avvisa dell'indisponibilità di una delle postazioni che ha prenotato.
 \end{itemize}
 
-\subsubsection{UC30 - Elenco stanze da igienizzare}
+\subsubsection{UC67 - Elenco stanze da igienizzare}
 \begin{itemize}
            	\item\textbf{Attori Primari:} addetto pulizie.
            	\item\textbf{Descrizione:} l'utente riceve un elenco delle stanze che necessitano di igienizzazione.
-           	\item\textbf{Scenario principale:} l'utente si trova all'interno del sistema e verifica tutte le stanze che sono state utilizzate almeno da un dipendente, che saranno quindi da igienizzare.
+           	\item\textbf{Scenario principale:} l'utente si trova all'interno del sistema e visualizza un elenco delle stanze con postazioni non igienizzate.
            	\item\textbf{Precondizione:} l'utente va nella sezione dedicata nel sistema e deve premere un bottone.
-           	\item\textbf{Postcondizione:} l'utente verifica quali stanze sono state occupate da almeno un dipendente, così da ottenere un elenco delle stanze da igienizzare.
+           	\item\textbf{Postcondizione:} l'utente visualizza un elenco delle stanze con postazioni non igienizzate.
 \end{itemize}
-\subsubsection{UC31 - Elenco postazioni da igienizzare}
+\subsubsection{UC68 - Elenco postazioni da igienizzare}
 \begin{itemize}
            	\item\textbf{Attori Primari:} addetto pulizie.
            	\item\textbf{Descrizione:} l'utente riceve un elenco delle postazioni che necessitano di igienizzazione.
-           	\item\textbf{Scenario principale:} l'utente si trova all'interno del sistema e verifica tutte le postazioni che sono state utilizzate almeno da un dipendente, che saranno quindi da igienizzare.
+           	\item\textbf{Scenario principale:} l'utente si trova all'interno del sistema e visualizza  un elenco delle postazioni non igienizzate.
            	\item\textbf{Precondizione:} l'utente va nella sezione dedicata nel sistema e deve premere un bottone.
-           	\item\textbf{Postcondizione:} l'utente verifica quali postazioni sono state occupate da almeno un dipendente, così da ottenere un elenco delle postazioni da igienizzare.
+           	\item\textbf{Postcondizione:} l'utente visualizza un elenco delle postazioni non igienizzate.
 \end{itemize}
 
-\subsubsection{UC32 - Marcatura stanza come igienizzata}
+\subsubsection{UC69 - Marcatura stanza come igienizzata}
 \begin{itemize}
            	\item\textbf{Attori Primari:} addetto pulizie.
-		\item\textbf{Attore Secondario:} Ethereum.
            	\item\textbf{Descrizione:} dopo l'igienizzazione l'utente marca la stanza come igienizzata.
-           	\item\textbf{Scenario principale:} l'utente igienizza la stanza, in seguito accede al sistema e la marca come igienizzata attraverso l'utilizzo di Ethereum.
+           	\item\textbf{Scenario principale:} l'utente igienizza la stanza, in seguito accede al sistema e la marca come igienizzata.
            	\item\textbf{Precondizione:} l'utente ottiene l'elenco delle stanze da igienizzare.
            	\item\textbf{Postcondizione:} l'utente, dopo l'igienizzazione, marca le stanze come igienizzate.
 \end{itemize}
-\subsubsection{UC33 - Marcatura postazione come igienizzata}
+
+\subsubsection{UC70 - Marcatura postazione come igienizzata}
 \begin{itemize}
            	\item\textbf{Attori Primari:} addetto pulizie.
-		\item\textbf{Attore Secondario:} Ethereum.
            	\item\textbf{Descrizione:} dopo l'igienizzazione l'utente marca la postazione come igienizzata.
-           	\item\textbf{Scenario principale:} l'utente igienizza la postazione, in seguito accede al sistema e la marca come igienizzata attraverso l'utilizzo di Ethereum.
+           	\item\textbf{Scenario principale:} l'utente igienizza la postazione, in seguito accede al sistema e la marca come igienizzata.
            	\item\textbf{Precondizione:} l'utente ottiene l'elenco delle postazioni da igienizzare.
            	\item\textbf{Postcondizione:} l'utente, dopo l'igienizzazione, marca le postazioni come igienizzate.
+\end{itemize}
+
+\subsubsection{UC71 - Conferma avvenuta transazione su Ethereum}
+\begin{itemize}
+	\item\textbf{Attori Primari:} Amministratore.
+	\item\textbf{Attori Secondari:} Ethereum.
+	\item\textbf{Descrizione:} certificazione delle igienizzazioni e delle occupazioni avvenute in giornata tramite Ethereum.
+	\item\textbf{Scenario principale:}
+	\begin{enumerate}
+		\item viene calcolato l'hash del certificato giornaliero;
+		\item l'hash del certificato viene trasmesso come messaggio di una transazione a Ethereum;
+		\item avviene la transazione su Ethereum;
+		\item viene registrato nel sistema il certificato con l'hash della transazione;
+		\item l'amministratore riceve una notifica di avvenuta transazione su Ethereum. La notifica consiste in un avviso sulla pagina principale del sito ricevuto nel primo accesso dell'amministratore al sistema, successivo alla transazione.
+	\end{enumerate}
+	\item\textbf{Precondizione:} sono trascorse 24 ore dalla generazione dell'ultimo certificato.   
+	\item\textbf{Postcondizione:} l'amministratore riceve una notifica di avvenuta transazione su Ethereum.
+	\item\textbf{Estensioni:} errore fallimento transazione su Ethereum (UC72).
+\end{itemize}
+
+\subsubsection{ UC72 - Errore fallimento transazione su Ethereum }
+\begin{itemize}
+	\item\textbf{Attori Primari:} Amministratore.
+	\item\textbf{Attori Secondari:} Ethereum.
+	\item\textbf{Descrizione:} l'amministratore viene avvisato se la transazione su Ethereum non va a buon fine.
+	\item\textbf{Scenario principale:} l'amministratore riceve una notifica di non avvenuta transazione su Ethereum. La notifica consiste in un avviso sulla pagina principale del sito ricevuto nel primo accesso dell'amministratore al sistema successivo alla transazione.
+	\item\textbf{Precondizione:} il salvataggio di una transazione su Ethereum è fallito.
+	\item\textbf{Postcondizione:} l'amministratore riceve una notifica di non avvenuta transazione su Ethereum.
 \end{itemize}
