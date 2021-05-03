@@ -134,12 +134,12 @@ Il diagramma sovrastante rappresenta la struttura e le relazioni dei package del
 	\label{fig:DiagrammaPackageBaseWebapp}
 \end{figure}
 Il package Base contiene tutte le funzionalità offerte a un amministratore autenticato.
-Le funzionalità che vi sono contenute sono ulteriormente suddivise in due package:
+Esse sono ulteriormente suddivise in due package:
 \begin{itemize}
-	\item credentials
-	\item rooms
+	\item Credentials
+	\item Rooms
 \end{itemize}
-Il primo contiene i componenti per la gestione delle credenziali, mentre il secondo contiene quelli per la gestione delle credenziali.la gestione delle credenziali, a sua volta racchiusa nel package Credentials, e la gestione delle stanze e delle postazioni, racchiusa nel package Rooms. La classe BaseComponent gestisce la visualizzazione del component  La classe BaseComponent viene utilizzata per gestire la visualizzazione dell'una o dell'altra funzionalità, e permette inoltre l'azione di logout.
+All'interno del package Credentials sono presenti tutti e soli i componenti utilizzati nella pagina di gestione delle credenziali. All'interno del package Rooms sono presenti tutti e soli i componenti utilizzati nella pagina di gestione delle stanze e delle postazioni. Le due pagine appena indicate sono annidate nella vista del componente Base. Quest'ultimo infatti presenta dei pulsanti per la selezione della pagina da visualizzare. Esso presenta inoltre, sempre tramite un pulsante, la funzionalità di logout. \newline
 Il package Base ha una dipendenza verso Models, le cui classi vengono usate per organizzare i dati, e una verso Services, le cui classi vengono usate per interagire con il server e con il local storage.
 
 \subsubsection{Login}
