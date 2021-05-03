@@ -249,7 +249,7 @@ L'applicazione mobile viene utilizzata dagli utenti che vogliono accedere ad una
 	\includegraphics[width=5cm]{res/images/login.png}
 	\caption{Login utente}
 \end{figure}
-L'utente può autenticarsi nella pagina iniziale del login inserendo il proprio username e la propria password nelle EditText corrispondenti.
+L'utente può autenticarsi nella pagina del login inserendo il proprio username e la propria password nelle caselle di testo corrispondenti.
 Nel caso in cui inserisca le credenziali corrette otterrà l'accesso all'applicazione e quindi alla pagina principale, altrimenti verrà visualizzato un messaggio di errore in cui verrà comunicato di riprovare il login.
 
 \subsubsection{Logout}
@@ -282,11 +282,11 @@ L'utente ha effettuato la scansione di una postazione e riceve le seguenti infor
 In base allo stato in cui si trova la postazione, l'utente visualizzerà un messaggio differente:
 \begin{itemize}
 	\item se libera e igienizzata, si invita l'utente a lasciare il telefono sul tag NFC per effettuare una prenotazione automatica della postazione;
-	\item se libera e non igienizzata, si invita l'utente ad effettuare la pulizia autonoma della postazione tramite il kit aziendale e quindi di cliccare il bottone "igienizza";
+	\item se libera e non igienizzata, si invita l'utente ad effettuare la pulizia autonoma della postazione tramite il kit aziendale e quindi di cliccare il bottone "igienizza", che modificherà lo stato in igienizzata;
 	\item se prenotata e igienizzata, si invita l'utente ad abbandonare la postazione dato che al momento non è disponibile;
-	\item se prenotata e non igienizzata, si invita l'utente ad effettuare la pulizia autonoma della postazione tramite il kit aziendale;
+	\item se prenotata e non igienizzata, si invita l'utente ad effettuare la pulizia autonoma della postazione tramite il kit aziendale e quindi di cliccare il bottone "igienizza", che modificherà lo stato in prenotata e igienizzata;
 	\item se guasta e igienizzata, si invita l'utente ad abbandonare la postazione dato che al momento non è disponibile;
-	\item se guasta e non igienizzata, si invita l'utente ad effettuare la pulizia autonoma della postazione tramite il kit aziendale;
+	\item se guasta e non igienizzata, si invita l'utente ad effettuare la pulizia autonoma della postazione tramite il kit aziendale e quindi di cliccare il bottone "igienizza", che modificherà lo stato in guasta e igienizzata.
 \end{itemize}
  
 \subsubsection{Occupazione postazione}
@@ -310,7 +310,7 @@ L'utente igienizza una postazione il cui stato è diverso da "igienizzato" e lo 
 	\includegraphics[width=5cm]{res/images/VisualizzaPrenotazioni.png}
 	\caption{Visualizzazione lista prenotazioni}
 \end{figure}
-L’utente può accedere alla sezione per la visualizzazione della lista delle prenotazioni da lui effettuate, cliccando il menù a tendina in alto a destra.
+L’utente può accedere alla sezione per la visualizzazione della lista delle prenotazioni da lui effettuate, cliccando nel menù a tendina in alto a destra "Visualizza prenotazioni".
 Ogni postazione mostra le seguenti informazioni:
 \begin{itemize}
 	\item stanza della prenotazione;
