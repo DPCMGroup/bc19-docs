@@ -284,9 +284,9 @@ In base allo stato in cui si trova la postazione, l'utente visualizzerà un mess
 	\item se libera e igienizzata, si invita l'utente a lasciare il telefono sul tag NFC per effettuare una prenotazione automatica della postazione;
 	\item se libera e non igienizzata, si invita l'utente ad effettuare la pulizia autonoma della postazione tramite il kit aziendale e quindi di cliccare il bottone "igienizza";
 	\item se prenotata e igienizzata, si invita l'utente ad abbandonare la postazione dato che al momento non è disponibile;
-	\item se prenotata e non igienizzata, si invita l'utente ad effettuare la pulizia autonoma della postazione tramite il kit aziendale e quindi di cliccare il bottone "igienizza";
+	\item se prenotata e non igienizzata, si invita l'utente ad effettuare la pulizia autonoma della postazione tramite il kit aziendale;
 	\item se guasta e igienizzata, si invita l'utente ad abbandonare la postazione dato che al momento non è disponibile;
-	\item se guasta e non igienizzata, si invita l'utente ad effettuare la pulizia autonoma della postazione tramite il kit aziendale e quindi di cliccare il bottone "igienizza";
+	\item se guasta e non igienizzata, si invita l'utente ad effettuare la pulizia autonoma della postazione tramite il kit aziendale;
 \end{itemize}
  
 \subsubsection{Occupazione postazione}
@@ -315,8 +315,10 @@ Ogni postazione mostra le seguenti informazioni:
 \begin{itemize}
 	\item stanza della prenotazione;
 	\item posizione indicata tramite X e Y;
-	\item data/ora di inizio della prenotazione;
-	\item data/ora di fine della prenotazione.
+	\item data di inizio della prenotazione;
+	\item ora di inizio della prenotazione;
+	\item data di fine della prenotazione;
+	\item ora di fine della prenotazione.
 \end{itemize}
 \subsubsection{Disdetta prenotazione}
 \begin{figure}[H]
@@ -339,9 +341,6 @@ L’utente accede alla pagina Guida utente, cliccando la sezione apposita del me
 	\caption{Prenotazione postazione}
 \end{figure}
 Il dipendente può prenotare una postazione premendo sull'elemento della lista "Prenota postazione" del menù principale in alto a destra.
-Dopo aver premuto dovrà inserire la data, l'ora di inizio, l'ora di fine e la stanza obbligatoriamente e in modo facoltativo anche il nome del collega. Per facilitare l'utente nell'inserimento dei dati, a destra di ciascun EditText è presente una GUI per la selezione di una data(vista a calendario) e di un orario(vista a orologio). Una volta premuto sul bottone "Cerca", se è stato inserito il nome del collega, visualizzerà tutte le sue prenotazioni effettuate nella stanza, nel range orario e nella data inseriti e scorrendo sotto visualizzerà tutte le postazioni di quella stanza con il loro stato e potrà decidere quale prenotare se disponibile. 
+Dopo aver premuto dovrà inserire la data, l'ora di inizio, l'ora di fine e la stanza obbligatoriamente e in modo facoltativo anche il nome del collega. Per facilitare l'utente nell'inserimento dei dati, sono presenti una vista a calendario per la selezione di una data e una vista a orologio per la selezione di un orario. Una volta premuto sul bottone "Cerca", se è stato inserito il nome del collega, visualizzerà tutte le sue prenotazioni effettuate nella stanza, nel range orario e nella data inseriti e scorrendo sotto visualizzerà tutte le postazioni di quella stanza con il loro stato e potrà decidere quale prenotare se disponibile. 
 
 
-
-
-\subsection{Addetto alle pulizie}
