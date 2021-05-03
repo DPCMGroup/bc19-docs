@@ -1,0 +1,44 @@
+\section*{Introduzione}
+\subsection*{Luogo e data dell'incontro}
+\begin{itemize}
+	\item \textbf{luogo:} videoconferenza su \glock{Discord};
+	\item \textbf{data:}  2021-04-08;
+	\item \textbf{ora di inizio:} 11:15;
+	\item \textbf{ora di fine:} 12:15.
+\end{itemize}
+
+\subsection*{Ordine del giorno}
+\begin{enumerate}
+	\item scelte architetturali;
+	\item Product Baseline;
+	\item varie ed eventuali.
+\end{enumerate}
+
+\subsection*{Presenze}
+\begin{itemize}
+	\item \textbf{Presenti:}
+	\begin{itemize}
+		\item Badan Antonio;
+		\item Bertoldo Damiano;
+		\item Budai Matteo;
+		\item De Grandi Samuele;
+		\item Piacere Ivan;
+		\item Privitera Sara;
+		\item Spigolon Daniele.
+	\end{itemize}
+\end{itemize}
+
+\section*{Svolgimento}
+\subsection*{Scelte architetturali}
+Si è discusso sulle possibili scelte architetturali da adottare per l'applicazione. Abbiamo concordato di utilizzare i seguenti design pattern: per l'app mobile il Model View Presenter, per la web-app il Model View Viewmodel, per il backend il Model Template View che si ispira al Model View Controller.
+
+\subsection*{Product Baseline}
+Abbiamo deciso, previa disponibilità del prof.~Cardin, che la presentazione della Product Baseline avverrà il 15 aprile. Ci siamo quindi suddivisi le parti della presentazione da preparare. Per ogni design pattern verranno scelti alcuni aspetti da illustrare tramite opportuni diagrammi delle classi e di sequenza. Il lavoro è così suddiviso:
+\begin{itemize}
+	\item Antonio, Matteo e Samuele si occupano dell'app mobile e precisamente della visualizzazione delle prenotazioni effettuate da un dipendente;
+	\item Daniele, Sara e Ivan si occupano della web app e precisamente della visualizzazione, modifica delle stanze e delle postazioni da parte dell'amministratore;
+	\item Damiano si occupa del backend e precisamente dell'interazione con il database, comunicazione backend - app mobile, comunicazione backend - web app.
+\end{itemize} 
+
+\subsection*{Varie ed eventuali}
+Abbiamo scelto di utilizzare file in formato json per la comunicazione fra app mobile / web app e backend. Il database utilizzerà il system versioning per ricostruire facilmente la storia delle modifiche del database.
