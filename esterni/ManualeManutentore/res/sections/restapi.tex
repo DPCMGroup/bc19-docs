@@ -1,0 +1,299 @@
+\section{REST API}
+\subsection{Introduzione}
+Questa parte del prodotto si riferisce alle API che permettono a BlockCovid di offrire le funzionalità agli utenti e amministratori che usano rispettivamente l'app android e il portale web.
+
+\subsubsection{Scopo}
+Le REST API di BlockCovid permettono all'app utente e alla webapp amministratore di fornire utenti e amministratori degli strumenti che necessitano per l'utilizzo.
+
+\subsection{Requisiti e installazione}
+Per poter utilizzare le REST API è necessario avere un istanza del backend operativa. Nel caso in cui non si abbia il backend attivo, è possibile consultare la sezione §4.
+
+\subsubsection{Formato dei dati}
+Tutti i dati inviati e ricevuti dalle REST API sono in formato JSON (i.e. application/json).
+
+\subsection{API}
+\subsubsection{Metodi}
+\begin{center}
+	\rowcolors{2}{lightest-grayest}{white}
+	\begin{longtable}{|c|p{5cm}|p{5cm}|}
+		\hline
+		\rowcolor{lighter-grayer}
+		\textbf{Richiesta HTTP} & \textbf{Path} & \textbf{Descrizione}\\		
+		\hline
+		\endfirsthead
+		\textbf{GET} & /workstation/list & Ritorna la lista delle postazioni.\\
+		\hline
+		\textbf{GET} & /workstation/del/\{int: id\} & Cancella la postazione specificata in \textit{id}.\\
+		\hline
+		\textbf{POST} & /workstation/insert & Aggiunge una nuova postazione con i dati specificati.\\
+		\hline
+		\textbf{POST} & /workstation/modify & Modifica una nuova postazione con i dati specificati.\\
+		\hline
+		\textbf{POST} & /workstation/getInfo & Ritorna le informazioni di una specifica postazione.\\
+		\hline
+		\textbf{POST} & /workstation/sanitize & Segna come sanificata una specifica postazione.\\
+		\hline
+		\textbf{GET} & /room/list & Ritorna la lista delle stanze.\\
+		\hline
+		\textbf{GET} & /room/del/\{int: id\} & Cancella la stanza specificata in \textit{id}.\\
+		\hline
+		\textbf{POST} & /room/insert & Aggiunge una nuova stanza con i dati specificati.\\
+		\hline
+		\textbf{POST} & /room/modify & Modifica una nuova stanza con i dati specificati.\\
+		\hline
+		\textbf{GET} & /user/list & Ritorna la lista degli utenti.\\
+		\hline
+		\textbf{GET} & /user/del/\{int: id\} & Cancella l'utente specificato in \textit{id}.\\
+		\hline
+		\textbf{POST} & /user/insert & Aggiunge un nuovo utente con i dati specificati.\\
+		\hline
+		\textbf{POST} & /user/modify & Modifica un nuovo utente con i dati specificati.\\
+		\hline
+		\textbf{POST} & /user/login & Verifica che i dati inseriti siano corretti per effettuare il login.\\
+		\hline
+		\textbf{GET} & /user/bookings/\{int: userId\} & Ritorna la lista di tutte le prenotazioni eseguite dall'utente specificato in \textit{userId}.\\
+		\hline
+	\end{longtable}
+\end{center}
+\subsubsection{Descrizione}
+\paragraph{/workstation/list}
+Chiamata GET semplice. Ritorna la lista delle postazioni in formato JSON come segue.	\\
+\begin{center}
+	\begin{lstlisting}
+		[
+			{
+			"id": 1, 
+			"tag": "00 c0 00 01 8d 91 04",
+			"workstationname": "lab1-1x1",
+			"xworkstation": 1, 
+			"yworkstation": 1, 
+			"idroom": 1,
+			"state": 0,
+			"sanitized": 1,
+			"archived": 0
+			}
+		]
+	\end{lstlisting}
+\end{center}
+Rispettivamente i campi corrispondono a:
+\begin{itemize}
+	\item \textbf{id}: id postazione;
+	\item \textbf{tag}: id tag postazione;
+	\item \textbf{workstationname}: nome postazione;
+	\item \textbf{xworkstation}: posizione asse x all'interno della stanza;
+	\item \textbf{yworkstation}: posizione asse y all'interno della stanza;	
+	\item \textbf{idroom}: id stanza in cui è presente la postazione;	
+	\item \textbf{state}: stato attuale della postazione;	
+	\item \textbf{sanitized}: indica se la postazione è sanificata;	
+	\item \textbf{archived}: indica se la postazione è archiviata.	
+\end{itemize}
+\paragraph{/workstation/del/\{int: id\}}
+Chiamata GET semplice. Cancella una postazione specificandone l'id.
+\paragraph{/workstation/insert}
+Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per l'inserimento della nuova postazione:
+\begin{itemize}
+	\item \textbf{tag}: id tag postazione;
+	\item \textbf{workstationname}: nome postazione;
+	\item \textbf{xworkstation}: posizione asse x all'interno della stanza;
+	\item \textbf{yworkstation}: posizione asse y all'interno della stanza;	
+	\item \textbf{idroom}: id stanza in cui è presente la postazione;	
+	\item \textbf{state}: stato attuale della postazione;	
+	\item \textbf{sanitized}: indica se la postazione è sanificata;	
+	\item \textbf{archived}: indica se la postazione è archiviata.	
+\end{itemize}
+\paragraph{/workstation/modify}
+Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per la modifica della postazione:
+\begin{itemize}
+	\item \textbf{id}: id postazione;
+	\item \textbf{tag}: id tag postazione;
+	\item \textbf{workstationname}: nome postazione;
+	\item \textbf{xworkstation}: posizione asse x all'interno della stanza;
+	\item \textbf{yworkstation}: posizione asse y all'interno della stanza;	
+	\item \textbf{idroom}: id stanza in cui è presente la postazione;	
+	\item \textbf{state}: stato attuale della postazione;	
+	\item \textbf{sanitized}: indica se la postazione è sanificata;	
+	\item \textbf{archived}: indica se la postazione è archiviata.	
+\end{itemize}
+\paragraph{/workstation/getInfo}
+Chiamata POST. Nella sezione \textit{body} viene specificato l'idtag della postazione di cui si vogliono avere informazioni.\\
+La risposta è strutturata come segue:
+\begin{center}
+	\begin{lstlisting}
+	{
+	"workId": 2,
+	"workName": "lab1-1x2", 
+	"workStatus": 1, 
+	"workSanitized": 1, 
+	"roomName": "lab1", 
+	"bookedToday": 0
+	}
+	\end{lstlisting}
+\end{center}
+Se la postazione ha delle prenotazioni, allora la risposta avrà dei campi aggiuntivi:
+\begin{center}
+	\begin{lstlisting}
+	{
+	[...]
+	"bookedToday": 1
+	"bookings": [{
+		"bookerId": 4,
+		"bookerUsername": username,
+		"bookerName": name,
+		"bookerSurname": surname,
+		"from": "30/07/21 10:00",
+		"to": "30/07/21 11:00"
+		}]
+	}
+	\end{lstlisting}
+\end{center}
+\begin{itemize}
+	\item \textbf{workId}: id postazione;
+	\item \textbf{workName}: nome postazione;	
+	\item \textbf{workStatus}: stato attuale della postazione;	
+	\item \textbf{workSanitized}: indica se la postazione è sanificata;
+	\item \textbf{bookedToday}: indica se la postazione ha una prenotazione nella giornata in cui viene scansionata.
+	\item \textbf{bookings}: lista prenotazioni presenti per la postazione.
+	\begin{itemize}		
+		\item \textbf{bookerId}: id utente della prenotazione;
+		\item \textbf{bookerUsername}: nome utente di chi ha effettuato la prenotazione;
+		\item \textbf{bookerName}: nome di chi ha effettuato la prenotazione;
+		\item \textbf{bookerSurname}: cognome di chi ha effettuato la prenotazione;
+		\item \textbf{from}: ora inizio prenotazione in formato "gg/MM/aa hh:mm";
+		\item \textbf{to}: ora fine prenotazione in formato "gg/MM/aa hh:mm";
+	\end{itemize}
+\end{itemize}
+\paragraph{/workstation/sanitize}
+Chiamata POST. Inserisce una sanificazione per una specifica postazione, indicando chi ha effettuato tale pulizia e a che ora è avvenuta.\\
+Il JSON è strutturato come segue:
+\begin{itemize}
+	\item \textbf{tag}: id tag postazione;
+	\item \textbf{idUser}: id utente di chi ha effettuato la sanificazione;
+	\item \textbf{data}: ora sanificazione in formato "gg/MM/aa hh:mm".
+\end{itemize}
+\paragraph{/room/list}
+Chiamata GET semplice. Ritorna la lista delle stanze in formato JSON come segue.	\\
+\begin{center}
+	\begin{lstlisting}
+	[{
+	"id": 1,
+	"roomname": "lab1",
+	"xroom": 10,
+	"yroom": 10,
+	"archived": 0
+	}]
+	\end{lstlisting}
+\end{center}
+Rispettivamente i campi corrispondono a:
+\begin{itemize}
+	\item \textbf{id}: id stanza;
+	\item \textbf{roomname}: nome stanza;
+	\item \textbf{xroom}: grandezza stanza nell'asse X;
+	\item \textbf{yroom}: grandezza stanza nell'asse Y;
+	\item \textbf{archived}: indica se la stanza è archiviata.	
+\end{itemize}
+\paragraph{/room/del/\{int: id\}}
+Chiamata GET semplice. Cancella una stanza specificandone l'id.
+\paragraph{/room/insert}
+Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per l'inserimento della nuova stanza:
+\begin{itemize}
+	\item \textbf{roomname}: nome stanza;
+	\item \textbf{xroom}: grandezza stanza nell'asse X;
+	\item \textbf{yroom}: grandezza stanza nell'asse Y;
+	\item \textbf{archived}: indica se la stanza è archiviata.		
+\end{itemize}
+
+\paragraph{/room/modify}
+Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per la modifica della stanza:
+\begin{itemize}
+	\item \textbf{id}: id stanza;
+	\item \textbf{roomname}: nome stanza;
+	\item \textbf{xroom}: grandezza stanza nell'asse X;
+	\item \textbf{yroom}: grandezza stanza nell'asse Y;
+	\item \textbf{archived}: indica se la stanza è archiviata.	
+\end{itemize}
+\paragraph{/user/list}
+Chiamata GET semplice. Ritorna la lista degli utenti in formato JSON come segue.	\\
+\begin{center}
+	\begin{lstlisting}
+	[{
+	"id": 1,
+	"username": "mrossi",
+	"password": "000",
+	"name": "mario",
+	"surname": "rossi",
+	"mail": "mario.rossi@gmail.com",
+	"type": 0,
+	"archived": 0
+	}]
+	\end{lstlisting}
+\end{center}
+Rispettivamente i campi corrispondono a:
+\begin{itemize}
+	\item \textbf{id}: id utente;
+	\item \textbf{username}: username utente;
+	\item \textbf{password}: password utente;
+	\item \textbf{name}: nome utente;
+	\item \textbf{surname}: cognome utente;	
+	\item \textbf{mail}: indirizzo email utente;	
+	\item \textbf{type}: tipo utente;	
+	\item \textbf{archived}: indica se l'utente è archiviato.	
+\end{itemize}
+\paragraph{/user/del/\{int: id\}}
+Chiamata GET semplice. Cancella un utente specificandone l'id.
+\paragraph{/user/insert}
+Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per l'inserimento del nuovo utente:
+\begin{itemize}
+	\item \textbf{username}: username utente;
+	\item \textbf{password}: password utente;
+	\item \textbf{name}: nome utente;
+	\item \textbf{surname}: cognome utente;	
+	\item \textbf{mail}: indirizzo email utente;	
+	\item \textbf{type}: tipo utente;	
+	\item \textbf{archived}: indica se l'utente è archiviato.	
+\end{itemize}
+
+\paragraph{/user/modify}
+Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per la modifica dell'utente:
+\begin{itemize}
+	\item \textbf{id}: id utente;
+	\item \textbf{username}: username utente;
+	\item \textbf{password}: password utente;
+	\item \textbf{name}: nome utente;
+	\item \textbf{surname}: cognome utente;	
+	\item \textbf{mail}: indirizzo email utente;	
+	\item \textbf{type}: tipo utente;	
+	\item \textbf{archived}: indica se l'utente è archiviato.	
+\end{itemize}
+
+\paragraph{/user/login}
+Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per il login dell'utente:
+\begin{itemize}
+	\item \textbf{username}: username utente;
+	\item \textbf{password}: password utente.	
+\end{itemize}
+Se il login avviene con successo, viene ritornato l'oggetto \textit{User} in formato JSON come specificato in \textbf{§7.3.2.7}
+\paragraph{user/bookings/\{int: userId\}}
+Chiamata GET. Viene richiesta la lista delle prenotazioni dell'utente specificato in \textit{userId}.\\
+Verrà ritornato una lista JSON come segue:
+\begin{center}
+	\begin{lstlisting}
+	[{
+	"bookId": 1,
+	"workId": 1,
+	"workName": "nome",
+	"roomId": 1,
+	"roomName": "nomeStanza",
+	"start": "30/07/21 10:00",
+	"end": "30/07/21 11:00"
+	}]
+	\end{lstlisting}
+\end{center}
+\begin{itemize}
+	\item \textbf{bookId}: id prenotazione;
+	\item \textbf{workId}: id postazione prenotata;
+	\item \textbf{workName}: nome postazione;
+	\item \textbf{roomId}: id stanza;
+	\item \textbf{roomName}: nome stanza;	
+	\item \textbf{start}: ora inizio prenotazione in formato "gg/MM/aa hh:mm";	
+	\item \textbf{end}: ora fine prenotazione in formato "gg/MM/aa hh:mm".
+\end{itemize}
