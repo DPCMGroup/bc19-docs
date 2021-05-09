@@ -288,17 +288,17 @@ Ciò non è ritenuto un problema in quanto le ore lavorative e i costi sostenuti
 I motivi dello sforamento rispetto alla pianificazione di microperiodo sono riportati di seguito:
 \begin{itemize}
 	\item sono stati riscontrati dei dubbi imprevisti da chiarire con il proponente e con i docenti, in particolare 
-per quanto riguarda l'analisi dei requisiti, si è deciso di sfruttare appieno l'interazione con la tecnologia NFC e
-quindi modificare i relativi casi d'uso.
-\item sono stati implementati degli strumenti gestionali per la definizione del nostro cruscotto, che ci hanno aiutato nella pianificazione 
-e verifica di quest'ultima. 
-\item si è riscontrata una certa difficoltà a chiudere alcune issues in breve tempo. 
-A tal proposito si è deciso di scrivere issues con compiti più definiti e
-a grana ancora più fine. In questo modo 
-chi le dovrà svolgere sarà meno disorientato, il progresso del lavoro risulterà più semplice da calcolare
-e la verifica più puntuale. Ciò comporta una rivalutazione al rialzo delle ore da assegnare al responsabile, in quanto
-presente in tutte le attività per coordinare al meglio il gruppo e per determinare le issue stesse.
-\item si è impiegato più tempo del previsto nell'integrazione fra le parti del PoC, in particolare back-end e Ethereum, attraverso la libreria web3.py. Si è provveduto a fornire una guida per la configurazione di queste tecnologie, in modo da evitare incongruenze e/o perdite di tempo all'interno del gruppo.
+	per quanto riguarda l'analisi dei requisiti, si è deciso di sfruttare appieno l'interazione con la tecnologia NFC e
+	quindi modificare i relativi casi d'uso.
+	\item sono stati implementati degli strumenti gestionali per la definizione del nostro cruscotto, che ci hanno aiutato nella pianificazione 
+	e verifica di quest'ultima. 
+	\item si è riscontrata una certa difficoltà a chiudere alcune issues in breve tempo. 
+	A tal proposito si è deciso di scrivere issues con compiti più definiti e
+	a grana ancora più fine. In questo modo 
+	chi le dovrà svolgere sarà meno disorientato, il progresso del lavoro risulterà più semplice da calcolare
+	e la verifica più puntuale. Ciò comporta una rivalutazione al rialzo delle ore da assegnare al responsabile, in quanto
+	presente in tutte le attività per coordinare al meglio il gruppo e per determinare le issue stesse.
+	\item si è impiegato più tempo del previsto nell'integrazione fra le parti del PoC, in particolare back-end e Ethereum, attraverso la libreria web3.py. Si è provveduto a fornire una guida per la configurazione di queste tecnologie, in modo da evitare incongruenze e/o perdite di tempo all'interno del gruppo.
 \end{itemize}
 
 Il preventivo a finire presenta un risparmio di 820\euro, poiché in questo periodo di progettazione architetturale sono state necessarie meno ore del previsto.
@@ -363,3 +363,363 @@ Si è deciso di reinvestire le ore risparmiate, nel lavoro di codifica del PoC m
 	\end{tabular}
 	\caption*{\textbf{Tabella 35}: Pianificazione riguardante il periodo di Validazione e collaudo\\}
 \end{table}
+
+\subsection{Periodo di Progettazione di dettaglio e codifica (dal 2021-03-08 al 2021-05-08) }
+\subsubsection{Consuntivo di macroperiodo}
+
+\begin{table}[H]
+	\rowcolors{2}{lightest-grayest}{white}
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\rowcolor{lighter-grayer}
+		\textbf{Attività} & \textbf{Re}        & \textbf{Am}        & \textbf{An}        & \textbf{Pt}        & \textbf{Pm}        & \textbf{Ve}        \\ \hline
+
+	Comunicazione con proponente              & 1                  & -  & -  & -  & -  & -  \\ \hline
+	PoC mobile                                & 2                  & -  & -  & 16 & 16 & -  \\ \hline
+	Configurazione analisi statica, CI, etc.. & 3                  & -  & -  & -  & 7  & -  \\ \hline
+	Aggiornamento AdR                         & 2                  & -  & 20 & -  & -  & 3  \\ \hline
+	Aggiornamento PdQ                         & 2                  & -  & -  & -  & -  & 14 \\ \hline
+	Aggiornamento PdP                         & 10                 & -  & -  & -  & -  & 2  \\ \hline
+	Aggiornamento NdP                         & 1                  & 1  & -  & -  & -  & 1  \\ \hline
+	Comunicazione con docenti                 & 2                  & -  & -  & -  & -  & -  \\ \hline
+	Configurazione del sistema                & 1                  & -  & -  & -  & 6  & 2  \\ \hline
+	PB                                        & 2                  & -  & -  & 19 & -  & 4  \\ \hline
+	Codifica della struttura delle componenti & 2                  & -  & -  & -  & 35 & 15 \\ \hline
+	Codifica delle interazioni tra le componenti interne & 2           & -           & -           & -           & 35          & 15          \\ \hline
+	Codifica delle interazioni con gli attori esterni    & 2           & -           & -           & -           & 35          & 14          \\ \hline
+	Manuale utente                            & 1 & 12 & -  & -  & -  & 4 \\ \hline
+	Manuale manutentore                       & 1                   & 12 & -  & -  & -  & 4  \\ \hline
+	Presentazione                             & 1                  & 1  & 1  & 1  & 1  & 1  \\ \hline
+	Attività accessorie                       & 2                  & 5  & 1  & 1  & 2  & 3  \\ \hline
+	
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\rowcolors{2}{lightest-grayest}{white}
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\rowcolor{lighter-grayer}
+		Ruolo & Ore & Costo \\ \hline
+		Responsabile & 35(+1) & 1080(+30\euro) \\ \hline
+		Amministratore & 31(-9) & 682(-118\euro) \\ \hline
+		Analista & 22(+0) & 550(+0\euro) \\ \hline
+		Progettista & 37(+1) & 888(+24\euro) \\ \hline
+		Programmatore & 137(-10) & 2192(-160\euro) \\ \hline
+		Verificatore & 82(-18) & 1312(-288\euro) \\ \hline
+		Totale preventivo & 380 & 7926\euro \\ \hline
+		Totale consuntivo & 344 & 6704\euro \\ \hline
+		Totale scostamento & 36 & 592\euro \\ \hline
+	\end{tabular}
+	\caption*{\textbf{Tabella 25}: Consuntivo\\}
+\end{table}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/GraficoRuoliDettaglioCodifica.png}
+	\caption*{\textbf{Figura 15}: Esperienza per ruolo}
+	\label{fig:Esperienza per ruolo}
+\end{figure}
+
+\subsubsection{Consuntivo di microperiodo}
+\paragraph{Microperiodo 1}
+\begin{table}[H]
+	\rowcolors{2}{lightest-grayest}{white}
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\rowcolor{lighter-grayer}
+		\textbf{Attività} & \textbf{Re}        & \textbf{Am}        & \textbf{An}        & \textbf{Pt}        & \textbf{Pm}        & \textbf{Ve}        \\ \hline
+		
+		Comunicazione con proponente & 1 & - & - & - & - & - \\ \hline
+		PoC mobile & 2 & - & - & 16 & 16 & - \\ \hline
+		Configurazione analisi statica, CI, etc.. & 3 & - & - & 7 & - & - \\ \hline
+		
+	\end{tabular}
+	\caption*{\textbf{Tabella 24}: Prospetto orario reale\\}
+\end{table}
+
+\begin{table}[H]
+	\rowcolors{2}{lightest-grayest}{white}
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\rowcolor{lighter-grayer}
+		Ruolo & Ore & Costo \\ \hline
+		Responsabile & 6(+0) & 180(+0\euro) \\ \hline
+		Amministratore & - & - \\ \hline
+		Analista & - & - \\ \hline
+		Progettista & 16(+0) & 384(+0\euro) \\ \hline
+		Programmatore & 23(+4) & 368(+64\euro) \\ \hline
+		Verificatore & - & - \\ \hline
+		Totale preventivo & 41 & 868\euro \\ \hline
+		Totale consuntivo & 45 & 932\euro \\ \hline
+		Totale scostamento & 4 & 64\euro \\ \hline
+	\end{tabular}
+	\caption*{\textbf{Tabella 25}: Consuntivo\\}
+\end{table}
+
+\paragraph{Microperiodo 2}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\rowcolor{lighter-grayer}
+		\textbf{Attività} & \textbf{Re}        & \textbf{Am}        & \textbf{An}        & \textbf{Pt}        & \textbf{Pm}        & \textbf{Ve}        \\ \hline
+		
+		Aggiornamento AdR & 1 & - & 12 & - & - & 2 \\ \hline
+		Aggiornamento PdQ & 1 & - & - & - & - & 6 \\ \hline
+		Aggiornamento PdP & 4 & - & - & - & - & 1 \\ \hline
+		Aggiornamento NdP & 1 & 1 & - & - & - & 1 \\ \hline
+		Comunicazione con docenti & 1 & - & - & - & - & - \\ \hline
+		
+	\end{tabular}
+	\caption*{\textbf{Tabella 24}: Prospetto orario reale\\}
+\end{table}
+
+\begin{table}[H]
+	\rowcolors{2}{lightest-grayest}{white}
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\rowcolor{lighter-grayer}
+		Ruolo & Ore & Costo \\ \hline
+		Responsabile & 8(+0) & 240(+0\euro) \\ \hline
+		Amministratore & 1(+0) & 22(+0\euro) \\ \hline
+		Analista & 12(+0) & 300(+0\euro) \\ \hline
+		Progettista & - & - \\ \hline
+		Programmatore & - & - \\ \hline
+		Verificatore & 10(-1) & 160(-16\euro) \\ \hline
+		Totale preventivo & 32 & 738\euro \\ \hline
+		Totale consuntivo & 31 & 722\euro \\ \hline
+		Totale scostamento & 1 & 16\euro \\ \hline
+	\end{tabular}
+	\caption*{\textbf{Tabella 25}: Consuntivo\\}
+\end{table}
+
+\paragraph{Microperiodo 3}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\rowcolor{lighter-grayer}
+		\textbf{Attività} & \textbf{Re}        & \textbf{Am}        & \textbf{An}        & \textbf{Pt}        & \textbf{Pm}        & \textbf{Ve}        \\ \hline
+		
+		Configurazione del sistema & 1 & - & - & - & 6 & 2 \\ \hline
+		Comunicazione con docenti & 1 & - & - & - & - & - \\ \hline	
+		
+	\end{tabular}
+	\caption*{\textbf{Tabella 24}: Prospetto orario reale\\}
+\end{table}
+
+\begin{table}[H]
+	\rowcolors{2}{lightest-grayest}{white}
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\rowcolor{lighter-grayer}
+		Ruolo & Ore & Costo \\ \hline
+		Responsabile & 2(+0) & 60(+0\euro) \\ \hline
+		Amministratore & - & - \\ \hline
+		Analista & - & - \\ \hline
+		Progettista & - & - \\ \hline
+		Programmatore & 6(+1) & 96(+16\euro) \\ \hline
+		Verificatore & 2(+0) & 32(+0\euro) \\ \hline
+		Totale preventivo & 9 & 172\euro \\ \hline
+		Totale consuntivo & 10 & 188\euro \\ \hline
+		Totale scostamento & 1 & 16\euro \\ \hline
+	\end{tabular}
+	\caption*{\textbf{Tabella 25}: Consuntivo\\}
+\end{table}
+
+\paragraph{Microperiodo 4}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\rowcolor{lighter-grayer}
+		
+		\textbf{Attività}                         & \textbf{Re} & \textbf{Am} & \textbf{An} & \textbf{Pt} & \textbf{Pm} & \textbf{Ve} \\ \hline
+		PB                                        & 1           & -           & -           & 14          & -           & 2           \\ \hline
+		Codifica della struttura delle componenti & 1           & -           & -           & -           & 15          & 7           \\ \hline	
+		
+	\end{tabular}
+	\caption*{\textbf{Tabella 24}: Prospetto orario reale\\}
+\end{table}
+
+\begin{table}[H]
+	\rowcolors{2}{lightest-grayest}{white}
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\rowcolor{lighter-grayer}
+		Ruolo & Ore & Costo \\ \hline
+		Responsabile & 2(+0) & 60(+0\euro) \\ \hline
+		Amministratore & - & - \\ \hline
+		Analista & - & - \\ \hline
+		Progettista & 14(+0) & 336(+0\euro) \\ \hline
+		Programmatore & 15(+0) & 240(+0\euro) \\ \hline
+		Verificatore & 9(+0) & 144(+0\euro) \\ \hline
+		Totale preventivo & 40 & 780\euro \\ \hline
+		Totale consuntivo & 40 & 780\euro \\ \hline
+		Totale scostamento & - & - \\ \hline
+	\end{tabular}
+	\caption*{\textbf{Tabella 25}: Consuntivo\\}
+\end{table}
+
+\paragraph{Microperiodo 5}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\rowcolor{lighter-grayer}
+		\textbf{Attività} & \textbf{Re}        & \textbf{Am}        & \textbf{An}        & \textbf{Pt}        & \textbf{Pm}        & \textbf{Ve}        \\ \hline
+		
+		Aggiornamento AdR                         & 1 & - & 8 & - & -  & 1 \\ \hline
+		PB                                        & 1 & - & - & 5 & -  & 2 \\ \hline
+		Codifica della struttura delle componenti & 1 & - & - & - & 20 & 8 \\ \hline		
+		
+	\end{tabular}
+	\caption*{\textbf{Tabella 24}: Prospetto orario reale\\}
+\end{table}
+
+\begin{table}[H]
+	\rowcolors{2}{lightest-grayest}{white}
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\rowcolor{lighter-grayer}
+		Ruolo & Ore & Costo \\ \hline
+		Responsabile & 3(+0) & 90(+0\euro) \\ \hline
+		Amministratore & - & - \\ \hline
+		Analista & 8(+0) & 200(+0\euro) \\ \hline
+		Progettista & 5(+0) & 120(+0\euro) \\ \hline
+		Programmatore & 20(+0) & 320(+0\euro) \\ \hline
+		Verificatore & 11(+0) & 176(+0\euro) \\ \hline
+		Totale preventivo & 47 & 906\euro \\ \hline
+		Totale consuntivo & 47 & 906\euro \\ \hline
+		Totale scostamento & - & - \\ \hline
+	\end{tabular}
+	\caption*{\textbf{Tabella 25}: Consuntivo\\}
+\end{table}
+
+\paragraph{Microperiodo 6}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\rowcolor{lighter-grayer}
+		\textbf{Attività} & \textbf{Re}        & \textbf{Am}        & \textbf{An}        & \textbf{Pt}        & \textbf{Pm}        & \textbf{Ve}        \\ \hline
+		
+		Codifica delle interazioni tra le componenti interne & 2           & -           & -           & -           & 35          & 15          \\ \hline
+		Codifica delle interazioni con gli attori esterni    & 1           & -           & -           & -           & 15          & 6           \\ \hline
+		
+	\end{tabular}
+	\caption*{\textbf{Tabella 24}: Prospetto orario reale\\}
+\end{table}
+
+\begin{table}[H]
+	\rowcolors{2}{lightest-grayest}{white}
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\rowcolor{lighter-grayer}
+		Ruolo & Ore & Costo \\ \hline
+		Responsabile & 3(+0) & 90(+0\euro) \\ \hline
+		Amministratore & - & - \\ \hline
+		Analista & - & - \\ \hline
+		Progettista & - & - \\ \hline
+		Programmatore & 50(+0) & 800(+0\euro) \\ \hline
+		Verificatore & 21(+0) & 336(+0\euro) \\ \hline
+		Totale preventivo & 74 & 1226\euro \\ \hline
+		Totale consuntivo & 74 & 1226\euro \\ \hline
+		Totale scostamento & - & - \\ \hline
+	\end{tabular}
+	\caption*{\textbf{Tabella 25}: Consuntivo\\}
+\end{table}
+
+\paragraph{Microperiodo 7}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\rowcolor{lighter-grayer}
+		\textbf{Attività} & \textbf{Re}        & \textbf{Am}        & \textbf{An}        & \textbf{Pt}        & \textbf{Pm}        & \textbf{Ve}        \\ \hline
+		
+		Aggiornamento PdQ   & 1 & -  & - & - & - & 8 \\ \hline
+		Aggiornamento PdP   & 6 & -  & - & - & - & 1 \\ \hline
+		Codifica delle interazioni con gli attori esterni & 1           & -           & -           & -           & 20          & 8           \\ \hline
+		Manuale utente      & 1 & 12 & - & - & - & 4 \\ \hline
+		Manuale manutentore &   & 12 & - & - & - & 4 \\ \hline
+	
+	\end{tabular}
+	\caption*{\textbf{Tabella 24}: Prospetto orario reale\\}
+\end{table}
+
+\begin{table}[H]
+	\rowcolors{2}{lightest-grayest}{white}
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\rowcolor{lighter-grayer}
+		Ruolo & Ore & Costo \\ \hline
+		Responsabile & 9(+0) & 270(+0\euro) \\ \hline
+		Amministratore & 24(+0) & 528(+0\euro) \\ \hline
+		Analista & - & - \\ \hline
+		Progettista & - & - \\ \hline
+		Programmatore & 20(+0) & 320(+0\euro) \\ \hline
+		Verificatore & 25(+0) & 400(+0\euro) \\ \hline
+		Totale preventivo & 78 & 1518\euro \\ \hline
+		Totale consuntivo & 78 & 1518\euro \\ \hline
+		Totale scostamento & - & - \\ \hline
+	\end{tabular}
+	\caption*{\textbf{Tabella 25}: Consuntivo\\}
+\end{table}
+
+\paragraph{Altro}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\rowcolor{lighter-grayer}
+		\textbf{Attività} & \textbf{Re}        & \textbf{Am}        & \textbf{An}        & \textbf{Pt}        & \textbf{Pm}        & \textbf{Ve}        \\ \hline
+		
+		Presentazione       & 1           & 1           & 1           & 1           & 1           & 1           \\ \hline
+		Attività accessorie & 2           & 5           & 1           & 1           & 2           & 3           \\ \hline
+		
+	\end{tabular}
+	\caption*{\textbf{Tabella 24}: Prospetto orario reale\\}
+\end{table}
+
+\begin{table}[H]
+	\rowcolors{2}{lightest-grayest}{white}
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\rowcolor{lighter-grayer}
+		Ruolo & Ore & Costo \\ \hline
+		Responsabile & 3(+0) & 90(+0\euro) \\ \hline
+		Amministratore & 6(+0) & 132(+0\euro) \\ \hline
+		Analista & 2(+0) & 50(+0\euro) \\ \hline
+		Progettista & 2(+0) & 48(+0\euro) \\ \hline
+		Programmatore & 3(+0) & 48(+0\euro) \\ \hline
+		Verificatore & 4(+0) & 64(+0\euro) \\ \hline
+		Totale preventivo & 20 & 432\euro \\ \hline
+		Totale consuntivo & 20 & 432\euro \\ \hline
+		Totale scostamento & - & - \\ \hline
+	\end{tabular}
+	\caption*{\textbf{Tabella 25}: Consuntivo\\}
+\end{table}
+
+\subsubsection{Preventivo a finire}
