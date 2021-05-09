@@ -5,6 +5,11 @@ Nel nostro sistema la blockchain viene utilizzata per certificare i dati di occu
 
 \subsection{Requisiti e installazione}
 
+\subsubsection{Ottenimento codice}
+I file per la configurazione della blockchain si trovano su GitHub all'indirizzo \url{https://github.com/DPCMGroup/bc19-blockchain}. Essi si possono scaricare compressi in formato zip direttamente dal sito, oppure tramite il comando \newline
+\texttt{git clone https://github.com/DPCMGroup/bc19-blockchain} \newline
+se si ha già installato il software di versionamento Git.
+
 \subsubsection{Tecnologie}
 \paragraph{Geth}
 Il funzionamento di una rete Ethereum si basa sull'esecuzione di uno o più nodi. Ogni nodo è rappresentato da una Ethereum Virtual Machine (EVM), che manteniene una copia del registro delle transazioni e che si può utilizzare per effettuare transazioni con gli altri nodi. Nel nostro caso la rete è costituita da un solo nodo. Esistono varie implementazioni della EVM e noi abbiamo adottato Geth. \newline
@@ -31,6 +36,6 @@ La prima inizializzazione della blockchain può richiedere diversi minuti per es
 Per far ripartire il minaggio eseguire \newline
 \texttt{geth attach url\_della\_blockchain -{}-exec "miner.start()"} \newline
 I dati generati dalla blockchain vengono salvati nella cartella \texttt{geth}. \newline
-Una documentazione più approfondita per l'utilizzo di geth si può trovare alla pagina \url{https://geth.ethereum.org/docs/}.
+Una documentazione più approfondita per l'utilizzo di Geth si può trovare alla pagina \url{https://geth.ethereum.org/docs/}.
 
 
