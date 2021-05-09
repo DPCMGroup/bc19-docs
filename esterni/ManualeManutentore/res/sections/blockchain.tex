@@ -22,13 +22,15 @@ Per modificare la password dell'account eseguire il comando \newline
 \texttt{geth account update indirizzo\_account -{}-datadir .} \newline
 Verrà chiesto di sbloccare l'account con la password "1234". Successivamente si dovrà inserire due volte la nuova password. \newline
 Dopo aver modificato la password scrivere quella nuova nel file \texttt{password.sec}, al posto della precedente.
+
 \paragraph{Esecuzione blockchain}
 Per rendere la blockchain operativa eseguire da riga di comando la seguente stringa:\newline
 \texttt{geth --networkid 4224 --mine --minerthreads 2 --datadir "." --nodiscover --rpc --rpcport "8545" --port "30303" --rpccorsdomain "*" --allow-insecure-unlock --nat "any" --rpcapi "eth, web3, personal, net, miner" --unlock 0 --password ./password.sec --ipcpath "~/.ethereum/geth.ipc"} \newline
-La blockchain diventerà quindi disponibile e sarà accessibile all'indirizzo \url{http://localhost:8545}. Essa continuerà a minare, anche se non vengono effettuate transazioni, fino a quando la shell non verrà chiusa o non si eseguirà il comando per fermare il minaggio. Per effettuare questa azione eseguire il comando \newline
+La prima inizializzazione della blockchain può richiedere diversi minuti per essere completata. Una volta disponibile la blockchain sarà accessibile all'indirizzo \url{http://localhost:8545}. Essa continuerà a minare blocchi, anche se non vengono effettuate transazioni, fino a quando la shell non verrà chiusa o non si eseguirà il comando per fermare il minaggio. Per effettuare questa azione eseguire il comando \newline
 \texttt{geth attach url\_della\_blockchain -{}-exec "miner.stop()"} \newline
 Per far ripartire il minaggio eseguire \newline
 \texttt{geth attach url\_della\_blockchain -{}-exec "miner.start()"} \newline
+I dati generati dalla blockchain vengono salvati nella cartella \texttt{geth}.
 Una documentazione più approfondita si può trovare alla pagina \url{https://geth.ethereum.org/docs/}.
 
 
