@@ -118,7 +118,7 @@ Tramite Gradle il progetto dell'applicazione viene compilato, testato ed eseguit
 \subsection{Estendibilità}
 
 \subsubsection{Creazione di un metodo}
-Tramite l'utilizzo dell'architettura Model View Presenter è facile da implementare dei nuovi metodi separandoli con la business logic e la vista e in seguito creare i rispettivi collegamenti utilizzando il presenter.
+Tramite l'utilizzo dell'architettura Model View Presenter è facile implementare nuovi metodi nella business logic o nella vista e in seguito collegarli tra loro tramite il presenter.
 
 
 \subsection{Architettura}
@@ -320,7 +320,7 @@ La classe GuideActivity offre i seguenti metodi:
 La classe GuidePresenter offre i seguenti metodi:
 \begin{itemize}
 	\item \textbf{registerPresenter(): void}: associa il Presenter alla View; 
-	\item \textbf{showGuide(): void}: Si occupa di richiedere al modello la guida, così poi da ritornarle alla vista. 
+	\item \textbf{showGuide(): void}: Si occupa di richiedere al modello la guida, così poi da ritornarla alla vista. 
 \end{itemize}
 
 La classe GuideModel offre i seguenti metodi:
@@ -446,11 +446,11 @@ Infine viene aggiornata la vista tramite il metodo \textit{updateLoginView}.
 	\label{fig:ShowBookings-Diagramma di sequenza}
 \end{figure}
 Questo diagramma di sequenza rappresenta la serie di azioni svolte dall'applicazione quando viene effettuata la richiesta di visualizzare le prenotazioni da un utente.
-La sequenza inizia con la creazione della vista tramite il metodo \textit{onCreate}. Successivamente viene richiesto al Presenter di visualizzare le prenotazioni tramite il metodo \textit{showBookings} che a sua volta richiederà al Model la lista della prenotazioni attraverso il metodo \textit{getBookingList}.
+La sequenza inizia con la creazione della vista tramite il metodo \textit{onCreate}. Successivamente viene richiesto al Presenter di visualizzare le prenotazioni tramite il metodo \textit{showBookings} che a sua volta richiederà al Model la lista delle prenotazioni attraverso il metodo \textit{getBookingList}.
 Il Model per ottenere la lista delle prenotazioni farà prima una chiamata alla classe User con il metodo \textit{getId} per ottenere l'id dello user.
 Il metodo successivo che deve usare è \textit{getUserBookings} con il quale genera il json con l'id dello user passandolo così al Service.
-Il compito del Service è di ottenere la lista delle prenotazioni grazie al json trasmesso dal Model e quindi farà una chiamata con il metodo \textit{httpClient}.
-In seguito verranno fatte tutte le chiamate di ritorno, ovvero verrà tornato al Model la lista delle prenotazioni che lo ritornerà al presenter che lo ritornerà a sua volta alla vista.
+Il compito del Service è di ottenere la lista delle prenotazioni grazie al json trasmesso dal Model e per farlo effettuerà una richiesta al server tramite il metodo \textit{httpClient}.
+In seguito verranno fatte tutte le chiamate di ritorno, ovvero verrà ritornata la lista delle prenotazioni al Model che la ritornerà al Presenter che la ritornerà a sua volta alla vista.
 In conclusione per visualizzare la lista delle prenotazioni la vista chiamerà il metodo \textit{updateBookingView}. 
 
 \subsubsection{Diagramma per ottenere le caratteristiche di una postazione}
@@ -460,11 +460,12 @@ In conclusione per visualizzare la lista delle prenotazioni la vista chiamerà i
 	\caption{Scan-Diagramma di sequenza}
 	\label{fig:Scan-Diagramma di sequenza}
 \end{figure}
-Questo diagramma di sequenza rappresenta la serie di azioni svolte dall'applicazione quando viene effettuata scansionato un tag NFC da un utente.
+Questo diagramma di sequenza rappresenta la serie di azioni svolte dall'applicazione quando viene scansionato un tag NFC da un utente.
 La sequenza inizia con la creazione della vista tramite il metodo \textit{onCreate}.
 Successivamente viene richiesto al Presenter di visualizzare le caratteristiche delle postazioni in seguito alla scansione del tag NFC tramite il metodo \textit{scanTagNFC} che a sua volta le richiederà al Model attraverso il metodo \textit{getStatus}.
-Successivamente grazie a il metodo \textit{getWorkstation}, che genera un json con l'id della postazione, andrà a richiedere al Service tutte le caratteristiche. Per generare queste informazioni il Service userà il metodo \textit{httpClient}.
-In seguito verranno fatte tutte le chiamate di ritorno, ovvero verrà tornato al Model le caratteristiche della postazione che lo ritornerà al presenter che lo ritornerà a sua volta alla vista.
+Successivamente grazie al metodo \textit{getWorkstation}, che genera un json con l'id della postazione, andrà a richiedere al Service tutte le caratteristiche. Per ottenere queste informazioni il Service userà il metodo \textit{httpClient}.
+In seguito verranno fatte tutte le chiamate di ritorno, ovvero le caratteristiche della postazioni verranno ritornate al Model che le ritornerà
+al Presenter che le ritornerà a sua volta alla vista.
 In conclusione per visualizzare le informazioni di una postazione la vista chiamerà il metodo \textit{updateScan}.
 
 
@@ -478,8 +479,8 @@ In conclusione per visualizzare le informazioni di una postazione la vista chiam
 Questo diagramma di sequenza rappresenta la serie di azioni svolte dall'applicazione quando viene premuto da un utente il bottone per rendere una postazione igienizzata.
 La sequenza inizia con la creazione della vista tramite il metodo \textit{onCreate}.
 Successivamente viene richiesto al Presenter di registrare l'igienizzazione della postazione da parte di un utente tramite il metodo \textit{sanitize} che a sua volta lo richiederà al Model attraverso il metodo \textit{setSanitize}.
-Il Model per ottenere igienizzare una postazione farà prima una chiamata alla classe User con il metodo \textit{getId} per ottenere l'id dello user.
-Successivamente grazie a il metodo \textit{registerSanitization}, che genera un json con l'id della postazione e l'id dell'utente, andrà a richiedere al Service di registrarla. Per registrarla il Service userà il metodo \textit{httpClient}.
-In seguito verranno fatte tutte le chiamate di ritorno, ovvero verrà tornato al Model il risultato dell'operazione che lo ritornerà al presenter che lo ritornerà a sua volta alla vista.
+Il Model, per igienizzare una postazione, farà prima una chiamata alla classe User con il metodo \textit{getId} per ottenere l'id dello user.
+Successivamente grazie al metodo \textit{registerSanitization}, che genera un json con l'id della postazione e l'id dell'utente, andrà a richiedere al Service di registrarla. Per registrarla il Service userà il metodo \textit{httpClient}.
+In seguito verranno fatte tutte le chiamate di ritorno, ovvero il risultato dell’operazione verrà ritornato al Model che lo ritornerà al Presenter che lo ritornerà a sua volta alla vista.
 In conclusione per visualizzare le nuove informazioni sulla postazione la vista chiamerà il metodo \textit{updateSanitization}.
 
