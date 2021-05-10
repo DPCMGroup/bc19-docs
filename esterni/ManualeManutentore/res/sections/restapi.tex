@@ -1,12 +1,12 @@
 \section{REST API}
 \subsection{Introduzione}
-Questa parte del prodotto si riferisce alle API che permettono a BlockCovid di offrire le funzionalità agli utenti e amministratori che usano rispettivamente l'app android e il portale web.
+Questa parte del documento si riferisce alle API che permettono a BlockCovid di offrire le funzionalità agli utenti e amministratori che usano rispettivamente l'app android e il portale web.
 
 \subsubsection{Scopo}
-Le REST API di BlockCovid permettono all'app utente e alla webapp amministratore di fornire utenti e amministratori degli strumenti che necessitano per l'utilizzo.
+Le REST API di BlockCovid permettono all'app utente e alla webapp amministratore di fornire a utenti e amministratori gli strumenti di cui necessitano per l'utilizzo.
 
 \subsection{Requisiti e installazione}
-Per poter utilizzare le REST API è necessario avere un istanza del backend operativa. Nel caso in cui non si abbia il backend attivo, è possibile consultare la sezione §4.
+Per poter utilizzare le REST API è necessario avere un'istanza del backend operativa. Nel caso in cui non si abbia il backend attivo, è possibile consultare la sezione §4.
 
 \subsubsection{Formato dei dati}
 Tutti i dati inviati e ricevuti dalle REST API sono in formato JSON (i.e. application/json).
@@ -27,7 +27,7 @@ Tutti i dati inviati e ricevuti dalle REST API sono in formato JSON (i.e. applic
 		\hline
 		\textbf{POST} & /workstation/insert & Aggiunge una nuova postazione con i dati specificati.\\
 		\hline
-		\textbf{POST} & /workstation/modify & Modifica una nuova postazione con i dati specificati.\\
+		\textbf{POST} & /workstation/modify & Modifica una postazione esistente con i dati specificati.\\
 		\hline
 		\textbf{POST} & /workstation/getInfo & Ritorna le informazioni di una specifica postazione.\\
 		\hline
@@ -39,7 +39,7 @@ Tutti i dati inviati e ricevuti dalle REST API sono in formato JSON (i.e. applic
 		\hline
 		\textbf{POST} & /room/insert & Aggiunge una nuova stanza con i dati specificati.\\
 		\hline
-		\textbf{POST} & /room/modify & Modifica una nuova stanza con i dati specificati.\\
+		\textbf{POST} & /room/modify & Modifica una stanza esistente con i dati specificati.\\
 		\hline
 		\textbf{GET} & /user/list & Ritorna la lista degli utenti.\\
 		\hline
@@ -47,7 +47,7 @@ Tutti i dati inviati e ricevuti dalle REST API sono in formato JSON (i.e. applic
 		\hline
 		\textbf{POST} & /user/insert & Aggiunge un nuovo utente con i dati specificati.\\
 		\hline
-		\textbf{POST} & /user/modify & Modifica un nuovo utente con i dati specificati.\\
+		\textbf{POST} & /user/modify & Modifica un utente esistente con i dati specificati.\\
 		\hline
 		\textbf{POST} & /user/login & Verifica che i dati inseriti siano corretti per effettuare il login.\\
 		\hline
@@ -57,7 +57,7 @@ Tutti i dati inviati e ricevuti dalle REST API sono in formato JSON (i.e. applic
 \end{center}
 \subsubsection{Descrizione}
 \paragraph{/workstation/list}
-Chiamata GET semplice. Ritorna la lista delle postazioni in formato JSON come segue.	\\
+Chiamata GET. Ritorna la lista delle postazioni in formato JSON come segue.	\\
 \begin{center}
 	\begin{lstlisting}
 		[
@@ -88,7 +88,7 @@ Rispettivamente i campi corrispondono a:
 	\item \textbf{archived}: indica se la postazione è archiviata.	
 \end{itemize}
 \paragraph{/workstation/del/\{int: id\}}
-Chiamata GET semplice. Cancella una postazione specificandone l'id.
+Chiamata GET. Cancella una postazione specificandone l'id.
 \paragraph{/workstation/insert}
 Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per l'inserimento della nuova postazione:
 \begin{itemize}
@@ -102,7 +102,7 @@ Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati 
 	\item \textbf{archived}: indica se la postazione è archiviata.	
 \end{itemize}
 \paragraph{/workstation/modify}
-Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per la modifica della postazione:
+Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per la modifica della postazione. La postazione da modificare è determinata dal parametro \textit{id}:
 \begin{itemize}
 	\item \textbf{id}: id postazione;
 	\item \textbf{tag}: id tag postazione;
@@ -192,7 +192,7 @@ Rispettivamente i campi corrispondono a:
 	\item \textbf{archived}: indica se la stanza è archiviata.	
 \end{itemize}
 \paragraph{/room/del/\{int: id\}}
-Chiamata GET semplice. Cancella una stanza specificandone l'id.
+Chiamata GET. Cancella una stanza specificandone l'id.
 \paragraph{/room/insert}
 Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per l'inserimento della nuova stanza:
 \begin{itemize}
@@ -203,7 +203,7 @@ Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati 
 \end{itemize}
 
 \paragraph{/room/modify}
-Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per la modifica della stanza:
+Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per la modifica della stanza. La stanza da modificare è determinata dal parametro \textit{id}:
 \begin{itemize}
 	\item \textbf{id}: id stanza;
 	\item \textbf{roomname}: nome stanza;
@@ -212,7 +212,7 @@ Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati 
 	\item \textbf{archived}: indica se la stanza è archiviata.	
 \end{itemize}
 \paragraph{/user/list}
-Chiamata GET semplice. Ritorna la lista degli utenti in formato JSON come segue.	\\
+Chiamata GET. Ritorna la lista degli utenti in formato JSON come segue.	\\
 \begin{center}
 	\begin{lstlisting}
 	[{
@@ -239,7 +239,7 @@ Rispettivamente i campi corrispondono a:
 	\item \textbf{archived}: indica se l'utente è archiviato.	
 \end{itemize}
 \paragraph{/user/del/\{int: id\}}
-Chiamata GET semplice. Cancella un utente specificandone l'id.
+Chiamata GET. Cancella un utente specificandone l'id.
 \paragraph{/user/insert}
 Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per l'inserimento del nuovo utente:
 \begin{itemize}
@@ -253,7 +253,7 @@ Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati 
 \end{itemize}
 
 \paragraph{/user/modify}
-Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per la modifica dell'utente:
+Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per la modifica dell'utente. L'utente da modificare è determinato dal parametro \textit{id}:
 \begin{itemize}
 	\item \textbf{id}: id utente;
 	\item \textbf{username}: username utente;
@@ -271,10 +271,10 @@ Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati 
 	\item \textbf{username}: username utente;
 	\item \textbf{password}: password utente.	
 \end{itemize}
-Se il login avviene con successo, viene ritornato l'oggetto \textit{User} in formato JSON come specificato in \textbf{§7.3.2.7}
+Se il login avviene con successo, viene ritornato l'oggetto \textit{User} in formato JSON come specificato in \textbf{§7.3.2.11}
 \paragraph{user/bookings/\{int: userId\}}
 Chiamata GET. Viene richiesta la lista delle prenotazioni dell'utente specificato in \textit{userId}.\\
-Verrà ritornato una lista JSON come segue:
+Verrà ritornata una lista JSON come segue:
 \begin{center}
 	\begin{lstlisting}
 	[{
