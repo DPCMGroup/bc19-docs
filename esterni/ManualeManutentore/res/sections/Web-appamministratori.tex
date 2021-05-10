@@ -23,15 +23,15 @@ se si ha già installato il software di versionamento Git.
 
 \subsubsection{Linguaggi}
 \paragraph{Typescript}
-Superset del linguaggio Javascript. Viene utilizzato per definire la logica dell'applicazione. \newline
-Per poterlo utilizzare con Angular, esso va prima installato col comando \newline
+Superset del linguaggio \glock{Javascript}. Viene utilizzato per definire la logica dell'applicazione. \newline
+Per poterlo utilizzare con \glock{Angular}, esso va prima installato col comando \newline
 	\texttt{npm install -g typescript}
 
 \paragraph{HTML}
 Linguaggio di markup utilizzato per definire la struttura delle pagine web. Non necessita di installazione.
 
 \paragraph{CSS}
-Linguaggio per la definizione dello stile grafico delle pagine web. Nella nostra applicazione il codice css introdotto da noi è molto limitato perché, per questo, ci siamo affidati al framework Bootstrap. CSS non necessita di installazione.
+Linguaggio per la definizione dello stile grafico delle pagine web. Nella nostra applicazione il codice \glock{css} introdotto da noi è molto limitato perché, per questo, ci siamo affidati al \glock{framework} Bootstrap. CSS non necessita di installazione.
 
 \subsubsection{Tecnologie}
 \paragraph{Node.js}
@@ -39,7 +39,7 @@ Programma focalizzato sull'esecuzione di codice javascript al di fuori di un bro
 Per l'installazione fare riferimento alla pagina \url{https://nodejs.org/en/download/}. La versione utilizzata per lo sviluppo è la 10.24.0.
 \paragraph{npm}
 Acronimo di Node Package Manager, permette di ottenere le librerie necessarie allo sviluppo.
-Si ottiene insieme a Node.js tramite l'installazione di quest'ultimo. La versione utilizzata per lo sviluppo è la 7.6.2.
+Si ottiene insieme a \glock{Node.js} tramite l'installazione di quest'ultimo. La versione utilizzata per lo sviluppo è la 7.6.2.
 \paragraph{Angular}
 Framework per applicazioni web.
 Per l'installazione fare riferimento alla pagina \url{https://angular.io/guide/setup-local#install-the-angular-cli}. La versione utilizzata per lo sviluppo è la 11.2.7.
@@ -101,7 +101,7 @@ I file contengono, nell'ordine:
 	\item il codice che definisce la logica del servizio.
 \end{itemize}
 
-La struttura del sito è definita principalmente dal modo in cui i componenti vengono annidati l'uno dentro all'altro. Nel codice html questo annidamento è descritto dai tag:
+La struttura del sito è definita principalmente dal modo in cui i componenti vengono annidati l'uno dentro all'altro. Nel codice \glock{html} questo annidamento è descritto dai tag:
 \begin{itemize}
 	\item \texttt{<app-nomecomponente>}
 	\item \texttt{<router-outlet>}
@@ -241,7 +241,7 @@ Classe che contiene i valori necessari per l'autenticazione di un amministratore
 \subparagraph{UserData}
 Classe che contiene tutti e soli i valori necessari per il salvataggio di un utente sul database. È utilizzata per il transito dei dati degli utenti all'interno dell'applicazione. \newline
 \subparagraph{Observable<T>}
-Classe fornita dalla libreria Rxjs. Viene utilizzata per effettuare chiamate asincrone al server. Per una documentazione più approfondita fare riferimento a \url{https://angular.io/guide/rx-library}. \newline
+Classe fornita dalla libreria Rxjs. Viene utilizzata per effettuare chiamate \glock{asincrone} al server. Per una documentazione più approfondita fare riferimento a \url{https://angular.io/guide/rx-library}. \newline
 Questa classe presenta i seguenti metodi:
 \begin{itemize}
 	\item \textbf{subscribe(next: (T)=>void): Subscription} \newline

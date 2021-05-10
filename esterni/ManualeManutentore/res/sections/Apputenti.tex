@@ -1,6 +1,6 @@
 \section{App utenti}
 \subsection{Introduzione}
-Questa parte del documento è orientata agli utenti che utilizzano l'applicazione Android.
+Questa parte del documento è orientata agli utenti che utilizzano l'applicazione \glock{Android}.
 
 \subsubsection{Scopo del prodotto}
 L'applicazione Android è sviluppata per due diverse tipologie di utente ovvero il dipendente e l'addetto alle pulizie.
@@ -13,7 +13,7 @@ In generale offre all'utente le seguenti funzionalità:
 
 Per quanto riguarda il dipendente, l'applicazione offre i seguenti servizi:
 \begin{itemize}
-	\item \textbf{Scansione:} Il dipendente ha la possibilità di scansionare una postazione per poter visualizzare lo stato di essa e altre informazioni come le prenotazioni associate ad essa; \\
+	\item \textbf{Scansione:} Il dipendente ha la possibilità di scansionare una \glock{postazione} per poter visualizzare lo stato di essa e altre informazioni come le prenotazioni associate ad essa; \\
 	\item \textbf{Occupazione:} Il dipendente, dopo aver scansionato una postazione, può occuparla se questa è prenotata da lui o è libera e igienizzata; \\
 	\item \textbf{Igienizzare:} Il dipendente, dopo aver scansionato una postazione, la può igienizzare se questa risulta non igienizzata; \\
 	\item \textbf{Lista prenotazioni:} Il dipendente può visualizzare le prenotazioni effettuate premendo sull'elemento della lista "Visualizza prenotazioni" del menù principale in alto a destra; \\
@@ -30,9 +30,9 @@ Per quanto riguarda il dipendente, l'applicazione offre i seguenti servizi:
 \subsection{Requisiti e installazione}
 
 \subsubsection{Requisiti}
-Per poter sviluppare sul proprio PC l'applicazione sono necessari i software e gli strumenti indicati indicati in questa sezione. I software da installare saranno divisi in base al loro scopo.
+Per poter sviluppare sul proprio PC l'applicazione sono necessari i software e gli strumenti indicati in questa sezione. I software da installare saranno divisi in base al loro scopo.
 
-Per scaricare il codice sorgente dell'applicazione bisogna andare nella pagina di GitHub che lo ospita, che si trova \href{https://github.com/DPCMGroup/bc19-mobile}{qui}, cliccare su Clone or download e successivamente premere su Download ZIP.
+Per scaricare il codice sorgente dell'applicazione bisogna andare nella pagina di \glock{GitHub} che lo ospita, che si trova \href{https://github.com/DPCMGroup/bc19-mobile}{qui}, cliccare su Clone or download e successivamente premere su Download ZIP.
 
 Un'alternativa più efficace a questo procedimento è scaricare il progetto tramite Git. Se non si dispone di Git è possibile scaricarlo seguendo quanto indicato nella sezione Source Code Management. Per scaricare il progetto in questo modo, digitare il seguente comando tramite un terminale o prompt dei comandi nel sistema in uso:\\ \\
 \textit{git clone https://github.com/DPCMGroup/bc19-mobile.git}
@@ -48,19 +48,19 @@ L'applicazione è stata sviluppata utilizzando l'ambiente di sviluppo Android St
 \\
 \textbf{Installazione di Android Studio su Windows}
 \\
-È possibile scaricare Android Studio su Windows visitando il sito ufficiale riportato \href{https://developer.android.com/studio}{qui}, andando alla sezione "Android Studio downloads".
+È possibile scaricare Android Studio su \glock{Windows} visitando il sito ufficiale riportato \href{https://developer.android.com/studio}{qui}, andando alla sezione "Android Studio downloads".
 Per eseguire l'installazione, bisognerà seguire la guida riportata nella sezione Windows cliccando nel seguente link \href{https://developer.android.com/studio/install#windows}{qui}.
 \\
 \\
 \textbf{Installazione di Android Studio su MacOS}
 \\
-La guida per scaricare Android Studio per MacOS è identica a quella per Windows.
+La guida per scaricare Android Studio per \glock{MacOS} è identica a quella per Windows.
 Per eseguire l'installazione, invece, bisognerà seguire la guida riportata nella sezione Mac cliccando nel seguente link \href{https://developer.android.com/studio/install#mac}{qui}.
 \\
 \\
 \textbf{Installazione di Android Studio su Ubuntu (e derivate, e altri derivati di Debian)}
 \\
-La guida per scaricare Android Studio per Linux è identica a quella per Windows e MacOS.
+La guida per scaricare Android Studio per \glock{Linux} è identica a quella per Windows e MacOS.
 Per eseguire l'installazione, invece, bisognerà seguire la guida riportata nella sezione Linux cliccando nel seguente link\href{https://developer.android.com/studio/install#linux}{qui}.
 \\
 \subsubsection{Linguaggi utilizzati}
@@ -68,7 +68,7 @@ Per eseguire l'installazione, invece, bisognerà seguire la guida riportata nell
 \paragraph{Kotlin}
 \textbf{Installazione di Kotlin su Windows}
 \\
-È possibile installare Kotlin su Windows visitando \href{https://plugins.jetbrains.com/plugin/6954-kotlin/versions}{questa pagina}.
+È possibile installare \glock{Kotlin} su Windows visitando \href{https://plugins.jetbrains.com/plugin/6954-kotlin/versions}{questa pagina}.
 Il link porta alla pagina di jetBrains e ti permette di installare l'ultima versione di Kotlin disponibile anche con il plugin su Android Studio.
 \\
 \\
@@ -107,12 +107,12 @@ implementation 'com.squareup.okhttp3:okhttp:3.8.1'
 
 
 \subsubsection{Source code management}
-Per poter effettuare il versionamento del codice sorgente è richiesto di utilizzare Git. Per poterlo installare è necessario recarsi a \href{https://git-scm.com/downloads}{questa pagina}.
-Non è strettamente necessario, ma è consigliato per integrare le proprie modifiche nel repository.
+Per poter effettuare il \glock{versionamento} del codice sorgente è richiesto di utilizzare Git. Per poterlo installare è necessario recarsi a \href{https://git-scm.com/downloads}{questa pagina}.
+Non è strettamente necessario, ma è consigliato per integrare le proprie modifiche nel \glock{repository}.
 
 \subsubsection{Build automation}
 La build automation (ovvero la gestione del processo di build) è affidata a Gradle, integrato e utilizzato in Android Studio. I file di build sono due: uno per tutto il progetto ed uno per il solo modulo app.
-Tramite Gradle il progetto dell'applicazione viene compilato, testato ed eseguito attraverso l'IDE Android Studio.
+Tramite Gradle il progetto dell'applicazione viene compilato, \glock{testato} ed eseguito attraverso l'IDE Android Studio.
 
 
 \subsection{Estendibilità}
@@ -260,7 +260,7 @@ La classe Service offre i seguenti metodi:
 	\label{fig:Main-Diagramma delle classi}
 \end{figure}
 La classe MainActivity rappresenta la pagina principale dell'applicazione. Al suo interno è possibile eseguire varie operazioni premendo sul menù a tendina in alto a sinistra.
-La funzione principale della classe MainActivity è la scansione dei tagNFC che ti permettono di visualizzare i seguenti campi:
+La funzione principale della classe MainActivity è la scansione dei \glock{tag NFC} che ti permettono di visualizzare i seguenti campi:
 \begin{itemize}
 	\item workId; 
 	\item workName; 
