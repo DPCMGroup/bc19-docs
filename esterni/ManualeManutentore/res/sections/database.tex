@@ -40,3 +40,94 @@ Per eseguire il database è necessario averlo installato. Se non lo si ha, si pu
 Ad installazione completata, il database verrà avviato in automatico ad ogni accensione.
 \paragraph{Docker}
 Per eseguire il database tramite docker è sufficiente seguire la seguente \href{https://hub.docker.com/\_/mariadb}{guida}.
+
+\subsection{Schema ER}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=16cm]{res/images/schemaER.png}
+	\caption{Schema ER}
+	\label{fig:schema ER}
+\end{figure}
+
+\subsubsection{Descrizione}
+\paragraph{Attendances}
+Entità che raccoglie i dati relativi alle occupazioni di una postazione. È descritta dai seguenti campi:
+\begin{itemize}
+	\item id: identificativo dell'occupazione;
+	\item idBooking: identificativo della prenotazione a cui l'occupazione è associata;
+	\item startTime: data e orario di inizio dell'occupazione;
+	\item endTime: data e orario di fine dell'occupazione.
+\end{itemize}
+
+\paragraph{Bookings}
+Entità che raccoglie i dati relativi alle prenotazioni di una postazione. È descritta dai seguenti campi:
+\begin{itemize}
+	\item id: identificativo della prenotazione;
+	\item idWorkStation: identificativo della postazione prenotata;
+	\item idUser: identificativo dell'utente che ha effettuato la prenotazione;
+	\item startTime: data e orario di inizio della prenotazione;
+	\item endTime: data e orario di fine della prenotazione. 
+\end{itemize}
+
+\paragraph{Users}
+Entità che raccoglie i dati relativi agli utenti. È descritta dai seguenti campi:
+\begin{itemize}
+	\item id: identificativo dell'utente;
+	\item username: nome dell'utente;
+	\item password: hash della password;
+	\item name: nome proprio dell'utente;
+	\item surname: cognome dell'utente;
+	\item mail: indirizzo e-mail dell'utente;
+	\item type: tipo di utente: 0 amministratore, 1 dipendente, 2 addetto alle pulizie;
+	\item archived: segnala se l'utente sia stato archiviato: 0 non archiviato, 1 archiviato.
+\end{itemize}
+
+\paragraph{Sanitizations}
+Entità che raccoglie i dati relativi alle igienizzazioni. È descritta dai seguenti campi:
+\begin{itemize}
+	\item id: identificativo dell'igienizzazione;
+	\item idWorkStation: identificativo della postazione igienizzata;
+	\item idUser: identificativo dell'utente che ha effettuato l'igienizzazione;
+	\item sanitizationTime: data e orario in cui è stata effettuata l'igienizzazione.
+\end{itemize}
+
+\paragraph{Reports}
+Entità che raccoglie le certificazioni generate dal sistema. È descritta dai seguenti campi:
+\begin{itemize}
+	\item id: identificativo della certificazione;
+	\item reportTime: data e orario in cui è avvenuta la certificazione;
+	\item hash: hash della certificazione.
+\end{itemize}
+
+\paragraph{Failures}
+Entità che raccoglie i guasti relativi alle postazioni. È descritta dai seguenti campi:
+\begin{itemize}
+	\item id: identificativo del guasto;
+	\item idWorkStation: identificativo della postazione soggetta a guasto;
+	\item startTime: data e orario di inizio guasto;
+	\item endTime: data e orario di fine guasto.
+\end{itemize}
+
+\paragraph{WorkStations}
+Entità che raccoglie i dati relativi alle postazioni. È descritta dai seguenti campi:
+\begin{itemize}
+	\item id: identificativo della postazione;
+	\item tag: codice esadecimale descrivente il tag NFC associato alla postazione;
+	\item workStationName: nome della postazione;
+	\item xWorkStation: posizione x (ascissa) in cui si trova la postazione all'interno della stanza;
+	\item xWorkStation: posizione y (ordinata) in cui si trova la postazione all'interno della stanza;
+	\item idRoom: identificativo della stanza in cui si trova la postazione;
+	\item state: descrive lo stato in cui si trova la postazione: 0 libera, 1 occupata, 2 prenotata, 3 guasta;
+	\item sanitized: descrive se la postazione è igienizzata: 0 non igienizzata, 1 igienizzata; 
+	\item archived: segnala se la postazione sia stata archiviata: 0 non archiviata, 1 archiviata.
+\end{itemize}
+
+\paragraph{Rooms}
+Entità che raccoglie i dati relativi alle stanze. È descritta dai seguenti campi:
+\begin{itemize}
+	\item id: identificativo della stanza;
+	\item roomName: nome della stanza;
+	\item xRoom: dimensione x (lunghezza) della stanza. Si assume che le stanze siano rettangolari;
+	\item yRoom: dimensione y (larghezza) della stanza;
+	\item archived: segnala se la stanza sia stata archiviata: 0 non archiviata, 1 archiviata.
+\end{itemize}
