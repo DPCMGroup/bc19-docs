@@ -20,7 +20,7 @@ Per quanto riguarda il dipendente, l'applicazione offre i seguenti servizi:
 	\item \textbf{Disdire prenotazione:} Il dipendente può disdire una prenotazione dopo che è entrato nella pagina in cui visualizza tutte le prenotazioni effettuate; \\
 	\item \textbf{Guida:} Il dipendente può visualizzare la guida premendo sull'elemento della lista "Guida" del menù principale in alto a destra; \\
 	\item \textbf{Prenota postazione:} Il dipendente può prenotare una postazione premendo sull'elemento della lista "Prenota postazione" del menù principale in alto a destra.
-	Dopo aver premuto dovrà inserire la data, l'ora di inizio, l'ora di fine e la stanza obbligatoriamente e in modo facoltativo anche il nome del collega.
+	Dopo aver premuto dovrà inserire la data, l'ora di inizio, l'ora di fine e la stanza obbligatoriamente e in modo facoltativo anche il nome di un collega.
 	Una volta premuto sul bottone "Cerca", se è stato inserito il nome di un collega, visualizzerà tutte le sue prenotazioni effettuate nella stanza, nel range orario e nella data inseriti e scorrendo sotto visualizzerà tutte le postazioni di quella stanza con il loro stato e potrà decidere quale prenotare se disponibile. \\	
 \end{itemize}
 
@@ -61,7 +61,7 @@ Per eseguire l'installazione, invece, bisognerà seguire la guida riportata nell
 \textbf{Installazione di Android Studio su Ubuntu (e derivate, e altri derivati di Debian)}
 \\
 La guida per scaricare Android Studio per \glock{Linux} è identica a quella per Windows e MacOS.
-Per eseguire l'installazione, invece, bisognerà seguire la guida riportata nella sezione Linux cliccando nel seguente link\href{https://developer.android.com/studio/install#linux}{qui}.
+Per eseguire l'installazione, invece, bisognerà seguire la guida riportata nella sezione Linux cliccando nel seguente link \href{https://developer.android.com/studio/install#linux}{qui}.
 \\
 \subsubsection{Linguaggi utilizzati}
 
@@ -118,7 +118,7 @@ Tramite Gradle il progetto dell'applicazione viene compilato, \glock{testato} ed
 \subsection{Estendibilità}
 
 \subsubsection{Creazione di un metodo}
-Tramite l'utilizzo dell'architettura Model View Presenter è facile implementare nuovi metodi nella business logic o nella vista e in seguito collegarli tra loro tramite il presenter.
+Tramite l'utilizzo dell'architettura Model View Presenter è facile implementare nuovi metodi nella business logic o nella vista e in seguito collegarli tra loro tramite il Presenter.
 
 
 \subsection{Architettura}
@@ -205,8 +205,8 @@ Nel seguente package vengono raggruppate tutte le classi ed interfacce dedicate 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=5cm]{res/images/apputenti-packageTools.png}
-	\caption{package-Tool}
-	\label{fig:package-Tool}
+	\caption{package-Tools}
+	\label{fig:package-Tools}
 \end{figure}
 
 \subsection{Diagramma delle classi}
@@ -468,7 +468,7 @@ Questo diagramma di sequenza rappresenta la serie di azioni svolte dall'applicaz
 La sequenza inizia con la creazione della vista tramite il metodo \textit{onCreate}.
 Successivamente viene richiesto al Presenter di visualizzare le caratteristiche delle postazioni in seguito alla scansione del tag NFC tramite il metodo \textit{scanTagNFC} che a sua volta le richiederà al Model attraverso il metodo \textit{getStatus}.
 Successivamente grazie al metodo \textit{getWorkstation}, che genera un json con l'id della postazione, andrà a richiedere al Service tutte le caratteristiche. Per ottenere queste informazioni il Service userà il metodo \textit{httpClient}.
-In seguito verranno fatte tutte le chiamate di ritorno, ovvero le caratteristiche della postazioni verranno ritornate al Model che le ritornerà
+In seguito verranno fatte tutte le chiamate di ritorno, ovvero le caratteristiche della postazione verranno ritornate al Model che le ritornerà
 al Presenter che le ritornerà a sua volta alla vista.
 In conclusione per visualizzare le informazioni di una postazione la vista chiamerà il metodo \textit{updateScan}.
 
