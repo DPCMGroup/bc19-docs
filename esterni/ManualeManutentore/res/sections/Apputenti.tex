@@ -280,7 +280,7 @@ La classe MainActivity offre i seguenti metodi:
 
 La classe MainPresenter offre i seguenti metodi:
 \begin{itemize}
-	\item \textbf{registerModel(): void}: associa il Model al Presenter.; 
+	\item \textbf{registerModel(): void}: associa il Model al Presenter; 
 	\item \textbf{scanTagNFC(): void}: Si occupa di richiedere al modello le informazioni riguardanti la postazione, così poi da ritornarle alla vista; 
 	\item \textbf{sanitize(): void}: Si occupa di richiedere al modello di igienizzare una postazione, così poi da ritornarlo alla vista. 
 \end{itemize}
@@ -299,12 +299,82 @@ La classe Service offre i seguenti metodi:
 \end{itemize}
 
 \subsubsection{Guide}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=16cm]{res/images/GuideActivity.png}
+	\caption{GuideActivity-Diagramma delle classi}
+	\label{fig:GuideActivity-Diagramma delle classi}
+\end{figure}
 La classe GuideActivity rappresenta la pagina dedicata alla visualizzazione della guida.
 L'utente per visualizzare la guida deve premere sul menu a tendina del menù principale(MainActivity) e successivamente deve premere sulla voce "Guida" e verrà reindirizzato alla pagina dedicata.
 
+In questa pagina verrà mostrata la guida dedicata all'utente. In base al suo identificativo con cui ha effettuato il login sarà possibile distinguerlo tra le due tipologie, dipendente e addetto alle pulizie, così da mostrare a ciascuno la guida corrispondente.
+
+La classe GuideActivity offre i seguenti metodi:
+\begin{itemize}
+	\item \textbf{onCreate(savedInstanceState:Bundle): void}: Si occupa della creazione della parte grafica visualizzata dall'utente; 
+	\item \textbf{getLayouId(): void}: associa il rispettivo file in formato xml alla View;
+	\item \textbf{updateGuideView(in filePath:String): void}: Si occupa di far visualizzare il filePath sotto forma di stringa del percorso in cui viene salvato il documento della guida. 
+\end{itemize}
+
+La classe GuidePresenter offre i seguenti metodi:
+\begin{itemize}
+	\item \textbf{registerPresenter(): void}: associa il Presenter alla View; 
+	\item \textbf{showGuide(): void}: Si occupa di richiedere al modello la guida, così poi da ritornarle alla vista. 
+\end{itemize}
+
+La classe GuideModel offre i seguenti metodi:
+\begin{itemize}
+	\item \textbf{registerModel(): void}: associa il Model al Presenter; 
+	\item \textbf{getGuide(): String}: Si occupa di ottenere il filePath della guida di una determinata tipologia di utente, in base all'identificativo di quest'ultimo. 
+\end{itemize}
+
 \subsubsection{BookingForm}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=16cm]{res/images/BookingForm.png}
+	\caption{BookingForm-Diagramma delle classi}
+	\label{fig:BookingForm-Diagramma delle classi}
+\end{figure}
 La classe BookingFormActivity rappresenta la pagina dedicata alla visualizzazione della ricerca di una postazione.
 L'utente per visualizzare questa pagina deve premere sul menu a tendina del menù principale(MainActivity) e successivamente deve premere sulla voce "Prenota Postazione" e verrà reindirizzato alla pagina dedicata.
+
+In questa pagina i campi da compilare sono: 
+\begin{itemize}
+	\item date; 
+	\item startTime; 
+	\item endTime; 
+	\item room; 
+	\item colleague. 
+\end{itemize}
+
+La classe BookingFormActivity offre i seguenti metodi:
+\begin{itemize}
+	\item \textbf{onCreate(savedInstanceState:Bundle): void}: Si occupa della creazione della parte grafica visualizzata dall'utente; 
+	\item \textbf{getLayoutId(): void}: associa il rispettivo file in formato xml alla View;
+	\item \textbf{updateBookingFormView(): void}: Si occupa di far visualizzare i campi da compilare tramite EditText nella pagina. Inoltre, per il campo data è possibile visualizzare una vista a calendario e per il campo ora una vista a orologio.
+\end{itemize}
+
+La classe BookingFormPresenter offre i seguenti metodi:
+\begin{itemize}
+	\item \textbf{registerPresenter(): void}: associa il Presenter alla View; 
+	\item \textbf{showAvailability(in date:String, in startTime:String, in endTime:String, in room:String, in colleague:String): void}: Si occupa di richiedere al modello la disponibilità delle postazioni con i parametri dei campi inseriti, così poi da ritornarla alla vista. 
+\end{itemize}
+
+La classe BookingFormModel offre i seguenti metodi:
+\begin{itemize}
+	\item \textbf{registerModel(): void}: associa il Model al Presenter; 
+	\item \textbf{getAvailability(in date:String, in startTime:String, in endTime:String, in room:String, in colleague:String): void}: Si occupa di richiedere al service la disponibilità delle postazioni con i parametri selezionati dall'utente. 
+\end{itemize}
+
+La classe Service offre i seguenti metodi:
+\begin{itemize}
+	\item \textbf{getUserBookings(idUser:int): JSONObject}: Si occupa di trasformare in un JSONObject l'id dello user;
+	\item \textbf{httpClient(json:JSONObject): JSONObject}: Viene fatta la richiesta al backend per ottenere le postazioni disponibili;
+	\item \textbf{login(in username:String, in password:String): JSONObject}: Si occupa di trasformare in un JSONObject lo username e password dello user;
+	\item \textbf{getAvailability(in date:String, in startTime:String, in endTime:String, in room:String, in colleague:String): JSONObject}: Viene fatta la richiesta al backend per verificare la disponibilità delle postazioni filtrate in base ai parametri.
+\end{itemize}
+
 
 \subsubsection{Bookings}
 \begin{figure}[H]
@@ -362,6 +432,11 @@ Vengono presentati di seguito i diagrammi UML di sequenza relativi all'applicazi
 	\caption{Login-Diagramma di sequenza}
 	\label{fig:Login-Diagramma di sequenza}
 \end{figure}
+Questo diagramma di sequenza rappresenta la serie di azioni svolte dall'applicazione per autenticare un utente.
+La sequenza inizia con la creazione della vista tramite il metodo \textit{onCreate}. Successivamente viene richiesto al Presenter di effettuare l'autenticazione tramite il metodo \textit{makeLogin} che a sua volta richiederà al Model di effettuare l'autenticazione attraverso il metodo \textit{sendLogin}.
+Il Model chiama \textit{login} del Service tramite il quale genera il json con username e password. Ora il Service chiede di verificare al backend se esiste un utente associato a quelle credenziali tramite il metodo \textit{httpClient}.
+Qualora l'utente esistesse viene creato un oggetto di classe User con l'id restituito da \textit{httpClient} e avvengono tutte le chiamate di ritorno.
+Infine viene aggiornata la vista tramite il metodo \textit{updateLoginView}. 
 
 \subsubsection{Diagramma per la visualizzazione delle prenotazioni di un utente}
 \begin{figure}[H]

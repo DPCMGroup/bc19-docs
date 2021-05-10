@@ -1,0 +1,41 @@
+\section{Blockchain}
+
+\subsection{Introduzione}
+Nel nostro sistema la blockchain viene utilizzata per certificare i dati di occupazione e igienizzazione delle postazioni. La tecnologia che abbiamo utilizzato per la nostra blockchain è Ethereum.
+
+\subsection{Requisiti e installazione}
+
+\subsubsection{Ottenimento codice}
+I file per la configurazione della blockchain si trovano su GitHub all'indirizzo \url{https://github.com/DPCMGroup/bc19-blockchain}. Essi si possono scaricare compressi in formato zip direttamente dal sito, oppure tramite il comando \newline
+\texttt{git clone https://github.com/DPCMGroup/bc19-blockchain} \newline
+se si ha già installato il software di versionamento Git.
+
+\subsubsection{Tecnologie}
+\paragraph{Geth}
+Il funzionamento di una rete Ethereum si basa sull'esecuzione di uno o più nodi. Ogni nodo è rappresentato da una Ethereum Virtual Machine (EVM), che manteniene una copia del registro delle transazioni e che si può utilizzare per effettuare transazioni con gli altri nodi. Nel nostro caso la rete è costituita da un solo nodo. Esistono varie implementazioni della EVM e noi abbiamo adottato Geth. \newline
+Per l'installazione fare riferimento alla pagina \url{https://geth.ethereum.org/docs/install-and-build/installing-geth}. \newline
+La versione da noi utilizzata è la 1.9.25.
+
+\subsubsection{Esecuzione}
+\paragraph{Modifica credenziali}
+I file di configurazione di Geth forniti presentano un account di gestione della blockchain predefinito. Si consiglia fortemente di modificarne la password prima di usarlo.
+Per ottenere l'indirizzo dell'account da modificare aprire una shell nella cartella della blockchain ed eseguirvi il comando \newline
+\texttt{geth account list -{}-datadir .} \newline
+All'inizio della riga sarà mostrata la stringa \newline
+\texttt{Account \#0 \{...\}} \newline con al posto dei puntini un codice di 40 caratteri. Quel codice è l'indirizzo dell'account. \newline
+Per modificare la password dell'account eseguire il comando \newline
+\texttt{geth account update indirizzo\_account -{}-datadir .} \newline
+Verrà chiesto di sbloccare l'account con la password "1234". Successivamente si dovrà inserire due volte la nuova password. \newline
+Dopo aver modificato la password scrivere quella nuova nel file \texttt{password.sec}, al posto della precedente.
+
+\paragraph{Esecuzione blockchain}
+Per rendere la blockchain operativa eseguire da riga di comando la seguente stringa:\newline
+\texttt{geth --networkid 4224 --mine --minerthreads 2 --datadir "." --nodiscover --rpc --rpcport "8545" --port "30303" --rpccorsdomain "*" --allow-insecure-unlock --nat "any" --rpcapi "eth, web3, personal, net, miner" --unlock 0 --password ./password.sec --ipcpath "~/.ethereum/geth.ipc"} \newline
+La prima inizializzazione della blockchain può richiedere diversi minuti per essere completata. L'inizializzazione è completata quando nella shell compare l'avviso che il primo blocco è stato minato. A questo punto, la blockchain è accessibile all'indirizzo \url{http://localhost:8545} e può essere utilizzata dal server descritto nella sezione §4. Essa continuerà a minare blocchi, anche se non vengono effettuate transazioni, fino a quando la shell non verrà chiusa o non si eseguirà il comando per fermare il minaggio. Per effettuare questa azione eseguire la stringa \newline
+\texttt{geth attach url\_della\_blockchain -{}-exec "miner.stop()"} \newline
+Per far ripartire il minaggio eseguire \newline
+\texttt{geth attach url\_della\_blockchain -{}-exec "miner.start()"} \newline
+I dati generati dalla blockchain vengono salvati nella cartella \texttt{geth}. \newline
+Una documentazione più approfondita per l'utilizzo di Geth si può trovare alla pagina \url{https://geth.ethereum.org/docs/}.
+
+
