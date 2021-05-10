@@ -11,7 +11,7 @@ In generale offre all'utente le seguenti funzionalità:
 
 Per quanto riguarda il dipendente, l'applicazione offre i seguenti servizi:
 \begin{itemize}
-	\item \textbf{Scansione:} Il dipendente ha la possibilità di scansionare una postazione per poter visualizzare lo stato di essa e altre informazioni come le prenotazioni associate ad essa; \\
+	\item \textbf{Scansione:} Il dipendente ha la possibilità di scansionare una postazione per poter visualizzare lo stato di essa e altre informazioni come le prenotazioni associate a essa; \\
 	\item \textbf{Occupazione:} Il dipendente dopo aver scansionato una postazione può occuparla se questa è prenotata da lui o è libera e igienizzata; \\
 	\item \textbf{Igienizzare:} Il dipendente dopo aver scansionato una postazione la può igienizzare se questa risulta non igienizzata; \\
 	\item \textbf{Lista prenotazioni:} Il dipendente può visualizzare le prenotazioni effettuate premendo sull'elemento della lista "Visualizza prenotazioni" del menù principale in alto a destra; \\
@@ -26,7 +26,7 @@ Per quanto riguarda il dipendente, l'applicazione offre i seguenti servizi:
 	Per il corretto funzionamento l'app mobile richiede di essere installata su un dispositivo con sistema operativo \glock{Android} con versione uguale o superiore alla 6.0 Marshmallow.
 	
 	\subsection{Utilizzo}
-	L'applicazione mobile viene utilizzata dagli utenti che vogliono accedere ad una postazione di una stanza dell'organizzazione. Essi hanno la possibilità di effettuare una prenotazione e di conoscere lo stato di una postazione, tramite la scansione del tag NFC associato. Inoltre per ogni occupazione viene registrato l'orario di inizio e di fine, e monitorata la presenza in tempo reale da parte dell'amministratore. Inoltre, ogni utente ha la possibilità di effettuare un'igienizzazione di una postazione precedentemente utilizzata. 
+	L'applicazione mobile viene utilizzata dagli utenti che vogliono accedere a una postazione di una stanza dell'organizzazione. Essi hanno la possibilità di effettuare una prenotazione e di conoscere lo stato di una postazione, tramite la scansione del tag NFC associato. Inoltre per ogni occupazione viene registrato l'orario di inizio e di fine, e monitorata la presenza in tempo reale da parte dell'amministratore. Inoltre, ogni utente ha la possibilità di effettuare un'igienizzazione di una postazione precedentemente utilizzata. 
 	\\All'utente dell'applicazione vengono offerte tutte le funzionalità indicate in questa sezione.
 	\subsubsection{Login}
 	\begin{figure}[H]
@@ -43,7 +43,7 @@ Per quanto riguarda il dipendente, l'applicazione offre i seguenti servizi:
 		\includegraphics[width=5cm]{res/images/menuATendina.png}
 		\caption{Logout utente}
 	\end{figure}
-	L'utente può eseguire il logout aprendo il menù a tendina in alto a destra e poi cliccando su logout. Avvenuta questa operazione l'utente si troverà nella pagina del login.
+	L'utente può eseguire il logout aprendo il menù a tendina in alto a destra e poi cliccando su logout. Avvenuta questa operazione l'utente sarà deautenticato dal sistema e si troverà nella pagina del login.
 	
 	\subsubsection{Scansione tag NFC}
 	\begin{figure}[H]
@@ -51,7 +51,7 @@ Per quanto riguarda il dipendente, l'applicazione offre i seguenti servizi:
 		\includegraphics[width=5cm]{res/images/avvicinaSmartphone.png}
 		\caption{Scansione tagNFC}
 	\end{figure}
-	L'utente si trova nella pagina principale dell'applicazione e gli viene chiesto di effettuare una scansione del tag NFC tramite lo smartphone. 
+	L'utente si trova nella pagina principale dell'applicazione e gli viene chiesto di effettuare una scansione del tag NFC tramite lo smartphone per ottenere tutte le informazioni sulla postazione.
 	\subsubsection{Visualizzazione stato postazione}
 	\begin{figure}[H]
 		\centering
@@ -67,11 +67,11 @@ Per quanto riguarda il dipendente, l'applicazione offre i seguenti servizi:
 	In base allo stato in cui si trova la postazione, l'utente visualizzerà un messaggio differente:
 	\begin{itemize}
 		\item se libera e igienizzata, si invita l'utente a lasciare il telefono sul tag NFC per effettuare una prenotazione automatica della postazione;
-		\item se libera e non igienizzata, si invita l'utente ad effettuare la pulizia autonoma della postazione tramite il kit aziendale e quindi di cliccare il bottone "igienizza", che modificherà lo stato in igienizzata;
+		\item se libera e non igienizzata, si invita l'utente a effettuare la pulizia autonoma della postazione tramite il kit aziendale e quindi di cliccare il bottone "igienizza", che modificherà lo stato in igienizzata;
 		\item se prenotata e igienizzata, si invita l'utente ad abbandonare la postazione dato che al momento non è disponibile;
-		\item se prenotata e non igienizzata, si invita l'utente ad effettuare la pulizia autonoma della postazione tramite il kit aziendale e quindi di cliccare il bottone "igienizza", che modificherà lo stato in prenotata e igienizzata;
+		\item se prenotata e non igienizzata, si invita l'utente a effettuare la pulizia autonoma della postazione tramite il kit aziendale e quindi di cliccare il bottone "igienizza", che modificherà lo stato in prenotata e igienizzata;
 		\item se guasta e igienizzata, si invita l'utente ad abbandonare la postazione dato che al momento non è disponibile;
-		\item se guasta e non igienizzata, si invita l'utente ad effettuare la pulizia autonoma della postazione tramite il kit aziendale e quindi di cliccare il bottone "igienizza", che modificherà lo stato in guasta e igienizzata.
+		\item se guasta e non igienizzata, si invita l'utente a effettuare la pulizia autonoma della postazione tramite il kit aziendale e quindi di cliccare il bottone "igienizza", che modificherà lo stato in guasta e igienizzata.
 	\end{itemize}
 	
 	\subsubsection{Occupazione postazione}
@@ -80,7 +80,7 @@ Per quanto riguarda il dipendente, l'applicazione offre i seguenti servizi:
 		\includegraphics[width=5cm]{res/images/DescrizionePostazione1.png}
 		\caption{Inizio occupazione postazione}
 	\end{figure}
-	L'utente dopo aver scansionato con il proprio smartphone il tag NFC per un tempo maggiore o uguale ad un minuto, prenota in modo automatico la postazione per
+	L'utente dopo aver scansionato con il proprio smartphone il tag NFC per un tempo maggiore o uguale a un minuto, prenota in modo automatico la postazione per
 	l’intera giornata lavorativa. Lo stato della postazione deve essere libera e igienizzata e non prenotata da un altro utente durante il resto della giornata.
 	\subsubsection{Igienizzazione postazione}
 	\begin{figure}[H]
@@ -95,8 +95,8 @@ Per quanto riguarda il dipendente, l'applicazione offre i seguenti servizi:
 		\includegraphics[width=5cm]{res/images/VisualizzaPrenotazioni.png}
 		\caption{Visualizzazione lista prenotazioni}
 	\end{figure}
-	L’utente può accedere alla sezione per la visualizzazione della lista delle prenotazioni da lui effettuate, cliccando nel menù a tendina in alto a destra "Visualizza prenotazioni".
-	Ogni postazione mostra le seguenti informazioni:
+	L’utente può accedere alla sezione per la visualizzazione della lista delle prenotazioni da lui effettuate cliccando nel menù a tendina in alto a destra "Visualizza prenotazioni".
+	Ogni prenotazione mostra le seguenti informazioni:
 	\begin{itemize}
 		\item stanza della prenotazione;
 		\item posizione indicata tramite X e Y;
