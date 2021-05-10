@@ -14,8 +14,8 @@ In generale offre all'utente le seguenti funzionalità:
 Per quanto riguarda il dipendente, l'applicazione offre i seguenti servizi:
 \begin{itemize}
 	\item \textbf{Scansione:} Il dipendente ha la possibilità di scansionare una postazione per poter visualizzare lo stato di essa e altre informazioni come le prenotazioni associate ad essa; \\
-	\item \textbf{Occupazione:} Il dipendente dopo aver scansionato una postazione può occuparla se questa è prenotata da lui o è libera e igienizzata; \\
-	\item \textbf{Igienizzare:} Il dipendente dopo aver scansionato una postazione la può igienizzare se questa risulta non igienizzata; \\
+	\item \textbf{Occupazione:} Il dipendente, dopo aver scansionato una postazione, può occuparla se questa è prenotata da lui o è libera e igienizzata; \\
+	\item \textbf{Igienizzare:} Il dipendente, dopo aver scansionato una postazione, la può igienizzare se questa risulta non igienizzata; \\
 	\item \textbf{Lista prenotazioni:} Il dipendente può visualizzare le prenotazioni effettuate premendo sull'elemento della lista "Visualizza prenotazioni" del menù principale in alto a destra; \\
 	\item \textbf{Disdire prenotazione:} Il dipendente può disdire una prenotazione dopo che è entrato nella pagina in cui visualizza tutte le prenotazioni effettuate; \\
 	\item \textbf{Guida:} Il dipendente può visualizzare la guida premendo sull'elemento della lista "Guida" del menù principale in alto a destra; \\
@@ -30,12 +30,12 @@ Per quanto riguarda il dipendente, l'applicazione offre i seguenti servizi:
 \subsection{Requisiti e installazione}
 
 \subsubsection{Requisiti}
-Per poter sviluppare sul proprio PC l'applicazione sono necessari i software e gli strumenti indicati in questa pagina. I software da installare saranno divisi in base al loro scopo.
+Per poter sviluppare sul proprio PC l'applicazione sono necessari i software e gli strumenti indicati indicati in questa sezione. I software da installare saranno divisi in base al loro scopo.
 
 Per scaricare il codice sorgente dell'applicazione bisogna andare nella pagina di GitHub che lo ospita, che si trova \href{https://github.com/DPCMGroup/bc19-mobile}{qui}, cliccare su Clone or download e successivamente premere su Download ZIP.
 
 Un'alternativa più efficace a questo procedimento è scaricare il progetto tramite Git. Se non si dispone di Git è possibile scaricarlo seguendo quanto indicato nella sezione Source Code Management. Per scaricare il progetto in questo modo, digitare il seguente comando tramite un terminale o prompt dei comandi nel sistema in uso:\\ \\
-\textit{https://github.com/DPCMGroup/bc19-mobile.git}
+\textit{git clone https://github.com/DPCMGroup/bc19-mobile.git}
 
 \subsubsection{Prerequisiti hardware e software}
 Le tecnologie utilizzate per sviluppare l'applicazione Android richiedono parecchie risorse nel loro uso contemporaneo. Si consiglia quindi di avere un computer con processore almeno quad-core e una memoria RAM di almeno 8 GB.
@@ -49,19 +49,19 @@ L'applicazione è stata sviluppata utilizzando l'ambiente di sviluppo Android St
 \textbf{Installazione di Android Studio su Windows}
 \\
 È possibile scaricare Android Studio su Windows visitando il sito ufficiale riportato \href{https://developer.android.com/studio}{qui}, andando alla sezione "Android Studio downloads".
-Per eseguire l'installazione, bisognerà seguire la guida riportata nella sezione Windows cliccando nel seguente link \href{https://developer.android.com/studio/install}{qui}.
+Per eseguire l'installazione, bisognerà seguire la guida riportata nella sezione Windows cliccando nel seguente link \href{https://developer.android.com/studio/install#windows}{qui}.
 \\
 \\
 \textbf{Installazione di Android Studio su MacOS}
 \\
 La guida per scaricare Android Studio per MacOS è identica a quella per Windows.
-Per eseguire l'installazione, invece, bisognerà seguire la guida riportata nella sezione Mac cliccando nel seguente link \href{https://developer.android.com/studio/install}{qui}.
+Per eseguire l'installazione, invece, bisognerà seguire la guida riportata nella sezione Mac cliccando nel seguente link \href{https://developer.android.com/studio/install#mac}{qui}.
 \\
 \\
 \textbf{Installazione di Android Studio su Ubuntu (e derivate, e altri derivati di Debian)}
 \\
 La guida per scaricare Android Studio per Linux è identica a quella per Windows e MacOS.
-Per eseguire l'installazione, invece, bisognerà seguire la guida riportata nella sezione Linux cliccando nel seguente link \href{https://developer.android.com/studio/install}{qui}.
+Per eseguire l'installazione, invece, bisognerà seguire la guida riportata nella sezione Linux cliccando nel seguente link\href{https://developer.android.com/studio/install#linux}{qui}.
 \\
 \subsubsection{Linguaggi utilizzati}
 
@@ -92,8 +92,8 @@ Per permettere la comunicazione con il server bisogna creare il file denominato 
 \subsubsection{Librerie utilizzate}
 
 \paragraph{Kotlin MVP auto}
-Viene utilizzata il plugin Kotlin MVP auto per generare in automatico una porzione di codice che rispetti l'architettura MVP. Il plugin è scaricabile a \href{https://plugins.jetbrains.com/plugin/12265-kotlin-mvp-auto}{questa pagina}.
-Per poterla usare vengono usate le seguenti dipendenze da aggiungere a build.gradle(:app):\\
+Viene utilizzato il plugin Kotlin MVP auto per generare in automatico una porzione di codice che rispetti l'architettura MVP. Il plugin è scaricabile a \href{https://plugins.jetbrains.com/plugin/12265-kotlin-mvp-auto}{questa pagina}.
+Per poterlo usare devono essere aggiunte le seguenti dipendenze al file build.gradle(:app):\\
 \begin{itemize}
 	\item implementation 'com.github.cn-ljb:kotlin-mvp-lib:1.2.0'; \\
 	\item implementation 'com.github.cn-ljb:netlib:1.0.1'; \\
@@ -123,7 +123,7 @@ Tramite l'utilizzo dell'architettura Model View Presenter è facile da implement
 
 \subsection{Architettura}
 Il modello architetturale scelto è il Model View Presenter che è fortemente consigliato per chi sviluppa delle applicazioni per dispositivi Android. Il MVP fornisce un modo semplice per mostrare la struttura del prodotto garantendo modularità, testabilità e in generale una base di codice più pulita e gestibile. Ne deriva quindi l'applicazione del paradigma separation of concerns, che separa la responsabilità tra le differenti parti del pattern.
-Come detto in precedenza verrà usato il plugin \href{https://git-scm.com/downloads}{Kotlin MVP auto} per generare in automatico codice che rispetti l'architettura.
+Come detto in precedenza verrà usato il plugin \href{https://plugins.jetbrains.com/plugin/12265-kotlin-mvp-auto}{Kotlin MVP auto} per generare in automatico codice che rispetti l'architettura.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=16cm]{res/images/mvp.png}
@@ -132,7 +132,7 @@ Come detto in precedenza verrà usato il plugin \href{https://git-scm.com/downlo
 \end{figure}
 
 \subsubsection{Model}
-Il Model è la parte dell'archittetura che ha il compito di gestire i dati e rappresenta il layer di persistenza dell'applicazione. La maggior parte delle operazioni e dei controlli vengono svolti al suo interno. Contiene anche i metodi che avviano le connessioni alle API ed interagiscono con esse eseguendo numerose funzionalità. Vi sono, ad esempio, i metodi che consentono la comunicazione con il backend.
+Il Model è la parte dell'architettura che ha il compito di gestire i dati e rappresenta il layer di persistenza dell'applicazione. La maggior parte delle operazioni e dei controlli vengono svolti al suo interno. Contiene anche i metodi che avviano le connessioni alle API ed interagiscono con esse eseguendo numerose funzionalità.
 
 
 \subsubsection{View}
@@ -143,10 +143,10 @@ La View ha la responsabilità di passare i dati al Presenter. Essa è implementa
 \end{itemize}
 
 \subsubsection{Presenter}
-Il Presenter funge da livello intermedio tra la View e il Model. Tutta la logica di presentazione appartiene ad esso ed è responsabile dell'interrogazione del modello e l'aggiornamento della vista, reagendo alle interazioni che compie l'utente nella UI. Un valore aggiunto è che il Presenter dipende dall'astrazione della View e non dalla sua concretizzazione, quindi non conosce la sua implementazione. Tutto ciò favorisce ad una più facile attività di test.
+Il Presenter funge da livello intermedio tra la View e il Model. Tutta la logica di presentazione appartiene ad esso ed è responsabile dell'interrogazione del modello e l'aggiornamento della vista, reagendo alle interazioni che compie l'utente nella UI. Un valore aggiunto è che il Presenter dipende dall'astrazione della View e non dalla sua concretizzazione, quindi non conosce la sua implementazione. Tutto ciò favorisce una più facile attività di test.
 
 \subsubsection{Contract}
-Il Contract può essere visto come un contratto nel quale vengono definiti tutti i metodi che verranno utilizzati dalla View, dal Presenter e dal Model. Quando si ha intenzione di scrivere una nuova funzionalità, è buona norma scrivere un Contract. Esso descrive la comunicazione tra View-Presenter e Model-Presenter, consentendo una progettazione più pulita e diminuire le dipendenze tra le componenti.
+Il Contract può essere visto come un contratto nel quale vengono definiti tutti i metodi che verranno utilizzati dalla View, dal Presenter e dal Model. Quando si ha intenzione di scrivere una nuova funzionalità, è buona norma scrivere un Contract. Esso descrive la comunicazione tra View-Presenter e Model-Presenter, consentendo una progettazione più pulita e diminuendo le dipendenze tra le componenti.
 Il Contract è un'interfaccia e contiene le altre interfacce della View, Presenter e Model per garantire le varie comunicazioni.
 
 
@@ -200,7 +200,7 @@ Nel seguente package vengono raggruppate tutte le interfacce Contract che servon
 	\label{fig:package-Contract}
 \end{figure}
 
-\subsubsection{Tool}
+\subsubsection{Tools}
 Nel seguente package vengono raggruppate tutte le classi ed interfacce dedicate alle funzionalità generiche che possono essere usate in base ai contesti per dare supporto alla vista.
 \begin{figure}[H]
 	\centering
@@ -231,7 +231,7 @@ La classe LoginActivity offre i seguenti metodi:
 	\item \textbf{enableBtnLogin(): void}: abilita il bottone di Login;
 	\item \textbf{isUserNameValid(in username:String): Boolean}: verifica della conformità dell'username;
 	\item \textbf{isPasswordValid(in username:String): Boolean}: verifica della conformità della password;
-	\item \textbf{updateLoginView(): void}: aggiorna la vista dopo la verifica delle credenziali ;
+	\item \textbf{updateLoginView(): void}: aggiorna la vista dopo la verifica delle credenziali.
 \end{itemize}
 
 La classe LoginPresenter offre i seguenti metodi:
@@ -262,7 +262,7 @@ La classe Service offre i seguenti metodi:
 La classe MainActivity rappresenta la pagina principale dell'applicazione. Al suo interno è possibile eseguire varie operazioni premendo sul menù a tendina in alto a sinistra.
 La funzione principale della classe MainActivity è la scansione dei tagNFC che ti permettono di visualizzare i seguenti campi:
 \begin{itemize}
-	\item wookId; 
+	\item workId; 
 	\item workName; 
 	\item workStatus. 
 \end{itemize}
