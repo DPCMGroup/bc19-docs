@@ -55,8 +55,8 @@ Entità che raccoglie i dati relativi alle occupazioni di una postazione. È des
 \begin{itemize}
 	\item id: identificativo dell'occupazione;
 	\item idBooking: identificativo della prenotazione a cui l'occupazione è associata;
-	\item startTime: data e orario di inizio dell'occupazione;
-	\item endTime: data e orario di fine dell'occupazione.
+	\item startTime: data e ora di inizio dell'occupazione;
+	\item endTime: data e ora di fine dell'occupazione.
 \end{itemize}
 
 \paragraph{Bookings}
@@ -65,8 +65,8 @@ Entità che raccoglie i dati relativi alle prenotazioni di una postazione. È de
 	\item id: identificativo della prenotazione;
 	\item idWorkStation: identificativo della postazione prenotata;
 	\item idUser: identificativo dell'utente che ha effettuato la prenotazione;
-	\item startTime: data e orario di inizio della prenotazione;
-	\item endTime: data e orario di fine della prenotazione. 
+	\item startTime: data e ora di inizio della prenotazione;
+	\item endTime: data e ora di fine della prenotazione. 
 \end{itemize}
 
 \paragraph{Users}
@@ -88,14 +88,14 @@ Entità che raccoglie i dati relativi alle igienizzazioni. È descritta dai segu
 	\item id: identificativo dell'igienizzazione;
 	\item idWorkStation: identificativo della postazione igienizzata;
 	\item idUser: identificativo dell'utente che ha effettuato l'igienizzazione;
-	\item sanitizationTime: data e orario in cui è stata effettuata l'igienizzazione.
+	\item sanitizationTime: data e ora in cui è stata effettuata l'igienizzazione.
 \end{itemize}
 
 \paragraph{Reports}
 Entità che raccoglie le certificazioni generate dal sistema. È descritta dai seguenti campi:
 \begin{itemize}
 	\item id: identificativo della certificazione;
-	\item reportTime: data e orario in cui è avvenuta la certificazione;
+	\item reportTime: data e ora in cui è avvenuta la certificazione;
 	\item hash: hash della certificazione.
 \end{itemize}
 
@@ -104,8 +104,8 @@ Entità che raccoglie i guasti relativi alle postazioni. È descritta dai seguen
 \begin{itemize}
 	\item id: identificativo del guasto;
 	\item idWorkStation: identificativo della postazione soggetta a guasto;
-	\item startTime: data e orario di inizio guasto;
-	\item endTime: data e orario di fine guasto.
+	\item startTime: data e ora di inizio guasto;
+	\item endTime: data e ora di fine guasto.
 \end{itemize}
 
 \paragraph{WorkStations}
