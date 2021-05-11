@@ -27,35 +27,35 @@ Per la classificazione dei test si fa riferimento alle sezioni Verifica\footnote
 			% Test di sistema per i requisiti funzionali %
 			TS2F1 & L'utente deve poter accedere alla guida per il login e per l'applicazione. & NI \\
 			\hline
-			TS1F2 & L'utente non ancora autenticato deve poter autenticarsi nel web server. & NI \\			
+			TS1F2 &  L'utente non ancora autenticato deve poter autenticarsi nel web server inserendo come credenziali nome utente e password.  & NI \\			
 			\hline
-			TS1F2.1 & L'utente non ancora autenticato nel web server deve ricevere un messaggio di errore nel caso abbia inserito le credenziali errate. & NI \\			
+			TS1F3 & L'utente non ancora autenticato nel web server deve ricevere un messaggio di errore nel caso abbia inserito le credenziali errate. & NI \\			
 			\hline
-			TS1F2.2 & L'utente non ancora autenticato nel web server deve ricevere un messaggio di errore nel caso l'account sia disabilitato. & NI \\			
+			TS1F4 & L'utente non ancora autenticato nel web server deve ricevere un messaggio di errore nel caso l'account sia disabilitato. & NI \\			
 			\hline
-			TS1F3 & L'utente non ancora autenticato deve poter autenticarsi nell'applicazione mobile. & NI \\			
+			TS1F5 & L'utente non ancora autenticato deve poter autenticarsi nell'applicazione mobile inserendo come credenziali nome utente e password. & NI \\			
 			\hline
-			TS1F3.1 & L'utente non ancora autenticato nell'applicazione mobile deve ricevere un messaggio di errore nel caso abbia inserito le credenziali errate. & NI \\			
+			TS1F6 & L'utente non ancora autenticato nell'applicazione mobile deve ricevere un messaggio di errore nel caso abbia inserito le credenziali errate. & NI \\			
 			\hline
-			TS1F3.2 & L'utente non ancora autenticato nell'applicazione mobile deve ricevere un messaggio di errore nel caso l'account sia disabilitato. & NI \\			
+			TS1F7 & L'utente non ancora autenticato nell'applicazione mobile deve ricevere un messaggio di errore nel caso l'account sia disabilitato. & NI \\			
 			\hline
-			TS1F4 & L'utente autenticato come amministratore deve potersi disconnettere dal web server. & NI \\			
+			TS1F8 & L'utente autenticato come amministratore deve potersi disconnettere dal web server. & NI \\			
 			\hline
-			TS1F5 & L'utente autenticato come dipendente deve potersi disconnettere dall'applicazione mobile. & NI \\			
+			TS1F9 & L'utente autenticato come dipendente deve potersi disconnettere dall'applicazione mobile. & NI \\			
 			\hline			
-			TS1F6 & L'utente autenticato come addetto alle pulizie deve potersi disconnettere dall'applicazione mobile. & NI \\			
+			TS1F10 & L'utente autenticato come addetto alle pulizie deve potersi disconnettere dall'applicazione mobile. & NI \\			
 			\hline
-			TS1F7 & L'utente autenticato come amministratore deve poter accedere ad una giuda completa delle funzionalità. & NI \\		
+			TS1F11 & L'utente autenticato come amministratore deve poter accedere ad una giuda completa delle funzionalità. & NI \\		
 			\hline
-			TS1F8 & L'utente autenticato come dipendente deve poter accedere ad una giuda completa delle funzionalità. & NI \\			
+			TS1F12 & L'utente autenticato come dipendente deve poter accedere ad una giuda completa delle funzionalità. & NI \\			
 			\hline
-			TS1F9 & L'utente autenticato come addetto alle pulizie deve poter accedere ad una giuda completa delle funzionalità. & NI \\
+			TS1F13 & L'utente autenticato come addetto alle pulizie deve poter accedere ad una giuda completa delle funzionalità. & NI \\
 			\hline
-			TS1F10 & L'amministratore può visualizzare le stanze e le postazioni salvate. & NI \\			
+			TS1F14 & L'amministratore può visualizzare le stanze e le postazioni salvate. & NI \\			
 			\hline
-			TS1F10.1 & L'amministratore può visualizzare le stanze e le postazioni in modo schematico. & NI \\			
+			TS1F14.1 & L'amministratore può visualizzare le stanze e le postazioni in modo schematico. & NI \\			
 			\hline
-			TS1F10.2 & Gli stati delle postazioni possono essere i seguenti:
+			TS1F14.2 & Gli stati delle postazioni possono essere i seguenti:
 			 \begin{itemize}
 			 	\item libera e igienizzata;
 			 	\item libera e non igienizzata;
@@ -67,53 +67,41 @@ Per la classificazione dei test si fa riferimento alle sezioni Verifica\footnote
 			 \end{itemize}
 			 & NI \\			
 			\hline
-			TS1F10.3 & Per ogni stanza deve essere indicato il numero di occupanti attuali. & NI \\			
+			TS1F14.3 & Per ogni stanza deve essere indicato il numero di occupanti attuali. & NI \\			
 			\hline
-			TS1F11 & L'amministratore può visualizzare il calendario delle prenotazioni delle postazioni. & NI \\			
+			TS1F15 & L'amministratore può visualizzare il calendario delle prenotazioni delle postazioni. & NI \\			
 			\hline
-			TS1F12 & L'amministratore può aggiungere una stanza al sistema e assegnarle un nome. & NI \\			
+			TS1F16 & L'amministratore può aggiungere una stanza al sistema e assegnarle un nome. & NI \\			
 			\hline
-			TS1F12.1 & La creazione di una stanza inizia il processo di salvataggio in Ethereum. & NI \\			
+			TS1F17 & L'amministratore non può creare una stanza con un nome già in utilizzo o con delle dimensioni impossibili e deve essere avvisato con un messaggio di errore. & NI \\			
 			\hline
-			TS1F12.2 & L'amministratore non può creare una stanza con un nome già in utilizzo o con delle dimensioni impossibili e deve essere avvisato con un messaggio di errore. & NI \\			
+			TS1F18 & L'amministratore può eliminare una stanza dal sistema. & NI \\			
 			\hline
-			TS1F13 & L'amministratore può eliminare una stanza al sistema. & NI \\			
+			TS1F19 & L'amministratore può modificare il nome di una stanza. & NI \\			
 			\hline
-			TS1F13.1 & L'eliminazione di una stanza inizia il processo di salvataggio in Ethereum. & NI \\			
+			TS1F20 & L'amministratore può impostare una stanza come inaccessibile per un determinato periodo di tempo, con data inizio e fine arbitraria. & NI \\			
 			\hline
-			TS1F14 & L'amministratore può modificare il nome di una stanza. & NI \\			
-			\hline
-			TS1F15 & L'amministratore può impostare una stanza come inaccessibile per un determinato periodo di tempo, con data inizio e fine arbitraria. & NI \\			
-			\hline
-			TS1F16 & L'amministratore può aggiungere una postazione in una stanza, specificando:
+			TS1F21 & L'amministratore può aggiungere una postazione in una stanza, specificando:
 			\begin{itemize}
 				\item codice della postazione;
 				\item codice tag NFC che la identifica;
 				\item posizione all'interno della stanza.
 			\end{itemize}
-			& NI \\			
-			\hline			
-			TS1F16.1 & L'aggiunta di una postazione inizia il processo di salvataggio in Ethereum. & NI \\			
+			& NI \\					
 			\hline				
-			TS1F16.2 & L'amministratore non può modificare il "codice postazione" di una postazione con un "codice postazione" già in utilizzo e deve essere avvisato con un messaggio di errore. & NI \\			
+			TS1F22 & L'amministratore non può modificare o creare una postazione utilizzando un "codice postazione" già in utilizzo e deve essere avvisato con un messaggio di errore. & NI \\			
 			\hline			
-			TS1F16.3 & L'amministratore non può modificare il "codice tag" di una postazione con un "codice tag" già in utilizzo e deve essere avvisato con un messaggio di errore. & NI \\			
+			TS1F23 & L'amministratore non può modificare o creare una postazione utilizzando un "codice tag" già in utilizzo e deve essere avvisato con un messaggio di errore. & NI \\			
 			\hline			
-			TS1F16.4 & L'amministratore non può modificare la posizione di una postazione con una posizione già in utilizzo e deve essere avvisato con un messaggio di errore. & NI \\			
+			TS1F24 & L'amministratore non può modificare o creare una postazione con un nome già in utilizzo e deve essere avvisato con un messaggio di errore. & NI \\			
 			\hline
-			TS1F17 & L'amministratore può eliminare una postazione. & NI \\			
-			\hline		
-			TS1F17.1 & L'eliminazione di una postazione inizia il processo di salvataggio in Ethereum. & NI \\			
+			TS1F25 & L'amministratore può eliminare una postazione. & NI \\	
 			\hline	
-			TS1F18 & L'amministratore può modificare i dati e la posizione di una postazione. & NI \\			
+			TS1F26 & L'amministratore può modificare i dati e la posizione di una postazione. & NI \\			
 			\hline	
-			TS1F18.1 & La modifica di una postazione inizia il processo di salvataggio in Ethereum. & NI \\			
-			\hline	
-			TS1F19 & L'amministratore gestisce le credenziali degli utenti. & NI \\	
+			TS1F27 & L'amministratore può visualizzare una lista delle credenziali di tutti gli utenti. & NI \\	
 			\hline
-			TS1F19.1 & L'amministratore può visualizzare una lista delle credenziali di tutti gli utenti. & NI \\	
-			\hline
-			TS1F19.2 & L'amministratore può creare nuove credenziali. Le informazioni contenute nel profilo di un utente sono:
+			TS1F28 & L'amministratore può creare nuove credenziali. Le informazioni contenute nel profilo di un utente sono:
 			\begin{itemize}
 				\item nome;
 				\item cognome;
@@ -123,119 +111,112 @@ Per la classificazione dei test si fa riferimento alle sezioni Verifica\footnote
 			\end{itemize}
 			Tra queste le informazioni necessarie per l’accesso sono password e nome utente. & NI \\	
 			\hline
-			TS1F19.3 & L’amministratore può modificare le credenziali degli utenti del sistema. & NI \\	
+			TS1F29 & L’amministratore può modificare le credenziali degli utenti del sistema. & NI \\	
 			\hline
-			TS1F19.4 & L’amministratore può eliminare le credenziali degli utenti del sistema. & NI \\	
+			TS1F30 & L’amministratore può eliminare le credenziali degli utenti del sistema. & NI \\	
 			\hline
-			TS1F19.5 & Il sistema può memorizzare più credenziali per ogni tipologia di utente. & NI \\	
+			TS1F31 & L'amministratore può vedere lo storico delle occupazioni delle postazioni. & NI \\	
 			\hline
-			TS1F20 & L'amministratore può vedere lo storico delle occupazioni delle postazioni. & NI \\	
+			TS1F32 & L'amministratore deve poter effettuare una ricerca delle postazioni occupate da un utente, specificando il periodo all'interno del quale l'utente occupava la postazione e ricevere un report. & NI \\	
 			\hline
-			TS1F20.1 & L'amministratore deve vedere lo storico delle postazioni occupate da un utente in modo tabellare, con data e orari di inizio e fine delle occupazioni e codici delle prenotazioni. & NI \\	
+			TS1F33 & L'amministratore deve poter ricevere un report contenente delle occupazioni di postazioni da parte di un utente specifico, specificando date e orari di inizio e fine delle occupazioni, codici delle postazioni e, opzionalmente, ore trascorse alla postazione. & NI \\	
 			\hline
-			TS1F20.1.1 & L'amministratore deve poter effettuare una ricerca delle postazioni occupate da un utente, specificando il periodo all'interno del quale l'utente occupava la postazione. & NI \\	
+			TS1F34 & L'amministratore deve vedere lo storico delle occupazioni di una postazione specifica, con data e orari di inizio e fine delle occupazioni e nomi e cognomi dei dipendenti, ricevendo un report. & NI \\			
 			\hline
-			TS2F20.1.2 & L'amministratore deve vedere lo storico delle postazioni occupate da un utente specifico in modo tabellare, con data e orari di inizio e fine delle occupazioni, codici delle prenotazioni e ore trascorse alla postazione. & NI \\	
+			TS1F35 & L'amministratore può ottenere un report delle
+			occupazioni e delle igienizzazioni in base alla sua ricerca. & NI \\		
+			\hline		
+			TS2F36 & L'amministratore può scaricare il report degli utenti che hanno condiviso la stanza con un determinato utente. & NI \\		
 			\hline
-			TS1F20.2 & L'amministratore deve vedere lo storico delle occupazioni di una postazione specifica in modo tabellare, con data e orari di inizio e fine delle occupazioni e nomi e cognomi dei dipendenti. & NI \\			
+			TS2F37 & L'amministrazione può ricevere un report con lo storico delle igienizzazioni di tutte le postazioni, con data e ora in cui sono avvenute, nome e cognome di chi le ha eseguite e il loro ruolo. & NI \\	
 			\hline
-			TS1F20.3 & L'amministratore può scaricare il report delle occupazioni in un formato leggibile. & NI \\		
+			TS1F38 & L'amministratore può scaricare il report che sta visualizzando in un formato leggibile. & NI \\	
 			\hline
-			TS2F20.3.1 & L'amministratore può scaricare il report delle occupazioni in formato PDF. & NI \\		
+			TS2F39 & L'amministratore può scaricare il report che sta visualizzando in formato PDF. & NI \\	
 			\hline			
-			TS2F20.4 & L'amministratore può scaricare il report degli utenti che hanno condiviso la stanza con un determinato utente. & NI \\		
+			TS1F40 & Il dipendente deve poter scansionare un tag NFC presente in una postazione. & NI \\	
 			\hline
-			TS2F21 & L'amministrazione può vedere lo storico delle igienizzazioni di tutte le postazioni in modo tabellare, con data e ora in cui sono avvenute, nome e cognome di chi le ha eseguite e il loro ruolo. & NI \\	
+			TS1F41 & Il dipendente deve poter vedere lo stato di una postazione tramite la scansione del tag NFC. & NI \\	
 			\hline
-			TS2F21.1 & L'amministratore può scaricare il report delle igienizzazioni in un formato leggibile. & NI \\	
-			\hline
-			TS2F21.1.1 & L'amministratore può scaricare il report delle igienizzazioni in formato PDF. & NI \\	
+			TS1F42 & Il dipendente deve poter segnare la propria presenza su una postazione in tempo reale. & NI \\	
 			\hline			
-			TS1F22 & Il dipendente deve poter scansionare un tag NFC presente in una postazione. & NI \\	
+			TS1F42.1 & Il dipendente deve poter segnare la propria presenza su una postazione in tempo reale, tramite la scansione del tag NFC. & NI \\	
 			\hline
-			TS1F23 & Il dipendente deve poter vedere lo stato di una postazione tramite la scansione del tag NFC. & NI \\	
-			\hline
-			TS1F24 & Il dipendente deve poter segnare la propria presenza su una postazione in tempo reale. & NI \\	
-			\hline			
-			TS1F24.1 & Il dipendente deve poter segnare la propria presenza su una postazione in tempo reale, tramite la scansione del tag NFC. & NI \\	
-			\hline
-			TS1F24.2 & Il dipendente deve poter registrare la propria presenza, di inizio e fine occupazione, su una postazione tramite Ethereum. & NI \\	
-			\hline			
-			TS1F24.2.1 & Il dipendente visualizza un messaggio di inizio della prenotazione, 30 minuti prima che essa avvenga. & NI \\	
-			\hline						
-			TS1F24.2.2 & Il dipendente visualizza un messaggio di fine della prenotazione, cinque minuti prima che essa avvenga. & NI \\	
+			TS1F42.2 & Il dipendente deve poter registrare la propria presenza, di inizio e fine occupazione, su una postazione. & NI \\		
 			\hline					
-			TS1F24.3 & Se lo smartphone non rileva il tag NFC per un tempo maggiore o uguale a 30 min avviene la disdetta automatica della prenotazione per il tempo restante. & NI \\	
+			TS1F43 & Se lo smartphone non rileva il tag NFC per un tempo maggiore o uguale a 30 minuti avviene la disdetta automatica della prenotazione per il tempo restante. & NI \\	
 			\hline				
-			TS1F24.4 & L’utente viene avvisato della disdetta automatica di una sua prenotazione se sposta il proprio smartphone dal tag NFC per più di 30 minuti. & NI \\	
+			TS1F44 & L’utente viene avvisato della disdetta automatica di una sua prenotazione se sposta il proprio smartphone dal tag NFC per più di 30 minuti. & NI \\	
 			\hline				
-			TS1F24.5 & Il dipendente visualizza un messaggio di errore se prova ad occupare una postazione non igienizzata. & NI \\	
+			TS1F45 & Il dipendente visualizza un messaggio di errore se prova ad occupare una postazione non igienizzata. & NI \\	
 			\hline
-			TS1F25 & Il dipendente deve poter registrare l'avvenuta igienizzazione autonoma tramite Ethereum. & NI \\	
+			TS1F46 & Il dipendente deve poter visualizzare un messaggio di inizio prenotazione, 30 minuti prima che essa avvenga. & NI \\	
 			\hline
-			TS1F26 & Il dipendente può ricercare una postazione. & NI \\	
+			TS1F47 & Il dipendente deve poter visualizzare un messaggio di fine prenotazione, 5 minuti prima che essa avvenga. & NI \\	
 			\hline
-			TS1F26.1 & Il dipendente può ricercare una postazione in base alla data, all'orario e all'identificativo della stanza. & NI \\	
+			TS1F48 & Il dipendente deve poter registrare l'avvenuta igienizzazione autonoma della postazione. & NI \\	
 			\hline
-			TS1F26.1.1 & Il dipendente deve compilare il campo della data per cercare una postazione. & NI \\	
+			TS1F49 & Il dipendente può ricercare una postazione in base alla data, all'orario e all'identificativo della stanza. & NI \\	
 			\hline
-			TS1F26.1.2 & Il dipendente riceve un messaggio di errore se il campo data ha un valore non valido. & NI \\	
+			TS1F49.1 & Il dipendente deve compilare il campo della data per cercare una postazione. & NI \\	
 			\hline
-			TS1F26.1.3 & Il dipendente deve compilare il campo dell'ora per cercare una postazione. & NI \\	
+			TS1F50 & Il dipendente riceve un messaggio di errore se il campo data ha un valore non valido. & NI \\	
 			\hline
-			TS1F26.1.4 & Il dipendente riceve un messaggio di errore se il campo ora ha un valore non valido. & NI \\	
+			TS1F49.2 & Il dipendente deve compilare il campo dell'ora per cercare una postazione. & NI \\	
+			\hline
+			TS1F51 & Il dipendente riceve un messaggio di errore se il campo ora ha un valore non valido. & NI \\	
 			\hline			
-			TS1F26.1.5 & Il dipendente deve compilare il campo stanza per cercare una postazione. & NI \\	
+			TS1F49.3 & Il dipendente deve compilare il campo stanza per cercare una postazione. & NI \\	
 			\hline
-			TS1F26.1.6 & Il dipendente riceve un messaggio di errore se il campo stanza ha un valore non valido. & NI \\	
+			TS152 & Il dipendente riceve un messaggio di errore se il campo stanza ha un valore non valido. & NI \\	
 			\hline			
-			TS1F26.1.7 & Il dipendente deve compilare il campo nome dipendente per cercare una postazione. & NI \\	
+			TS1F49.4 & Il dipendente deve compilare il campo nome dipendente per cercare una postazione. & NI \\	
 			\hline
-			TS1F26.1.8 & Il dipendente riceve un messaggio di errore se il campo nome dipendente ha un valore non valido. & NI \\	
+			TS1F53 & Il dipendente riceve un messaggio di errore se il campo nome dipendente ha un valore non valido. & NI \\	
 			\hline
-			TS1F26.2 & Il dipendente può visualizzare le postazioni di una stanza. & NI \\	
+			TS1F54 & Il dipendente può visualizzare le postazioni di una stanza. & NI \\	
 			\hline
-			TS1F26.3 & Il dipendente riceve un messaggio di errore se non ci sono postazioni prenotabili. & NI \\	
+			TS1F55 & Il dipendente riceve un messaggio di errore se non ci sono postazioni prenotabili. & NI \\	
 			\hline
-			TS1F26.4 & Il dipendete può visualizzare l'identificativo della prima postazione igienizzata e libera in una stanza. & NI \\	
+			TS1F56 & Il dipendete può visualizzare l'identificativo della prima postazione igienizzata e libera in una stanza. & NI \\	
 			\hline
-			TS1F26.4.1 & Il dipendete può visualizzare l'identificativo di una postazione igienizzata e libera in una stanza scelta con criterio random. & NI \\	
+			TS1F57 & Il dipendete può visualizzare l'identificativo di una postazione igienizzata e libera in una stanza scelta con criterio random. & NI \\	
 			\hline
-			TS2F26.4.2 & Il dipendete può visualizzare l'identificativo di una postazione igienizzata e libera in una stanza scelta con criterio top distanza dalle altre postazioni. & NI \\	
+			TS2F58 & Il dipendete può visualizzare l'identificativo di una postazione igienizzata e libera in una stanza scelta con criterio top distanza dalle altre postazioni. & NI \\	
 			\hline
-			TS1F26.5 & Il dipendente può selezionare una postazione di una stanza. & NI \\	
+			TS1F59 & Il dipendente può selezionare e prenotare una postazione di una stanza. & NI \\		
 			\hline
-			TS1F26.6 & Il dipendente può prenotare una postazione selezionata. & NI \\	
+			TS1F60 & Il dipendente riceve un messaggio di errore se la postazione non è prenotabile. & NI \\	
 			\hline
-			TS1F26.7 & Il dipendente riceve un messaggio di errore se la postazione non è prenotabile. & NI \\	
+			TS1F61 & Se il dipendente scansiona il tag NFC per più di un minuto prenota la postazione per l'intera giornata. & NI \\	
 			\hline
-			TS1F27 & Se il dipendente scansiona il tag NFC per più di un minuto prenota la postazione per l'intera giornata. & NI \\	
+			TS1F62 & Se la postazione è occupata viene emesso un segnale sonoro. & NI \\	
 			\hline
-			TS1F27.1 & Se la postazione è occupata viene emesso un segnale sonoro. & NI \\	
+			TS1F63 & Se il dipendente scansiona il tag NFC per più di un minuto, e la postazione risulta essere prenotata in un momento successivo della giornata, prenota la postazione fino all'inizio della prenotazione successiva. & NI \\	
 			\hline
-			TS1F27.2 & Se il dipendente scansione il tag NFC per più di un minuto, e la postazione risulta essere prenotata in un momento successivo della giornata, prenota la postazione fino all'inizio della prenotazione successiva. & NI \\	
+			TS1F64 & Il dipendente deve poter visualizzare l'elenco delle prenotazioni che ha effettuato. & NI \\
 			\hline
-			TS1F28 & Il dipendente deve poter disdire una prenotazione. & NI \\	
+			TS1F65 & Il dipendente dopo aver selezionato una prenotazione, deve poterla disdire. & NI \\	
 			\hline
-			TS1F28.1 & Il dipendente deve poter visualizzare l'elenco delle prenotazioni che ha effettuato. & NI \\	
+			TS1F66 & Gli utenti che hanno una prenotazione devono essere avvisati se la postazione prenotata, o la stanza in cui si trova la postazione prenotata, diventa non disponibile. & NI \\	
 			\hline
-			TS1F28.2 & Il dipendente deve poter selezionare una prenotazione che vuole disdire. & NI \\	
+			TS1F67 & L'addetto delle pulizie riceve l'elenco delle stanze che necessitano di igienizzazione. & NI \\	
 			\hline
-			TS1F28.3 & Il dipendente dopo aver selezionato una prenotazione, deve poterla disdire. & NI \\	
+			TS1F68 & L'addetto delle pulizie riceve l'elenco delle postazioni che necessitano di igienizzazione. & NI \\	
 			\hline
-			TS1F29 & Gli utenti che hanno una prenotazione devono essere avvisati se la postazione prenotata, o la stanza in cui si trova la postazione prenotata, diventa non disponibile. & NI \\	
+			TS1F69 & L'addetto delle pulizie deve poter marcare una stanza come igienizzata. & NI \\	
 			\hline
-			TS1F30 & L'addetto delle pulizie riceve l'elenco delle stanze che necessitano di igienizzazione. & NI \\	
+			TS1F70 & L'addetto delle pulizie deve poter marcare una postazione come igienizzata. & NI \\	
 			\hline
-			TS1F31 & L'addetto delle pulizie riceve l'elenco delle postazioni che necessitano igienizzazione. & NI \\	
+			TS1F70.1 & L'addetto delle pulizie non può pulire stanze o postazioni occupate. & NI \\	
 			\hline
-			TS1F32 & L'addetto delle pulizie deve poter marcare una stanza come igienizzata, tramite Ethereum. & NI \\	
+			TS1F70.2 & Ogni 24 ore deve avvenire una transazione in Ethereum per la certificazione dei report e l'amministratore deve essere notificato se l'operazione è avvenuta con successo. & NI \\	
+			\hline			
+			TS1F72 & L’amministratore deve ricevere una notifica con un messaggio di errore nel caso in cui la transazione su Ethereum sia fallita. & NI \\	
+			\hline						
+			TS1F73& In Ethereum vanno salvate tutte le operazioni che riguardano l'occupazione, l'igienizzazione e le varie modifiche a stanze o postazioni. & NI \\	
 			\hline
-			TS1F33 & L'addetto delle pulizie deve poter marcare una postazione come igienizzata, tramite Ethereum. & NI \\	
-			\hline
-			TS1F34 & L'addetto delle pulizie non può pulire stanze o postazioni occupate. & NI \\	
-			\hline
-			TS1F35 & Realizzazione file Docker contenente l'applicativo. & NI \\	
+			TS1F74 & Realizzazione file Docker contenente l'applicativo. & NI \\	
 			\hline
 			% Test di sistema per i requisiti di qualità%			
 			TS1Q1 & Si verifichi che vengano rispettate le norme e metriche definite nel documento \dext{Piano di qualifica v. 2.0.0}. & NI \\	
