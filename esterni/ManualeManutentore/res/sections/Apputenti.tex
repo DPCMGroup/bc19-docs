@@ -305,7 +305,7 @@ La classe Service offre i seguenti metodi:
 \subsubsection{Guide}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=16cm]{res/images/GuideActivity.png}
+	\includegraphics[width=16cm]{res/images/GuideClass.png}
 	\caption{GuideActivity-Diagramma delle classi}
 	\label{fig:GuideActivity-Diagramma delle classi}
 \end{figure}
@@ -472,6 +472,20 @@ In seguito verranno fatte tutte le chiamate di ritorno, ovvero le caratteristich
 al Presenter che le ritornerà a sua volta alla vista.
 In conclusione per visualizzare le informazioni di una postazione la vista chiamerà il metodo \textit{updateScan}.
 
+
+\subsubsection{Diagramma per ottenere la guida dell'utente}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=16cm]{res/images/GuideSeq.png}
+	\caption{Guida-Diagramma di sequenza}
+	\label{fig:Guida-Diagramma di sequenza}
+\end{figure}
+Questo diagramma di sequenza rappresenta la serie di azioni svolte dall'applicazione quando l'utente vuole visualizzare la guida utente.
+La sequenza inizia con la creazione della vista tramite il metodo \textit{onCreate}.
+Successivamente viene richiesto al Presenter di visualizzare la guida tramite il metodo \textit{showGuide} che a sua volta inoltrerà la richiesta al Model attraverso il metodo \textit{getGuide}.
+Successivamente grazie al metodo \textit{getGuideFilePath} viene recuperato il file path dove è stato salvato la guida Utente.
+In seguito verranno fatte tutte le chiamate di ritorno, ossia il file path verrà ritornato al Model che lo ritornerà al Presenter che lo ritornerà a sua volta alla vista.
+In conclusione per visualizzare la guida la vista chiamerà il metodo \textit{updateGuideView}.
 
 \subsubsection{Diagramma per registrare l'igienizzazione di una postazione} 
 \begin{figure}[H]
