@@ -467,6 +467,7 @@ In conclusione per visualizzare la lista delle prenotazioni la vista chiamerà i
 Questo diagramma di sequenza rappresenta la serie di azioni svolte dall'applicazione quando viene scansionato un tag NFC da un utente.
 La sequenza inizia con la creazione della vista tramite il metodo \textit{onCreate}.
 Successivamente viene richiesto al Presenter di visualizzare le caratteristiche delle postazioni in seguito alla scansione del tag NFC tramite il metodo \textit{scanTagNFC} che a sua volta le richiederà al Model attraverso il metodo \textit{getStatus}.
+Il Model, per ottenere le informazioni di una postazione, otterrà l'id della Workstation grazie al tag associato ad esso.
 Successivamente grazie al metodo \textit{getWorkstation}, che genera un json con l'id della postazione, andrà a richiedere al Service tutte le caratteristiche. Per ottenere queste informazioni il Service userà il metodo \textit{httpClient}.
 In seguito verranno fatte tutte le chiamate di ritorno, ovvero le caratteristiche della postazione verranno ritornate al Model che le ritornerà
 al Presenter che le ritornerà a sua volta alla vista.
@@ -497,7 +498,7 @@ In conclusione per visualizzare la guida la vista chiamerà il metodo \textit{up
 Questo diagramma di sequenza rappresenta la serie di azioni svolte dall'applicazione quando viene premuto da un utente il bottone per rendere una postazione igienizzata.
 La sequenza inizia con la creazione della vista tramite il metodo \textit{onCreate}.
 Successivamente viene richiesto al Presenter di registrare l'igienizzazione della postazione da parte di un utente tramite il metodo \textit{sanitize} che a sua volta lo richiederà al Model attraverso il metodo \textit{setSanitize}.
-Il Model, per igienizzare una postazione, farà prima una chiamata alla classe DataWorkstation con il metodo \textit{getStatus} per ottenere l'id della Workstation e poi alla classe User con il metodo \textit{getId} per ottenere l'id dello user.
+Il Model, per igienizzare una postazione, otterrà prima l'id della Workstation grazie al tag associato ad esso e poi l'id dello user dalla classe User con il metodo \textit{getId}.
 Successivamente grazie al metodo \textit{registerSanitization}, che genera un json con l'id della postazione e l'id dell'utente, andrà a richiedere al Service di registrarla. Per registrarla il Service userà il metodo \textit{httpClient}.
 In seguito verranno fatte tutte le chiamate di ritorno, ovvero il risultato dell’operazione verrà ritornato al Model che lo ritornerà al Presenter che lo ritornerà a sua volta alla vista.
 In conclusione per visualizzare le nuove informazioni sulla postazione la vista chiamerà il metodo \textit{updateSanitization}.
