@@ -285,14 +285,14 @@ La classe MainActivity offre i seguenti metodi:
 La classe MainPresenter offre i seguenti metodi:
 \begin{itemize}
 	\item \textbf{registerModel(): void}: associa il Model al Presenter; 
-	\item \textbf{scanTagNFC(workId:Int): void}: Si occupa di richiedere al modello le informazioni riguardanti la postazione, così poi da ritornarle alla vista; 
-	\item \textbf{sanitize(workId:Int): void}: Si occupa di richiedere al modello di igienizzare una postazione, così poi da ritornarlo alla vista. 
+	\item \textbf{scanTagNFC(tag: String): void}: Si occupa di richiedere al modello le informazioni riguardanti la postazione, così poi da ritornarle alla vista; 
+	\item \textbf{sanitize(tag: String): void}: Si occupa di richiedere al modello di igienizzare una postazione, così poi da ritornarlo alla vista. 
 \end{itemize}
 
 La classe MainModel offre i seguenti metodi:
 \begin{itemize}
-	\item \textbf{getStatus(workId:Int): DataWorkstation}: Si occupa di richiedere al service le caratteristiche di una determinata postazione;
-	\item \textbf{setSanitize(workId:Int): void}: Si occupa di richiedere al service di igienizzare una determinata postazione.
+	\item \textbf{getStatus(tag: String): DataWorkstation}: Si occupa di richiedere al service le caratteristiche di una determinata postazione;
+	\item \textbf{setSanitize(tag: String): void}: Si occupa di richiedere al service di igienizzare una determinata postazione.
 \end{itemize}
 
 La classe Service offre i seguenti metodi:
