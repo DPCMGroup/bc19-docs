@@ -1,0 +1,68 @@
+%!TEX output_directory = .cache
+
+
+\documentclass[12pt]{letter}
+
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{eurosym}
+\usepackage{charter}
+
+\geometry{a4paper,top=3cm,bottom=3cm,left=3.5cm,right=3.5cm,heightrounded,bindingoffset=5mm}
+
+
+% Unicode per simbolo euro
+\DeclareUnicodeCharacter{20AC}{\euro}
+
+\pagenumbering{gobble}
+
+
+\signature{ 
+	\begin{center}
+		Daniele Spigolon \\	
+		\textit{Responsabile di Progetto} \\		
+		\includegraphics[width=0.3\textwidth, height=5mm]{images/firma}
+	\end{center}
+}
+\address{ Via Trieste 63 \\ Padova \\ PD 35121, Italia}
+\date{11 Maggio 2021}
+
+
+\begin{letter}
+{
+	Alla cortese attenzione di:\\
+	prof.~Tullio Vardanega \\
+ 	prof.~Riccardo Cardin
+}
+
+\begin{document}
+
+\includegraphics[scale=0.17]{images/logo.png}
+
+\opening{}
+Il gruppo \textit{DPCM 2077} intende comunicarVi ufficialmente la candidatura alla partecipazione alla Revisione di Qualifica.
+
+Di seguito l'elenco della documentazione allegata alla presente lettera:
+\begin{itemize}
+	\item \textit{Norme di Progetto v. 3.0.0};
+	\item \textit{Piano di Progetto v. 3.0.0};
+	\item \textit{Piano di Qualifica v. 3.0.0};
+	\item \textit{Manuale utente v. 0.1.6};
+	\item \textit{Manuale manutentore v. 0.1.6};
+	\item \textit{Verbale interno del 2021-03-22 v.1.0.0};
+	\item \textit{Verbale interno del 2021-03-29 v.1.0.0};
+	\item \textit{Verbale interno del 2021-04-08 v.1.0.0};
+	\item \textit{Verbale interno del 2021-04-30 v.1.0.0};
+	\item \textit{Verbale esterno del 2021-03-19 v.1.0.0}.
+\end{itemize}
+
+Infine si segnala che il prezzo finale è stato aggiornato a 14024.00\euro~ (anziché 14026.00\euro).
+
+\closing{Cordialmente,}
+\end{letter}
+
+\let\clearpage\relax
+
+\end{document}
