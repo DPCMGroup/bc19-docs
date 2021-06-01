@@ -20,9 +20,9 @@ Per quanto riguarda le stanze, permette all'amministratore di:
 \end{itemize}
 Per quanto riguarda le credenziali, permette all'amministratore di:
 \begin{itemize}
-	\item \textbf{Aggiungere una credenziale}: l'amministratore ha la possibilità di aggiungere una credenziale premendo sul bottone "Add Credential"; \\
+	\item \textbf{Aggiungere una credenziale}: l'amministratore ha la possibilità di aggiungere una credenziale premendo sul bottone "Crea credenziale"; \\
 	\item \textbf{Eliminare una credenziale}: l'amministratore ha la possibilità di eliminare una credenziale premendo sul bottone dove è raffigurato un cestino; \\
-	\item \textbf{Modificare una credenziale}:  l'amministratore ha la possibilità di modificare le caratteristiche di una credenziale premendo sul bottone dove è raffigurata una "E". \\
+	\item \textbf{Modificare una credenziale}:  l'amministratore ha la possibilità di modificare le caratteristiche di una credenziale premendo sul bottone dove è raffigurata una "M". \\
 \end{itemize}
 
 \subsection{Requisiti e installazione}
@@ -35,7 +35,7 @@ La web app viene eseguita sul browser, non necessita di installazione e ha come 
 	\includegraphics[width=15cm]{res/images/login.jpg}
 	\caption{Login}
 \end{figure}
-L'amministratore può autenticarsi inserendo il proprio username e la password. L’username è da inserire nel primo campo di testo (1), la password nel secondo (2). Dopo l’inserimento dei dati può cliccare sul pulsante 'Sign in' per effettuare l'autenticazione.
+L'amministratore può autenticarsi inserendo il proprio username e la password. L’username è da inserire nel primo campo di testo, la password nel secondo. Dopo l’inserimento dei dati può cliccare sul pulsante 'Invia' per effettuare l'autenticazione.
 
 \subsubsection{Visualizzazione errore di autenticazione}
 \begin{figure}[H]
@@ -45,6 +45,13 @@ L'amministratore può autenticarsi inserendo il proprio username e la password. 
 \end{figure}
 Se le credenziali inserite risultano errate, l’applicazione mostra un errore avvisando la persona che o non è un amministratore o ancora non è registrata.
 
+\subsubsection{Visualizzazione errore di disabilitazione}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/credDisab.png}
+	\caption{Visualizzazione errore}
+\end{figure}
+Se le credenziali inserite risultano disabilitate, l’applicazione mostra un errore avvisando che le credenziali inserite risultano disabilitate.
 \subsubsection{Logout}
 \begin{figure}[H]
 	\centering
@@ -59,14 +66,16 @@ L'amministratore, una volta effettuata l'autenticazione, può eseguire il logout
 	\includegraphics[width=15cm]{res/images/visStanza.png}
 	\caption{Visualizzazione stanze}
 \end{figure}
-Per poter visualizzare le stanze, l'amministratore deve premere sul bottone 'Rooms'.
+Per poter visualizzare le stanze, l'amministratore deve premere sul bottone 'Stanze'.
 Dopo aver premuto sul bottone, per ogni stanza l'amministratore visualizza:
 \begin{enumerate}
 	\item identificativo della stanza;
 	\item nome della stanza;
-	\item dimensioni della stanza.
+	\item dimensioni della stanza;
+	\item il numero di occupanti della stanza;
+	\item eventuali date in cui la stanza non è accessibile.
 \end{enumerate}
-Per ogni postazione all'interno di una stanza l'amministratore visualizza:
+Per ogni postazione all'interno di una stanza, dopo aver premuto sulla postazione di interesse, l'amministratore visualizza:
 \begin{enumerate}
 	\item identificativo della postazione;
 	\item identificativo del tag;
@@ -74,7 +83,7 @@ Per ogni postazione all'interno di una stanza l'amministratore visualizza:
 	\item l'ascissa della postazione nella stanza;
 	\item l'ordinata della postazione nella stanza;
 	\item lo stato della postazione;
-	\item lo stato dell' igienizzazione;
+	\item lo stato dell'igienizzazione;
 	\item opzione per eliminare la postazione;
 	\item opzione per modificare la postazione.
 	
@@ -194,24 +203,25 @@ Una volta premuto sul bottone, comparirà un popup che l'amministratore dovrà c
 \subsubsection{Visualizzazione delle credenziali}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=15cm]{res/images/credential.jpg}
+	\includegraphics[width=15cm]{res/images/credential.png}
 	\caption{Visualizzazione credenziali}
 \end{figure}
-L’amministratore può visualizzare la lista delle credenziali di ogni utente. Questo sarà permesso da ogni pagina cliccando sul pulsante Credentials.
+L’amministratore può visualizzare la lista delle credenziali di ogni utente. Questo sarà permesso da ogni pagina cliccando sul pulsante Credenziali.
 La lista di credenziali è composta dai seguenti campi:
 \begin{enumerate}
 	\item Id;
 	\item Username;
-	\item Name;
-	\item Surname;
+	\item Nome;
+	\item Cognome;
 	\item Email;
-	\item Type;
-	\item Option.
+	\item Tipo;
+	\item Abilitazione;
+	\item Opzioni.
 \end{enumerate}
-Type indica il tipo di utente, Option presenta due pulsanti per eliminare o modificare le credenziali.
+Titpo indica il tipo di utente, Opzioni presenta due pulsanti per eliminare o modificare le credenziali e Abilitazione indica se le credenziali di quell'utente sono abilitate oppure no.
 
 \subsubsection{Aggiunta di nuove credenziali}
-Per poter aggiungere nuove credenziali, l'amministratore deve premere sul bottone 'Add Credential' di colore blu.
+Per poter aggiungere nuove credenziali, l'amministratore deve premere sul bottone 'Crea credenziale' di colore blu.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=15cm]{res/images/addCredential.jpg}
@@ -219,12 +229,12 @@ Per poter aggiungere nuove credenziali, l'amministratore deve premere sul botton
 \end{figure}
 Una volta premuto sul bottone, comparirà un popup che l'amministratore dovrà compilare inserendo:
 \begin{enumerate}
-	\item il nome dell'utente (1);
-	\item il cognome dell'utente (2);
-	\item l'username(3);
-	\item l'email (4);
-	\item il tipo di utente (5);
-	\item la password (6).
+	\item il nome dell'utente;
+	\item il cognome dell'utente;
+	\item l'username;
+	\item l'email;
+	\item il tipo di utente;
+	\item la password.
 \end{enumerate}
 \begin{figure}[H]
 	\centering
@@ -242,7 +252,7 @@ Per poter eliminare le credenziali di un utente, l'amministratore deve premere s
 \end{figure}
 
 \subsubsection{Modifica delle credenziali}
-Per poter modificare le credenziali di un utente, l'amministratore deve premere sul bottone 'E' di colore blu.
+Per poter modificare le credenziali di un utente, l'amministratore deve premere sul bottone 'M' di colore blu.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=15cm]{res/images/optionEdit.jpg}
@@ -250,15 +260,24 @@ Per poter modificare le credenziali di un utente, l'amministratore deve premere 
 \end{figure}
 Una volta premuto sul bottone, comparirà un popup che l'amministratore dovrà compilare inserendo:
 \begin{enumerate}
-	\item il nome dell'utente (1);
-	\item il cognome dell'utente (2);
-	\item l'username(3);
-	\item l'email (4);
-	\item il tipo di utente (5);
-	\item la password (6).
+	\item il nome dell'utente;
+	\item il cognome dell'utente;
+	\item l'username;
+	\item l'email;
+	\item il tipo di utente;
+	\item la password;
+	\item abilitato / non abilitato.
 \end{enumerate}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=15cm]{res/images/editc.jpg}
 	\caption{Visualizzazione popup modifica credenziali}
+\end{figure}
+
+\subsubsection{Visualizzazione della Guida}
+Per poter visualizza il Manuale Utente dell'applicazione, l'amministratore deve premere sul bottone 'Guida'. In seguito in una nuova pagina, verrà aperta in formato PDF la Guida dell'applicazione.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/guida.jpg}
+	\caption{Visualizzazione Guida}
 \end{figure}
