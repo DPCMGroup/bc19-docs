@@ -250,24 +250,6 @@ La classe LoginActivity offre i seguenti metodi:
 	\item \textbf{callError(): void}: aggiorna la vista dopo la verifica delle credenziali se risultano errate.
 \end{itemize}
 
-La classe LoginPresenter offre i seguenti metodi:
-\begin{itemize}
-	\item \textbf{makeLogin(username: String, password: String): void}: Si occupa di richiedere al modello di effettuare il login; 
-	\item \textbf{registerModel(): void}: associa il Model al Presenter.
-\end{itemize}
-
-La classe LoginModel offre i seguenti metodi:
-\begin{itemize}
-	\item \textbf{sendLogin(username: String, password: String): void}: Si occupa di richiedere al service di verificare le credenziali fornite dall'utente. 
-	\item \textbf{getUser(): User?}: Si occupa di richiedere allo User le informazioni. 
-	\item \textbf{setLoginListener(listener:LoginListener?): void}: Si occupa di settare il listner per richiamare il Presenter. 
-	\item \textbf{loginHandle(response:String): void}: Si occupa di gestire la risposta fornita dal service. 
-\end{itemize}
-
-La classe Service offre i seguenti metodi:
-\begin{itemize}
-		\item \textbf{httpClient(json:JSONObject): JSONObject}: Viene fatta la richiesta al backend per verificare le credenziali fornite dall'utente.
-\end{itemize}
 
 \subsubsection{Scan}
 \begin{figure}[H]
@@ -276,44 +258,31 @@ La classe Service offre i seguenti metodi:
 	\caption{Main-Diagramma delle classi}
 	\label{fig:Main-Diagramma delle classi}
 \end{figure}
-La classe MainActivity rappresenta la pagina principale dell'applicazione. Al suo interno è possibile eseguire varie operazioni premendo sul menù a tendina in alto a sinistra.
-La funzione principale della classe MainActivity è la scansione dei \glock{tag NFC} che ti permettono di visualizzare i seguenti campi:
+La classe ScanActivity rappresenta la pagina principale dell'applicazione. Al suo interno è possibile eseguire varie operazioni premendo sul menù a tendina in alto a sinistra.
+La funzione principale della classe ScanActivity è la scansione dei \glock{tag NFC} che ti permettono di visualizzare i seguenti campi:
 \begin{itemize}
-	\item workId; 
 	\item workName; 
 	\item workStatus. 
 \end{itemize}
 In caso di prenotazioni, queste verranno mostrate.
 Un'altra funzionalità di questa attività consiste nel premere sul bottone igienizzata una volta igienizzata la postazione così da cambiare stato e poter occupare la postazione se disponibile.
 
-La classe MainActivity offre i seguenti metodi:
+La classe ScanActivity offre i seguenti metodi:
 \begin{itemize}
 	\item \textbf{onCreate(savedInstanceState:Bundle): void}: Si occupa della creazione della parte grafica visualizzata dall'utente; 
 	\item \textbf{registerPresenter(): void}: associa il Presenter alla View; 
 	\item \textbf{getLayoutId(): void}: associa il rispettivo file in formato xml alla View;
-	\item \textbf{updateScan(scan:DataWorkstation): void}: Si occupa di far visualizzare le caratteristiche di una postazione dopo la scansione; 
-	\item \textbf{updateSanitization(): void}: Si occupa di cambiare lo stato della postazione e disabilitare e nascondere il bottone per igienizzare. 
+	\item \textbf{updateScanView(workstation:DataWorkstation?. bookings:ArrayList<DataBookingToday>?): void}: Si occupa di far visualizzare le caratteristiche di una postazione dopo la scansione; 
+	\item \textbf{callScanError(): void}:  Si occupa di mostrare un messaggio di errore nel caso la scansione non vada a buon fine;
+	\item \textbf{callSanitizeError(): void}: Si occupa di mostrare un messaggio di errore nel caso l'igienizzazione non vada a buon fine;
+	\item \textbf{callSanitizeOk(): void}:Si occupa di aggiornare la vista in seguito all'igienizzazione di una postazione;
+	\item \textbf{CallGetTimeToNextUpdate(s:String): void}:Si occupa di aggiornare la vista in base a quante ore l'utente potrà stare al massimo sulla postazione desiderata;
+	\item \textbf{callStartOccupationOk(): void}: Si occupa di aggiornare la vista in seguito all'inizio dell'occupazione;
+	\item \textbf{callStartOccupationError(): void}:Si occupa di mostrare un messaggio di errore nel caso l'inizio dell'occupazione non vada a buon fine;
+	\item \textbf{callEndOccupationOk(): void}:Si occupa di aggiornare la vista in seguito alla fine dell'occupazione;
+	\item \textbf{callEndOccupationError(): void}:Si occupa di mostrare un messaggio di errore nel caso la fine dell'occupazione non vada a buon fine.
 \end{itemize}
 
-La classe MainPresenter offre i seguenti metodi:
-\begin{itemize}
-	\item \textbf{registerModel(): void}: associa il Model al Presenter; 
-	\item \textbf{scanTagNFC(tag: String): void}: Si occupa di richiedere al modello le informazioni riguardanti la postazione, così poi da ritornarle alla vista; 
-	\item \textbf{sanitize(tag: String): void}: Si occupa di richiedere al modello di igienizzare una postazione, così poi da ritornarlo alla vista. 
-\end{itemize}
-
-La classe MainModel offre i seguenti metodi:
-\begin{itemize}
-	\item \textbf{getStatus(tag: String): DataWorkstation}: Si occupa di richiedere al service le caratteristiche di una determinata postazione;
-	\item \textbf{setSanitize(tag: String): void}: Si occupa di richiedere al service di igienizzare una determinata postazione.
-\end{itemize}
-
-La classe Service offre i seguenti metodi:
-\begin{itemize}
-	\item \textbf{registerSanitization(workId:Int, userId:Int): JSONObject}: Si occupa di trasformare in un JSONObject l'id dello user e l'id della postazione così poi da registrare l'igienizzazione;
-	\item \textbf{getWorkstation(workId:Int): JSONObject}: Si occupa di trasformare in un JSONObject l'id della postazione così poi da ottenere le sue caratteristiche;
-	\item \textbf{httpClient(json:JSONObject): JSONObject}: Viene fatta la richiesta al backend per ottenere le caratteristiche della postazione o per registrare l'igienizzazione.	
-\end{itemize}
 
 \subsubsection{Guide}
 \begin{figure}[H]
@@ -323,7 +292,7 @@ La classe Service offre i seguenti metodi:
 	\label{fig:GuideActivity-Diagramma delle classi}
 \end{figure}
 La classe GuideActivity rappresenta la pagina dedicata alla visualizzazione della guida.
-L'utente per visualizzare la guida deve premere sul menu a tendina del menù principale(MainActivity) e successivamente deve premere sulla voce "Guida" e verrà reindirizzato alla pagina dedicata.
+L'utente per visualizzare la guida deve premere sul menu a tendina del menù principale(ScanActivity) e successivamente deve premere sulla voce "Guida" e verrà reindirizzato alla pagina dedicata.
 
 In questa pagina verrà mostrata la guida dedicata all'utente. In base al suo identificativo con cui ha effettuato il login sarà possibile distinguerlo tra le due tipologie, dipendente e addetto alle pulizie, così da mostrare a ciascuno la guida corrispondente.
 
@@ -335,17 +304,6 @@ La classe GuideActivity offre i seguenti metodi:
 	\item \textbf{updateGuideView(in filePath:String): void}: Si occupa di far visualizzare il filePath sotto forma di stringa del percorso in cui viene salvato il documento della guida. 
 \end{itemize}
 
-La classe GuidePresenter offre i seguenti metodi:
-\begin{itemize}
-	\item \textbf{registerModel(): void}: associa il Model al Presenter;
-	\item \textbf{showGuide(): void}: Si occupa di richiedere al modello la guida, così poi da ritornarla alla vista. 
-\end{itemize}
-
-La classe GuideModel offre i seguenti metodi:
-\begin{itemize} 
-	\item \textbf{getGuide(): String}: Si occupa di ottenere il filePath della guida di una determinata tipologia di utente, in base all'identificativo di quest'ultimo. 
-\end{itemize}
-
 \subsubsection{BookingForm}
 \begin{figure}[H]
 	\centering
@@ -354,7 +312,7 @@ La classe GuideModel offre i seguenti metodi:
 	\label{fig:BookingForm-Diagramma delle classi}
 \end{figure}
 La classe BookingFormActivity rappresenta la pagina dedicata alla visualizzazione della ricerca di una postazione.
-L'utente per visualizzare questa pagina deve premere sul menu a tendina del menù principale(MainActivity) e successivamente deve premere sulla voce "Prenota Postazione" e verrà reindirizzato alla pagina dedicata.
+L'utente per visualizzare questa pagina deve premere sul menu a tendina del menù principale(ScanActivity) e successivamente deve premere sulla voce "Prenota Postazione" e verrà reindirizzato alla pagina dedicata.
 
 In questa pagina i campi da compilare sono: 
 \begin{itemize}
@@ -373,25 +331,6 @@ La classe BookingFormActivity offre i seguenti metodi:
 	\item \textbf{updateBookingFormView(): void}: Si occupa di far visualizzare i campi da compilare tramite EditText nella pagina. Inoltre, per il campo data è possibile visualizzare una vista a calendario e per il campo ora una vista a orologio.
 \end{itemize}
 
-La classe BookingFormPresenter offre i seguenti metodi:
-\begin{itemize}
-	\item \textbf{registerModel(): void}: associa il Model al Presenter;
-	\item \textbf{showAvailability(in date:String, in startTime:String, in endTime:String, in room:String, in colleague:String): void}: Si occupa di richiedere al modello la disponibilità delle postazioni con i parametri dei campi inseriti, così poi da ritornarla alla vista. 
-\end{itemize}
-
-La classe BookingFormModel offre i seguenti metodi:
-\begin{itemize}
-	\item \textbf{getAvailability(in date:String, in startTime:String, in endTime:String, in room:String, in colleague:String): void}: Si occupa di richiedere al service la disponibilità delle postazioni con i parametri selezionati dall'utente. 
-\end{itemize}
-
-La classe Service offre i seguenti metodi:
-\begin{itemize}
-	\item \textbf{getUserBookings(idUser:int): JSONObject}: Si occupa di trasformare in un JSONObject l'id dello user;
-	\item \textbf{httpClient(json:JSONObject): JSONObject}: Viene fatta la richiesta al backend per ottenere le postazioni disponibili;
-	\item \textbf{login(in username:String, in password:String): JSONObject}: Si occupa di trasformare in un JSONObject lo username e password dello user;
-	\item \textbf{getAvailability(in date:String, in startTime:String, in endTime:String, in room:String, in colleague:String): JSONObject}: Viene fatta la richiesta al backend per verificare la disponibilità delle postazioni filtrate in base ai parametri.
-\end{itemize}
-
 
 \subsubsection{Bookings}
 \begin{figure}[H]
@@ -400,7 +339,7 @@ La classe Service offre i seguenti metodi:
 	\caption{Bookings-Diagramma delle classi}
 	\label{fig:Bookings-Diagramma delle classi}
 \end{figure}
-La classe BookingActivity rappresenta la pagina dedicata alle prenotazioni effettuate da un utente. L'utente per visualizzare le prenotazioni deve premere sul menù a tendina del menù principale(MainActivity) e successivamente deve premere sulla voce "Visualizza Prenotazioni" e verrà reindirizzato alla pagina dedicata.
+La classe BookingActivity rappresenta la pagina dedicata alle prenotazioni effettuate da un utente. L'utente per visualizzare le prenotazioni deve premere sul menù a tendina del menù principale(ScanActivity) e successivamente deve premere sulla voce "Visualizza Prenotazioni" e verrà reindirizzato alla pagina dedicata.
 
 In questa pagina verranno mostrate in una lista tutte le prenotazioni effettuate dall'utente. Per ogni prenotazione i campi visualizzati sono: 
 \begin{itemize}
@@ -419,24 +358,6 @@ La classe BookingActivity offre i seguenti metodi:
 	\item \textbf{getLayoutId(): void}: associa il rispettivo file in formato xml alla View;
 	\item \textbf{registerPresenter(): void}: associa il Presenter alla View;
 	\item \textbf{updateBookingView(in bookings:List<DataBooking>): void}: Si occupa di far visualizzare le prenotazioni di un utente in una lista se ci sono, altrimenti deve far visualizzare la stringa "Non ci sono prenotazioni effettuate".
-\end{itemize}
-
-La classe BookingPresenter offre i seguenti metodi:
-\begin{itemize}
-	\item \textbf{showBookings(): void}: Si occupa di richiedere al modello la lista delle prenotazioni, così poi da restituirle alla vista; 
-	\item \textbf{registerModel(): void}: associa il Model al Presenter.
-\end{itemize}
-
-La classe BookingModel offre i seguenti metodi:
-\begin{itemize}
-	\item \textbf{getBookingList(): List<DataBooking>}: Si occupa di richiedere al service le prenotazioni di un determinato utente. 
-\end{itemize}
-
-La classe Service offre i seguenti metodi:
-\begin{itemize}
-	\item \textbf{getUserBookings(idUser:int): JSONObject}: Si occupa di trasformare in un JSONObject l'id dello user così poi da ottenere la lista delle sue prenotazioni;
-	\item \textbf{httpClient(json:JSONObject): JSONObject}: Viene fatta la richiesta al backend per ottenere la lista delle prenotazioni.
- 
 \end{itemize}
 
 \subsection{Diagramma di sequenza}
