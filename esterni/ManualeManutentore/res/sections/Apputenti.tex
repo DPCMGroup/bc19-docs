@@ -345,9 +345,8 @@ In questa pagina verranno mostrate in una lista tutte le prenotazioni effettuate
 	\item bookId; 
 	\item workName; 
 	\item roomName; 
-	\item startTime; 
-	\item endTime; 
-	\item date. 
+	\item start; 
+	\item end. 
 \end{itemize}
 Nel caso non ci siano prenotazioni effettuate verrà mostrata una semplice stringa di testo con scritto: "Non ci sono prenotazioni effettuate".
 
@@ -356,7 +355,10 @@ La classe BookingActivity offre i seguenti metodi:
 	\item \textbf{onCreate(savedInstanceState:Bundle): void}: Si occupa della creazione della parte grafica visualizzata dall'utente; 
 	\item \textbf{getLayoutId(): void}: associa il rispettivo file in formato xml alla View;
 	\item \textbf{registerPresenter(): void}: associa il Presenter alla View;
-	\item \textbf{updateBookingView(in bookings:List<DataBooking>): void}: Si occupa di far visualizzare le prenotazioni di un utente in una lista se ci sono, altrimenti deve far visualizzare la stringa "Non ci sono prenotazioni effettuate".
+	\item \textbf{updateBookingView(bookings:List<DataBooking>): void}: Si occupa di far visualizzare le prenotazioni di un utente in una lista se ci sono;
+	\item \textbf{callError(): void}: Si occupa di far visualizzare la stringa "Non ci sono prenotazioni";
+	\item \textbf{updateBookingDeleteView(bookings:ArrayList<DataBooking>?): void}: Si occupa di aggiornare la vista nel caso una prenotazione sia eliminata premendo sul apposito bottone;
+	\item \textbf{callDeleteError(): void}: Si occupa di far apparire un messaggio di errore nel caso l'eliminazione della prenotazione non sia riuscita.
 \end{itemize}
 
 \subsection{Diagramma di sequenza}
