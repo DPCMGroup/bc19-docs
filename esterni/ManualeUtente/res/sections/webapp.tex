@@ -7,16 +7,23 @@ In generale offre all'utente le seguenti funzionalità:
 \begin{itemize}
 	\item \textbf{Login:} L'utente ha la possibilità di autenticarsi inserendo il proprio username e password; \\
 	\item \textbf{Logout:} L'utente ha la possibilità di deautenticarsi premendo sul bottone "Logout" del menù principale in alto a destra. \\
+	\item \textbf{Guida:} L'utente ha la possibilità di visualizzare la guida dell'applicazione web premendo sul bottone "Guida" del menù principale in alto a destra. \\
 \end{itemize}
 Per quanto riguarda le stanze, permette all'amministratore di:
 \begin{itemize}
-	\item \textbf{Aggiungere una stanza}: l'amministratore ha la possibilità di aggiungere una nuova stanza premendo sul bottone "Add Room"; \\
-	\item \textbf{Ricercare una determinata postazione}: l'amministratore ha la possibilità di ricercare una postazione inserendo determinati parametri premendo sul bottone "Search Workstation"; \\
-	\item \textbf{Modificare una stanza}: l'amministratore ha la possibilità di modificare le caratteristiche di una stanza premendo sul bottone "Edit Room"; \\
-	\item \textbf{Rimuovere una stanza}: l'amministratore ha la possibilità di rimuovere una stanza premendo sul bottone "Remove Room"; \\
-	\item \textbf{Aggiungere una postazione all'interno di una stanza}: l'amministratore ha la possibilità di aggiungere una postazione all'interno di una stanza premendo sul bottone "Add Workstation"; \\
-	\item \textbf{Rimuovere una postazione all'interno di una stanza}: l'amministratore ha la possibilità di eliminare una postazione all'interno di una stanza premendo sul bottone dove è raffigurato un cestino; \\
-	\item \textbf{Modificare una postazione all'interno di una stanza}:  l'amministratore ha la possibilità di modificare le caratteristiche di una postazione all'interno di una stanza premendo sul bottone dove è raffigurata una "E". \\
+	\item \textbf{Aggiungere una stanza}: l'amministratore ha la possibilità di aggiungere una nuova stanza premendo sul bottone "Crea stanza"; \\
+	\item \textbf{Modificare una stanza}: l'amministratore ha la possibilità di modificare le caratteristiche di una stanza premendo sul bottone "Modifica stanza"; \\
+	\item \textbf{Rimuovere una stanza}: l'amministratore ha la possibilità di rimuovere una stanza premendo sul bottone "Elimina stanza"; \\
+	\item \textbf{Cercare una stanza}: l'amministratore ha la possibilità di cercare una stanza premendo sul bottone "Cerca una stanza" e poi inserendo il nome della stanza da ricercare; \\
+	\item \textbf{Impostare una stanza come inaccessibile}: l'amministratore ha la possibilità di impostare una stanza come inaccessibile premendo nel bottone "Modifica stanza" e selezionando le date in cui sarà inaccessibile; \\
+\end{itemize}
+Per quanto riguarda le postazioni all'interno delle stanze, permette all'amministratore di:
+\begin{itemize}
+	\item \textbf{Aggiungere una postazione all'interno di una stanza}: l'amministratore ha la possibilità di aggiungere una postazione all'interno di una stanza premendo sul bottone "Crea postazione"; \\
+	\item \textbf{Rimuovere una postazione all'interno di una stanza}: l'amministratore ha la possibilità di eliminare una postazione all'interno di una stanza selezionando la postazione di interesse nella griglia, e poi premendo nel bottone "Elimina"; \\
+	\item \textbf{Modificare una postazione all'interno di una stanza}:  l'amministratore ha la possibilità di modificare le caratteristiche di una postazione all'interno di una stanza selezionando la postazione di interesse nella griglia, e poi premendo nel bottone "Modifica" e inserendo i campi richiesti; \\
+	\item \textbf{Cercare una postazione all'interno di una stanza}: l'amministratore ha la possibilità di cercare una postazione all'interno di una stanza premendo sul bottone "Cerca una postazione" e poi inserendo il nome della postazione da ricercare; \\
+	\item \textbf{Impostare una postazione come guasta}:  l'amministratore ha la possibilità di modificare le caratteristiche di una postazione all'interno di una stanza impostandola come guasta selezionando la postazione di interesse nella griglia, e poi premendo nel bottone "Modifica" e poi selezionando le date in cui la postazione sarà guasta; \\
 \end{itemize}
 Per quanto riguarda le credenziali, permette all'amministratore di:
 \begin{itemize}
@@ -130,8 +137,7 @@ Per poter ricercare una determinata postazione, l'amministratore deve premere su
 	\includegraphics[width=15cm]{res/images/bottoneSearchWorkstation.png}
 	\caption{Visualizzazione bottoni}
 \end{figure}
-Una volta premuto sul bottone, comparirà un popup che l'amministratore dovrà compilare inserendo:
-l'identificativo della postazione, oppure l'username di chi la occupa.
+Una volta premuto sul bottone, comparirà un popup che l'amministratore dovrà compilare inserendo il nome della postazione.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=15cm]{res/images/searchWorkstation.png}
@@ -180,7 +186,7 @@ Una volta premuto sul bottone, comparirà un popup dove l'amministratore dovrà 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=15cm]{res/images/roomInaccessibile.png}
-	\caption{Visualizzazione popup modifica stanza come inaccessibile}
+	\caption{Visualizzazione popup impostazione stanza come inaccessibile}
 \end{figure}
 
 \subsubsection{Rimozione di una stanza}
@@ -193,7 +199,7 @@ Per poter rimuovere una stanza, l'amministratore deve premere sul bottone 'Elimi
 Una volta premuto sul bottone, comparirà un popup che chiederà all'amministratore una conferma per eliminare definitivamente la stanza.
 
 \subsubsection{Aggiunta di una postazione all'interno di una stanza}
-Per poter inserire una nuova postazione all'interno di una stanza, l'amministratore deve premere sul bottone 'Add Workstation'.
+Per poter inserire una nuova postazione all'interno di una stanza, l'amministratore deve premere sul bottone 'Crea postazione'.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=15cm]{res/images/bottoneAddWorkstation.png}
@@ -212,23 +218,41 @@ Una volta premuto sul bottone, comparirà un popup che l'amministratore dovrà c
 	\caption{Visualizzazione popup inserimento postazione dentro a una stanza}
 \end{figure}
 
-\subsubsection{Eliminazione di una postazione all'interno di una stanza}
-Per poter eliminare una postazione all'interno di una stanza, l'amministratore deve premere sul bottone dove è raffigurato un cestino.
+\subsubsection{Legenda dei colori di una postazione all'interno di una stanza}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=15cm]{res/images/bottoneCestinoWorkstation.png}
-	\caption{Visualizzazione bottoni}
+	\includegraphics[width=10cm]{res/images/legendaColori.png}
+	\caption{Visualizzazione legenda colori postazioni}
 \end{figure}
-Una volta premuto sul bottone, comparirà un popup che chiederà all' amministratore una conferma per eliminare definitivamente la postazione dentro alla stanza.
+
+\subsubsection{Eliminazione di una postazione all'interno di una stanza}
+Per poter eliminare una postazione all'interno di una stanza, l'amministratore deve selezionare la postazione di interesse nella griglia.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/postDaEliminare.png}
+	\caption{Visualizzazione postazioni}
+\end{figure}
+Una volta premuto sulla postazione, comparirà una finestra dove l'utente dovrà premere nel bottone 'Elimina'.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=10cm]{res/images/bottoneCestinoWorkstation.png}
+	\caption{Visualizzazione bottone}
+\end{figure}
 
 \subsubsection{Modifica di una postazione all'interno di una stanza}
-Per poter modificare le caratteristiche di una postazione all'interno di una stanza, l'amministratore deve premere sul bottone 'E' di colore blu.
+Per poter modificare una postazione all'interno di una stanza, l'amministratore deve selezionare la postazione di interesse nella griglia.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=15cm]{res/images/bottoneEditWorkstation.png}
-	\caption{Visualizzazione bottoni}
+	\includegraphics[width=15cm]{res/images/postDaEliminare.png}
+	\caption{Visualizzazione postazioni}
 \end{figure}
-Una volta premuto sul bottone, comparirà un popup che l'amministratore dovrà compilare inserendo:
+Una volta premuto sulla postazione, comparirà una finestra dove l'utente dovrà premere nel bottone 'Modifica'.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=10cm]{res/images/bottoneCestinoWorkstation.png}
+	\caption{Visualizzazione bottone}
+\end{figure}
+Una volta premuto nel bottone 'Modifica' dovrà compilare i seguenti campi per modificare la postazione:
 \begin{enumerate}
 	\item il tag della postazione;
 	\item il nome della postazione;
@@ -239,6 +263,30 @@ Una volta premuto sul bottone, comparirà un popup che l'amministratore dovrà c
 	\centering
 	\includegraphics[width=15cm]{res/images/editWorkstation.png}
 	\caption{Visualizzazione popup modifica postazione all'interno di una stanza}
+\end{figure}
+
+\subsubsection{Impostare guasta una postazione all'interno di una stanza}
+Per poter modificare come guasta una postazione all'interno di una stanza, l'amministratore deve selezionare la postazione di interesse nella griglia.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/postDaEliminare.png}
+	\caption{Visualizzazione postazioni}
+\end{figure}
+Una volta premuto sulla postazione, comparirà una finestra dove l'utente dovrà premere nel bottone 'Modifica'.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=10cm]{res/images/bottoneCestinoWorkstation.png}
+	\caption{Visualizzazione bottone}
+\end{figure}
+Una volta premuto nel bottone 'Modifica' dovrà selezionare il checkobx 'Guasto' e selezionare i seguenti parametri:
+\begin{enumerate}
+	\item data di inizio dello stato di guasta;
+	\item data di fine dello stato di guasta.
+\end{enumerate}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/postazioneGuasta.png}
+	\caption{Visualizzazione popup impostazione postazione guasta all'interno di una stanza}
 \end{figure}
 
 \subsubsection{Visualizzazione delle credenziali}
@@ -259,7 +307,7 @@ La lista di credenziali è composta dai seguenti campi:
 	\item Abilitazione;
 	\item Opzioni.
 \end{enumerate}
-Titpo indica il tipo di utente, Opzioni presenta due pulsanti per eliminare o modificare le credenziali e Abilitazione indica se le credenziali di quell'utente sono abilitate oppure no.
+Tipo indica il tipo di utente, Opzioni presenta due pulsanti per eliminare o modificare le credenziali e Abilitazione indica se le credenziali di quell'utente sono abilitate oppure no.
 
 \subsubsection{Aggiunta di nuove credenziali}
 Per poter aggiungere nuove credenziali, l'amministratore deve premere sul bottone 'Crea credenziale' di colore blu.
@@ -316,9 +364,17 @@ Una volta premuto sul bottone, comparirà un popup che l'amministratore dovrà c
 \end{figure}
 
 \subsubsection{Visualizzazione della Guida}
-Per poter visualizza il Manuale Utente dell'applicazione, l'amministratore deve premere sul bottone 'Guida'. In seguito in una nuova pagina del browser, verrà aperta in formato PDF la Guida (Manuale Utente) dell'applicazione.
+Per poter visualizzare il Manuale Utente dell'applicazione, l'amministratore deve premere sul bottone 'Guida'. In seguito in una nuova pagina del browser, verrà aperta in formato PDF la Guida (Manuale Utente) dell'applicazione.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=15cm]{res/images/guida.jpg}
 	\caption{Visualizzazione Guida}
+\end{figure}
+\newpage
+\subsubsection{Visualizzazione dei Report}
+Per poter visualizzare i report di occupazione / igienizzazione / dati inviati alla blockchain l'amministratore deve premere nel bottone 'Report'.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/bottoneReport.png}
+	\caption{Visualizzazione bottone}
 \end{figure}
