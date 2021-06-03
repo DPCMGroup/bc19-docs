@@ -119,7 +119,7 @@ Tramite Gradle il progetto dell'applicazione viene compilato, \glock{testato} ed
 
 \subsubsection{Creazione di un metodo}
 Tramite l'utilizzo dell'architettura Model View Presenter è facile implementare nuovi metodi nella business logic o nella vista e in seguito collegarli tra loro tramite il Presenter.
-Per creare una nuova Activity che rispetti l'architettura MVP bisognerà premere su \textit{com.example.bc19mobile} e successivamente selezionare \textit{New MVP Kotlin}. Assegnando un nome a questa Activity verrà creata una struttura che rispetta l'architettura.
+Per creare una nuova Activity che rispetti l'architettura MVP bisognerà premere con il tasto destro su \textit{com.example.bc19mobile} e successivamente selezionare \textit{New MVP Kotlin}. Assegnando un nome a questa Activity verrà creata una struttura che rispetta l'architettura.
 
 
 \subsection{Architettura}
@@ -205,9 +205,19 @@ Nel seguente package vengono raggruppate tutte le interfacce Contract che servon
 Nel seguente package vengono raggruppate tutte le classi ed interfacce dedicate alle funzionalità generiche che possono essere usate in base ai contesti per dare supporto alla vista.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=5cm]{res/images/apputenti-packageTools.png}
+	\includegraphics[width=8cm]{res/images/apputenti-packageTools.png}
 	\caption{package-Tools}
 	\label{fig:package-Tools}
+\end{figure}
+
+
+\subsubsection{NFC}
+Nel seguente package vengono raggruppate tutte le classi, interfacce e oggetti dedicate alle funzionalità generiche dei tag NFC che possono essere usate in base ai contesti per dare supporto alla vista.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=8cm]{res/images/apputenti-packageNFC.png}
+	\caption{package-NFC}
+	\label{fig:package-NFC}
 \end{figure}
 
 \subsection{Diagramma delle classi}
