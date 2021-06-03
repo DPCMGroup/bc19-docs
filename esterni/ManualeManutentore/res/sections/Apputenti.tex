@@ -259,9 +259,9 @@ La classe LoginPresenter offre i seguenti metodi:
 La classe LoginModel offre i seguenti metodi:
 \begin{itemize}
 	\item \textbf{sendLogin(username: String, password: String): void}: Si occupa di richiedere al service di verificare le credenziali fornite dall'utente. 
-	\item \textbf{sendLogin(username: String, password: String): void}: Si occupa di richiedere al service di verificare le credenziali fornite dall'utente. 
-	\item \textbf{sendLogin(username: String, password: String): void}: Si occupa di richiedere al service di verificare le credenziali fornite dall'utente. \\
-	\item \textbf{sendLogin(username: String, password: String): void}: Si occupa di richiedere al service di verificare le credenziali fornite dall'utente. 
+	\item \textbf{getUser(): User?}: Si occupa di richiedere allo User le informazioni. 
+	\item \textbf{setLoginListener(listener:LoginListener?): void}: Si occupa di settare il listner per richiamare il Presenter. 
+	\item \textbf{loginHandle(response:String): void}: Si occupa di gestire la risposta fornita dal service. 
 \end{itemize}
 
 La classe Service offre i seguenti metodi:
