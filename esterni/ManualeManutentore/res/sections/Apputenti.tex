@@ -20,9 +20,12 @@ Per quanto riguarda il dipendente, l'applicazione offre i seguenti servizi:
 	\item \textbf{Disdire prenotazione:} Il dipendente può disdire una prenotazione dopo che è entrato nella pagina in cui visualizza tutte le prenotazioni effettuate; \\
 	\item \textbf{Guida:} Il dipendente può visualizzare la guida premendo sull'elemento della lista "Guida" del menù principale in alto a destra; \\
 	\item \textbf{Prenota postazione:} Il dipendente può prenotare una postazione premendo sull'elemento della lista "Prenota postazione" del menù principale in alto a destra.
-	Dopo aver premuto dovrà inserire la data, l'ora di inizio, l'ora di fine e la stanza obbligatoriamente e in modo facoltativo anche il nome di un collega.
-	Una volta premuto sul bottone "Cerca", se è stato inserito il nome di un collega, visualizzerà tutte le sue prenotazioni effettuate nella stanza, nel range orario e nella data inseriti e scorrendo sotto visualizzerà tutte le postazioni di quella stanza con il loro stato e potrà decidere quale prenotare se disponibile. \\	
+	Dopo aver premuto dovrà inserire la data, l'ora di inizio, l'ora di fine e la stanza obbligatoriamente.
+	Una volta premuto sul bottone "Cerca" visualizzerà tutte le postazioni di quella stanza che sono disponibili e potrà decidere quale prenotare. \\	
 \end{itemize}
+Per quanto riguarda il dipendente, l'addetto alle pulizie offre i seguenti servizi:
+\item \textbf{Lista postazioni e stanze:} Il dipendente, dopo aver premuto sull'apposito bottone può ottenere la lista delle stanze o delle postazioni da igienizzare;
+\item \textbf{Igienizzare:} Il dipendente, dopo aver ottenuto l'elenco delle stanze o delle postazioni può igienizzarle premendo sull'apposito bottone.
 
 
 
@@ -359,6 +362,22 @@ La classe BookingActivity offre i seguenti metodi:
 	\item \textbf{callError(): void}: Si occupa di far visualizzare la stringa "Non ci sono prenotazioni";
 	\item \textbf{updateBookingDeleteView(bookings:ArrayList<DataBooking>?): void}: Si occupa di aggiornare la vista nel caso una prenotazione sia eliminata premendo sul apposito bottone;
 	\item \textbf{callDeleteError(): void}: Si occupa di far apparire un messaggio di errore nel caso l'eliminazione della prenotazione non sia riuscita.
+\end{itemize}
+
+\subsubsection{Clean}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=16cm]{res/images/Clean.png}
+	\caption{Clean-Diagramma delle classi}
+	\label{fig:Clean-Diagramma delle classi}
+\end{figure}
+La classe CleanActivity rappresenta la pagina nella quale l'addetto alle pulizie può ricercare le postazioni e le stanze da igienizzare.
+
+La classe CleanActivity offre i seguenti metodi:
+\begin{itemize}
+	\item \textbf{onCreate(savedInstanceState:Bundle): void}: Si occupa della creazione della parte grafica visualizzata dall'utente; 
+	\item \textbf{getLayoutId(): void}: associa il rispettivo file in formato xml alla View;
+	\item \textbf{registerPresenter(): void}: associa il Presenter alla View; 
 \end{itemize}
 
 \subsection{Diagramma di sequenza}
