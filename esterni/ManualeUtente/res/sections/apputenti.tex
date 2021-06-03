@@ -76,13 +76,14 @@ Per quanto riguarda l'addetto alle pulizie, l'applicazione offre i seguenti serv
 	L'utente ha effettuato la scansione di una postazione e riceve le seguenti informazioni nella pagina principale dell'applicazione:
 	\begin{itemize}
 		\item nome postazione;
-		\item stato della postazione;
+		\item stato postazione.
 	\end{itemize}
 	In base allo stato in cui si trova la postazione, l'utente visualizzerà un messaggio differente:
 	\begin{itemize}
-		\item se libera e igienizzata, si invita l'utente a lasciare il telefono sul tag NFC per effettuare un'occupazione della postazione;
+		\item se libera e igienizzata, si invita l'utente a indicare il numero di ore per cui si intende effettuare un'occupazione della postazione;
 		\item se libera e non igienizzata, si invita l'utente a effettuare la pulizia autonoma della postazione tramite il kit aziendale e quindi di cliccare il bottone "igienizza", che modificherà lo stato in igienizzata;
-		\item se prenotata e igienizzata, si invita l'utente ad abbandonare la postazione dato che al momento non è disponibile;
+		\item se prenotata dallo stesso utente e igienizzata, viene mostrato un messaggio contenente la data e ora di inizio e fine della prenotazione e si invita l'utente a indicare il numero di ore per cui si intende effettuare un'occupazione della postazione;
+		\item se prenotata da un altro utente e igienizzata, si invita l'utente ad abbandonare la postazione dato che al momento non è disponibile;
 		\item se prenotata e non igienizzata, si invita l'utente a effettuare la pulizia autonoma della postazione tramite il kit aziendale e quindi di cliccare il bottone "igienizza", che modificherà lo stato in prenotata e igienizzata;
 		\item se guasta e igienizzata, si invita l'utente ad abbandonare la postazione dato che al momento non è disponibile;
 		\item se guasta e non igienizzata, si invita l'utente a effettuare la pulizia autonoma della postazione tramite il kit aziendale e quindi di cliccare il bottone "igienizza", che modificherà lo stato in guasta e igienizzata.
@@ -94,13 +95,13 @@ Per quanto riguarda l'addetto alle pulizie, l'applicazione offre i seguenti serv
 		\includegraphics[width=5cm]{res/images/inizioOccupazione.png}
 		\caption{Inizio occupazione postazione}
 	\end{figure}
-	L'utente dopo aver scansionato con il proprio smartphone il tag NFC, può occupare la postazione per un determinato numero di ore da lui selezionato.
-	l’intera giornata lavorativa. Lo stato della postazione deve essere libera e igienizzata e non prenotata da un altro utente durante il resto della giornata.
+	L'utente dopo aver scansionato con il proprio smartphone il tag NFC, può occupare la postazione per un determinato numero di ore da lui selezionato. Lo stato della postazione deve essere libera e igienizzata o prenotata dallo stesso utente. Nel caso in cui la postazione sia prenotata da un altro utente, l'ora di fine occupazione, calcolata con l'ora inserita in precedenza, deve essere minore dell'orario di inizio prenotazione di un altro utente. Altrimenti viene chiesto di inserire meno ore per l'occupazione.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=5cm]{res/images/occupata.png}
 		\caption{Fine occupazione postazione}
 	\end{figure}
+	Una volta avvenuta con successo l'occupazione, lo stato della postazione diventa "Occupato" e da quel momento in poi risulta possibile terminare l'occupazione premendo il bottone "Fine Occupazione".
 	\subsubsection{Igienizzazione postazione}
 	\begin{figure}[H]
 		\centering
@@ -117,12 +118,10 @@ Per quanto riguarda l'addetto alle pulizie, l'applicazione offre i seguenti serv
 	L’utente può accedere alla sezione per la visualizzazione della lista delle prenotazioni da lui effettuate cliccando nel menù a tendina in alto a destra "Visualizza prenotazioni".
 	Ogni prenotazione mostra le seguenti informazioni:
 	\begin{itemize}
-		\item stanza della prenotazione;
-		\item posizione indicata tramite X e Y;
-		\item data di inizio della prenotazione;
-		\item ora di inizio della prenotazione;
-		\item data di fine della prenotazione;
-		\item ora di fine della prenotazione.
+		\item nome della postazione;
+		\item nome della stanza;
+		\item data e ora di inizio;
+		\item data e ora di fine.
 	\end{itemize}
 	\subsubsection{Disdetta prenotazione}
 	\begin{figure}[H]
@@ -130,7 +129,7 @@ Per quanto riguarda l'addetto alle pulizie, l'applicazione offre i seguenti serv
 		\includegraphics[width=5cm]{res/images/MessaggioEliminazioneAvvenutaSuccesso.png}
 		\caption{Disdetta prenotazione}
 	\end{figure}
-	L’utente si trova nella sezione di visualizzazione della lista delle prenotazioni, arrivatoci cliccando il menù a tendina in alto a destra, e disdice una prenotazione da lui effettuata in precedenza.
+	L’utente si trova nella sezione di visualizzazione della lista delle prenotazioni, arrivatoci cliccando il menù a tendina in alto a destra, e disdice una prenotazione da lui effettuata in precedenza premendo il bottone "Elimina". A seguito di tale azione la prenotazione non viene più visualizzata nella lista e compare il messaggio "Eliminazione eseguita con successo!".
 	\subsubsection{Guida utente}
 	\begin{figure}[H]
 		\centering
@@ -145,7 +144,7 @@ Per quanto riguarda l'addetto alle pulizie, l'applicazione offre i seguenti serv
 		\caption{Inserimento campi di ricerca}
 	\end{figure}
 	Il dipendente può prenotare una postazione premendo sull'elemento della lista "Prenota postazione" del menù principale in alto a destra.
-	Dopo aver premuto dovrà inserire la data, l'ora di inizio, l'ora di fine e la stanza obbligatoriamente e in modo facoltativo anche il nome del collega. Per facilitare l'utente nell'inserimento dei dati, sono presenti una vista a calendario per la selezione di una data e una vista a orologio per la selezione di un orario. Una volta premuto sul bottone "Cerca", se è stato inserito il nome del collega, visualizzerà tutte le sue prenotazioni effettuate nella stanza, nel range orario e nella data inseriti e scorrendo sotto visualizzerà tutte le postazioni di quella stanza con il loro stato e potrà decidere quale prenotare se disponibile.
+	Dopo aver premuto dovrà inserire la data, l'ora di inizio, l'ora di fine e la stanza obbligatoriamente. Per facilitare l'utente nell'inserimento dei dati, sono presenti una vista a calendario per la selezione di una data e una vista a orologio per la selezione di un orario. Una volta premuto sul bottone "Cerca", l’utente visualizzerà tutte le postazioni disponibili nella stanza, nel range orario e nella data inseriti e potrà decidere di effettuare una prenotazione premendo il bottone "Prenota" presente sulla destra di ogni postazione.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=5cm]{res/images/ListaPostazioniDaPrenotare.png}
@@ -187,8 +186,8 @@ Per quanto riguarda l'addetto alle pulizie, l'applicazione offre i seguenti serv
 	L’utente può accedere alla sezione per la visualizzazione della lista delle postazioni da igienizzare cliccando il bottone "Ottieni postazioni", presente nella pagina principale.
 	Ogni postazione mostra le seguenti informazioni:
 	\begin{itemize}
-		\item nome postazione;
-		\item stanza della postazione;
+		\item nome della postazione;
+		\item nome della stanza della postazione.
 	\end{itemize}
 	\subsubsection{Visualizzazione lista stanze da igienizzare}
 	\begin{figure}[H]
@@ -197,10 +196,7 @@ Per quanto riguarda l'addetto alle pulizie, l'applicazione offre i seguenti serv
 		\caption{Lista stanze da igienizzare}
 	\end{figure}
 	L’utente può accedere alla sezione per la visualizzazione della lista delle stanze da igienizzare cliccando il bottone "Ottieni stanze", presente nella pagina principale.
-	Ogni postazione mostra le seguenti informazioni:
-	\begin{itemize}
-		\item nome stanza;
-	\end{itemize}
+	Ogni stanza mostra come informazione il nome che la identifica.
 	
 	\subsubsection{Igienizzazione postazione}
 	\begin{figure}[H]
@@ -208,7 +204,7 @@ Per quanto riguarda l'addetto alle pulizie, l'applicazione offre i seguenti serv
 		\includegraphics[width=5cm]{res/images/igienizzazionePostazioniAddetto.png}
 		\caption{Postazione igienizzata}
 	\end{figure}
-	L'utente igienizza una postazione e lo segnala premendo l'apposito bottone "igienizza" presente sulla destra della postazione. In modo automatico la postazione igienizzata non verrà più visualizzata sulla lista.
+	L'utente igienizza una postazione e lo segnala premendo l'apposito bottone "igienizza" presente sulla destra della postazione. In modo automatico la postazione igienizzata non verrà più visualizzata sulla lista e comparirà il messaggio "Igienizzazione completata!".
 	
 	\subsubsection{Igienizzazione stanza}
 	\begin{figure}[H]
@@ -216,7 +212,7 @@ Per quanto riguarda l'addetto alle pulizie, l'applicazione offre i seguenti serv
 		\includegraphics[width=5cm]{res/images/igienizzazioneStanza.png}
 		\caption{Stanza igienizzata}
 	\end{figure}
-	L'utente igienizza una stanza e lo segnala premendo l'apposito bottone "igienizza" presente sulla destra della stanza. In modo automatico la stanza igienizzata non verrà più visualizzata sulla lista.
+	L'utente igienizza una stanza e lo segnala premendo l'apposito bottone "igienizza" presente sulla destra della stanza. In modo automatico la stanza igienizzata non verrà più visualizzata sulla lista e comparirà il messaggio "Igienizzazione eseguita con successo!".
 	\subsubsection{Guida utente}
 	\begin{figure}[H]
 		\centering
