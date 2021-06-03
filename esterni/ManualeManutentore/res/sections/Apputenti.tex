@@ -405,7 +405,7 @@ La classe BookingWorkstationActivity offre i seguenti metodi:
 \subsubsection{RoomsDirty}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=16cm]{res/images/Clean.png}
+	\includegraphics[width=16cm]{res/images/RoomsDirty.png}
 	\caption{RoomsDirty-Diagramma delle classi}
 	\label{fig:RoomsDirty-Diagramma delle classi}
 \end{figure}
@@ -416,16 +416,16 @@ La classe RoomsDirtyActivity offre i seguenti metodi:
 	\item \textbf{onCreate(savedInstanceState:Bundle): void}: Si occupa della creazione della parte grafica visualizzata dall'utente; 
 	\item \textbf{getLayoutId(): void}: associa il rispettivo file in formato xml alla View;
 	\item \textbf{registerPresenter(): void}: associa il Presenter alla View; 
-	\item \textbf{updateWorkstationsBookableView( workstationsDirty:ArrayList<DataBookableWorkstation>?): void}: Aggiorna la vista con una lista di postazioni prenotabili; 
-	\item \textbf{callErrorBookableWorkstation(): void}: Da un messaggio di errore nel caso non ci siano postazioni prenotabili;
-	\item \textbf{callBookableFailure(): void}: Si occupa di far vedere un messaggio di errore nel caso la prenotazione non sia stata effettuata; 
-	\item \textbf{callBookableSuccess(): void}: Si occupa di aggiornare la vista in seguito alla prenotazione avvenuta con successo.
+	\item \textbf{updateRoomsView(roomsDirty:ArrayList<DataDirtyRooms>?): void}: Aggiorna la vista con una lista di stanze igienizzabili; 
+	\item \textbf{callErrorRoomsDirty(): void}: Da un messaggio di errore nel caso non ci siano stanze igienizzabili;
+	\item \textbf{callErrorSanitizeRoom(): void}: Ritorna un messaggio se l'igienizzazione di una stanza non è avvenuta con successo; 
+	\item \textbf{updateRoomsSanitizeView(): void}: Si occupa di aggiornare la vista in seguito all'igienizzazione di una stanza avvenuta con successo.
 \end{itemize}
 
 \subsubsection{WorkstationsDirty}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=16cm]{res/images/Clean.png}
+	\includegraphics[width=16cm]{res/images/WorkstationsDirty.png}
 	\caption{WorkstationsDirty-Diagramma delle classi}
 	\label{fig:WorkstationsDirty-Diagramma delle classi}
 \end{figure}
@@ -436,10 +436,10 @@ La classe WorkstationsDirtyActivity offre i seguenti metodi:
 	\item \textbf{onCreate(savedInstanceState:Bundle): void}: Si occupa della creazione della parte grafica visualizzata dall'utente; 
 	\item \textbf{getLayoutId(): void}: associa il rispettivo file in formato xml alla View;
 	\item \textbf{registerPresenter(): void}: associa il Presenter alla View; 
-	\item \textbf{updateWorkstationsBookableView( workstationsDirty:ArrayList<DataBookableWorkstation>?): void}: Aggiorna la vista con una lista di postazioni prenotabili; 
-	\item \textbf{callErrorBookableWorkstation(): void}: Da un messaggio di errore nel caso non ci siano postazioni prenotabili;
-	\item \textbf{callBookableFailure(): void}: Si occupa di far vedere un messaggio di errore nel caso la prenotazione non sia stata effettuata; 
-	\item \textbf{callBookableSuccess(): void}: Si occupa di aggiornare la vista in seguito alla prenotazione avvenuta con successo.
+	\item \textbf{updateWorkstationsView(workstationsDirty:ArrayList<DataDirtyWorkstations>?): void}: Aggiorna la vista con una lista di postazioni igienizzabili; 
+	\item \textbf{callErrorWorkstationsDirty(): void}:Da un messaggio di errore nel caso non ci siano postazioni igienizzabili;
+	\item \textbf{callSanitizeError(): void}:  Ritorna un messaggio se l'igienizzazione di una postazione non è avvenuta con successo; 
+	\item \textbf{callSanitizeOk(): void}: Si occupa di aggiornare la vista in seguito all'igienizzazione di una postazione avvenuta con successo.
 \end{itemize}
 
 \subsection{Diagramma di sequenza}
