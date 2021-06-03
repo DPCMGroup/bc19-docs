@@ -14,9 +14,117 @@ I tipi di dati e i loro rispettivi valori descritti nelle sezioni che seguono ri
 
 \subsection{API}
 \subsubsection{Metodi}
+\paragraph{Occupazione}
 \begin{center}
 	\rowcolors{2}{lightest-grayest}{white}
-	\begin{longtable}{|c|p{5cm}|p{5cm}|}
+	\begin{longtable}{|c|p{7cm}|p{5cm}|}
+		\hline
+		\rowcolor{lighter-grayer}
+		\textbf{Richiesta HTTP} & \textbf{Path} & \textbf{Descrizione}\\		
+		\hline
+		\endfirsthead
+		\textbf{POST} & /attendences/insert & Inserisce un'occupazione.\\
+		\hline
+		\textbf{POST} & /attendences/end & Termina un'occupazione.\\
+		\hline
+	\end{longtable}
+\end{center}
+\paragraph{Prenotazione}
+\begin{center}
+	\rowcolors{2}{lightest-grayest}{white}
+	\begin{longtable}{|c|p{7cm}|p{5cm}|}
+		\hline
+		\rowcolor{lighter-grayer}
+		\textbf{Richiesta HTTP} & \textbf{Path} & \textbf{Descrizione}\\		
+		\hline
+		\endfirsthead
+		\textbf{POST} & booking/insert & Inserisce una prenotazione.\\
+		\hline
+		\textbf{GET} & booking/list & Restituisce la lista di tutte le prenotazioni.\\
+		\hline
+		\textbf{POST} & booking/modify & Modifica la prenotazione specificata.\\
+		\hline
+		\textbf{GET} & booking/del/\{int: id\} & Elimina una prenotazione.\\
+		\hline
+		\textbf{POST} & booking/gettimetonext & Restituisce quante ora ci sono a disposizione dalla prossima prenotazione.\\
+		\hline
+	\end{longtable}
+\end{center}
+\paragraph{Report}
+\begin{center}
+	\rowcolors{2}{lightest-grayest}{white}
+	\begin{longtable}{|c|p{7cm}|p{5cm}|}
+		\hline
+		\rowcolor{lighter-grayer}
+		\textbf{Richiesta HTTP} & \textbf{Path} & \textbf{Descrizione}\\		
+		\hline
+		\endfirsthead
+		\textbf{POST} & report/occupations & Ritorna il report delle occupazioni del periodo specificato.\\
+		\hline
+		\textbf{POST} & report/sanitizations & Ritorna il report delle sanificazioni del periodo specificato.\\
+		\hline
+		\textbf{GET} & report/all & Ritorna la lista dei report presenti nel database.\\
+		\hline
+	\end{longtable}
+\end{center}
+\paragraph{Stanza}
+\begin{center}
+	\rowcolors{2}{lightest-grayest}{white}
+	\begin{longtable}{|c|p{7cm}|p{5cm}|}
+		\hline
+		\rowcolor{lighter-grayer}
+		\textbf{Richiesta HTTP} & \textbf{Path} & \textbf{Descrizione}\\		
+		\hline
+		\endfirsthead
+		\textbf{GET} & /room/list & Ritorna la lista delle stanze.\\
+		\hline
+		\textbf{GET} & /room/del/\{int: id\} & Cancella la stanza specificata in \textit{id}.\\
+		\hline
+		\textbf{POST} & /room/insert & Aggiunge una nuova stanza con i dati specificati.\\
+		\hline
+		\textbf{POST} & /room/modify & Modifica una stanza esistente con i dati specificati.\\
+		\hline
+		\textbf{GET} & /room/dirty/list & Ritorna la lista delle stanze con almeno una postazione da sanificare.\\
+		\hline
+		\textbf{GET} & /room/failure/del/\{int: idFail\} & Elimina la failure inserita nel database.\\
+		\hline
+		\textbf{GET} & /room/failure/delall/\{int: idRoom\} & Elimina le failure appartenenti alla stanza specificata.\\
+		\hline
+		\textbf{POST} & /room/failure/insert & Aggiunge una nuova failure nel database.\\
+		\hline
+		\textbf{POST} & /room/failure/modify & Modifica una failure esistente con i dati specificati.\\
+		\hline
+		\textbf{GET} & /room/failure/list & Ritorna la lista di tutte le failure.\\
+		\hline
+	\end{longtable}
+\end{center}
+\paragraph{Utente}
+\begin{center}
+	\rowcolors{2}{lightest-grayest}{white}
+	\begin{longtable}{|c|p{7cm}|p{5cm}|}
+		\hline
+		\rowcolor{lighter-grayer}
+		\textbf{Richiesta HTTP} & \textbf{Path} & \textbf{Descrizione}\\		
+		\hline
+		\endfirsthead
+		\textbf{GET} & /user/list & Ritorna la lista degli utenti.\\
+		\hline
+		\textbf{GET} & /user/del/\{int: id\} & Cancella l'utente specificato in \textit{id}.\\
+		\hline
+		\textbf{POST} & /user/insert & Aggiunge un nuovo utente con i dati specificati.\\
+		\hline
+		\textbf{POST} & /user/modify & Modifica un utente esistente con i dati specificati.\\
+		\hline
+		\textbf{POST} & /user/login & Verifica che i dati inseriti siano corretti per effettuare il login.\\
+		\hline
+		\textbf{GET} & /user/bookings/\{int: userId\} & Ritorna la lista di tutte le prenotazioni eseguite dall'utente specificato in \textit{userId}.\\
+		\hline
+	\end{longtable}
+\end{center}
+\paragraph{Postazione}
+\begin{center}
+	\rowcolors{2}{lightest-grayest}{white}
+	\begin{longtable}{|c|p{7cm}|p{5cm}|}
 		\hline
 		\rowcolor{lighter-grayer}
 		\textbf{Richiesta HTTP} & \textbf{Path} & \textbf{Descrizione}\\		
@@ -34,29 +142,271 @@ I tipi di dati e i loro rispettivi valori descritti nelle sezioni che seguono ri
 		\hline
 		\textbf{POST} & /workstation/sanitize & Segna come \glock{sanificata} una specifica postazione.\\
 		\hline
-		\textbf{GET} & /room/list & Ritorna la lista delle stanze.\\
+		\textbf{GET} & /workstation/dirty/list & Ritorna la lista delle postazioni da sanificare.\\
 		\hline
-		\textbf{GET} & /room/del/\{int: id\} & Cancella la stanza specificata in \textit{id}.\\
+		\textbf{POST} & /workstation/bookable/list & Ritorna la lista delle postazioni prenotabili.\\
 		\hline
-		\textbf{POST} & /room/insert & Aggiunge una nuova stanza con i dati specificati.\\
+		\textbf{POST} & /workstation/sanitizeall & Imposta come sanificato tutte le postazioni appartenenti alla stanza specificata.\\
 		\hline
-		\textbf{POST} & /room/modify & Modifica una stanza esistente con i dati specificati.\\
+		\textbf{GET} & /workstation/failure/del/\{int: idFail\} & Elimina la failure inserita nel database.\\
 		\hline
-		\textbf{GET} & /user/list & Ritorna la lista degli utenti.\\
+		\textbf{GET} & /workstation/failure/delall/\{int: idWorkstation\} & Elimina le failure appartenenti alla postazione specificata.\\
 		\hline
-		\textbf{GET} & /user/del/\{int: id\} & Cancella l'utente specificato in \textit{id}.\\
+		\textbf{POST} & /workstation/failure/insert & Aggiunge una nuova failure nel database.\\
 		\hline
-		\textbf{POST} & /user/insert & Aggiunge un nuovo utente con i dati specificati.\\
+		\textbf{POST} & /workstation/failure/modify & Modifica una failure esistente con i dati specificati.\\
 		\hline
-		\textbf{POST} & /user/modify & Modifica un utente esistente con i dati specificati.\\
-		\hline
-		\textbf{POST} & /user/login & Verifica che i dati inseriti siano corretti per effettuare il login.\\
-		\hline
-		\textbf{GET} & /user/bookings/\{int: userId\} & Ritorna la lista di tutte le prenotazioni eseguite dall'utente specificato in \textit{userId}.\\
+		\textbf{GET} & /workstation/failure/list & Ritorna la lista di tutte le failure.\\
 		\hline
 	\end{longtable}
 \end{center}
 \subsubsection{Descrizione}
+\paragraph{/attendences/insert}
+Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per l'occupazione.
+\begin{itemize}
+	\item \textbf{idworkstation}: id postazione;
+	\item \textbf{iduser}: id utente;
+	\item \textbf{time}: ora inizio occupazione in formato "aaaa-MM-gg hh:mm";
+	\item \textbf{hour}: numero di ore di occupazione, 0 indica l'occupazione per tutto il tempo a disposizione.
+\end{itemize}
+\paragraph{/attendences/end}
+Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per il termine dell'occupazione.
+\begin{itemize}
+	\item \textbf{idattendence}: id occupazione;
+	\item \textbf{time}: ora fine occupazione in formato "aaaa-MM-gg hh:mm".
+\end{itemize}
+\paragraph{/booking/insert}
+Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per l'inserimento di una prenotazione.
+\begin{itemize}
+	\item \textbf{idworkstation}: id postazione;
+	\item \textbf{iduser}: id utente;
+	\item \textbf{starttime}: ora inizio prenotazione in formato "aaaa-MM-gg hh:mm";
+	\item \textbf{endtime}: ora fine prenotazione in formato "aaaa-MM-gg hh:mm".
+\end{itemize}
+\paragraph{/booking/list}
+Chiamata GET. Ritorna la lista delle prenotazioni in formato JSON come segue.	\\
+\begin{center}
+	\begin{lstlisting}
+	[{
+	"id": 1,
+	"idworkstation": 1,
+	"iduser": 2,
+	"starttime": "2021-06-01 10:30",
+	"endtime": "2021-06-01 19:00"
+	}]
+	\end{lstlisting}
+\end{center}
+Rispettivamente i campi corrispondono a:
+\begin{itemize}
+	\item \textbf{id}: id prenotazione;
+	\item \textbf{idworkstation}: nome postazione;
+	\item \textbf{iduser}: id utente;
+	\item \textbf{starttime}: ora inizio prenotazione;
+	\item \textbf{endtime}: ora fine prenotazione.	
+\end{itemize}
+\paragraph{/booking/modify}
+Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per la modifica della prenotazione. La prenotazione da modificare è determinata dal parametro \textit{id}:
+\begin{itemize}
+	\item \textbf{id}: id prenotazione;
+	\item \textbf{idworkstation}: nome postazione;
+	\item \textbf{iduser}: id utente;
+	\item \textbf{starttime}: ora inizio prenotazione;
+	\item \textbf{endtime}: ora fine prenotazione.	
+\end{itemize}
+\paragraph{/booking/del/\{int: id\}}
+Chiamata GET. Elimina la prenotazione con identificata da \textit{id}.
+\paragraph{/booking/gettimetonext}
+Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per il reperimento delle ore disponibili fino alla prenotazione successiva.
+\begin{itemize}
+	\item \textbf{idworkstation}: id postazione;
+	\item \textbf{iduser}: id utente.
+\end{itemize}
+\paragraph{/report/occupations}
+Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per il reperimento del report delle occupazioni.
+\begin{itemize}
+	\item \textbf{starttime}: ora inizio ricerca in formato "aaaa-MM-gg hh:mm";
+	\item \textbf{endtime}: ora fine ricerca in formato "aaaa-MM-gg hh:mm".
+\end{itemize}
+\paragraph{/report/sanitizations}
+Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per il reperimento del report delle sanificazioni.
+\begin{itemize}
+	\item \textbf{starttime}: ora inizio ricerca in formato "aaaa-MM-gg hh:mm";
+	\item \textbf{endtime}: ora fine ricerca in formato "aaaa-MM-gg hh:mm".
+\end{itemize}
+\paragraph{/report/all}
+Chiamata GET. Ritorna la lista dei report in formato JSON come segue.	\\
+\begin{center}
+	\begin{lstlisting}
+	[{
+	"id": 1,
+	"reporttime": "lab1",
+	"blockchainhash": 10,
+	"fileHash": 10
+	}]
+	\end{lstlisting}
+\end{center}
+Rispettivamente i campi corrispondono a:
+\begin{itemize}
+	\item \textbf{id}: id report;
+	\item \textbf{reporttime}: ora calcolo report inserito;
+	\item \textbf{blockchainhash}: hash transazione \glock{blockchain};
+	\item \textbf{fileHash}: hash report generato.
+\end{itemize}
+\paragraph{/room/list}
+Chiamata GET. Ritorna la lista delle stanze in formato JSON come segue.	\\
+\begin{center}
+	\begin{lstlisting}
+	[{
+	"id": 1,
+	"roomname": "lab1",
+	"xroom": 10,
+	"yroom": 10,
+	"archived": 0
+	}]
+	\end{lstlisting}
+\end{center}
+Rispettivamente i campi corrispondono a:
+\begin{itemize}
+	\item \textbf{id}: id stanza;
+	\item \textbf{roomname}: nome stanza;
+	\item \textbf{xroom}: grandezza stanza nell'asse X;
+	\item \textbf{yroom}: grandezza stanza nell'asse Y;
+	\item \textbf{archived}: indica se la stanza è archiviata.	
+\end{itemize}
+\paragraph{/room/del/\{int: id\}}
+Chiamata GET. Cancella una stanza specificandone l'id.
+\paragraph{/room/insert}
+Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per l'inserimento della nuova stanza:
+\begin{itemize}
+	\item \textbf{roomname}: nome stanza;
+	\item \textbf{xroom}: grandezza stanza nell'asse X;
+	\item \textbf{yroom}: grandezza stanza nell'asse Y;
+	\item \textbf{archived}: indica se la stanza è archiviata.		
+\end{itemize}
+
+\paragraph{/room/modify}
+Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per la modifica della stanza. La stanza da modificare è determinata dal parametro \textit{id}:
+\begin{itemize}
+	\item \textbf{id}: id stanza;
+	\item \textbf{roomname}: nome stanza;
+	\item \textbf{xroom}: grandezza stanza nell'asse X;
+	\item \textbf{yroom}: grandezza stanza nell'asse Y;
+	\item \textbf{archived}: indica se la stanza è archiviata.	
+\end{itemize}
+\paragraph{/room/dirty/list}
+Chiamata GET. Ritorna la lista delle stanze con almeno una postazione non sanificata in formato JSON come segue.	\\
+\begin{center}
+	\begin{lstlisting}
+	[{
+	"id": 1,
+	"roomname": "lab1",
+	"xroom": 10,
+	"yroom": 10,
+	"archived": 0
+	}]
+	\end{lstlisting}
+\end{center}
+Rispettivamente i campi corrispondono a:
+\begin{itemize}
+	\item \textbf{id}: id stanza;
+	\item \textbf{roomname}: nome stanza;
+	\item \textbf{xroom}: grandezza stanza nell'asse X;
+	\item \textbf{yroom}: grandezza stanza nell'asse Y;
+	\item \textbf{archived}: indica se la stanza è archiviata.	
+\end{itemize}
+\paragraph{/room/failure/del/\{int: idFail\}}
+\paragraph{/room/failure/delall/\{int: idRoom\}}
+\paragraph{/room/failure/insert}
+\paragraph{/room/failure/modify}
+\paragraph{/room/failure/list}
+
+\paragraph{/user/list}
+Chiamata GET. Ritorna la lista degli utenti in formato JSON come segue.	\\
+\begin{center}
+	\begin{lstlisting}
+	[{
+	"id": 1,
+	"username": "mrossi",
+	"password": "000",
+	"name": "mario",
+	"surname": "rossi",
+	"mail": "mario.rossi@gmail.com",
+	"type": 0,
+	"archived": 0
+	}]
+	\end{lstlisting}
+\end{center}
+Rispettivamente i campi corrispondono a:
+\begin{itemize}
+	\item \textbf{id}: id utente;
+	\item \textbf{username}: username utente;
+	\item \textbf{password}: password utente;
+	\item \textbf{name}: nome utente;
+	\item \textbf{surname}: cognome utente;	
+	\item \textbf{mail}: indirizzo email utente;	
+	\item \textbf{type}: tipo utente;	
+	\item \textbf{archived}: indica se l'utente è archiviato.	
+\end{itemize}
+\paragraph{/user/del/\{int: id\}}
+Chiamata GET. Cancella un utente specificandone l'id.
+\paragraph{/user/insert}
+Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per l'inserimento del nuovo utente:
+\begin{itemize}
+	\item \textbf{username}: username utente;
+	\item \textbf{password}: password utente;
+	\item \textbf{name}: nome utente;
+	\item \textbf{surname}: cognome utente;	
+	\item \textbf{mail}: indirizzo email utente;	
+	\item \textbf{type}: tipo utente;	
+	\item \textbf{archived}: indica se l'utente è archiviato.	
+\end{itemize}
+
+\paragraph{/user/modify}
+Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per la modifica dell'utente. L'utente da modificare è determinato dal parametro \textit{id}:
+\begin{itemize}
+	\item \textbf{id}: id utente;
+	\item \textbf{username}: username utente;
+	\item \textbf{password}: password utente;
+	\item \textbf{name}: nome utente;
+	\item \textbf{surname}: cognome utente;	
+	\item \textbf{mail}: indirizzo email utente;	
+	\item \textbf{type}: tipo utente;	
+	\item \textbf{archived}: indica se l'utente è archiviato.	
+\end{itemize}
+
+\paragraph{/user/login}
+Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per il login dell'utente:
+\begin{itemize}
+	\item \textbf{username}: username utente;
+	\item \textbf{password}: password utente.	
+\end{itemize}
+Se il login avviene con successo, viene ritornato l'oggetto \textit{User} in formato JSON come specificato in \textbf{§7.3.2.11}
+\paragraph{user/bookings/\{int: userId\}}
+Chiamata GET. Viene richiesta la lista delle prenotazioni dell'utente specificato in \textit{userId}.\\
+Verrà ritornata una lista JSON come segue:
+\begin{center}
+	\begin{lstlisting}
+	[{
+	"bookId": 1,
+	"workId": 1,
+	"workName": "nome",
+	"roomId": 1,
+	"roomName": "nomeStanza",
+	"start": "2021-07-30 10:00",
+	"end": "2021-07-30 11:00"
+	}]
+	\end{lstlisting}
+\end{center}
+\begin{itemize}
+	\item \textbf{bookId}: id prenotazione;
+	\item \textbf{workId}: id postazione prenotata;
+	\item \textbf{workName}: nome postazione;
+	\item \textbf{roomId}: id stanza;
+	\item \textbf{roomName}: nome stanza;	
+	\item \textbf{start}: ora inizio prenotazione in formato "aaaa-MM-gg hh:mm";	
+	\item \textbf{end}: ora fine prenotazione in formato "aaaa-MM-gg hh:mm".
+\end{itemize}
+
 \paragraph{/workstation/list}
 Chiamata GET. Ritorna la lista delle postazioni in formato JSON come segue.	\\
 \begin{center}
@@ -141,8 +491,8 @@ Se la postazione ha delle prenotazioni, allora la risposta avrà dei campi aggiu
 		"bookerUsername": username,
 		"bookerName": name,
 		"bookerSurname": surname,
-		"from": "30/07/21 10:00",
-		"to": "30/07/21 11:00"
+		"from": "2021-07-30 10:00",
+		"to": "2021-07-30 11:00"
 		}]
 	}
 	\end{lstlisting}
@@ -159,8 +509,8 @@ Se la postazione ha delle prenotazioni, allora la risposta avrà dei campi aggiu
 		\item \textbf{bookerUsername}: nome utente di chi ha effettuato la prenotazione;
 		\item \textbf{bookerName}: nome di chi ha effettuato la prenotazione;
 		\item \textbf{bookerSurname}: cognome di chi ha effettuato la prenotazione;
-		\item \textbf{from}: ora inizio prenotazione in formato "gg/MM/aa hh:mm";
-		\item \textbf{to}: ora fine prenotazione in formato "gg/MM/aa hh:mm";
+		\item \textbf{from}: ora inizio prenotazione in formato "aaaa-MM-gg hh:mm";
+		\item \textbf{to}: ora fine prenotazione in formato "aaaa-MM-gg hh:mm";
 	\end{itemize}
 \end{itemize}
 \paragraph{/workstation/sanitize}
@@ -169,132 +519,15 @@ Il JSON è strutturato come segue:
 \begin{itemize}
 	\item \textbf{tag}: id tag postazione;
 	\item \textbf{idUser}: id utente di chi ha effettuato la sanificazione;
-	\item \textbf{data}: ora sanificazione in formato "gg/MM/aa hh:mm".
-\end{itemize}
-\paragraph{/room/list}
-Chiamata GET. Ritorna la lista delle stanze in formato JSON come segue.	\\
-\begin{center}
-	\begin{lstlisting}
-	[{
-	"id": 1,
-	"roomname": "lab1",
-	"xroom": 10,
-	"yroom": 10,
-	"archived": 0
-	}]
-	\end{lstlisting}
-\end{center}
-Rispettivamente i campi corrispondono a:
-\begin{itemize}
-	\item \textbf{id}: id stanza;
-	\item \textbf{roomname}: nome stanza;
-	\item \textbf{xroom}: grandezza stanza nell'asse X;
-	\item \textbf{yroom}: grandezza stanza nell'asse Y;
-	\item \textbf{archived}: indica se la stanza è archiviata.	
-\end{itemize}
-\paragraph{/room/del/\{int: id\}}
-Chiamata GET. Cancella una stanza specificandone l'id.
-\paragraph{/room/insert}
-Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per l'inserimento della nuova stanza:
-\begin{itemize}
-	\item \textbf{roomname}: nome stanza;
-	\item \textbf{xroom}: grandezza stanza nell'asse X;
-	\item \textbf{yroom}: grandezza stanza nell'asse Y;
-	\item \textbf{archived}: indica se la stanza è archiviata.		
+	\item \textbf{data}: ora sanificazione in formato "aaaa-MM-gg hh:mm".
 \end{itemize}
 
-\paragraph{/room/modify}
-Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per la modifica della stanza. La stanza da modificare è determinata dal parametro \textit{id}:
-\begin{itemize}
-	\item \textbf{id}: id stanza;
-	\item \textbf{roomname}: nome stanza;
-	\item \textbf{xroom}: grandezza stanza nell'asse X;
-	\item \textbf{yroom}: grandezza stanza nell'asse Y;
-	\item \textbf{archived}: indica se la stanza è archiviata.	
-\end{itemize}
-\paragraph{/user/list}
-Chiamata GET. Ritorna la lista degli utenti in formato JSON come segue.	\\
-\begin{center}
-	\begin{lstlisting}
-	[{
-	"id": 1,
-	"username": "mrossi",
-	"password": "000",
-	"name": "mario",
-	"surname": "rossi",
-	"mail": "mario.rossi@gmail.com",
-	"type": 0,
-	"archived": 0
-	}]
-	\end{lstlisting}
-\end{center}
-Rispettivamente i campi corrispondono a:
-\begin{itemize}
-	\item \textbf{id}: id utente;
-	\item \textbf{username}: username utente;
-	\item \textbf{password}: password utente;
-	\item \textbf{name}: nome utente;
-	\item \textbf{surname}: cognome utente;	
-	\item \textbf{mail}: indirizzo email utente;	
-	\item \textbf{type}: tipo utente;	
-	\item \textbf{archived}: indica se l'utente è archiviato.	
-\end{itemize}
-\paragraph{/user/del/\{int: id\}}
-Chiamata GET. Cancella un utente specificandone l'id.
-\paragraph{/user/insert}
-Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per l'inserimento del nuovo utente:
-\begin{itemize}
-	\item \textbf{username}: username utente;
-	\item \textbf{password}: password utente;
-	\item \textbf{name}: nome utente;
-	\item \textbf{surname}: cognome utente;	
-	\item \textbf{mail}: indirizzo email utente;	
-	\item \textbf{type}: tipo utente;	
-	\item \textbf{archived}: indica se l'utente è archiviato.	
-\end{itemize}
+\paragraph{/workstation/dirty/list}
+\paragraph{/workstation/bookable/list}
+\paragraph{/workstation/sanitizeall}
+\paragraph{/workstation/failure/del/\{int: idFail\}}
+\paragraph{/workstation/failure/delall/\{int: idRoom\}}
+\paragraph{/workstation/failure/insert}
+\paragraph{/workstation/failure/modify}
+\paragraph{/workstation/failure/list}
 
-\paragraph{/user/modify}
-Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per la modifica dell'utente. L'utente da modificare è determinato dal parametro \textit{id}:
-\begin{itemize}
-	\item \textbf{id}: id utente;
-	\item \textbf{username}: username utente;
-	\item \textbf{password}: password utente;
-	\item \textbf{name}: nome utente;
-	\item \textbf{surname}: cognome utente;	
-	\item \textbf{mail}: indirizzo email utente;	
-	\item \textbf{type}: tipo utente;	
-	\item \textbf{archived}: indica se l'utente è archiviato.	
-\end{itemize}
-
-\paragraph{/user/login}
-Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per il login dell'utente:
-\begin{itemize}
-	\item \textbf{username}: username utente;
-	\item \textbf{password}: password utente.	
-\end{itemize}
-Se il login avviene con successo, viene ritornato l'oggetto \textit{User} in formato JSON come specificato in \textbf{§7.3.2.11}
-\paragraph{user/bookings/\{int: userId\}}
-Chiamata GET. Viene richiesta la lista delle prenotazioni dell'utente specificato in \textit{userId}.\\
-Verrà ritornata una lista JSON come segue:
-\begin{center}
-	\begin{lstlisting}
-	[{
-	"bookId": 1,
-	"workId": 1,
-	"workName": "nome",
-	"roomId": 1,
-	"roomName": "nomeStanza",
-	"start": "30/07/21 10:00",
-	"end": "30/07/21 11:00"
-	}]
-	\end{lstlisting}
-\end{center}
-\begin{itemize}
-	\item \textbf{bookId}: id prenotazione;
-	\item \textbf{workId}: id postazione prenotata;
-	\item \textbf{workName}: nome postazione;
-	\item \textbf{roomId}: id stanza;
-	\item \textbf{roomName}: nome stanza;	
-	\item \textbf{start}: ora inizio prenotazione in formato "gg/MM/aa hh:mm";	
-	\item \textbf{end}: ora fine prenotazione in formato "gg/MM/aa hh:mm".
-\end{itemize}
