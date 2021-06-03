@@ -244,9 +244,10 @@ La classe LoginActivity offre i seguenti metodi:
 	\item \textbf{initView(): void}: mappa l'Activity associandole le variabili: username, password, loginBtn, errore;
 	\item \textbf{initData(): void}: definisce l'aggiornamento della vista secondo gli input dell'utente ;
 	\item \textbf{enableBtnLogin(): void}: abilita il bottone di Login;
-	\item \textbf{isUserNameValid(in username:String): Boolean}: verifica della conformità dell'username;
-	\item \textbf{isPasswordValid(in username:String): Boolean}: verifica della conformità della password;
-	\item \textbf{updateLoginView(): void}: aggiorna la vista dopo la verifica delle credenziali.
+	\item \textbf{isUserNameValid(username:String): Boolean}: verifica della conformità dell'username;
+	\item \textbf{isPasswordValid(username:String): Boolean}: verifica della conformità della password;
+	\item \textbf{callScan(user:User?): void}: aggiorna la vista dopo la verifica delle credenziali se sono corrette.
+	\item \textbf{callError(): void}: aggiorna la vista dopo la verifica delle credenziali se risultano errate.
 \end{itemize}
 
 La classe LoginPresenter offre i seguenti metodi:
@@ -258,16 +259,17 @@ La classe LoginPresenter offre i seguenti metodi:
 La classe LoginModel offre i seguenti metodi:
 \begin{itemize}
 	\item \textbf{sendLogin(username: String, password: String): void}: Si occupa di richiedere al service di verificare le credenziali fornite dall'utente. 
+	\item \textbf{sendLogin(username: String, password: String): void}: Si occupa di richiedere al service di verificare le credenziali fornite dall'utente. 
+	\item \textbf{sendLogin(username: String, password: String): void}: Si occupa di richiedere al service di verificare le credenziali fornite dall'utente. \\
+	\item \textbf{sendLogin(username: String, password: String): void}: Si occupa di richiedere al service di verificare le credenziali fornite dall'utente. 
 \end{itemize}
 
 La classe Service offre i seguenti metodi:
 \begin{itemize}
-	\item \textbf{login(in username:String, in password:String): JSONObject}: Si occupa di trasformare in un JSONObject username e password così poi da ottenere l'id dello user;
-	\item \textbf{httpClient(json:JSONObject): JSONObject}: Viene fatta la richiesta al backend per verificare le credenziali fornite dall'utente.
-	
+		\item \textbf{httpClient(json:JSONObject): JSONObject}: Viene fatta la richiesta al backend per verificare le credenziali fornite dall'utente.
 \end{itemize}
 
-\subsubsection{Main}
+\subsubsection{Scan}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=16cm]{res/images/apputenti-MainClass.png}
