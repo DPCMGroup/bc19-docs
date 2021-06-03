@@ -102,7 +102,7 @@ Per poter aggiungere una stanza, l'amministratore deve premere sul bottone 'Crea
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=15cm]{res/images/bottoneAddRoom.png}
-	\caption{Visualizzazione bottoni}
+	\caption{Visualizzazione bottone aggiunta di una nuova stanza}
 \end{figure}
 Una volta premuto sul bottone, comparirà un popup che l'amministratore dovrà compilare inserendo:
 \begin{enumerate}
@@ -121,7 +121,7 @@ Per poter ricercare una determinata stanza, l'amministratore deve premere sul bo
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=15cm]{res/images/bottoneSearchRoom.png}
-	\caption{Visualizzazione bottoni}
+	\caption{Visualizzazione bottone ricerca di una stanza}
 \end{figure}
 Una volta premuto sul bottone, comparirà un popup che l'amministratore dovrà compilare inserendo il nome della stanza.
 \begin{figure}[H]
@@ -149,7 +149,7 @@ Dopo aver fatto ricerche sulla postazione e / o stanza, l'amministratore per pot
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=15cm]{res/images/resetFiltri.png}
-	\caption{Visualizzazione bottone}
+	\caption{Visualizzazione bottone reset filtri dopo le ricerche}
 \end{figure}
 
 \subsubsection{Modifica di una stanza}
@@ -157,7 +157,7 @@ Per poter modificare le caratteristiche di una stanza, l'amministratore deve pre
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=15cm]{res/images/bottoneEditRoom.png}
-	\caption{Visualizzazione bottoni}
+	\caption{Visualizzazione bottone modifica stanza}
 \end{figure}
 Una volta premuto sul bottone, comparirà un popup che l'amministratore dovrà compilare inserendo:
 \begin{enumerate}
@@ -176,7 +176,7 @@ Per poter modificare le caratteristiche di una stanza impostandola come inaccess
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=15cm]{res/images/bottoneEditRoom.png}
-	\caption{Visualizzazione bottoni}
+	\caption{Visualizzazione bottone modifica stanza}
 \end{figure}
 Una volta premuto sul bottone, comparirà un popup dove l'amministratore dovrà selezionare il checkbox per inserire le date in cui la stanza sarà inaccessibile, e selezionerà:
 \begin{enumerate}
@@ -194,7 +194,7 @@ Per poter rimuovere una stanza, l'amministratore deve premere sul bottone 'Elimi
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=15cm]{res/images/bottoneRemoveRoom.png}
-	\caption{Visualizzazione bottoni}
+	\caption{Visualizzazione bottone eliminazione di una stanza}
 \end{figure}
 Una volta premuto sul bottone, comparirà un popup che chiederà all'amministratore una conferma per eliminare definitivamente la stanza.
 
@@ -203,7 +203,7 @@ Per poter inserire una nuova postazione all'interno di una stanza, l'amministrat
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=15cm]{res/images/bottoneAddWorkstation.png}
-	\caption{Visualizzazione bottoni}
+	\caption{Visualizzazione bottone creazione postazioni all'interno della stanza}
 \end{figure}
 Una volta premuto sul bottone, comparirà un popup che l'amministratore dovrà compilare inserendo:
 \begin{enumerate}
@@ -236,7 +236,7 @@ Una volta premuto sulla postazione, comparirà una finestra dove l'utente dovrà
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=10cm]{res/images/bottoneCestinoWorkstation.png}
-	\caption{Visualizzazione bottone}
+	\caption{Visualizzazione bottone eliminazione postazioni}
 \end{figure}
 
 \subsubsection{Modifica di una postazione all'interno di una stanza}
@@ -250,7 +250,7 @@ Una volta premuto sulla postazione, comparirà una finestra dove l'utente dovrà
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=10cm]{res/images/bottoneCestinoWorkstation.png}
-	\caption{Visualizzazione bottone}
+	\caption{Visualizzazione bottone modifica postazioni}
 \end{figure}
 Una volta premuto nel bottone 'Modifica' dovrà compilare i seguenti campi per modificare la postazione:
 \begin{enumerate}
@@ -276,7 +276,7 @@ Una volta premuto sulla postazione, comparirà una finestra dove l'utente dovrà
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=10cm]{res/images/bottoneCestinoWorkstation.png}
-	\caption{Visualizzazione bottone}
+	\caption{Visualizzazione bottone modifica postazioni}
 \end{figure}
 Una volta premuto nel bottone 'Modifica' dovrà selezionare il checkobx 'Guasto' e selezionare i seguenti parametri:
 \begin{enumerate}
@@ -372,9 +372,79 @@ Per poter visualizzare il Manuale Utente dell'applicazione, l'amministratore dev
 \end{figure}
 \newpage
 \subsubsection{Visualizzazione dei Report}
-Per poter visualizzare i report di occupazione / igienizzazione / dati inviati alla blockchain l'amministratore deve premere nel bottone 'Report'.
+Per poter visualizzare i report di occupazione / igienizzazione / informazioni sui dati inviati alla blockchain l'amministratore deve premere nel bottone 'Report'.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=15cm]{res/images/bottoneReport.png}
-	\caption{Visualizzazione bottone}
+	\caption{Visualizzazione bottone visualizzazione dei report}
 \end{figure}
+
+\subsubsection{Visualizzazione dei Report di occupazione delle postazioni}
+Per poter visualizzare i report di occupazione delle postazioni l'amministratore deve selezionare il radio button 'Occupazioni', le date che desidera e poi premere nel bottone 'Mostra'.
+Verranno visualizzati i seguenti dati in una tabella riassuntiva:
+\begin{itemize}
+\item id postazione;
+\item id utente;
+\item username;
+\item nome;
+\item cognome;
+\item ruolo;
+\item data e ora inizio occupazione;
+\item data e ora fine occupazione.
+\end{itemize}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/bottoneReportO.png}
+	\caption{Visualizzazione report occupazione postazioni}
+\end{figure}
+
+\subsubsection{Visualizzazione dei Report di igienizzazione delle postazioni}
+Per poter visualizzare i report di igienizzazione delle postazioni l'amministratore deve selezionare il radio button 'Disinfezioni', le date che desidera e poi premere nel bottone 'Mostra'.
+Verranno visualizzati i seguenti dati in una tabella riassuntiva:
+\begin{itemize}
+\item id postazione;
+\item id utente;
+\item username;
+\item nome;
+\item cognome;
+\item ruolo;
+\item data e ora igienizzazione.
+\end{itemize}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/bottoneReportI.png}
+	\caption{Visualizzazione report igienizzazione postazioni}
+\end{figure}
+
+\subsubsection{Visualizzazione dei Report dei dati inviati alla blockchain}
+Per poter visualizzare i report dei dati inviati alla blockchain l'amministratore deve selezionare il radio button 'Report', e poi premere nel bottone 'Mostra'. In questo caso le date servono solo per filtrare il report completo, la lista in questo caso non è filtrabile.
+Verranno visualizzati i seguenti dati in una tabella riassuntiva:
+\begin{itemize}
+\item id report;
+\item data e ora del report;
+\item hash transazione;
+\item hash dei dati.
+\end{itemize}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/bottoneReportR.png}
+	\caption{Visualizzazione report dati inviati alla blockchain}
+\end{figure}
+
+\subsubsection{Scaricamento Report Completo}
+Una volta selezionate le date di interesse e premuto nel bottone 'Scaricamento report completo' , l'amministratore potrà scaricare un file in formato CSV contenente informazioni sia sulle igienizzazioni che occupazioni delle postazioni.
+Non è necessario selezionare alcun radio button in questo caso.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/ReportCompleto.png}
+	\caption{Visualizzazione bottone scaricamento report completo}
+\end{figure}
+
+\subsubsection{Scaricamento Report singolo}
+L'amministratore dopo aver selezionato il tipo di report che desidera visualizzare tramite i radio button, e le date di interesse può scaricare un file in formato CSV contenente i dati del report di interesse.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{res/images/ReportSingolo.png}
+	\caption{Visualizzazione bottone scaricamento report singolo}
+\end{figure}
+
