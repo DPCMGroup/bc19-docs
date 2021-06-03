@@ -24,8 +24,10 @@ Per quanto riguarda il dipendente, l'applicazione offre i seguenti servizi:
 	Una volta premuto sul bottone "Cerca" visualizzerà tutte le postazioni di quella stanza che sono disponibili e potrà decidere quale prenotare. \\	
 \end{itemize}
 Per quanto riguarda il dipendente, l'addetto alle pulizie offre i seguenti servizi:
-\item \textbf{Lista postazioni e stanze:} Il dipendente, dopo aver premuto sull'apposito bottone può ottenere la lista delle stanze o delle postazioni da igienizzare;
-\item \textbf{Igienizzare:} Il dipendente, dopo aver ottenuto l'elenco delle stanze o delle postazioni può igienizzarle premendo sull'apposito bottone.
+\begin{itemize}
+\item \textbf{Lista postazioni e stanze:} Il dipendente, dopo aver premuto sull'apposito bottone può ottenere la lista delle stanze o delle postazioni da igienizzare; \\
+\item \textbf{Igienizzare:} Il dipendente, dopo aver ottenuto l'elenco delle stanze o delle postazioni può igienizzarle premendo sull'apposito bottone.\\
+\end{itemize}
 
 
 
@@ -330,7 +332,7 @@ La classe BookingFormActivity offre i seguenti metodi:
 \begin{itemize}
 	\item \textbf{onCreate(savedInstanceState:Bundle): void}: Si occupa della creazione della parte grafica visualizzata dall'utente; 
 	\item \textbf{getLayoutId(): void}: associa il rispettivo file in formato xml alla View;
-	\item \textbf{registerPresenter(): void}: associa il Presenter alla View; 
+	\item \textbf{registerPresenter(): void}: associa il Presenter alla View. 
 \end{itemize}
 
 
@@ -377,7 +379,67 @@ La classe CleanActivity offre i seguenti metodi:
 \begin{itemize}
 	\item \textbf{onCreate(savedInstanceState:Bundle): void}: Si occupa della creazione della parte grafica visualizzata dall'utente; 
 	\item \textbf{getLayoutId(): void}: associa il rispettivo file in formato xml alla View;
+	\item \textbf{registerPresenter(): void}: associa il Presenter alla View.
+\end{itemize}
+
+\subsubsection{BookingWorkstation}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=16cm]{res/images/BookingWorkstation.png}
+	\caption{BookingWorkstation-Diagramma delle classi}
+	\label{fig:BookingWorkstation-Diagramma delle classi}
+\end{figure}
+La classe BookingWorkstationActivity rappresenta la pagina nella quale il dipendente può prenotare una postazione tra quelle disponibili.
+
+La classe BookingWorkstationActivity offre i seguenti metodi:
+\begin{itemize}
+	\item \textbf{onCreate(savedInstanceState:Bundle): void}: Si occupa della creazione della parte grafica visualizzata dall'utente; 
+	\item \textbf{getLayoutId(): void}: associa il rispettivo file in formato xml alla View;
 	\item \textbf{registerPresenter(): void}: associa il Presenter alla View; 
+	\item \textbf{updateWorkstationsBookableView( workstationsDirty:ArrayList<DataBookableWorkstation>?): void}: Aggiorna la vista con una lista di postazioni prenotabili; 
+	\item \textbf{callErrorBookableWorkstation(): void}: Da un messaggio di errore nel caso non ci siano postazioni prenotabili;
+	\item \textbf{callBookableFailure(): void}: Si occupa di far vedere un messaggio di errore nel caso la prenotazione non sia stata effettuata; 
+	\item \textbf{callBookableSuccess(): void}: Si occupa di aggiornare la vista in seguito alla prenotazione avvenuta con successo.
+\end{itemize}
+
+\subsubsection{RoomsDirty}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=16cm]{res/images/Clean.png}
+	\caption{RoomsDirty-Diagramma delle classi}
+	\label{fig:RoomsDirty-Diagramma delle classi}
+\end{figure}
+La classe RoomsDirtyActivity rappresenta la pagina nella quale l'addetto alle pulizie può igienizzare le stanze non igienizzate.
+
+La classe RoomsDirtyActivity offre i seguenti metodi:
+\begin{itemize}
+	\item \textbf{onCreate(savedInstanceState:Bundle): void}: Si occupa della creazione della parte grafica visualizzata dall'utente; 
+	\item \textbf{getLayoutId(): void}: associa il rispettivo file in formato xml alla View;
+	\item \textbf{registerPresenter(): void}: associa il Presenter alla View; 
+	\item \textbf{updateWorkstationsBookableView( workstationsDirty:ArrayList<DataBookableWorkstation>?): void}: Aggiorna la vista con una lista di postazioni prenotabili; 
+	\item \textbf{callErrorBookableWorkstation(): void}: Da un messaggio di errore nel caso non ci siano postazioni prenotabili;
+	\item \textbf{callBookableFailure(): void}: Si occupa di far vedere un messaggio di errore nel caso la prenotazione non sia stata effettuata; 
+	\item \textbf{callBookableSuccess(): void}: Si occupa di aggiornare la vista in seguito alla prenotazione avvenuta con successo.
+\end{itemize}
+
+\subsubsection{WorkstationsDirty}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=16cm]{res/images/Clean.png}
+	\caption{WorkstationsDirty-Diagramma delle classi}
+	\label{fig:WorkstationsDirty-Diagramma delle classi}
+\end{figure}
+La classe WorkstationsDirtyActivity rappresenta la pagina nella quale l'addetto alle pulizie può igienizzare le postazioni non igienizzate.
+
+La classe WorkstationsDirtyActivity offre i seguenti metodi:
+\begin{itemize}
+	\item \textbf{onCreate(savedInstanceState:Bundle): void}: Si occupa della creazione della parte grafica visualizzata dall'utente; 
+	\item \textbf{getLayoutId(): void}: associa il rispettivo file in formato xml alla View;
+	\item \textbf{registerPresenter(): void}: associa il Presenter alla View; 
+	\item \textbf{updateWorkstationsBookableView( workstationsDirty:ArrayList<DataBookableWorkstation>?): void}: Aggiorna la vista con una lista di postazioni prenotabili; 
+	\item \textbf{callErrorBookableWorkstation(): void}: Da un messaggio di errore nel caso non ci siano postazioni prenotabili;
+	\item \textbf{callBookableFailure(): void}: Si occupa di far vedere un messaggio di errore nel caso la prenotazione non sia stata effettuata; 
+	\item \textbf{callBookableSuccess(): void}: Si occupa di aggiornare la vista in seguito alla prenotazione avvenuta con successo.
 \end{itemize}
 
 \subsection{Diagramma di sequenza}
