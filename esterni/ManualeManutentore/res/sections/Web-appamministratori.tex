@@ -134,13 +134,16 @@ Il diagramma sovrastante rappresenta la struttura e le relazioni dei package del
 	\label{fig:DiagrammaPackageBaseWebapp}
 \end{figure}
 Il package Base contiene tutte le funzionalità offerte a un amministratore autenticato.
-Esse sono ulteriormente suddivise in due package:
+Esse sono ulteriormente suddivise in tre package:
 \begin{itemize}
-	\item Credentials
-	\item Rooms
+\item Credentials;
+\item Rooms;
+\item Report.
 \end{itemize}
-All'interno del package Credentials sono presenti tutti e soli i componenti utilizzati nella pagina di gestione delle credenziali. All'interno del package Rooms sono presenti tutti e soli i componenti utilizzati nella pagina di gestione delle stanze e delle postazioni. Le due pagine appena indicate sono annidate nella vista del componente Base. Quest'ultimo infatti presenta dei pulsanti per la selezione della pagina da visualizzare. Esso presenta inoltre, sempre tramite un pulsante, la funzionalità di logout. \newline
+All'interno del package Credentials sono presenti tutti e soli i componenti utilizzati nella pagina di gestione delle credenziali. All'interno del package Rooms sono presenti tutti e soli i componenti utilizzati nella pagina di gestione delle stanze e delle postazioni. All'interno del package Report sono presenti tutti e soli i componenti utilizzati nella pagina di gestione dei report. Le tre pagine appena indicate sono annidate nella vista del componente Base. Quest'ultimo infatti presenta dei pulsanti per la selezione della pagina da visualizzare. Esso presenta inoltre, sempre tramite un pulsante, la funzionalità di logout e di visulizzazione della guida dell'applicazione web. \newline
 Il package Base ha una dipendenza verso Models, le cui classi vengono usate per organizzare i dati, e una verso Services, le cui classi vengono usate per interagire con il server e con il local storage.
+All'interno del package Rooms è presente il package Grid. Esso si occupa di gestire tutto quello che riguarda la visualizzazione schematica delle postazioni all'interno di una griglia.
+
 
 \subsubsection{Login}
 \begin{figure}[H]
@@ -518,16 +521,8 @@ L'utilizzo dei componenti \texttt{ShowSanitizationsReportComponent} e \texttt{Sh
 	\label{fig:DiagrammaSequenzaAutoLogin}
 \end{figure}
 Il diagramma sovrastante rappresenta l'evento di login automatico. L'evento è provocato dall'inizializzazione della pagina (\texttt{ngOnInit}). La sequenza consiste nel richiedere le credenziali salvate nel browser tramite il \texttt{LocalAccountService} ( \texttt{retrieveLocalCredentials}) e nel tentare un'autenticazione al server con esse tramite il metodo \texttt{login} del \texttt{LoginService}. In caso di esito positivo viene resituito da quest'ultimo servizio un oggetto \texttt{UserData} con i dati dell'utente che si è autenticato. La funzione \texttt{checkLoginResponse} gestisce la risposta del server provocando il reindirizzamento alla home page, in caso di successo, o la visualizzazione del form per l'inserimento delle credenziali.
-\subsubsection{Gestione stanze e postazioni}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=18cm]{res/images/webapp-visualStanzePostazioni-diagrammaSequenza.png}
-	\caption{Diagramma di sequenza per la visualizzazione delle stanze e delle postazioni}
-	\label{fig:DiagrammaSequenzaStanzePostazioni1}
-\end{figure}
-L'evento rappresentato nel diagramma sovrastante è scatenato dalla chiamata di \texttt{ngOnInit}. Come conseguenza viene chiamato il metodo \texttt{refreshAll} che fa eseguire parallelamente due richieste di dati al server, la prima per ottenere le stanze e la seconda per ottenere le postazioni. In entrambe le esecuzioni il componente chiama il metodo apposito del servizio e riceve come risposta un \texttt{Observable}. Poi, chiamando il metodo \texttt{subscribe} di questo oggetto, il componente invia la chiamata al server e imposta la funzione di callback che ne gestirà la risposta. In entrambi i casi i dati di ritorno vengono assegnati a degli attributi del componente. Per le stanze il metodo \texttt{setRoomsList} assegna l'array di ritorno all'array locale \texttt{roomsList}. Per le stanze, invece, il metodo \texttt{setWorkstationsList} assegna l'array di ritorno all'array locale \texttt{workstationList}. Quando entrambe le risposte sono arrivate l'esecuzione procede col metodo \texttt{populateRoomsMap}, che organizza le stanze e le postazioni in una mappa.
-Dal diagramma sono esclusi gli eventi successivi al popolamento delle stanze. In sostanza ai diversi GridComponent, rappresentanti le singole stanze, vengono assegnate le rispettive postazioni. All'interno del componente questi oggetti verrano ulteriormente organizzati in una matrice rappresentante la griglia. Per ogni elemento della matrice viene successivamente creato un WorkstationComponent e gli viene assegnata la rispettiva postazione, se presente.
 
+\subsubsection{Aggiunta e modifica stanze}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=18cm]{res/images/webapp-addEditStanzePostazioni-diagrammaSequenza.png}
@@ -537,6 +532,18 @@ Dal diagramma sono esclusi gli eventi successivi al popolamento delle stanze. In
 
 Il diagramma sovrastante rappresenta l'evento di aggiunta o modifica di una stanza.
 L'azione è provocata dalla chiamata del metodo \texttt{takeAction} successiva alla pressione di un pulsante da parte dell'utente. A questo punto la scelta dell'una o dell'altra via è determinata dal parametro \texttt{action}, che ha assunto valore 'add' o 'edit' a seconda del pulsante premuto. In entrambi i casi l'azione è eseguita inviando i dati da inserire, formattati in un \texttt{RoomData}, al servizio. Il servizio restituisce un \texttt{Observable} che permette, tramite il metodo \texttt{subscribe}, di eseguire la chiamata al server e di impostare una funzione di callback per gestire i dati di ritorno. 
+
+\subsubsection{Visualizzazione stanze e postazioni}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=18cm]{res/images/webapp-visualStanzePostazioni-diagrammaSequenza.png}
+	\caption{Diagramma di sequenza per la visualizzazione delle stanze e delle postazioni}
+	\label{fig:DiagrammaSequenzaStanzePostazioni1}
+\end{figure}
+L'evento rappresentato nel diagramma sovrastante è scatenato dalla chiamata di \texttt{ngOnInit}. Come conseguenza viene chiamato il metodo \texttt{refreshAll} che fa eseguire parallelamente due richieste di dati al server, la prima per ottenere le stanze e la seconda per ottenere le postazioni. In entrambe le esecuzioni il componente chiama il metodo apposito del servizio e riceve come risposta un \texttt{Observable}. Poi, chiamando il metodo \texttt{subscribe} di questo oggetto, il componente invia la chiamata al server e imposta la funzione di callback che ne gestirà la risposta. In entrambi i casi i dati di ritorno vengono assegnati a degli attributi del componente. Per le stanze il metodo \texttt{setRoomsList} assegna l'array di ritorno all'array locale \texttt{roomsList}. Per le stanze, invece, il metodo \texttt{setWorkstationsList} assegna l'array di ritorno all'array locale \texttt{workstationList}. Quando entrambe le risposte sono arrivate l'esecuzione procede col metodo \texttt{populateRoomsMap}, che organizza le stanze e le postazioni in una mappa.
+Dal diagramma sono esclusi gli eventi successivi al popolamento delle stanze. In sostanza ai diversi GridComponent, rappresentanti le singole stanze, vengono assegnate le rispettive postazioni. All'interno del componente questi oggetti verrano ulteriormente organizzati in una matrice rappresentante la griglia. Per ogni elemento della matrice viene successivamente creato un WorkstationComponent e gli viene assegnata la rispettiva postazione, se presente.
+
+
 \subsubsection{Gestione credenziali}
 \begin{figure}[H]
 	\centering
@@ -552,6 +559,10 @@ Il diagramma sovrastante rappresenta l'evento di visualizzazione delle credenzia
 	\label{fig:DiagrammaSequenzaVisualizzazioneCredenziali}
 \end{figure}
 Il diagramma sovrastante rappresenta l'azione di aggiunta o modifica di una credenziale da parte di un'amministratore. L'evento è provocato dalla chiamata a \texttt{takeAction}, eseguita dall'utente tramite la pressione di un pulsante. Successivamente viene eseguita l'aggiunta (\texttt{addCredential}) o la modifica (\texttt{editCredential}) della credenziale definita dai valori inseriti precedentemente dall'utente. In entrambi i casi il componente invia i dati all'\texttt{UserService} e riceve un Observable, col quale può, tramite il metodo \texttt{subscribe}, inviare la chiamata al server e impostare una funzione di callback per gestirne la risposta.
+
+\subsubsection{Visualizzazione report}
+
+Non sono stati aggiunti nuovi diagrammi di sequenza in quanto il flusso di esecuzione di questo caso d'uso è lo stesso di quanto descritto in §3.7.3.
 
 
 
