@@ -44,7 +44,7 @@ I dati generati dalla blockchain vengono salvati nella cartella \texttt{geth}. \
 Una documentazione più approfondita per l'utilizzo di Geth si può trovare alla pagina \url{https://geth.ethereum.org/docs/}.
 
 \subparagraph{Docker}
-Per esguire la blockchain tramite docker, è necessario posizionarsi allo stessi livello del file \textit{docker-compose.yml} ed eseguire il comando \textit{docker-compose up}. Docker si occuperà di scaricare tutti i pacchetti necessari per l'esecuzione, e renderà accessibili le porte 8545 e 30303.\newline
+Per esguire la blockchain tramite docker, è necessario posizionarsi allo stesso livello del file \textit{docker-compose.yml} ed eseguire il comando \textit{docker-compose up}. Docker si occuperà di scaricare tutti i pacchetti necessari per l'esecuzione, e renderà accessibili le porte 8545 e 30303.\newline
 Per poter bloccare il mining, ci si può collegare con geth tramite il comando:
 \begin{center}
 	\texttt{geth attach url\_della\_blockchain -{}-exec "miner.stop()"}
