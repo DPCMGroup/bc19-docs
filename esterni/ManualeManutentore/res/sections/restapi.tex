@@ -169,6 +169,17 @@ Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati 
 	\item \textbf{time}: ora inizio occupazione in formato "aaaa-MM-gg hh:mm";
 	\item \textbf{hour}: numero di ore di occupazione, 0 indica l'occupazione per tutto il tempo a disposizione.
 \end{itemize}
+Verrà restituito un JSON contenente le informazioni necessarie riguardante l'occupazione.
+\begin{center}
+	\begin{lstlisting}
+	{
+	"idattendence": 2,
+	"idbooking": 20,
+	"starttime": "2021-06-02 15:00",
+	"endtime": "2021-06-02 16:59"
+	}
+	\end{lstlisting}
+\end{center}
 \paragraph{/attendences/end}
 Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per il termine dell'occupazione.
 \begin{itemize}
@@ -221,18 +232,50 @@ Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati 
 	\item \textbf{idworkstation}: id postazione;
 	\item \textbf{iduser}: id utente.
 \end{itemize}
+Verrà restituita una risposta contenente le ore disponibili.
 \paragraph{/report/occupations}
 Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per il reperimento del report delle occupazioni.
 \begin{itemize}
 	\item \textbf{starttime}: ora inizio ricerca in formato "aaaa-MM-gg hh:mm";
 	\item \textbf{endtime}: ora fine ricerca in formato "aaaa-MM-gg hh:mm".
 \end{itemize}
+Verrà restituito un JSON contenente la lista delle occupazioni e i dati necessari per identificare l'utente.
+\begin{center}
+	\begin{lstlisting}
+	[{
+	"idoccupation": 1,
+	"idworkstation": 1,
+	"iduser": 2,
+	"username": "averdi",
+	"name": "alessio",
+	"surname": "verdi",
+	"type": 1,
+	"starttime": "2021-06-01 10:30",
+	"endtime": "2021-06-01 19:00"
+	}]
+	\end{lstlisting}
+\end{center}
 \paragraph{/report/sanitizations}
 Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per il reperimento del report delle sanificazioni.
 \begin{itemize}
 	\item \textbf{starttime}: ora inizio ricerca in formato "aaaa-MM-gg hh:mm";
 	\item \textbf{endtime}: ora fine ricerca in formato "aaaa-MM-gg hh:mm".
 \end{itemize}
+Verrà restituito un JSON contenente la lista delle sanificazioni e i dati necessari per identificare l'utente.
+\begin{center}
+	\begin{lstlisting}
+	[{
+	"idsanitize": 1,
+	"idworkstation": 3,
+	"iduser": 1,
+	"username": "mrossi",
+	"name": "mario",
+	"surname": "rossi",
+	"type": 0,
+	"time": "2021-06-02 16:59"
+	}]
+	\end{lstlisting}
+\end{center}
 \paragraph{/report/all}
 Chiamata GET. Ritorna la lista dei report in formato JSON come segue.	\\
 \begin{center}
