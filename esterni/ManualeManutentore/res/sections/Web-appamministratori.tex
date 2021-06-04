@@ -129,7 +129,7 @@ Il diagramma sovrastante rappresenta la struttura e le relazioni dei package del
 \subsubsection{Base}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=8cm]{res/images/webapp-base-diagrammaPackage.png}
+	\includegraphics[width=13cm]{res/images/webapp-base-diagrammaPackage.png}
 	\caption{Diagramma del package base della webapp}
 	\label{fig:DiagrammaPackageBaseWebapp}
 \end{figure}
@@ -154,7 +154,7 @@ Il package Login contiene le funzionalità necessarie per l'autenticazione dell'
 \subsubsection{Models}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=5cm]{res/images/webapp-models-diagrammaPackage.png}
+	\includegraphics[width=10cm]{res/images/webapp-models-diagrammaPackage.png}
 	\caption{Diagramma del package models della webapp}
 	\label{fig:DiagrammaPackageModelsWebapp}
 \end{figure}
@@ -163,11 +163,11 @@ Il package Models contiene le classi che vengono usate nel resto dell'applicazio
 \subsubsection{Services}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=8cm]{res/images/webapp-services-diagrammaPackage.png}
+	\includegraphics[width=12cm]{res/images/webapp-services-diagrammaPackage.png}
 	\caption{Diagramma del package services della webapp}
 	\label{fig:DiagrammaPackageServicesWebapp}
 \end{figure}
-Il package Services contiene le classi usate nel resto dell'applicazione per interagire col server e con il local storage. All'interno di questo package le classi che si occupano dell'interazione col server sono racchiuse nel package Api\_services.
+Il package Services contiene le classi usate nel resto dell'applicazione per interagire col server e con il local storage oppure che fungono da contenitori di algoritmi comuni.
 
 \subsection{Diagrammi delle classi}
 Nelle descrizioni che seguono si possono notare alcune mancanze, di cui illustriamo ora le motivazioni:
@@ -505,6 +505,14 @@ Questa classe presenta i seguenti metodi:
 	\item \textbf{subscribe(next: (T)=>void): Subscription} \newline
 	Metodo che permette di eseguire la chiamata al server e di specificare la funzione di callback che gestirà la risposta.
 \end{itemize}
+
+\subsubsection{Visualizzazione report}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=18cm]{res/images/webapp-report-diagrammaClassi.png}
+	\caption{Diagramma delle classi per la visualizzazione dei report}
+	\label{fig:DiagrammaClassiReport}
+\end{figure}
 
 \subsection{Diagrammi di sequenza}
 \subsubsection{Login}
