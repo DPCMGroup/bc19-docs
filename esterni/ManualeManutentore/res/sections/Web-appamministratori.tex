@@ -170,7 +170,18 @@ Il package Models contiene le classi che vengono usate nel resto dell'applicazio
 Il package Services contiene le classi usate nel resto dell'applicazione per interagire col server e con il local storage oppure che fungono da contenitori di algoritmi comuni.
 
 \subsection{Diagrammi delle classi}
-Nelle descrizioni che seguono si possono notare alcune mancanze, di cui illustriamo ora le motivazioni:
+Nei diagrammi e nelle descrizioni che seguono si possono notare alcune mancanze, di cui illustriamo ora le motivazioni:
+
+\textbf{Diagrammi}
+\begin{itemize}
+	\item non sono rappresentate le classi HttpClient, Observable, UtilsService e le dipendenze verso di esse perchè sono molto comuni ed è quindi poco utile rappresentarle singolarmente. In particolare:
+	\begin{itemize}
+		\item \textbf{HttpClient}: classe fornita da Angular per eseguire chiamate http. Da questa classe dipendono tutti i servizi che si connettono al backend.
+		\item \textbf{Observable}: classe fornita dalla libreria rxjs (Reactive Extensions) per ricezione di dati in modo asincrono. Ne sono dipendenti tutti servizi che si connettono al server e tutti i componenti che utilizzano quei servizi.
+		\item \textbf{UtilsService}: servizio che offre alcuni algoritmi comuni. Ne dipendono quasi tutti i componenti e nessun servizio.
+	\end{itemize}
+\end{itemize}
+\textbf{Descrizioni}
 \begin{itemize}
 	\item non sono presenti i costruttori delle classi perché essi non hanno alcun effetto oltre a quello di creare gli oggetti;
 	\item per le classi del package Models non sono descritti gli attributi poiché essi sono semplicemente la copia delle informazioni contenute nel database;
@@ -248,10 +259,10 @@ Questa classe presenta i seguenti metodi:
 	Metodo che permette di eseguire la chiamata al server e di specificare la funzione di callback che gestirà la risposta.
 \end{itemize}
 
-\subsubsection{Gestione stanze e postazioni}
+\subsubsection{Aggiunta e modifica stanze}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=18cm]{res/images/webapp-visualAddEditStanzePostazioni-diagrammaClassi.png}
+	\includegraphics[width=18cm]{res/images/webapp-AddEditStanze-diagrammaClassi.png}
 	\caption{Diagramma delle classi per la gestione delle stanze e delle postazioni}
 	\label{fig:DiagrammaClassiStanzePostazioni}
 \end{figure}
@@ -417,6 +428,14 @@ Questa classe presenta i seguenti metodi:
 	\item \textbf{subscribe(next: (T)=>void): Subscription} \newline
 	Metodo che permette di eseguire la chiamata al server e di specificare la funzione di callback che gestirà la risposta.
 \end{itemize}
+
+\subsubsection{Visualizzazione stanze e postazioni}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=18cm]{res/images/webapp-visualStanzePostazioni-diagrammaClassi.png}
+	\caption{Diagramma delle classi per la visualizzazione delle stanze e delle postazioni}
+	\label{fig:DiagrammaClassiVisualStanzePostazioni}
+\end{figure}
 
 \subsubsection{Gestione credenziali}
 \begin{figure}[H]
