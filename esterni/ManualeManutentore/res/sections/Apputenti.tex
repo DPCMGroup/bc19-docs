@@ -87,7 +87,7 @@ L'installazione per MacOS è identica a quella per Windows.
 È possibile installare Kotlin su sistemi Linux in modo identico a MacOs e Windows.
 
 \paragraph{XML}
-La configurazione dell'applicazione e alcune sue dipendenze sono gestite tramite un file denominato AndroidManifest.xml. Una dipendenza importante da inserire nel file denominato AndroidManifest.xml è: android:networkSecurityConfig="@xml/network\_security\_config".  Inoltre, lo sviluppo di applicazioni Android richiede una cartella di progetto denominata "res" che contiene tutti i file XML per gestire risorse come layout, immagini, menu, stringhe e altro. 
+La configurazione dell'applicazione e alcune sue dipendenze sono gestite tramite un file denominato AndroidManifest.xml. Una dipendenza importante da inserire nel file denominato AndroidManifest.xml è: android:networkSecurityConfig="@xml/network\_security\_config". Bisogna inserire anche la dipendenza \textit{<uses-permission android:name="android.permission.NFC" />} per permettere l'attivazione della tecnologia NFC sullo smartphone. Inoltre, lo sviluppo di applicazioni Android richiede una cartella di progetto denominata "res" che contiene tutti i file XML per gestire risorse come layout, immagini, menu, stringhe e altro. 
 Per permettere la comunicazione con il server bisogna creare il file denominato network\_security\_config.xml nella cartella res/xml con il seguente contenuto:\\ <?xml version="1.0" encoding="utf-8"?>\\
 <network-security-config>\\
 <base-config cleartextTrafficPermitted="true" />\\
