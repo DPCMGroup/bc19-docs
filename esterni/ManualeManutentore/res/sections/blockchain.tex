@@ -29,13 +29,29 @@ Verrà chiesto di sbloccare l'account con la password "1234". Successivamente si
 Dopo aver modificato la password scrivere quella nuova nel file \texttt{password.sec}, al posto della precedente.
 
 \paragraph{Esecuzione blockchain}
+\subparagraph{Linea di comando}
 Per rendere la blockchain operativa eseguire da riga di comando la seguente stringa:\newline
 \texttt{geth --networkid 4224 --mine --minerthreads 2 --datadir "." --nodiscover --rpc --rpcport "8545" --port "30303" --rpccorsdomain "*" --allow-insecure-unlock --nat "any" --rpcapi "eth, web3, personal, net, miner" --unlock 0 --password ./password.sec --ipcpath "~/.ethereum/geth.ipc"} \newline
-La prima inizializzazione della blockchain può richiedere diversi minuti per essere completata. L'inizializzazione è completata quando nella shell compare l'avviso che il primo blocco è stato minato. A questo punto, la blockchain è accessibile all'indirizzo \url{http://localhost:8545} e può essere utilizzata dal server descritto nella sezione §4. Essa continuerà a minare blocchi, anche se non vengono effettuate transazioni, fino a quando la shell non verrà chiusa o non si eseguirà il comando per fermare il minaggio. Per effettuare questa azione eseguire la stringa \newline
-\texttt{geth attach url\_della\_blockchain -{}-exec "miner.stop()"} \newline
-Per far ripartire il minaggio eseguire \newline
-\texttt{geth attach url\_della\_blockchain -{}-exec "miner.start()"} \newline
+La prima inizializzazione della blockchain può richiedere diversi minuti per essere completata. L'inizializzazione è completata quando nella shell compare l'avviso che il primo blocco è stato minato. A questo punto, la blockchain è accessibile all'indirizzo \url{http://localhost:8545} e può essere utilizzata dal server descritto nella sezione §4. Essa continuerà a minare blocchi, anche se non vengono effettuate transazioni, fino a quando la shell non verrà chiusa o non si eseguirà il comando per fermare il mining. Per effettuare questa azione eseguire la stringa: 
+\begin{center}
+	\texttt{geth attach url\_della\_blockchain -{}-exec "miner.stop()"}
+\end{center} 
+Per far ripartire il mining eseguire:
+\begin{center}
+	\texttt{geth attach url\_della\_blockchain -{}-exec "miner.start()"}
+\end{center}
 I dati generati dalla blockchain vengono salvati nella cartella \texttt{geth}. \newline
 Una documentazione più approfondita per l'utilizzo di Geth si può trovare alla pagina \url{https://geth.ethereum.org/docs/}.
 
+\subparagraph{Docker}
+Per esguire la blockchain tramite docker, è necessario posizionarsi allo stesso livello del file \textit{docker-compose.yml} ed eseguire il comando \textit{docker-compose up}. Docker si occuperà di scaricare tutti i pacchetti necessari per l'esecuzione, e renderà accessibili le porte 8545 e 30303.\newline
+Per poter bloccare il mining, ci si può collegare con geth tramite il comando:
+\begin{center}
+	\texttt{geth attach url\_della\_blockchain -{}-exec "miner.stop()"}
+\end{center}
+Per poter riprendere il mining, ci si può collegare con geth tramite il comando:
+\begin{center}
+	\texttt{geth attach url\_della\_blockchain -{}-exec "miner.start(1)"}
+\end{center}
+È consigliato avviare il miner con 1 thread (\textit{miner.start(1)}), altrimenti il calcolo del mining può influire molto sulle prestazioni del server.
 
