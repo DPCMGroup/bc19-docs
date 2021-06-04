@@ -134,15 +134,13 @@ Il diagramma sovrastante rappresenta la struttura e le relazioni dei package del
 	\label{fig:DiagrammaPackageBaseWebapp}
 \end{figure}
 Il package Base contiene tutte le funzionalità offerte a un amministratore autenticato.
-Esse sono ulteriormente suddivise in tre package:
+Esse sono ulteriormente suddivise in due package:
 \begin{itemize}
-	\item Credentials;
-	\item Rooms;
-	\item Report.
+	\item Credentials
+	\item Rooms
 \end{itemize}
-All'interno del package Credentials sono presenti tutti e soli i componenti utilizzati nella pagina di gestione delle credenziali. All'interno del package Rooms sono presenti tutti e soli i componenti utilizzati nella pagina di gestione delle stanze e delle postazioni. All'interno del package Report sono presenti tutti e soli i componenti utilizzati nella pagina di gestione dei report. Le tre pagine appena indicate sono annidate nella vista del componente Base. Quest'ultimo infatti presenta dei pulsanti per la selezione della pagina da visualizzare. Esso presenta inoltre, sempre tramite un pulsante, la funzionalità di logout e di visulizzazione della guida dell'applicazione web. \newline
+All'interno del package Credentials sono presenti tutti e soli i componenti utilizzati nella pagina di gestione delle credenziali. All'interno del package Rooms sono presenti tutti e soli i componenti utilizzati nella pagina di gestione delle stanze e delle postazioni. Le due pagine appena indicate sono annidate nella vista del componente Base. Quest'ultimo infatti presenta dei pulsanti per la selezione della pagina da visualizzare. Esso presenta inoltre, sempre tramite un pulsante, la funzionalità di logout. \newline
 Il package Base ha una dipendenza verso Models, le cui classi vengono usate per organizzare i dati, e una verso Services, le cui classi vengono usate per interagire con il server e con il local storage.
-All'interno del package Rooms è presente il package Grid. Esso si occupa di gestire tutto quello che riguarda la visualizzazione schematica delle postazioni all'interno di una griglia.
 
 \subsubsection{Login}
 \begin{figure}[H]
@@ -253,13 +251,6 @@ Questa classe presenta i seguenti metodi:
 Classe che contiene i valori necessari per l'autenticazione di un amministratore al sistema. Viene usata per la comunicazione di questo tipo di dati all'interno dell'applicazione. \newline
 \subparagraph{UserData}
 Classe che contiene tutti e soli i valori necessari per il salvataggio di un utente sul database. È utilizzata per il transito dei dati degli utenti all'interno dell'applicazione. \newline
-\subparagraph{Observable<T>}
-Classe fornita dalla libreria Rxjs. Viene utilizzata per effettuare chiamate \glock{asincrone} al server. Per una documentazione più approfondita fare riferimento a \url{https://angular.io/guide/rx-library}. \newline
-Questa classe presenta i seguenti metodi:
-\begin{itemize}
-	\item \textbf{subscribe(next: (T)=>void): Subscription} \newline
-	Metodo che permette di eseguire la chiamata al server e di specificare la funzione di callback che gestirà la risposta.
-\end{itemize}
 
 \subsubsection{Aggiunta e modifica stanze}
 \begin{figure}[H]
@@ -268,8 +259,10 @@ Questa classe presenta i seguenti metodi:
 	\caption{Diagramma delle classi per la gestione delle stanze e delle postazioni}
 	\label{fig:DiagrammaClassiStanzePostazioni}
 \end{figure}
-Il diagramma sovrastante rappresenta l'architettura utilizzata per la pagina di gestione delle stanze e delle postazioni. \newline
-\texttt{RoomsComponent} si occupa della visualizzazione ed eliminazione delle stanze e delle postazioni. Essa delega la creazione e modifica dei questi due dati alle classi \texttt{AddEditWorkstationComponent} e \texttt{AddEditRoomComponent}. Le tre componenti contengono un riferimento ad ognuno dei servizi di cui necessitano. I due servizi coinvolti sono \texttt{WorkstationService} e \texttt{RoomService}. Le informazini vengono ottenute dal server tramite la classe \texttt{Observable}. In generale i dati riguardanti postazioni e stanze sono scambiati utilizzando le due classi \texttt{WorkstationData} e \texttt{RoomData}.
+Il diagramma sovrastante rappresenta l'architettura utilizzata per l'aggiunta e modifica delle stanze. \newline
+\texttt{RoomsComponent} si occupa della visualizzazione ed eliminazione delle stanze. Essa delega la creazione e modifica di questi due dati alla classe \texttt{AddEditRoomComponent}. Le due componenti contengono riferimenti ai servizi di cui necessitano. I due servizi coinvolti sono \texttt{RoomService} e \texttt{RoomFailuresService}. Le informazini vengono ottenute dal server tramite la classe \texttt{Observable}. In generale i dati riguardanti le stanze sono scambiati utilizzando le due classi \texttt{RoomData} e \texttt{RoomDataWithDates}.
+
+L'aggiunta e modifica delle postazioni è molto simile al caso qui presentato. Pertanto esso non viene illustrato.
 
 
 \paragraph{Classi}
@@ -334,31 +327,7 @@ Questa classe presenta i seguenti metodi:
 	Richiede tutti i dati sulle postazioni e sulle stanze al server senza alcun filtro.
 \end{itemize}
 	
-\subparagraph{AddEditWorkstationComponent}
-Classe che si occupa dell'aggiunta e modifica di postazioni. I primi 9 attributi sono sempre sincronizzati con il form che viene presentato all'utente. Tramite essi viene definita la postazione da aggiungere o i nuovi dati della postazione da modificare.\newline
-Questa classe contiene i seguenti attributi:
-\begin{itemize}
-	\item \textbf{passedWorkstation: WorkstationData } \newline
-	L'oggetto che viene passato da \texttt{RoomComponent} e che indica la postazione da modificare.
-	\item \textbf{action: string} \newline
-	L'attributo che viene passato da \texttt{RoomComponent} e che indica il tipo di azione da eseguire: aggiunta o modifica della postazione.
-\end{itemize}
-Questa classe presenta i seguenti metodi:
-\begin{itemize}
-	\item \textbf{ngOnChanges(): void } \newline
-	Metodo chiamato ogni volta che una proprietà data-bound viene modificata. In questo caso serve per aggiornare i parametri locali in base ai valori di \texttt{passedWorkstation}.
-	\item \textbf{getWorkstationFromLocalValues(): WorkstationData } \newline
-	Restituisce un oggetto \texttt{WorkstationData} ottenuto dai primi 9 attributi.
-	\item \textbf{takeAction(): void } \newline
-	Chiama il metodo \texttt{addWorkstation()} o \texttt{editWorkstation()} a seconda del valore dell'attributo action.
-	\item \textbf{addWorkstation(): void } \newline
-	Richiede al service di aggiungere la postazione specificata.
-	\item \textbf{editWorkstation(): void} \newline
-	Richiede al service di modificare la postazione nel modo specificato.
-	\item \textbf{showMessage(message: string): void} \newline
-	Metodo che mostra all'utente la stringa passata come parametro.
-	
-\end{itemize}
+
 \subparagraph{AddEditRoomComponent}
 Classe che si occupa dell'aggiunta e modifica di stanze. I primi 5 attributi sono sempre sincronizzati con il form che viene presentato all'utente. Tramite essi viene definita la stanza da aggiungere o i nuovi dati della stanza da modificare.\newline
 Questa classe contiene i seguenti attributi:
@@ -383,24 +352,7 @@ Questa classe presenta i seguenti metodi:
 	\item \textbf{showMessage(message: string): void} \newline
 	Metodo che mostra all'utente la stringa passata come parametro.
 \end{itemize}
-\subparagraph{WorkstationsService}
-Servizio che permette di ottenere dal server informazioni sulle postazioni. Ogni metodo di questa classe, tranne il costruttore, restituisce un \texttt{Observable}. Questo oggetto espone un metodo subscribe con il quale si potrà impostare una funzione di callback che verrà chiamata quando il server fornirà una risposta. \newline
-Questa classe contiene i seguenti attributi:
-\begin{itemize}
-	\item \textbf{APIUrl: string} \newline
-	L'url base dell'API REST a cui il servizio fa riferimento.
-\end{itemize}
-Questa classe presenta i seguenti metodi:
-\begin{itemize}
-	\item \textbf{getWorkstationList(): Observable<Array<WorkstationData> > 	} \newline
-	Usato per ottenere una lista delle postazioni.
-	\item \textbf{addWorkstation(val: WorkstationData): Observable<string> 	} \newline
-	Usato per tentare di aggiungere la postazione indicata in \texttt{val} e di ricevere l'esito dell'operazione.
-	\item \textbf{deleteWorkstation(val: number): Observable<string> 	} \newline
-	Usato per tentare di eliminare la postazione con id \texttt{val} e di ricevere l'esito dell'operazione.
-	\item \textbf{modifyWorkstation(val: WorkstationData): Observable<string>} \newline
-	Usato per tentare di modificare la postazione con id pari a quello contenuto in \texttt{val} assegnandole gli altri valori dello stesso parametro. Restituisce, tramite un \texttt{Observable}, una risposta in formato stringa che indica l'esito dell'operazione.
-\end{itemize}
+
 \subparagraph{RoomsService}
 Servizio che permette di ottenere dal server informazioni sulle stanze. Ogni metodo di questa classe, tranne il costruttore, restituisce un \texttt{Observable}. Questo oggetto espone un metodo subscribe con il quale si potrà impostare una funzione di callback che verrà chiamata quando il server fornirà una risposta. \newline
 Questa classe contiene i seguenti attributi:
@@ -419,17 +371,8 @@ Questa classe presenta i seguenti metodi:
 	\item \textbf{modifyWorkstation(val: RoomData): Observable<string>} \newline
 	Usato per tentare di modificare la stanza con id pari a quello contenuto in \texttt{val} assegnandole gli altri valori dello stesso parametro. Restituisce, tramite un \texttt{Observable}, una risposta in formato stringa che indica l'esito dell'operazione.
 \end{itemize}
-\subparagraph{WorkstationData}
-Classe che contiene tutti e soli i valori necessari per il salvataggio di una postazione sul database. È utilizzata per il transito dei dati delle postazioni all'interno dell'applicazione. \newline
 \subparagraph{RoomData}
 Questa classe contiene tutti e soli i valori necessari per il salvataggio di una stanza sul database. È utilizzata per il transito dei dati delle stanze all'interno dell'applicazione. \newline
-\subparagraph{Observable<T>}
-Classe fornita dalla libreria Rxjs. Viene utilizzata per effettuare chiamate asincrone al server. Per una documentazione più approfondita fare riferimento a \url{https://angular.io/guide/rx-library}. \newline
-Questa classe presenta i seguenti metodi:
-\begin{itemize}
-	\item \textbf{subscribe(next: (T)=>void): Subscription} \newline
-	Metodo che permette di eseguire la chiamata al server e di specificare la funzione di callback che gestirà la risposta.
-\end{itemize}
 
 \subsubsection{Visualizzazione stanze e postazioni}
 \begin{figure}[H]
@@ -438,6 +381,24 @@ Questa classe presenta i seguenti metodi:
 	\caption{Diagramma delle classi per la visualizzazione delle stanze e delle postazioni}
 	\label{fig:DiagrammaClassiVisualStanzePostazioni}
 \end{figure}
+
+\paragraph{Classi}
+Alla visualizzazione delle stanze e delle postazioni prendono parte le componenti \texttt{RoomsComponent}, \texttt{GridComponent}, \texttt{WorkstationComponent} che gestiscono i dati a tre livelli diversi, dal più alto al più basso.
+I dati vengono gestiti e trasportati tramite le classi \texttt{RoomData}, \texttt{RoomDataWithDates}, \texttt{WorkstationData}, \texttt{WorkstationDataWithDates}.
+I dati vengono ottenuti dal server tramite i due servizi \texttt{RoomsService} e \texttt{WorkstationsService}.
+\subparagraph{RoomsComponent}
+Si occupa di ottenere le stanze e le postazioni dal server, tramite il metodo \texttt{refreshAll} e di organizzare le seconde all'interno delle prime tramite il metodo \texttt{populateRoomsMap}. Il primo metodo scarica in modo parallelo i dati dal server e li salva negli array \texttt{roomsList} e \texttt{workstationList}. Il secondo metodo invece prende le postazioni appena raccolte e le suddivide per stanza nella mappa <number, WorsktationData> \texttt{roomsMap}.
+Una volta popolate le stanze, è possibile assegnare ad ogni \texttt{GridComponent} le postazioni corrispondenti.
+\subparagraph{GridComponent}
+Si occupa di organizzare le postazioni ricevute in una matrice e di visualizzare quest'ultima in un tabella html. Le postazioni sono salvate nell'array \texttt{workstationsList} mentre la matrice è \texttt{roomArray}. L'organizzazione viene eseguita tramite il metodo \texttt{workstationsToRoomGrid}. Una volta eseguita viene assegnata ad ogni WorkstationComponent la rispettiva postazione.
+\subparagraph{WorkstationComponent}
+Questo componente si occupa di rappresentare la postazione ricevuta. Questa rappresentazione avviene esponendo nella vista (html) gli attributi della postazione e colorando il componente con un colore consono allo stato e alla situazione di sanificazione. Questo colore viene calcolato tramite il metodo \texttt{getColorByState}.
+\subparagraph{Classi Data}
+Come suggerito dai nomi, i dati sono rappresentati in due formati: con e senza date.
+Questa variabilità dipende dallo stato di inaccessibilità della stanza o della postazione. Nel caso in cui essa sia inaccessibile, sono indicate anche le date di inizio e fine del perido in cui tale stato sarà vigente.
+\subparagraph{Servizi}
+I due servizi utilizzati forniscono entrambi 4 metodi in formato CRUD (Create, Read, Update, Delete) che rispecchiano le API fornite dal backend.
+
 
 \subsubsection{Gestione credenziali}
 \begin{figure}[H]
@@ -519,13 +480,6 @@ Questa classe presenta i seguenti metodi:
 \end{itemize}
 \subparagraph{UserData}
 Questa classe contiene tutti e soli i valori necessari per il salvataggio di un utente sul database. È utilizzata per il transito dei dati degli utenti all'interno dell'applicazione. \newline
-\subparagraph{Observable<T>}
-Classe fornita dalla libreria Rxjs. Viene utilizzata per effettuare chiamate asincrone al server. Per una documentazione più approfondita fare riferimento a \url{https://angular.io/guide/rx-library}. \newline
-Questa classe presenta i seguenti metodi:
-\begin{itemize}
-	\item \textbf{subscribe(next: (T)=>void): Subscription} \newline
-	Metodo che permette di eseguire la chiamata al server e di specificare la funzione di callback che gestirà la risposta.
-\end{itemize}
 
 \subsubsection{Visualizzazione report}
 \begin{figure}[H]
@@ -545,6 +499,14 @@ Questa classe presenta i seguenti metodi:
 \end{figure}
 Il diagramma sovrastante rappresenta l'evento di login automatico. L'evento è provocato dall'inizializzazione della pagina (\texttt{ngOnInit}). La sequenza consiste nel richiedere le credenziali salvate nel browser tramite il \texttt{LocalAccountService} ( \texttt{retrieveLocalCredentials}) e nel tentare un'autenticazione al server con esse tramite il metodo \texttt{login} del \texttt{LoginService}. In caso di esito positivo viene resituito da quest'ultimo servizio un oggetto \texttt{UserData} con i dati dell'utente che si è autenticato. La funzione \texttt{checkLoginResponse} gestisce la risposta del server provocando il reindirizzamento alla home page, in caso di successo, o la visualizzazione del form per l'inserimento delle credenziali.
 \subsubsection{Gestione stanze e postazioni}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=18cm]{res/images/webapp-visualStanzePostazioni-diagrammaSequenza.png}
+	\caption{Diagramma di sequenza per la visualizzazione delle stanze e delle postazioni}
+	\label{fig:DiagrammaSequenzaStanzePostazioni1}
+\end{figure}
+L'evento rappresentato nel diagramma sovrastante è scatenato dalla chiamata di \texttt{ngOnInit}. Come conseguenza viene chiamato il metodo \texttt{refreshAll} che fa eseguire parallelamente due richieste di dati al server, la prima per ottenere le stanze e la seconda per ottenere le postazioni. In entrambe le esecuzioni il componente chiama il metodo apposito del servizio e riceve come risposta un \texttt{Observable}. Poi, chiamando il metodo \texttt{subscribe} di questo oggetto, il componente invia la chiamata al server e imposta la funzione di callback che ne gestirà la risposta. In entrambi i casi i dati di ritorno vengono assegnati a degli attributi del componente. Per le stanze il metodo \texttt{setRoomsList} assegna l'array di ritorno all'array locale \texttt{roomsList}. Per le stanze, invece, il metodo \texttt{setWorkstationsList} assegna l'array di ritorno all'array locale \texttt{workstationList}. Quando entrambe le risposte sono arrivate l'esecuzione procede col metodo \texttt{populateRoomsMap}, che organizza le stanze e le postazioni in una mappa.
+Dal diagramma sono esclusi gli eventi successivi al popolamento delle stanze. In sostanza ai diversi GridComponent, rappresentanti le singole stanze, vengono assegnate le rispettive postazioni. All'interno del componente questi oggetti verrano ulteriormente organizzati in una matrice rappresentante la griglia. Per ogni elemento della matrice viene successivamente creato un WorkstationComponent e gli viene assegnata la rispettiva postazione, se presente.
 
 \begin{figure}[H]
 	\centering
@@ -571,7 +533,5 @@ Il diagramma sovrastante rappresenta l'evento di visualizzazione delle credenzia
 \end{figure}
 Il diagramma sovrastante rappresenta l'azione di aggiunta o modifica di una credenziale da parte di un'amministratore. L'evento è provocato dalla chiamata a \texttt{takeAction}, eseguita dall'utente tramite la pressione di un pulsante. Successivamente viene eseguita l'aggiunta (\texttt{addCredential}) o la modifica (\texttt{editCredential}) della credenziale definita dai valori inseriti precedentemente dall'utente. In entrambi i casi il componente invia i dati all'\texttt{UserService} e riceve un Observable, col quale può, tramite il metodo \texttt{subscribe}, inviare la chiamata al server e impostare una funzione di callback per gestirne la risposta.
 
-\subsubsection{Gestione dei Report}
 
-Non sono stati aggiunti nuovi diagrammi di sequenza in quanto il flusso di esecuzione di questo caso d'uso è lo stesso di quanto descritto in §3.7.3.
 
