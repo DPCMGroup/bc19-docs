@@ -454,7 +454,7 @@ Obiettivi:
 	\item predisposizione della presentazione per la PB e la RQ.
 \end{itemize}
 
-\subsection{Validazione e collaudo (dal 2021-05-09 al 2021-05-31)}
+\subsection{Validazione e collaudo (dal 2021-05-17 al 2021-05-31)}
 
 \subsubsection{Pianificazione di macroperiodo}
 \begin{table}[H]
@@ -480,3 +480,126 @@ Obiettivi:
 	\end{tabular}
 	\caption{ Pianificazione riguardante il periodo di Validazione e collaudo\\}
 \end{table}
+
+\subsubsection{Pianificazione di microperiodo}
+\indent La pianificazione settimanale che segue riporta la suddivisione oraria tra i ruoli ma non tra i componenti. Si è deciso di escludere questa informazione dal documento, anche se essa è presente nello strumento utilizzato, per rendere la lettura più semplice.
+
+\paragraph{Microperiodo 1}
+\begin{table}[H]
+	\rowcolors{2}{lightest-grayest}{white}
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{|c|p{10mm}|p{10mm}|p{10mm}|p{10mm}|p{10mm}|p{10mm}|}
+		\hline
+		\rowcolor{lighter-grayer}
+		\textbf{Attività}                         & \textbf{Re} & \textbf{Am} & \textbf{An} & \textbf{Pt} & \textbf{Pm} & \textbf{Ve} \\ \hline
+		Verbale interno        & - & 1 & - & - & -  & 1 \\ \hline
+		Comunicazione con proponente & -           & -           & -           & -           & 1           & -           \\ \hline
+		Sviluppo applicazione  & - & - & - & - & 81 & - \\ \hline
+		Coordinamento attività & 1 & - & - & - & -  & - \\ \hline
+	\end{tabular}
+	\caption{ Pianificazione riguardante il 1° microperiodo\\}
+\end{table}
+
+Obiettivi di microperiodo:
+\begin{itemize}
+	\item Si intende implementare le seguenti funzionalità della web-app:
+	\begin{itemize}
+		\item la visualizzazione delle postazioni e delle stanze tramite una griglia/scacchiera; 
+		\item la colorazione delle postazioni in base allo stato;
+		\item mostrare il numero di occupanti per stanza.
+	\end{itemize}
+\item Relativamente all'app-mobile si intende:
+\begin{itemize}
+	\item effettuare il refactoring del codice esistente;
+	\item garantire la visualizzazione della guida utente.
+\end{itemize}
+\item Riguardo al backend gli obiettivi sono:
+\begin{itemize}
+	\item la stesura degli unit test del codice esistente;
+	\item la gestione della comunicazione fra backend e blockchain tramite web3.
+\end{itemize}
+\item creazione di un video-demo per aggiornare Imola Informatica sullo stato di avanzamento dei lavori.
+\end{itemize}
+
+
+\paragraph{Microperiodo 2}
+\begin{table}[H]
+	\rowcolors{2}{lightest-grayest}{white}
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{|c|p{10mm}|p{10mm}|p{10mm}|p{10mm}|p{10mm}|p{10mm}|}
+		\hline
+		\rowcolor{lighter-grayer}
+		\textbf{Attività}                         & \textbf{Re} & \textbf{Am} & \textbf{An} & \textbf{Pt} & \textbf{Pm} & \textbf{Ve} \\ \hline
+		Verbale interno                                   & - & 1 & - & - & -  & 1 \\ \hline
+		Comunicazione con proponente					  & - & - & - & - & 1  & - \\ \hline
+		Sviluppo applicazione                             & - & - & - & - & 80 & - \\ \hline
+		Coordinamento attività                            & 1 & - & - & - & -  & - \\ \hline
+	\end{tabular}
+	\caption{ Pianificazione riguardante il 2° microperiodo\\}
+\end{table}
+
+Obiettivi di microperiodo:
+\begin{itemize}
+	\item Si intende raggiungere i seguenti obiettivi per la la web-app:
+	\begin{itemize}
+		\item impostazione delle postazioni nello stato guasto; 
+		\item impostazione inacessibilità delle stanze;
+		\item visualizzazione della guida;
+		\item disabilitazione utente;
+		\item scrittura test.
+	\end{itemize}
+	\item Relativamente all'app-mobile si intende implementare le seguenti funzionalità:
+	\begin{itemize}
+		\item visualizzazione e gestione delle prenotazioni;
+		\item occupazione delle postazioni;
+		\item funzionalità dell'addetto alle pulizie (guida, visualizzazione stanze e postazioni da igienizzare e loro igienizzazione).
+	\end{itemize}
+	\item Riguardo al backend gli obiettivi sono:
+	\begin{itemize}
+		\item generazione report, calcolo hash e salvataggio nella blockchain;
+		\item implementazione delle chiamate API per consentire le funzionalità sopra elencate per la web-app e l'app-mobile.
+	\end{itemize}
+\item creazione di un video-demo per aggiornare Imola Informatica sullo stato di avanzamento dei lavori.
+\end{itemize}
+
+\paragraph{Microperiodo 3}
+\begin{table}[H]
+	\rowcolors{2}{lightest-grayest}{white}
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{|c|p{10mm}|p{10mm}|p{10mm}|p{10mm}|p{10mm}|p{10mm}|}
+		\hline
+		\rowcolor{lighter-grayer}
+		\textbf{Attività}                         & \textbf{Re} & \textbf{Am} & \textbf{An} & \textbf{Pt} & \textbf{Pm} & \textbf{Ve} \\ \hline
+		Verbale interno              & - & 1 & - & - & -  & 1  \\ \hline
+		Comunicazione con proponente & -           & 1           & -           & -           & -           & 1           \\ \hline
+		aggiornamento documentazione & - & 4 & - & - & -  & -  \\ \hline
+		Validazione e collaudo       & - & - & - & - & 67 & 14 \\ \hline
+		Coordinamento attività       & 1 & - & - & - & -  & -  \\ \hline
+	\end{tabular}
+	\caption{ Pianificazione riguardante il 3° microperiodo\\}
+\end{table}
+
+Obiettivi di microperiodo:
+
+\begin{itemize}
+	\item Per la web-app si intende:
+	\begin{itemize}
+		\item concludere la stesura dei test;
+		\item creazione dell'interfaccia per la visualizzazione dei report.
+	\end{itemize}
+	\item Relativamente all'app-mobile si intende:
+	\begin{itemize}
+		\item consentire la possibilità di fissare una durata per un'occupazione non prevista;
+		\item concludere la stesura dei test.
+	\end{itemize}
+	\item Riguardo al backend gli obiettivi sono:
+	\begin{itemize}
+		\item concludere la stesura dei test;
+		\item implementazione delle chiamate API per consentire le funzionalità sopra elencate per la web-app e l'app-mobile.
+	\end{itemize}
+\item aggiornamento della documentazione richiesta per la RA;
+\item demo live con Imola Informatica.
+\end{itemize}
