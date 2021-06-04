@@ -262,7 +262,7 @@ Classe che contiene tutti e soli i valori necessari per il salvataggio di un ute
 Il diagramma sovrastante rappresenta l'architettura utilizzata per l'aggiunta e modifica delle stanze. \newline
 \texttt{RoomsComponent} si occupa della visualizzazione ed eliminazione delle stanze. Essa delega la creazione e modifica di questi due dati alla classe \texttt{AddEditRoomComponent}. Le due componenti contengono riferimenti ai servizi di cui necessitano. I due servizi coinvolti sono \texttt{RoomService} e \texttt{RoomFailuresService}. Le informazini vengono ottenute dal server tramite la classe \texttt{Observable}. In generale i dati riguardanti le stanze sono scambiati utilizzando le due classi \texttt{RoomData} e \texttt{RoomDataWithDates}.
 
-L'aggiunta e modifica delle postazioni è molto simile al caso qui presentato. Pertanto esso non viene illustrato.
+L'aggiunta e modifica delle postazioni è molto simile al caso qui presentato. Pertanto esse non vengono illustrate.
 
 
 \paragraph{Classi}
@@ -386,6 +386,8 @@ Questa classe contiene tutti e soli i valori necessari per il salvataggio di una
 Alla visualizzazione delle stanze e delle postazioni prendono parte le componenti \texttt{RoomsComponent}, \texttt{GridComponent}, \texttt{WorkstationComponent} che gestiscono i dati a tre livelli diversi, dal più alto al più basso.
 I dati vengono gestiti e trasportati tramite le classi \texttt{RoomData}, \texttt{RoomDataWithDates}, \texttt{WorkstationData}, \texttt{WorkstationDataWithDates}.
 I dati vengono ottenuti dal server tramite i due servizi \texttt{RoomsService} e \texttt{WorkstationsService}.
+
+Di seguito viene descritto meglio il ruolo delle classi. Vengono esclusi i metodi non strettamente inerenti alla visualizzazione delle stanze e delle postazioni e i metodi il cui funzionamento è facilmente deducibile dal nome.
 \subparagraph{RoomsComponent}
 Si occupa di ottenere le stanze e le postazioni dal server, tramite il metodo \texttt{refreshAll} e di organizzare le seconde all'interno delle prime tramite il metodo \texttt{populateRoomsMap}. Il primo metodo scarica in modo parallelo i dati dal server e li salva negli array \texttt{roomsList} e \texttt{workstationList}. Il secondo metodo invece prende le postazioni appena raccolte e le suddivide per stanza nella mappa <number, WorsktationData> \texttt{roomsMap}.
 Una volta popolate le stanze, è possibile assegnare ad ogni \texttt{GridComponent} le postazioni corrispondenti.
@@ -488,6 +490,24 @@ Questa classe contiene tutti e soli i valori necessari per il salvataggio di un 
 	\caption{Diagramma delle classi per la visualizzazione dei report}
 	\label{fig:DiagrammaClassiReport}
 \end{figure}
+
+\paragraph{Classi}
+Le classi prese in considerazione nel diagramma servono per la visualizzazione del report delle occupazioni.
+\subparagraph{ReportComponent}
+Fornisce un'interfaccia per:
+\begin{itemize}
+	\item selezione tipo di report da visaulizzazione o scaricare;
+	\item filtraggio report per periodo;
+	\item scaricamento report.
+\end{itemize}
+\subparagraph{ShowOccupationsReportComponent}
+Questo componente si occupa di ottenere una lista delle occupazioni tramite il metodo \texttt{refresh} e di mostrarle tramite la vista. Le occupazioni vengono filtrate in base al periodo definito dai valori di \texttt{startDate} e \texttt{endDate}. Inoltre questo componente fornisce, tramite il metodo \texttt{getDownloadData}, la lista delle occupazioni in formato csv. In questo modo \texttt{ReportComponent} può ottenere i dati da far scaricare all'utente.
+\subparagraph{OccupationData}
+Rappresenta una occupazione singola.
+\subparagraph{ReportsService}
+Fornisce tre metodi per ottenere i tre tipi di report possibili. I primi due metodi accettano in input due date che definiscono il periodo all'interno del quale si cercano le informazioni.
+
+L'utilizzo dei componenti \texttt{ShowSanitizationsReportComponent} e \texttt{ShowReportsReportComponent} è quasi identico a quanto appena descritto. Pertanto esso non viene illustrato esplicitamente
 
 \subsection{Diagrammi di sequenza}
 \subsubsection{Login}
