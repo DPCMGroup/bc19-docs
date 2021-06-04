@@ -201,8 +201,8 @@ Rispettivamente i campi corrispondono a:
 	\item \textbf{id}: id prenotazione;
 	\item \textbf{idworkstation}: nome postazione;
 	\item \textbf{iduser}: id utente;
-	\item \textbf{starttime}: ora inizio prenotazione;
-	\item \textbf{endtime}: ora fine prenotazione.	
+	\item \textbf{starttime}: ora inizio prenotazione in formato "aaaa-MM-gg hh:mm";
+	\item \textbf{endtime}: ora fine prenotazione in formato "aaaa-MM-gg hh:mm".	
 \end{itemize}
 \paragraph{/booking/modify}
 Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per la modifica della prenotazione. La prenotazione da modificare è determinata dal parametro \textit{id}:
@@ -210,11 +210,11 @@ Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati 
 	\item \textbf{id}: id prenotazione;
 	\item \textbf{idworkstation}: nome postazione;
 	\item \textbf{iduser}: id utente;
-	\item \textbf{starttime}: ora inizio prenotazione;
-	\item \textbf{endtime}: ora fine prenotazione.	
+	\item \textbf{starttime}: ora inizio prenotazione in formato "aaaa-MM-gg hh:mm";
+	\item \textbf{endtime}: ora fine prenotazione in formato "aaaa-MM-gg hh:mm".	
 \end{itemize}
 \paragraph{/booking/del/\{int: id\}}
-Chiamata GET. Elimina la prenotazione con identificata da \textit{id}.
+Chiamata GET. Elimina la prenotazione identificata da \textit{id}.
 \paragraph{/booking/gettimetonext}
 Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per il reperimento delle ore disponibili fino alla prenotazione successiva.
 \begin{itemize}
@@ -315,11 +315,44 @@ Rispettivamente i campi corrispondono a:
 	\item \textbf{archived}: indica se la stanza è archiviata.	
 \end{itemize}
 \paragraph{/room/failure/del/\{int: idFail\}}
+Chiamata GET. Cancella un una "roomFailure" specificandone l'id.
 \paragraph{/room/failure/delall/\{int: idRoom\}}
+Chiamata GET. Cancella tutte le "roomFailure" identificate dalla id stanza.
 \paragraph{/room/failure/insert}
+Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per l'inserimento dell'inaccessibilità della stanza:
+\begin{itemize}
+	\item \textbf{idroom}: id stanza;
+	\item \textbf{starttime}: ora inizio failure in formato "aaaa-MM-gg hh:mm";
+	\item \textbf{endtime}: ora fine failure in formato "aaaa-MM-gg hh:mm".
+\end{itemize}
+Viene fatto notare che nel caso in cui si voglia specificare una failure a tempo indeterminato, \textit{endtime} viene impostato a \textit{null}.
 \paragraph{/room/failure/modify}
+Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per la modifica dell'inaccessibilità della stanza:
+\begin{itemize}
+	\item \textbf{id}: id failure;
+	\item \textbf{idroom}: id stanza;
+	\item \textbf{starttime}: ora inizio failure in formato "aaaa-MM-gg hh:mm";
+	\item \textbf{endtime}: ora fine failure in formato "aaaa-MM-gg hh:mm".
+\end{itemize}
 \paragraph{/room/failure/list}
-
+Chiamata GET. Ritorna la lista delle inaccessibilità delle stanze in formato JSON come segue.	\\
+\begin{center}
+	\begin{lstlisting}
+	[{
+	"id": 1,
+	"idroom": 2,
+	"starttime": "2021-06-01 10:30",
+	"endtime": "2021-06-01 19:00"
+	}]
+	\end{lstlisting}
+\end{center}
+Rispettivamente i campi corrispondono a:
+\begin{itemize}
+	\item \textbf{id}: id failure;
+	\item \textbf{idroom}: id stanza;
+	\item \textbf{starttime}: ora inizio inaccessibilità in formato "aaaa-MM-gg hh:mm";
+	\item \textbf{endtime}: ora fine inaccessibilità in formato "aaaa-MM-gg hh:mm".
+\end{itemize}
 \paragraph{/user/list}
 Chiamata GET. Ritorna la lista degli utenti in formato JSON come segue.	\\
 \begin{center}
@@ -523,11 +556,87 @@ Il JSON è strutturato come segue:
 \end{itemize}
 
 \paragraph{/workstation/dirty/list}
+Chiamata GET. Ritorna la lista delle postazioni non sanificate in formato JSON come segue.	\\
+\begin{center}
+	\begin{lstlisting}
+	[{
+	"id": 1, 
+	"tag": "00 c0 00 01 8d 91 04",
+	"workstationname": "lab1-1x1",
+	"xworkstation": 1, 
+	"yworkstation": 1, 
+	"idroom": 1,
+	"state": 0,
+	"sanitized": 1,
+	"archived": 0
+	}]
+	\end{lstlisting}
+\end{center}
+Rispettivamente i campi corrispondono a:
+\begin{itemize}
+	\item \textbf{id}: id postazione;
+	\item \textbf{tag}: id tag postazione;
+	\item \textbf{workstationname}: nome postazione;
+	\item \textbf{xworkstation}: posizione asse x all'interno della stanza;
+	\item \textbf{yworkstation}: posizione asse y all'interno della stanza;	
+	\item \textbf{idroom}: id stanza in cui è presente la postazione;	
+	\item \textbf{state}: stato attuale della postazione;	
+	\item \textbf{sanitized}: indica se la postazione è sanificata;	
+	\item \textbf{archived}: indica se la postazione è archiviata.	
+\end{itemize}
 \paragraph{/workstation/bookable/list}
+Chiamata POST. Ritorna le postazioni prenotabili specificato un intervallo di tempo.\\
+Il JSON per la chiamata è strutturato come segue:
+\begin{itemize}
+	\item \textbf{startTime}: ora inizio intervallo in formato "aaaa-MM-gg hh:mm;
+	\item \textbf{endTime}: ora fine intervallo in formato "aaaa-MM-gg hh:mm;
+	\item \textbf{idRoom}: id stanza.
+\end{itemize}
 \paragraph{/workstation/sanitizeall}
+Chiamata POST. Imposta come sanificate tutte le postazioni appartenenti ad una stanza.\\
+Il JSON per la chiamata è strutturato come segue:
+\begin{itemize}
+	\item \textbf{time}: ora sanificazione in formato "aaaa-MM-gg hh:mm;
+	\item \textbf{iduser}: id utente che ha effettuato la sanificazione;
+	\item \textbf{idroom}: id stanza.
+\end{itemize}
 \paragraph{/workstation/failure/del/\{int: idFail\}}
-\paragraph{/workstation/failure/delall/\{int: idRoom\}}
+Chiamata GET. Cancella un una "workstationFailure" specificandone l'id.
+\paragraph{/workstation/failure/delall/\{int: idWork\}}
+Chiamata GET. Cancella tutte le "workstationFailure" che appartengono alla postazione identificata da \textit{idWork}.
 \paragraph{/workstation/failure/insert}
+Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per l'inserimento dell'inaccessibilità della postazione:
+\begin{itemize}
+	\item \textbf{idworkstation}: id postazione;
+	\item \textbf{starttime}: ora inizio failure in formato "aaaa-MM-gg hh:mm";
+	\item \textbf{endtime}: ora fine failure in formato "aaaa-MM-gg hh:mm".
+\end{itemize}
+Viene fatto notare che nel caso in cui si voglia specificare una failure a tempo indeterminato, \textit{endtime} viene impostato a \textit{null}.
 \paragraph{/workstation/failure/modify}
+Chiamata POST. Nella sezione \textit{body} viene specificato il JSON con i dati necessari per l'inserimento dell'inaccessibilità della postazione:
+\begin{itemize}
+	\item \textbf{id}: id failure;
+	\item \textbf{idworkstation}: id postazione;
+	\item \textbf{starttime}: ora inizio failure in formato "aaaa-MM-gg hh:mm";
+	\item \textbf{endtime}: ora fine failure in formato "aaaa-MM-gg hh:mm".
+\end{itemize}
 \paragraph{/workstation/failure/list}
+Chiamata GET. Ritorna la lista delle inaccessibilità delle postazioni in formato JSON come segue.	\\
+\begin{center}
+	\begin{lstlisting}
+	[{
+	"id": 1,
+	"idworkstation": 2,
+	"starttime": "2021-06-01 10:30",
+	"endtime": "2021-06-01 19:00"
+	}]
+	\end{lstlisting}
+\end{center}
+Rispettivamente i campi corrispondono a:
+\begin{itemize}
+	\item \textbf{id}: id failure;
+	\item \textbf{idworkstation}: id postazione;
+	\item \textbf{starttime}: ora inizio inaccessibilità in formato "aaaa-MM-gg hh:mm";
+	\item \textbf{endtime}: ora fine inaccessibilità in formato "aaaa-MM-gg hh:mm".
+\end{itemize}
 
