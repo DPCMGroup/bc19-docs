@@ -5,11 +5,10 @@ Per assicurare la qualità del software prodotto, il gruppo \textit{DPCM 2077} u
 \\
 Per la classificazione dei test si fa riferimento alle sezioni Verifica\footnote{Sezione §3.4} e Validazione\footnote{Sezione §3.5} del documento \dext{Norme di progetto v. 2.0.0}.
 	\subsection{Tipi di test}
-	Vengono individuate quattro tipologie di test:
+	Vengono individuate tre tipologie di test:
 	\begin{itemize}
 		\item \textbf{Test di Sistema [TS]};
 		\item \textbf{Test di Accettazione [TA]};
-		\item \textbf{Test di Integrazione [TI]};
 		\item \textbf{Test di Unità [TU]}.
 	\end{itemize}
 	\subsection{Test di Sistema}
@@ -262,7 +261,121 @@ Per la classificazione dei test si fa riferimento alle sezioni Verifica\footnote
 
 	\subsection{Test di Accettazione}
 	Il test di accettazione comprende l'esecuzione dei test di sistema con la partecipazione dei committenti. Dunque, è in tale circostanza che si eseguiranno i test di accettazione. 
-	\subsection{Test di Integrazione}
-	Le specifiche di questi test verranno scritte successivamente utilizzando il Modello a V.
 	\subsection{Test di Unità}
-	Le specifiche di questi test verranno scritte successivamente utilizzando il Modello a V.
+	\begin{center}
+		\rowcolors{2}{white}{lightest-grayest}
+		\begin{longtable}{|c|p{10cm}|c|}
+			\hline
+			\rowcolor{lighter-grayer}
+			\textbf{Codice} & \textbf{Descrizione} & \textbf{Stato}  \\ 
+			
+			\hline
+			\endhead
+			
+			TU1 & Si verifichi che l'indirizzo per la lista delle stanze sia associato al metodo corretto. & S \\	
+			\hline
+			TU2 & Si verifichi che l'indirizzo per l'inserimento delle stanze sia associato al metodo corretto. & S \\	
+			\hline
+			TU3 & Si verifichi che l'indirizzo per la cancellazione delle stanze sia associato al metodo corretto. & S \\	
+			\hline
+			TU4 & Si verifichi che l'indirizzo per la modifica delle stanze sia associato al metodo corretto. & S \\	
+			\hline
+			TU5 & Si verifichi che l'indirizzo per la lista degli utenti sia associato al metodo corretto. & S \\	
+			\hline
+			TU6 & Si verifichi che l'indirizzo per l'inserimento degli utenti sia associato al metodo corretto. & S \\	
+			\hline
+			TU7 & Si verifichi che l'indirizzo per la cancellazione degli utenti sia associato al metodo corretto. & S \\	
+			\hline
+			TU8 & Si verifichi che l'indirizzo per la modifica degli utenti sia associato al metodo corretto. & S \\	
+			\hline
+			TU9 & Si verifichi che l'indirizzo per il login sia associato al metodo corretto. & S \\	
+			\hline
+			TU10 & Si verifichi che l'indirizzo per le prenotazioni dell'utente sia associato al metodo corretto. & S \\	
+			\hline
+			TU11 & Si verifichi che l'indirizzo per la lista delle postazioni sia associato al metodo corretto. & S \\	
+			\hline
+			TU12 & Si verifichi che l'indirizzo per l'inserimento delle postazioni sia associato al metodo corretto. & S \\	
+			\hline
+			TU13 & Si verifichi che l'indirizzo per la cancellazione delle postazioni sia associato al metodo corretto. & S \\	
+			\hline
+			TU14 & Si verifichi che l'indirizzo per la modifica delle postazioni sia associato al metodo corretto. & S \\	
+			\hline
+			TU15 & Si verifichi che l'indirizzo per la visualizzazione dello stato della postazione sia associato al metodo corretto. & S \\	
+			\hline
+			TU16 & Si verifichi che l'indirizzo per la sanificazione delle postazioni sia associato al metodo corretto. & S \\	
+			\hline
+			TU17 & Si verifichi che la cancellazione di una stanza con id non esistente dia errore. & S \\	
+			\hline
+			TU18 & Si verifichi che la cancellazione di una stanza con id corretto vada a buon fine. & S \\	
+			\hline
+			TU19 & Si verifichi che il metodo per il reperimento della lista delle stanze vada a buon fine. & S \\	
+			\hline
+			TU20 & Si verifichi che il metodo per l'inserimento della  stanza vada a buon fine specificando dei dati corretti. & S \\	
+			\hline
+			TU21 & Si verifichi che il metodo per l'inserimento della  stanza vada in errore specificando dei dati non univoci. & S \\	
+			\hline
+			TU22 & Si verifichi che il metodo per l'inserimento della  stanza vada in errore specificando dei dati sbagliati. & S \\	
+			\hline
+			TU23 & Si verifichi che il metodo per la modifica della  stanza vada a buon fine specificando dei dati corretti. & S \\	
+			\hline
+			TU24 & Si verifichi che il metodo per la modifica della  stanza vada in errore specificando dei dati non univoci. & S \\	
+			\hline
+			TU25 & Si verifichi che il metodo per la modifica della  stanza vada in errore specificando dei dati sbagliati. & S \\	
+			\hline
+			
+			TU26 & Si verifichi che il metodo per il reperimento della lista delle prenotazioni dell'utente vada a buon fine. & S \\	
+			\hline
+			TU27 & Si verifichi che il metodo per il login dell'utente vada a buon fine specificando dati corretti. & S \\	
+			\hline
+			TU28 & Si verifichi che il metodo per il login dell'utente vada in errore specificando dati sbagliati. & S \\	
+			\hline
+			TU29 & Si verifichi che la cancellazione di un utente con id non esistente dia errore. & S \\	
+			\hline
+			TU30 & Si verifichi che la cancellazione di un utente con id corretto vada a buon fine. & S \\	
+			\hline
+			TU31 & Si verifichi che il metodo per il reperimento della lista degli utenti vada a buon fine. & S \\	
+			\hline
+			TU32 & Si verifichi che il metodo per l'inserimento di un utente vada a buon fine specificando dei dati corretti. & S \\	
+			\hline
+			TU33 & Si verifichi che il metodo per l'inserimento di un utente vada in errore specificando dei dati non univoci. & S \\	
+			\hline
+			TU34 & Si verifichi che il metodo per l'inserimento di un utente vada in errore specificando dei dati sbagliati. & S \\	
+			\hline
+			TU35 & Si verifichi che il metodo per la modifica di un utente vada a buon fine specificando dei dati corretti. & S \\	
+			\hline
+			TU36 & Si verifichi che il metodo per la modifica di un utente vada in errore specificando dei dati non univoci. & S \\	
+			\hline
+			TU37 & Si verifichi che il metodo per la modifica di un utente vada in errore specificando dei dati sbagliati. & S \\	
+			\hline
+			
+			TU38 & Si verifichi che il metodo per la sanificazione di una postazione vada a buon fine specificando dati corretti. & S \\	
+			\hline
+			TU39 & Si verifichi che il metodo per la sanificazione di una postazione vada in errore specificando dati sbagliati. & S \\	
+			\hline
+			TU40 & Si verifichi che il metodo per il reperimento dello stato della postazione vada a buon fine specificando dati corretti. & S \\	
+			\hline
+			TU41 & Si verifichi che il metodo per il reperimento dello stato della postazione vada in errore specificando dati sbagliati. & S \\	
+			\hline
+			TU29 & Si verifichi che la cancellazione di una postazione con id non esistente dia errore. & S \\	
+			\hline
+			TU30 & Si verifichi che la cancellazione di una postazione con id corretto vada a buon fine. & S \\	
+			\hline
+			TU31 & Si verifichi che il metodo per il reperimento della postazioni vada a buon fine. & S \\	
+			\hline
+			TU32 & Si verifichi che il metodo per l'inserimento di una postazione vada a buon fine specificando dei dati corretti. & S \\	
+			\hline
+			TU33 & Si verifichi che il metodo per l'inserimento di una postazione vada in errore specificando dei dati non univoci. & S \\	
+			\hline
+			TU34 & Si verifichi che il metodo per l'inserimento di una postazione vada in errore specificando dei dati sbagliati. & S \\	
+			\hline
+			TU35 & Si verifichi che il metodo per la modifica di una postazione vada a buon fine specificando dei dati corretti. & S \\	
+			\hline
+			TU36 & Si verifichi che il metodo per la modifica di una postazione vada in errore specificando dei dati non univoci. & S \\	
+			\hline
+			TU37 & Si verifichi che il metodo per la modifica di una postazione vada in errore specificando dei dati sbagliati. & S \\	
+			\hline
+			% Test di sistema per i requisiti prestazionali %	
+			\hiderowcolors
+			\caption{Tabella dei test di unità}		
+		\end{longtable}	
+	\end{center}
